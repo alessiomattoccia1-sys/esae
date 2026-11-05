@@ -48,3 +48,10 @@ def test_heuristics_not_promoted_to_defects():
 
 def test_comments_strings_do_not_create_risks():
     assert analyze({'a.c':'// malloc(4);\nconst char *s="sleep(1)";\nint safe(void){ return 0; }\n'})==[]
+
+
+def test_cppcheck_configuration_errors_are_not_defects(tmp_path):
+    for rule in ['unknownMacro','syntaxError','preprocessorErrorDirective','internalError','configurationNotChecked']:
+        xml=f'<results><errors><error id="{rule}" severity="error" msg="Configuration required"><location file="{tmp_path}/a.c" line="1" column="1"/></error></errors></results>'
+        found,errors=cppcheck_findings(xml,tmp_path,{'a.c':'MACRO();\n'})
+        assert not found and len(errors)==1 and rule in errors[0]

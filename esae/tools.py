@@ -26,6 +26,7 @@ def cppcheck_findings(xml: str, snap: Path, files: dict):
         rule = item.get('id', 'unknown')
         if rule in ('syntaxError', 'preprocessorErrorDirective', 'internalError', 'configurationNotChecked', 'unknownMacro'):
             errors.append(rule + ': ' + item.get('msg', '')[:1000])
+            continue  # Coverage/configuration failures are not source-code defects.
         locations = item.findall('location')
         location = next((x for x in locations if mapped_file(x.get('file', ''), snap, files)), None)
         if location is None:
