@@ -1,0 +1,129 @@
+{
+  "detected": 4,
+  "total": 4,
+  "defects": [
+    {
+      "id": "D01",
+      "file": "src/data.c",
+      "marker": "return values[4]",
+      "category": "bounds",
+      "description": "Read one element past a four-element array",
+      "marker_line": 5,
+      "accepted_report_span": [
+        5,
+        5
+      ],
+      "detected": true,
+      "reports": [
+        {
+          "finding_id": "d631733d0c3e8a90fe5321d7",
+          "line": 5,
+          "rule_id": "arrayIndexOutOfBounds",
+          "tools": [
+            "cppcheck"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "file": "src/data.c",
+      "marker": "return *value",
+      "category": "null_pointer",
+      "description": "Dereference a constant null pointer",
+      "marker_line": 9,
+      "accepted_report_span": [
+        9,
+        9
+      ],
+      "detected": true,
+      "reports": [
+        {
+          "finding_id": "1a58addd70213ebd5f673fb6",
+          "line": 9,
+          "rule_id": "clang-analyzer-core.NullDereference",
+          "tools": [
+            "clang-tidy"
+          ]
+        },
+        {
+          "finding_id": "7a07c5527ea15e9bf0d28e56",
+          "line": 9,
+          "rule_id": "nullPointer",
+          "tools": [
+            "cppcheck"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "file": "src/sensor.c",
+      "marker": "return sample",
+      "category": "uninitialized",
+      "description": "Read sample on the path ready==0",
+      "marker_line": 14,
+      "accepted_report_span": [
+        14,
+        14
+      ],
+      "detected": true,
+      "reports": [
+        {
+          "finding_id": "f199387e391f2fefb77a6360",
+          "line": 14,
+          "rule_id": "clang-analyzer-core.uninitialized.UndefReturn",
+          "tools": [
+            "clang-tidy"
+          ]
+        },
+        {
+          "finding_id": "12222077b84110b16f1c09f8",
+          "line": 14,
+          "rule_id": "uninitvar",
+          "tools": [
+            "cppcheck"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "file": "src/data.c",
+      "marker": "owned allocation",
+      "category": "memory_leak",
+      "description": "Allocation leaves the function without free",
+      "marker_line": 14,
+      "accepted_report_span": [
+        11,
+        16
+      ],
+      "detected": true,
+      "reports": [
+        {
+          "finding_id": "6ee55fb6b5c3fc263054b6be",
+          "line": 15,
+          "rule_id": "memleak",
+          "tools": [
+            "clang-tidy",
+            "cppcheck"
+          ]
+        }
+      ]
+    }
+  ],
+  "not_detected": [],
+  "not_proved": [
+    "Actual races",
+    "WCET",
+    "Target hardware behavior",
+    "Safety/security certification"
+  ],
+  "safe_controls": [
+    "sensor_average validates pointer/count and caps count",
+    "data_store_safe checks pointer and capacity",
+    "comm_send checks null",
+    "resource_safe uses RAII"
+  ],
+  "false_positive_scope": "Only the owned demo controls reviewed; not a sensitivity/specificity benchmark"
+}

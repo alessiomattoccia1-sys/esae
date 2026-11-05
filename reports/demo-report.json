@@ -1,0 +1,1485 @@
+{
+  "id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+  "created_at": "2026-11-05T22:04:05.210230+00:00",
+  "repository": "demo",
+  "version": "0.1.0",
+  "status": "completed",
+  "phase": "Scansione conclusa",
+  "findings": [
+    {
+      "file": "include/sensor.h",
+      "line": 5,
+      "column": 1,
+      "severity": "medium",
+      "category": "embedded_risk",
+      "rule_id": "embedded.narrow-integer-arithmetic",
+      "source_tool": "esae-heuristics",
+      "message": "Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.",
+      "evidence": {
+        "expression": "uint16_t sensor_average(const uint16_t *values, unsigned count);"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "e9f07e7206841dfd30812ad2",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.narrow-integer-arithmetic",
+          "message": "Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.",
+          "severity": "medium",
+          "evidence": {
+            "expression": "uint16_t sensor_average(const uint16_t *values, unsigned count);"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/data.c",
+      "line": 4,
+      "column": 9,
+      "severity": "low",
+      "category": "suspicious_operation",
+      "rule_id": "constVariable",
+      "source_tool": "cppcheck",
+      "message": "Variable 'values' can be declared as const array",
+      "evidence": {
+        "analyzer_severity": "style",
+        "inconclusive": false,
+        "trace": [
+          {
+            "file": "src/data.c",
+            "line": 4,
+            "info": "Variable 'values' can be declared as const array"
+          }
+        ]
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "298789922e4eee26bb4132ef",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "cppcheck",
+          "rule_id": "constVariable",
+          "message": "Variable 'values' can be declared as const array",
+          "severity": "low",
+          "evidence": {
+            "analyzer_severity": "style",
+            "inconclusive": false,
+            "trace": [
+              {
+                "file": "src/data.c",
+                "line": 4,
+                "info": "Variable 'values' can be declared as const array"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/data.c",
+      "line": 5,
+      "column": 12,
+      "severity": "medium",
+      "category": "suspicious_operation",
+      "rule_id": "clang-analyzer-security.ArrayBound",
+      "source_tool": "clang-tidy",
+      "message": "Out of bound access to memory after the end of 'values'",
+      "evidence": {
+        "analyzer_level": "Warning",
+        "notes": [
+          {
+            "file": "src/data.c",
+            "message": "Access of 'values' at index 4, while it holds only 4 'int' elements"
+          }
+        ],
+        "suggested_replacements_not_applied": 0
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "8ed785621e67077963405d91",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "clang-tidy",
+          "rule_id": "clang-analyzer-security.ArrayBound",
+          "message": "Out of bound access to memory after the end of 'values'",
+          "severity": "medium",
+          "evidence": {
+            "analyzer_level": "Warning",
+            "notes": [
+              {
+                "file": "src/data.c",
+                "message": "Access of 'values' at index 4, while it holds only 4 'int' elements"
+              }
+            ],
+            "suggested_replacements_not_applied": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/data.c",
+      "line": 5,
+      "column": 18,
+      "severity": "high",
+      "category": "bounds",
+      "rule_id": "arrayIndexOutOfBounds",
+      "source_tool": "cppcheck",
+      "message": "Array 'values[4]' accessed at index 4, which is out of bounds.",
+      "evidence": {
+        "analyzer_severity": "error",
+        "inconclusive": false,
+        "trace": [
+          {
+            "file": "src/data.c",
+            "line": 5,
+            "info": "Array index out of bounds"
+          }
+        ]
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "d631733d0c3e8a90fe5321d7",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "cppcheck",
+          "rule_id": "arrayIndexOutOfBounds",
+          "message": "Array 'values[4]' accessed at index 4, which is out of bounds.",
+          "severity": "high",
+          "evidence": {
+            "analyzer_severity": "error",
+            "inconclusive": false,
+            "trace": [
+              {
+                "file": "src/data.c",
+                "line": 5,
+                "info": "Array index out of bounds"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/data.c",
+      "line": 8,
+      "column": 10,
+      "severity": "low",
+      "category": "suspicious_operation",
+      "rule_id": "constVariablePointer",
+      "source_tool": "cppcheck",
+      "message": "Variable 'value' can be declared as pointer to const",
+      "evidence": {
+        "analyzer_severity": "style",
+        "inconclusive": false,
+        "trace": [
+          {
+            "file": "src/data.c",
+            "line": 8,
+            "info": "Variable 'value' can be declared as pointer to const"
+          }
+        ]
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "ab9f8d8d1874983468246584",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "cppcheck",
+          "rule_id": "constVariablePointer",
+          "message": "Variable 'value' can be declared as pointer to const",
+          "severity": "low",
+          "evidence": {
+            "analyzer_severity": "style",
+            "inconclusive": false,
+            "trace": [
+              {
+                "file": "src/data.c",
+                "line": 8,
+                "info": "Variable 'value' can be declared as pointer to const"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/data.c",
+      "line": 9,
+      "column": 12,
+      "severity": "medium",
+      "category": "null_pointer",
+      "rule_id": "clang-analyzer-core.NullDereference",
+      "source_tool": "clang-tidy",
+      "message": "Dereference of null pointer (loaded from variable 'value')",
+      "evidence": {
+        "analyzer_level": "Warning",
+        "notes": [
+          {
+            "file": "src/data.c",
+            "message": "'value' initialized to a null pointer value"
+          },
+          {
+            "file": "src/data.c",
+            "message": "Dereference of null pointer (loaded from variable 'value')"
+          }
+        ],
+        "suggested_replacements_not_applied": 0
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": {
+        "status": "generated",
+        "confidence_type": "ai_hypothesis",
+        "verification_status": "not_verified",
+        "finding_id": "1a58addd70213ebd5f673fb6",
+        "model": "qwen3:4b",
+        "fields": {
+          "explanation": "Il tool rileva un accesso a puntatore nullo nel file src/data.c, linea 9, dove viene tentato di dereferenziare un puntatore 'value' inizializzato a 0.",
+          "possible_causes": "Il puntatore 'value' è stato inizializzato a 0 senza essere allocato dinamicamente o inizializzato correttamente.",
+          "plausible_consequences": "L'accesso a puntatore nullo può causare crash del programma o comportamenti non prevedibili.",
+          "suggested_changes": "Inizializzare il puntatore 'value' con un valore valido o verificare se è nullo prima di dereferenziarlo.",
+          "change_impact": "Il cambiamento riduce il rischio di crash e migliora la sicurezza del codice.",
+          "verification_tests": "Eseguire test unitari per confermare che il puntatore non è nullo prima dell'accesso."
+        }
+      },
+      "id": "1a58addd70213ebd5f673fb6",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "clang-tidy",
+          "rule_id": "clang-analyzer-core.NullDereference",
+          "message": "Dereference of null pointer (loaded from variable 'value')",
+          "severity": "medium",
+          "evidence": {
+            "analyzer_level": "Warning",
+            "notes": [
+              {
+                "file": "src/data.c",
+                "message": "'value' initialized to a null pointer value"
+              },
+              {
+                "file": "src/data.c",
+                "message": "Dereference of null pointer (loaded from variable 'value')"
+              }
+            ],
+            "suggested_replacements_not_applied": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/data.c",
+      "line": 9,
+      "column": 13,
+      "severity": "high",
+      "category": "null_pointer",
+      "rule_id": "nullPointer",
+      "source_tool": "cppcheck",
+      "message": "Null pointer dereference: value",
+      "evidence": {
+        "analyzer_severity": "error",
+        "inconclusive": false,
+        "trace": [
+          {
+            "file": "src/data.c",
+            "line": 9,
+            "info": "Null pointer dereference"
+          },
+          {
+            "file": "src/data.c",
+            "line": 8,
+            "info": "Assignment 'value=0', assigned value is 0"
+          }
+        ]
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "7a07c5527ea15e9bf0d28e56",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "cppcheck",
+          "rule_id": "nullPointer",
+          "message": "Null pointer dereference: value",
+          "severity": "high",
+          "evidence": {
+            "analyzer_severity": "error",
+            "inconclusive": false,
+            "trace": [
+              {
+                "file": "src/data.c",
+                "line": 9,
+                "info": "Null pointer dereference"
+              },
+              {
+                "file": "src/data.c",
+                "line": 8,
+                "info": "Assignment 'value=0', assigned value is 0"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/data.c",
+      "line": 12,
+      "column": 26,
+      "severity": "medium",
+      "category": "embedded_risk",
+      "rule_id": "embedded.dynamic-allocation",
+      "source_tool": "esae-heuristics",
+      "message": "Dynamic allocation via malloc; review failure handling, lifetime and determinism.",
+      "evidence": {
+        "function": "data_leak",
+        "call": "malloc"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "905aed2f376b06ae65deb243",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.dynamic-allocation",
+          "message": "Dynamic allocation via malloc; review failure handling, lifetime and determinism.",
+          "severity": "medium",
+          "evidence": {
+            "function": "data_leak",
+            "call": "malloc"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/data.c",
+      "line": 15,
+      "column": 1,
+      "severity": "high",
+      "category": "memory_leak",
+      "rule_id": "memleak",
+      "source_tool": "cppcheck",
+      "message": "Memory leak: buffer",
+      "evidence": {
+        "analyzer_severity": "error",
+        "inconclusive": false,
+        "trace": [
+          {
+            "file": "src/data.c",
+            "line": 15,
+            "info": ""
+          }
+        ]
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "6ee55fb6b5c3fc263054b6be",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "cppcheck",
+          "rule_id": "memleak",
+          "message": "Memory leak: buffer",
+          "severity": "high",
+          "evidence": {
+            "analyzer_severity": "error",
+            "inconclusive": false,
+            "trace": [
+              {
+                "file": "src/data.c",
+                "line": 15,
+                "info": ""
+              }
+            ]
+          }
+        },
+        {
+          "tool": "clang-tidy",
+          "rule_id": "clang-analyzer-unix.Malloc",
+          "message": "Potential leak of memory pointed to by 'buffer'",
+          "severity": "medium",
+          "evidence": {
+            "analyzer_level": "Warning",
+            "notes": [
+              {
+                "file": "src/data.c",
+                "message": "Memory is allocated"
+              },
+              {
+                "file": "src/data.c",
+                "message": "Assuming 'buffer' is not equal to null"
+              },
+              {
+                "file": "src/data.c",
+                "message": "'buffer' is not equal to null"
+              },
+              {
+                "file": "src/data.c",
+                "message": "Taking true branch"
+              },
+              {
+                "file": "src/data.c",
+                "message": "Potential leak of memory pointed to by 'buffer'"
+              }
+            ],
+            "suggested_replacements_not_applied": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 5,
+      "column": 1,
+      "severity": "medium",
+      "category": "embedded_risk",
+      "rule_id": "embedded.shared-volatile-candidate",
+      "source_tool": "esae-heuristics",
+      "message": "Global volatile object may be shared with interrupts/tasks. Volatile does not prove synchronization or a race.",
+      "evidence": {
+        "symbol": "shared_samples",
+        "scope": "lexically global",
+        "race_condition_verified": false
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "568da758caaa2bba284b0454",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.shared-volatile-candidate",
+          "message": "Global volatile object may be shared with interrupts/tasks. Volatile does not prove synchronization or a race.",
+          "severity": "medium",
+          "evidence": {
+            "symbol": "shared_samples",
+            "scope": "lexically global",
+            "race_condition_verified": false
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 6,
+      "column": 10,
+      "severity": "medium",
+      "category": "embedded_risk",
+      "rule_id": "embedded.recursion-candidate",
+      "source_tool": "esae-heuristics",
+      "message": "File-local call-name cycle involving diagnostics_retry; review stack depth and termination.",
+      "evidence": {
+        "function": "diagnostics_retry",
+        "resolution": "lexical names, not AST; macros/overloads can invalidate inference"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "eadcc71e1ee903e9641cab1c",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.recursion-candidate",
+          "message": "File-local call-name cycle involving diagnostics_retry; review stack depth and termination.",
+          "severity": "medium",
+          "evidence": {
+            "function": "diagnostics_retry",
+            "resolution": "lexical names, not AST; macros/overloads can invalidate inference"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 11,
+      "column": 21,
+      "severity": "medium",
+      "category": "embedded_risk",
+      "rule_id": "embedded.dynamic-allocation",
+      "source_tool": "esae-heuristics",
+      "message": "Dynamic allocation via malloc; review failure handling, lifetime and determinism.",
+      "evidence": {
+        "function": "Sensor_IRQHandler",
+        "call": "malloc"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "c73a99dadf1d11ce8370f90d",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.dynamic-allocation",
+          "message": "Dynamic allocation via malloc; review failure handling, lifetime and determinism.",
+          "severity": "medium",
+          "evidence": {
+            "function": "Sensor_IRQHandler",
+            "call": "malloc"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 11,
+      "column": 21,
+      "severity": "high",
+      "category": "embedded_risk",
+      "rule_id": "embedded.isr-suspicious-call",
+      "source_tool": "esae-heuristics",
+      "message": "malloc in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.",
+      "evidence": {
+        "function": "Sensor_IRQHandler",
+        "call": "malloc",
+        "isr_evidence": "function naming convention only"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "5d7f31fd6ed13e51a0553a39",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.isr-suspicious-call",
+          "message": "malloc in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.",
+          "severity": "high",
+          "evidence": {
+            "function": "Sensor_IRQHandler",
+            "call": "malloc",
+            "isr_evidence": "function naming convention only"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 11,
+      "column": 21,
+      "severity": "low",
+      "category": "suspicious_operation",
+      "rule_id": "unusedAllocatedMemory",
+      "source_tool": "cppcheck",
+      "message": "Variable 'scratch' is allocated memory that is never used.",
+      "evidence": {
+        "analyzer_severity": "style",
+        "inconclusive": false,
+        "trace": [
+          {
+            "file": "src/diagnostics.c",
+            "line": 11,
+            "info": ""
+          }
+        ]
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "4ac744c4bf02b361e9d7db78",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "cppcheck",
+          "rule_id": "unusedAllocatedMemory",
+          "message": "Variable 'scratch' is allocated memory that is never used.",
+          "severity": "low",
+          "evidence": {
+            "analyzer_severity": "style",
+            "inconclusive": false,
+            "trace": [
+              {
+                "file": "src/diagnostics.c",
+                "line": 11,
+                "info": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 12,
+      "column": 5,
+      "severity": "high",
+      "category": "embedded_risk",
+      "rule_id": "embedded.isr-suspicious-call",
+      "source_tool": "esae-heuristics",
+      "message": "usleep in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.",
+      "evidence": {
+        "function": "Sensor_IRQHandler",
+        "call": "usleep",
+        "isr_evidence": "function naming convention only"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "366c0874661cc4b4d55708fa",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.isr-suspicious-call",
+          "message": "usleep in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.",
+          "severity": "high",
+          "evidence": {
+            "function": "Sensor_IRQHandler",
+            "call": "usleep",
+            "isr_evidence": "function naming convention only"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 12,
+      "column": 5,
+      "severity": "medium",
+      "category": "embedded_risk",
+      "rule_id": "embedded.possibly-blocking-call",
+      "source_tool": "esae-heuristics",
+      "message": "usleep may block; timing depends on platform and arguments.",
+      "evidence": {
+        "function": "Sensor_IRQHandler",
+        "call": "usleep"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "9bc9581cbed0776f92c3bd7d",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.possibly-blocking-call",
+          "message": "usleep may block; timing depends on platform and arguments.",
+          "severity": "medium",
+          "evidence": {
+            "function": "Sensor_IRQHandler",
+            "call": "usleep"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 14,
+      "column": 5,
+      "severity": "high",
+      "category": "embedded_risk",
+      "rule_id": "embedded.isr-suspicious-call",
+      "source_tool": "esae-heuristics",
+      "message": "free in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.",
+      "evidence": {
+        "function": "Sensor_IRQHandler",
+        "call": "free",
+        "isr_evidence": "function naming convention only"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "ec7df8966b1e8f988d66d0a4",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.isr-suspicious-call",
+          "message": "free in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.",
+          "severity": "high",
+          "evidence": {
+            "function": "Sensor_IRQHandler",
+            "call": "free",
+            "isr_evidence": "function naming convention only"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/diagnostics.c",
+      "line": 20,
+      "column": 5,
+      "severity": "medium",
+      "category": "embedded_risk",
+      "rule_id": "embedded.narrow-integer-arithmetic",
+      "source_tool": "esae-heuristics",
+      "message": "Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.",
+      "evidence": {
+        "expression": "uint8_t result = a + b;"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "542c3c131d4da6cc2e6165d0",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.narrow-integer-arithmetic",
+          "message": "Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.",
+          "severity": "medium",
+          "evidence": {
+            "expression": "uint8_t result = a + b;"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/main.c",
+      "line": 6,
+      "column": 14,
+      "severity": "low",
+      "category": "suspicious_operation",
+      "rule_id": "constVariable",
+      "source_tool": "cppcheck",
+      "message": "Variable 'samples' can be declared as const array",
+      "evidence": {
+        "analyzer_severity": "style",
+        "inconclusive": false,
+        "trace": [
+          {
+            "file": "src/main.c",
+            "line": 6,
+            "info": "Variable 'samples' can be declared as const array"
+          }
+        ]
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "07927b941b6bb677a5e006cd",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "cppcheck",
+          "rule_id": "constVariable",
+          "message": "Variable 'samples' can be declared as const array",
+          "severity": "low",
+          "evidence": {
+            "analyzer_severity": "style",
+            "inconclusive": false,
+            "trace": [
+              {
+                "file": "src/main.c",
+                "line": 6,
+                "info": "Variable 'samples' can be declared as const array"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/sensor.c",
+      "line": 3,
+      "column": 13,
+      "severity": "medium",
+      "category": "embedded_risk",
+      "rule_id": "embedded.narrow-integer-arithmetic",
+      "source_tool": "esae-heuristics",
+      "message": "Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.",
+      "evidence": {
+        "expression": "uint16_t)(100U + (channel % 4U) * 10U);"
+      },
+      "confidence_type": "heuristic_indicator",
+      "verification_status": "requires_engineering_review",
+      "ai_explanation": null,
+      "id": "ce74aea5928fa110b81cc59a",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "esae-heuristics",
+          "rule_id": "embedded.narrow-integer-arithmetic",
+          "message": "Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.",
+          "severity": "medium",
+          "evidence": {
+            "expression": "uint16_t)(100U + (channel % 4U) * 10U);"
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/sensor.c",
+      "line": 14,
+      "column": 5,
+      "severity": "medium",
+      "category": "uninitialized",
+      "rule_id": "clang-analyzer-core.uninitialized.UndefReturn",
+      "source_tool": "clang-tidy",
+      "message": "Undefined or garbage value returned to caller",
+      "evidence": {
+        "analyzer_level": "Warning",
+        "notes": [
+          {
+            "file": "src/sensor.c",
+            "message": "'sample' declared without an initial value"
+          },
+          {
+            "file": "src/sensor.c",
+            "message": "Assuming 'ready' is 0"
+          },
+          {
+            "file": "src/sensor.c",
+            "message": "Taking false branch"
+          },
+          {
+            "file": "src/sensor.c",
+            "message": "Undefined or garbage value returned to caller"
+          }
+        ],
+        "suggested_replacements_not_applied": 0
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "f199387e391f2fefb77a6360",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "clang-tidy",
+          "rule_id": "clang-analyzer-core.uninitialized.UndefReturn",
+          "message": "Undefined or garbage value returned to caller",
+          "severity": "medium",
+          "evidence": {
+            "analyzer_level": "Warning",
+            "notes": [
+              {
+                "file": "src/sensor.c",
+                "message": "'sample' declared without an initial value"
+              },
+              {
+                "file": "src/sensor.c",
+                "message": "Assuming 'ready' is 0"
+              },
+              {
+                "file": "src/sensor.c",
+                "message": "Taking false branch"
+              },
+              {
+                "file": "src/sensor.c",
+                "message": "Undefined or garbage value returned to caller"
+              }
+            ],
+            "suggested_replacements_not_applied": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "src/sensor.c",
+      "line": 14,
+      "column": 12,
+      "severity": "medium",
+      "category": "uninitialized",
+      "rule_id": "uninitvar",
+      "source_tool": "cppcheck",
+      "message": "Uninitialized variable: sample",
+      "evidence": {
+        "analyzer_severity": "warning",
+        "inconclusive": false,
+        "trace": [
+          {
+            "file": "src/sensor.c",
+            "line": 14,
+            "info": ""
+          },
+          {
+            "file": "src/sensor.c",
+            "line": 13,
+            "info": "Assuming condition is false"
+          }
+        ]
+      },
+      "confidence_type": "static_analysis",
+      "verification_status": "reported_by_tool_not_manually_verified",
+      "ai_explanation": null,
+      "id": "12222077b84110b16f1c09f8",
+      "scan_id": "dd545378-9458-4fe4-b8e7-3f25e41188bc",
+      "tool_reports": [
+        {
+          "tool": "cppcheck",
+          "rule_id": "uninitvar",
+          "message": "Uninitialized variable: sample",
+          "severity": "medium",
+          "evidence": {
+            "analyzer_severity": "warning",
+            "inconclusive": false,
+            "trace": [
+              {
+                "file": "src/sensor.c",
+                "line": 14,
+                "info": ""
+              },
+              {
+                "file": "src/sensor.c",
+                "line": 13,
+                "info": "Assuming condition is false"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "executed": [
+    {
+      "tool": "cppcheck",
+      "translation_units": 6,
+      "returncode": 0,
+      "duration_seconds": 0.109,
+      "version": "Cppcheck 2.22.0"
+    },
+    {
+      "tool": "clang-tidy",
+      "file": "src/comm.c",
+      "returncode": 0,
+      "duration_seconds": 0.331,
+      "version": "LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build."
+    },
+    {
+      "tool": "clang-tidy",
+      "file": "src/data.c",
+      "returncode": 0,
+      "duration_seconds": 0.113,
+      "version": "LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build."
+    },
+    {
+      "tool": "clang-tidy",
+      "file": "src/diagnostics.c",
+      "returncode": 0,
+      "duration_seconds": 0.112,
+      "version": "LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build."
+    },
+    {
+      "tool": "clang-tidy",
+      "file": "src/main.c",
+      "returncode": 0,
+      "duration_seconds": 0.112,
+      "version": "LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build."
+    },
+    {
+      "tool": "clang-tidy",
+      "file": "src/sensor.c",
+      "returncode": 0,
+      "duration_seconds": 0.113,
+      "version": "LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build."
+    },
+    {
+      "tool": "clang-tidy",
+      "file": "src/resource.cpp",
+      "returncode": 0,
+      "duration_seconds": 0.382,
+      "version": "LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build."
+    }
+  ],
+  "configuration": {
+    "excludes": [
+      ".git",
+      ".venv",
+      "node_modules",
+      "build",
+      "dist",
+      "vendor",
+      "third_party",
+      "external",
+      "generated",
+      ".local",
+      ".toolchain"
+    ],
+    "per_process_timeout_seconds": 30,
+    "clang_checks": "-*,clang-analyzer-*,bugprone-sizeof-expression,bugprone-infinite-loop,bugprone-suspicious-memset-usage,bugprone-narrowing-conversions,cert-err34-c,portability-*",
+    "source_mode": "private_readonly_snapshot",
+    "network": "denied_to_analyzers",
+    "platform": "Darwin",
+    "os_sandbox": true,
+    "ai": "optional_explicit_local_only",
+    "host_system_headers": true,
+    "database_used": true,
+    "accepted_translation_units": 6,
+    "ignored_compilation_arguments": []
+  },
+  "not_verified": [
+    "Worst-Case Execution Time (WCET)",
+    "Absence of race conditions",
+    "Functional correctness on hardware",
+    "MISRA, CERT, DO-178C, ISO 26262 or other standard compliance/certification",
+    "Absence of all defects/security vulnerabilities",
+    "Complete call graph or AST-based dataflow"
+  ],
+  "inventory": {
+    "file_count": 10,
+    "lines": 106,
+    "nonblank_lines": 106,
+    "line_count_method": "physical source lines; includes comments; nonblank also reported",
+    "files": [
+      {
+        "path": "include/comm.h",
+        "bytes": 108,
+        "lines": 5,
+        "nonblank_lines": 5,
+        "sha256": "2d15ece030416a6fcee976ff5ecbada7821a7a68fff885bed026b537786d40fc"
+      },
+      {
+        "path": "include/data.h",
+        "bytes": 212,
+        "lines": 8,
+        "nonblank_lines": 8,
+        "sha256": "9cb155dda33d7a1b84368e01e82bc40f0cc0a418fbb9f6cf66b6d878cc6c6088"
+      },
+      {
+        "path": "include/diagnostics.h",
+        "bytes": 194,
+        "lines": 7,
+        "nonblank_lines": 7,
+        "sha256": "48c8a562f522f27e662b507d9b2832fc9cc2f2f2993c5b74c1e071487f4e5bee"
+      },
+      {
+        "path": "include/sensor.h",
+        "bytes": 213,
+        "lines": 7,
+        "nonblank_lines": 7,
+        "sha256": "023066d78a2d9a576bfd81ebadf1047db838fcad2516a7173ce4136ddaef6530"
+      },
+      {
+        "path": "src/comm.c",
+        "bytes": 148,
+        "lines": 6,
+        "nonblank_lines": 6,
+        "sha256": "4c77935a8f57cc642ee7f36755fed379dfd05dd0b9a9275785bcf901af046b80"
+      },
+      {
+        "path": "src/data.c",
+        "bytes": 620,
+        "lines": 20,
+        "nonblank_lines": 20,
+        "sha256": "66747c05c7e8da658fc5711c965e40ce007811e3c7e7b627282c7cf4a02b239b"
+      },
+      {
+        "path": "src/diagnostics.c",
+        "bytes": 835,
+        "lines": 22,
+        "nonblank_lines": 22,
+        "sha256": "9d3cfae0b614e653413461d22083ebd484269e97ad35a4449926d164ccb18736"
+      },
+      {
+        "path": "src/main.c",
+        "bytes": 368,
+        "lines": 11,
+        "nonblank_lines": 11,
+        "sha256": "75801d7c7acae3c1d28723a1f6e9d22e3b97a144f560561d5f589202dfca3fa3"
+      },
+      {
+        "path": "src/resource.cpp",
+        "bytes": 111,
+        "lines": 5,
+        "nonblank_lines": 5,
+        "sha256": "7fe5cb573a688237d6fef6c1c6db155b919459a1801fc04df8c4ad44a884b6e6"
+      },
+      {
+        "path": "src/sensor.c",
+        "bytes": 527,
+        "lines": 15,
+        "nonblank_lines": 15,
+        "sha256": "24a0496255c8ff7312077fe71c87630ef6c4791e384c6321bf3eaa86e83fb5d2"
+      }
+    ],
+    "directories": [
+      ".",
+      "include",
+      "src"
+    ],
+    "excluded": [],
+    "build_systems": [
+      "CMakeLists.txt"
+    ],
+    "compilation_database": true
+  },
+  "architecture": {
+    "kind": "lexical_include_graph",
+    "nodes": [
+      {
+        "id": "include/comm.h",
+        "incoming": 3,
+        "outgoing": 1
+      },
+      {
+        "id": "include/data.h",
+        "incoming": 2,
+        "outgoing": 0
+      },
+      {
+        "id": "include/diagnostics.h",
+        "incoming": 2,
+        "outgoing": 1
+      },
+      {
+        "id": "include/sensor.h",
+        "incoming": 2,
+        "outgoing": 0
+      },
+      {
+        "id": "src/comm.c",
+        "incoming": 0,
+        "outgoing": 1
+      },
+      {
+        "id": "src/data.c",
+        "incoming": 0,
+        "outgoing": 1
+      },
+      {
+        "id": "src/diagnostics.c",
+        "incoming": 0,
+        "outgoing": 1
+      },
+      {
+        "id": "src/main.c",
+        "incoming": 0,
+        "outgoing": 3
+      },
+      {
+        "id": "src/resource.cpp",
+        "incoming": 0,
+        "outgoing": 0
+      },
+      {
+        "id": "src/sensor.c",
+        "incoming": 0,
+        "outgoing": 1
+      }
+    ],
+    "edges": [
+      {
+        "source": "include/comm.h",
+        "target": "include/diagnostics.h",
+        "line": 3
+      },
+      {
+        "source": "include/diagnostics.h",
+        "target": "include/comm.h",
+        "line": 3
+      },
+      {
+        "source": "src/comm.c",
+        "target": "include/comm.h",
+        "line": 1
+      },
+      {
+        "source": "src/data.c",
+        "target": "include/data.h",
+        "line": 1
+      },
+      {
+        "source": "src/diagnostics.c",
+        "target": "include/diagnostics.h",
+        "line": 1
+      },
+      {
+        "source": "src/main.c",
+        "target": "include/sensor.h",
+        "line": 1
+      },
+      {
+        "source": "src/main.c",
+        "target": "include/data.h",
+        "line": 2
+      },
+      {
+        "source": "src/main.c",
+        "target": "include/comm.h",
+        "line": 3
+      },
+      {
+        "source": "src/sensor.c",
+        "target": "include/sensor.h",
+        "line": 1
+      }
+    ],
+    "cycles": [
+      [
+        "include/comm.h",
+        "include/diagnostics.h"
+      ]
+    ],
+    "most_connected": [
+      {
+        "id": "include/comm.h",
+        "incoming": 3,
+        "outgoing": 1
+      },
+      {
+        "id": "include/diagnostics.h",
+        "incoming": 2,
+        "outgoing": 1
+      },
+      {
+        "id": "src/main.c",
+        "incoming": 0,
+        "outgoing": 3
+      },
+      {
+        "id": "include/data.h",
+        "incoming": 2,
+        "outgoing": 0
+      },
+      {
+        "id": "include/sensor.h",
+        "incoming": 2,
+        "outgoing": 0
+      },
+      {
+        "id": "src/comm.c",
+        "incoming": 0,
+        "outgoing": 1
+      },
+      {
+        "id": "src/data.c",
+        "incoming": 0,
+        "outgoing": 1
+      },
+      {
+        "id": "src/diagnostics.c",
+        "incoming": 0,
+        "outgoing": 1
+      },
+      {
+        "id": "src/sensor.c",
+        "incoming": 0,
+        "outgoing": 1
+      },
+      {
+        "id": "src/resource.cpp",
+        "incoming": 0,
+        "outgoing": 0
+      }
+    ],
+    "unresolved": [
+      {
+        "source": "include/data.h",
+        "include": "stddef.h",
+        "kind": "system_or_unresolved"
+      },
+      {
+        "source": "include/sensor.h",
+        "include": "stdint.h",
+        "kind": "system_or_unresolved"
+      },
+      {
+        "source": "src/comm.c",
+        "include": "stdio.h",
+        "kind": "system_or_unresolved"
+      },
+      {
+        "source": "src/data.c",
+        "include": "stdlib.h",
+        "kind": "system_or_unresolved"
+      },
+      {
+        "source": "src/diagnostics.c",
+        "include": "stdint.h",
+        "kind": "system_or_unresolved"
+      },
+      {
+        "source": "src/diagnostics.c",
+        "include": "stdlib.h",
+        "kind": "system_or_unresolved"
+      },
+      {
+        "source": "src/diagnostics.c",
+        "include": "unistd.h",
+        "kind": "system_or_unresolved"
+      },
+      {
+        "source": "src/main.c",
+        "include": "stdio.h",
+        "kind": "system_or_unresolved"
+      },
+      {
+        "source": "src/resource.cpp",
+        "include": "memory",
+        "kind": "system_or_unresolved"
+      }
+    ],
+    "limitations": [
+      "Conditional preprocessor branches are not evaluated",
+      "Macro includes unresolved",
+      "Quoted includes resolved relative to file, root and include/ only; arbitrary compiler search order is not modeled",
+      "Not a call graph; no AST or link-time dependency analysis"
+    ]
+  },
+  "source_integrity": {
+    "unchanged_after_scan": true,
+    "changed_paths": [],
+    "note": "Concurrent owner edits can change originals; reports always refer to captured hashes"
+  },
+  "duration_seconds": 1.315,
+  "completed_at": "2026-11-05T22:04:06.575316+00:00",
+  "summary": {
+    "static_findings": 11,
+    "heuristic_indicators": 11,
+    "ai_explanations": 1,
+    "static_by_severity": {
+      "high": 3,
+      "medium": 4,
+      "low": 4,
+      "info": 0
+    },
+    "total_findings": 22
+  },
+  "demo_validation": {
+    "detected": 4,
+    "total": 4,
+    "defects": [
+      {
+        "id": "D01",
+        "file": "src/data.c",
+        "marker": "return values[4]",
+        "category": "bounds",
+        "description": "Read one element past a four-element array",
+        "marker_line": 5,
+        "accepted_report_span": [
+          5,
+          5
+        ],
+        "detected": true,
+        "reports": [
+          {
+            "finding_id": "d631733d0c3e8a90fe5321d7",
+            "line": 5,
+            "rule_id": "arrayIndexOutOfBounds",
+            "tools": [
+              "cppcheck"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D02",
+        "file": "src/data.c",
+        "marker": "return *value",
+        "category": "null_pointer",
+        "description": "Dereference a constant null pointer",
+        "marker_line": 9,
+        "accepted_report_span": [
+          9,
+          9
+        ],
+        "detected": true,
+        "reports": [
+          {
+            "finding_id": "1a58addd70213ebd5f673fb6",
+            "line": 9,
+            "rule_id": "clang-analyzer-core.NullDereference",
+            "tools": [
+              "clang-tidy"
+            ]
+          },
+          {
+            "finding_id": "7a07c5527ea15e9bf0d28e56",
+            "line": 9,
+            "rule_id": "nullPointer",
+            "tools": [
+              "cppcheck"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D03",
+        "file": "src/sensor.c",
+        "marker": "return sample",
+        "category": "uninitialized",
+        "description": "Read sample on the path ready==0",
+        "marker_line": 14,
+        "accepted_report_span": [
+          14,
+          14
+        ],
+        "detected": true,
+        "reports": [
+          {
+            "finding_id": "f199387e391f2fefb77a6360",
+            "line": 14,
+            "rule_id": "clang-analyzer-core.uninitialized.UndefReturn",
+            "tools": [
+              "clang-tidy"
+            ]
+          },
+          {
+            "finding_id": "12222077b84110b16f1c09f8",
+            "line": 14,
+            "rule_id": "uninitvar",
+            "tools": [
+              "cppcheck"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D04",
+        "file": "src/data.c",
+        "marker": "owned allocation",
+        "category": "memory_leak",
+        "description": "Allocation leaves the function without free",
+        "marker_line": 14,
+        "accepted_report_span": [
+          11,
+          16
+        ],
+        "detected": true,
+        "reports": [
+          {
+            "finding_id": "6ee55fb6b5c3fc263054b6be",
+            "line": 15,
+            "rule_id": "memleak",
+            "tools": [
+              "clang-tidy",
+              "cppcheck"
+            ]
+          }
+        ]
+      }
+    ],
+    "not_detected": [],
+    "not_proved": [
+      "Actual races",
+      "WCET",
+      "Target hardware behavior",
+      "Safety/security certification"
+    ],
+    "safe_controls": [
+      "sensor_average validates pointer/count and caps count",
+      "data_store_safe checks pointer and capacity",
+      "comm_send checks null",
+      "resource_safe uses RAII"
+    ],
+    "false_positive_scope": "Only the owned demo controls reviewed; not a sensitivity/specificity benchmark"
+  },
+  "qualification": {
+    "tests": {
+      "passed": 49,
+      "failed": 0,
+      "skipped": 0
+    },
+    "browser_checks": 24,
+    "platform": "Mac mini M1 / macOS 27 / Python3.12",
+    "ollama_real": "Local qwen3:4b explanation generated and labeled ai_hypothesis; no cloud"
+  }
+}

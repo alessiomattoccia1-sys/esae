@@ -1,0 +1,68 @@
+[
+  {
+    "directory": ".",
+    "file": "src/comm.c",
+    "arguments": [
+      "clang",
+      "-std=c11",
+      "-Iinclude",
+      "-c",
+      "src/comm.c"
+    ]
+  },
+  {
+    "directory": ".",
+    "file": "src/data.c",
+    "arguments": [
+      "clang",
+      "-std=c11",
+      "-Iinclude",
+      "-c",
+      "src/data.c"
+    ]
+  },
+  {
+    "directory": ".",
+    "file": "src/diagnostics.c",
+    "arguments": [
+      "clang",
+      "-std=c11",
+      "-Iinclude",
+      "-c",
+      "src/diagnostics.c"
+    ]
+  },
+  {
+    "directory": ".",
+    "file": "src/main.c",
+    "arguments": [
+      "clang",
+      "-std=c11",
+      "-Iinclude",
+      "-c",
+      "src/main.c"
+    ]
+  },
+  {
+    "directory": ".",
+    "file": "src/sensor.c",
+    "arguments": [
+      "clang",
+      "-std=c11",
+      "-Iinclude",
+      "-c",
+      "src/sensor.c"
+    ]
+  },
+  {
+    "directory": ".",
+    "file": "src/resource.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-Iinclude",
+      "-c",
+      "src/resource.cpp"
+    ]
+  }
+]

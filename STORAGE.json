@@ -1,0 +1,17 @@
+{
+  "creator": "Codex per Alessio",
+  "purpose": "Persistent local ESAE development and verification",
+  "classification": "CANONICAL",
+  "retention": "Until explicit owner retirement",
+  "deletion_condition": "Explicit owner authorization; never an automatic sweep",
+  "classes": {
+    "CANONICAL": "Instructions, policy and provenance; explicit retirement only",
+    "PROJECT": "Sources, toolchain, pinned dependencies and distribution archives; explicit retirement only",
+    "EVIDENCE": "Scan snapshots, database, original tool logs, test results and reports; explicit retirement only",
+    "SESSION": "Owned server process metadata; stop only the recorded matching process when no scan is active",
+    "EPHEMERAL": "Only owned unused files created in TMPDIR; remove at the end of their operation"
+  },
+  "thresholds": {"temporary_growth_warn_bytes": 5000000000, "temporary_growth_stop_bytes": 10000000000, "free_warn_bytes": 50000000000, "free_bulk_stop_bytes": 30000000000},
+  "private_git_exclusions": [".local/", "evidence/", ".toolchain/", ".venv/"],
+  "public_reports": "Only reports from the owned demo; relative paths, no host paths, no private repository content"
+}

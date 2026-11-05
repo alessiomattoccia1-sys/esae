@@ -1,0 +1,15 @@
+.venv/
+.toolchain/
+.local/
+.pytest_cache/
+__pycache__/
+*.egg-info/
+dist/
+build/
+evidence/
+site-integration/
+.DS_Store
+demo/build/
+/AGENTS.md
+/scripts/qualify_demo.py
+/scripts/verify-browser.cjs

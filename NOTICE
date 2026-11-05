@@ -1,0 +1,8 @@
+Embedded Software Analysis Engine (ESAE)
+Copyright 2026 Alessio Mattoccia / Mattoccia Labs
+
+Original engine, local dashboard and owned demonstration: Apache License 2.0.
+Research prototype; no certification, suitability or absence-of-defects claim.
+Cppcheck and LLVM/clang-tidy remain separate third-party executables under their
+own licenses. They are not included in ESAE source or release archives.
+See THIRD_PARTY.md. No proprietary application repository or user scan is included.

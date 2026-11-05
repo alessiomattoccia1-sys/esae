@@ -1,0 +1,479 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; base-uri 'none'; form-action 'none'"><title>ESAE · Scan dd545378-9458-4fe4-b8e7-3f25e41188bc</title><style>body{font:16px/1.65 system-ui;background:#f6f5f1;color:#14252e;margin:0 auto;max-width:1050px;padding:48px 24px}h1{font-size:44px;line-height:1.1}h2{margin-top:48px}.eyebrow,.meta{color:#536773;font-size:13px}article{background:white;border:1px solid #d7dfe0;padding:24px;margin:16px 0;border-radius:14px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.stats{padding:20px;background:#e2edef;border-radius:14px}.notice{border-left:3px solid #c18c42;padding:0 20px}@media print{body{padding:12px}article{break-inside:avoid}details{display:block}}</style><header><p class="eyebrow">MATTOCCIA LABS / ENGINEERING EVIDENCE</p><h1>Embedded Software<br>Analysis Engine.</h1><p>Experimental local prototype · v0.1.0</p></header><div class="stats"><b>Scan dd545378-9458-4fe4-b8e7-3f25e41188bc</b><p>2026-11-05T22:04:05.210230+00:00 · demo · completed</p><p>10 captured source files · 106 physical lines · 1.315 s</p><pre>{
+  &quot;static_findings&quot;: 11,
+  &quot;heuristic_indicators&quot;: 11,
+  &quot;ai_explanations&quot;: 1,
+  &quot;static_by_severity&quot;: {
+    &quot;high&quot;: 3,
+    &quot;medium&quot;: 4,
+    &quot;low&quot;: 4,
+    &quot;info&quot;: 0
+  },
+  &quot;total_findings&quot;: 22
+}</pre></div><p class="notice">Tool-reported diagnostics require engineering review. Heuristics are risk indicators. AI text is an unverified hypothesis. No source modification, hardware execution or certification.</p><h2>Executed tools and configuration</h2><pre>{
+  &quot;configuration&quot;: {
+    &quot;excludes&quot;: [
+      &quot;.git&quot;,
+      &quot;.venv&quot;,
+      &quot;node_modules&quot;,
+      &quot;build&quot;,
+      &quot;dist&quot;,
+      &quot;vendor&quot;,
+      &quot;third_party&quot;,
+      &quot;external&quot;,
+      &quot;generated&quot;,
+      &quot;.local&quot;,
+      &quot;.toolchain&quot;
+    ],
+    &quot;per_process_timeout_seconds&quot;: 30,
+    &quot;clang_checks&quot;: &quot;-*,clang-analyzer-*,bugprone-sizeof-expression,bugprone-infinite-loop,bugprone-suspicious-memset-usage,bugprone-narrowing-conversions,cert-err34-c,portability-*&quot;,
+    &quot;source_mode&quot;: &quot;private_readonly_snapshot&quot;,
+    &quot;network&quot;: &quot;denied_to_analyzers&quot;,
+    &quot;platform&quot;: &quot;Darwin&quot;,
+    &quot;os_sandbox&quot;: true,
+    &quot;ai&quot;: &quot;optional_explicit_local_only&quot;,
+    &quot;host_system_headers&quot;: true,
+    &quot;database_used&quot;: true,
+    &quot;accepted_translation_units&quot;: 6,
+    &quot;ignored_compilation_arguments&quot;: []
+  },
+  &quot;executed&quot;: [
+    {
+      &quot;tool&quot;: &quot;cppcheck&quot;,
+      &quot;translation_units&quot;: 6,
+      &quot;returncode&quot;: 0,
+      &quot;duration_seconds&quot;: 0.109,
+      &quot;version&quot;: &quot;Cppcheck 2.22.0&quot;
+    },
+    {
+      &quot;tool&quot;: &quot;clang-tidy&quot;,
+      &quot;file&quot;: &quot;src/comm.c&quot;,
+      &quot;returncode&quot;: 0,
+      &quot;duration_seconds&quot;: 0.331,
+      &quot;version&quot;: &quot;LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build.&quot;
+    },
+    {
+      &quot;tool&quot;: &quot;clang-tidy&quot;,
+      &quot;file&quot;: &quot;src/data.c&quot;,
+      &quot;returncode&quot;: 0,
+      &quot;duration_seconds&quot;: 0.113,
+      &quot;version&quot;: &quot;LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build.&quot;
+    },
+    {
+      &quot;tool&quot;: &quot;clang-tidy&quot;,
+      &quot;file&quot;: &quot;src/diagnostics.c&quot;,
+      &quot;returncode&quot;: 0,
+      &quot;duration_seconds&quot;: 0.112,
+      &quot;version&quot;: &quot;LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build.&quot;
+    },
+    {
+      &quot;tool&quot;: &quot;clang-tidy&quot;,
+      &quot;file&quot;: &quot;src/main.c&quot;,
+      &quot;returncode&quot;: 0,
+      &quot;duration_seconds&quot;: 0.112,
+      &quot;version&quot;: &quot;LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build.&quot;
+    },
+    {
+      &quot;tool&quot;: &quot;clang-tidy&quot;,
+      &quot;file&quot;: &quot;src/sensor.c&quot;,
+      &quot;returncode&quot;: 0,
+      &quot;duration_seconds&quot;: 0.113,
+      &quot;version&quot;: &quot;LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build.&quot;
+    },
+    {
+      &quot;tool&quot;: &quot;clang-tidy&quot;,
+      &quot;file&quot;: &quot;src/resource.cpp&quot;,
+      &quot;returncode&quot;: 0,
+      &quot;duration_seconds&quot;: 0.382,
+      &quot;version&quot;: &quot;LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build.&quot;
+    }
+  ]
+}</pre><h2>Analysis errors and coverage limitations</h2><ul><li>No tool errors recorded</li></ul><h2>Findings</h2><article><p class="eyebrow">heuristic_indicator / medium</p><h3>include/sensor.h:5</h3><p>Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.</p><p class="meta">esae-heuristics · embedded.narrow-integer-arithmetic · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.narrow-integer-arithmetic&quot;,
+    &quot;message&quot;: &quot;Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;expression&quot;: &quot;uint16_t sensor_average(const uint16_t *values, unsigned count);&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / low</p><h3>src/data.c:4</h3><p>Variable &#x27;values&#x27; can be declared as const array</p><p class="meta">cppcheck · constVariable · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;cppcheck&quot;,
+    &quot;rule_id&quot;: &quot;constVariable&quot;,
+    &quot;message&quot;: &quot;Variable &#x27;values&#x27; can be declared as const array&quot;,
+    &quot;severity&quot;: &quot;low&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_severity&quot;: &quot;style&quot;,
+      &quot;inconclusive&quot;: false,
+      &quot;trace&quot;: [
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;line&quot;: 4,
+          &quot;info&quot;: &quot;Variable &#x27;values&#x27; can be declared as const array&quot;
+        }
+      ]
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / medium</p><h3>src/data.c:5</h3><p>Out of bound access to memory after the end of &#x27;values&#x27;</p><p class="meta">clang-tidy · clang-analyzer-security.ArrayBound · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;clang-tidy&quot;,
+    &quot;rule_id&quot;: &quot;clang-analyzer-security.ArrayBound&quot;,
+    &quot;message&quot;: &quot;Out of bound access to memory after the end of &#x27;values&#x27;&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_level&quot;: &quot;Warning&quot;,
+      &quot;notes&quot;: [
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;message&quot;: &quot;Access of &#x27;values&#x27; at index 4, while it holds only 4 &#x27;int&#x27; elements&quot;
+        }
+      ],
+      &quot;suggested_replacements_not_applied&quot;: 0
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / high</p><h3>src/data.c:5</h3><p>Array &#x27;values[4]&#x27; accessed at index 4, which is out of bounds.</p><p class="meta">cppcheck · arrayIndexOutOfBounds · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;cppcheck&quot;,
+    &quot;rule_id&quot;: &quot;arrayIndexOutOfBounds&quot;,
+    &quot;message&quot;: &quot;Array &#x27;values[4]&#x27; accessed at index 4, which is out of bounds.&quot;,
+    &quot;severity&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_severity&quot;: &quot;error&quot;,
+      &quot;inconclusive&quot;: false,
+      &quot;trace&quot;: [
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;line&quot;: 5,
+          &quot;info&quot;: &quot;Array index out of bounds&quot;
+        }
+      ]
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / low</p><h3>src/data.c:8</h3><p>Variable &#x27;value&#x27; can be declared as pointer to const</p><p class="meta">cppcheck · constVariablePointer · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;cppcheck&quot;,
+    &quot;rule_id&quot;: &quot;constVariablePointer&quot;,
+    &quot;message&quot;: &quot;Variable &#x27;value&#x27; can be declared as pointer to const&quot;,
+    &quot;severity&quot;: &quot;low&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_severity&quot;: &quot;style&quot;,
+      &quot;inconclusive&quot;: false,
+      &quot;trace&quot;: [
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;line&quot;: 8,
+          &quot;info&quot;: &quot;Variable &#x27;value&#x27; can be declared as pointer to const&quot;
+        }
+      ]
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / medium</p><h3>src/data.c:9</h3><p>Dereference of null pointer (loaded from variable &#x27;value&#x27;)</p><p class="meta">clang-tidy · clang-analyzer-core.NullDereference · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;clang-tidy&quot;,
+    &quot;rule_id&quot;: &quot;clang-analyzer-core.NullDereference&quot;,
+    &quot;message&quot;: &quot;Dereference of null pointer (loaded from variable &#x27;value&#x27;)&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_level&quot;: &quot;Warning&quot;,
+      &quot;notes&quot;: [
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;message&quot;: &quot;&#x27;value&#x27; initialized to a null pointer value&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;message&quot;: &quot;Dereference of null pointer (loaded from variable &#x27;value&#x27;)&quot;
+        }
+      ],
+      &quot;suggested_replacements_not_applied&quot;: 0
+    }
+  }
+]</pre></details><aside><b>AI hypothesis — not verified</b><pre>{
+  &quot;status&quot;: &quot;generated&quot;,
+  &quot;confidence_type&quot;: &quot;ai_hypothesis&quot;,
+  &quot;verification_status&quot;: &quot;not_verified&quot;,
+  &quot;finding_id&quot;: &quot;1a58addd70213ebd5f673fb6&quot;,
+  &quot;model&quot;: &quot;qwen3:4b&quot;,
+  &quot;fields&quot;: {
+    &quot;explanation&quot;: &quot;Il tool rileva un accesso a puntatore nullo nel file src/data.c, linea 9, dove viene tentato di dereferenziare un puntatore &#x27;value&#x27; inizializzato a 0.&quot;,
+    &quot;possible_causes&quot;: &quot;Il puntatore &#x27;value&#x27; è stato inizializzato a 0 senza essere allocato dinamicamente o inizializzato correttamente.&quot;,
+    &quot;plausible_consequences&quot;: &quot;L&#x27;accesso a puntatore nullo può causare crash del programma o comportamenti non prevedibili.&quot;,
+    &quot;suggested_changes&quot;: &quot;Inizializzare il puntatore &#x27;value&#x27; con un valore valido o verificare se è nullo prima di dereferenziarlo.&quot;,
+    &quot;change_impact&quot;: &quot;Il cambiamento riduce il rischio di crash e migliora la sicurezza del codice.&quot;,
+    &quot;verification_tests&quot;: &quot;Eseguire test unitari per confermare che il puntatore non è nullo prima dell&#x27;accesso.&quot;
+  }
+}</pre></aside></article><article><p class="eyebrow">static_analysis / high</p><h3>src/data.c:9</h3><p>Null pointer dereference: value</p><p class="meta">cppcheck · nullPointer · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;cppcheck&quot;,
+    &quot;rule_id&quot;: &quot;nullPointer&quot;,
+    &quot;message&quot;: &quot;Null pointer dereference: value&quot;,
+    &quot;severity&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_severity&quot;: &quot;error&quot;,
+      &quot;inconclusive&quot;: false,
+      &quot;trace&quot;: [
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;line&quot;: 9,
+          &quot;info&quot;: &quot;Null pointer dereference&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;line&quot;: 8,
+          &quot;info&quot;: &quot;Assignment &#x27;value=0&#x27;, assigned value is 0&quot;
+        }
+      ]
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / medium</p><h3>src/data.c:12</h3><p>Dynamic allocation via malloc; review failure handling, lifetime and determinism.</p><p class="meta">esae-heuristics · embedded.dynamic-allocation · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.dynamic-allocation&quot;,
+    &quot;message&quot;: &quot;Dynamic allocation via malloc; review failure handling, lifetime and determinism.&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;function&quot;: &quot;data_leak&quot;,
+      &quot;call&quot;: &quot;malloc&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / high</p><h3>src/data.c:15</h3><p>Memory leak: buffer</p><p class="meta">cppcheck · memleak · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;cppcheck&quot;,
+    &quot;rule_id&quot;: &quot;memleak&quot;,
+    &quot;message&quot;: &quot;Memory leak: buffer&quot;,
+    &quot;severity&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_severity&quot;: &quot;error&quot;,
+      &quot;inconclusive&quot;: false,
+      &quot;trace&quot;: [
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;line&quot;: 15,
+          &quot;info&quot;: &quot;&quot;
+        }
+      ]
+    }
+  },
+  {
+    &quot;tool&quot;: &quot;clang-tidy&quot;,
+    &quot;rule_id&quot;: &quot;clang-analyzer-unix.Malloc&quot;,
+    &quot;message&quot;: &quot;Potential leak of memory pointed to by &#x27;buffer&#x27;&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_level&quot;: &quot;Warning&quot;,
+      &quot;notes&quot;: [
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;message&quot;: &quot;Memory is allocated&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;message&quot;: &quot;Assuming &#x27;buffer&#x27; is not equal to null&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;message&quot;: &quot;&#x27;buffer&#x27; is not equal to null&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;message&quot;: &quot;Taking true branch&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/data.c&quot;,
+          &quot;message&quot;: &quot;Potential leak of memory pointed to by &#x27;buffer&#x27;&quot;
+        }
+      ],
+      &quot;suggested_replacements_not_applied&quot;: 0
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / medium</p><h3>src/diagnostics.c:5</h3><p>Global volatile object may be shared with interrupts/tasks. Volatile does not prove synchronization or a race.</p><p class="meta">esae-heuristics · embedded.shared-volatile-candidate · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.shared-volatile-candidate&quot;,
+    &quot;message&quot;: &quot;Global volatile object may be shared with interrupts/tasks. Volatile does not prove synchronization or a race.&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;symbol&quot;: &quot;shared_samples&quot;,
+      &quot;scope&quot;: &quot;lexically global&quot;,
+      &quot;race_condition_verified&quot;: false
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / medium</p><h3>src/diagnostics.c:6</h3><p>File-local call-name cycle involving diagnostics_retry; review stack depth and termination.</p><p class="meta">esae-heuristics · embedded.recursion-candidate · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.recursion-candidate&quot;,
+    &quot;message&quot;: &quot;File-local call-name cycle involving diagnostics_retry; review stack depth and termination.&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;function&quot;: &quot;diagnostics_retry&quot;,
+      &quot;resolution&quot;: &quot;lexical names, not AST; macros/overloads can invalidate inference&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / medium</p><h3>src/diagnostics.c:11</h3><p>Dynamic allocation via malloc; review failure handling, lifetime and determinism.</p><p class="meta">esae-heuristics · embedded.dynamic-allocation · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.dynamic-allocation&quot;,
+    &quot;message&quot;: &quot;Dynamic allocation via malloc; review failure handling, lifetime and determinism.&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;function&quot;: &quot;Sensor_IRQHandler&quot;,
+      &quot;call&quot;: &quot;malloc&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / high</p><h3>src/diagnostics.c:11</h3><p>malloc in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.</p><p class="meta">esae-heuristics · embedded.isr-suspicious-call · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.isr-suspicious-call&quot;,
+    &quot;message&quot;: &quot;malloc in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.&quot;,
+    &quot;severity&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: {
+      &quot;function&quot;: &quot;Sensor_IRQHandler&quot;,
+      &quot;call&quot;: &quot;malloc&quot;,
+      &quot;isr_evidence&quot;: &quot;function naming convention only&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / low</p><h3>src/diagnostics.c:11</h3><p>Variable &#x27;scratch&#x27; is allocated memory that is never used.</p><p class="meta">cppcheck · unusedAllocatedMemory · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;cppcheck&quot;,
+    &quot;rule_id&quot;: &quot;unusedAllocatedMemory&quot;,
+    &quot;message&quot;: &quot;Variable &#x27;scratch&#x27; is allocated memory that is never used.&quot;,
+    &quot;severity&quot;: &quot;low&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_severity&quot;: &quot;style&quot;,
+      &quot;inconclusive&quot;: false,
+      &quot;trace&quot;: [
+        {
+          &quot;file&quot;: &quot;src/diagnostics.c&quot;,
+          &quot;line&quot;: 11,
+          &quot;info&quot;: &quot;&quot;
+        }
+      ]
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / high</p><h3>src/diagnostics.c:12</h3><p>usleep in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.</p><p class="meta">esae-heuristics · embedded.isr-suspicious-call · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.isr-suspicious-call&quot;,
+    &quot;message&quot;: &quot;usleep in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.&quot;,
+    &quot;severity&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: {
+      &quot;function&quot;: &quot;Sensor_IRQHandler&quot;,
+      &quot;call&quot;: &quot;usleep&quot;,
+      &quot;isr_evidence&quot;: &quot;function naming convention only&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / medium</p><h3>src/diagnostics.c:12</h3><p>usleep may block; timing depends on platform and arguments.</p><p class="meta">esae-heuristics · embedded.possibly-blocking-call · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.possibly-blocking-call&quot;,
+    &quot;message&quot;: &quot;usleep may block; timing depends on platform and arguments.&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;function&quot;: &quot;Sensor_IRQHandler&quot;,
+      &quot;call&quot;: &quot;usleep&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / high</p><h3>src/diagnostics.c:14</h3><p>free in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.</p><p class="meta">esae-heuristics · embedded.isr-suspicious-call · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.isr-suspicious-call&quot;,
+    &quot;message&quot;: &quot;free in ISR-named function Sensor_IRQHandler; confirm ISR role and target constraints.&quot;,
+    &quot;severity&quot;: &quot;high&quot;,
+    &quot;evidence&quot;: {
+      &quot;function&quot;: &quot;Sensor_IRQHandler&quot;,
+      &quot;call&quot;: &quot;free&quot;,
+      &quot;isr_evidence&quot;: &quot;function naming convention only&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / medium</p><h3>src/diagnostics.c:20</h3><p>Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.</p><p class="meta">esae-heuristics · embedded.narrow-integer-arithmetic · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.narrow-integer-arithmetic&quot;,
+    &quot;message&quot;: &quot;Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;expression&quot;: &quot;uint8_t result = a + b;&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / low</p><h3>src/main.c:6</h3><p>Variable &#x27;samples&#x27; can be declared as const array</p><p class="meta">cppcheck · constVariable · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;cppcheck&quot;,
+    &quot;rule_id&quot;: &quot;constVariable&quot;,
+    &quot;message&quot;: &quot;Variable &#x27;samples&#x27; can be declared as const array&quot;,
+    &quot;severity&quot;: &quot;low&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_severity&quot;: &quot;style&quot;,
+      &quot;inconclusive&quot;: false,
+      &quot;trace&quot;: [
+        {
+          &quot;file&quot;: &quot;src/main.c&quot;,
+          &quot;line&quot;: 6,
+          &quot;info&quot;: &quot;Variable &#x27;samples&#x27; can be declared as const array&quot;
+        }
+      ]
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">heuristic_indicator / medium</p><h3>src/sensor.c:3</h3><p>Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.</p><p class="meta">esae-heuristics · embedded.narrow-integer-arithmetic · requires_engineering_review</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;esae-heuristics&quot;,
+    &quot;rule_id&quot;: &quot;embedded.narrow-integer-arithmetic&quot;,
+    &quot;message&quot;: &quot;Arithmetic assigned to a narrow integer: range/conversion risk candidate, not a proven overflow.&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;expression&quot;: &quot;uint16_t)(100U + (channel % 4U) * 10U);&quot;
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / medium</p><h3>src/sensor.c:14</h3><p>Undefined or garbage value returned to caller</p><p class="meta">clang-tidy · clang-analyzer-core.uninitialized.UndefReturn · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;clang-tidy&quot;,
+    &quot;rule_id&quot;: &quot;clang-analyzer-core.uninitialized.UndefReturn&quot;,
+    &quot;message&quot;: &quot;Undefined or garbage value returned to caller&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_level&quot;: &quot;Warning&quot;,
+      &quot;notes&quot;: [
+        {
+          &quot;file&quot;: &quot;src/sensor.c&quot;,
+          &quot;message&quot;: &quot;&#x27;sample&#x27; declared without an initial value&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/sensor.c&quot;,
+          &quot;message&quot;: &quot;Assuming &#x27;ready&#x27; is 0&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/sensor.c&quot;,
+          &quot;message&quot;: &quot;Taking false branch&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/sensor.c&quot;,
+          &quot;message&quot;: &quot;Undefined or garbage value returned to caller&quot;
+        }
+      ],
+      &quot;suggested_replacements_not_applied&quot;: 0
+    }
+  }
+]</pre></details></article><article><p class="eyebrow">static_analysis / medium</p><h3>src/sensor.c:14</h3><p>Uninitialized variable: sample</p><p class="meta">cppcheck · uninitvar · reported_by_tool_not_manually_verified</p><details><summary>Evidence / all tool reports</summary><pre>[
+  {
+    &quot;tool&quot;: &quot;cppcheck&quot;,
+    &quot;rule_id&quot;: &quot;uninitvar&quot;,
+    &quot;message&quot;: &quot;Uninitialized variable: sample&quot;,
+    &quot;severity&quot;: &quot;medium&quot;,
+    &quot;evidence&quot;: {
+      &quot;analyzer_severity&quot;: &quot;warning&quot;,
+      &quot;inconclusive&quot;: false,
+      &quot;trace&quot;: [
+        {
+          &quot;file&quot;: &quot;src/sensor.c&quot;,
+          &quot;line&quot;: 14,
+          &quot;info&quot;: &quot;&quot;
+        },
+        {
+          &quot;file&quot;: &quot;src/sensor.c&quot;,
+          &quot;line&quot;: 13,
+          &quot;info&quot;: &quot;Assuming condition is false&quot;
+        }
+      ]
+    }
+  }
+]</pre></details></article><h2>Not verified</h2><ul><li>Worst-Case Execution Time (WCET)</li><li>Absence of race conditions</li><li>Functional correctness on hardware</li><li>MISRA, CERT, DO-178C, ISO 26262 or other standard compliance/certification</li><li>Absence of all defects/security vulnerabilities</li><li>Complete call graph or AST-based dataflow</li></ul></html>

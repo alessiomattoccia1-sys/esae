@@ -1,0 +1,13 @@
+{
+  "purpose": "Controlled known defects and safe controls in an owned demonstration. Do not execute defect functions.",
+  "defects": [
+    {"id":"D01","file":"src/data.c","marker":"return values[4]","category":"bounds","description":"Read one element past a four-element array"},
+    {"id":"D02","file":"src/data.c","marker":"return *value","category":"null_pointer","description":"Dereference a constant null pointer"},
+    {"id":"D03","file":"src/sensor.c","marker":"return sample","category":"uninitialized","description":"Read sample on the path ready==0"},
+    {"id":"D04","file":"src/data.c","marker":"owned allocation","category":"memory_leak","description":"Allocation leaves the function without free"}
+  ],
+  "heuristic_expectations": ["embedded.dynamic-allocation","embedded.possibly-blocking-call","embedded.isr-suspicious-call","embedded.recursion-candidate","embedded.shared-volatile-candidate","embedded.narrow-integer-arithmetic"],
+  "dependency_cycle": ["include/comm.h","include/diagnostics.h"],
+  "safe_controls": ["sensor_average validates pointer/count and caps count","data_store_safe checks pointer and capacity","comm_send checks null","resource_safe uses RAII"],
+  "not_detected_by_design": ["No actual race condition proof","No WCET proof","No whole-program behavior proof"]
+}
