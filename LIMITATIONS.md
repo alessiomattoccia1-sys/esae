@@ -64,3 +64,21 @@ their operational safety or control devices.
 The public website presents documentation and an owned-demo report. GitHub hosts
 source/downloads. **Neither static hosting nor GitHub runs FastAPI/clang-tidy**;
 scans execute on the user's explicitly launched local engine.
+
+## Scale profile
+
+A line count is not a universal capacity limit: templates, configuration, headers
+and individual path analysis change cost dramatically. The reproducible Cppcheck
+CLI/core example uses bounded sequential units and checkpoints; its unique-input
+line count does not multiply headers and does not mean whole-program CTU analysis.
+The ordinary dashboard single-job budget remains 300s, default 30s/process. The
+separate benchmark example uses the existing 120s/process API maximum per unit.
+Qualified workload: 134,737 unique physical source/header lines, 186 files,
+85/85 translation units completed by both analyzers, zero detected execution/
+configuration errors, 689.715s on Mac mini M1 / 16 GiB / macOS 27. Analyzer peak
+RSS 540 MiB (one process high-water mark; not total simultaneous memory).
+This includes the CLI/core build and selected vendored dependencies, excluding
+GUI/tests/addons/tools. Completion is not proof of every path or all platforms.
+Full conditions and initial partial baseline: reports/scalability.json/html.
+The original Godot full-repository rejection and partial coverage are retained
+as evidence; they are not turned into a completed million-line scan.

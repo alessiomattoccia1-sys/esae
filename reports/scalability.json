@@ -1,0 +1,897 @@
+{
+  "creator": "Mattoccia Labs / Codex per Alessio",
+  "classification": "EVIDENCE",
+  "purpose": "Public aggregate of a real, bounded, reproducible C++ analysis workload",
+  "deletion_condition": "Explicit retirement",
+  "status": "QUALIFIED",
+  "measured_at": "2026-11-05T23:33:02.899153+00:00",
+  "input": {
+    "repository": "https://github.com/cppcheck-opensource/cppcheck",
+    "revision": "2.22.0",
+    "source_archive_sha256": "d74945deb2d50393430e07596b766f8a779512c7f60dac2a30ea64e059ece57b",
+    "scope": "All 85 translation units of the successful Cppcheck CLI/core build, with local project headers; excludes GUI/tests/addons/tools",
+    "unique_physical_lines": 134737,
+    "unique_files": 186,
+    "translation_units": 85,
+    "unique_bytes": 5315690,
+    "line_count_method": "Unique physical source/header lines including comments and blanks; shared headers counted once. Host SDK headers excluded from line count.",
+    "all_selected_source_hashes_verified": true
+  },
+  "coverage": {
+    "completed": 85,
+    "planned": 85,
+    "native_analyzer_invocations": 170,
+    "analysis_errors": 0,
+    "original_sources_unchanged": true,
+    "meaning": "Both analyzers completed each selected translation unit without detected execution/configuration errors; not every possible program path or all repository targets."
+  },
+  "measurements": {
+    "total_seconds": 689.715,
+    "sum_unit_seconds": 689.516,
+    "analyzer_peak_rss_bytes": 565968896,
+    "controller_peak_rss_bytes": 149798912,
+    "memory_method": "macOS getrusage ru_maxrss process high-water marks. Analyzer and controller peaks are separate, not simultaneous total system memory.",
+    "timing_method": "Monotonic wall time of full serial queue including native scans, snapshots and report generation; excludes initial tool installation, source download and queue preparation."
+  },
+  "profile": {
+    "concurrency": 1,
+    "per_process_timeout_seconds": 120,
+    "native_budget_per_unit_seconds": 300,
+    "configuration_scope": "One selected Mac build configuration; no whole-program inter-unit CTU claim"
+  },
+  "hardware": {
+    "computer": "Mac mini M1",
+    "memory_gib": 16,
+    "os": "macOS 27",
+    "python": "3.12",
+    "architecture": "arm64"
+  },
+  "tools": {
+    "cppcheck": {
+      "available": true,
+      "version": "Cppcheck 2.22.0",
+      "sha256": "e6d818b462233906d8f636703c27aaa2fb73de90c28ddb60a74e30660ec48475",
+      "error": null
+    },
+    "clang-tidy": {
+      "available": true,
+      "version": "LLVM (http://llvm.org/):\n  LLVM version 23.1.4\n  Optimized build.",
+      "sha256": "b1dc688f37863892204fcf3d0a063bf980ec7775825e9766fb7bf6a3e6b48581",
+      "error": null
+    }
+  },
+  "engine": {
+    "release_recipe": "0.1.1",
+    "full_queue": "Local hardening candidate, recorded version 0.1.0, selected-configuration fix active",
+    "final_path_checked": "Two slowest units repeated on final 0.1.1 source; diagnostic signatures unchanged",
+    "source_script": "benchmarks/reproduce_cppcheck.py",
+    "profile_sha256": "19364781a17d1e6286b47aed00dd18c52a73b0a2aa4a5429c08980bcb7e55e78",
+    "cppcheck_max_configurations_with_database": 1
+  },
+  "repeatability": {
+    "units_checked": 2,
+    "all_completed": true,
+    "same_diagnostic_signatures": true,
+    "source_unchanged": true,
+    "units": [
+      {
+        "file": "lib/valueflow.cpp",
+        "first_seconds": 70.982,
+        "repeat_seconds": 71.228,
+        "same_diagnostic_signature": true
+      },
+      {
+        "file": "lib/symboldatabase.cpp",
+        "first_seconds": 56.417,
+        "repeat_seconds": 56.158,
+        "same_diagnostic_signature": true
+      }
+    ],
+    "full_second_85_unit_run": false,
+    "public_reproduction_first_unit_completed": true,
+    "public_reproduction_resumed_second_unit_without_replay": true
+  },
+  "tests": {
+    "passed": 53,
+    "failed": 0,
+    "skipped": 0
+  },
+  "standard_profile": {
+    "status": "partial",
+    "seconds": 305.215,
+    "clang_completed": 33,
+    "planned": 85,
+    "context": "Initial pre-correction single-job baseline, 30s/process and 300s native budget. Later qualification also corrected target macros and Cppcheck configuration selection; this is not a controlled speedup comparison."
+  },
+  "limits": {
+    "source_files_per_scan": 1000,
+    "source_bytes_per_scan": 50000000,
+    "bytes_per_file": 2000000,
+    "native_budget_per_scan_seconds": 300,
+    "default_timeout_seconds": 30,
+    "maximum_timeout_seconds": 120,
+    "security_controls_relaxed": false
+  },
+  "not_claimed": [
+    "Universal maximum number of code lines",
+    "A completed million-line Godot analysis",
+    "Whole-program cross-unit verification",
+    "Every conditional configuration or execution path",
+    "Confirmed bug count, sensitivity or specificity",
+    "WCET, race freedom, formal proof or certification",
+    "Windows or Linux qualification"
+  ],
+  "privacy": {
+    "ai_used": false,
+    "user_code_uploaded": false,
+    "third_party_source_redistributed_in_esae": false,
+    "public_payload": "Original recipe, hashes and aggregate metrics only; source downloaded locally from upstream on explicit execution"
+  },
+  "units": [
+    {
+      "index": 1,
+      "file": "externals/simplecpp/simplecpp.cpp",
+      "status": "completed",
+      "seconds": 19.718,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 2,
+      "file": "externals/tinyxml2/tinyxml2.cpp",
+      "status": "completed",
+      "seconds": 15.008,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 3,
+      "file": "lib/valueflow.cpp",
+      "status": "completed",
+      "seconds": 70.982,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 4,
+      "file": "lib/tokenize.cpp",
+      "status": "completed",
+      "seconds": 32.132,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 5,
+      "file": "lib/symboldatabase.cpp",
+      "status": "completed",
+      "seconds": 56.417,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 6,
+      "file": "lib/addoninfo.cpp",
+      "status": "completed",
+      "seconds": 2.442,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 7,
+      "file": "lib/analyzerinfo.cpp",
+      "status": "completed",
+      "seconds": 5.66,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 8,
+      "file": "lib/astutils.cpp",
+      "status": "completed",
+      "seconds": 37.368,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 9,
+      "file": "lib/check64bit.cpp",
+      "status": "completed",
+      "seconds": 2.577,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 10,
+      "file": "lib/checkassert.cpp",
+      "status": "completed",
+      "seconds": 2.678,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 11,
+      "file": "lib/checkautovariables.cpp",
+      "status": "completed",
+      "seconds": 4.604,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 12,
+      "file": "lib/checkbool.cpp",
+      "status": "completed",
+      "seconds": 2.726,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 13,
+      "file": "lib/checkbufferoverrun.cpp",
+      "status": "completed",
+      "seconds": 3.925,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 14,
+      "file": "lib/checkclass.cpp",
+      "status": "completed",
+      "seconds": 19.982,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 15,
+      "file": "lib/checkcondition.cpp",
+      "status": "completed",
+      "seconds": 13.274,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 16,
+      "file": "lib/checkers.cpp",
+      "status": "completed",
+      "seconds": 0.912,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 17,
+      "file": "lib/checkersidmapping.cpp",
+      "status": "completed",
+      "seconds": 0.68,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 18,
+      "file": "lib/checkersreport.cpp",
+      "status": "completed",
+      "seconds": 3.675,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 19,
+      "file": "lib/checkexceptionsafety.cpp",
+      "status": "completed",
+      "seconds": 2.764,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 20,
+      "file": "lib/checkfunctions.cpp",
+      "status": "completed",
+      "seconds": 4.971,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 21,
+      "file": "lib/checkimpl.cpp",
+      "status": "completed",
+      "seconds": 1.225,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 22,
+      "file": "lib/checkinternal.cpp",
+      "status": "completed",
+      "seconds": 0.385,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 23,
+      "file": "lib/checkio.cpp",
+      "status": "completed",
+      "seconds": 13.856,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 24,
+      "file": "lib/checkleakautovar.cpp",
+      "status": "completed",
+      "seconds": 6.905,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 25,
+      "file": "lib/checkmemoryleak.cpp",
+      "status": "completed",
+      "seconds": 8.005,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 26,
+      "file": "lib/checknullpointer.cpp",
+      "status": "completed",
+      "seconds": 4.673,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 27,
+      "file": "lib/checkother.cpp",
+      "status": "completed",
+      "seconds": 18.483,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 28,
+      "file": "lib/checkpostfixoperator.cpp",
+      "status": "completed",
+      "seconds": 2.552,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 29,
+      "file": "lib/checks.cpp",
+      "status": "completed",
+      "seconds": 2.352,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 30,
+      "file": "lib/checksizeof.cpp",
+      "status": "completed",
+      "seconds": 4.38,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 31,
+      "file": "lib/checkstl.cpp",
+      "status": "completed",
+      "seconds": 17.271,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 32,
+      "file": "lib/checkstring.cpp",
+      "status": "completed",
+      "seconds": 3.442,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 33,
+      "file": "lib/checktype.cpp",
+      "status": "completed",
+      "seconds": 4.847,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 34,
+      "file": "lib/checkuninitvar.cpp",
+      "status": "completed",
+      "seconds": 9.068,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 35,
+      "file": "lib/checkunusedfunctions.cpp",
+      "status": "completed",
+      "seconds": 7.141,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 36,
+      "file": "lib/checkunusedvar.cpp",
+      "status": "completed",
+      "seconds": 8.981,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 37,
+      "file": "lib/checkvaarg.cpp",
+      "status": "completed",
+      "seconds": 2.766,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 38,
+      "file": "lib/clangimport.cpp",
+      "status": "completed",
+      "seconds": 8.089,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 39,
+      "file": "lib/color.cpp",
+      "status": "completed",
+      "seconds": 1.251,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 40,
+      "file": "lib/cppcheck.cpp",
+      "status": "completed",
+      "seconds": 9.028,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 41,
+      "file": "lib/ctu.cpp",
+      "status": "completed",
+      "seconds": 9.629,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 42,
+      "file": "lib/errorlogger.cpp",
+      "status": "completed",
+      "seconds": 8.994,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 43,
+      "file": "lib/errortypes.cpp",
+      "status": "completed",
+      "seconds": 0.793,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 44,
+      "file": "lib/findtoken.cpp",
+      "status": "completed",
+      "seconds": 4.059,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 45,
+      "file": "lib/forwardanalyzer.cpp",
+      "status": "completed",
+      "seconds": 5.273,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 46,
+      "file": "lib/fwdanalysis.cpp",
+      "status": "completed",
+      "seconds": 4.973,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 47,
+      "file": "lib/importproject.cpp",
+      "status": "completed",
+      "seconds": 14.4,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 48,
+      "file": "lib/infer.cpp",
+      "status": "completed",
+      "seconds": 5.301,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 49,
+      "file": "lib/keywords.cpp",
+      "status": "completed",
+      "seconds": 0.797,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 50,
+      "file": "lib/library.cpp",
+      "status": "completed",
+      "seconds": 11.752,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 51,
+      "file": "lib/mathlib.cpp",
+      "status": "completed",
+      "seconds": 4.521,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 52,
+      "file": "lib/path.cpp",
+      "status": "completed",
+      "seconds": 1.593,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 53,
+      "file": "lib/pathanalysis.cpp",
+      "status": "completed",
+      "seconds": 2.933,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 54,
+      "file": "lib/pathmatch.cpp",
+      "status": "completed",
+      "seconds": 2.035,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 55,
+      "file": "lib/platform.cpp",
+      "status": "completed",
+      "seconds": 3.447,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 56,
+      "file": "lib/preprocessor.cpp",
+      "status": "completed",
+      "seconds": 12.072,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 57,
+      "file": "lib/programmemory.cpp",
+      "status": "completed",
+      "seconds": 11.247,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 58,
+      "file": "lib/regex.cpp",
+      "status": "completed",
+      "seconds": 0.329,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 59,
+      "file": "lib/reverseanalyzer.cpp",
+      "status": "completed",
+      "seconds": 2.919,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 60,
+      "file": "lib/sarifreport.cpp",
+      "status": "completed",
+      "seconds": 3.057,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 61,
+      "file": "lib/settings.cpp",
+      "status": "completed",
+      "seconds": 4.842,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 62,
+      "file": "lib/standards.cpp",
+      "status": "completed",
+      "seconds": 0.939,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 63,
+      "file": "lib/summaries.cpp",
+      "status": "completed",
+      "seconds": 4.481,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 64,
+      "file": "lib/suppressions.cpp",
+      "status": "completed",
+      "seconds": 12.784,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 65,
+      "file": "lib/templatesimplifier.cpp",
+      "status": "completed",
+      "seconds": 20.189,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 66,
+      "file": "lib/timer.cpp",
+      "status": "completed",
+      "seconds": 2.391,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 67,
+      "file": "lib/token.cpp",
+      "status": "completed",
+      "seconds": 21.119,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 68,
+      "file": "lib/tokenlist.cpp",
+      "status": "completed",
+      "seconds": 14.374,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 69,
+      "file": "lib/utils.cpp",
+      "status": "completed",
+      "seconds": 1.55,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 70,
+      "file": "lib/vf_analyzers.cpp",
+      "status": "completed",
+      "seconds": 12.006,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 71,
+      "file": "lib/vf_common.cpp",
+      "status": "completed",
+      "seconds": 3.902,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 72,
+      "file": "lib/vf_settokenvalue.cpp",
+      "status": "completed",
+      "seconds": 3.087,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 73,
+      "file": "lib/vfvalue.cpp",
+      "status": "completed",
+      "seconds": 2.527,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 74,
+      "file": "frontend/frontend.cpp",
+      "status": "completed",
+      "seconds": 1.054,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 75,
+      "file": "cli/cmdlineparser.cpp",
+      "status": "completed",
+      "seconds": 17.411,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 76,
+      "file": "cli/cppcheckexecutor.cpp",
+      "status": "completed",
+      "seconds": 4.4,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 77,
+      "file": "cli/executor.cpp",
+      "status": "completed",
+      "seconds": 1.887,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 78,
+      "file": "cli/filelister.cpp",
+      "status": "completed",
+      "seconds": 2.683,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 79,
+      "file": "cli/main.cpp",
+      "status": "completed",
+      "seconds": 0.846,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 80,
+      "file": "cli/processexecutor.cpp",
+      "status": "completed",
+      "seconds": 3.289,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 81,
+      "file": "cli/sehwrapper.cpp",
+      "status": "completed",
+      "seconds": 0.324,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 82,
+      "file": "cli/signalhandler.cpp",
+      "status": "completed",
+      "seconds": 0.858,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 83,
+      "file": "cli/singleexecutor.cpp",
+      "status": "completed",
+      "seconds": 1.045,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 84,
+      "file": "cli/stacktrace.cpp",
+      "status": "completed",
+      "seconds": 0.988,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    },
+    {
+      "index": 85,
+      "file": "cli/threadexecutor.cpp",
+      "status": "completed",
+      "seconds": 3.221,
+      "analyzers_completed": 2,
+      "errors": 0,
+      "source_unchanged": true
+    }
+  ]
+}

@@ -16,7 +16,7 @@ def test_missing_analyzers_still_save_result(engine,repo):
 def test_api_scan_export_and_source(engine,repo):
     c=client(engine)
     assert c.get('/').status_code==200
-    assert c.get('/api/status').json()['version']=='0.1.0'
+    assert c.get('/api/status').json()['version']=='0.1.1'
     r=engine.scan(str(repo));scan=r['id']
     assert c.get('/api/scans').json()[0]['id']==scan
     assert c.get(f'/api/scans/{scan}').json()['inventory']['file_count']==1

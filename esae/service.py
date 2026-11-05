@@ -63,6 +63,7 @@ class Engine:
             report['configuration']['host_system_headers'] = bool(self.system_flags)
             report['configuration']['database_used'] = inv.database is not None
             report['configuration']['accepted_translation_units'] = len(entries)
+            report['configuration']['cppcheck_configuration_scope'] = 'selected compilation configuration' if entries else 'standalone exploratory configurations'
             report['configuration']['ignored_compilation_arguments'] = ignored
             report['errors'] += [{'tool':'compilation', 'file':None, 'error':x} for x in config_errors]
             report['phase'] = 'Cppcheck e clang-tidy'; self.store.save(report)

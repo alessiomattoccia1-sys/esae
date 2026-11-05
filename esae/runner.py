@@ -44,17 +44,26 @@ def run_tool(command: list[str], work: Path, timeout=45, sandbox=True, output_li
             child = subprocess.Popen(invocation, cwd=work, env=env, stdin=subprocess.DEVNULL, stdout=out, stderr=err, start_new_session=True, shell=False)
         except OSError as e:
             return ProcessResult(-1, '', str(e), 0, 'Process could not start')
-        while child.poll() is None:
-            if time.monotonic() - started > timeout:
-                error = 'Process timeout; process group terminated'
-            elif outpath.stat().st_size + errpath.stat().st_size > output_limit:
-                error = 'Process output limit exceeded; process group terminated'
-            if error:
+        try:
+            while child.poll() is None:
+                if time.monotonic() - started > timeout:
+                    error = 'Process timeout; process group terminated'
+                elif outpath.stat().st_size + errpath.stat().st_size > output_limit:
+                    error = 'Process output limit exceeded; process group terminated'
+                if error:
+                    try: os.killpg(child.pid, signal.SIGKILL)
+                    except ProcessLookupError: pass
+                    break
+                time.sleep(.05)
+            child.wait(timeout=5)
+        except BaseException:
+            # Ctrl+C/termination of the explicit local job must not orphan a
+            # native analyzer. This does not relax any analyzer boundary.
+            if child.poll() is None:
                 try: os.killpg(child.pid, signal.SIGKILL)
                 except ProcessLookupError: pass
-                break
-            time.sleep(.05)
-        child.wait(timeout=5)
+            child.wait(timeout=5)
+            raise
     stdout = outpath.read_bytes()[:output_limit].decode('utf-8', errors='replace')
     stderr = errpath.read_bytes()[:output_limit].decode('utf-8', errors='replace')
     if not error and outpath.stat().st_size + errpath.stat().st_size > output_limit: error = 'Process output limit exceeded'

@@ -8,7 +8,7 @@ import re
 
 ROOT=Path(__file__).resolve().parents[1]
 FILES=['.gitignore','README.md','LICENSE','NOTICE','THIRD_PARTY.md','SECURITY.md','LIMITATIONS.md','STORAGE.json','pyproject.toml','requirements.lock','requirements-macos-arm64-py312.lock','Avvia-ESAE.command']
-DIRS=['esae','tests','demo','reports']
+DIRS=['esae','tests','demo','reports','benchmarks']
 SCRIPTS=['scripts/setup.py','scripts/demo_database.py','scripts/package.py']
 
 def members():
@@ -30,15 +30,15 @@ def main():
         data=p.read_bytes()
         if re.search(rb'/(?:Users|Volumes)/[A-Za-z0-9_-]+',data) or re.search(rb'[\w.+-]+@(?:gmail|icloud|yahoo)\.com',data) or (b'-----BEGIN '+b'PRIVATE KEY-----') in data:raise ValueError('Private path/secret marker '+name)
         hashes[name]=hashlib.sha256(data).hexdigest()
-    manifest={'name':'Embedded Software Analysis Engine','version':'0.1.0','license':'Apache-2.0','creator':'Codex per Alessio / Mattoccia Labs','classification':'PROJECT','purpose':'Reproducible original source and owned demo distribution','deletion_condition':'Explicit retirement','files':hashes,'third_party_binaries_included':False,'models_included':False,'private_scans_included':False}
+    manifest={'name':'Embedded Software Analysis Engine','version':'0.1.1','license':'Apache-2.0','creator':'Codex per Alessio / Mattoccia Labs','classification':'PROJECT','purpose':'Reproducible original source and owned demo distribution','deletion_condition':'Explicit retirement','files':hashes,'third_party_binaries_included':False,'models_included':False,'private_scans_included':False}
     manifest_bytes=(json.dumps(manifest,sort_keys=True,indent=2)+'\n').encode()
     def build(dest):
         with zipfile.ZipFile(dest,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
             for name in files+['DISTRIBUTION.json']:
-                info=zipfile.ZipInfo('ESAE-0.1.0/'+name,date_time=(2026,11,5,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED
+                info=zipfile.ZipInfo('ESAE-0.1.1/'+name,date_time=(2026,11,5,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED
                 info.external_attr=(0o100755 if name=='Avvia-ESAE.command' else 0o100644)<<16
                 z.writestr(info,manifest_bytes if name=='DISTRIBUTION.json' else (ROOT/name).read_bytes())
-    archive=out/'ESAE-0.1.0-source.zip';repeat=out/'ESAE-0.1.0-repro-check.zip'
+    archive=out/'ESAE-0.1.1-source.zip';repeat=out/'ESAE-0.1.1-repro-check.zip'
     for previous in [archive,repeat]:
         if previous.exists():
             oldhash=hashlib.sha256(previous.read_bytes()).hexdigest();saved=out/'archive-history'/oldhash/previous.name

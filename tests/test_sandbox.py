@@ -30,3 +30,17 @@ def test_timeout_kills_process_group(tmp_path):
 def test_output_limit(tmp_path):
     r=run_tool([sys.executable,'-I','-c','print("x"*100000)'],tmp_path/'output',timeout=5,output_limit=2000)
     assert r.error and 'output limit' in r.error.lower()
+
+def test_interrupt_reaps_owned_analyzer(monkeypatch,tmp_path):
+    import esae.runner as module
+    killed=[];waited=[]
+    class Child:
+        pid=999999
+        def poll(self):return None
+        def wait(self,timeout):waited.append(timeout)
+    monkeypatch.setattr(module.subprocess,'Popen',lambda *a,**kw:Child())
+    monkeypatch.setattr(module.os,'killpg',lambda pid,sig:killed.append((pid,sig)))
+    def interrupt(delay):raise KeyboardInterrupt()
+    monkeypatch.setattr(module.time,'sleep',interrupt)
+    with pytest.raises(KeyboardInterrupt):module.run_tool(['/usr/bin/true'],tmp_path/'interrupt',sandbox=False)
+    assert killed==[(999999,module.signal.SIGKILL)] and waited==[5]

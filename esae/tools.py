@@ -76,7 +76,7 @@ class Analyzers:
                 errors.append({'tool': name, 'file': None, 'error': status['error']}); continue
             exe = str(self.paths[name])
             if name == 'cppcheck':
-                command = [exe, '--xml', '--xml-version=2', '--enable=warning,style,performance,portability', '--inconclusive', '--max-configs=12', '--max-ctu-depth=2', '--error-exitcode=0']
+                command = [exe, '--xml', '--xml-version=2', '--enable=warning,style,performance,portability', '--inconclusive', '--max-configs=1' if entries else '--max-configs=12', '--max-ctu-depth=2', '--error-exitcode=0']
                 command += ['--project=' + str(database / 'compile_commands.json')] if entries else [str(snap)]
                 result = run_tool(command, work / name, timeout=timeout, read_roots=(snap, database))
                 executed.append({'tool': name, 'translation_units': len(entries) or len([x for x in files if x.endswith(('.c', '.cpp', '.cc', '.cxx'))]), 'returncode': result.returncode, 'duration_seconds': result.duration, 'version': status['version']})

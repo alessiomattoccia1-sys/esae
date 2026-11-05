@@ -1,4 +1,4 @@
-# Embedded Software Analysis Engine — ESAE v0.1
+# Embedded Software Analysis Engine — ESAE v0.1.1
 
 Real, local C/C++ analysis. A small engineering prototype by **Mattoccia Labs**.
 Cppcheck and clang-tidy produce actual diagnostics; embedded heuristics and optional
@@ -14,7 +14,7 @@ Qualified platform: Mac mini M1, macOS 27, Python 3.12. Other macOS versions are
 not claimed as tested. Linux/Windows installation/OS isolation are not qualified.
 This release is a **source prototype**, not an Appunti-style signed installer.
 
-1. Download the `ESAE-0.1.0-source.zip` from the GitHub release and extract it.
+1. Download the `ESAE-0.1.1-source.zip` from the GitHub release and extract it.
 2. Provide **Python 3.12** and Apple's Command Line Tools. Check:
    `python3.12 --version` and `xcrun --find clang++`.
    If the tools are missing, install them personally with `xcode-select --install`.
@@ -151,3 +151,43 @@ Sources/distribution are PROJECT, verification reports are EVIDENCE and policy i
 CANONICAL; retained until explicit retirement. No broad cleanup or midnight
 deletion. Temporary files, when needed, belong in TMPDIR and only owned unused
 files may be removed. See [STORAGE.json](STORAGE.json).
+
+## Real workload qualification / checkpointed benchmark
+
+The owned 106-line demo is a defect-detection regression, not a scale claim.
+The `benchmarks/` example reproduces a separate real C++ workload: the CLI/core
+build of Cppcheck 2.22.0, with 186 unique source/header files, 134,737 physical
+lines and 85 original translation units. GUI/tests/addons are excluded. Headers
+reused by different units are counted once in the unique-input figure.
+
+**Measured on Mac mini M1 / 16 GiB / macOS 27:** 85/85 translation units,
+both analyzers completed, zero execution/configuration errors; **689.715 seconds
+(11.5 minutes)**. Analyzer peak RSS **540 MiB**, controller peak **143 MiB**
+(separate process high-water marks, not simultaneous system total). The two
+slowest units repeated with identical diagnostic signatures; checkpoint/resume
+was separately exercised with the public command. **53 tests passed**.
+See [full conditions and results](reports/scalability.html) and
+[machine-readable measurements](reports/scalability.json).
+
+Run the explicit local profile (downloads only SHA256-pinned public source):
+
+```sh
+.venv/bin/python -m benchmarks.reproduce_cppcheck --output .local/cppcheck-benchmark
+```
+
+Use `--max-new-units 5` to stop after five new units; rerun the same command to
+resume. The checkpoint is reused only when profile, engine sources, toolchain
+and work-source hashes match. One unit at a time, 120s maximum per native process
+(the existing API maximum), 300s native budget per unit; all input/sandbox limits
+remain in force. Ctrl+C reaps the owned native process.
+
+This is a selected macOS arm64 C++11 configuration with recorded compiler macros,
+not all possible platform/configuration combinations. Cppcheck follows the
+selected compilation configuration instead of exploring unrelated alternatives.
+No whole-program CTU result across separate units, WCET/race-freedom proof,
+verified bug count or universal maximum line count is claimed. The standard
+single-job profile and checkpointed profile have different coverage/runtime.
+The initial pre-correction single-job baseline stopped partially at 305.215s;
+the later run also corrected target macros/configuration selection, so this is
+not a controlled speedup comparison. This is the largest workload qualified so
+far here, not a maximum established across arbitrary C++ repositories.

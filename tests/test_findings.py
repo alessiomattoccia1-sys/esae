@@ -55,3 +55,19 @@ def test_cppcheck_configuration_errors_are_not_defects(tmp_path):
         xml=f'<results><errors><error id="{rule}" severity="error" msg="Configuration required"><location file="{tmp_path}/a.c" line="1" column="1"/></error></errors></results>'
         found,errors=cppcheck_findings(xml,tmp_path,{'a.c':'MACRO();\n'})
         assert not found and len(errors)==1 and rule in errors[0]
+
+
+def test_compilation_database_uses_selected_configuration(monkeypatch,tmp_path):
+    import esae.tools as module
+    from esae.runner import ProcessResult
+    from esae.tools import Analyzers
+    commands=[]
+    def run(command,work,**kw):
+        commands.append(command)
+        return ProcessResult(0,'','<results><errors/></results>',0)
+    monkeypatch.setattr(module,'run_tool',run)
+    analyzer=object.__new__(Analyzers)
+    analyzer.paths={'cppcheck':tmp_path/'trusted-cppcheck'}
+    analyzer.status={'cppcheck':{'available':True,'version':'test'}}
+    analyzer.analyze(tmp_path,{'a.cpp':'int x;'},tmp_path,[{'file':str(tmp_path/'a.cpp')}],tmp_path/'work')
+    assert '--max-configs=1' in commands[0] and '--max-configs=12' not in commands[0]

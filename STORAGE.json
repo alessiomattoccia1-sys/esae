@@ -13,5 +13,5 @@
   },
   "thresholds": {"temporary_growth_warn_bytes": 5000000000, "temporary_growth_stop_bytes": 10000000000, "free_warn_bytes": 50000000000, "free_bulk_stop_bytes": 30000000000},
   "private_git_exclusions": [".local/", "evidence/", ".toolchain/", ".venv/"],
-  "public_reports": "Only reports from the owned demo; relative paths, no host paths, no private repository content"
+  "public_reports": "Owned demo and owner-requested redacted public benchmark aggregates/recipe/hashes only; relative public paths, no host paths, raw scans, credentials or third-party source"
 }
