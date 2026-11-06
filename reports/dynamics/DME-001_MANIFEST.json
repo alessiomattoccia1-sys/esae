@@ -1,0 +1,1382 @@
+{
+  "experiment_id": "DME-001",
+  "engine_version": "0.1.0",
+  "git_commit_at_execution": "af8fd7504bbf3532ed3a66123239277febbf3455",
+  "working_source_files_sha256": {
+    "simulation.py": "6c0d2d643db1c5986aeec3a738da2e6aa06057d9bc5f3c6aa50ad9ec0f580875",
+    "service.py": "11fc9500b41ce1231f77e5a8553c385df4152805323b2f9f203dc1ed55e6829c",
+    "flights.py": "6703eb4995e4db176435a0b8fbe3bafc9c5241e70bd2b3d2c6e092a47d4ea76d",
+    "__init__.py": "37b7da6e50cf3e9acba46089ab414ac092f1613b3fbfae695d233b31862c4f80",
+    "api.py": "1c7ceffe19f41ed486928373131d0b0595b8bcb6ba46cf41f49449b616f98184",
+    "setup.py": "cca9cd5728e4b8751a6cda295e6ef85f48f852f1c6ec0ead0a53f1d2a7e15544",
+    "experiments.py": "72c5450bc4dbb2c938b1b5f60975e56a91fc274ad3eb91d64b5fc6f3c7060ae6",
+    "cli.py": "707828f9837925115faf74720747e95655025a755bfa6db7efb4c56ae3dc985f",
+    "acquisition.py": "eb1488a0f220f070c2d8b240fcfb92abb018fbaff7f82ee5cc6d2457ed10325b",
+    "miluv.py": "90025f905ba575256b033ff74d8898c82f4070ea317d13a6fbe517457f84ae9f",
+    "mathematical.py": "15be5174300bc85e7d6232b041bb2c965808d212fdace71e3f9f4e8a6a2e460d",
+    "reporting.py": "5c921aed428f5dcfde30f475562eb67e63dafb30c16349b51304ac094c714eaf",
+    "validation.py": "c13cb0667cafddfbb0cebb46c84b55ce3368f5421d6f930f78c17fd7a0ed8dbe"
+  },
+  "parser_version": "dynamics-parser-1.0",
+  "configuration": {
+    "seed": 20261106,
+    "offline": true
+  },
+  "sources": [
+    {
+      "id": "c7a046706016ddde8a99453aea380daf5f414d24b1ca40845f9918d0bb53f5cc",
+      "url": "https://zenodo.org/api/records/16992976",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T09:27:59.824385+00:00",
+      "release_date": null,
+      "etag": "\"6\"",
+      "server_date": "Fri, 06 Nov 2026 09:27:59 GMT",
+      "sha256": "61f648b3f9e0cebd3b40da4aa0f937fdaf376bb65b9d6c46239a69aa6c0a5a01",
+      "bytes": 6741,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://zenodo.org/api/records/16992976"
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=580703153-580834224",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        580703153,
+        580834224
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 131072,
+      "sha256": "7b9cbe73b28a2eb1e56dc2ac9f018e0a30dded6474e22ff142bae6dc38171df1",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:00.299296+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=580804389-580834202",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        580804389,
+        580834202
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 29814,
+      "sha256": "24af52166b7fe981c7b4844f1f8819e89ff42395c5869702b4ac9d4b9c9a8c86",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:01.043971+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=264-293",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        264,
+        293
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:01.470645+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=372-61864",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        372,
+        61864
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 61493,
+      "sha256": "9614929bf0e156224f183029105ed00d3cbd936eb7de2e160e457d303ba59e77",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:02.144344+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=61881-61910",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        61881,
+        61910
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:02.666907+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=61989-124258",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        61989,
+        124258
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 62270,
+      "sha256": "5cba660393ad2b9380af89c98412a90e579a2769768cf8f3834acb46014661a4",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:03.286078+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=124275-124304",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        124275,
+        124304
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:03.807631+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=124383-189876",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        124383,
+        189876
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 65494,
+      "sha256": "4427e18c3ba1f00cfe44f22ecd3fe5610ab214862c847e886169e10e5ca6e889",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:04.973860+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=189893-189922",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        189893,
+        189922
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:05.518871+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=190001-252994",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        190001,
+        252994
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 62994,
+      "sha256": "17be957b9033d62cf182bfc01f9a6138a72a3f66be0359b341d50381f31b0f1c",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:06.338984+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=253011-253040",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        253011,
+        253040
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:06.923174+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=253119-319969",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        253119,
+        319969
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 66851,
+      "sha256": "d855c763f8c4d989bfdea6ed8ef118ddc56077ed0be5870b176b2f60fadadc1e",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:07.727712+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=319986-320015",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        319986,
+        320015
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:08.314217+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=320094-389395",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        320094,
+        389395
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 69302,
+      "sha256": "6f618b556f5d6754ecd324dfe0cdd26c7ae97977e5bb78080c050b3257bde562",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:08.746941+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=389412-389441",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        389412,
+        389441
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:09.042864+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=389520-461545",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        389520,
+        461545
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 72026,
+      "sha256": "c077eb491a49abf3f72b462361cd55a51a7e07d39eda0315bc1aa51cffab4599",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:09.408939+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=461562-461591",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        461562,
+        461591
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:09.722143+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=461670-535811",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        461670,
+        535811
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 74142,
+      "sha256": "dab5a70db9bf434be6aa5daf4b096715616a5282de4fdbe943ceb1c01ddf4f3c",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:10.160043+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=535828-535857",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        535828,
+        535857
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:10.434762+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=535936-606321",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        535936,
+        606321
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 70386,
+      "sha256": "9bd8548e4452b1cf1ec6eaadc9a53e10b6655641d70baefcdb3c922d0c9e2a53",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:10.820448+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=606338-606367",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        606338,
+        606367
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:11.133825+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=606446-676426",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        606446,
+        676426
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 69981,
+      "sha256": "f492298d665b1014bc823c326e66087435e686fb6a8d7254cdf58a189a395ebf",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:11.491451+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=676443-676472",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        676443,
+        676472
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:11.778603+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=676551-741682",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        676551,
+        741682
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 65132,
+      "sha256": "d52c78a62a0ad8d18874d53133e1f266970cc763eee45a36135ecfd3b8b51a71",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:12.097722+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=741699-741728",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        741699,
+        741728
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:12.433069+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=741807-809729",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        741807,
+        809729
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 67923,
+      "sha256": "a9296a7b08f22c4554df7624a2e5f866467761b8ede8e60d928807482a1c60f3",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:12.810300+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=809746-809775",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        809746,
+        809775
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:13.088496+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=809854-877618",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        809854,
+        877618
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 67765,
+      "sha256": "8d480d26004713e586023cf406e96f726360b85246289e13bd028206bb7af88c",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:13.429307+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=877635-877664",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        877635,
+        877664
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:13.745465+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=877743-946369",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        877743,
+        946369
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 68627,
+      "sha256": "14298e98902146a7dfffac733efffb0d054ee90d10871f85dfc441796dd4636b",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:14.201515+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=946386-946415",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        946386,
+        946415
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:14.431053+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=946494-1012747",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        946494,
+        1012747
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 66254,
+      "sha256": "37b041adcd2bb24837f9e4cc7c1bafe22d1ff2ebe6092ce701b65cf39dec5293",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:14.846855+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1012764-1012793",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1012764,
+        1012793
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:15.144186+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1012872-1076063",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1012872,
+        1076063
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 63192,
+      "sha256": "9153b5afdace5066fe15f2d37b16adc64fcb871b072d3e551dbdbbeba8476b76",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:15.519555+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1076080-1076109",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1076080,
+        1076109
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:15.767722+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1076188-1141487",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1076188,
+        1141487
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 65300,
+      "sha256": "d652db24929fa5cedb102afa54a094407f0ecf8bf449a1bc9c28d72f21820a65",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:16.146221+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1141504-1141533",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1141504,
+        1141533
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:16.408149+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1141612-1204897",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1141612,
+        1204897
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 63286,
+      "sha256": "477cbe503d9cd13325fe110fee7bc5ad6d1fa69a90474a97859c406b97bb7849",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:16.808141+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1204914-1204943",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1204914,
+        1204943
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:17.197662+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1205022-1270340",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1205022,
+        1270340
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 65319,
+      "sha256": "a3fccd60b2cd028715fcebe92605b0958e6bb775db48534c4cf4a8f004946dc1",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:17.590780+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1270357-1270386",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1270357,
+        1270386
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:17.847950+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1270465-1342568",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1270465,
+        1342568
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 72104,
+      "sha256": "6359795e46b4d83addadca649dc764b5c3f1176c9335d46ea2d1892587fffbb2",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:18.332553+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1342585-1342614",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1342585,
+        1342614
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:18.613726+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1342693-1406866",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1342693,
+        1406866
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 64174,
+      "sha256": "8eed0616b66654a2899609968f28783d589f1082906664b7c90e41efb687a4a5",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:18.911088+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1406883-1406912",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1406883,
+        1406912
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:19.255981+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1406991-1468050",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1406991,
+        1468050
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 61060,
+      "sha256": "622ab279e224221c60572770fb872695f6d34603dddecbd849ee0920536767e7",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:19.640024+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1468067-1468096",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1468067,
+        1468096
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:19.875948+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1468175-1524041",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1468175,
+        1524041
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 55867,
+      "sha256": "0de967843dfa43d011dab5af7911bf7fd5947f0cec54c9341d2d135dbacb0fb0",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:20.228932+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1524058-1524087",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1524058,
+        1524087
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:20.459838+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1524166-1584271",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1524166,
+        1584271
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 60106,
+      "sha256": "4d5b7faf04fe8e8dca6b6a75896397b813a389a3101cff35101514b2341c6767",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:20.861926+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1584288-1584317",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1584288,
+        1584317
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:21.210874+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1584396-1649317",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1584396,
+        1649317
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 64922,
+      "sha256": "71df470eda5df302158154a39192cdde27d0110302c853868c24618b1b4c88cd",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:21.652844+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1649334-1649363",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1649334,
+        1649363
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:21.930690+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1649442-1713183",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1649442,
+        1713183
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 63742,
+      "sha256": "aaa5274e1372b7d58af52171d8e3de2c41b3d0b8aefa3c4d280e497f8d7b9c1f",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:22.346171+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1713200-1713229",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1713200,
+        1713229
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:22.592265+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1713308-1781717",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1713308,
+        1781717
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 68410,
+      "sha256": "66ba9e85efc381f7d77f2d2fbf51b6dceb3445cb1be6a10c68b0990de274ff5c",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:22.944640+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1781734-1781763",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1781734,
+        1781763
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:23.346013+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1781842-1847529",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1781842,
+        1847529
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 65688,
+      "sha256": "69b1ae0e1720f2ec63320fb57a46d5b5c40824de55e2ea4a7b670b78e07f1288",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:23.726527+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1847546-1847575",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1847546,
+        1847575
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:23.994464+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1847654-1915098",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1847654,
+        1915098
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 67445,
+      "sha256": "eefacec4a65a3018690896f79414984266ba52170b8c44d6eaef78a0b923cdfa",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:24.458624+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1915115-1915144",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1915115,
+        1915144
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 30,
+      "sha256": "87192186ff413dd9a2c7c01cb1622d0f11c8543f1b066772e714e2b058e85fca",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:24.712305+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content|bytes=1915223-1988455",
+      "url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+      "range": [
+        1915223,
+        1988455
+      ],
+      "archive_bytes": 580834225,
+      "bytes": 73233,
+      "sha256": "b1b9866e21600d373eb8197beaaba6ab1e67820f1ab5d662d693baf053ca57ec",
+      "etag": null,
+      "last_modified": null,
+      "acquired_at": "2026-11-06T09:28:25.027144+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    }
+  ],
+  "dataset": {
+    "source": "Zenodo IDF_DS",
+    "doi": "10.5281/zenodo.16992976",
+    "version": "v1.0",
+    "archive_url": "https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content",
+    "archive_total_bytes": 580834225,
+    "archive_declared_md5_not_whole_verified": "md5:fa6210078d8f615118027a5310dfc99c",
+    "whole_archive_downloaded": false,
+    "license": "CC-BY-4.0",
+    "authors": [
+      "Garc\u00eda Gasc\u00f3n, C\u00e9sar"
+    ],
+    "concept_dataset_flights_claimed": 240,
+    "readme_speedybee_flights_claimed": 120,
+    "actual_gps_members": 111,
+    "selected_by_rule": "First30lexicographically sorted GPS files before values; no outcome selection",
+    "members": [
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap001_gps.csv",
+        "bytes": 228258,
+        "crc32": "2edff5e8",
+        "sha256": "611f2d9417f94eaf6399d77bb971cd0dd2eba6c7dac9a8fce8e34bc87474a22e"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap002_gps.csv",
+        "bytes": 231394,
+        "crc32": "8f27f9c9",
+        "sha256": "94c2761e3838f2b4c8ae479702bf5a68eca9d18a6ba5661dd76ca1748bbabb8f"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap003_gps.csv",
+        "bytes": 243612,
+        "crc32": "31c44155",
+        "sha256": "3a7dcdbe64709d26c02df25b834694486bd2377c4e657b7eb0ce1c3a84eb42cc"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap004_gps.csv",
+        "bytes": 235920,
+        "crc32": "97f0d386",
+        "sha256": "c004d14f072c859f0a931b340cb99019de239aa63d1db399333643f82ae1d6e9"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap005_gps.csv",
+        "bytes": 249131,
+        "crc32": "9f9dce17",
+        "sha256": "87dc6dd1059970adefe57e8a4c2e3f4a111db4caec5a6feaefbd745bf8486dd7"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap006_gps.csv",
+        "bytes": 254222,
+        "crc32": "b3edca47",
+        "sha256": "ce3972d05e2c3284350b89664c753952578a755fce7fef83414bdcb48dc4b970"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap007_gps.csv",
+        "bytes": 264302,
+        "crc32": "a739ff38",
+        "sha256": "361af6176e811cb73ddbaa28a1ffa6d2e4d65f9dbbe15d34aa7ced043bb56422"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap008_gps.csv",
+        "bytes": 272936,
+        "crc32": "5e530db3",
+        "sha256": "e67480ccd1920dcc8459df6843215a528fb4a71a2576799727825e09db7bc2f5"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap009_gps.csv",
+        "bytes": 259655,
+        "crc32": "e3939169",
+        "sha256": "a47b6049a3af75537d28bca255f1fa2945f744110dda39d9da0dbf10672876a2"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap010_gps.csv",
+        "bytes": 256720,
+        "crc32": "27bbcdfb",
+        "sha256": "d8aba94ed6fbddacb840efe1ac77c599b017343e4528054cb7457d744932a869"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap011_gps.csv",
+        "bytes": 243010,
+        "crc32": "ab2d62aa",
+        "sha256": "4ea98abfdc71fef2696c5e9728192672688371f54955a01a99f34b752c198ec2"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap012_gps.csv",
+        "bytes": 254490,
+        "crc32": "1eb01a4a",
+        "sha256": "198a1f288f9730b6bd2719f1c1d52dee83fdc32e1f0fe582749a43905fdc26cc"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap013_gps.csv",
+        "bytes": 257315,
+        "crc32": "cdd63c5b",
+        "sha256": "ea87f3abe32840c99fdae07029c757d1486fc2f29a1d176e7b4b236c9885c66e"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap014_gps.csv",
+        "bytes": 259710,
+        "crc32": "3088c5a7",
+        "sha256": "d8509493c63c55533eb026ea2175b1fdde38ce45ddfc7baf02411f45da5eb240"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap015_gps.csv",
+        "bytes": 249987,
+        "crc32": "3c6c451e",
+        "sha256": "982a2b955c66b4ed4179ed8d7031192fdfd5fd33fc9ec6e501b16ce5b684d776"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap016_gps.csv",
+        "bytes": 235317,
+        "crc32": "f6b83870",
+        "sha256": "4693a6abbb4117e430606a1d01eaa3a0df30d842e54742f9c15813a2ed8b8e7a"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap017_gps.csv",
+        "bytes": 242644,
+        "crc32": "826fb4da",
+        "sha256": "0947fa4d061280d37cbb5c98787b5920e16cefdf6528af5880b2a4816781cc98"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap018_gps.csv",
+        "bytes": 239197,
+        "crc32": "857334f6",
+        "sha256": "2b7e46d01b1a5d21dc5576f55a18bb214be4fed090f172a023b1dd882351d342"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap019_gps.csv",
+        "bytes": 247048,
+        "crc32": "f7c9f9c6",
+        "sha256": "6edd511e690f9039e85d6015fbb5bec2f003f0ece97c51e094678a7fcd89085c"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap020_gps.csv",
+        "bytes": 271949,
+        "crc32": "93a157d2",
+        "sha256": "83c97cf139f08d8fbacf392c3f640615b1aa8b83377e2d2862f6e5e5cd3f9023"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap021_gps.csv",
+        "bytes": 240419,
+        "crc32": "7177459f",
+        "sha256": "825b5bc248217407b806fe5be760cfb1f3aadd8ceba86818227add8324c08186"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap022_gps.csv",
+        "bytes": 229517,
+        "crc32": "71808aff",
+        "sha256": "e472a0659b1857b4d864e2c58e436a3d4a995e042fbba0343327087fc56db02e"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap023_gps.csv",
+        "bytes": 210653,
+        "crc32": "1891ef8a",
+        "sha256": "148a50a720b34209859adb68670719270a094ab60df2c80029deafb9bf4bf19f"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap024_gps.csv",
+        "bytes": 228523,
+        "crc32": "96c03271",
+        "sha256": "97277b993ddc84aa5eebdd594f26f5155da95af6244c423c0750aa0d6d252fa1"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap025_gps.csv",
+        "bytes": 244486,
+        "crc32": "b6d81cc7",
+        "sha256": "deeb39735f004592716edf4b3338a4fcf39f881551e7a0aff39a2b1910957c80"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap026_gps.csv",
+        "bytes": 241516,
+        "crc32": "4e1c1b25",
+        "sha256": "28aaf568bad86b7a34cd7b16e76f58cee81744f816e4ab756f53502e33f8cccd"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap027_gps.csv",
+        "bytes": 254430,
+        "crc32": "5c515dba",
+        "sha256": "4f68df4fe56b302a935b6d604da67d975c7ab34d1a625e9cf7fdda215ca3925e"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap028_gps.csv",
+        "bytes": 243290,
+        "crc32": "556551a6",
+        "sha256": "01a05bad69f90394cdcf84c76b7174abd339eb7a6a6c4ef894609ebb6ac60e4c"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap029_gps.csv",
+        "bytes": 252361,
+        "crc32": "38380c39",
+        "sha256": "ed402784cf03d2d504f8f99261d4501cc3bb603dd0891ba74d4d22d926296837"
+      },
+      {
+        "name": "Speedybee DataSet/processed/GPS/Lap030_gps.csv",
+        "bytes": 274137,
+        "crc32": "07cb2e80",
+        "sha256": "74b0259266b6674238aa6664c62ec3d833d80948cafe01c901852d55d81f8219"
+      }
+    ],
+    "excluded": [],
+    "source_metadata_sha256": "61f648b3f9e0cebd3b40da4aa0f937fdaf376bb65b9d6c46239a69aa6c0a5a01",
+    "imported_flights": 30,
+    "raw_source_bytes": 7416149,
+    "documentation_caveat": "Speedybee README describes120flights; actual archive has111GPS files. Do not conflate archive layouts or claim all240flights analyzed."
+  },
+  "created_at": "2026-11-06T10:24:33.270529+00:00",
+  "completed_at": "2026-11-06T10:25:09.902316+00:00",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.1",
+    "pyarrow": "26.0.1",
+    "PyYAML": "6.0.3",
+    "fastapi": "0.162.0",
+    "matplotlib": "3.11.2",
+    "httpx": "0.28.1"
+  },
+  "execution_environment": {
+    "system": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.14"
+  },
+  "results_sha256": "1f0238e055f9f9a1d601982e68e3e6406f6148a4e768ca17fd0cdfed30427280",
+  "validation_status": "computed; independently qualified by external acceptance evidence",
+  "performance": {
+    "acquisition_seconds": 0.2941706250421703,
+    "analysis_seconds": 36.02503625000827,
+    "models": {
+      "RW": {
+        "test_forecast_seconds": 0.03504662500927225,
+        "forecast_points": 1317
+      },
+      "CV": {
+        "test_forecast_seconds": 0.07636908302083611,
+        "forecast_points": 1317
+      },
+      "CA": {
+        "test_forecast_seconds": 0.08068858296610415,
+        "forecast_points": 1317
+      },
+      "KF": {
+        "test_forecast_seconds": 0.9414666250231676,
+        "forecast_points": 1317
+      },
+      "CRW": {
+        "test_forecast_seconds": 0.9354272079654038,
+        "forecast_points": 1317
+      },
+      "OU": {
+        "test_forecast_seconds": 0.7737172080087475,
+        "forecast_points": 1317
+      }
+    },
+    "total_seconds": 36.638933082984295,
+    "network_bytes_this_run": 0,
+    "source_response_bytes": 2153015,
+    "process_peak_rss_bytes": 227229696,
+    "rss_scope": "Whole process lifetime peak; no unmeasured hard RSS guarantee"
+  },
+  "figures": [
+    {
+      "file": "figures/model-accuracy.png",
+      "caption": "Six individual methods and validation-fitted ensemble, identical held-out origins. GNSS is a noisy reference.",
+      "sha256": "cf749a1ec664bbba8ab710bb025642ee16112dd4043d55fee2506e51e4e6c565"
+    },
+    {
+      "file": "figures/uncertainty-coverage.png",
+      "caption": "Actual coverage of nominal Gaussian95percent regions; validation fitting does not guarantee test coverage.",
+      "sha256": "4b319a38ede6d4d18a94dec655c9a0c278f74cd185d65989264f5f5d5ab1bcad"
+    },
+    {
+      "file": "figures/recorded-flight.png",
+      "caption": "Public display uses relative ENU and stride only; observations are not simulation truth.",
+      "sha256": "e0043f2b99fb03678d72ab994c590313768d67b6adc14e96cf3ae58b18becebe"
+    }
+  ],
+  "outputs": {
+    "DME-001_RESULTS.json": "76734b5c4a9fe9964c0b36798bbb02290da0d3774487b51249dc26c7a9b739b3",
+    "DME-001_METRICS.csv": "1ffc0c283f4fe4d03ddb05fe6328e618bc9a84188001b7b83e951658baa2213f",
+    "DME-001_METHODOLOGY.md": "a9878fbcf2558ebdbdf9dc7e62b85239d418af944d40ce47edd8f491c9acf577",
+    "DME-001_REPRODUCIBILITY.md": "b64d1278928008bc2228199543eb1f39133be5113e058d4dc94c99240135fbef",
+    "DME-001_REPORT.html": "8f77324db935799f75a14a8f938338f7a923ce886d93c1b0012b507ecfa12546"
+  },
+  "presentation_updated_at": "2026-11-06T10:38:19.159650+00:00",
+  "presentation_source_sha256": "7a594d65244516b16e9f09537406c2a8dfaac0668f69b1b542ce2caf7b61f119",
+  "presentation_change": "Wrap long inline SHA identifiers on narrow screens; numerical results unchanged"
+}

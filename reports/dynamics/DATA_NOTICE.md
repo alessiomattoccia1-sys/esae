@@ -1,0 +1,3 @@
+# Scientific data attribution
+
+IDF_DS DOI10.5281/zenodo.16992976 and MILUV DOI10.25452/figshare.plus.28386041.v1, CC BY4.0. Source authors, version and URLs are retained in each RESULTS/MANIFEST. Modifications: selected members, quality gates, local ENU, range residuals, mathematical statistics. No original full archives, images or absolute GNSS origin distributed. DME003 is original synthetic data, not recorded flights. Original software Apache2.0 does not relicense source datasets. Public web JSON may remove whitespace only; PUBLIC_EXPORT.json maps original and published hashes without numerical edits.

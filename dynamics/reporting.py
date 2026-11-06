@@ -14,7 +14,7 @@ matplotlib.use("Agg")
 from matplotlib import pyplot as plt
 import numpy as np
 
-CSS = """body{font:16px/1.65 system-ui,sans-serif;color:#18272c;background:#f7f5ef;margin:auto;max-width:1120px;padding:50px 25px}h1{font-size:42px;line-height:1.1;max-width:900px}h2{margin-top:50px}a{color:#24616c}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #cbd2ce;padding:12px;text-align:left}th{background:#e8ede8}figure{margin:35px 0}img{max-width:100%;height:auto}pre{white-space:pre-wrap;font-size:13px;overflow-wrap:anywhere}small,.muted{color:#566a70}.label{letter-spacing:3px;font:12px ui-monospace,monospace}article{border-left:3px solid #527c75;padding-left:20px;margin:24px 0}.scroll{overflow:auto}footer{margin-top:65px;border-top:1px solid #bbc6c1;padding-top:20px}@media print{body{padding:0}h2{break-after:avoid}figure,table{break-inside:avoid}}"""
+CSS = """code{overflow-wrap:anywhere;word-break:break-word}body{font:16px/1.65 system-ui,sans-serif;color:#18272c;background:#f7f5ef;margin:auto;max-width:1120px;padding:50px 25px}h1{font-size:42px;line-height:1.1;max-width:900px}h2{margin-top:50px}a{color:#24616c}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #cbd2ce;padding:12px;text-align:left}th{background:#e8ede8}figure{margin:35px 0}img{max-width:100%;height:auto}pre{white-space:pre-wrap;font-size:13px;overflow-wrap:anywhere}small,.muted{color:#566a70}.label{letter-spacing:3px;font:12px ui-monospace,monospace}article{border-left:3px solid #527c75;padding-left:20px;margin:24px 0}.scroll{overflow:auto}footer{margin-top:65px;border-top:1px solid #bbc6c1;padding-top:20px}@media print{body{padding:0}h2{break-after:avoid}figure,table{break-inside:avoid}}"""
 
 
 def rows(r):

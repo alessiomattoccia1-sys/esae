@@ -1,0 +1,617 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>DME-001 · Dynamics Lab</title><style>code{overflow-wrap:anywhere;word-break:break-word}body{font:16px/1.65 system-ui,sans-serif;color:#18272c;background:#f7f5ef;margin:auto;max-width:1120px;padding:50px 25px}h1{font-size:42px;line-height:1.1;max-width:900px}h2{margin-top:50px}a{color:#24616c}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #cbd2ce;padding:12px;text-align:left}th{background:#e8ede8}figure{margin:35px 0}img{max-width:100%;height:auto}pre{white-space:pre-wrap;font-size:13px;overflow-wrap:anywhere}small,.muted{color:#566a70}.label{letter-spacing:3px;font:12px ui-monospace,monospace}article{border-left:3px solid #527c75;padding-left:20px;margin:24px 0}.scroll{overflow:auto}footer{margin-top:65px;border-top:1px solid #bbc6c1;padding-top:20px}@media print{body{padding:0}h2{break-after:avoid}figure,table{break-inside:avoid}}</style><body><p class="label">DYNAMICS LAB · ENGINE01</p><h1>Probabilistic Flight Modeling Benchmark</h1><p>DME-001 · REAL EXPERIMENTAL DATA</p><p class="muted">Computed 2026-11-06T10:25:09.902316+00:00 · reproducible scientific prototype</p><h2>Objective & dataset</h2><p>Compare six motion models and a validation-fitted ensemble on held-out civil flight observations.</p><pre>{
+  &quot;flights_imported&quot;: 30,
+  &quot;valid_source_observations&quot;: 75510,
+  &quot;excluded_source_rows&quot;: 0,
+  &quot;development_flights&quot;: 12,
+  &quot;validation_flights&quot;: 9,
+  &quot;test_flights&quot;: 9,
+  &quot;validation_origins&quot;: 450,
+  &quot;test_origins&quot;: 439,
+  &quot;test_forecast_points_per_model&quot;: 1317,
+  &quot;individual_models&quot;: 6,
+  &quot;ensemble_models&quot;: 1
+}</pre><h2>Measured and computed results</h2><div class="scroll"><table><thead><tr><th>model</th><th>ADE_m</th><th>FDE_m</th><th>RMSE_m</th><th>MAE_coordinate_m</th><th>coverage95</th></tr></thead><tbody><tr><td>RW</td><td>34.795993</td><td>57.405282</td><td>41.426328</td><td>20.467411</td><td>0.96096</td></tr><tr><td>CV</td><td>12.743919</td><td>20.827194</td><td>22.185587</td><td>8.206763</td><td>0.90653</td></tr><tr><td>CA</td><td>18.129089</td><td>35.422055</td><td>29.652082</td><td>11.491921</td><td>0.883761</td></tr><tr><td>KF</td><td>9.121695</td><td>17.242098</td><td>15.83215</td><td>5.798683</td><td>0.904366</td></tr><tr><td>CRW</td><td>9.271408</td><td>17.240235</td><td>15.439684</td><td>5.92636</td><td>0.909744</td></tr><tr><td>OU</td><td>180.270339</td><td>237.539602</td><td>208.814684</td><td>116.08671</td><td>0.98021</td></tr><tr><td>ENSEMBLE</td><td>9.59961</td><td>17.400355</td><td>15.11573</td><td>6.119857</td><td>0.926349</td></tr></tbody></table></div><figure><img src="figures/model-accuracy.png" alt="Six individual methods and validation-fitted ensemble, identical held-out origins. GNSS is a noisy reference."><figcaption>Six individual methods and validation-fitted ensemble, identical held-out origins. GNSS is a noisy reference.</figcaption></figure><figure><img src="figures/uncertainty-coverage.png" alt="Actual coverage of nominal Gaussian95percent regions; validation fitting does not guarantee test coverage."><figcaption>Actual coverage of nominal Gaussian95percent regions; validation fitting does not guarantee test coverage.</figcaption></figure><figure><img src="figures/recorded-flight.png" alt="Public display uses relative ENU and stride only; observations are not simulation truth."><figcaption>Public display uses relative ENU and stride only; observations are not simulation truth.</figcaption></figure><h2>Paired comparison and uncertainty</h2><div class="scroll"><table><thead><tr><th>model</th><th>reference</th><th>mean_ADE_difference_m</th><th>two_sided_exact_signflip_p</th><th>units</th><th>holm_adjusted_p</th></tr></thead><tbody><tr><td>RW</td><td>CV</td><td>22.052075</td><td>0.003906</td><td>9</td><td>0.023438</td></tr><tr><td>CA</td><td>CV</td><td>5.385171</td><td>0.003906</td><td>9</td><td>0.023438</td></tr><tr><td>KF</td><td>CV</td><td>-3.622223</td><td>0.003906</td><td>9</td><td>0.023438</td></tr><tr><td>CRW</td><td>CV</td><td>-3.472511</td><td>0.003906</td><td>9</td><td>0.023438</td></tr><tr><td>OU</td><td>CV</td><td>167.52642</td><td>0.003906</td><td>9</td><td>0.023438</td></tr><tr><td>ENSEMBLE</td><td>CV</td><td>-3.144308</td><td>0.003906</td><td>9</td><td>0.023438</td></tr></tbody></table></div><p>Intervals resample whole flight files; shared platform/circuit and unknown recording days limit independence. More complex methods and the ensemble are not assumed superior.</p><pre>{
+  &quot;RW&quot;: {
+    &quot;ADE_interval95&quot;: {
+      &quot;lower&quot;: 33.394518634683514,
+      &quot;upper&quot;: 36.45540032492981,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    },
+    &quot;coverage_interval95&quot;: {
+      &quot;lower&quot;: 0.951194561727825,
+      &quot;upper&quot;: 0.9719819626723475,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    }
+  },
+  &quot;CV&quot;: {
+    &quot;ADE_interval95&quot;: {
+      &quot;lower&quot;: 11.970185251147065,
+      &quot;upper&quot;: 13.572510260043504,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    },
+    &quot;coverage_interval95&quot;: {
+      &quot;lower&quot;: 0.8928219540634288,
+      &quot;upper&quot;: 0.9195976862564671,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    }
+  },
+  &quot;CA&quot;: {
+    &quot;ADE_interval95&quot;: {
+      &quot;lower&quot;: 17.09672790656177,
+      &quot;upper&quot;: 19.133507993257894,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    },
+    &quot;coverage_interval95&quot;: {
+      &quot;lower&quot;: 0.8665181003860317,
+      &quot;upper&quot;: 0.9010038011240665,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    }
+  },
+  &quot;KF&quot;: {
+    &quot;ADE_interval95&quot;: {
+      &quot;lower&quot;: 8.588941941202101,
+      &quot;upper&quot;: 9.715699860802555,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    },
+    &quot;coverage_interval95&quot;: {
+      &quot;lower&quot;: 0.8873652966285815,
+      &quot;upper&quot;: 0.9187859249856266,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    }
+  },
+  &quot;CRW&quot;: {
+    &quot;ADE_interval95&quot;: {
+      &quot;lower&quot;: 8.723924360992173,
+      &quot;upper&quot;: 9.903148689362789,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    },
+    &quot;coverage_interval95&quot;: {
+      &quot;lower&quot;: 0.8889613997153427,
+      &quot;upper&quot;: 0.9265915633254418,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    }
+  },
+  &quot;OU&quot;: {
+    &quot;ADE_interval95&quot;: {
+      &quot;lower&quot;: 170.895326803684,
+      &quot;upper&quot;: 190.87843474957631,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    },
+    &quot;coverage_interval95&quot;: {
+      &quot;lower&quot;: 0.9689552046405913,
+      &quot;upper&quot;: 0.989076369213609,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    }
+  },
+  &quot;ENSEMBLE&quot;: {
+    &quot;ADE_interval95&quot;: {
+      &quot;lower&quot;: 9.085326886795325,
+      &quot;upper&quot;: 10.193450729001109,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    },
+    &quot;coverage_interval95&quot;: {
+      &quot;lower&quot;: 0.9147342511883979,
+      &quot;upper&quot;: 0.9352277884893583,
+      &quot;resampling_unit&quot;: &quot;whole flight file, equal weight&quot;,
+      &quot;replicates&quot;: 999,
+      &quot;seed&quot;: 20261106,
+      &quot;n_units&quot;: 9,
+      &quot;assumption&quot;: &quot;Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization&quot;
+    }
+  }
+}</pre><h2>Robustness</h2><div class="scroll"><table><thead><tr><th>condition</th><th>model</th><th>ADE_m</th><th>matched_baseline_ADE_m</th><th>origins</th></tr></thead><tbody><tr><td>context_noise2m</td><td>RW</td><td>34.989761</td><td>34.795993</td><td>439</td></tr><tr><td>context_noise2m</td><td>CV</td><td>13.186904</td><td>12.743919</td><td>439</td></tr><tr><td>context_noise2m</td><td>CA</td><td>23.081313</td><td>18.129089</td><td>439</td></tr><tr><td>context_noise2m</td><td>KF</td><td>23.934084</td><td>9.121695</td><td>439</td></tr><tr><td>context_noise2m</td><td>CRW</td><td>23.260576</td><td>9.271408</td><td>439</td></tr><tr><td>context_noise2m</td><td>OU</td><td>180.268998</td><td>180.270339</td><td>439</td></tr><tr><td>context_noise2m</td><td>ENSEMBLE</td><td>22.686669</td><td>9.59961</td><td>439</td></tr><tr><td>context_missing30percent</td><td>RW</td><td>35.769462</td><td>34.874378</td><td>435</td></tr><tr><td>context_missing30percent</td><td>CV</td><td>12.865287</td><td>12.78599</td><td>435</td></tr><tr><td>context_missing30percent</td><td>CA</td><td>18.334218</td><td>18.112987</td><td>435</td></tr><tr><td>context_missing30percent</td><td>KF</td><td>9.243975</td><td>9.115594</td><td>435</td></tr><tr><td>context_missing30percent</td><td>CRW</td><td>9.504622</td><td>9.270341</td><td>435</td></tr><tr><td>context_missing30percent</td><td>OU</td><td>182.589058</td><td>179.941936</td><td>435</td></tr><tr><td>context_missing30percent</td><td>ENSEMBLE</td><td>9.830866</td><td>9.594352</td><td>435</td></tr></tbody></table></div><h2>Method & parameters</h2><pre># DME-001 — method
+
+Kind: REAL EXPERIMENTAL DATA. Algorithm: dme-flight-1.0.
+
+First30 sorted source GPS files; first12development, next9validation, last9test. File-disjoint, not recording-day-independent. Twenty past samples per origin, stride50; nearest observed targets1/3/5s within120ms; source gaps&gt;2s rejected. WGS84 ECEF→local ENU horizontal, no altitude or Euclidean degrees. Six methods share identical origins and targets. q∈{.01,1,100}, R∈{1,10}, validationADE/NLL tie-break only. Covariance scale=validation equal-flight mean Mahalanobis²/2. Ensemble simplex minimizes validation equal-flight MSE; total covariance includes within-model and between-mean dispersion. ADE/FDE/RMSE/MAE/coverage aggregate equally over nine test files. Nominal95percent Gaussian ellipse (χ²₂), empirical coverage and999 whole-file bootstrap samples. Exact paired sign-flip512patterns, Holm correction over6comparisons. Robustness adds2m context noise or30percent missingness with untouched held-out reference and matched-origin baseline. HMM3 descriptive states fit development only on offline speed/acceleration/turn-rate features; not causal intent inference.
+
+## Limits
+- Recorded GNSS is a noisy reference, not known true state. Physical sensor calibration is unavailable.
+- Flights share platform and circuit; recording-day groups are unavailable. File-disjoint splits prevent row leakage but do not prove external generalization or independent days.
+- Gaussian nominal regions and validation scaling are empirically evaluated, not guaranteed confidence coverage.
+- ADE averages sampled1/3/5second horizons, actual timestamp offsets recorded; no interpolation.
+- All parameter and ensemble fitting use development/validation only; test outcomes are not tuning inputs.
+
+## Source
+{
+  &quot;source&quot;: &quot;Zenodo IDF_DS&quot;,
+  &quot;doi&quot;: &quot;10.5281/zenodo.16992976&quot;,
+  &quot;version&quot;: &quot;v1.0&quot;,
+  &quot;archive_url&quot;: &quot;https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content&quot;,
+  &quot;archive_total_bytes&quot;: 580834225,
+  &quot;archive_declared_md5_not_whole_verified&quot;: &quot;md5:fa6210078d8f615118027a5310dfc99c&quot;,
+  &quot;whole_archive_downloaded&quot;: false,
+  &quot;license&quot;: &quot;CC-BY-4.0&quot;,
+  &quot;authors&quot;: [
+    &quot;García Gascón, César&quot;
+  ],
+  &quot;concept_dataset_flights_claimed&quot;: 240,
+  &quot;readme_speedybee_flights_claimed&quot;: 120,
+  &quot;actual_gps_members&quot;: 111,
+  &quot;selected_by_rule&quot;: &quot;First30lexicographically sorted GPS files before values; no outcome selection&quot;,
+  &quot;members&quot;: [
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap001_gps.csv&quot;,
+      &quot;bytes&quot;: 228258,
+      &quot;crc32&quot;: &quot;2edff5e8&quot;,
+      &quot;sha256&quot;: &quot;611f2d9417f94eaf6399d77bb971cd0dd2eba6c7dac9a8fce8e34bc87474a22e&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap002_gps.csv&quot;,
+      &quot;bytes&quot;: 231394,
+      &quot;crc32&quot;: &quot;8f27f9c9&quot;,
+      &quot;sha256&quot;: &quot;94c2761e3838f2b4c8ae479702bf5a68eca9d18a6ba5661dd76ca1748bbabb8f&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap003_gps.csv&quot;,
+      &quot;bytes&quot;: 243612,
+      &quot;crc32&quot;: &quot;31c44155&quot;,
+      &quot;sha256&quot;: &quot;3a7dcdbe64709d26c02df25b834694486bd2377c4e657b7eb0ce1c3a84eb42cc&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap004_gps.csv&quot;,
+      &quot;bytes&quot;: 235920,
+      &quot;crc32&quot;: &quot;97f0d386&quot;,
+      &quot;sha256&quot;: &quot;c004d14f072c859f0a931b340cb99019de239aa63d1db399333643f82ae1d6e9&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap005_gps.csv&quot;,
+      &quot;bytes&quot;: 249131,
+      &quot;crc32&quot;: &quot;9f9dce17&quot;,
+      &quot;sha256&quot;: &quot;87dc6dd1059970adefe57e8a4c2e3f4a111db4caec5a6feaefbd745bf8486dd7&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap006_gps.csv&quot;,
+      &quot;bytes&quot;: 254222,
+      &quot;crc32&quot;: &quot;b3edca47&quot;,
+      &quot;sha256&quot;: &quot;ce3972d05e2c3284350b89664c753952578a755fce7fef83414bdcb48dc4b970&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap007_gps.csv&quot;,
+      &quot;bytes&quot;: 264302,
+      &quot;crc32&quot;: &quot;a739ff38&quot;,
+      &quot;sha256&quot;: &quot;361af6176e811cb73ddbaa28a1ffa6d2e4d65f9dbbe15d34aa7ced043bb56422&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap008_gps.csv&quot;,
+      &quot;bytes&quot;: 272936,
+      &quot;crc32&quot;: &quot;5e530db3&quot;,
+      &quot;sha256&quot;: &quot;e67480ccd1920dcc8459df6843215a528fb4a71a2576799727825e09db7bc2f5&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap009_gps.csv&quot;,
+      &quot;bytes&quot;: 259655,
+      &quot;crc32&quot;: &quot;e3939169&quot;,
+      &quot;sha256&quot;: &quot;a47b6049a3af75537d28bca255f1fa2945f744110dda39d9da0dbf10672876a2&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap010_gps.csv&quot;,
+      &quot;bytes&quot;: 256720,
+      &quot;crc32&quot;: &quot;27bbcdfb&quot;,
+      &quot;sha256&quot;: &quot;d8aba94ed6fbddacb840efe1ac77c599b017343e4528054cb7457d744932a869&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap011_gps.csv&quot;,
+      &quot;bytes&quot;: 243010,
+      &quot;crc32&quot;: &quot;ab2d62aa&quot;,
+      &quot;sha256&quot;: &quot;4ea98abfdc71fef2696c5e9728192672688371f54955a01a99f34b752c198ec2&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap012_gps.csv&quot;,
+      &quot;bytes&quot;: 254490,
+      &quot;crc32&quot;: &quot;1eb01a4a&quot;,
+      &quot;sha256&quot;: &quot;198a1f288f9730b6bd2719f1c1d52dee83fdc32e1f0fe582749a43905fdc26cc&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap013_gps.csv&quot;,
+      &quot;bytes&quot;: 257315,
+      &quot;crc32&quot;: &quot;cdd63c5b&quot;,
+      &quot;sha256&quot;: &quot;ea87f3abe32840c99fdae07029c757d1486fc2f29a1d176e7b4b236c9885c66e&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap014_gps.csv&quot;,
+      &quot;bytes&quot;: 259710,
+      &quot;crc32&quot;: &quot;3088c5a7&quot;,
+      &quot;sha256&quot;: &quot;d8509493c63c55533eb026ea2175b1fdde38ce45ddfc7baf02411f45da5eb240&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap015_gps.csv&quot;,
+      &quot;bytes&quot;: 249987,
+      &quot;crc32&quot;: &quot;3c6c451e&quot;,
+      &quot;sha256&quot;: &quot;982a2b955c66b4ed4179ed8d7031192fdfd5fd33fc9ec6e501b16ce5b684d776&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap016_gps.csv&quot;,
+      &quot;bytes&quot;: 235317,
+      &quot;crc32&quot;: &quot;f6b83870&quot;,
+      &quot;sha256&quot;: &quot;4693a6abbb4117e430606a1d01eaa3a0df30d842e54742f9c15813a2ed8b8e7a&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap017_gps.csv&quot;,
+      &quot;bytes&quot;: 242644,
+      &quot;crc32&quot;: &quot;826fb4da&quot;,
+      &quot;sha256&quot;: &quot;0947fa4d061280d37cbb5c98787b5920e16cefdf6528af5880b2a4816781cc98&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap018_gps.csv&quot;,
+      &quot;bytes&quot;: 239197,
+      &quot;crc32&quot;: &quot;857334f6&quot;,
+      &quot;sha256&quot;: &quot;2b7e46d01b1a5d21dc5576f55a18bb214be4fed090f172a023b1dd882351d342&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap019_gps.csv&quot;,
+      &quot;bytes&quot;: 247048,
+      &quot;crc32&quot;: &quot;f7c9f9c6&quot;,
+      &quot;sha256&quot;: &quot;6edd511e690f9039e85d6015fbb5bec2f003f0ece97c51e094678a7fcd89085c&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap020_gps.csv&quot;,
+      &quot;bytes&quot;: 271949,
+      &quot;crc32&quot;: &quot;93a157d2&quot;,
+      &quot;sha256&quot;: &quot;83c97cf139f08d8fbacf392c3f640615b1aa8b83377e2d2862f6e5e5cd3f9023&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap021_gps.csv&quot;,
+      &quot;bytes&quot;: 240419,
+      &quot;crc32&quot;: &quot;7177459f&quot;,
+      &quot;sha256&quot;: &quot;825b5bc248217407b806fe5be760cfb1f3aadd8ceba86818227add8324c08186&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap022_gps.csv&quot;,
+      &quot;bytes&quot;: 229517,
+      &quot;crc32&quot;: &quot;71808aff&quot;,
+      &quot;sha256&quot;: &quot;e472a0659b1857b4d864e2c58e436a3d4a995e042fbba0343327087fc56db02e&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap023_gps.csv&quot;,
+      &quot;bytes&quot;: 210653,
+      &quot;crc32&quot;: &quot;1891ef8a&quot;,
+      &quot;sha256&quot;: &quot;148a50a720b34209859adb68670719270a094ab60df2c80029deafb9bf4bf19f&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap024_gps.csv&quot;,
+      &quot;bytes&quot;: 228523,
+      &quot;crc32&quot;: &quot;96c03271&quot;,
+      &quot;sha256&quot;: &quot;97277b993ddc84aa5eebdd594f26f5155da95af6244c423c0750aa0d6d252fa1&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap025_gps.csv&quot;,
+      &quot;bytes&quot;: 244486,
+      &quot;crc32&quot;: &quot;b6d81cc7&quot;,
+      &quot;sha256&quot;: &quot;deeb39735f004592716edf4b3338a4fcf39f881551e7a0aff39a2b1910957c80&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap026_gps.csv&quot;,
+      &quot;bytes&quot;: 241516,
+      &quot;crc32&quot;: &quot;4e1c1b25&quot;,
+      &quot;sha256&quot;: &quot;28aaf568bad86b7a34cd7b16e76f58cee81744f816e4ab756f53502e33f8cccd&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap027_gps.csv&quot;,
+      &quot;bytes&quot;: 254430,
+      &quot;crc32&quot;: &quot;5c515dba&quot;,
+      &quot;sha256&quot;: &quot;4f68df4fe56b302a935b6d604da67d975c7ab34d1a625e9cf7fdda215ca3925e&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap028_gps.csv&quot;,
+      &quot;bytes&quot;: 243290,
+      &quot;crc32&quot;: &quot;556551a6&quot;,
+      &quot;sha256&quot;: &quot;01a05bad69f90394cdcf84c76b7174abd339eb7a6a6c4ef894609ebb6ac60e4c&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap029_gps.csv&quot;,
+      &quot;bytes&quot;: 252361,
+      &quot;crc32&quot;: &quot;38380c39&quot;,
+      &quot;sha256&quot;: &quot;ed402784cf03d2d504f8f99261d4501cc3bb603dd0891ba74d4d22d926296837&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap030_gps.csv&quot;,
+      &quot;bytes&quot;: 274137,
+      &quot;crc32&quot;: &quot;07cb2e80&quot;,
+      &quot;sha256&quot;: &quot;74b0259266b6674238aa6664c62ec3d833d80948cafe01c901852d55d81f8219&quot;
+    }
+  ],
+  &quot;excluded&quot;: [],
+  &quot;source_metadata_sha256&quot;: &quot;61f648b3f9e0cebd3b40da4aa0f937fdaf376bb65b9d6c46239a69aa6c0a5a01&quot;,
+  &quot;imported_flights&quot;: 30,
+  &quot;raw_source_bytes&quot;: 7416149,
+  &quot;documentation_caveat&quot;: &quot;Speedybee README describes120flights; actual archive has111GPS files. Do not conflate archive layouts or claim all240flights analyzed.&quot;
+}
+</pre><h2>Validation and reproducibility</h2><pre># Reproduce DME-001
+
+Use Python3.12 and the pinned lock. From the distribution root:
+
+    python -m dynamics.cli run DME-001 --data /your/local/dynamics-data
+    python -m dynamics.cli reproduce JOB_UUID --data /your/local/dynamics-data
+
+The second command rehashes every acquired source object, reparses original selected ZIP bytes and recomputes mathematical results offline, with the original manifest parameters. Missing or altered cached bytes fail explicitly; a new download is a new acquisition, not substitution for an old vintage. The results_sha256 excludes measured execution timing but includes all scientific results and source identities. Public source packages do not contain multi-GB third-party archives. Dataset source availability may change. All seeds/parameters/dependency versions and source hashes are in the manifest.
+</pre><p>Scientific result SHA-256: <code>1f0238e055f9f9a1d601982e68e3e6406f6148a4e768ca17fd0cdfed30427280</code>. Numerical correctness is evaluated with independent controls and source replay; scientific validity remains bounded by source quality and model assumptions.</p><h2>Limits</h2><article>Recorded GNSS is a noisy reference, not known true state. Physical sensor calibration is unavailable.</article><article>Flights share platform and circuit; recording-day groups are unavailable. File-disjoint splits prevent row leakage but do not prove external generalization or independent days.</article><article>Gaussian nominal regions and validation scaling are empirically evaluated, not guaranteed confidence coverage.</article><article>ADE averages sampled1/3/5second horizons, actual timestamp offsets recorded; no interpolation.</article><article>All parameter and ensemble fitting use development/validation only; test outcomes are not tuning inputs.</article><h2>Sources & attribution</h2><pre>{
+  &quot;source&quot;: &quot;Zenodo IDF_DS&quot;,
+  &quot;doi&quot;: &quot;10.5281/zenodo.16992976&quot;,
+  &quot;version&quot;: &quot;v1.0&quot;,
+  &quot;archive_url&quot;: &quot;https://zenodo.org/api/records/16992976/files/Speedybee%20DataSet.zip/content&quot;,
+  &quot;archive_total_bytes&quot;: 580834225,
+  &quot;archive_declared_md5_not_whole_verified&quot;: &quot;md5:fa6210078d8f615118027a5310dfc99c&quot;,
+  &quot;whole_archive_downloaded&quot;: false,
+  &quot;license&quot;: &quot;CC-BY-4.0&quot;,
+  &quot;authors&quot;: [
+    &quot;García Gascón, César&quot;
+  ],
+  &quot;concept_dataset_flights_claimed&quot;: 240,
+  &quot;readme_speedybee_flights_claimed&quot;: 120,
+  &quot;actual_gps_members&quot;: 111,
+  &quot;selected_by_rule&quot;: &quot;First30lexicographically sorted GPS files before values; no outcome selection&quot;,
+  &quot;members&quot;: [
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap001_gps.csv&quot;,
+      &quot;bytes&quot;: 228258,
+      &quot;crc32&quot;: &quot;2edff5e8&quot;,
+      &quot;sha256&quot;: &quot;611f2d9417f94eaf6399d77bb971cd0dd2eba6c7dac9a8fce8e34bc87474a22e&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap002_gps.csv&quot;,
+      &quot;bytes&quot;: 231394,
+      &quot;crc32&quot;: &quot;8f27f9c9&quot;,
+      &quot;sha256&quot;: &quot;94c2761e3838f2b4c8ae479702bf5a68eca9d18a6ba5661dd76ca1748bbabb8f&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap003_gps.csv&quot;,
+      &quot;bytes&quot;: 243612,
+      &quot;crc32&quot;: &quot;31c44155&quot;,
+      &quot;sha256&quot;: &quot;3a7dcdbe64709d26c02df25b834694486bd2377c4e657b7eb0ce1c3a84eb42cc&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap004_gps.csv&quot;,
+      &quot;bytes&quot;: 235920,
+      &quot;crc32&quot;: &quot;97f0d386&quot;,
+      &quot;sha256&quot;: &quot;c004d14f072c859f0a931b340cb99019de239aa63d1db399333643f82ae1d6e9&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap005_gps.csv&quot;,
+      &quot;bytes&quot;: 249131,
+      &quot;crc32&quot;: &quot;9f9dce17&quot;,
+      &quot;sha256&quot;: &quot;87dc6dd1059970adefe57e8a4c2e3f4a111db4caec5a6feaefbd745bf8486dd7&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap006_gps.csv&quot;,
+      &quot;bytes&quot;: 254222,
+      &quot;crc32&quot;: &quot;b3edca47&quot;,
+      &quot;sha256&quot;: &quot;ce3972d05e2c3284350b89664c753952578a755fce7fef83414bdcb48dc4b970&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap007_gps.csv&quot;,
+      &quot;bytes&quot;: 264302,
+      &quot;crc32&quot;: &quot;a739ff38&quot;,
+      &quot;sha256&quot;: &quot;361af6176e811cb73ddbaa28a1ffa6d2e4d65f9dbbe15d34aa7ced043bb56422&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap008_gps.csv&quot;,
+      &quot;bytes&quot;: 272936,
+      &quot;crc32&quot;: &quot;5e530db3&quot;,
+      &quot;sha256&quot;: &quot;e67480ccd1920dcc8459df6843215a528fb4a71a2576799727825e09db7bc2f5&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap009_gps.csv&quot;,
+      &quot;bytes&quot;: 259655,
+      &quot;crc32&quot;: &quot;e3939169&quot;,
+      &quot;sha256&quot;: &quot;a47b6049a3af75537d28bca255f1fa2945f744110dda39d9da0dbf10672876a2&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap010_gps.csv&quot;,
+      &quot;bytes&quot;: 256720,
+      &quot;crc32&quot;: &quot;27bbcdfb&quot;,
+      &quot;sha256&quot;: &quot;d8aba94ed6fbddacb840efe1ac77c599b017343e4528054cb7457d744932a869&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap011_gps.csv&quot;,
+      &quot;bytes&quot;: 243010,
+      &quot;crc32&quot;: &quot;ab2d62aa&quot;,
+      &quot;sha256&quot;: &quot;4ea98abfdc71fef2696c5e9728192672688371f54955a01a99f34b752c198ec2&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap012_gps.csv&quot;,
+      &quot;bytes&quot;: 254490,
+      &quot;crc32&quot;: &quot;1eb01a4a&quot;,
+      &quot;sha256&quot;: &quot;198a1f288f9730b6bd2719f1c1d52dee83fdc32e1f0fe582749a43905fdc26cc&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap013_gps.csv&quot;,
+      &quot;bytes&quot;: 257315,
+      &quot;crc32&quot;: &quot;cdd63c5b&quot;,
+      &quot;sha256&quot;: &quot;ea87f3abe32840c99fdae07029c757d1486fc2f29a1d176e7b4b236c9885c66e&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap014_gps.csv&quot;,
+      &quot;bytes&quot;: 259710,
+      &quot;crc32&quot;: &quot;3088c5a7&quot;,
+      &quot;sha256&quot;: &quot;d8509493c63c55533eb026ea2175b1fdde38ce45ddfc7baf02411f45da5eb240&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap015_gps.csv&quot;,
+      &quot;bytes&quot;: 249987,
+      &quot;crc32&quot;: &quot;3c6c451e&quot;,
+      &quot;sha256&quot;: &quot;982a2b955c66b4ed4179ed8d7031192fdfd5fd33fc9ec6e501b16ce5b684d776&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap016_gps.csv&quot;,
+      &quot;bytes&quot;: 235317,
+      &quot;crc32&quot;: &quot;f6b83870&quot;,
+      &quot;sha256&quot;: &quot;4693a6abbb4117e430606a1d01eaa3a0df30d842e54742f9c15813a2ed8b8e7a&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap017_gps.csv&quot;,
+      &quot;bytes&quot;: 242644,
+      &quot;crc32&quot;: &quot;826fb4da&quot;,
+      &quot;sha256&quot;: &quot;0947fa4d061280d37cbb5c98787b5920e16cefdf6528af5880b2a4816781cc98&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap018_gps.csv&quot;,
+      &quot;bytes&quot;: 239197,
+      &quot;crc32&quot;: &quot;857334f6&quot;,
+      &quot;sha256&quot;: &quot;2b7e46d01b1a5d21dc5576f55a18bb214be4fed090f172a023b1dd882351d342&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap019_gps.csv&quot;,
+      &quot;bytes&quot;: 247048,
+      &quot;crc32&quot;: &quot;f7c9f9c6&quot;,
+      &quot;sha256&quot;: &quot;6edd511e690f9039e85d6015fbb5bec2f003f0ece97c51e094678a7fcd89085c&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap020_gps.csv&quot;,
+      &quot;bytes&quot;: 271949,
+      &quot;crc32&quot;: &quot;93a157d2&quot;,
+      &quot;sha256&quot;: &quot;83c97cf139f08d8fbacf392c3f640615b1aa8b83377e2d2862f6e5e5cd3f9023&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap021_gps.csv&quot;,
+      &quot;bytes&quot;: 240419,
+      &quot;crc32&quot;: &quot;7177459f&quot;,
+      &quot;sha256&quot;: &quot;825b5bc248217407b806fe5be760cfb1f3aadd8ceba86818227add8324c08186&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap022_gps.csv&quot;,
+      &quot;bytes&quot;: 229517,
+      &quot;crc32&quot;: &quot;71808aff&quot;,
+      &quot;sha256&quot;: &quot;e472a0659b1857b4d864e2c58e436a3d4a995e042fbba0343327087fc56db02e&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap023_gps.csv&quot;,
+      &quot;bytes&quot;: 210653,
+      &quot;crc32&quot;: &quot;1891ef8a&quot;,
+      &quot;sha256&quot;: &quot;148a50a720b34209859adb68670719270a094ab60df2c80029deafb9bf4bf19f&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap024_gps.csv&quot;,
+      &quot;bytes&quot;: 228523,
+      &quot;crc32&quot;: &quot;96c03271&quot;,
+      &quot;sha256&quot;: &quot;97277b993ddc84aa5eebdd594f26f5155da95af6244c423c0750aa0d6d252fa1&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap025_gps.csv&quot;,
+      &quot;bytes&quot;: 244486,
+      &quot;crc32&quot;: &quot;b6d81cc7&quot;,
+      &quot;sha256&quot;: &quot;deeb39735f004592716edf4b3338a4fcf39f881551e7a0aff39a2b1910957c80&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap026_gps.csv&quot;,
+      &quot;bytes&quot;: 241516,
+      &quot;crc32&quot;: &quot;4e1c1b25&quot;,
+      &quot;sha256&quot;: &quot;28aaf568bad86b7a34cd7b16e76f58cee81744f816e4ab756f53502e33f8cccd&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap027_gps.csv&quot;,
+      &quot;bytes&quot;: 254430,
+      &quot;crc32&quot;: &quot;5c515dba&quot;,
+      &quot;sha256&quot;: &quot;4f68df4fe56b302a935b6d604da67d975c7ab34d1a625e9cf7fdda215ca3925e&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap028_gps.csv&quot;,
+      &quot;bytes&quot;: 243290,
+      &quot;crc32&quot;: &quot;556551a6&quot;,
+      &quot;sha256&quot;: &quot;01a05bad69f90394cdcf84c76b7174abd339eb7a6a6c4ef894609ebb6ac60e4c&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap029_gps.csv&quot;,
+      &quot;bytes&quot;: 252361,
+      &quot;crc32&quot;: &quot;38380c39&quot;,
+      &quot;sha256&quot;: &quot;ed402784cf03d2d504f8f99261d4501cc3bb603dd0891ba74d4d22d926296837&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Speedybee DataSet/processed/GPS/Lap030_gps.csv&quot;,
+      &quot;bytes&quot;: 274137,
+      &quot;crc32&quot;: &quot;07cb2e80&quot;,
+      &quot;sha256&quot;: &quot;74b0259266b6674238aa6664c62ec3d833d80948cafe01c901852d55d81f8219&quot;
+    }
+  ],
+  &quot;excluded&quot;: [],
+  &quot;source_metadata_sha256&quot;: &quot;61f648b3f9e0cebd3b40da4aa0f937fdaf376bb65b9d6c46239a69aa6c0a5a01&quot;,
+  &quot;imported_flights&quot;: 30,
+  &quot;raw_source_bytes&quot;: 7416149,
+  &quot;documentation_caveat&quot;: &quot;Speedybee README describes120flights; actual archive has111GPS files. Do not conflate archive layouts or claim all240flights analyzed.&quot;
+}</pre><h2>Execution evidence</h2><pre>{
+  &quot;acquisition_seconds&quot;: 0.2941706250421703,
+  &quot;analysis_seconds&quot;: 36.02503625000827,
+  &quot;models&quot;: {
+    &quot;RW&quot;: {
+      &quot;test_forecast_seconds&quot;: 0.03504662500927225,
+      &quot;forecast_points&quot;: 1317
+    },
+    &quot;CV&quot;: {
+      &quot;test_forecast_seconds&quot;: 0.07636908302083611,
+      &quot;forecast_points&quot;: 1317
+    },
+    &quot;CA&quot;: {
+      &quot;test_forecast_seconds&quot;: 0.08068858296610415,
+      &quot;forecast_points&quot;: 1317
+    },
+    &quot;KF&quot;: {
+      &quot;test_forecast_seconds&quot;: 0.9414666250231676,
+      &quot;forecast_points&quot;: 1317
+    },
+    &quot;CRW&quot;: {
+      &quot;test_forecast_seconds&quot;: 0.9354272079654038,
+      &quot;forecast_points&quot;: 1317
+    },
+    &quot;OU&quot;: {
+      &quot;test_forecast_seconds&quot;: 0.7737172080087475,
+      &quot;forecast_points&quot;: 1317
+    }
+  },
+  &quot;total_seconds&quot;: 36.638933082984295,
+  &quot;network_bytes_this_run&quot;: 0,
+  &quot;source_response_bytes&quot;: 2153015,
+  &quot;process_peak_rss_bytes&quot;: 227229696,
+  &quot;rss_scope&quot;: &quot;Whole process lifetime peak; no unmeasured hard RSS guarantee&quot;
+}</pre><footer>Original software Apache License2.0. Third-party source data retains its own licence. AI hypotheses do not generate these measurements. Offline research, no operational control.</footer></body></html>

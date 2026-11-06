@@ -1,0 +1,4708 @@
+{
+  "status": "QUALIFIED",
+  "family": "DYNAMICS LAB",
+  "engine": "Drone Dynamics Engine",
+  "version": "0.1.0",
+  "experiments": {
+    "DME-001": {
+      "analysis_sha256": "1f0238e055f9f9a1d601982e68e3e6406f6148a4e768ca17fd0cdfed30427280",
+      "completed_at": "2026-11-06T10:25:09.902316+00:00",
+      "counts": {
+        "flights_imported": 30,
+        "valid_source_observations": 75510,
+        "excluded_source_rows": 0,
+        "development_flights": 12,
+        "validation_flights": 9,
+        "test_flights": 9,
+        "validation_origins": 450,
+        "test_origins": 439,
+        "test_forecast_points_per_model": 1317,
+        "individual_models": 6,
+        "ensemble_models": 1
+      },
+      "performance": {
+        "acquisition_seconds": 0.2941706250421703,
+        "analysis_seconds": 36.02503625000827,
+        "models": {
+          "RW": {
+            "test_forecast_seconds": 0.03504662500927225,
+            "forecast_points": 1317
+          },
+          "CV": {
+            "test_forecast_seconds": 0.07636908302083611,
+            "forecast_points": 1317
+          },
+          "CA": {
+            "test_forecast_seconds": 0.08068858296610415,
+            "forecast_points": 1317
+          },
+          "KF": {
+            "test_forecast_seconds": 0.9414666250231676,
+            "forecast_points": 1317
+          },
+          "CRW": {
+            "test_forecast_seconds": 0.9354272079654038,
+            "forecast_points": 1317
+          },
+          "OU": {
+            "test_forecast_seconds": 0.7737172080087475,
+            "forecast_points": 1317
+          }
+        },
+        "total_seconds": 36.638933082984295,
+        "network_bytes_this_run": 0,
+        "source_response_bytes": 2153015,
+        "process_peak_rss_bytes": 227229696,
+        "rss_scope": "Whole process lifetime peak; no unmeasured hard RSS guarantee"
+      },
+      "source_objects": 63,
+      "job_id_local": "3a872d35-76fd-4fc4-b74e-9d07324d799e",
+      "kind": "REAL EXPERIMENTAL DATA",
+      "metrics": {
+        "RW": {
+          "ADE_m": 34.79599340517596,
+          "FDE_m": 57.40528231759866,
+          "MAE_coordinate_m": 20.46741140597036,
+          "coverage95": 0.9609596090387102,
+          "gaussian_NLL": 9.177233564723783,
+          "RMSE_m": 41.42632752240315,
+          "flights": 9,
+          "origins": 439,
+          "forecast_points": 1317,
+          "per_flight": [
+            {
+              "flight_id": "Lap022_gps",
+              "origins": 46,
+              "forecast_points": 138,
+              "ADE_m": 35.82620567056315,
+              "FDE_m": 59.11532635884406,
+              "MSE_radial_m2": 1736.21066487558,
+              "RMSE_m": 41.66786129471466,
+              "MAE_coordinate_m": 21.06861749200791,
+              "coverage95": 0.9782608695652174,
+              "gaussian_NLL": 9.189880935825055
+            },
+            {
+              "flight_id": "Lap023_gps",
+              "origins": 42,
+              "forecast_points": 126,
+              "ADE_m": 38.26831024375012,
+              "FDE_m": 63.20513483544127,
+              "MSE_radial_m2": 1947.944842858317,
+              "RMSE_m": 44.13552812483744,
+              "MAE_coordinate_m": 22.352569765538316,
+              "coverage95": 0.9444444444444444,
+              "gaussian_NLL": 9.314318337748405
+            },
+            {
+              "flight_id": "Lap024_gps",
+              "origins": 45,
+              "forecast_points": 135,
+              "ADE_m": 38.363311360390576,
+              "FDE_m": 63.26165232659232,
+              "MSE_radial_m2": 1945.381673773221,
+              "RMSE_m": 44.10648108581346,
+              "MAE_coordinate_m": 22.492958971218574,
+              "coverage95": 0.9777777777777777,
+              "gaussian_NLL": 9.315701015188866
+            },
+            {
+              "flight_id": "Lap025_gps",
+              "origins": 49,
+              "forecast_points": 147,
+              "ADE_m": 35.313652701992865,
+              "FDE_m": 58.525114441491645,
+              "MSE_radial_m2": 1743.7456727394538,
+              "RMSE_m": 41.75818090793053,
+              "MAE_coordinate_m": 20.691115047848946,
+              "coverage95": 0.9795918367346939,
+              "gaussian_NLL": 9.191487722864208
+            },
+            {
+              "flight_id": "Lap026_gps",
+              "origins": 48,
+              "forecast_points": 144,
+              "ADE_m": 34.68691979746613,
+              "FDE_m": 57.56375503192414,
+              "MSE_radial_m2": 1689.1733959562107,
+              "RMSE_m": 41.099554692918645,
+              "MAE_coordinate_m": 20.451568143929645,
+              "coverage95": 0.9791666666666666,
+              "gaussian_NLL": 9.156394168405651
+            },
+            {
+              "flight_id": "Lap027_gps",
+              "origins": 52,
+              "forecast_points": 156,
+              "ADE_m": 32.6079290359612,
+              "FDE_m": 53.52796709331967,
+              "MSE_radial_m2": 1553.6437246857463,
+              "RMSE_m": 39.416287555853685,
+              "MAE_coordinate_m": 19.056924604010764,
+              "coverage95": 0.9487179487179487,
+              "gaussian_NLL": 9.083929515810874
+            },
+            {
+              "flight_id": "Lap028_gps",
+              "origins": 50,
+              "forecast_points": 150,
+              "ADE_m": 34.04577263871745,
+              "FDE_m": 56.007322515658124,
+              "MSE_radial_m2": 1723.7020108124266,
+              "RMSE_m": 41.51749042045324,
+              "MAE_coordinate_m": 20.184862604163886,
+              "coverage95": 0.94,
+              "gaussian_NLL": 9.183398598604004
+            },
+            {
+              "flight_id": "Lap029_gps",
+              "origins": 51,
+              "forecast_points": 153,
+              "ADE_m": 32.69062693898049,
+              "FDE_m": 53.65900065317182,
+              "MSE_radial_m2": 1586.0233523393779,
+              "RMSE_m": 39.82490869216624,
+              "MAE_coordinate_m": 19.3729003241261,
+              "coverage95": 0.954248366013072,
+              "gaussian_NLL": 9.100561519577436
+            },
+            {
+              "flight_id": "Lap030_gps",
+              "origins": 56,
+              "forecast_points": 168,
+              "ADE_m": 31.361212258761707,
+              "FDE_m": 51.78226760194486,
+              "MSE_radial_m2": 1519.4401699004181,
+              "RMSE_m": 38.979997048491654,
+              "MAE_coordinate_m": 18.535185700889077,
+              "coverage95": 0.9464285714285714,
+              "gaussian_NLL": 9.059430268489534
+            }
+          ],
+          "coverage_status": "Empirically evaluated nominal Gaussian ellipse; not validated physical measurement uncertainty",
+          "metric_weighting": "Each full flight file has equal weight; ADE averages sampled horizons1/3/5s; FDE is last sampled horizon; RMSE is radial2D; MAE coordinatewise",
+          "uncalibrated_coverage95": 0.7541096681457173,
+          "ADE_interval95": {
+            "lower": 33.394518634683514,
+            "upper": 36.45540032492981,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "coverage_interval95": {
+            "lower": 0.951194561727825,
+            "upper": 0.9719819626723475,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "covariance_validation_scale": 2.039951227209171
+        },
+        "CV": {
+          "ADE_m": 12.743918507014964,
+          "FDE_m": 20.827193625849272,
+          "MAE_coordinate_m": 8.206762500066333,
+          "coverage95": 0.9065299259800538,
+          "gaussian_NLL": 8.010587800276923,
+          "RMSE_m": 22.185586759661263,
+          "flights": 9,
+          "origins": 439,
+          "forecast_points": 1317,
+          "per_flight": [
+            {
+              "flight_id": "Lap022_gps",
+              "origins": 46,
+              "forecast_points": 138,
+              "ADE_m": 11.835267084646302,
+              "FDE_m": 19.060913145772524,
+              "MSE_radial_m2": 491.7573889551943,
+              "RMSE_m": 22.175603463157305,
+              "MAE_coordinate_m": 7.462479379863054,
+              "coverage95": 0.8913043478260869,
+              "gaussian_NLL": 7.971640161354065
+            },
+            {
+              "flight_id": "Lap023_gps",
+              "origins": 42,
+              "forecast_points": 126,
+              "ADE_m": 12.009843497514622,
+              "FDE_m": 20.77432875913444,
+              "MSE_radial_m2": 473.66201622895136,
+              "RMSE_m": 21.76377761853285,
+              "MAE_coordinate_m": 7.665148386794109,
+              "coverage95": 0.9206349206349206,
+              "gaussian_NLL": 7.845578609060582
+            },
+            {
+              "flight_id": "Lap024_gps",
+              "origins": 45,
+              "forecast_points": 135,
+              "ADE_m": 15.004359501089208,
+              "FDE_m": 25.194406980593214,
+              "MSE_radial_m2": 686.2075848012703,
+              "RMSE_m": 26.195564219945144,
+              "MAE_coordinate_m": 9.858636237021596,
+              "coverage95": 0.8666666666666667,
+              "gaussian_NLL": 8.390226160151238
+            },
+            {
+              "flight_id": "Lap025_gps",
+              "origins": 49,
+              "forecast_points": 147,
+              "ADE_m": 13.067909377990938,
+              "FDE_m": 20.88816201287902,
+              "MSE_radial_m2": 541.7954712753318,
+              "RMSE_m": 23.27650040868111,
+              "MAE_coordinate_m": 8.375371048890209,
+              "coverage95": 0.9047619047619048,
+              "gaussian_NLL": 8.218842282688344
+            },
+            {
+              "flight_id": "Lap026_gps",
+              "origins": 48,
+              "forecast_points": 144,
+              "ADE_m": 11.926978551374004,
+              "FDE_m": 19.609703837081774,
+              "MSE_radial_m2": 438.2458091135389,
+              "RMSE_m": 20.934321319630566,
+              "MAE_coordinate_m": 7.388968634400502,
+              "coverage95": 0.9166666666666666,
+              "gaussian_NLL": 7.906524009446522
+            },
+            {
+              "flight_id": "Lap027_gps",
+              "origins": 52,
+              "forecast_points": 156,
+              "ADE_m": 12.385429830780108,
+              "FDE_m": 19.7927189754365,
+              "MSE_radial_m2": 443.5971783289818,
+              "RMSE_m": 21.061746801464064,
+              "MAE_coordinate_m": 8.066657009331239,
+              "coverage95": 0.9166666666666666,
+              "gaussian_NLL": 7.962570800444146
+            },
+            {
+              "flight_id": "Lap028_gps",
+              "origins": 50,
+              "forecast_points": 150,
+              "ADE_m": 10.664973721759248,
+              "FDE_m": 17.453242696711456,
+              "MSE_radial_m2": 337.0466533170406,
+              "RMSE_m": 18.358830390769466,
+              "MAE_coordinate_m": 6.796789649634545,
+              "coverage95": 0.9466666666666667,
+              "gaussian_NLL": 7.657245620040164
+            },
+            {
+              "flight_id": "Lap029_gps",
+              "origins": 51,
+              "forecast_points": 153,
+              "ADE_m": 13.487982703213886,
+              "FDE_m": 22.172890254115494,
+              "MSE_radial_m2": 464.10457919874807,
+              "RMSE_m": 21.54308657548282,
+              "MAE_coordinate_m": 8.89841105421551,
+              "coverage95": 0.9084967320261438,
+              "gaussian_NLL": 8.006602630806144
+            },
+            {
+              "flight_id": "Lap030_gps",
+              "origins": 56,
+              "forecast_points": 168,
+              "ADE_m": 14.31252229476636,
+              "FDE_m": 22.498375970919035,
+              "MSE_radial_m2": 553.3856576150564,
+              "RMSE_m": 23.52415051845776,
+              "MAE_coordinate_m": 9.34840110044623,
+              "coverage95": 0.8869047619047619,
+              "gaussian_NLL": 8.136059928501105
+            }
+          ],
+          "coverage_status": "Empirically evaluated nominal Gaussian ellipse; not validated physical measurement uncertainty",
+          "metric_weighting": "Each full flight file has equal weight; ADE averages sampled horizons1/3/5s; FDE is last sampled horizon; RMSE is radial2D; MAE coordinatewise",
+          "uncalibrated_coverage95": 0.9694041854323794,
+          "ADE_interval95": {
+            "lower": 11.970185251147065,
+            "upper": 13.572510260043504,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "coverage_interval95": {
+            "lower": 0.8928219540634288,
+            "upper": 0.9195976862564671,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "covariance_validation_scale": 0.3211274199124716
+        },
+        "CA": {
+          "ADE_m": 18.12908933214658,
+          "FDE_m": 35.422055431012424,
+          "MAE_coordinate_m": 11.491921491095576,
+          "coverage95": 0.8837609427932369,
+          "gaussian_NLL": 8.064676096633479,
+          "RMSE_m": 29.652082361035625,
+          "flights": 9,
+          "origins": 439,
+          "forecast_points": 1317,
+          "per_flight": [
+            {
+              "flight_id": "Lap022_gps",
+              "origins": 46,
+              "forecast_points": 138,
+              "ADE_m": 16.03142122183035,
+              "FDE_m": 31.64197745482443,
+              "MSE_radial_m2": 754.6772376320172,
+              "RMSE_m": 27.4713894375952,
+              "MAE_coordinate_m": 10.073445580915797,
+              "coverage95": 0.8913043478260869,
+              "gaussian_NLL": 7.880622810170771
+            },
+            {
+              "flight_id": "Lap023_gps",
+              "origins": 42,
+              "forecast_points": 126,
+              "ADE_m": 15.376294697286271,
+              "FDE_m": 30.51493754538535,
+              "MSE_radial_m2": 657.8489116124636,
+              "RMSE_m": 25.648565488394542,
+              "MAE_coordinate_m": 9.750201259707513,
+              "coverage95": 0.9047619047619048,
+              "gaussian_NLL": 7.752356283877563
+            },
+            {
+              "flight_id": "Lap024_gps",
+              "origins": 45,
+              "forecast_points": 135,
+              "ADE_m": 18.312421466646263,
+              "FDE_m": 35.60965747712541,
+              "MSE_radial_m2": 1021.2864245218927,
+              "RMSE_m": 31.957572256382253,
+              "MAE_coordinate_m": 11.569656813130994,
+              "coverage95": 0.8592592592592593,
+              "gaussian_NLL": 8.238609810697868
+            },
+            {
+              "flight_id": "Lap025_gps",
+              "origins": 49,
+              "forecast_points": 147,
+              "ADE_m": 18.497883982730546,
+              "FDE_m": 35.825078553139996,
+              "MSE_radial_m2": 866.6676285796977,
+              "RMSE_m": 29.439219225035465,
+              "MAE_coordinate_m": 11.575137953194867,
+              "coverage95": 0.9251700680272109,
+              "gaussian_NLL": 8.063814915112253
+            },
+            {
+              "flight_id": "Lap026_gps",
+              "origins": 48,
+              "forecast_points": 144,
+              "ADE_m": 17.907631951075516,
+              "FDE_m": 35.35338739367122,
+              "MSE_radial_m2": 899.0907897617991,
+              "RMSE_m": 29.9848426669509,
+              "MAE_coordinate_m": 10.827567538588571,
+              "coverage95": 0.8958333333333334,
+              "gaussian_NLL": 8.072441173752743
+            },
+            {
+              "flight_id": "Lap027_gps",
+              "origins": 52,
+              "forecast_points": 156,
+              "ADE_m": 19.348401227165652,
+              "FDE_m": 37.99547840629213,
+              "MSE_radial_m2": 984.6838233487241,
+              "RMSE_m": 31.379672135774843,
+              "MAE_coordinate_m": 12.403134712470985,
+              "coverage95": 0.8910256410256411,
+              "gaussian_NLL": 8.179884592642834
+            },
+            {
+              "flight_id": "Lap028_gps",
+              "origins": 50,
+              "forecast_points": 150,
+              "ADE_m": 16.875570374192957,
+              "FDE_m": 33.32736185713215,
+              "MSE_radial_m2": 706.2497738398815,
+              "RMSE_m": 26.575360276765423,
+              "MAE_coordinate_m": 10.845078012103887,
+              "coverage95": 0.8933333333333333,
+              "gaussian_NLL": 7.845860701155016
+            },
+            {
+              "flight_id": "Lap029_gps",
+              "origins": 51,
+              "forecast_points": 153,
+              "ADE_m": 20.51014064430663,
+              "FDE_m": 40.004668070978454,
+              "MSE_radial_m2": 1020.275284997926,
+              "RMSE_m": 31.941748308411768,
+              "MAE_coordinate_m": 13.335438772418561,
+              "coverage95": 0.8300653594771242,
+              "gaussian_NLL": 8.267844659109192
+            },
+            {
+              "flight_id": "Lap030_gps",
+              "origins": 56,
+              "forecast_points": 168,
+              "ADE_m": 20.302038424085058,
+              "FDE_m": 38.5259521205627,
+              "MSE_radial_m2": 1002.4340208163578,
+              "RMSE_m": 31.661238459926956,
+              "MAE_coordinate_m": 13.047632777329019,
+              "coverage95": 0.8630952380952381,
+              "gaussian_NLL": 8.280649923183065
+            }
+          ],
+          "coverage_status": "Empirically evaluated nominal Gaussian ellipse; not validated physical measurement uncertainty",
+          "metric_weighting": "Each full flight file has equal weight; ADE averages sampled horizons1/3/5s; FDE is last sampled horizon; RMSE is radial2D; MAE coordinatewise",
+          "uncalibrated_coverage95": 0.7944124838506359,
+          "ADE_interval95": {
+            "lower": 17.09672790656177,
+            "upper": 19.133507993257894,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "coverage_interval95": {
+            "lower": 0.8665181003860317,
+            "upper": 0.9010038011240665,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "covariance_validation_scale": 2.238555269076304
+        },
+        "KF": {
+          "ADE_m": 9.121695164264448,
+          "FDE_m": 17.242097834962987,
+          "MAE_coordinate_m": 5.798683291843183,
+          "coverage95": 0.9043656784733796,
+          "gaussian_NLL": 6.4968939463397,
+          "RMSE_m": 15.832150288144044,
+          "flights": 9,
+          "origins": 439,
+          "forecast_points": 1317,
+          "per_flight": [
+            {
+              "flight_id": "Lap022_gps",
+              "origins": 46,
+              "forecast_points": 138,
+              "ADE_m": 7.991361011843056,
+              "FDE_m": 15.269942852259222,
+              "MSE_radial_m2": 222.0382233377333,
+              "RMSE_m": 14.900947061772058,
+              "MAE_coordinate_m": 4.956052854892467,
+              "coverage95": 0.8985507246376812,
+              "gaussian_NLL": 6.343382623277274
+            },
+            {
+              "flight_id": "Lap023_gps",
+              "origins": 42,
+              "forecast_points": 126,
+              "ADE_m": 8.151551357679745,
+              "FDE_m": 16.307048363701398,
+              "MSE_radial_m2": 216.82949974857192,
+              "RMSE_m": 14.725131569822116,
+              "MAE_coordinate_m": 5.099514683001623,
+              "coverage95": 0.9285714285714286,
+              "gaussian_NLL": 6.206677340285214
+            },
+            {
+              "flight_id": "Lap024_gps",
+              "origins": 45,
+              "forecast_points": 135,
+              "ADE_m": 10.040294740055227,
+              "FDE_m": 18.786208880711374,
+              "MSE_radial_m2": 346.57310491109035,
+              "RMSE_m": 18.616474019295126,
+              "MAE_coordinate_m": 6.5324182626890215,
+              "coverage95": 0.8518518518518519,
+              "gaussian_NLL": 6.873778668590793
+            },
+            {
+              "flight_id": "Lap025_gps",
+              "origins": 49,
+              "forecast_points": 147,
+              "ADE_m": 9.018164415041612,
+              "FDE_m": 16.484060125662324,
+              "MSE_radial_m2": 251.39269852294572,
+              "RMSE_m": 15.855368129530948,
+              "MAE_coordinate_m": 5.447532782700299,
+              "coverage95": 0.9047619047619048,
+              "gaussian_NLL": 6.627296948759553
+            },
+            {
+              "flight_id": "Lap026_gps",
+              "origins": 48,
+              "forecast_points": 144,
+              "ADE_m": 9.039495893068079,
+              "FDE_m": 17.416492112436014,
+              "MSE_radial_m2": 238.9901984784305,
+              "RMSE_m": 15.459307826627636,
+              "MAE_coordinate_m": 5.660545864209841,
+              "coverage95": 0.9027777777777778,
+              "gaussian_NLL": 6.397289362754874
+            },
+            {
+              "flight_id": "Lap027_gps",
+              "origins": 52,
+              "forecast_points": 156,
+              "ADE_m": 8.753639619826016,
+              "FDE_m": 16.29444793390098,
+              "MSE_radial_m2": 218.2077343676352,
+              "RMSE_m": 14.771856158507473,
+              "MAE_coordinate_m": 5.6292130125836275,
+              "coverage95": 0.9102564102564102,
+              "gaussian_NLL": 6.3918475009192415
+            },
+            {
+              "flight_id": "Lap028_gps",
+              "origins": 50,
+              "forecast_points": 150,
+              "ADE_m": 8.310418421644542,
+              "FDE_m": 16.314856097220087,
+              "MSE_radial_m2": 194.6814676890035,
+              "RMSE_m": 13.952830096041573,
+              "MAE_coordinate_m": 5.264193632710556,
+              "coverage95": 0.94,
+              "gaussian_NLL": 6.218056654782563
+            },
+            {
+              "flight_id": "Lap029_gps",
+              "origins": 51,
+              "forecast_points": 153,
+              "ADE_m": 10.35696469459421,
+              "FDE_m": 19.408958976628895,
+              "MSE_radial_m2": 258.8540879428541,
+              "RMSE_m": 16.088943033737614,
+              "MAE_coordinate_m": 6.725834951821013,
+              "coverage95": 0.9215686274509803,
+              "gaussian_NLL": 6.575343753300276
+            },
+            {
+              "flight_id": "Lap030_gps",
+              "origins": 56,
+              "forecast_points": 168,
+              "ADE_m": 10.433366324627547,
+              "FDE_m": 18.89686517214659,
+              "MSE_radial_m2": 308.34582971915086,
+              "RMSE_m": 17.559778749151448,
+              "MAE_coordinate_m": 6.8728435819802,
+              "coverage95": 0.8809523809523809,
+              "gaussian_NLL": 6.838372664387513
+            }
+          ],
+          "coverage_status": "Empirically evaluated nominal Gaussian ellipse; not validated physical measurement uncertainty",
+          "metric_weighting": "Each full flight file has equal weight; ADE averages sampled horizons1/3/5s; FDE is last sampled horizon; RMSE is radial2D; MAE coordinatewise",
+          "uncalibrated_coverage95": 1.0,
+          "ADE_interval95": {
+            "lower": 8.588941941202101,
+            "upper": 9.715699860802555,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "coverage_interval95": {
+            "lower": 0.8873652966285815,
+            "upper": 0.9187859249856266,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "covariance_validation_scale": 0.05826862088596038
+        },
+        "CRW": {
+          "ADE_m": 9.27140791571523,
+          "FDE_m": 17.24023501820971,
+          "MAE_coordinate_m": 5.926360158759186,
+          "coverage95": 0.909743616881907,
+          "gaussian_NLL": 6.5003447733674555,
+          "RMSE_m": 15.439683800195244,
+          "flights": 9,
+          "origins": 439,
+          "forecast_points": 1317,
+          "per_flight": [
+            {
+              "flight_id": "Lap022_gps",
+              "origins": 46,
+              "forecast_points": 138,
+              "ADE_m": 8.204628179383697,
+              "FDE_m": 15.374138453362713,
+              "MSE_radial_m2": 209.8208044170739,
+              "RMSE_m": 14.485192591645921,
+              "MAE_coordinate_m": 5.14459612065555,
+              "coverage95": 0.9057971014492754,
+              "gaussian_NLL": 6.3447743236968694
+            },
+            {
+              "flight_id": "Lap023_gps",
+              "origins": 42,
+              "forecast_points": 126,
+              "ADE_m": 8.330068520007758,
+              "FDE_m": 16.24792713154416,
+              "MSE_radial_m2": 204.13877576829256,
+              "RMSE_m": 14.287714154765714,
+              "MAE_coordinate_m": 5.274833475696064,
+              "coverage95": 0.9365079365079365,
+              "gaussian_NLL": 6.2101392280734675
+            },
+            {
+              "flight_id": "Lap024_gps",
+              "origins": 45,
+              "forecast_points": 135,
+              "ADE_m": 10.371219760457356,
+              "FDE_m": 19.080460039864082,
+              "MSE_radial_m2": 329.7408143982935,
+              "RMSE_m": 18.15876687438587,
+              "MAE_coordinate_m": 6.744887401252291,
+              "coverage95": 0.8444444444444444,
+              "gaussian_NLL": 6.883271038875003
+            },
+            {
+              "flight_id": "Lap025_gps",
+              "origins": 49,
+              "forecast_points": 147,
+              "ADE_m": 9.132799919170846,
+              "FDE_m": 16.528948909938688,
+              "MSE_radial_m2": 240.07434545210302,
+              "RMSE_m": 15.494332688183219,
+              "MAE_coordinate_m": 5.637510434427646,
+              "coverage95": 0.9251700680272109,
+              "gaussian_NLL": 6.621019193463514
+            },
+            {
+              "flight_id": "Lap026_gps",
+              "origins": 48,
+              "forecast_points": 144,
+              "ADE_m": 9.314158825521242,
+              "FDE_m": 17.600859908879034,
+              "MSE_radial_m2": 232.1398490630456,
+              "RMSE_m": 15.236136290511634,
+              "MAE_coordinate_m": 5.953392827220792,
+              "coverage95": 0.9097222222222222,
+              "gaussian_NLL": 6.419695006332594
+            },
+            {
+              "flight_id": "Lap027_gps",
+              "origins": 52,
+              "forecast_points": 156,
+              "ADE_m": 8.70479087122689,
+              "FDE_m": 15.983669546203808,
+              "MSE_radial_m2": 205.64705548632256,
+              "RMSE_m": 14.340399418646697,
+              "MAE_coordinate_m": 5.5978224638224425,
+              "coverage95": 0.9230769230769231,
+              "gaussian_NLL": 6.394618517296051
+            },
+            {
+              "flight_id": "Lap028_gps",
+              "origins": 50,
+              "forecast_points": 150,
+              "ADE_m": 8.275278091217226,
+              "FDE_m": 15.884989866773735,
+              "MSE_radial_m2": 182.61684130628495,
+              "RMSE_m": 13.513579884926308,
+              "MAE_coordinate_m": 5.241946225433544,
+              "coverage95": 0.9333333333333333,
+              "gaussian_NLL": 6.220773132458165
+            },
+            {
+              "flight_id": "Lap029_gps",
+              "origins": 51,
+              "forecast_points": 153,
+              "ADE_m": 10.424822539936862,
+              "FDE_m": 19.25529240571348,
+              "MSE_radial_m2": 245.05065148745655,
+              "RMSE_m": 15.654093761296325,
+              "MAE_coordinate_m": 6.6937302972559545,
+              "coverage95": 0.934640522875817,
+              "gaussian_NLL": 6.562871423067048
+            },
+            {
+              "flight_id": "Lap030_gps",
+              "origins": 56,
+              "forecast_points": 168,
+              "ADE_m": 10.68490453451519,
+              "FDE_m": 19.205828901607692,
+              "MSE_radial_m2": 296.2253852712304,
+              "RMSE_m": 17.211199414080077,
+              "MAE_coordinate_m": 7.048522183068393,
+              "coverage95": 0.875,
+              "gaussian_NLL": 6.845941097044385
+            }
+          ],
+          "coverage_status": "Empirically evaluated nominal Gaussian ellipse; not validated physical measurement uncertainty",
+          "metric_weighting": "Each full flight file has equal weight; ADE averages sampled horizons1/3/5s; FDE is last sampled horizon; RMSE is radial2D; MAE coordinatewise",
+          "uncalibrated_coverage95": 1.0,
+          "ADE_interval95": {
+            "lower": 8.723924360992173,
+            "upper": 9.903148689362789,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "coverage_interval95": {
+            "lower": 0.8889613997153427,
+            "upper": 0.9265915633254418,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "covariance_validation_scale": 0.05798673070656982
+        },
+        "OU": {
+          "ADE_m": 180.2703386378971,
+          "FDE_m": 237.53960182643493,
+          "MAE_coordinate_m": 116.08671010816033,
+          "coverage95": 0.98021044418428,
+          "gaussian_NLL": 12.759947690951684,
+          "RMSE_m": 208.8146836033179,
+          "flights": 9,
+          "origins": 439,
+          "forecast_points": 1317,
+          "per_flight": [
+            {
+              "flight_id": "Lap022_gps",
+              "origins": 46,
+              "forecast_points": 138,
+              "ADE_m": 186.25362086702432,
+              "FDE_m": 245.82193460560526,
+              "MSE_radial_m2": 46786.995739935235,
+              "RMSE_m": 216.3030183329286,
+              "MAE_coordinate_m": 119.12615512677442,
+              "coverage95": 0.9855072463768116,
+              "gaussian_NLL": 12.817299295023403
+            },
+            {
+              "flight_id": "Lap023_gps",
+              "origins": 42,
+              "forecast_points": 126,
+              "ADE_m": 203.87519359173652,
+              "FDE_m": 268.56402468259614,
+              "MSE_radial_m2": 55692.2522972748,
+              "RMSE_m": 235.99205981828032,
+              "MAE_coordinate_m": 129.80634163080586,
+              "coverage95": 0.9444444444444444,
+              "gaussian_NLL": 12.978527758470626
+            },
+            {
+              "flight_id": "Lap024_gps",
+              "origins": 45,
+              "forecast_points": 135,
+              "ADE_m": 195.70985321591778,
+              "FDE_m": 257.20831813265704,
+              "MSE_radial_m2": 50777.34396996436,
+              "RMSE_m": 225.33828784732603,
+              "MAE_coordinate_m": 124.99151997790469,
+              "coverage95": 0.9703703703703703,
+              "gaussian_NLL": 12.89076944535203
+            },
+            {
+              "flight_id": "Lap025_gps",
+              "origins": 49,
+              "forecast_points": 147,
+              "ADE_m": 193.13698642081474,
+              "FDE_m": 254.71652125106593,
+              "MSE_radial_m2": 49208.31233422333,
+              "RMSE_m": 221.82946678523874,
+              "MAE_coordinate_m": 123.39731367459879,
+              "coverage95": 0.9659863945578231,
+              "gaussian_NLL": 12.861688543327643
+            },
+            {
+              "flight_id": "Lap026_gps",
+              "origins": 48,
+              "forecast_points": 144,
+              "ADE_m": 175.88187302683153,
+              "FDE_m": 231.65021649908238,
+              "MSE_radial_m2": 41169.11279566475,
+              "RMSE_m": 202.90173186955488,
+              "MAE_coordinate_m": 113.22181193857796,
+              "coverage95": 0.9930555555555556,
+              "gaussian_NLL": 12.715758716035246
+            },
+            {
+              "flight_id": "Lap027_gps",
+              "origins": 52,
+              "forecast_points": 156,
+              "ADE_m": 159.56506037625144,
+              "FDE_m": 210.37239864769742,
+              "MSE_radial_m2": 34020.266005519945,
+              "RMSE_m": 184.44583488254742,
+              "MAE_coordinate_m": 104.5094163341118,
+              "coverage95": 0.9935897435897436,
+              "gaussian_NLL": 12.586033032969548
+            },
+            {
+              "flight_id": "Lap028_gps",
+              "origins": 50,
+              "forecast_points": 150,
+              "ADE_m": 162.4629267516494,
+              "FDE_m": 213.84865846719276,
+              "MSE_radial_m2": 35209.09717728236,
+              "RMSE_m": 187.6408728856332,
+              "MAE_coordinate_m": 106.5294351719984,
+              "coverage95": 0.9933333333333333,
+              "gaussian_NLL": 12.607349683889002
+            },
+            {
+              "flight_id": "Lap029_gps",
+              "origins": 51,
+              "forecast_points": 153,
+              "ADE_m": 160.88407078907085,
+              "FDE_m": 211.96209957894882,
+              "MSE_radial_m2": 34456.03691452096,
+              "RMSE_m": 185.62337383670453,
+              "MAE_coordinate_m": 105.10932982554976,
+              "coverage95": 0.9934640522875817,
+              "gaussian_NLL": 12.594058951478711
+            },
+            {
+              "flight_id": "Lap030_gps",
+              "origins": 56,
+              "forecast_points": 168,
+              "ADE_m": 184.66346270177743,
+              "FDE_m": 243.7122445730686,
+              "MSE_radial_m2": 45112.73156079806,
+              "RMSE_m": 212.39757898996416,
+              "MAE_coordinate_m": 118.08906729312132,
+              "coverage95": 0.9821428571428571,
+              "gaussian_NLL": 12.788043792018952
+            }
+          ],
+          "coverage_status": "Empirically evaluated nominal Gaussian ellipse; not validated physical measurement uncertainty",
+          "metric_weighting": "Each full flight file has equal weight; ADE averages sampled horizons1/3/5s; FDE is last sampled horizon; RMSE is radial2D; MAE coordinatewise",
+          "uncalibrated_coverage95": 0.015214635629221753,
+          "ADE_interval95": {
+            "lower": 170.895326803684,
+            "upper": 190.87843474957631,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "coverage_interval95": {
+            "lower": 0.9689552046405913,
+            "upper": 0.989076369213609,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "covariance_validation_scale": 294.4828741931356
+        },
+        "ENSEMBLE": {
+          "ADE_m": 9.599610420455292,
+          "FDE_m": 17.400355167842317,
+          "MAE_coordinate_m": 6.11985696413853,
+          "coverage95": 0.9263486861361662,
+          "gaussian_NLL": 7.148051332843407,
+          "RMSE_m": 15.115730293738961,
+          "flights": 9,
+          "origins": 439,
+          "forecast_points": 1317,
+          "per_flight": [
+            {
+              "flight_id": "Lap022_gps",
+              "origins": 46,
+              "forecast_points": 138,
+              "ADE_m": 8.69471026388418,
+              "FDE_m": 15.64510590063236,
+              "MSE_radial_m2": 203.78512974181697,
+              "RMSE_m": 14.275332911768361,
+              "MAE_coordinate_m": 5.465795475239007,
+              "coverage95": 0.927536231884058,
+              "gaussian_NLL": 7.202175455172112
+            },
+            {
+              "flight_id": "Lap023_gps",
+              "origins": 42,
+              "forecast_points": 126,
+              "ADE_m": 8.832607436828688,
+              "FDE_m": 16.55822057096841,
+              "MSE_radial_m2": 191.95615549995017,
+              "RMSE_m": 13.85482426810063,
+              "MAE_coordinate_m": 5.5118980768571415,
+              "coverage95": 0.9444444444444444,
+              "gaussian_NLL": 7.021009718434879
+            },
+            {
+              "flight_id": "Lap024_gps",
+              "origins": 45,
+              "forecast_points": 135,
+              "ADE_m": 10.810451224538669,
+              "FDE_m": 19.511437439436893,
+              "MSE_radial_m2": 312.6658274580032,
+              "RMSE_m": 17.682359216405576,
+              "MAE_coordinate_m": 7.049746413513329,
+              "coverage95": 0.8888888888888888,
+              "gaussian_NLL": 7.401467264461581
+            },
+            {
+              "flight_id": "Lap025_gps",
+              "origins": 49,
+              "forecast_points": 147,
+              "ADE_m": 9.472947281467187,
+              "FDE_m": 16.874267448422064,
+              "MSE_radial_m2": 231.1846874757574,
+              "RMSE_m": 15.20475871152704,
+              "MAE_coordinate_m": 5.926235924158849,
+              "coverage95": 0.9251700680272109,
+              "gaussian_NLL": 7.037863773021842
+            },
+            {
+              "flight_id": "Lap026_gps",
+              "origins": 48,
+              "forecast_points": 144,
+              "ADE_m": 9.566647994827823,
+              "FDE_m": 17.61083276426452,
+              "MSE_radial_m2": 220.29341616447388,
+              "RMSE_m": 14.842284735325418,
+              "MAE_coordinate_m": 6.096837856617489,
+              "coverage95": 0.9305555555555556,
+              "gaussian_NLL": 7.111166264226392
+            },
+            {
+              "flight_id": "Lap027_gps",
+              "origins": 52,
+              "forecast_points": 156,
+              "ADE_m": 8.985922137053743,
+              "FDE_m": 16.007813396175465,
+              "MSE_radial_m2": 200.3677640462631,
+              "RMSE_m": 14.155132074490266,
+              "MAE_coordinate_m": 5.710948559307053,
+              "coverage95": 0.9423076923076923,
+              "gaussian_NLL": 7.156634850892779
+            },
+            {
+              "flight_id": "Lap028_gps",
+              "origins": 50,
+              "forecast_points": 150,
+              "ADE_m": 8.519325264649849,
+              "FDE_m": 15.778985441190684,
+              "MSE_radial_m2": 176.36949476232743,
+              "RMSE_m": 13.28041771791563,
+              "MAE_coordinate_m": 5.3937597009629,
+              "coverage95": 0.94,
+              "gaussian_NLL": 6.972403298741708
+            },
+            {
+              "flight_id": "Lap029_gps",
+              "origins": 51,
+              "forecast_points": 153,
+              "ADE_m": 10.705182006645515,
+              "FDE_m": 19.318568262259124,
+              "MSE_radial_m2": 237.28813306049,
+              "RMSE_m": 15.404159602538854,
+              "MAE_coordinate_m": 6.8022476108306,
+              "coverage95": 0.9215686274509803,
+              "gaussian_NLL": 7.200880840620467
+            },
+            {
+              "flight_id": "Lap030_gps",
+              "origins": 56,
+              "forecast_points": 168,
+              "ADE_m": 10.808700174201972,
+              "FDE_m": 19.29796528723137,
+              "MSE_radial_m2": 282.45711260843717,
+              "RMSE_m": 16.80646044259282,
+              "MAE_coordinate_m": 7.121243059760399,
+              "coverage95": 0.9166666666666666,
+              "gaussian_NLL": 7.228860530018912
+            }
+          ],
+          "coverage_status": "Empirically evaluated nominal Gaussian ellipse; not validated physical measurement uncertainty",
+          "metric_weighting": "Each full flight file has equal weight; ADE averages sampled horizons1/3/5s; FDE is last sampled horizon; RMSE is radial2D; MAE coordinatewise",
+          "ADE_interval95": {
+            "lower": 9.085326886795325,
+            "upper": 10.193450729001109,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "coverage_interval95": {
+            "lower": 0.9147342511883979,
+            "upper": 0.9352277884893583,
+            "resampling_unit": "whole flight file, equal weight",
+            "replicates": 999,
+            "seed": 20261106,
+            "n_units": 9,
+            "assumption": "Flight-file exchangeability/independence not guaranteed across unreported day groups; conditional interval, limited external generalization"
+          },
+          "covariance_validation_scale": 0.1471181078012837,
+          "region": "Moment-matched Gaussian ellipse approximation to a model mixture; empirical coverage measured, no guaranteed95percent mixture mass"
+        }
+      }
+    },
+    "DME-002": {
+      "analysis_sha256": "1011008f5d536e6f415f5f94f3d797d682971c26650577891ab0d800684ce89d",
+      "completed_at": "2026-11-06T10:25:51.257151+00:00",
+      "counts": {
+        "real_flights_analyzed": 3,
+        "source_uwb_rows": 34019,
+        "observations_analyzed": 34019,
+        "excluded_uwb_rows": 0,
+        "source_mocap_rows": 48515,
+        "matched_mocap_ranges": 34012
+      },
+      "performance": {
+        "acquisition_and_analysis_seconds": 5.1550677079940215,
+        "total_seconds": 5.363840707985219,
+        "network_bytes_this_run": 0,
+        "source_response_bytes": 18750216,
+        "process_peak_rss_bytes": 309002240,
+        "rss_scope": "Whole process lifetime peak; no unmeasured hard RSS guarantee"
+      },
+      "source_objects": 26,
+      "job_id_local": "bb17e19f-7948-4aae-a673-51d27589a095",
+      "kind": "REAL EXPERIMENTAL DATA",
+      "metrics": {
+        "observation_weighted_calibrated": {
+          "n": 34019,
+          "bias_m": 0.12284103185135584,
+          "MAE_m": 0.17668887672333414,
+          "RMSE_m": 0.30776633109381496,
+          "absolute_error_p50_m": 0.07158533430315206,
+          "absolute_error_p95_m": 0.7852287609954418,
+          "coverage95": 0.8401187571651136,
+          "coverage_denominator": 34019,
+          "nominal_coverage": 0.95
+        },
+        "observation_weighted_raw": {
+          "n": 34019,
+          "bias_m": 0.1998845074706905,
+          "MAE_m": 0.22432024313559268,
+          "RMSE_m": 0.3555526933853096,
+          "absolute_error_p50_m": 0.11717897492394114,
+          "absolute_error_p95_m": 0.889407837813711
+        },
+        "equal_flight_mean_MAE_m": 0.18198681403955022
+      }
+    },
+    "DME-003": {
+      "analysis_sha256": "f154ddcdb4aebdec0a278e478fae39a500f3ee9383c4bfdcd1c20b63a9441a67",
+      "completed_at": "2026-11-06T10:26:06.753926+00:00",
+      "counts": {
+        "main_simulations": 500,
+        "robustness_simulations": 15,
+        "reproducibility_recalculations": 1,
+        "maximum_agents": 50,
+        "steps_per_main_run": 200,
+        "seed_replicates_per_configuration": 20
+      },
+      "performance": {
+        "total_analysis_seconds": 10.232996916980483,
+        "run_timings": [
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261206,
+            "total_seconds": 0.005974916974082589,
+            "seconds_per_step": 2.9874584870412947e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261207,
+            "total_seconds": 0.005721708992496133,
+            "seconds_per_step": 2.8608544962480664e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261208,
+            "total_seconds": 0.00554329197620973,
+            "seconds_per_step": 2.771645988104865e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261209,
+            "total_seconds": 0.005527458037249744,
+            "seconds_per_step": 2.763729018624872e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261210,
+            "total_seconds": 0.005577499978244305,
+            "seconds_per_step": 2.7887499891221522e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261211,
+            "total_seconds": 0.0055542499758303165,
+            "seconds_per_step": 2.7771249879151583e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261212,
+            "total_seconds": 0.0055487920180894434,
+            "seconds_per_step": 2.7743960090447216e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261213,
+            "total_seconds": 0.005552208051085472,
+            "seconds_per_step": 2.776104025542736e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261214,
+            "total_seconds": 0.005545624997466803,
+            "seconds_per_step": 2.7728124987334013e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261215,
+            "total_seconds": 0.005574667011387646,
+            "seconds_per_step": 2.787333505693823e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261216,
+            "total_seconds": 0.005514124990440905,
+            "seconds_per_step": 2.7570624952204524e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261217,
+            "total_seconds": 0.005538874946068972,
+            "seconds_per_step": 2.769437473034486e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261218,
+            "total_seconds": 0.005518542020581663,
+            "seconds_per_step": 2.7592710102908315e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261219,
+            "total_seconds": 0.005515208991710097,
+            "seconds_per_step": 2.757604495855048e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261220,
+            "total_seconds": 0.005511875031515956,
+            "seconds_per_step": 2.755937515757978e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261221,
+            "total_seconds": 0.005546917032916099,
+            "seconds_per_step": 2.7734585164580493e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261222,
+            "total_seconds": 0.005559207987971604,
+            "seconds_per_step": 2.779603993985802e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261223,
+            "total_seconds": 0.005546791013330221,
+            "seconds_per_step": 2.7733955066651104e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261224,
+            "total_seconds": 0.0055274170008488,
+            "seconds_per_step": 2.7637085004244e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 1,
+            "seed": 20261225,
+            "total_seconds": 0.005518499994650483,
+            "seconds_per_step": 2.7592499973252414e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261606,
+            "total_seconds": 0.0061264579999260604,
+            "seconds_per_step": 3.06322899996303e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261607,
+            "total_seconds": 0.006091292016208172,
+            "seconds_per_step": 3.045646008104086e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261608,
+            "total_seconds": 0.005980042042210698,
+            "seconds_per_step": 2.990021021105349e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261609,
+            "total_seconds": 0.006021499983035028,
+            "seconds_per_step": 3.010749991517514e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261610,
+            "total_seconds": 0.006080624996684492,
+            "seconds_per_step": 3.040312498342246e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261611,
+            "total_seconds": 0.00597095798002556,
+            "seconds_per_step": 2.98547899001278e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261612,
+            "total_seconds": 0.006002041976898909,
+            "seconds_per_step": 3.0010209884494542e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261613,
+            "total_seconds": 0.005972249957267195,
+            "seconds_per_step": 2.9861249786335974e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261614,
+            "total_seconds": 0.0059835410211235285,
+            "seconds_per_step": 2.9917705105617643e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261615,
+            "total_seconds": 0.005985583993606269,
+            "seconds_per_step": 2.9927919968031347e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261616,
+            "total_seconds": 0.006062457978259772,
+            "seconds_per_step": 3.031228989129886e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261617,
+            "total_seconds": 0.005994709033984691,
+            "seconds_per_step": 2.9973545169923456e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261618,
+            "total_seconds": 0.0059806249919347465,
+            "seconds_per_step": 2.9903124959673734e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261619,
+            "total_seconds": 0.005983915994875133,
+            "seconds_per_step": 2.9919579974375664e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261620,
+            "total_seconds": 0.006216000008862466,
+            "seconds_per_step": 3.1080000044312326e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261621,
+            "total_seconds": 0.006238625035621226,
+            "seconds_per_step": 3.119312517810613e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261622,
+            "total_seconds": 0.006319791020359844,
+            "seconds_per_step": 3.159895510179922e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261623,
+            "total_seconds": 0.006186041980981827,
+            "seconds_per_step": 3.093020990490913e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261624,
+            "total_seconds": 0.006178166018798947,
+            "seconds_per_step": 3.089083009399474e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 5,
+            "seed": 20261625,
+            "total_seconds": 0.006206083984579891,
+            "seconds_per_step": 3.103041992289946e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262106,
+            "total_seconds": 0.00654012500308454,
+            "seconds_per_step": 3.27006250154227e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262107,
+            "total_seconds": 0.006468250008765608,
+            "seconds_per_step": 3.234125004382804e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262108,
+            "total_seconds": 0.006630415969993919,
+            "seconds_per_step": 3.31520798499696e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262109,
+            "total_seconds": 0.006438041978981346,
+            "seconds_per_step": 3.219020989490673e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262110,
+            "total_seconds": 0.006438666023313999,
+            "seconds_per_step": 3.219333011656999e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262111,
+            "total_seconds": 0.006431124988012016,
+            "seconds_per_step": 3.215562494006008e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262112,
+            "total_seconds": 0.006421333004254848,
+            "seconds_per_step": 3.210666502127424e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262113,
+            "total_seconds": 0.006433208007365465,
+            "seconds_per_step": 3.2166040036827325e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262114,
+            "total_seconds": 0.006576375046279281,
+            "seconds_per_step": 3.2881875231396404e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262115,
+            "total_seconds": 0.006424999970477074,
+            "seconds_per_step": 3.2124999852385374e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262116,
+            "total_seconds": 0.00642237497959286,
+            "seconds_per_step": 3.21118748979643e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262117,
+            "total_seconds": 0.006628790986724198,
+            "seconds_per_step": 3.314395493362099e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262118,
+            "total_seconds": 0.0065800840384326875,
+            "seconds_per_step": 3.290042019216344e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262119,
+            "total_seconds": 0.006446541985496879,
+            "seconds_per_step": 3.223270992748439e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262120,
+            "total_seconds": 0.033861499978229403,
+            "seconds_per_step": 0.00016930749989114703
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262121,
+            "total_seconds": 0.006612083001527935,
+            "seconds_per_step": 3.3060415007639675e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262122,
+            "total_seconds": 0.006474166992120445,
+            "seconds_per_step": 3.237083496060222e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262123,
+            "total_seconds": 0.006495583977084607,
+            "seconds_per_step": 3.2477919885423037e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262124,
+            "total_seconds": 0.006463541998527944,
+            "seconds_per_step": 3.231770999263972e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 10,
+            "seed": 20262125,
+            "total_seconds": 0.006799291004426777,
+            "seconds_per_step": 3.399645502213389e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263106,
+            "total_seconds": 0.007061208947561681,
+            "seconds_per_step": 3.5306044737808405e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263107,
+            "total_seconds": 0.007051250024233013,
+            "seconds_per_step": 3.525625012116507e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263108,
+            "total_seconds": 0.0070213330327533185,
+            "seconds_per_step": 3.5106665163766595e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263109,
+            "total_seconds": 0.0070390410255640745,
+            "seconds_per_step": 3.5195205127820374e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263110,
+            "total_seconds": 0.007017083000391722,
+            "seconds_per_step": 3.508541500195861e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263111,
+            "total_seconds": 0.007673499989323318,
+            "seconds_per_step": 3.836749994661659e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263112,
+            "total_seconds": 0.007293624978046864,
+            "seconds_per_step": 3.646812489023432e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263113,
+            "total_seconds": 0.0068634169874712825,
+            "seconds_per_step": 3.4317084937356414e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263114,
+            "total_seconds": 0.006776041991543025,
+            "seconds_per_step": 3.388020995771512e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263115,
+            "total_seconds": 0.006778957962524146,
+            "seconds_per_step": 3.389478981262073e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263116,
+            "total_seconds": 0.006744208978489041,
+            "seconds_per_step": 3.372104489244521e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263117,
+            "total_seconds": 0.00716054200893268,
+            "seconds_per_step": 3.58027100446634e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263118,
+            "total_seconds": 0.006734375027008355,
+            "seconds_per_step": 3.3671875135041775e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263119,
+            "total_seconds": 0.006735458038747311,
+            "seconds_per_step": 3.367729019373655e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263120,
+            "total_seconds": 0.006744041980709881,
+            "seconds_per_step": 3.3720209903549405e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263121,
+            "total_seconds": 0.006757125025615096,
+            "seconds_per_step": 3.378562512807548e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263122,
+            "total_seconds": 0.006788667000364512,
+            "seconds_per_step": 3.3943335001822564e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263123,
+            "total_seconds": 0.00715004198718816,
+            "seconds_per_step": 3.5750209935940805e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263124,
+            "total_seconds": 0.0068880420294590294,
+            "seconds_per_step": 3.444021014729515e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 20,
+            "seed": 20263125,
+            "total_seconds": 0.0067530840169638395,
+            "seconds_per_step": 3.37654200848192e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266106,
+            "total_seconds": 0.008294791972730309,
+            "seconds_per_step": 4.147395986365154e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266107,
+            "total_seconds": 0.007917416980490088,
+            "seconds_per_step": 3.958708490245044e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266108,
+            "total_seconds": 0.0085504159796983,
+            "seconds_per_step": 4.27520798984915e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266109,
+            "total_seconds": 0.009934874949976802,
+            "seconds_per_step": 4.967437474988401e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266110,
+            "total_seconds": 0.008495583024341613,
+            "seconds_per_step": 4.247791512170807e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266111,
+            "total_seconds": 0.00842987501528114,
+            "seconds_per_step": 4.2149375076405704e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266112,
+            "total_seconds": 0.00842075003311038,
+            "seconds_per_step": 4.21037501655519e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266113,
+            "total_seconds": 0.008402582956478,
+            "seconds_per_step": 4.201291478239e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266114,
+            "total_seconds": 0.008515791967511177,
+            "seconds_per_step": 4.257895983755588e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266115,
+            "total_seconds": 0.009243917011190206,
+            "seconds_per_step": 4.621958505595103e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266116,
+            "total_seconds": 0.0084674580139108,
+            "seconds_per_step": 4.2337290069554e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266117,
+            "total_seconds": 0.008488833031151444,
+            "seconds_per_step": 4.2444165155757216e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266118,
+            "total_seconds": 0.008449916960671544,
+            "seconds_per_step": 4.224958480335772e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266119,
+            "total_seconds": 0.008415749995037913,
+            "seconds_per_step": 4.207874997518957e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266120,
+            "total_seconds": 0.008409707981627434,
+            "seconds_per_step": 4.2048539908137175e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266121,
+            "total_seconds": 0.009168584016151726,
+            "seconds_per_step": 4.584292008075863e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266122,
+            "total_seconds": 0.008432457980234176,
+            "seconds_per_step": 4.216228990117088e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266123,
+            "total_seconds": 0.008373791992198676,
+            "seconds_per_step": 4.186895996099338e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266124,
+            "total_seconds": 0.008459792006760836,
+            "seconds_per_step": 4.229896003380418e-05
+          },
+          {
+            "scenario": "A",
+            "agents": 50,
+            "seed": 20266125,
+            "total_seconds": 0.008393541967961937,
+            "seconds_per_step": 4.196770983980969e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261206,
+            "total_seconds": 0.01240012503694743,
+            "seconds_per_step": 6.200062518473714e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261207,
+            "total_seconds": 0.01139033300569281,
+            "seconds_per_step": 5.695166502846405e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261208,
+            "total_seconds": 0.0113897499977611,
+            "seconds_per_step": 5.69487499888055e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261209,
+            "total_seconds": 0.011707041994668543,
+            "seconds_per_step": 5.853520997334272e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261210,
+            "total_seconds": 0.011422750016208738,
+            "seconds_per_step": 5.711375008104369e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261211,
+            "total_seconds": 0.01144320802995935,
+            "seconds_per_step": 5.721604014979675e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261212,
+            "total_seconds": 0.011355667025782168,
+            "seconds_per_step": 5.677833512891084e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261213,
+            "total_seconds": 0.011373332992661744,
+            "seconds_per_step": 5.686666496330872e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261214,
+            "total_seconds": 0.011401208001188934,
+            "seconds_per_step": 5.700604000594467e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261215,
+            "total_seconds": 0.011336041032336652,
+            "seconds_per_step": 5.668020516168326e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261216,
+            "total_seconds": 0.011374333000276238,
+            "seconds_per_step": 5.687166500138119e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261217,
+            "total_seconds": 0.011387292004656047,
+            "seconds_per_step": 5.6936460023280236e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261218,
+            "total_seconds": 0.011328583990689367,
+            "seconds_per_step": 5.664291995344683e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261219,
+            "total_seconds": 0.011335457966197282,
+            "seconds_per_step": 5.667728983098641e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261220,
+            "total_seconds": 0.011367708968464285,
+            "seconds_per_step": 5.6838544842321426e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261221,
+            "total_seconds": 0.011361957993358374,
+            "seconds_per_step": 5.680978996679187e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261222,
+            "total_seconds": 0.011321250000037253,
+            "seconds_per_step": 5.660625000018626e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261223,
+            "total_seconds": 0.011302625003736466,
+            "seconds_per_step": 5.651312501868233e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261224,
+            "total_seconds": 0.011310625006444752,
+            "seconds_per_step": 5.655312503222376e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 1,
+            "seed": 20261225,
+            "total_seconds": 0.011329041968565434,
+            "seconds_per_step": 5.6645209842827174e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261606,
+            "total_seconds": 0.017173999978695065,
+            "seconds_per_step": 8.586999989347532e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261607,
+            "total_seconds": 0.014373875048477203,
+            "seconds_per_step": 7.186937524238602e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261608,
+            "total_seconds": 0.012958250008523464,
+            "seconds_per_step": 6.479125004261732e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261609,
+            "total_seconds": 0.012519125011749566,
+            "seconds_per_step": 6.259562505874782e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261610,
+            "total_seconds": 0.012054499995429069,
+            "seconds_per_step": 6.0272499977145346e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261611,
+            "total_seconds": 0.011959833034779876,
+            "seconds_per_step": 5.979916517389938e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261612,
+            "total_seconds": 0.011929167027119547,
+            "seconds_per_step": 5.964583513559774e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261613,
+            "total_seconds": 0.011961125012021512,
+            "seconds_per_step": 5.9805625060107556e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261614,
+            "total_seconds": 0.011898416967596859,
+            "seconds_per_step": 5.949208483798429e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261615,
+            "total_seconds": 0.011998666974250227,
+            "seconds_per_step": 5.999333487125114e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261616,
+            "total_seconds": 0.03466779203154147,
+            "seconds_per_step": 0.00017333896015770734
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261617,
+            "total_seconds": 0.012108791968785226,
+            "seconds_per_step": 6.0543959843926135e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261618,
+            "total_seconds": 0.011932249995879829,
+            "seconds_per_step": 5.966124997939914e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261619,
+            "total_seconds": 0.011921083030756563,
+            "seconds_per_step": 5.9605415153782814e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261620,
+            "total_seconds": 0.011882624996360391,
+            "seconds_per_step": 5.9413124981801955e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261621,
+            "total_seconds": 0.012015208951197565,
+            "seconds_per_step": 6.007604475598782e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261622,
+            "total_seconds": 0.011910000001080334,
+            "seconds_per_step": 5.955000000540167e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261623,
+            "total_seconds": 0.011940416996367276,
+            "seconds_per_step": 5.970208498183638e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261624,
+            "total_seconds": 0.011881957994773984,
+            "seconds_per_step": 5.940978997386992e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 5,
+            "seed": 20261625,
+            "total_seconds": 0.011958041985053569,
+            "seconds_per_step": 5.9790209925267845e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262106,
+            "total_seconds": 0.012347334006335586,
+            "seconds_per_step": 6.173667003167793e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262107,
+            "total_seconds": 0.012411125004291534,
+            "seconds_per_step": 6.205562502145767e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262108,
+            "total_seconds": 0.012240791984368116,
+            "seconds_per_step": 6.120395992184057e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262109,
+            "total_seconds": 0.012217374984174967,
+            "seconds_per_step": 6.108687492087484e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262110,
+            "total_seconds": 0.012228416977450252,
+            "seconds_per_step": 6.114208488725126e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262111,
+            "total_seconds": 0.012154583004303277,
+            "seconds_per_step": 6.077291502151638e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262112,
+            "total_seconds": 0.012211708992253989,
+            "seconds_per_step": 6.105854496126994e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262113,
+            "total_seconds": 0.012357833969872445,
+            "seconds_per_step": 6.178916984936222e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262114,
+            "total_seconds": 0.012226250022649765,
+            "seconds_per_step": 6.113125011324882e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262115,
+            "total_seconds": 0.012211374996695668,
+            "seconds_per_step": 6.105687498347834e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262116,
+            "total_seconds": 0.012216625036671758,
+            "seconds_per_step": 6.10831251833588e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262117,
+            "total_seconds": 0.012156374985352159,
+            "seconds_per_step": 6.0781874926760795e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262118,
+            "total_seconds": 0.012159208999946713,
+            "seconds_per_step": 6.0796044999733566e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262119,
+            "total_seconds": 0.01229316700482741,
+            "seconds_per_step": 6.146583502413704e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262120,
+            "total_seconds": 0.012127125053666532,
+            "seconds_per_step": 6.063562526833266e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262121,
+            "total_seconds": 0.012199250049889088,
+            "seconds_per_step": 6.099625024944544e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262122,
+            "total_seconds": 0.012172083021141589,
+            "seconds_per_step": 6.086041510570794e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262123,
+            "total_seconds": 0.012141540995799005,
+            "seconds_per_step": 6.070770497899503e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262124,
+            "total_seconds": 0.012164499959908426,
+            "seconds_per_step": 6.082249979954213e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 10,
+            "seed": 20262125,
+            "total_seconds": 0.012340083019807935,
+            "seconds_per_step": 6.170041509903968e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263106,
+            "total_seconds": 0.012859457987360656,
+            "seconds_per_step": 6.429728993680328e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263107,
+            "total_seconds": 0.012808083032723516,
+            "seconds_per_step": 6.404041516361759e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263108,
+            "total_seconds": 0.012797791976481676,
+            "seconds_per_step": 6.398895988240838e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263109,
+            "total_seconds": 0.01286791602615267,
+            "seconds_per_step": 6.433958013076336e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263110,
+            "total_seconds": 0.012897374981548637,
+            "seconds_per_step": 6.448687490774318e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263111,
+            "total_seconds": 0.013118708971887827,
+            "seconds_per_step": 6.559354485943914e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263112,
+            "total_seconds": 0.012789542030077428,
+            "seconds_per_step": 6.394771015038713e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263113,
+            "total_seconds": 0.012810375017579645,
+            "seconds_per_step": 6.405187508789822e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263114,
+            "total_seconds": 0.012797458039131016,
+            "seconds_per_step": 6.398729019565507e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263115,
+            "total_seconds": 0.012807500024791807,
+            "seconds_per_step": 6.403750012395903e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263116,
+            "total_seconds": 0.012769374996423721,
+            "seconds_per_step": 6.38468749821186e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263117,
+            "total_seconds": 0.01303783297771588,
+            "seconds_per_step": 6.51891648885794e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263118,
+            "total_seconds": 0.012817208014894277,
+            "seconds_per_step": 6.408604007447138e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263119,
+            "total_seconds": 0.012848999991547316,
+            "seconds_per_step": 6.424499995773659e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263120,
+            "total_seconds": 0.012826334044802934,
+            "seconds_per_step": 6.413167022401467e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263121,
+            "total_seconds": 0.012762208003550768,
+            "seconds_per_step": 6.381104001775384e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263122,
+            "total_seconds": 0.01286608399823308,
+            "seconds_per_step": 6.43304199911654e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263123,
+            "total_seconds": 0.013053083966951817,
+            "seconds_per_step": 6.526541983475909e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263124,
+            "total_seconds": 0.01432558405213058,
+            "seconds_per_step": 7.16279202606529e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 20,
+            "seed": 20263125,
+            "total_seconds": 0.013560749997850507,
+            "seconds_per_step": 6.780374998925253e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266106,
+            "total_seconds": 0.014835749985650182,
+            "seconds_per_step": 7.417874992825091e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266107,
+            "total_seconds": 0.01447562495013699,
+            "seconds_per_step": 7.237812475068495e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266108,
+            "total_seconds": 0.015794624981936067,
+            "seconds_per_step": 7.897312490968034e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266109,
+            "total_seconds": 0.016671666991896927,
+            "seconds_per_step": 8.335833495948464e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266110,
+            "total_seconds": 0.015110375010408461,
+            "seconds_per_step": 7.555187505204231e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266111,
+            "total_seconds": 0.014775209012441337,
+            "seconds_per_step": 7.387604506220669e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266112,
+            "total_seconds": 0.014836083981208503,
+            "seconds_per_step": 7.418041990604251e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266113,
+            "total_seconds": 0.014915833016857505,
+            "seconds_per_step": 7.457916508428753e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266114,
+            "total_seconds": 0.014866209006868303,
+            "seconds_per_step": 7.433104503434151e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266115,
+            "total_seconds": 0.015369499975349754,
+            "seconds_per_step": 7.684749987674878e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266116,
+            "total_seconds": 0.014785875042434782,
+            "seconds_per_step": 7.392937521217392e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266117,
+            "total_seconds": 0.014781500038225204,
+            "seconds_per_step": 7.390750019112602e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266118,
+            "total_seconds": 0.01478495798073709,
+            "seconds_per_step": 7.392478990368545e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266119,
+            "total_seconds": 0.014764958003070205,
+            "seconds_per_step": 7.382479001535103e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266120,
+            "total_seconds": 0.014756416960153729,
+            "seconds_per_step": 7.378208480076864e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266121,
+            "total_seconds": 0.04108037502737716,
+            "seconds_per_step": 0.0002054018751368858
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266122,
+            "total_seconds": 0.015073791961185634,
+            "seconds_per_step": 7.536895980592818e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266123,
+            "total_seconds": 0.01476029196055606,
+            "seconds_per_step": 7.38014598027803e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266124,
+            "total_seconds": 0.014820165990386158,
+            "seconds_per_step": 7.410082995193079e-05
+          },
+          {
+            "scenario": "B",
+            "agents": 50,
+            "seed": 20266125,
+            "total_seconds": 0.014755333017092198,
+            "seconds_per_step": 7.3776665085461e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261206,
+            "total_seconds": 0.02233070897636935,
+            "seconds_per_step": 0.00011165354488184675
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261207,
+            "total_seconds": 0.016901083989068866,
+            "seconds_per_step": 8.450541994534433e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261208,
+            "total_seconds": 0.01519041700521484,
+            "seconds_per_step": 7.59520850260742e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261209,
+            "total_seconds": 0.014376875013113022,
+            "seconds_per_step": 7.18843750655651e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261210,
+            "total_seconds": 0.014017667039297521,
+            "seconds_per_step": 7.00883351964876e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261211,
+            "total_seconds": 0.014025542011950165,
+            "seconds_per_step": 7.012771005975083e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261212,
+            "total_seconds": 0.014069332974031568,
+            "seconds_per_step": 7.034666487015784e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261213,
+            "total_seconds": 0.013990792038384825,
+            "seconds_per_step": 6.995396019192413e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261214,
+            "total_seconds": 0.013980667048599571,
+            "seconds_per_step": 6.990333524299786e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261215,
+            "total_seconds": 0.014351834019180387,
+            "seconds_per_step": 7.175917009590194e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261216,
+            "total_seconds": 0.013978125003632158,
+            "seconds_per_step": 6.989062501816079e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261217,
+            "total_seconds": 0.013983834011014551,
+            "seconds_per_step": 6.991917005507276e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261218,
+            "total_seconds": 0.013973207969684154,
+            "seconds_per_step": 6.986603984842077e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261219,
+            "total_seconds": 0.013995333982165903,
+            "seconds_per_step": 6.997666991082951e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261220,
+            "total_seconds": 0.01399858301738277,
+            "seconds_per_step": 6.999291508691385e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261221,
+            "total_seconds": 0.013974832952953875,
+            "seconds_per_step": 6.987416476476938e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261222,
+            "total_seconds": 0.01399341702926904,
+            "seconds_per_step": 6.99670851463452e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261223,
+            "total_seconds": 0.01399279199540615,
+            "seconds_per_step": 6.996395997703075e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261224,
+            "total_seconds": 0.01397320901742205,
+            "seconds_per_step": 6.986604508711025e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 1,
+            "seed": 20261225,
+            "total_seconds": 0.014001583971548826,
+            "seconds_per_step": 7.000791985774413e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261606,
+            "total_seconds": 0.015363041020464152,
+            "seconds_per_step": 7.681520510232076e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261607,
+            "total_seconds": 0.015252416953444481,
+            "seconds_per_step": 7.62620847672224e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261608,
+            "total_seconds": 0.015246791008394212,
+            "seconds_per_step": 7.623395504197106e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261609,
+            "total_seconds": 0.015122667013201863,
+            "seconds_per_step": 7.561333506600932e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261610,
+            "total_seconds": 0.015128415951039642,
+            "seconds_per_step": 7.56420797551982e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261611,
+            "total_seconds": 0.015125958016142249,
+            "seconds_per_step": 7.562979008071124e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261612,
+            "total_seconds": 0.015161290997639298,
+            "seconds_per_step": 7.580645498819649e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261613,
+            "total_seconds": 0.015092166024260223,
+            "seconds_per_step": 7.546083012130111e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261614,
+            "total_seconds": 0.01518350001424551,
+            "seconds_per_step": 7.591750007122755e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261615,
+            "total_seconds": 0.01515175000531599,
+            "seconds_per_step": 7.575875002657995e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261616,
+            "total_seconds": 0.015094458009116352,
+            "seconds_per_step": 7.547229004558176e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261617,
+            "total_seconds": 0.015080209006555378,
+            "seconds_per_step": 7.54010450327769e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261618,
+            "total_seconds": 0.015099083015229553,
+            "seconds_per_step": 7.549541507614776e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261619,
+            "total_seconds": 0.015112082997802645,
+            "seconds_per_step": 7.556041498901322e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261620,
+            "total_seconds": 0.01519625005312264,
+            "seconds_per_step": 7.59812502656132e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261621,
+            "total_seconds": 0.015140665986109525,
+            "seconds_per_step": 7.570332993054762e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261622,
+            "total_seconds": 0.01511345902690664,
+            "seconds_per_step": 7.55672951345332e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261623,
+            "total_seconds": 0.015109958010725677,
+            "seconds_per_step": 7.554979005362839e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261624,
+            "total_seconds": 0.015792874968610704,
+            "seconds_per_step": 7.896437484305351e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 5,
+            "seed": 20261625,
+            "total_seconds": 0.015312374976929277,
+            "seconds_per_step": 7.656187488464639e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262106,
+            "total_seconds": 0.01591995800845325,
+            "seconds_per_step": 7.959979004226625e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262107,
+            "total_seconds": 0.015756750013679266,
+            "seconds_per_step": 7.878375006839633e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262108,
+            "total_seconds": 0.015711958054453135,
+            "seconds_per_step": 7.855979027226567e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262109,
+            "total_seconds": 0.015658750024158508,
+            "seconds_per_step": 7.829375012079254e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262110,
+            "total_seconds": 0.015669125015847385,
+            "seconds_per_step": 7.834562507923693e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262111,
+            "total_seconds": 0.01566145900869742,
+            "seconds_per_step": 7.83072950434871e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262112,
+            "total_seconds": 0.016022666997741908,
+            "seconds_per_step": 8.011333498870954e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262113,
+            "total_seconds": 0.01579920802032575,
+            "seconds_per_step": 7.899604010162875e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262114,
+            "total_seconds": 0.015710917010437697,
+            "seconds_per_step": 7.855458505218849e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262115,
+            "total_seconds": 0.01574954204261303,
+            "seconds_per_step": 7.874771021306515e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262116,
+            "total_seconds": 0.015879707993008196,
+            "seconds_per_step": 7.939853996504098e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262117,
+            "total_seconds": 0.015759209054522216,
+            "seconds_per_step": 7.879604527261108e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262118,
+            "total_seconds": 0.015931833011563867,
+            "seconds_per_step": 7.965916505781933e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262119,
+            "total_seconds": 0.015612167015206069,
+            "seconds_per_step": 7.806083507603035e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262120,
+            "total_seconds": 0.015776709013152868,
+            "seconds_per_step": 7.888354506576434e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262121,
+            "total_seconds": 0.015632792026735842,
+            "seconds_per_step": 7.816396013367922e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262122,
+            "total_seconds": 0.015712750027887523,
+            "seconds_per_step": 7.856375013943761e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262123,
+            "total_seconds": 0.01562575000571087,
+            "seconds_per_step": 7.812875002855435e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262124,
+            "total_seconds": 0.01619637501426041,
+            "seconds_per_step": 8.098187507130206e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 10,
+            "seed": 20262125,
+            "total_seconds": 0.01590279198717326,
+            "seconds_per_step": 7.951395993586629e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263106,
+            "total_seconds": 0.02519587497226894,
+            "seconds_per_step": 0.0001259793748613447
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263107,
+            "total_seconds": 0.020082208036910743,
+            "seconds_per_step": 0.00010041104018455371
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263108,
+            "total_seconds": 0.018349707999732345,
+            "seconds_per_step": 9.174853999866173e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263109,
+            "total_seconds": 0.01753945800010115,
+            "seconds_per_step": 8.769729000050574e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263110,
+            "total_seconds": 0.01798616599990055,
+            "seconds_per_step": 8.993082999950275e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263111,
+            "total_seconds": 0.01756054104771465,
+            "seconds_per_step": 8.780270523857325e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263112,
+            "total_seconds": 0.017526957963127643,
+            "seconds_per_step": 8.763478981563822e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263113,
+            "total_seconds": 0.017594292003195733,
+            "seconds_per_step": 8.797146001597867e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263114,
+            "total_seconds": 0.017836167011409998,
+            "seconds_per_step": 8.918083505705e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263115,
+            "total_seconds": 0.017568834009580314,
+            "seconds_per_step": 8.784417004790158e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263116,
+            "total_seconds": 0.017855332989711314,
+            "seconds_per_step": 8.927666494855657e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263117,
+            "total_seconds": 0.04280154197476804,
+            "seconds_per_step": 0.0002140077098738402
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263118,
+            "total_seconds": 0.017884082975797355,
+            "seconds_per_step": 8.942041487898678e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263119,
+            "total_seconds": 0.01773679198231548,
+            "seconds_per_step": 8.868395991157741e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263120,
+            "total_seconds": 0.017673625028692186,
+            "seconds_per_step": 8.836812514346093e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263121,
+            "total_seconds": 0.018081249960232526,
+            "seconds_per_step": 9.040624980116263e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263122,
+            "total_seconds": 0.018605582998134196,
+            "seconds_per_step": 9.302791499067097e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263123,
+            "total_seconds": 0.018229959008749574,
+            "seconds_per_step": 9.114979504374787e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263124,
+            "total_seconds": 0.018318083020858467,
+            "seconds_per_step": 9.159041510429234e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 20,
+            "seed": 20263125,
+            "total_seconds": 0.018492208037059754,
+            "seconds_per_step": 9.246104018529877e-05
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266106,
+            "total_seconds": 0.027798041992355138,
+            "seconds_per_step": 0.0001389902099617757
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266107,
+            "total_seconds": 0.027076541038695723,
+            "seconds_per_step": 0.00013538270519347862
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266108,
+            "total_seconds": 0.03138825000496581,
+            "seconds_per_step": 0.00015694125002482906
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266109,
+            "total_seconds": 0.027946125017479062,
+            "seconds_per_step": 0.0001397306250873953
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266110,
+            "total_seconds": 0.02850975003093481,
+            "seconds_per_step": 0.00014254875015467405
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266111,
+            "total_seconds": 0.027867749973665923,
+            "seconds_per_step": 0.00013933874986832962
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266112,
+            "total_seconds": 0.02788008301286027,
+            "seconds_per_step": 0.00013940041506430134
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266113,
+            "total_seconds": 0.02747062500566244,
+            "seconds_per_step": 0.00013735312502831222
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266114,
+            "total_seconds": 0.028107958030886948,
+            "seconds_per_step": 0.00014053979015443474
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266115,
+            "total_seconds": 0.026757917017675936,
+            "seconds_per_step": 0.00013378958508837967
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266116,
+            "total_seconds": 0.026757582963909954,
+            "seconds_per_step": 0.00013378791481954977
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266117,
+            "total_seconds": 0.026733000006061047,
+            "seconds_per_step": 0.00013366500003030523
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266118,
+            "total_seconds": 0.02671812498010695,
+            "seconds_per_step": 0.00013359062490053475
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266119,
+            "total_seconds": 0.02663049998227507,
+            "seconds_per_step": 0.00013315249991137533
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266120,
+            "total_seconds": 0.027349292009603232,
+            "seconds_per_step": 0.00013674646004801616
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266121,
+            "total_seconds": 0.026667291997000575,
+            "seconds_per_step": 0.00013333645998500287
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266122,
+            "total_seconds": 0.026663624972570688,
+            "seconds_per_step": 0.00013331812486285343
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266123,
+            "total_seconds": 0.026704041985794902,
+            "seconds_per_step": 0.00013352020992897452
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266124,
+            "total_seconds": 0.027293750026728958,
+            "seconds_per_step": 0.00013646875013364478
+          },
+          {
+            "scenario": "C",
+            "agents": 50,
+            "seed": 20266125,
+            "total_seconds": 0.02753866696730256,
+            "seconds_per_step": 0.0001376933348365128
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261206,
+            "total_seconds": 0.018613208027090877,
+            "seconds_per_step": 9.306604013545439e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261207,
+            "total_seconds": 0.013692542037460953,
+            "seconds_per_step": 6.846271018730477e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261208,
+            "total_seconds": 0.012499791977461427,
+            "seconds_per_step": 6.249895988730714e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261209,
+            "total_seconds": 0.011922459001652896,
+            "seconds_per_step": 5.9612295008264485e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261210,
+            "total_seconds": 0.011601832986343652,
+            "seconds_per_step": 5.800916493171826e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261211,
+            "total_seconds": 0.011474917002487928,
+            "seconds_per_step": 5.737458501243964e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261212,
+            "total_seconds": 0.011474041035398841,
+            "seconds_per_step": 5.7370205176994204e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261213,
+            "total_seconds": 0.011460957990493625,
+            "seconds_per_step": 5.730478995246813e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261214,
+            "total_seconds": 0.011497417057398707,
+            "seconds_per_step": 5.748708528699353e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261215,
+            "total_seconds": 0.011422166018746793,
+            "seconds_per_step": 5.7110830093733964e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261216,
+            "total_seconds": 0.011656749993562698,
+            "seconds_per_step": 5.828374996781349e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261217,
+            "total_seconds": 0.011517665989231318,
+            "seconds_per_step": 5.758832994615659e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261218,
+            "total_seconds": 0.011547958012670279,
+            "seconds_per_step": 5.7739790063351395e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261219,
+            "total_seconds": 0.011489042022731155,
+            "seconds_per_step": 5.744521011365577e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261220,
+            "total_seconds": 0.011488332995213568,
+            "seconds_per_step": 5.744166497606784e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261221,
+            "total_seconds": 0.011463458009529859,
+            "seconds_per_step": 5.7317290047649297e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261222,
+            "total_seconds": 0.011480624962132424,
+            "seconds_per_step": 5.740312481066212e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261223,
+            "total_seconds": 0.01143420796142891,
+            "seconds_per_step": 5.717103980714455e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261224,
+            "total_seconds": 0.01145241700578481,
+            "seconds_per_step": 5.726208502892405e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 1,
+            "seed": 20261225,
+            "total_seconds": 0.01143424998736009,
+            "seconds_per_step": 5.717124993680045e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261606,
+            "total_seconds": 0.012203166959807277,
+            "seconds_per_step": 6.101583479903639e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261607,
+            "total_seconds": 0.012153458024840802,
+            "seconds_per_step": 6.076729012420401e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261608,
+            "total_seconds": 0.012136666977312416,
+            "seconds_per_step": 6.068333488656208e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261609,
+            "total_seconds": 0.012084541958756745,
+            "seconds_per_step": 6.0422709793783724e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261610,
+            "total_seconds": 0.012076083978172392,
+            "seconds_per_step": 6.0380419890861956e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261611,
+            "total_seconds": 0.012058083026204258,
+            "seconds_per_step": 6.029041513102129e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261612,
+            "total_seconds": 0.012038875021971762,
+            "seconds_per_step": 6.019437510985881e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261613,
+            "total_seconds": 0.012022375012747943,
+            "seconds_per_step": 6.011187506373972e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261614,
+            "total_seconds": 0.012084249989129603,
+            "seconds_per_step": 6.042124994564802e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261615,
+            "total_seconds": 0.012003708980046213,
+            "seconds_per_step": 6.001854490023106e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261616,
+            "total_seconds": 0.011987833015155047,
+            "seconds_per_step": 5.993916507577524e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261617,
+            "total_seconds": 0.011979000002611428,
+            "seconds_per_step": 5.989500001305714e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261618,
+            "total_seconds": 0.011957291979342699,
+            "seconds_per_step": 5.97864598967135e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261619,
+            "total_seconds": 0.012026540993247181,
+            "seconds_per_step": 6.0132704966235906e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261620,
+            "total_seconds": 0.012014750041998923,
+            "seconds_per_step": 6.0073750209994617e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261621,
+            "total_seconds": 0.011973375047091395,
+            "seconds_per_step": 5.986687523545697e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261622,
+            "total_seconds": 0.01202137500513345,
+            "seconds_per_step": 6.010687502566725e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261623,
+            "total_seconds": 0.012035916035529226,
+            "seconds_per_step": 6.017958017764613e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261624,
+            "total_seconds": 0.01194983400637284,
+            "seconds_per_step": 5.97491700318642e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 5,
+            "seed": 20261625,
+            "total_seconds": 0.0119754170300439,
+            "seconds_per_step": 5.98770851502195e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262106,
+            "total_seconds": 0.012435124954208732,
+            "seconds_per_step": 6.217562477104366e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262107,
+            "total_seconds": 0.012313209008425474,
+            "seconds_per_step": 6.156604504212738e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262108,
+            "total_seconds": 0.012269708968233317,
+            "seconds_per_step": 6.134854484116659e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262109,
+            "total_seconds": 0.012231624976266176,
+            "seconds_per_step": 6.115812488133088e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262110,
+            "total_seconds": 0.012264250020962209,
+            "seconds_per_step": 6.132125010481104e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262111,
+            "total_seconds": 0.012267082987818867,
+            "seconds_per_step": 6.133541493909434e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262112,
+            "total_seconds": 0.03885412501404062,
+            "seconds_per_step": 0.00019427062507020308
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262113,
+            "total_seconds": 0.012694125005509704,
+            "seconds_per_step": 6.347062502754852e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262114,
+            "total_seconds": 0.012448791007045656,
+            "seconds_per_step": 6.224395503522828e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262115,
+            "total_seconds": 0.012380917032714933,
+            "seconds_per_step": 6.190458516357467e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262116,
+            "total_seconds": 0.012332291982602328,
+            "seconds_per_step": 6.166145991301164e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262117,
+            "total_seconds": 0.012577000015880913,
+            "seconds_per_step": 6.288500007940456e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262118,
+            "total_seconds": 0.012334999977611005,
+            "seconds_per_step": 6.167499988805502e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262119,
+            "total_seconds": 0.012350958015304059,
+            "seconds_per_step": 6.17547900765203e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262120,
+            "total_seconds": 0.012315917003434151,
+            "seconds_per_step": 6.157958501717076e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262121,
+            "total_seconds": 0.01234158402075991,
+            "seconds_per_step": 6.170792010379956e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262122,
+            "total_seconds": 0.012307833007071167,
+            "seconds_per_step": 6.153916503535583e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262123,
+            "total_seconds": 0.012521083001047373,
+            "seconds_per_step": 6.260541500523687e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262124,
+            "total_seconds": 0.012302500021178275,
+            "seconds_per_step": 6.151250010589138e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 10,
+            "seed": 20262125,
+            "total_seconds": 0.012353541038464755,
+            "seconds_per_step": 6.176770519232377e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263106,
+            "total_seconds": 0.013134084001649171,
+            "seconds_per_step": 6.567042000824586e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263107,
+            "total_seconds": 0.013021999970078468,
+            "seconds_per_step": 6.510999985039234e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263108,
+            "total_seconds": 0.012969000032171607,
+            "seconds_per_step": 6.484500016085804e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263109,
+            "total_seconds": 0.01337600004626438,
+            "seconds_per_step": 6.68800002313219e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263110,
+            "total_seconds": 0.012951790995430201,
+            "seconds_per_step": 6.4758954977151e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263111,
+            "total_seconds": 0.012925958028063178,
+            "seconds_per_step": 6.46297901403159e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263112,
+            "total_seconds": 0.012932833982631564,
+            "seconds_per_step": 6.466416991315782e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263113,
+            "total_seconds": 0.012916125007905066,
+            "seconds_per_step": 6.458062503952533e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263114,
+            "total_seconds": 0.012936708983033895,
+            "seconds_per_step": 6.468354491516948e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263115,
+            "total_seconds": 0.013331041962374002,
+            "seconds_per_step": 6.665520981187e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263116,
+            "total_seconds": 0.012916041014250368,
+            "seconds_per_step": 6.458020507125184e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263117,
+            "total_seconds": 0.012944791989866644,
+            "seconds_per_step": 6.472395994933322e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263118,
+            "total_seconds": 0.012894750048872083,
+            "seconds_per_step": 6.447375024436042e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263119,
+            "total_seconds": 0.01296479202574119,
+            "seconds_per_step": 6.482396012870595e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263120,
+            "total_seconds": 0.012924708018545061,
+            "seconds_per_step": 6.462354009272531e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263121,
+            "total_seconds": 0.013281958003062755,
+            "seconds_per_step": 6.640979001531377e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263122,
+            "total_seconds": 0.012982333020772785,
+            "seconds_per_step": 6.491166510386393e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263123,
+            "total_seconds": 0.012922374997287989,
+            "seconds_per_step": 6.461187498643995e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263124,
+            "total_seconds": 0.013029541994910687,
+            "seconds_per_step": 6.514770997455344e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 20,
+            "seed": 20263125,
+            "total_seconds": 0.01293954101856798,
+            "seconds_per_step": 6.46977050928399e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266106,
+            "total_seconds": 0.020763333013746887,
+            "seconds_per_step": 0.00010381666506873444
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266107,
+            "total_seconds": 0.017754999978933483,
+            "seconds_per_step": 8.877499989466742e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266108,
+            "total_seconds": 0.016262417018879205,
+            "seconds_per_step": 8.131208509439603e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266109,
+            "total_seconds": 0.015317083045374602,
+            "seconds_per_step": 7.658541522687301e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266110,
+            "total_seconds": 0.015397458977531642,
+            "seconds_per_step": 7.698729488765821e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266111,
+            "total_seconds": 0.015001791005488485,
+            "seconds_per_step": 7.500895502744242e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266112,
+            "total_seconds": 0.015060291974805295,
+            "seconds_per_step": 7.530145987402648e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266113,
+            "total_seconds": 0.01590341597329825,
+            "seconds_per_step": 7.951707986649126e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266114,
+            "total_seconds": 0.015068792039528489,
+            "seconds_per_step": 7.534396019764244e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266115,
+            "total_seconds": 0.0150605000089854,
+            "seconds_per_step": 7.5302500044927e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266116,
+            "total_seconds": 0.015018625010270625,
+            "seconds_per_step": 7.509312505135312e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266117,
+            "total_seconds": 0.015087708015926182,
+            "seconds_per_step": 7.543854007963091e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266118,
+            "total_seconds": 0.015067833999637514,
+            "seconds_per_step": 7.533916999818757e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266119,
+            "total_seconds": 0.015802750014699996,
+            "seconds_per_step": 7.901375007349997e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266120,
+            "total_seconds": 0.014927499985788018,
+            "seconds_per_step": 7.46374999289401e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266121,
+            "total_seconds": 0.014982957975007594,
+            "seconds_per_step": 7.491478987503797e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266122,
+            "total_seconds": 0.014958958025090396,
+            "seconds_per_step": 7.479479012545198e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266123,
+            "total_seconds": 0.014949333039112389,
+            "seconds_per_step": 7.474666519556194e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266124,
+            "total_seconds": 0.014961083012167364,
+            "seconds_per_step": 7.480541506083683e-05
+          },
+          {
+            "scenario": "D",
+            "agents": 50,
+            "seed": 20266125,
+            "total_seconds": 0.01608699996722862,
+            "seconds_per_step": 8.04349998361431e-05
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261206,
+            "total_seconds": 0.030056124960538,
+            "seconds_per_step": 0.00015028062480269
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261207,
+            "total_seconds": 0.027292874990962446,
+            "seconds_per_step": 0.00013646437495481222
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261208,
+            "total_seconds": 0.027295999985653907,
+            "seconds_per_step": 0.00013647999992826953
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261209,
+            "total_seconds": 0.027452791982796043,
+            "seconds_per_step": 0.00013726395991398022
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261210,
+            "total_seconds": 0.027190583990886807,
+            "seconds_per_step": 0.00013595291995443403
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261211,
+            "total_seconds": 0.027235208021011204,
+            "seconds_per_step": 0.00013617604010505603
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261212,
+            "total_seconds": 0.027556957968045026,
+            "seconds_per_step": 0.00013778478984022513
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261213,
+            "total_seconds": 0.027201916964259,
+            "seconds_per_step": 0.000136009584821295
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261214,
+            "total_seconds": 0.027164958999492228,
+            "seconds_per_step": 0.00013582479499746114
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261215,
+            "total_seconds": 0.02711195801384747,
+            "seconds_per_step": 0.00013555979006923735
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261216,
+            "total_seconds": 0.02721162501256913,
+            "seconds_per_step": 0.00013605812506284565
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261217,
+            "total_seconds": 0.027107000001706183,
+            "seconds_per_step": 0.0001355350000085309
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261218,
+            "total_seconds": 0.027139917016029358,
+            "seconds_per_step": 0.0001356995850801468
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261219,
+            "total_seconds": 0.02693937497679144,
+            "seconds_per_step": 0.0001346968748839572
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261220,
+            "total_seconds": 0.027204209007322788,
+            "seconds_per_step": 0.00013602104503661393
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261221,
+            "total_seconds": 0.02717779198428616,
+            "seconds_per_step": 0.0001358889599214308
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261222,
+            "total_seconds": 0.02718437503790483,
+            "seconds_per_step": 0.00013592187518952415
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261223,
+            "total_seconds": 0.027147833025082946,
+            "seconds_per_step": 0.00013573916512541473
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261224,
+            "total_seconds": 0.027048874995671213,
+            "seconds_per_step": 0.00013524437497835606
+          },
+          {
+            "scenario": "E",
+            "agents": 1,
+            "seed": 20261225,
+            "total_seconds": 0.026889999979175627,
+            "seconds_per_step": 0.00013444999989587814
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261606,
+            "total_seconds": 0.03460379102034494,
+            "seconds_per_step": 0.00017301895510172472
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261607,
+            "total_seconds": 0.02900345902889967,
+            "seconds_per_step": 0.00014501729514449836
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261608,
+            "total_seconds": 0.054711417004000396,
+            "seconds_per_step": 0.00027355708502000195
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261609,
+            "total_seconds": 0.02808483300032094,
+            "seconds_per_step": 0.00014042416500160471
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261610,
+            "total_seconds": 0.028278375044465065,
+            "seconds_per_step": 0.00014139187522232532
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261611,
+            "total_seconds": 0.028215291968081146,
+            "seconds_per_step": 0.00014107645984040573
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261612,
+            "total_seconds": 0.02808133402140811,
+            "seconds_per_step": 0.00014040667010704056
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261613,
+            "total_seconds": 0.027831749990582466,
+            "seconds_per_step": 0.00013915874995291234
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261614,
+            "total_seconds": 0.02785979100735858,
+            "seconds_per_step": 0.00013929895503679291
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261615,
+            "total_seconds": 0.027892125013750046,
+            "seconds_per_step": 0.00013946062506875023
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261616,
+            "total_seconds": 0.027795417001470923,
+            "seconds_per_step": 0.00013897708500735462
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261617,
+            "total_seconds": 0.02764204202685505,
+            "seconds_per_step": 0.00013821021013427526
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261618,
+            "total_seconds": 0.02888862497638911,
+            "seconds_per_step": 0.00014444312488194556
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261619,
+            "total_seconds": 0.02785250003216788,
+            "seconds_per_step": 0.00013926250016083942
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261620,
+            "total_seconds": 0.027689250011462718,
+            "seconds_per_step": 0.00013844625005731358
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261621,
+            "total_seconds": 0.028253916010726243,
+            "seconds_per_step": 0.0001412695800536312
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261622,
+            "total_seconds": 0.027865917014423758,
+            "seconds_per_step": 0.00013932958507211878
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261623,
+            "total_seconds": 0.027680874976795167,
+            "seconds_per_step": 0.00013840437488397584
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261624,
+            "total_seconds": 0.027886625030077994,
+            "seconds_per_step": 0.00013943312515038997
+          },
+          {
+            "scenario": "E",
+            "agents": 5,
+            "seed": 20261625,
+            "total_seconds": 0.028113540960475802,
+            "seconds_per_step": 0.000140567704802379
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262106,
+            "total_seconds": 0.028229542018380016,
+            "seconds_per_step": 0.00014114771009190007
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262107,
+            "total_seconds": 0.02827129198703915,
+            "seconds_per_step": 0.00014135645993519576
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262108,
+            "total_seconds": 0.028189208009280264,
+            "seconds_per_step": 0.0001409460400464013
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262109,
+            "total_seconds": 0.028125125041697174,
+            "seconds_per_step": 0.00014062562520848588
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262110,
+            "total_seconds": 0.028367999999318272,
+            "seconds_per_step": 0.00014183999999659136
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262111,
+            "total_seconds": 0.028921083023305982,
+            "seconds_per_step": 0.00014460541511652992
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262112,
+            "total_seconds": 0.030160041991621256,
+            "seconds_per_step": 0.00015080020995810627
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262113,
+            "total_seconds": 0.030646874976810068,
+            "seconds_per_step": 0.00015323437488405035
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262114,
+            "total_seconds": 0.030520749976858497,
+            "seconds_per_step": 0.00015260374988429248
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262115,
+            "total_seconds": 0.030182708986103535,
+            "seconds_per_step": 0.00015091354493051767
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262116,
+            "total_seconds": 0.030800290987826884,
+            "seconds_per_step": 0.00015400145493913442
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262117,
+            "total_seconds": 0.030609541980084032,
+            "seconds_per_step": 0.00015304770990042015
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262118,
+            "total_seconds": 0.030809084011707455,
+            "seconds_per_step": 0.00015404542005853728
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262119,
+            "total_seconds": 0.028608750028070062,
+            "seconds_per_step": 0.00014304375014035031
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262120,
+            "total_seconds": 0.028235542005859315,
+            "seconds_per_step": 0.00014117771002929657
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262121,
+            "total_seconds": 0.028319750039372593,
+            "seconds_per_step": 0.00014159875019686296
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262122,
+            "total_seconds": 0.02872495900373906,
+            "seconds_per_step": 0.0001436247950186953
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262123,
+            "total_seconds": 0.028422042028978467,
+            "seconds_per_step": 0.00014211021014489233
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262124,
+            "total_seconds": 0.028253500000573695,
+            "seconds_per_step": 0.00014126750000286847
+          },
+          {
+            "scenario": "E",
+            "agents": 10,
+            "seed": 20262125,
+            "total_seconds": 0.028516083024442196,
+            "seconds_per_step": 0.00014258041512221097
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263106,
+            "total_seconds": 0.039243875013198704,
+            "seconds_per_step": 0.0001962193750659935
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263107,
+            "total_seconds": 0.030262582993600518,
+            "seconds_per_step": 0.00015131291496800259
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263108,
+            "total_seconds": 0.029197124997153878,
+            "seconds_per_step": 0.0001459856249857694
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263109,
+            "total_seconds": 0.02891183301107958,
+            "seconds_per_step": 0.0001445591650553979
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263110,
+            "total_seconds": 0.02882716601016,
+            "seconds_per_step": 0.0001441358300508
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263111,
+            "total_seconds": 0.028855125012341887,
+            "seconds_per_step": 0.00014427562506170945
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263112,
+            "total_seconds": 0.028789291973225772,
+            "seconds_per_step": 0.00014394645986612887
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263113,
+            "total_seconds": 0.028731875005178154,
+            "seconds_per_step": 0.00014365937502589077
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263114,
+            "total_seconds": 0.029191915993578732,
+            "seconds_per_step": 0.00014595957996789367
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263115,
+            "total_seconds": 0.02876708301482722,
+            "seconds_per_step": 0.00014383541507413612
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263116,
+            "total_seconds": 0.02872854203451425,
+            "seconds_per_step": 0.00014364271017257125
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263117,
+            "total_seconds": 0.029226207989268005,
+            "seconds_per_step": 0.00014613103994634002
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263118,
+            "total_seconds": 0.02902420802274719,
+            "seconds_per_step": 0.00014512104011373594
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263119,
+            "total_seconds": 0.029006958997342736,
+            "seconds_per_step": 0.0001450347949867137
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263120,
+            "total_seconds": 0.029297249973751605,
+            "seconds_per_step": 0.00014648624986875802
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263121,
+            "total_seconds": 0.02888358401833102,
+            "seconds_per_step": 0.0001444179200916551
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263122,
+            "total_seconds": 0.02892191696446389,
+            "seconds_per_step": 0.00014460958482231945
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263123,
+            "total_seconds": 0.029135583026800305,
+            "seconds_per_step": 0.00014567791513400152
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263124,
+            "total_seconds": 0.02886141702765599,
+            "seconds_per_step": 0.00014430708513827996
+          },
+          {
+            "scenario": "E",
+            "agents": 20,
+            "seed": 20263125,
+            "total_seconds": 0.028826416993979365,
+            "seconds_per_step": 0.00014413208496989684
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266106,
+            "total_seconds": 0.031518290983513,
+            "seconds_per_step": 0.000157591454917565
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266107,
+            "total_seconds": 0.030550124996807426,
+            "seconds_per_step": 0.00015275062498403712
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266108,
+            "total_seconds": 0.031375749967992306,
+            "seconds_per_step": 0.00015687874983996152
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266109,
+            "total_seconds": 0.03185237501747906,
+            "seconds_per_step": 0.00015926187508739532
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266110,
+            "total_seconds": 0.03229945799103007,
+            "seconds_per_step": 0.00016149728995515033
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266111,
+            "total_seconds": 0.0321779579971917,
+            "seconds_per_step": 0.00016088978998595848
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266112,
+            "total_seconds": 0.03262933297082782,
+            "seconds_per_step": 0.00016314666485413908
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266113,
+            "total_seconds": 0.060445541981607676,
+            "seconds_per_step": 0.00030222770990803835
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266114,
+            "total_seconds": 0.03132449998520315,
+            "seconds_per_step": 0.00015662249992601574
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266115,
+            "total_seconds": 0.03150974999880418,
+            "seconds_per_step": 0.0001575487499940209
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266116,
+            "total_seconds": 0.03113133297301829,
+            "seconds_per_step": 0.00015565666486509145
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266117,
+            "total_seconds": 0.031834500026889145,
+            "seconds_per_step": 0.00015917250013444573
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266118,
+            "total_seconds": 0.0310220830142498,
+            "seconds_per_step": 0.00015511041507124902
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266119,
+            "total_seconds": 0.031126209010835737,
+            "seconds_per_step": 0.0001556310450541787
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266120,
+            "total_seconds": 0.0312062919838354,
+            "seconds_per_step": 0.00015603145991917699
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266121,
+            "total_seconds": 0.031118083046749234,
+            "seconds_per_step": 0.00015559041523374617
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266122,
+            "total_seconds": 0.03101595799671486,
+            "seconds_per_step": 0.0001550797899835743
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266123,
+            "total_seconds": 0.03240804199595004,
+            "seconds_per_step": 0.0001620402099797502
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266124,
+            "total_seconds": 0.03109304199460894,
+            "seconds_per_step": 0.0001554652099730447
+          },
+          {
+            "scenario": "E",
+            "agents": 50,
+            "seed": 20266125,
+            "total_seconds": 0.031100750027690083,
+            "seconds_per_step": 0.0001555037501384504
+          }
+        ],
+        "scaling": [
+          {
+            "agents": 1,
+            "simulations": 100,
+            "median_total_seconds": 0.011507541523315012,
+            "median_step_seconds": 5.7537707616575064e-05
+          },
+          {
+            "agents": 5,
+            "simulations": 100,
+            "median_total_seconds": 0.012084395973943174,
+            "median_step_seconds": 6.042197986971587e-05
+          },
+          {
+            "agents": 10,
+            "simulations": 100,
+            "median_total_seconds": 0.0123556875041686,
+            "median_step_seconds": 6.1778437520843e-05
+          },
+          {
+            "agents": 20,
+            "simulations": 100,
+            "median_total_seconds": 0.013025770982494578,
+            "median_step_seconds": 6.512885491247289e-05
+          },
+          {
+            "agents": 50,
+            "simulations": 100,
+            "median_total_seconds": 0.015383479476440698,
+            "median_step_seconds": 7.69173973822035e-05
+          }
+        ],
+        "total_seconds": 10.423513083020225,
+        "network_bytes_this_run": 0,
+        "source_response_bytes": 0,
+        "process_peak_rss_bytes": 375914496,
+        "rss_scope": "Whole process lifetime peak; no unmeasured hard RSS guarantee"
+      },
+      "source_objects": 0,
+      "job_id_local": "c270e218-bc93-4d9d-b28a-2e4c19f3c8b4",
+      "kind": "SIMULATED DATA",
+      "scaling": [
+        {
+          "agents": 1,
+          "simulations": 100,
+          "median_total_seconds": 0.011507541523315012,
+          "median_step_seconds": 5.7537707616575064e-05
+        },
+        {
+          "agents": 5,
+          "simulations": 100,
+          "median_total_seconds": 0.012084395973943174,
+          "median_step_seconds": 6.042197986971587e-05
+        },
+        {
+          "agents": 10,
+          "simulations": 100,
+          "median_total_seconds": 0.0123556875041686,
+          "median_step_seconds": 6.1778437520843e-05
+        },
+        {
+          "agents": 20,
+          "simulations": 100,
+          "median_total_seconds": 0.013025770982494578,
+          "median_step_seconds": 6.512885491247289e-05
+        },
+        {
+          "agents": 50,
+          "simulations": 100,
+          "median_total_seconds": 0.015383479476440698,
+          "median_step_seconds": 7.69173973822035e-05
+        }
+      ]
+    }
+  },
+  "qualification": {
+    "tests_passed": 284,
+    "dynamics_tests": 38,
+    "baseline_tests": 246,
+    "independent_checks": 18,
+    "raw_replay_passed": true,
+    "dashboard_layouts": 28
+  }
+}

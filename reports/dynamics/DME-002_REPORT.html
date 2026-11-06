@@ -1,0 +1,215 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>DME-002 · Dynamics Lab</title><style>code{overflow-wrap:anywhere;word-break:break-word}body{font:16px/1.65 system-ui,sans-serif;color:#18272c;background:#f7f5ef;margin:auto;max-width:1120px;padding:50px 25px}h1{font-size:42px;line-height:1.1;max-width:900px}h2{margin-top:50px}a{color:#24616c}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #cbd2ce;padding:12px;text-align:left}th{background:#e8ede8}figure{margin:35px 0}img{max-width:100%;height:auto}pre{white-space:pre-wrap;font-size:13px;overflow-wrap:anywhere}small,.muted{color:#566a70}.label{letter-spacing:3px;font:12px ui-monospace,monospace}article{border-left:3px solid #527c75;padding-left:20px;margin:24px 0}.scroll{overflow:auto}footer{margin-top:65px;border-top:1px solid #bbc6c1;padding-top:20px}@media print{body{padding:0}h2{break-after:avoid}figure,table{break-inside:avoid}}</style><body><p class="label">DYNAMICS LAB · ENGINE01</p><h1>Observational Uncertainty &amp; Multi-Sensor Consistency — MILUV substitution</h1><p>DME-002 · REAL EXPERIMENTAL DATA</p><p class="muted">Computed 2026-11-06T10:25:51.257151+00:00 · reproducible scientific prototype</p><h2>Objective & dataset</h2><p>Assess historical UWB measurement consistency and uncertainty against a motion-capture-derived reference.</p><pre>{
+  &quot;real_flights_analyzed&quot;: 3,
+  &quot;source_uwb_rows&quot;: 34019,
+  &quot;observations_analyzed&quot;: 34019,
+  &quot;excluded_uwb_rows&quot;: 0,
+  &quot;source_mocap_rows&quot;: 48515,
+  &quot;matched_mocap_ranges&quot;: 34012
+}</pre><h2>Measured and computed results</h2><div class="scroll"><table><thead><tr><th>flight_id</th><th>n</th><th>MAE_m</th><th>RMSE_m</th><th>bias_m</th><th>coverage95</th><th>raw_RMSE_m</th></tr></thead><tbody><tr><td>default_1_circular2D_0</td><td>9960</td><td>0.19896</td><td>0.336288</td><td>0.142373</td><td>0.811044</td><td>0.383192</td></tr><tr><td>default_1_circular3D_0</td><td>9515</td><td>0.202353</td><td>0.34177</td><td>0.142053</td><td>0.807882</td><td>0.390488</td></tr><tr><td>default_1_random3_0</td><td>14544</td><td>0.144647</td><td>0.260174</td><td>0.096896</td><td>0.881119</td><td>0.308842</td></tr></tbody></table></div><figure><img src="figures/range-errors.png" alt="Observation-weighted per-flight range RMSE; source calibration is not an independent sensor comparison."><figcaption>Observation-weighted per-flight range RMSE; source calibration is not an independent sensor comparison.</figcaption></figure><figure><img src="figures/range-residuals.png" alt="Display stride only; all valid rows enter metrics. No3D position error inferred."><figcaption>Display stride only; all valid rows enter metrics. No3D position error inferred.</figcaption></figure><h2>Source substitution and numerical cross-check</h2><pre>{
+  &quot;original&quot;: &quot;AERPAW DOI10.5061/dryad.7d7wm3898&quot;,
+  &quot;reason&quot;: &quot;Official public download403 and API401; no matching local archive; user authorized another scientific source&quot;,
+  &quot;scope_change&quot;: &quot;UWB scalar range vs motion-capture-derived distance instead of radar/RF3D position; no claimed position or independent sensor accuracy&quot;
+}</pre><div class="scroll"><table><thead><tr><th>flight</th><th>matched</th><th>unmatched</th><th>reconstructed_reference_RMSE_m</th></tr></thead><tbody><tr><td>default_1_circular2D_0</td><td>9954</td><td>6</td><td>0.001141</td></tr><tr><td>default_1_circular3D_0</td><td>9514</td><td>1</td><td>0.002354</td></tr><tr><td>default_1_random3_0</td><td>14544</td><td>0</td><td>0.003461</td></tr></tbody></table></div><h2>Synchronisation sensitivity</h2><div class="scroll"><table><thead><tr><th>flight</th><th>tolerance_s</th><th>offset_s</th><th>matched</th><th>RMSE_m</th></tr></thead><tbody><tr><td>default_1_circular2D_0</td><td>0.005</td><td>0</td><td>9425</td><td>0.337427</td></tr><tr><td>default_1_circular2D_0</td><td>0.01</td><td>0</td><td>9946</td><td>0.336281</td></tr><tr><td>default_1_circular2D_0</td><td>0.02</td><td>0</td><td>9954</td><td>0.336398</td></tr><tr><td>default_1_circular2D_0</td><td>0.02</td><td>-0.02</td><td>9952</td><td>0.338656</td></tr><tr><td>default_1_circular2D_0</td><td>0.02</td><td>-0.01</td><td>9953</td><td>0.337517</td></tr><tr><td>default_1_circular2D_0</td><td>0.02</td><td>0.01</td><td>9954</td><td>0.335344</td></tr><tr><td>default_1_circular2D_0</td><td>0.02</td><td>0.02</td><td>9954</td><td>0.334339</td></tr><tr><td>default_1_circular3D_0</td><td>0.005</td><td>0</td><td>7872</td><td>0.34414</td></tr><tr><td>default_1_circular3D_0</td><td>0.01</td><td>0</td><td>9428</td><td>0.341531</td></tr><tr><td>default_1_circular3D_0</td><td>0.02</td><td>0</td><td>9514</td><td>0.341774</td></tr><tr><td>default_1_circular3D_0</td><td>0.02</td><td>-0.02</td><td>9513</td><td>0.344017</td></tr><tr><td>default_1_circular3D_0</td><td>0.02</td><td>-0.01</td><td>9512</td><td>0.342653</td></tr><tr><td>default_1_circular3D_0</td><td>0.02</td><td>0.01</td><td>9513</td><td>0.340873</td></tr><tr><td>default_1_circular3D_0</td><td>0.02</td><td>0.02</td><td>9512</td><td>0.339957</td></tr><tr><td>default_1_random3_0</td><td>0.005</td><td>0</td><td>13245</td><td>0.25891</td></tr><tr><td>default_1_random3_0</td><td>0.01</td><td>0</td><td>14501</td><td>0.260472</td></tr><tr><td>default_1_random3_0</td><td>0.02</td><td>0</td><td>14544</td><td>0.260172</td></tr><tr><td>default_1_random3_0</td><td>0.02</td><td>-0.02</td><td>14542</td><td>0.260337</td></tr><tr><td>default_1_random3_0</td><td>0.02</td><td>-0.01</td><td>14543</td><td>0.260203</td></tr><tr><td>default_1_random3_0</td><td>0.02</td><td>0.01</td><td>14542</td><td>0.260076</td></tr><tr><td>default_1_random3_0</td><td>0.02</td><td>0.02</td><td>14542</td><td>0.260005</td></tr></tbody></table></div><h2>Method & parameters</h2><pre># DME-002 — method
+
+Kind: REAL EXPERIMENTAL DATA. Algorithm: dme-miluv-1.0.
+
+AERPAW unavailable(403public/401API), replaced with user-authorized MILUV v1(CC BY4.0). Three predefined single-UAV sequences share anchor constellation0. Every selected UWB row analyzed; finite/positive gates, first timestamp+pair duplicate retained, explicit stable time sort. Residual=calibrated(or raw) range−source gt_range, metres. Source gt_range derived from motion capture, not exact truth. Published std assessed with ±1.95996398454σ nominal normal95percent intervals. A second computation uses nearest motion capture(≤20ms), no extrapolation: tag_world=p_world+Rotation(quaternion xyzw)×tag_body; distance=norm(tag_world−anchor_world), pinned published extrinsics. Tolerance5/10/20ms and offset−20/−10/0/10/20ms sensitivity reported. Source spline-derived reference may differ from nearest-time reconstruction. No synchronization fitted to residuals; no3D position error claimed. Pooled metrics observation-weighted; equal-flight MAE separately reported. Source calibration training/validation independence unknown; total systematic uncertainty unavailable.
+
+## Limits
+- UWB range residual is not3D position error or UAV intent.
+- Source gt_range is motion-capture-derived, not exact physical truth; reconstruction uses same reference system.
+- Published std is a calibrated measurement uncertainty model, not known total uncertainty; nominal normal95percent coverage is measured, not guaranteed.
+- Source calibrator training/held-out independence not established; before/after comparison is descriptive.
+- Three selected flights/one UAV/indoor constellation0 do not establish generalization across36experiments or platforms.
+- Nearest-time differences and source spline processing can explain reconstructed-vs-published reference differences; no unrecorded alignment or recalibration.
+
+## Source
+{
+  &quot;name&quot;: &quot;MILUV: A Multi-UAV Indoor Localization dataset with UWB and Vision&quot;,
+  &quot;doi&quot;: &quot;10.25452/figshare.plus.28386041.v1&quot;,
+  &quot;version&quot;: 1,
+  &quot;source&quot;: &quot;https://api.figshare.com/v2/articles/28386041&quot;,
+  &quot;license&quot;: &quot;CC BY 4.0&quot;,
+  &quot;authors&quot;: [
+    &quot;Mohammed Shalaby&quot;,
+    &quot;Syed Shabbir Ahmed&quot;,
+    &quot;Nicholas Dahdah&quot;,
+    &quot;Charles Cossette&quot;,
+    &quot;Jerome Le Ny&quot;,
+    &quot;James R. Forbes&quot;
+  ],
+  &quot;available_experiments_source_description&quot;: 36,
+  &quot;selected_flights&quot;: [
+    &quot;default_1_circular2D_0&quot;,
+    &quot;default_1_circular3D_0&quot;,
+    &quot;default_1_random3_0&quot;
+  ],
+  &quot;selected_members&quot;: [
+    {
+      &quot;name&quot;: &quot;default_1_circular2D_0/ifo001/uwb_range.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250714&quot;,
+      &quot;archive_size&quot;: 1862182413,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 5971295,
+      &quot;crc32&quot;: &quot;4dba162d&quot;,
+      &quot;sha256&quot;: &quot;7fc6a81e554a2ab609fc36b2cbef9aa166a4676a486be8862d4bd9623566e75b&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_circular2D_0/ifo001/mocap.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250714&quot;,
+      &quot;archive_size&quot;: 1862182413,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 2215752,
+      &quot;crc32&quot;: &quot;72ef8c2b&quot;,
+      &quot;sha256&quot;: &quot;32bf4a2876a3a4902d1dc387feb084a253528f60d35f1b98ce57c75ba4c5a19a&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_circular3D_0/ifo001/uwb_range.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250702&quot;,
+      &quot;archive_size&quot;: 1671977142,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 5704219,
+      &quot;crc32&quot;: &quot;9048d367&quot;,
+      &quot;sha256&quot;: &quot;8fc39328e537ed0b01f083a2355b78d7f497ba0aec58b257775ae4fcb6033def&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_circular3D_0/ifo001/mocap.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250702&quot;,
+      &quot;archive_size&quot;: 1671977142,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 2048266,
+      &quot;crc32&quot;: &quot;d0b477ea&quot;,
+      &quot;sha256&quot;: &quot;b508cc1479b697a1eb49ad5e259d1ade8501e1cf3d7821202bfa603e234d43e5&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_random3_0/ifo001/uwb_range.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250735&quot;,
+      &quot;archive_size&quot;: 2551133105,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 8747251,
+      &quot;crc32&quot;: &quot;5df54254&quot;,
+      &quot;sha256&quot;: &quot;05e4423870f001bbb1e6136c260e80055b694ddae20648e6b51c77cb14e64330&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_random3_0/ifo001/mocap.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250735&quot;,
+      &quot;archive_size&quot;: 2551133105,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 3123830,
+      &quot;crc32&quot;: &quot;c65aae08&quot;,
+      &quot;sha256&quot;: &quot;08bb608c14050f83a4f40711f09d8c281e4d6560663852ec3b7e0a3b021d5855&quot;
+    }
+  ],
+  &quot;devkit_commit&quot;: &quot;399ad46f4e6e88c3c98b40aae33fe8e2c6719cff&quot;,
+  &quot;configuration_hashes&quot;: {
+    &quot;config/experiments.csv&quot;: &quot;8b66ed2185c7b68dc67ce285a1f481175b21cec7613bff8b732f841d2b79dc3c&quot;,
+    &quot;config/uwb/anchors.yaml&quot;: &quot;4e38cef90d8db1cc0fed2a51aa2b67fee3a637140d4bdb685c1608472b5bb4f3&quot;,
+    &quot;config/uwb/tags.yaml&quot;: &quot;6499c59ebfd498d3077d00c3fbecc3c873112641f25d1f1473b94b1a63be3215&quot;,
+    &quot;preprocess/cleanup_csv.py&quot;: &quot;0798479fc0476a2dbbee644875fc0d04423d0c9c965ebfa42a9ca35aad820dbb&quot;,
+    &quot;preprocess/process_uwb.py&quot;: &quot;e5e32fc672effec2af9ab21b14d3406d534bc27da1d85eba06766936493f4e3b&quot;,
+    &quot;miluv/utils.py&quot;: &quot;dce4a0fa78744b70c183838f6f1bb000aef16775c6c098f929e186ecb8e822a6&quot;,
+    &quot;examples/ekfutils/imu_one_robot_models.py&quot;: &quot;4b4beeaa1f73cf03a97d4f002aabd36de6f176e71d79fdbdd24e6a86c3f984ad&quot;
+  }
+}
+</pre><h2>Validation and reproducibility</h2><pre># Reproduce DME-002
+
+Use Python3.12 and the pinned lock. From the distribution root:
+
+    python -m dynamics.cli run DME-002 --data /your/local/dynamics-data
+    python -m dynamics.cli reproduce JOB_UUID --data /your/local/dynamics-data
+
+The second command rehashes every acquired source object, reparses original selected ZIP bytes and recomputes mathematical results offline, with the original manifest parameters. Missing or altered cached bytes fail explicitly; a new download is a new acquisition, not substitution for an old vintage. The results_sha256 excludes measured execution timing but includes all scientific results and source identities. Public source packages do not contain multi-GB third-party archives. Dataset source availability may change. All seeds/parameters/dependency versions and source hashes are in the manifest.
+</pre><p>Scientific result SHA-256: <code>1011008f5d536e6f415f5f94f3d797d682971c26650577891ab0d800684ce89d</code>. Numerical correctness is evaluated with independent controls and source replay; scientific validity remains bounded by source quality and model assumptions.</p><h2>Limits</h2><article>UWB range residual is not3D position error or UAV intent.</article><article>Source gt_range is motion-capture-derived, not exact physical truth; reconstruction uses same reference system.</article><article>Published std is a calibrated measurement uncertainty model, not known total uncertainty; nominal normal95percent coverage is measured, not guaranteed.</article><article>Source calibrator training/held-out independence not established; before/after comparison is descriptive.</article><article>Three selected flights/one UAV/indoor constellation0 do not establish generalization across36experiments or platforms.</article><article>Nearest-time differences and source spline processing can explain reconstructed-vs-published reference differences; no unrecorded alignment or recalibration.</article><h2>Sources & attribution</h2><pre>{
+  &quot;name&quot;: &quot;MILUV: A Multi-UAV Indoor Localization dataset with UWB and Vision&quot;,
+  &quot;doi&quot;: &quot;10.25452/figshare.plus.28386041.v1&quot;,
+  &quot;version&quot;: 1,
+  &quot;source&quot;: &quot;https://api.figshare.com/v2/articles/28386041&quot;,
+  &quot;license&quot;: &quot;CC BY 4.0&quot;,
+  &quot;authors&quot;: [
+    &quot;Mohammed Shalaby&quot;,
+    &quot;Syed Shabbir Ahmed&quot;,
+    &quot;Nicholas Dahdah&quot;,
+    &quot;Charles Cossette&quot;,
+    &quot;Jerome Le Ny&quot;,
+    &quot;James R. Forbes&quot;
+  ],
+  &quot;available_experiments_source_description&quot;: 36,
+  &quot;selected_flights&quot;: [
+    &quot;default_1_circular2D_0&quot;,
+    &quot;default_1_circular3D_0&quot;,
+    &quot;default_1_random3_0&quot;
+  ],
+  &quot;selected_members&quot;: [
+    {
+      &quot;name&quot;: &quot;default_1_circular2D_0/ifo001/uwb_range.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250714&quot;,
+      &quot;archive_size&quot;: 1862182413,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 5971295,
+      &quot;crc32&quot;: &quot;4dba162d&quot;,
+      &quot;sha256&quot;: &quot;7fc6a81e554a2ab609fc36b2cbef9aa166a4676a486be8862d4bd9623566e75b&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_circular2D_0/ifo001/mocap.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250714&quot;,
+      &quot;archive_size&quot;: 1862182413,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 2215752,
+      &quot;crc32&quot;: &quot;72ef8c2b&quot;,
+      &quot;sha256&quot;: &quot;32bf4a2876a3a4902d1dc387feb084a253528f60d35f1b98ce57c75ba4c5a19a&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_circular3D_0/ifo001/uwb_range.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250702&quot;,
+      &quot;archive_size&quot;: 1671977142,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 5704219,
+      &quot;crc32&quot;: &quot;9048d367&quot;,
+      &quot;sha256&quot;: &quot;8fc39328e537ed0b01f083a2355b78d7f497ba0aec58b257775ae4fcb6033def&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_circular3D_0/ifo001/mocap.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250702&quot;,
+      &quot;archive_size&quot;: 1671977142,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 2048266,
+      &quot;crc32&quot;: &quot;d0b477ea&quot;,
+      &quot;sha256&quot;: &quot;b508cc1479b697a1eb49ad5e259d1ade8501e1cf3d7821202bfa603e234d43e5&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_random3_0/ifo001/uwb_range.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250735&quot;,
+      &quot;archive_size&quot;: 2551133105,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 8747251,
+      &quot;crc32&quot;: &quot;5df54254&quot;,
+      &quot;sha256&quot;: &quot;05e4423870f001bbb1e6136c260e80055b694ddae20648e6b51c77cb14e64330&quot;
+    },
+    {
+      &quot;name&quot;: &quot;default_1_random3_0/ifo001/mocap.csv&quot;,
+      &quot;archive_url&quot;: &quot;https://ndownloader.figshare.com/files/52250735&quot;,
+      &quot;archive_size&quot;: 2551133105,
+      &quot;whole_archive_checksum_verified&quot;: false,
+      &quot;bytes&quot;: 3123830,
+      &quot;crc32&quot;: &quot;c65aae08&quot;,
+      &quot;sha256&quot;: &quot;08bb608c14050f83a4f40711f09d8c281e4d6560663852ec3b7e0a3b021d5855&quot;
+    }
+  ],
+  &quot;devkit_commit&quot;: &quot;399ad46f4e6e88c3c98b40aae33fe8e2c6719cff&quot;,
+  &quot;configuration_hashes&quot;: {
+    &quot;config/experiments.csv&quot;: &quot;8b66ed2185c7b68dc67ce285a1f481175b21cec7613bff8b732f841d2b79dc3c&quot;,
+    &quot;config/uwb/anchors.yaml&quot;: &quot;4e38cef90d8db1cc0fed2a51aa2b67fee3a637140d4bdb685c1608472b5bb4f3&quot;,
+    &quot;config/uwb/tags.yaml&quot;: &quot;6499c59ebfd498d3077d00c3fbecc3c873112641f25d1f1473b94b1a63be3215&quot;,
+    &quot;preprocess/cleanup_csv.py&quot;: &quot;0798479fc0476a2dbbee644875fc0d04423d0c9c965ebfa42a9ca35aad820dbb&quot;,
+    &quot;preprocess/process_uwb.py&quot;: &quot;e5e32fc672effec2af9ab21b14d3406d534bc27da1d85eba06766936493f4e3b&quot;,
+    &quot;miluv/utils.py&quot;: &quot;dce4a0fa78744b70c183838f6f1bb000aef16775c6c098f929e186ecb8e822a6&quot;,
+    &quot;examples/ekfutils/imu_one_robot_models.py&quot;: &quot;4b4beeaa1f73cf03a97d4f002aabd36de6f176e71d79fdbdd24e6a86c3f984ad&quot;
+  }
+}</pre><h2>Execution evidence</h2><pre>{
+  &quot;acquisition_and_analysis_seconds&quot;: 5.1550677079940215,
+  &quot;total_seconds&quot;: 5.363840707985219,
+  &quot;network_bytes_this_run&quot;: 0,
+  &quot;source_response_bytes&quot;: 18750216,
+  &quot;process_peak_rss_bytes&quot;: 309002240,
+  &quot;rss_scope&quot;: &quot;Whole process lifetime peak; no unmeasured hard RSS guarantee&quot;
+}</pre><footer>Original software Apache License2.0. Third-party source data retains its own licence. AI hypotheses do not generate these measurements. Offline research, no operational control.</footer></body></html>

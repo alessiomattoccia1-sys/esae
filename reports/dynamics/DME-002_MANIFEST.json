@@ -1,0 +1,597 @@
+{
+  "experiment_id": "DME-002",
+  "engine_version": "0.1.0",
+  "git_commit_at_execution": "af8fd7504bbf3532ed3a66123239277febbf3455",
+  "working_source_files_sha256": {
+    "simulation.py": "6c0d2d643db1c5986aeec3a738da2e6aa06057d9bc5f3c6aa50ad9ec0f580875",
+    "service.py": "11fc9500b41ce1231f77e5a8553c385df4152805323b2f9f203dc1ed55e6829c",
+    "flights.py": "6703eb4995e4db176435a0b8fbe3bafc9c5241e70bd2b3d2c6e092a47d4ea76d",
+    "__init__.py": "37b7da6e50cf3e9acba46089ab414ac092f1613b3fbfae695d233b31862c4f80",
+    "api.py": "1c7ceffe19f41ed486928373131d0b0595b8bcb6ba46cf41f49449b616f98184",
+    "setup.py": "cca9cd5728e4b8751a6cda295e6ef85f48f852f1c6ec0ead0a53f1d2a7e15544",
+    "experiments.py": "72c5450bc4dbb2c938b1b5f60975e56a91fc274ad3eb91d64b5fc6f3c7060ae6",
+    "cli.py": "707828f9837925115faf74720747e95655025a755bfa6db7efb4c56ae3dc985f",
+    "acquisition.py": "eb1488a0f220f070c2d8b240fcfb92abb018fbaff7f82ee5cc6d2457ed10325b",
+    "miluv.py": "90025f905ba575256b033ff74d8898c82f4070ea317d13a6fbe517457f84ae9f",
+    "mathematical.py": "15be5174300bc85e7d6232b041bb2c965808d212fdace71e3f9f4e8a6a2e460d",
+    "reporting.py": "5c921aed428f5dcfde30f475562eb67e63dafb30c16349b51304ac094c714eaf",
+    "validation.py": "c13cb0667cafddfbb0cebb46c84b55ce3368f5421d6f930f78c17fd7a0ed8dbe"
+  },
+  "parser_version": "dynamics-parser-1.0",
+  "configuration": {
+    "seed": 20261106,
+    "offline": true
+  },
+  "sources": [
+    {
+      "id": "0be92ab496975959d17ece83d2942e1e6a80a5d70d64c626cd61143012eff22f",
+      "url": "https://api.figshare.com/v2/articles/28386041",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T10:07:19.306549+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 10:07:19 GMT",
+      "sha256": "716c03fc5f2453eddceefa589ec61e28ddb165a61892b93d538d01db5e3d9788",
+      "bytes": 19694,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://api.figshare.com/v2/articles/28386041"
+    },
+    {
+      "id": "bff0cba3e983f027e04573e585b3a25adaf248b595697df2e702d36da88d8bf9",
+      "url": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/config/experiments.csv",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T10:07:19.847416+00:00",
+      "release_date": null,
+      "etag": "\"fbfaf394f435a1400c8a5b882f7b4cb714a4c47ad35adc957efb8deb9b6dd009\"",
+      "server_date": "Fri, 06 Nov 2026 10:07:19 GMT",
+      "sha256": "8b66ed2185c7b68dc67ce285a1f481175b21cec7613bff8b732f841d2b79dc3c",
+      "bytes": 2495,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/config/experiments.csv"
+    },
+    {
+      "id": "3bbd49f5915913bc549258e3a46745f040a873756564cd5571a2a4ac0ab491af",
+      "url": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/config/uwb/anchors.yaml",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T10:07:20.411818+00:00",
+      "release_date": null,
+      "etag": "\"eef5b1cde9dd1112b939cde72ddfc09760e986cf1c409be1a8632759159fedb4\"",
+      "server_date": "Fri, 06 Nov 2026 10:07:20 GMT",
+      "sha256": "4e38cef90d8db1cc0fed2a51aa2b67fee3a637140d4bdb685c1608472b5bb4f3",
+      "bytes": 2146,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/config/uwb/anchors.yaml"
+    },
+    {
+      "id": "e5ee6de27c7d86d81ee6b220719967a60ca68d1390bf89d5b56f104b66efb664",
+      "url": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/config/uwb/tags.yaml",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T10:07:21.020355+00:00",
+      "release_date": null,
+      "etag": "\"bc1cab05d59d9a339b994e6db6526872d368a50fcffc91937cbf694a3ac74e14\"",
+      "server_date": "Fri, 06 Nov 2026 10:07:20 GMT",
+      "sha256": "6499c59ebfd498d3077d00c3fbecc3c873112641f25d1f1473b94b1a63be3215",
+      "bytes": 333,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/config/uwb/tags.yaml"
+    },
+    {
+      "id": "fcae01121e856d2178d6fa196e447e8dfb4f01148b7e1602b523b61df7c47e01",
+      "url": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/preprocess/cleanup_csv.py",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T10:07:21.568420+00:00",
+      "release_date": null,
+      "etag": "\"a2ea5a6da9af7864246f72a3785bde3d4033ddf3a57c749f0f376e791ad6cdd9\"",
+      "server_date": "Fri, 06 Nov 2026 10:07:21 GMT",
+      "sha256": "0798479fc0476a2dbbee644875fc0d04423d0c9c965ebfa42a9ca35aad820dbb",
+      "bytes": 4703,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/preprocess/cleanup_csv.py"
+    },
+    {
+      "id": "c6bbf95a9451919438ecaae641edd8fd9d9c01e0835dbd168caa3357ac038c1a",
+      "url": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/preprocess/process_uwb.py",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T10:07:21.901056+00:00",
+      "release_date": null,
+      "etag": "\"36df37f9f8227c2685e24c72327069480b9323a479df0bc687c07e26ee5b4675\"",
+      "server_date": "Fri, 06 Nov 2026 10:07:21 GMT",
+      "sha256": "e5e32fc672effec2af9ab21b14d3406d534bc27da1d85eba06766936493f4e3b",
+      "bytes": 7965,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/preprocess/process_uwb.py"
+    },
+    {
+      "id": "b23be7115849651462db670bb169ed7355b88b16e6e2a57feddd33995d51c3a4",
+      "url": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/miluv/utils.py",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T10:07:22.312830+00:00",
+      "release_date": null,
+      "etag": "\"60ec04d83097d408ad01ef608bc90b5e87c4949f787e0873d1f97bb63822cef8\"",
+      "server_date": "Fri, 06 Nov 2026 10:07:22 GMT",
+      "sha256": "dce4a0fa78744b70c183838f6f1bb000aef16775c6c098f929e186ecb8e822a6",
+      "bytes": 18888,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/miluv/utils.py"
+    },
+    {
+      "id": "b164b64a8828aa999aa2661994430f2cf168a6d9af2db93f703f82d3122da1ba",
+      "url": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/examples/ekfutils/imu_one_robot_models.py",
+      "organization": "Zenodo IDF_DS / Dryad AERPAW",
+      "acquired_at": "2026-11-06T10:07:22.836819+00:00",
+      "release_date": null,
+      "etag": "\"dc0a388093fb8f117edc32ada041ae54b247a7823a76ff5110e1053a40e3d283\"",
+      "server_date": "Fri, 06 Nov 2026 10:07:22 GMT",
+      "sha256": "4b4beeaa1f73cf03a97d4f002aabd36de6f176e71d79fdbdd24e6a86c3f984ad",
+      "bytes": 10723,
+      "http_status": 200,
+      "parser_version": "dynamics-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "key": "https://raw.githubusercontent.com/decargroup/miluv/399ad46f4e6e88c3c98b40aae33fe8e2c6719cff/examples/ekfutils/imu_one_robot_models.py"
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250714|bytes=1862051341-1862182412",
+      "url": "https://ndownloader.figshare.com/files/52250714",
+      "range": [
+        1862051341,
+        1862182412
+      ],
+      "archive_bytes": 1862182413,
+      "bytes": 131072,
+      "sha256": "0b6283c68137eaabd7d80ea7529cedf7e3196eb1c9e779dee3ebe1e4dada08ae",
+      "etag": "\"40b7406195854258ae7759ae6f10bfda-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:26:21 GMT",
+      "acquired_at": "2026-11-06T10:03:33.171589+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250714|bytes=1860242975-1862182390",
+      "url": "https://ndownloader.figshare.com/files/52250714",
+      "range": [
+        1860242975,
+        1862182390
+      ],
+      "archive_bytes": 1862182413,
+      "bytes": 1939416,
+      "sha256": "73c36f7da293069b896dc0a16d5e169e3ec704050e096c31d1dd22f395b10dba",
+      "etag": "\"40b7406195854258ae7759ae6f10bfda-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:26:21 GMT",
+      "acquired_at": "2026-11-06T10:03:35.103153+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250714|bytes=1156284160-1156284189",
+      "url": "https://ndownloader.figshare.com/files/52250714",
+      "range": [
+        1156284160,
+        1156284189
+      ],
+      "archive_bytes": 1862182413,
+      "bytes": 30,
+      "sha256": "dc79295e7c0f878e20b3651a93498386adb20e4629ab69ada24e78e59e8ecefc",
+      "etag": "\"40b7406195854258ae7759ae6f10bfda-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:26:21 GMT",
+      "acquired_at": "2026-11-06T10:04:36.317948+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250714|bytes=1156284265-1158791120",
+      "url": "https://ndownloader.figshare.com/files/52250714",
+      "range": [
+        1156284265,
+        1158791120
+      ],
+      "archive_bytes": 1862182413,
+      "bytes": 2506856,
+      "sha256": "85fa9232b684c568c954d3ec5e1311b4490912974a99a68a3ba15b9e29177329",
+      "etag": "\"40b7406195854258ae7759ae6f10bfda-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:26:21 GMT",
+      "acquired_at": "2026-11-06T10:04:37.295114+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250714|bytes=1162716730-1162716759",
+      "url": "https://ndownloader.figshare.com/files/52250714",
+      "range": [
+        1162716730,
+        1162716759
+      ],
+      "archive_bytes": 1862182413,
+      "bytes": 30,
+      "sha256": "3e69a91e8440d249447b3bdcf91153b6ad51b34f2bec329ea93ba75934455a5c",
+      "etag": "\"40b7406195854258ae7759ae6f10bfda-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:26:21 GMT",
+      "acquired_at": "2026-11-06T10:04:38.434921+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250714|bytes=1162716831-1163697814",
+      "url": "https://ndownloader.figshare.com/files/52250714",
+      "range": [
+        1162716831,
+        1163697814
+      ],
+      "archive_bytes": 1862182413,
+      "bytes": 980984,
+      "sha256": "ec5f79f23457b670e0482ce77d0f2ba3069449c85cf027d933af6228c55c1558",
+      "etag": "\"40b7406195854258ae7759ae6f10bfda-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:26:21 GMT",
+      "acquired_at": "2026-11-06T10:04:40.606538+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250702|bytes=1671846070-1671977141",
+      "url": "https://ndownloader.figshare.com/files/52250702",
+      "range": [
+        1671846070,
+        1671977141
+      ],
+      "archive_bytes": 1671977142,
+      "bytes": 131072,
+      "sha256": "a6c957124fd4b79c5a006a2e69256faf380b951a2703a9b9853af064301013b1",
+      "etag": "\"8dab8af57132842d3b89cb1a7543ff7d-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:27:57 GMT",
+      "acquired_at": "2026-11-06T10:07:25.174306+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250702|bytes=1670180955-1671977119",
+      "url": "https://ndownloader.figshare.com/files/52250702",
+      "range": [
+        1670180955,
+        1671977119
+      ],
+      "archive_bytes": 1671977142,
+      "bytes": 1796165,
+      "sha256": "d84647a3e0374dc64d82b8a46cbae554309e9a765c17fa114611aed9e1849ede",
+      "etag": "\"8dab8af57132842d3b89cb1a7543ff7d-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:27:57 GMT",
+      "acquired_at": "2026-11-06T10:07:26.025126+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250702|bytes=1042602851-1042602880",
+      "url": "https://ndownloader.figshare.com/files/52250702",
+      "range": [
+        1042602851,
+        1042602880
+      ],
+      "archive_bytes": 1671977142,
+      "bytes": 30,
+      "sha256": "b68d79f587ba7ba6a378bf2b6c883519b703de9e60e417f667e0ce2994478ae0",
+      "etag": "\"8dab8af57132842d3b89cb1a7543ff7d-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:27:57 GMT",
+      "acquired_at": "2026-11-06T10:07:26.580993+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250702|bytes=1042602956-1045011467",
+      "url": "https://ndownloader.figshare.com/files/52250702",
+      "range": [
+        1042602956,
+        1045011467
+      ],
+      "archive_bytes": 1671977142,
+      "bytes": 2408512,
+      "sha256": "a19dd72faa18c9bd0a83d8782c4ea3a94317282f09db57da0f69c44edd712178",
+      "etag": "\"8dab8af57132842d3b89cb1a7543ff7d-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:27:57 GMT",
+      "acquired_at": "2026-11-06T10:07:27.516497+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250702|bytes=1040353947-1040353976",
+      "url": "https://ndownloader.figshare.com/files/52250702",
+      "range": [
+        1040353947,
+        1040353976
+      ],
+      "archive_bytes": 1671977142,
+      "bytes": 30,
+      "sha256": "039c1f0767500822392ded25eb372395084da2a22ffe4abf9217488dc9eb6af5",
+      "etag": "\"8dab8af57132842d3b89cb1a7543ff7d-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:27:57 GMT",
+      "acquired_at": "2026-11-06T10:07:28.021351+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250702|bytes=1040354048-1041269509",
+      "url": "https://ndownloader.figshare.com/files/52250702",
+      "range": [
+        1040354048,
+        1041269509
+      ],
+      "archive_bytes": 1671977142,
+      "bytes": 915462,
+      "sha256": "8953784f2ebe83946de6276641d4818717a872a7c3ce73ccfdceeb9fa1cbe4a2",
+      "etag": "\"8dab8af57132842d3b89cb1a7543ff7d-2\"",
+      "last_modified": "Tue, 11 Feb 2025 01:27:57 GMT",
+      "acquired_at": "2026-11-06T10:07:28.844875+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250735|bytes=2551002033-2551133104",
+      "url": "https://ndownloader.figshare.com/files/52250735",
+      "range": [
+        2551002033,
+        2551133104
+      ],
+      "archive_bytes": 2551133105,
+      "bytes": 131072,
+      "sha256": "e95f5ff20b8d3fba3cf42b21d5bd57326c16859f658af87647e8d514fd7a6853",
+      "etag": "\"662b42d06e610d686006180125778516-3\"",
+      "last_modified": "Tue, 11 Feb 2025 02:13:34 GMT",
+      "acquired_at": "2026-11-06T10:07:30.842939+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250735|bytes=2548448578-2551133082",
+      "url": "https://ndownloader.figshare.com/files/52250735",
+      "range": [
+        2548448578,
+        2551133082
+      ],
+      "archive_bytes": 2551133105,
+      "bytes": 2684505,
+      "sha256": "be7fa5f9c93734c649a1e894ca2eae179d794178d584873a23490be6d85a6a28",
+      "etag": "\"662b42d06e610d686006180125778516-3\"",
+      "last_modified": "Tue, 11 Feb 2025 02:13:34 GMT",
+      "acquired_at": "2026-11-06T10:07:31.749472+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250735|bytes=2535269422-2535269451",
+      "url": "https://ndownloader.figshare.com/files/52250735",
+      "range": [
+        2535269422,
+        2535269451
+      ],
+      "archive_bytes": 2551133105,
+      "bytes": 30,
+      "sha256": "0e4872405654f631941a8305d444f506a5abd01396465dd3e44c982b2bf68f6b",
+      "etag": "\"662b42d06e610d686006180125778516-3\"",
+      "last_modified": "Tue, 11 Feb 2025 02:13:34 GMT",
+      "acquired_at": "2026-11-06T10:07:32.385242+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250735|bytes=2535269524-2538938111",
+      "url": "https://ndownloader.figshare.com/files/52250735",
+      "range": [
+        2535269524,
+        2538938111
+      ],
+      "archive_bytes": 2551133105,
+      "bytes": 3668588,
+      "sha256": "f4928a9d97057d8652dd7186014533f52c10a59e871370e071d3450a3b776ed2",
+      "etag": "\"662b42d06e610d686006180125778516-3\"",
+      "last_modified": "Tue, 11 Feb 2025 02:13:34 GMT",
+      "acquired_at": "2026-11-06T10:07:33.489965+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250735|bytes=2546997441-2546997470",
+      "url": "https://ndownloader.figshare.com/files/52250735",
+      "range": [
+        2546997441,
+        2546997470
+      ],
+      "archive_bytes": 2551133105,
+      "bytes": 30,
+      "sha256": "05a1338c6bd2339446c453ca7a78386d3331256a5d8177c5ca2f789c81947c6b",
+      "etag": "\"662b42d06e610d686006180125778516-3\"",
+      "last_modified": "Tue, 11 Feb 2025 02:13:34 GMT",
+      "acquired_at": "2026-11-06T10:07:34.025484+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    },
+    {
+      "key": "https://ndownloader.figshare.com/files/52250735|bytes=2546997539-2548386923",
+      "url": "https://ndownloader.figshare.com/files/52250735",
+      "range": [
+        2546997539,
+        2548386923
+      ],
+      "archive_bytes": 2551133105,
+      "bytes": 1389385,
+      "sha256": "bfb51d5485d07d11a526632b4ddacf7f4e0b2c75ea15cf81350c55d358b674aa",
+      "etag": "\"662b42d06e610d686006180125778516-3\"",
+      "last_modified": "Tue, 11 Feb 2025 02:13:34 GMT",
+      "acquired_at": "2026-11-06T10:07:34.819857+00:00",
+      "http_status": 206,
+      "parser_version": "dynamics-parser-1.0",
+      "whole_archive_checksum_verified": false
+    }
+  ],
+  "dataset": {
+    "name": "MILUV: A Multi-UAV Indoor Localization dataset with UWB and Vision",
+    "doi": "10.25452/figshare.plus.28386041.v1",
+    "version": 1,
+    "source": "https://api.figshare.com/v2/articles/28386041",
+    "license": "CC BY 4.0",
+    "authors": [
+      "Mohammed Shalaby",
+      "Syed Shabbir Ahmed",
+      "Nicholas Dahdah",
+      "Charles Cossette",
+      "Jerome Le Ny",
+      "James R. Forbes"
+    ],
+    "available_experiments_source_description": 36,
+    "selected_flights": [
+      "default_1_circular2D_0",
+      "default_1_circular3D_0",
+      "default_1_random3_0"
+    ],
+    "selected_members": [
+      {
+        "name": "default_1_circular2D_0/ifo001/uwb_range.csv",
+        "archive_url": "https://ndownloader.figshare.com/files/52250714",
+        "archive_size": 1862182413,
+        "whole_archive_checksum_verified": false,
+        "bytes": 5971295,
+        "crc32": "4dba162d",
+        "sha256": "7fc6a81e554a2ab609fc36b2cbef9aa166a4676a486be8862d4bd9623566e75b"
+      },
+      {
+        "name": "default_1_circular2D_0/ifo001/mocap.csv",
+        "archive_url": "https://ndownloader.figshare.com/files/52250714",
+        "archive_size": 1862182413,
+        "whole_archive_checksum_verified": false,
+        "bytes": 2215752,
+        "crc32": "72ef8c2b",
+        "sha256": "32bf4a2876a3a4902d1dc387feb084a253528f60d35f1b98ce57c75ba4c5a19a"
+      },
+      {
+        "name": "default_1_circular3D_0/ifo001/uwb_range.csv",
+        "archive_url": "https://ndownloader.figshare.com/files/52250702",
+        "archive_size": 1671977142,
+        "whole_archive_checksum_verified": false,
+        "bytes": 5704219,
+        "crc32": "9048d367",
+        "sha256": "8fc39328e537ed0b01f083a2355b78d7f497ba0aec58b257775ae4fcb6033def"
+      },
+      {
+        "name": "default_1_circular3D_0/ifo001/mocap.csv",
+        "archive_url": "https://ndownloader.figshare.com/files/52250702",
+        "archive_size": 1671977142,
+        "whole_archive_checksum_verified": false,
+        "bytes": 2048266,
+        "crc32": "d0b477ea",
+        "sha256": "b508cc1479b697a1eb49ad5e259d1ade8501e1cf3d7821202bfa603e234d43e5"
+      },
+      {
+        "name": "default_1_random3_0/ifo001/uwb_range.csv",
+        "archive_url": "https://ndownloader.figshare.com/files/52250735",
+        "archive_size": 2551133105,
+        "whole_archive_checksum_verified": false,
+        "bytes": 8747251,
+        "crc32": "5df54254",
+        "sha256": "05e4423870f001bbb1e6136c260e80055b694ddae20648e6b51c77cb14e64330"
+      },
+      {
+        "name": "default_1_random3_0/ifo001/mocap.csv",
+        "archive_url": "https://ndownloader.figshare.com/files/52250735",
+        "archive_size": 2551133105,
+        "whole_archive_checksum_verified": false,
+        "bytes": 3123830,
+        "crc32": "c65aae08",
+        "sha256": "08bb608c14050f83a4f40711f09d8c281e4d6560663852ec3b7e0a3b021d5855"
+      }
+    ],
+    "devkit_commit": "399ad46f4e6e88c3c98b40aae33fe8e2c6719cff",
+    "configuration_hashes": {
+      "config/experiments.csv": "8b66ed2185c7b68dc67ce285a1f481175b21cec7613bff8b732f841d2b79dc3c",
+      "config/uwb/anchors.yaml": "4e38cef90d8db1cc0fed2a51aa2b67fee3a637140d4bdb685c1608472b5bb4f3",
+      "config/uwb/tags.yaml": "6499c59ebfd498d3077d00c3fbecc3c873112641f25d1f1473b94b1a63be3215",
+      "preprocess/cleanup_csv.py": "0798479fc0476a2dbbee644875fc0d04423d0c9c965ebfa42a9ca35aad820dbb",
+      "preprocess/process_uwb.py": "e5e32fc672effec2af9ab21b14d3406d534bc27da1d85eba06766936493f4e3b",
+      "miluv/utils.py": "dce4a0fa78744b70c183838f6f1bb000aef16775c6c098f929e186ecb8e822a6",
+      "examples/ekfutils/imu_one_robot_models.py": "4b4beeaa1f73cf03a97d4f002aabd36de6f176e71d79fdbdd24e6a86c3f984ad"
+    }
+  },
+  "created_at": "2026-11-06T10:25:45.898489+00:00",
+  "completed_at": "2026-11-06T10:25:51.257151+00:00",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.1",
+    "pyarrow": "26.0.1",
+    "PyYAML": "6.0.3",
+    "fastapi": "0.162.0",
+    "matplotlib": "3.11.2",
+    "httpx": "0.28.1"
+  },
+  "execution_environment": {
+    "system": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.14"
+  },
+  "results_sha256": "1011008f5d536e6f415f5f94f3d797d682971c26650577891ab0d800684ce89d",
+  "validation_status": "computed; independently qualified by external acceptance evidence",
+  "performance": {
+    "acquisition_and_analysis_seconds": 5.1550677079940215,
+    "total_seconds": 5.363840707985219,
+    "network_bytes_this_run": 0,
+    "source_response_bytes": 18750216,
+    "process_peak_rss_bytes": 309002240,
+    "rss_scope": "Whole process lifetime peak; no unmeasured hard RSS guarantee"
+  },
+  "figures": [
+    {
+      "file": "figures/range-errors.png",
+      "caption": "Observation-weighted per-flight range RMSE; source calibration is not an independent sensor comparison.",
+      "sha256": "1c9a98e840144881aba0bfd155cddc84129a8f9a16abe8595f836e3c13abf971"
+    },
+    {
+      "file": "figures/range-residuals.png",
+      "caption": "Display stride only; all valid rows enter metrics. No3D position error inferred.",
+      "sha256": "343ceba95a3876dcd6a0804127a9a54c9486c2efe661564965a27f0c812da84b"
+    }
+  ],
+  "outputs": {
+    "DME-002_RESULTS.json": "72cae03995136e73e76c87f59d704cf436ecadf4961924910a55a13e42968496",
+    "DME-002_METRICS.csv": "3646c8ca9ef59e0aa1fe51940bf5be624d4ca60a10a6e1ddbb2fd98c82b02289",
+    "DME-002_METHODOLOGY.md": "a094292528efca6467c978210a40757e592248fc856d669366aadfc02a760025",
+    "DME-002_REPRODUCIBILITY.md": "cae52a841762c77f5fef58212b655306937735d7ccba0a42f2ab1048f6abbd22",
+    "DME-002_REPORT.html": "067261662f17d662811636c1ea1b28d225d0aef4872fce290851a52735d8d28a"
+  },
+  "presentation_updated_at": "2026-11-06T10:38:19.169380+00:00",
+  "presentation_source_sha256": "7a594d65244516b16e9f09537406c2a8dfaac0668f69b1b542ce2caf7b61f119",
+  "presentation_change": "Wrap long inline SHA identifiers on narrow screens; numerical results unchanged"
+}

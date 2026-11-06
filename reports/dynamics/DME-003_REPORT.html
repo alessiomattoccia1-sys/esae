@@ -1,0 +1,3579 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>DME-003 · Dynamics Lab</title><style>code{overflow-wrap:anywhere;word-break:break-word}body{font:16px/1.65 system-ui,sans-serif;color:#18272c;background:#f7f5ef;margin:auto;max-width:1120px;padding:50px 25px}h1{font-size:42px;line-height:1.1;max-width:900px}h2{margin-top:50px}a{color:#24616c}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #cbd2ce;padding:12px;text-align:left}th{background:#e8ede8}figure{margin:35px 0}img{max-width:100%;height:auto}pre{white-space:pre-wrap;font-size:13px;overflow-wrap:anywhere}small,.muted{color:#566a70}.label{letter-spacing:3px;font:12px ui-monospace,monospace}article{border-left:3px solid #527c75;padding-left:20px;margin:24px 0}.scroll{overflow:auto}footer{margin-top:65px;border-top:1px solid #bbc6c1;padding-top:20px}@media print{body{padding:0}h2{break-after:avoid}figure,table{break-inside:avoid}}</style><body><p class="label">DYNAMICS LAB · ENGINE01</p><h1>Multi-Agent Stochastic Dynamics</h1><p>DME-003 · SIMULATED DATA</p><p class="muted">Computed 2026-11-06T10:26:06.753926+00:00 · reproducible scientific prototype</p><h2>Objective & dataset</h2><p>Measure scaling, collective statistics and reproducibility of an abstract stochastic multi-agent system.</p><pre>{
+  &quot;main_simulations&quot;: 500,
+  &quot;robustness_simulations&quot;: 15,
+  &quot;reproducibility_recalculations&quot;: 1,
+  &quot;maximum_agents&quot;: 50,
+  &quot;steps_per_main_run&quot;: 200,
+  &quot;seed_replicates_per_configuration&quot;: 20
+}</pre><h2>Measured and computed results</h2><div class="scroll"><table><thead><tr><th>scenario</th><th>agents</th><th>replicates</th><th>velocity_dispersion_mean</th><th>observation_coverage</th><th>terminal_displacement_mean</th><th>centroid_displacement</th><th>observation_rmse</th></tr></thead><tbody><tr><td>A</td><td>1</td><td>20</td><td>0.0</td><td>1.0</td><td>41.870487</td><td>41.870487</td><td>1.411106</td></tr><tr><td>A</td><td>5</td><td>20</td><td>3.765396</td><td>1.0</td><td>50.675299</td><td>16.59906</td><td>1.410445</td></tr><tr><td>A</td><td>10</td><td>20</td><td>3.341888</td><td>1.0</td><td>47.478487</td><td>14.105822</td><td>1.415085</td></tr><tr><td>A</td><td>20</td><td>20</td><td>4.016579</td><td>1.0</td><td>50.073858</td><td>11.984433</td><td>1.415531</td></tr><tr><td>A</td><td>50</td><td>20</td><td>3.909306</td><td>1.0</td><td>49.413596</td><td>8.146317</td><td>1.416274</td></tr><tr><td>B</td><td>1</td><td>20</td><td>0.0</td><td>1.0</td><td>48.822249</td><td>48.822249</td><td>1.411106</td></tr><tr><td>B</td><td>5</td><td>20</td><td>4.386093</td><td>1.0</td><td>52.524302</td><td>19.085683</td><td>1.410445</td></tr><tr><td>B</td><td>10</td><td>20</td><td>4.079807</td><td>1.0</td><td>50.651062</td><td>16.383918</td><td>1.415085</td></tr><tr><td>B</td><td>20</td><td>20</td><td>4.981916</td><td>1.0</td><td>53.471046</td><td>12.565007</td><td>1.415531</td></tr><tr><td>B</td><td>50</td><td>20</td><td>4.855011</td><td>1.0</td><td>52.943239</td><td>8.968647</td><td>1.416274</td></tr><tr><td>C</td><td>1</td><td>20</td><td>0.0</td><td>1.0</td><td>48.822249</td><td>48.822249</td><td>1.411106</td></tr><tr><td>C</td><td>5</td><td>20</td><td>2.277782</td><td>1.0</td><td>38.626312</td><td>19.852833</td><td>1.410445</td></tr><tr><td>C</td><td>10</td><td>20</td><td>0.950429</td><td>1.0</td><td>25.781581</td><td>16.916832</td><td>1.415085</td></tr><tr><td>C</td><td>20</td><td>20</td><td>0.668383</td><td>1.0</td><td>20.777772</td><td>12.795076</td><td>1.415531</td></tr><tr><td>C</td><td>50</td><td>20</td><td>0.287159</td><td>1.0</td><td>12.081143</td><td>9.212947</td><td>1.416274</td></tr><tr><td>D</td><td>1</td><td>20</td><td>0.0</td><td>0.688806</td><td>48.822249</td><td>48.822249</td><td>1.40881</td></tr><tr><td>D</td><td>5</td><td>20</td><td>4.386093</td><td>0.694378</td><td>52.524302</td><td>19.085683</td><td>1.410351</td></tr><tr><td>D</td><td>10</td><td>20</td><td>4.079807</td><td>0.700224</td><td>50.651062</td><td>16.383918</td><td>1.41396</td></tr><tr><td>D</td><td>20</td><td>20</td><td>4.981916</td><td>0.700398</td><td>53.471046</td><td>12.565007</td><td>1.417139</td></tr><tr><td>D</td><td>50</td><td>20</td><td>4.855011</td><td>0.697881</td><td>52.943239</td><td>8.968647</td><td>1.416109</td></tr><tr><td>E</td><td>1</td><td>20</td><td>0.0</td><td>1.0</td><td>48.822249</td><td>48.822249</td><td>1.411106</td></tr><tr><td>E</td><td>5</td><td>20</td><td>3.082943</td><td>1.0</td><td>36.563589</td><td>15.73776</td><td>1.410445</td></tr><tr><td>E</td><td>10</td><td>20</td><td>2.32764</td><td>1.0</td><td>32.069244</td><td>11.548876</td><td>1.415085</td></tr><tr><td>E</td><td>20</td><td>20</td><td>2.64923</td><td>1.0</td><td>32.891587</td><td>9.192158</td><td>1.415531</td></tr><tr><td>E</td><td>50</td><td>20</td><td>2.681613</td><td>1.0</td><td>32.69384</td><td>6.955912</td><td>1.416274</td></tr></tbody></table></div><figure><img src="figures/multi-agent.png" alt="Computed synthetic states; no real geography or drone control."><figcaption>Computed synthetic states; no real geography or drone control.</figcaption></figure><figure><img src="figures/collective-statistics.png" alt="Seed-level variability and interaction rules determine the measured collective statistics."><figcaption>Seed-level variability and interaction rules determine the measured collective statistics.</figcaption></figure><h2>Method & parameters</h2><pre># DME-003 — method
+
+Kind: SIMULATED DATA. Algorithm: dme-simulation-1.0.
+
+Five synthetic scenarios Aindependent/Bstochastic/Clocal velocity consensus/Dpartial observations/Eheterogeneous CV+CRW; N1/5/10/20/50×20seeds=500main runs. dt=.1s,200steps, q=noise²=.09, radius12abstract units, coupling.8, observationσ1, Dmissing.3. Synchronous consensus dv_i=κ(mean_neighbor(v)−v_i)dt; reflecting box±100, no targets or geography. Three separate RNG streams for process/measurement/missingness. Bootstrap resamples independent seeds. Sensitivity dt .05/.1/.2 at equal20s, noise .1/.3/.8, coupling0/.8/1.6, missing0/.3/.6. Observation cadence1/2/5 supplemental after first pilot. Same-seed replay byte checks strict scientific JSON. Timing excludes no work silently; run timing includes state recording/result assembly. Abstract results are not validated drone aerodynamics.
+
+## Limits
+- All values are synthetic abstract-system results, not real flights.
+- Local velocity consensus and a reflecting box are defined mathematical rules, not validated aerodynamics.
+- Different timesteps use equal physical duration but different stochastic discretizations; sensitivity is not a common-Brownian-path strong-convergence proof.
+- Bootstrap intervals here resample independent simulation seeds, unlike temporal observations within real flights.
+
+## Source
+{
+  &quot;source&quot;: &quot;Dynamics mathematical/simulation core&quot;,
+  &quot;license&quot;: &quot;Apache-2.0 original generated synthetic data; no measured flights&quot;,
+  &quot;actual_flight_data&quot;: false
+}
+</pre><h2>Validation and reproducibility</h2><pre># Reproduce DME-003
+
+Use Python3.12 and the pinned lock. From the distribution root:
+
+    python -m dynamics.cli run DME-003 --data /your/local/dynamics-data
+    python -m dynamics.cli reproduce JOB_UUID --data /your/local/dynamics-data
+
+The second command rehashes every acquired source object, reparses original selected ZIP bytes and recomputes mathematical results offline, with the original manifest parameters. Missing or altered cached bytes fail explicitly; a new download is a new acquisition, not substitution for an old vintage. The results_sha256 excludes measured execution timing but includes all scientific results and source identities. Public source packages do not contain multi-GB third-party archives. Dataset source availability may change. All seeds/parameters/dependency versions and source hashes are in the manifest.
+</pre><p>Scientific result SHA-256: <code>f154ddcdb4aebdec0a278e478fae39a500f3ee9383c4bfdcd1c20b63a9441a67</code>. Numerical correctness is evaluated with independent controls and source replay; scientific validity remains bounded by source quality and model assumptions.</p><h2>Limits</h2><article>All values are synthetic abstract-system results, not real flights.</article><article>Local velocity consensus and a reflecting box are defined mathematical rules, not validated aerodynamics.</article><article>Different timesteps use equal physical duration but different stochastic discretizations; sensitivity is not a common-Brownian-path strong-convergence proof.</article><article>Bootstrap intervals here resample independent simulation seeds, unlike temporal observations within real flights.</article><h2>Sources & attribution</h2><pre>{
+  &quot;source&quot;: &quot;Dynamics mathematical/simulation core&quot;,
+  &quot;license&quot;: &quot;Apache-2.0 original generated synthetic data; no measured flights&quot;,
+  &quot;actual_flight_data&quot;: false
+}</pre><h2>Execution evidence</h2><pre>{
+  &quot;total_analysis_seconds&quot;: 10.232996916980483,
+  &quot;run_timings&quot;: [
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261206,
+      &quot;total_seconds&quot;: 0.005974916974082589,
+      &quot;seconds_per_step&quot;: 2.9874584870412947e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261207,
+      &quot;total_seconds&quot;: 0.005721708992496133,
+      &quot;seconds_per_step&quot;: 2.8608544962480664e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261208,
+      &quot;total_seconds&quot;: 0.00554329197620973,
+      &quot;seconds_per_step&quot;: 2.771645988104865e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261209,
+      &quot;total_seconds&quot;: 0.005527458037249744,
+      &quot;seconds_per_step&quot;: 2.763729018624872e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261210,
+      &quot;total_seconds&quot;: 0.005577499978244305,
+      &quot;seconds_per_step&quot;: 2.7887499891221522e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261211,
+      &quot;total_seconds&quot;: 0.0055542499758303165,
+      &quot;seconds_per_step&quot;: 2.7771249879151583e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261212,
+      &quot;total_seconds&quot;: 0.0055487920180894434,
+      &quot;seconds_per_step&quot;: 2.7743960090447216e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261213,
+      &quot;total_seconds&quot;: 0.005552208051085472,
+      &quot;seconds_per_step&quot;: 2.776104025542736e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261214,
+      &quot;total_seconds&quot;: 0.005545624997466803,
+      &quot;seconds_per_step&quot;: 2.7728124987334013e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261215,
+      &quot;total_seconds&quot;: 0.005574667011387646,
+      &quot;seconds_per_step&quot;: 2.787333505693823e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261216,
+      &quot;total_seconds&quot;: 0.005514124990440905,
+      &quot;seconds_per_step&quot;: 2.7570624952204524e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261217,
+      &quot;total_seconds&quot;: 0.005538874946068972,
+      &quot;seconds_per_step&quot;: 2.769437473034486e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261218,
+      &quot;total_seconds&quot;: 0.005518542020581663,
+      &quot;seconds_per_step&quot;: 2.7592710102908315e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261219,
+      &quot;total_seconds&quot;: 0.005515208991710097,
+      &quot;seconds_per_step&quot;: 2.757604495855048e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261220,
+      &quot;total_seconds&quot;: 0.005511875031515956,
+      &quot;seconds_per_step&quot;: 2.755937515757978e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261221,
+      &quot;total_seconds&quot;: 0.005546917032916099,
+      &quot;seconds_per_step&quot;: 2.7734585164580493e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261222,
+      &quot;total_seconds&quot;: 0.005559207987971604,
+      &quot;seconds_per_step&quot;: 2.779603993985802e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261223,
+      &quot;total_seconds&quot;: 0.005546791013330221,
+      &quot;seconds_per_step&quot;: 2.7733955066651104e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261224,
+      &quot;total_seconds&quot;: 0.0055274170008488,
+      &quot;seconds_per_step&quot;: 2.7637085004244e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261225,
+      &quot;total_seconds&quot;: 0.005518499994650483,
+      &quot;seconds_per_step&quot;: 2.7592499973252414e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261606,
+      &quot;total_seconds&quot;: 0.0061264579999260604,
+      &quot;seconds_per_step&quot;: 3.06322899996303e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261607,
+      &quot;total_seconds&quot;: 0.006091292016208172,
+      &quot;seconds_per_step&quot;: 3.045646008104086e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261608,
+      &quot;total_seconds&quot;: 0.005980042042210698,
+      &quot;seconds_per_step&quot;: 2.990021021105349e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261609,
+      &quot;total_seconds&quot;: 0.006021499983035028,
+      &quot;seconds_per_step&quot;: 3.010749991517514e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261610,
+      &quot;total_seconds&quot;: 0.006080624996684492,
+      &quot;seconds_per_step&quot;: 3.040312498342246e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261611,
+      &quot;total_seconds&quot;: 0.00597095798002556,
+      &quot;seconds_per_step&quot;: 2.98547899001278e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261612,
+      &quot;total_seconds&quot;: 0.006002041976898909,
+      &quot;seconds_per_step&quot;: 3.0010209884494542e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261613,
+      &quot;total_seconds&quot;: 0.005972249957267195,
+      &quot;seconds_per_step&quot;: 2.9861249786335974e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261614,
+      &quot;total_seconds&quot;: 0.0059835410211235285,
+      &quot;seconds_per_step&quot;: 2.9917705105617643e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261615,
+      &quot;total_seconds&quot;: 0.005985583993606269,
+      &quot;seconds_per_step&quot;: 2.9927919968031347e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261616,
+      &quot;total_seconds&quot;: 0.006062457978259772,
+      &quot;seconds_per_step&quot;: 3.031228989129886e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261617,
+      &quot;total_seconds&quot;: 0.005994709033984691,
+      &quot;seconds_per_step&quot;: 2.9973545169923456e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261618,
+      &quot;total_seconds&quot;: 0.0059806249919347465,
+      &quot;seconds_per_step&quot;: 2.9903124959673734e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261619,
+      &quot;total_seconds&quot;: 0.005983915994875133,
+      &quot;seconds_per_step&quot;: 2.9919579974375664e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261620,
+      &quot;total_seconds&quot;: 0.006216000008862466,
+      &quot;seconds_per_step&quot;: 3.1080000044312326e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261621,
+      &quot;total_seconds&quot;: 0.006238625035621226,
+      &quot;seconds_per_step&quot;: 3.119312517810613e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261622,
+      &quot;total_seconds&quot;: 0.006319791020359844,
+      &quot;seconds_per_step&quot;: 3.159895510179922e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261623,
+      &quot;total_seconds&quot;: 0.006186041980981827,
+      &quot;seconds_per_step&quot;: 3.093020990490913e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261624,
+      &quot;total_seconds&quot;: 0.006178166018798947,
+      &quot;seconds_per_step&quot;: 3.089083009399474e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261625,
+      &quot;total_seconds&quot;: 0.006206083984579891,
+      &quot;seconds_per_step&quot;: 3.103041992289946e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262106,
+      &quot;total_seconds&quot;: 0.00654012500308454,
+      &quot;seconds_per_step&quot;: 3.27006250154227e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262107,
+      &quot;total_seconds&quot;: 0.006468250008765608,
+      &quot;seconds_per_step&quot;: 3.234125004382804e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262108,
+      &quot;total_seconds&quot;: 0.006630415969993919,
+      &quot;seconds_per_step&quot;: 3.31520798499696e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262109,
+      &quot;total_seconds&quot;: 0.006438041978981346,
+      &quot;seconds_per_step&quot;: 3.219020989490673e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262110,
+      &quot;total_seconds&quot;: 0.006438666023313999,
+      &quot;seconds_per_step&quot;: 3.219333011656999e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262111,
+      &quot;total_seconds&quot;: 0.006431124988012016,
+      &quot;seconds_per_step&quot;: 3.215562494006008e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262112,
+      &quot;total_seconds&quot;: 0.006421333004254848,
+      &quot;seconds_per_step&quot;: 3.210666502127424e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262113,
+      &quot;total_seconds&quot;: 0.006433208007365465,
+      &quot;seconds_per_step&quot;: 3.2166040036827325e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262114,
+      &quot;total_seconds&quot;: 0.006576375046279281,
+      &quot;seconds_per_step&quot;: 3.2881875231396404e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262115,
+      &quot;total_seconds&quot;: 0.006424999970477074,
+      &quot;seconds_per_step&quot;: 3.2124999852385374e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262116,
+      &quot;total_seconds&quot;: 0.00642237497959286,
+      &quot;seconds_per_step&quot;: 3.21118748979643e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262117,
+      &quot;total_seconds&quot;: 0.006628790986724198,
+      &quot;seconds_per_step&quot;: 3.314395493362099e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262118,
+      &quot;total_seconds&quot;: 0.0065800840384326875,
+      &quot;seconds_per_step&quot;: 3.290042019216344e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262119,
+      &quot;total_seconds&quot;: 0.006446541985496879,
+      &quot;seconds_per_step&quot;: 3.223270992748439e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262120,
+      &quot;total_seconds&quot;: 0.033861499978229403,
+      &quot;seconds_per_step&quot;: 0.00016930749989114703
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262121,
+      &quot;total_seconds&quot;: 0.006612083001527935,
+      &quot;seconds_per_step&quot;: 3.3060415007639675e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262122,
+      &quot;total_seconds&quot;: 0.006474166992120445,
+      &quot;seconds_per_step&quot;: 3.237083496060222e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262123,
+      &quot;total_seconds&quot;: 0.006495583977084607,
+      &quot;seconds_per_step&quot;: 3.2477919885423037e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262124,
+      &quot;total_seconds&quot;: 0.006463541998527944,
+      &quot;seconds_per_step&quot;: 3.231770999263972e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262125,
+      &quot;total_seconds&quot;: 0.006799291004426777,
+      &quot;seconds_per_step&quot;: 3.399645502213389e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263106,
+      &quot;total_seconds&quot;: 0.007061208947561681,
+      &quot;seconds_per_step&quot;: 3.5306044737808405e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263107,
+      &quot;total_seconds&quot;: 0.007051250024233013,
+      &quot;seconds_per_step&quot;: 3.525625012116507e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263108,
+      &quot;total_seconds&quot;: 0.0070213330327533185,
+      &quot;seconds_per_step&quot;: 3.5106665163766595e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263109,
+      &quot;total_seconds&quot;: 0.0070390410255640745,
+      &quot;seconds_per_step&quot;: 3.5195205127820374e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263110,
+      &quot;total_seconds&quot;: 0.007017083000391722,
+      &quot;seconds_per_step&quot;: 3.508541500195861e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263111,
+      &quot;total_seconds&quot;: 0.007673499989323318,
+      &quot;seconds_per_step&quot;: 3.836749994661659e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263112,
+      &quot;total_seconds&quot;: 0.007293624978046864,
+      &quot;seconds_per_step&quot;: 3.646812489023432e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263113,
+      &quot;total_seconds&quot;: 0.0068634169874712825,
+      &quot;seconds_per_step&quot;: 3.4317084937356414e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263114,
+      &quot;total_seconds&quot;: 0.006776041991543025,
+      &quot;seconds_per_step&quot;: 3.388020995771512e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263115,
+      &quot;total_seconds&quot;: 0.006778957962524146,
+      &quot;seconds_per_step&quot;: 3.389478981262073e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263116,
+      &quot;total_seconds&quot;: 0.006744208978489041,
+      &quot;seconds_per_step&quot;: 3.372104489244521e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263117,
+      &quot;total_seconds&quot;: 0.00716054200893268,
+      &quot;seconds_per_step&quot;: 3.58027100446634e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263118,
+      &quot;total_seconds&quot;: 0.006734375027008355,
+      &quot;seconds_per_step&quot;: 3.3671875135041775e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263119,
+      &quot;total_seconds&quot;: 0.006735458038747311,
+      &quot;seconds_per_step&quot;: 3.367729019373655e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263120,
+      &quot;total_seconds&quot;: 0.006744041980709881,
+      &quot;seconds_per_step&quot;: 3.3720209903549405e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263121,
+      &quot;total_seconds&quot;: 0.006757125025615096,
+      &quot;seconds_per_step&quot;: 3.378562512807548e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263122,
+      &quot;total_seconds&quot;: 0.006788667000364512,
+      &quot;seconds_per_step&quot;: 3.3943335001822564e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263123,
+      &quot;total_seconds&quot;: 0.00715004198718816,
+      &quot;seconds_per_step&quot;: 3.5750209935940805e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263124,
+      &quot;total_seconds&quot;: 0.0068880420294590294,
+      &quot;seconds_per_step&quot;: 3.444021014729515e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263125,
+      &quot;total_seconds&quot;: 0.0067530840169638395,
+      &quot;seconds_per_step&quot;: 3.37654200848192e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266106,
+      &quot;total_seconds&quot;: 0.008294791972730309,
+      &quot;seconds_per_step&quot;: 4.147395986365154e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266107,
+      &quot;total_seconds&quot;: 0.007917416980490088,
+      &quot;seconds_per_step&quot;: 3.958708490245044e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266108,
+      &quot;total_seconds&quot;: 0.0085504159796983,
+      &quot;seconds_per_step&quot;: 4.27520798984915e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266109,
+      &quot;total_seconds&quot;: 0.009934874949976802,
+      &quot;seconds_per_step&quot;: 4.967437474988401e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266110,
+      &quot;total_seconds&quot;: 0.008495583024341613,
+      &quot;seconds_per_step&quot;: 4.247791512170807e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266111,
+      &quot;total_seconds&quot;: 0.00842987501528114,
+      &quot;seconds_per_step&quot;: 4.2149375076405704e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266112,
+      &quot;total_seconds&quot;: 0.00842075003311038,
+      &quot;seconds_per_step&quot;: 4.21037501655519e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266113,
+      &quot;total_seconds&quot;: 0.008402582956478,
+      &quot;seconds_per_step&quot;: 4.201291478239e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266114,
+      &quot;total_seconds&quot;: 0.008515791967511177,
+      &quot;seconds_per_step&quot;: 4.257895983755588e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266115,
+      &quot;total_seconds&quot;: 0.009243917011190206,
+      &quot;seconds_per_step&quot;: 4.621958505595103e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266116,
+      &quot;total_seconds&quot;: 0.0084674580139108,
+      &quot;seconds_per_step&quot;: 4.2337290069554e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266117,
+      &quot;total_seconds&quot;: 0.008488833031151444,
+      &quot;seconds_per_step&quot;: 4.2444165155757216e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266118,
+      &quot;total_seconds&quot;: 0.008449916960671544,
+      &quot;seconds_per_step&quot;: 4.224958480335772e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266119,
+      &quot;total_seconds&quot;: 0.008415749995037913,
+      &quot;seconds_per_step&quot;: 4.207874997518957e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266120,
+      &quot;total_seconds&quot;: 0.008409707981627434,
+      &quot;seconds_per_step&quot;: 4.2048539908137175e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266121,
+      &quot;total_seconds&quot;: 0.009168584016151726,
+      &quot;seconds_per_step&quot;: 4.584292008075863e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266122,
+      &quot;total_seconds&quot;: 0.008432457980234176,
+      &quot;seconds_per_step&quot;: 4.216228990117088e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266123,
+      &quot;total_seconds&quot;: 0.008373791992198676,
+      &quot;seconds_per_step&quot;: 4.186895996099338e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266124,
+      &quot;total_seconds&quot;: 0.008459792006760836,
+      &quot;seconds_per_step&quot;: 4.229896003380418e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;A&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266125,
+      &quot;total_seconds&quot;: 0.008393541967961937,
+      &quot;seconds_per_step&quot;: 4.196770983980969e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261206,
+      &quot;total_seconds&quot;: 0.01240012503694743,
+      &quot;seconds_per_step&quot;: 6.200062518473714e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261207,
+      &quot;total_seconds&quot;: 0.01139033300569281,
+      &quot;seconds_per_step&quot;: 5.695166502846405e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261208,
+      &quot;total_seconds&quot;: 0.0113897499977611,
+      &quot;seconds_per_step&quot;: 5.69487499888055e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261209,
+      &quot;total_seconds&quot;: 0.011707041994668543,
+      &quot;seconds_per_step&quot;: 5.853520997334272e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261210,
+      &quot;total_seconds&quot;: 0.011422750016208738,
+      &quot;seconds_per_step&quot;: 5.711375008104369e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261211,
+      &quot;total_seconds&quot;: 0.01144320802995935,
+      &quot;seconds_per_step&quot;: 5.721604014979675e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261212,
+      &quot;total_seconds&quot;: 0.011355667025782168,
+      &quot;seconds_per_step&quot;: 5.677833512891084e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261213,
+      &quot;total_seconds&quot;: 0.011373332992661744,
+      &quot;seconds_per_step&quot;: 5.686666496330872e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261214,
+      &quot;total_seconds&quot;: 0.011401208001188934,
+      &quot;seconds_per_step&quot;: 5.700604000594467e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261215,
+      &quot;total_seconds&quot;: 0.011336041032336652,
+      &quot;seconds_per_step&quot;: 5.668020516168326e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261216,
+      &quot;total_seconds&quot;: 0.011374333000276238,
+      &quot;seconds_per_step&quot;: 5.687166500138119e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261217,
+      &quot;total_seconds&quot;: 0.011387292004656047,
+      &quot;seconds_per_step&quot;: 5.6936460023280236e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261218,
+      &quot;total_seconds&quot;: 0.011328583990689367,
+      &quot;seconds_per_step&quot;: 5.664291995344683e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261219,
+      &quot;total_seconds&quot;: 0.011335457966197282,
+      &quot;seconds_per_step&quot;: 5.667728983098641e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261220,
+      &quot;total_seconds&quot;: 0.011367708968464285,
+      &quot;seconds_per_step&quot;: 5.6838544842321426e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261221,
+      &quot;total_seconds&quot;: 0.011361957993358374,
+      &quot;seconds_per_step&quot;: 5.680978996679187e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261222,
+      &quot;total_seconds&quot;: 0.011321250000037253,
+      &quot;seconds_per_step&quot;: 5.660625000018626e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261223,
+      &quot;total_seconds&quot;: 0.011302625003736466,
+      &quot;seconds_per_step&quot;: 5.651312501868233e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261224,
+      &quot;total_seconds&quot;: 0.011310625006444752,
+      &quot;seconds_per_step&quot;: 5.655312503222376e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261225,
+      &quot;total_seconds&quot;: 0.011329041968565434,
+      &quot;seconds_per_step&quot;: 5.6645209842827174e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261606,
+      &quot;total_seconds&quot;: 0.017173999978695065,
+      &quot;seconds_per_step&quot;: 8.586999989347532e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261607,
+      &quot;total_seconds&quot;: 0.014373875048477203,
+      &quot;seconds_per_step&quot;: 7.186937524238602e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261608,
+      &quot;total_seconds&quot;: 0.012958250008523464,
+      &quot;seconds_per_step&quot;: 6.479125004261732e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261609,
+      &quot;total_seconds&quot;: 0.012519125011749566,
+      &quot;seconds_per_step&quot;: 6.259562505874782e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261610,
+      &quot;total_seconds&quot;: 0.012054499995429069,
+      &quot;seconds_per_step&quot;: 6.0272499977145346e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261611,
+      &quot;total_seconds&quot;: 0.011959833034779876,
+      &quot;seconds_per_step&quot;: 5.979916517389938e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261612,
+      &quot;total_seconds&quot;: 0.011929167027119547,
+      &quot;seconds_per_step&quot;: 5.964583513559774e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261613,
+      &quot;total_seconds&quot;: 0.011961125012021512,
+      &quot;seconds_per_step&quot;: 5.9805625060107556e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261614,
+      &quot;total_seconds&quot;: 0.011898416967596859,
+      &quot;seconds_per_step&quot;: 5.949208483798429e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261615,
+      &quot;total_seconds&quot;: 0.011998666974250227,
+      &quot;seconds_per_step&quot;: 5.999333487125114e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261616,
+      &quot;total_seconds&quot;: 0.03466779203154147,
+      &quot;seconds_per_step&quot;: 0.00017333896015770734
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261617,
+      &quot;total_seconds&quot;: 0.012108791968785226,
+      &quot;seconds_per_step&quot;: 6.0543959843926135e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261618,
+      &quot;total_seconds&quot;: 0.011932249995879829,
+      &quot;seconds_per_step&quot;: 5.966124997939914e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261619,
+      &quot;total_seconds&quot;: 0.011921083030756563,
+      &quot;seconds_per_step&quot;: 5.9605415153782814e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261620,
+      &quot;total_seconds&quot;: 0.011882624996360391,
+      &quot;seconds_per_step&quot;: 5.9413124981801955e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261621,
+      &quot;total_seconds&quot;: 0.012015208951197565,
+      &quot;seconds_per_step&quot;: 6.007604475598782e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261622,
+      &quot;total_seconds&quot;: 0.011910000001080334,
+      &quot;seconds_per_step&quot;: 5.955000000540167e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261623,
+      &quot;total_seconds&quot;: 0.011940416996367276,
+      &quot;seconds_per_step&quot;: 5.970208498183638e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261624,
+      &quot;total_seconds&quot;: 0.011881957994773984,
+      &quot;seconds_per_step&quot;: 5.940978997386992e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261625,
+      &quot;total_seconds&quot;: 0.011958041985053569,
+      &quot;seconds_per_step&quot;: 5.9790209925267845e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262106,
+      &quot;total_seconds&quot;: 0.012347334006335586,
+      &quot;seconds_per_step&quot;: 6.173667003167793e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262107,
+      &quot;total_seconds&quot;: 0.012411125004291534,
+      &quot;seconds_per_step&quot;: 6.205562502145767e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262108,
+      &quot;total_seconds&quot;: 0.012240791984368116,
+      &quot;seconds_per_step&quot;: 6.120395992184057e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262109,
+      &quot;total_seconds&quot;: 0.012217374984174967,
+      &quot;seconds_per_step&quot;: 6.108687492087484e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262110,
+      &quot;total_seconds&quot;: 0.012228416977450252,
+      &quot;seconds_per_step&quot;: 6.114208488725126e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262111,
+      &quot;total_seconds&quot;: 0.012154583004303277,
+      &quot;seconds_per_step&quot;: 6.077291502151638e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262112,
+      &quot;total_seconds&quot;: 0.012211708992253989,
+      &quot;seconds_per_step&quot;: 6.105854496126994e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262113,
+      &quot;total_seconds&quot;: 0.012357833969872445,
+      &quot;seconds_per_step&quot;: 6.178916984936222e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262114,
+      &quot;total_seconds&quot;: 0.012226250022649765,
+      &quot;seconds_per_step&quot;: 6.113125011324882e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262115,
+      &quot;total_seconds&quot;: 0.012211374996695668,
+      &quot;seconds_per_step&quot;: 6.105687498347834e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262116,
+      &quot;total_seconds&quot;: 0.012216625036671758,
+      &quot;seconds_per_step&quot;: 6.10831251833588e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262117,
+      &quot;total_seconds&quot;: 0.012156374985352159,
+      &quot;seconds_per_step&quot;: 6.0781874926760795e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262118,
+      &quot;total_seconds&quot;: 0.012159208999946713,
+      &quot;seconds_per_step&quot;: 6.0796044999733566e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262119,
+      &quot;total_seconds&quot;: 0.01229316700482741,
+      &quot;seconds_per_step&quot;: 6.146583502413704e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262120,
+      &quot;total_seconds&quot;: 0.012127125053666532,
+      &quot;seconds_per_step&quot;: 6.063562526833266e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262121,
+      &quot;total_seconds&quot;: 0.012199250049889088,
+      &quot;seconds_per_step&quot;: 6.099625024944544e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262122,
+      &quot;total_seconds&quot;: 0.012172083021141589,
+      &quot;seconds_per_step&quot;: 6.086041510570794e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262123,
+      &quot;total_seconds&quot;: 0.012141540995799005,
+      &quot;seconds_per_step&quot;: 6.070770497899503e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262124,
+      &quot;total_seconds&quot;: 0.012164499959908426,
+      &quot;seconds_per_step&quot;: 6.082249979954213e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262125,
+      &quot;total_seconds&quot;: 0.012340083019807935,
+      &quot;seconds_per_step&quot;: 6.170041509903968e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263106,
+      &quot;total_seconds&quot;: 0.012859457987360656,
+      &quot;seconds_per_step&quot;: 6.429728993680328e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263107,
+      &quot;total_seconds&quot;: 0.012808083032723516,
+      &quot;seconds_per_step&quot;: 6.404041516361759e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263108,
+      &quot;total_seconds&quot;: 0.012797791976481676,
+      &quot;seconds_per_step&quot;: 6.398895988240838e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263109,
+      &quot;total_seconds&quot;: 0.01286791602615267,
+      &quot;seconds_per_step&quot;: 6.433958013076336e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263110,
+      &quot;total_seconds&quot;: 0.012897374981548637,
+      &quot;seconds_per_step&quot;: 6.448687490774318e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263111,
+      &quot;total_seconds&quot;: 0.013118708971887827,
+      &quot;seconds_per_step&quot;: 6.559354485943914e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263112,
+      &quot;total_seconds&quot;: 0.012789542030077428,
+      &quot;seconds_per_step&quot;: 6.394771015038713e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263113,
+      &quot;total_seconds&quot;: 0.012810375017579645,
+      &quot;seconds_per_step&quot;: 6.405187508789822e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263114,
+      &quot;total_seconds&quot;: 0.012797458039131016,
+      &quot;seconds_per_step&quot;: 6.398729019565507e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263115,
+      &quot;total_seconds&quot;: 0.012807500024791807,
+      &quot;seconds_per_step&quot;: 6.403750012395903e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263116,
+      &quot;total_seconds&quot;: 0.012769374996423721,
+      &quot;seconds_per_step&quot;: 6.38468749821186e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263117,
+      &quot;total_seconds&quot;: 0.01303783297771588,
+      &quot;seconds_per_step&quot;: 6.51891648885794e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263118,
+      &quot;total_seconds&quot;: 0.012817208014894277,
+      &quot;seconds_per_step&quot;: 6.408604007447138e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263119,
+      &quot;total_seconds&quot;: 0.012848999991547316,
+      &quot;seconds_per_step&quot;: 6.424499995773659e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263120,
+      &quot;total_seconds&quot;: 0.012826334044802934,
+      &quot;seconds_per_step&quot;: 6.413167022401467e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263121,
+      &quot;total_seconds&quot;: 0.012762208003550768,
+      &quot;seconds_per_step&quot;: 6.381104001775384e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263122,
+      &quot;total_seconds&quot;: 0.01286608399823308,
+      &quot;seconds_per_step&quot;: 6.43304199911654e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263123,
+      &quot;total_seconds&quot;: 0.013053083966951817,
+      &quot;seconds_per_step&quot;: 6.526541983475909e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263124,
+      &quot;total_seconds&quot;: 0.01432558405213058,
+      &quot;seconds_per_step&quot;: 7.16279202606529e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263125,
+      &quot;total_seconds&quot;: 0.013560749997850507,
+      &quot;seconds_per_step&quot;: 6.780374998925253e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266106,
+      &quot;total_seconds&quot;: 0.014835749985650182,
+      &quot;seconds_per_step&quot;: 7.417874992825091e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266107,
+      &quot;total_seconds&quot;: 0.01447562495013699,
+      &quot;seconds_per_step&quot;: 7.237812475068495e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266108,
+      &quot;total_seconds&quot;: 0.015794624981936067,
+      &quot;seconds_per_step&quot;: 7.897312490968034e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266109,
+      &quot;total_seconds&quot;: 0.016671666991896927,
+      &quot;seconds_per_step&quot;: 8.335833495948464e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266110,
+      &quot;total_seconds&quot;: 0.015110375010408461,
+      &quot;seconds_per_step&quot;: 7.555187505204231e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266111,
+      &quot;total_seconds&quot;: 0.014775209012441337,
+      &quot;seconds_per_step&quot;: 7.387604506220669e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266112,
+      &quot;total_seconds&quot;: 0.014836083981208503,
+      &quot;seconds_per_step&quot;: 7.418041990604251e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266113,
+      &quot;total_seconds&quot;: 0.014915833016857505,
+      &quot;seconds_per_step&quot;: 7.457916508428753e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266114,
+      &quot;total_seconds&quot;: 0.014866209006868303,
+      &quot;seconds_per_step&quot;: 7.433104503434151e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266115,
+      &quot;total_seconds&quot;: 0.015369499975349754,
+      &quot;seconds_per_step&quot;: 7.684749987674878e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266116,
+      &quot;total_seconds&quot;: 0.014785875042434782,
+      &quot;seconds_per_step&quot;: 7.392937521217392e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266117,
+      &quot;total_seconds&quot;: 0.014781500038225204,
+      &quot;seconds_per_step&quot;: 7.390750019112602e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266118,
+      &quot;total_seconds&quot;: 0.01478495798073709,
+      &quot;seconds_per_step&quot;: 7.392478990368545e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266119,
+      &quot;total_seconds&quot;: 0.014764958003070205,
+      &quot;seconds_per_step&quot;: 7.382479001535103e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266120,
+      &quot;total_seconds&quot;: 0.014756416960153729,
+      &quot;seconds_per_step&quot;: 7.378208480076864e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266121,
+      &quot;total_seconds&quot;: 0.04108037502737716,
+      &quot;seconds_per_step&quot;: 0.0002054018751368858
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266122,
+      &quot;total_seconds&quot;: 0.015073791961185634,
+      &quot;seconds_per_step&quot;: 7.536895980592818e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266123,
+      &quot;total_seconds&quot;: 0.01476029196055606,
+      &quot;seconds_per_step&quot;: 7.38014598027803e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266124,
+      &quot;total_seconds&quot;: 0.014820165990386158,
+      &quot;seconds_per_step&quot;: 7.410082995193079e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;B&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266125,
+      &quot;total_seconds&quot;: 0.014755333017092198,
+      &quot;seconds_per_step&quot;: 7.3776665085461e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261206,
+      &quot;total_seconds&quot;: 0.02233070897636935,
+      &quot;seconds_per_step&quot;: 0.00011165354488184675
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261207,
+      &quot;total_seconds&quot;: 0.016901083989068866,
+      &quot;seconds_per_step&quot;: 8.450541994534433e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261208,
+      &quot;total_seconds&quot;: 0.01519041700521484,
+      &quot;seconds_per_step&quot;: 7.59520850260742e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261209,
+      &quot;total_seconds&quot;: 0.014376875013113022,
+      &quot;seconds_per_step&quot;: 7.18843750655651e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261210,
+      &quot;total_seconds&quot;: 0.014017667039297521,
+      &quot;seconds_per_step&quot;: 7.00883351964876e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261211,
+      &quot;total_seconds&quot;: 0.014025542011950165,
+      &quot;seconds_per_step&quot;: 7.012771005975083e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261212,
+      &quot;total_seconds&quot;: 0.014069332974031568,
+      &quot;seconds_per_step&quot;: 7.034666487015784e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261213,
+      &quot;total_seconds&quot;: 0.013990792038384825,
+      &quot;seconds_per_step&quot;: 6.995396019192413e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261214,
+      &quot;total_seconds&quot;: 0.013980667048599571,
+      &quot;seconds_per_step&quot;: 6.990333524299786e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261215,
+      &quot;total_seconds&quot;: 0.014351834019180387,
+      &quot;seconds_per_step&quot;: 7.175917009590194e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261216,
+      &quot;total_seconds&quot;: 0.013978125003632158,
+      &quot;seconds_per_step&quot;: 6.989062501816079e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261217,
+      &quot;total_seconds&quot;: 0.013983834011014551,
+      &quot;seconds_per_step&quot;: 6.991917005507276e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261218,
+      &quot;total_seconds&quot;: 0.013973207969684154,
+      &quot;seconds_per_step&quot;: 6.986603984842077e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261219,
+      &quot;total_seconds&quot;: 0.013995333982165903,
+      &quot;seconds_per_step&quot;: 6.997666991082951e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261220,
+      &quot;total_seconds&quot;: 0.01399858301738277,
+      &quot;seconds_per_step&quot;: 6.999291508691385e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261221,
+      &quot;total_seconds&quot;: 0.013974832952953875,
+      &quot;seconds_per_step&quot;: 6.987416476476938e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261222,
+      &quot;total_seconds&quot;: 0.01399341702926904,
+      &quot;seconds_per_step&quot;: 6.99670851463452e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261223,
+      &quot;total_seconds&quot;: 0.01399279199540615,
+      &quot;seconds_per_step&quot;: 6.996395997703075e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261224,
+      &quot;total_seconds&quot;: 0.01397320901742205,
+      &quot;seconds_per_step&quot;: 6.986604508711025e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261225,
+      &quot;total_seconds&quot;: 0.014001583971548826,
+      &quot;seconds_per_step&quot;: 7.000791985774413e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261606,
+      &quot;total_seconds&quot;: 0.015363041020464152,
+      &quot;seconds_per_step&quot;: 7.681520510232076e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261607,
+      &quot;total_seconds&quot;: 0.015252416953444481,
+      &quot;seconds_per_step&quot;: 7.62620847672224e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261608,
+      &quot;total_seconds&quot;: 0.015246791008394212,
+      &quot;seconds_per_step&quot;: 7.623395504197106e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261609,
+      &quot;total_seconds&quot;: 0.015122667013201863,
+      &quot;seconds_per_step&quot;: 7.561333506600932e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261610,
+      &quot;total_seconds&quot;: 0.015128415951039642,
+      &quot;seconds_per_step&quot;: 7.56420797551982e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261611,
+      &quot;total_seconds&quot;: 0.015125958016142249,
+      &quot;seconds_per_step&quot;: 7.562979008071124e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261612,
+      &quot;total_seconds&quot;: 0.015161290997639298,
+      &quot;seconds_per_step&quot;: 7.580645498819649e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261613,
+      &quot;total_seconds&quot;: 0.015092166024260223,
+      &quot;seconds_per_step&quot;: 7.546083012130111e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261614,
+      &quot;total_seconds&quot;: 0.01518350001424551,
+      &quot;seconds_per_step&quot;: 7.591750007122755e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261615,
+      &quot;total_seconds&quot;: 0.01515175000531599,
+      &quot;seconds_per_step&quot;: 7.575875002657995e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261616,
+      &quot;total_seconds&quot;: 0.015094458009116352,
+      &quot;seconds_per_step&quot;: 7.547229004558176e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261617,
+      &quot;total_seconds&quot;: 0.015080209006555378,
+      &quot;seconds_per_step&quot;: 7.54010450327769e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261618,
+      &quot;total_seconds&quot;: 0.015099083015229553,
+      &quot;seconds_per_step&quot;: 7.549541507614776e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261619,
+      &quot;total_seconds&quot;: 0.015112082997802645,
+      &quot;seconds_per_step&quot;: 7.556041498901322e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261620,
+      &quot;total_seconds&quot;: 0.01519625005312264,
+      &quot;seconds_per_step&quot;: 7.59812502656132e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261621,
+      &quot;total_seconds&quot;: 0.015140665986109525,
+      &quot;seconds_per_step&quot;: 7.570332993054762e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261622,
+      &quot;total_seconds&quot;: 0.01511345902690664,
+      &quot;seconds_per_step&quot;: 7.55672951345332e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261623,
+      &quot;total_seconds&quot;: 0.015109958010725677,
+      &quot;seconds_per_step&quot;: 7.554979005362839e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261624,
+      &quot;total_seconds&quot;: 0.015792874968610704,
+      &quot;seconds_per_step&quot;: 7.896437484305351e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261625,
+      &quot;total_seconds&quot;: 0.015312374976929277,
+      &quot;seconds_per_step&quot;: 7.656187488464639e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262106,
+      &quot;total_seconds&quot;: 0.01591995800845325,
+      &quot;seconds_per_step&quot;: 7.959979004226625e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262107,
+      &quot;total_seconds&quot;: 0.015756750013679266,
+      &quot;seconds_per_step&quot;: 7.878375006839633e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262108,
+      &quot;total_seconds&quot;: 0.015711958054453135,
+      &quot;seconds_per_step&quot;: 7.855979027226567e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262109,
+      &quot;total_seconds&quot;: 0.015658750024158508,
+      &quot;seconds_per_step&quot;: 7.829375012079254e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262110,
+      &quot;total_seconds&quot;: 0.015669125015847385,
+      &quot;seconds_per_step&quot;: 7.834562507923693e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262111,
+      &quot;total_seconds&quot;: 0.01566145900869742,
+      &quot;seconds_per_step&quot;: 7.83072950434871e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262112,
+      &quot;total_seconds&quot;: 0.016022666997741908,
+      &quot;seconds_per_step&quot;: 8.011333498870954e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262113,
+      &quot;total_seconds&quot;: 0.01579920802032575,
+      &quot;seconds_per_step&quot;: 7.899604010162875e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262114,
+      &quot;total_seconds&quot;: 0.015710917010437697,
+      &quot;seconds_per_step&quot;: 7.855458505218849e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262115,
+      &quot;total_seconds&quot;: 0.01574954204261303,
+      &quot;seconds_per_step&quot;: 7.874771021306515e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262116,
+      &quot;total_seconds&quot;: 0.015879707993008196,
+      &quot;seconds_per_step&quot;: 7.939853996504098e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262117,
+      &quot;total_seconds&quot;: 0.015759209054522216,
+      &quot;seconds_per_step&quot;: 7.879604527261108e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262118,
+      &quot;total_seconds&quot;: 0.015931833011563867,
+      &quot;seconds_per_step&quot;: 7.965916505781933e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262119,
+      &quot;total_seconds&quot;: 0.015612167015206069,
+      &quot;seconds_per_step&quot;: 7.806083507603035e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262120,
+      &quot;total_seconds&quot;: 0.015776709013152868,
+      &quot;seconds_per_step&quot;: 7.888354506576434e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262121,
+      &quot;total_seconds&quot;: 0.015632792026735842,
+      &quot;seconds_per_step&quot;: 7.816396013367922e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262122,
+      &quot;total_seconds&quot;: 0.015712750027887523,
+      &quot;seconds_per_step&quot;: 7.856375013943761e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262123,
+      &quot;total_seconds&quot;: 0.01562575000571087,
+      &quot;seconds_per_step&quot;: 7.812875002855435e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262124,
+      &quot;total_seconds&quot;: 0.01619637501426041,
+      &quot;seconds_per_step&quot;: 8.098187507130206e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262125,
+      &quot;total_seconds&quot;: 0.01590279198717326,
+      &quot;seconds_per_step&quot;: 7.951395993586629e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263106,
+      &quot;total_seconds&quot;: 0.02519587497226894,
+      &quot;seconds_per_step&quot;: 0.0001259793748613447
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263107,
+      &quot;total_seconds&quot;: 0.020082208036910743,
+      &quot;seconds_per_step&quot;: 0.00010041104018455371
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263108,
+      &quot;total_seconds&quot;: 0.018349707999732345,
+      &quot;seconds_per_step&quot;: 9.174853999866173e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263109,
+      &quot;total_seconds&quot;: 0.01753945800010115,
+      &quot;seconds_per_step&quot;: 8.769729000050574e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263110,
+      &quot;total_seconds&quot;: 0.01798616599990055,
+      &quot;seconds_per_step&quot;: 8.993082999950275e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263111,
+      &quot;total_seconds&quot;: 0.01756054104771465,
+      &quot;seconds_per_step&quot;: 8.780270523857325e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263112,
+      &quot;total_seconds&quot;: 0.017526957963127643,
+      &quot;seconds_per_step&quot;: 8.763478981563822e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263113,
+      &quot;total_seconds&quot;: 0.017594292003195733,
+      &quot;seconds_per_step&quot;: 8.797146001597867e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263114,
+      &quot;total_seconds&quot;: 0.017836167011409998,
+      &quot;seconds_per_step&quot;: 8.918083505705e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263115,
+      &quot;total_seconds&quot;: 0.017568834009580314,
+      &quot;seconds_per_step&quot;: 8.784417004790158e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263116,
+      &quot;total_seconds&quot;: 0.017855332989711314,
+      &quot;seconds_per_step&quot;: 8.927666494855657e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263117,
+      &quot;total_seconds&quot;: 0.04280154197476804,
+      &quot;seconds_per_step&quot;: 0.0002140077098738402
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263118,
+      &quot;total_seconds&quot;: 0.017884082975797355,
+      &quot;seconds_per_step&quot;: 8.942041487898678e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263119,
+      &quot;total_seconds&quot;: 0.01773679198231548,
+      &quot;seconds_per_step&quot;: 8.868395991157741e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263120,
+      &quot;total_seconds&quot;: 0.017673625028692186,
+      &quot;seconds_per_step&quot;: 8.836812514346093e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263121,
+      &quot;total_seconds&quot;: 0.018081249960232526,
+      &quot;seconds_per_step&quot;: 9.040624980116263e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263122,
+      &quot;total_seconds&quot;: 0.018605582998134196,
+      &quot;seconds_per_step&quot;: 9.302791499067097e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263123,
+      &quot;total_seconds&quot;: 0.018229959008749574,
+      &quot;seconds_per_step&quot;: 9.114979504374787e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263124,
+      &quot;total_seconds&quot;: 0.018318083020858467,
+      &quot;seconds_per_step&quot;: 9.159041510429234e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263125,
+      &quot;total_seconds&quot;: 0.018492208037059754,
+      &quot;seconds_per_step&quot;: 9.246104018529877e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266106,
+      &quot;total_seconds&quot;: 0.027798041992355138,
+      &quot;seconds_per_step&quot;: 0.0001389902099617757
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266107,
+      &quot;total_seconds&quot;: 0.027076541038695723,
+      &quot;seconds_per_step&quot;: 0.00013538270519347862
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266108,
+      &quot;total_seconds&quot;: 0.03138825000496581,
+      &quot;seconds_per_step&quot;: 0.00015694125002482906
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266109,
+      &quot;total_seconds&quot;: 0.027946125017479062,
+      &quot;seconds_per_step&quot;: 0.0001397306250873953
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266110,
+      &quot;total_seconds&quot;: 0.02850975003093481,
+      &quot;seconds_per_step&quot;: 0.00014254875015467405
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266111,
+      &quot;total_seconds&quot;: 0.027867749973665923,
+      &quot;seconds_per_step&quot;: 0.00013933874986832962
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266112,
+      &quot;total_seconds&quot;: 0.02788008301286027,
+      &quot;seconds_per_step&quot;: 0.00013940041506430134
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266113,
+      &quot;total_seconds&quot;: 0.02747062500566244,
+      &quot;seconds_per_step&quot;: 0.00013735312502831222
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266114,
+      &quot;total_seconds&quot;: 0.028107958030886948,
+      &quot;seconds_per_step&quot;: 0.00014053979015443474
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266115,
+      &quot;total_seconds&quot;: 0.026757917017675936,
+      &quot;seconds_per_step&quot;: 0.00013378958508837967
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266116,
+      &quot;total_seconds&quot;: 0.026757582963909954,
+      &quot;seconds_per_step&quot;: 0.00013378791481954977
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266117,
+      &quot;total_seconds&quot;: 0.026733000006061047,
+      &quot;seconds_per_step&quot;: 0.00013366500003030523
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266118,
+      &quot;total_seconds&quot;: 0.02671812498010695,
+      &quot;seconds_per_step&quot;: 0.00013359062490053475
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266119,
+      &quot;total_seconds&quot;: 0.02663049998227507,
+      &quot;seconds_per_step&quot;: 0.00013315249991137533
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266120,
+      &quot;total_seconds&quot;: 0.027349292009603232,
+      &quot;seconds_per_step&quot;: 0.00013674646004801616
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266121,
+      &quot;total_seconds&quot;: 0.026667291997000575,
+      &quot;seconds_per_step&quot;: 0.00013333645998500287
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266122,
+      &quot;total_seconds&quot;: 0.026663624972570688,
+      &quot;seconds_per_step&quot;: 0.00013331812486285343
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266123,
+      &quot;total_seconds&quot;: 0.026704041985794902,
+      &quot;seconds_per_step&quot;: 0.00013352020992897452
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266124,
+      &quot;total_seconds&quot;: 0.027293750026728958,
+      &quot;seconds_per_step&quot;: 0.00013646875013364478
+    },
+    {
+      &quot;scenario&quot;: &quot;C&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266125,
+      &quot;total_seconds&quot;: 0.02753866696730256,
+      &quot;seconds_per_step&quot;: 0.0001376933348365128
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261206,
+      &quot;total_seconds&quot;: 0.018613208027090877,
+      &quot;seconds_per_step&quot;: 9.306604013545439e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261207,
+      &quot;total_seconds&quot;: 0.013692542037460953,
+      &quot;seconds_per_step&quot;: 6.846271018730477e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261208,
+      &quot;total_seconds&quot;: 0.012499791977461427,
+      &quot;seconds_per_step&quot;: 6.249895988730714e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261209,
+      &quot;total_seconds&quot;: 0.011922459001652896,
+      &quot;seconds_per_step&quot;: 5.9612295008264485e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261210,
+      &quot;total_seconds&quot;: 0.011601832986343652,
+      &quot;seconds_per_step&quot;: 5.800916493171826e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261211,
+      &quot;total_seconds&quot;: 0.011474917002487928,
+      &quot;seconds_per_step&quot;: 5.737458501243964e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261212,
+      &quot;total_seconds&quot;: 0.011474041035398841,
+      &quot;seconds_per_step&quot;: 5.7370205176994204e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261213,
+      &quot;total_seconds&quot;: 0.011460957990493625,
+      &quot;seconds_per_step&quot;: 5.730478995246813e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261214,
+      &quot;total_seconds&quot;: 0.011497417057398707,
+      &quot;seconds_per_step&quot;: 5.748708528699353e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261215,
+      &quot;total_seconds&quot;: 0.011422166018746793,
+      &quot;seconds_per_step&quot;: 5.7110830093733964e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261216,
+      &quot;total_seconds&quot;: 0.011656749993562698,
+      &quot;seconds_per_step&quot;: 5.828374996781349e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261217,
+      &quot;total_seconds&quot;: 0.011517665989231318,
+      &quot;seconds_per_step&quot;: 5.758832994615659e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261218,
+      &quot;total_seconds&quot;: 0.011547958012670279,
+      &quot;seconds_per_step&quot;: 5.7739790063351395e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261219,
+      &quot;total_seconds&quot;: 0.011489042022731155,
+      &quot;seconds_per_step&quot;: 5.744521011365577e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261220,
+      &quot;total_seconds&quot;: 0.011488332995213568,
+      &quot;seconds_per_step&quot;: 5.744166497606784e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261221,
+      &quot;total_seconds&quot;: 0.011463458009529859,
+      &quot;seconds_per_step&quot;: 5.7317290047649297e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261222,
+      &quot;total_seconds&quot;: 0.011480624962132424,
+      &quot;seconds_per_step&quot;: 5.740312481066212e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261223,
+      &quot;total_seconds&quot;: 0.01143420796142891,
+      &quot;seconds_per_step&quot;: 5.717103980714455e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261224,
+      &quot;total_seconds&quot;: 0.01145241700578481,
+      &quot;seconds_per_step&quot;: 5.726208502892405e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261225,
+      &quot;total_seconds&quot;: 0.01143424998736009,
+      &quot;seconds_per_step&quot;: 5.717124993680045e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261606,
+      &quot;total_seconds&quot;: 0.012203166959807277,
+      &quot;seconds_per_step&quot;: 6.101583479903639e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261607,
+      &quot;total_seconds&quot;: 0.012153458024840802,
+      &quot;seconds_per_step&quot;: 6.076729012420401e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261608,
+      &quot;total_seconds&quot;: 0.012136666977312416,
+      &quot;seconds_per_step&quot;: 6.068333488656208e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261609,
+      &quot;total_seconds&quot;: 0.012084541958756745,
+      &quot;seconds_per_step&quot;: 6.0422709793783724e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261610,
+      &quot;total_seconds&quot;: 0.012076083978172392,
+      &quot;seconds_per_step&quot;: 6.0380419890861956e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261611,
+      &quot;total_seconds&quot;: 0.012058083026204258,
+      &quot;seconds_per_step&quot;: 6.029041513102129e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261612,
+      &quot;total_seconds&quot;: 0.012038875021971762,
+      &quot;seconds_per_step&quot;: 6.019437510985881e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261613,
+      &quot;total_seconds&quot;: 0.012022375012747943,
+      &quot;seconds_per_step&quot;: 6.011187506373972e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261614,
+      &quot;total_seconds&quot;: 0.012084249989129603,
+      &quot;seconds_per_step&quot;: 6.042124994564802e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261615,
+      &quot;total_seconds&quot;: 0.012003708980046213,
+      &quot;seconds_per_step&quot;: 6.001854490023106e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261616,
+      &quot;total_seconds&quot;: 0.011987833015155047,
+      &quot;seconds_per_step&quot;: 5.993916507577524e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261617,
+      &quot;total_seconds&quot;: 0.011979000002611428,
+      &quot;seconds_per_step&quot;: 5.989500001305714e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261618,
+      &quot;total_seconds&quot;: 0.011957291979342699,
+      &quot;seconds_per_step&quot;: 5.97864598967135e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261619,
+      &quot;total_seconds&quot;: 0.012026540993247181,
+      &quot;seconds_per_step&quot;: 6.0132704966235906e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261620,
+      &quot;total_seconds&quot;: 0.012014750041998923,
+      &quot;seconds_per_step&quot;: 6.0073750209994617e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261621,
+      &quot;total_seconds&quot;: 0.011973375047091395,
+      &quot;seconds_per_step&quot;: 5.986687523545697e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261622,
+      &quot;total_seconds&quot;: 0.01202137500513345,
+      &quot;seconds_per_step&quot;: 6.010687502566725e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261623,
+      &quot;total_seconds&quot;: 0.012035916035529226,
+      &quot;seconds_per_step&quot;: 6.017958017764613e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261624,
+      &quot;total_seconds&quot;: 0.01194983400637284,
+      &quot;seconds_per_step&quot;: 5.97491700318642e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261625,
+      &quot;total_seconds&quot;: 0.0119754170300439,
+      &quot;seconds_per_step&quot;: 5.98770851502195e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262106,
+      &quot;total_seconds&quot;: 0.012435124954208732,
+      &quot;seconds_per_step&quot;: 6.217562477104366e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262107,
+      &quot;total_seconds&quot;: 0.012313209008425474,
+      &quot;seconds_per_step&quot;: 6.156604504212738e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262108,
+      &quot;total_seconds&quot;: 0.012269708968233317,
+      &quot;seconds_per_step&quot;: 6.134854484116659e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262109,
+      &quot;total_seconds&quot;: 0.012231624976266176,
+      &quot;seconds_per_step&quot;: 6.115812488133088e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262110,
+      &quot;total_seconds&quot;: 0.012264250020962209,
+      &quot;seconds_per_step&quot;: 6.132125010481104e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262111,
+      &quot;total_seconds&quot;: 0.012267082987818867,
+      &quot;seconds_per_step&quot;: 6.133541493909434e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262112,
+      &quot;total_seconds&quot;: 0.03885412501404062,
+      &quot;seconds_per_step&quot;: 0.00019427062507020308
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262113,
+      &quot;total_seconds&quot;: 0.012694125005509704,
+      &quot;seconds_per_step&quot;: 6.347062502754852e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262114,
+      &quot;total_seconds&quot;: 0.012448791007045656,
+      &quot;seconds_per_step&quot;: 6.224395503522828e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262115,
+      &quot;total_seconds&quot;: 0.012380917032714933,
+      &quot;seconds_per_step&quot;: 6.190458516357467e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262116,
+      &quot;total_seconds&quot;: 0.012332291982602328,
+      &quot;seconds_per_step&quot;: 6.166145991301164e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262117,
+      &quot;total_seconds&quot;: 0.012577000015880913,
+      &quot;seconds_per_step&quot;: 6.288500007940456e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262118,
+      &quot;total_seconds&quot;: 0.012334999977611005,
+      &quot;seconds_per_step&quot;: 6.167499988805502e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262119,
+      &quot;total_seconds&quot;: 0.012350958015304059,
+      &quot;seconds_per_step&quot;: 6.17547900765203e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262120,
+      &quot;total_seconds&quot;: 0.012315917003434151,
+      &quot;seconds_per_step&quot;: 6.157958501717076e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262121,
+      &quot;total_seconds&quot;: 0.01234158402075991,
+      &quot;seconds_per_step&quot;: 6.170792010379956e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262122,
+      &quot;total_seconds&quot;: 0.012307833007071167,
+      &quot;seconds_per_step&quot;: 6.153916503535583e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262123,
+      &quot;total_seconds&quot;: 0.012521083001047373,
+      &quot;seconds_per_step&quot;: 6.260541500523687e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262124,
+      &quot;total_seconds&quot;: 0.012302500021178275,
+      &quot;seconds_per_step&quot;: 6.151250010589138e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262125,
+      &quot;total_seconds&quot;: 0.012353541038464755,
+      &quot;seconds_per_step&quot;: 6.176770519232377e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263106,
+      &quot;total_seconds&quot;: 0.013134084001649171,
+      &quot;seconds_per_step&quot;: 6.567042000824586e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263107,
+      &quot;total_seconds&quot;: 0.013021999970078468,
+      &quot;seconds_per_step&quot;: 6.510999985039234e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263108,
+      &quot;total_seconds&quot;: 0.012969000032171607,
+      &quot;seconds_per_step&quot;: 6.484500016085804e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263109,
+      &quot;total_seconds&quot;: 0.01337600004626438,
+      &quot;seconds_per_step&quot;: 6.68800002313219e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263110,
+      &quot;total_seconds&quot;: 0.012951790995430201,
+      &quot;seconds_per_step&quot;: 6.4758954977151e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263111,
+      &quot;total_seconds&quot;: 0.012925958028063178,
+      &quot;seconds_per_step&quot;: 6.46297901403159e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263112,
+      &quot;total_seconds&quot;: 0.012932833982631564,
+      &quot;seconds_per_step&quot;: 6.466416991315782e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263113,
+      &quot;total_seconds&quot;: 0.012916125007905066,
+      &quot;seconds_per_step&quot;: 6.458062503952533e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263114,
+      &quot;total_seconds&quot;: 0.012936708983033895,
+      &quot;seconds_per_step&quot;: 6.468354491516948e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263115,
+      &quot;total_seconds&quot;: 0.013331041962374002,
+      &quot;seconds_per_step&quot;: 6.665520981187e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263116,
+      &quot;total_seconds&quot;: 0.012916041014250368,
+      &quot;seconds_per_step&quot;: 6.458020507125184e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263117,
+      &quot;total_seconds&quot;: 0.012944791989866644,
+      &quot;seconds_per_step&quot;: 6.472395994933322e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263118,
+      &quot;total_seconds&quot;: 0.012894750048872083,
+      &quot;seconds_per_step&quot;: 6.447375024436042e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263119,
+      &quot;total_seconds&quot;: 0.01296479202574119,
+      &quot;seconds_per_step&quot;: 6.482396012870595e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263120,
+      &quot;total_seconds&quot;: 0.012924708018545061,
+      &quot;seconds_per_step&quot;: 6.462354009272531e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263121,
+      &quot;total_seconds&quot;: 0.013281958003062755,
+      &quot;seconds_per_step&quot;: 6.640979001531377e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263122,
+      &quot;total_seconds&quot;: 0.012982333020772785,
+      &quot;seconds_per_step&quot;: 6.491166510386393e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263123,
+      &quot;total_seconds&quot;: 0.012922374997287989,
+      &quot;seconds_per_step&quot;: 6.461187498643995e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263124,
+      &quot;total_seconds&quot;: 0.013029541994910687,
+      &quot;seconds_per_step&quot;: 6.514770997455344e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263125,
+      &quot;total_seconds&quot;: 0.01293954101856798,
+      &quot;seconds_per_step&quot;: 6.46977050928399e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266106,
+      &quot;total_seconds&quot;: 0.020763333013746887,
+      &quot;seconds_per_step&quot;: 0.00010381666506873444
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266107,
+      &quot;total_seconds&quot;: 0.017754999978933483,
+      &quot;seconds_per_step&quot;: 8.877499989466742e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266108,
+      &quot;total_seconds&quot;: 0.016262417018879205,
+      &quot;seconds_per_step&quot;: 8.131208509439603e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266109,
+      &quot;total_seconds&quot;: 0.015317083045374602,
+      &quot;seconds_per_step&quot;: 7.658541522687301e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266110,
+      &quot;total_seconds&quot;: 0.015397458977531642,
+      &quot;seconds_per_step&quot;: 7.698729488765821e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266111,
+      &quot;total_seconds&quot;: 0.015001791005488485,
+      &quot;seconds_per_step&quot;: 7.500895502744242e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266112,
+      &quot;total_seconds&quot;: 0.015060291974805295,
+      &quot;seconds_per_step&quot;: 7.530145987402648e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266113,
+      &quot;total_seconds&quot;: 0.01590341597329825,
+      &quot;seconds_per_step&quot;: 7.951707986649126e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266114,
+      &quot;total_seconds&quot;: 0.015068792039528489,
+      &quot;seconds_per_step&quot;: 7.534396019764244e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266115,
+      &quot;total_seconds&quot;: 0.0150605000089854,
+      &quot;seconds_per_step&quot;: 7.5302500044927e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266116,
+      &quot;total_seconds&quot;: 0.015018625010270625,
+      &quot;seconds_per_step&quot;: 7.509312505135312e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266117,
+      &quot;total_seconds&quot;: 0.015087708015926182,
+      &quot;seconds_per_step&quot;: 7.543854007963091e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266118,
+      &quot;total_seconds&quot;: 0.015067833999637514,
+      &quot;seconds_per_step&quot;: 7.533916999818757e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266119,
+      &quot;total_seconds&quot;: 0.015802750014699996,
+      &quot;seconds_per_step&quot;: 7.901375007349997e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266120,
+      &quot;total_seconds&quot;: 0.014927499985788018,
+      &quot;seconds_per_step&quot;: 7.46374999289401e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266121,
+      &quot;total_seconds&quot;: 0.014982957975007594,
+      &quot;seconds_per_step&quot;: 7.491478987503797e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266122,
+      &quot;total_seconds&quot;: 0.014958958025090396,
+      &quot;seconds_per_step&quot;: 7.479479012545198e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266123,
+      &quot;total_seconds&quot;: 0.014949333039112389,
+      &quot;seconds_per_step&quot;: 7.474666519556194e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266124,
+      &quot;total_seconds&quot;: 0.014961083012167364,
+      &quot;seconds_per_step&quot;: 7.480541506083683e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;D&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266125,
+      &quot;total_seconds&quot;: 0.01608699996722862,
+      &quot;seconds_per_step&quot;: 8.04349998361431e-05
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261206,
+      &quot;total_seconds&quot;: 0.030056124960538,
+      &quot;seconds_per_step&quot;: 0.00015028062480269
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261207,
+      &quot;total_seconds&quot;: 0.027292874990962446,
+      &quot;seconds_per_step&quot;: 0.00013646437495481222
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261208,
+      &quot;total_seconds&quot;: 0.027295999985653907,
+      &quot;seconds_per_step&quot;: 0.00013647999992826953
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261209,
+      &quot;total_seconds&quot;: 0.027452791982796043,
+      &quot;seconds_per_step&quot;: 0.00013726395991398022
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261210,
+      &quot;total_seconds&quot;: 0.027190583990886807,
+      &quot;seconds_per_step&quot;: 0.00013595291995443403
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261211,
+      &quot;total_seconds&quot;: 0.027235208021011204,
+      &quot;seconds_per_step&quot;: 0.00013617604010505603
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261212,
+      &quot;total_seconds&quot;: 0.027556957968045026,
+      &quot;seconds_per_step&quot;: 0.00013778478984022513
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261213,
+      &quot;total_seconds&quot;: 0.027201916964259,
+      &quot;seconds_per_step&quot;: 0.000136009584821295
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261214,
+      &quot;total_seconds&quot;: 0.027164958999492228,
+      &quot;seconds_per_step&quot;: 0.00013582479499746114
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261215,
+      &quot;total_seconds&quot;: 0.02711195801384747,
+      &quot;seconds_per_step&quot;: 0.00013555979006923735
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261216,
+      &quot;total_seconds&quot;: 0.02721162501256913,
+      &quot;seconds_per_step&quot;: 0.00013605812506284565
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261217,
+      &quot;total_seconds&quot;: 0.027107000001706183,
+      &quot;seconds_per_step&quot;: 0.0001355350000085309
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261218,
+      &quot;total_seconds&quot;: 0.027139917016029358,
+      &quot;seconds_per_step&quot;: 0.0001356995850801468
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261219,
+      &quot;total_seconds&quot;: 0.02693937497679144,
+      &quot;seconds_per_step&quot;: 0.0001346968748839572
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261220,
+      &quot;total_seconds&quot;: 0.027204209007322788,
+      &quot;seconds_per_step&quot;: 0.00013602104503661393
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261221,
+      &quot;total_seconds&quot;: 0.02717779198428616,
+      &quot;seconds_per_step&quot;: 0.0001358889599214308
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261222,
+      &quot;total_seconds&quot;: 0.02718437503790483,
+      &quot;seconds_per_step&quot;: 0.00013592187518952415
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261223,
+      &quot;total_seconds&quot;: 0.027147833025082946,
+      &quot;seconds_per_step&quot;: 0.00013573916512541473
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261224,
+      &quot;total_seconds&quot;: 0.027048874995671213,
+      &quot;seconds_per_step&quot;: 0.00013524437497835606
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 1,
+      &quot;seed&quot;: 20261225,
+      &quot;total_seconds&quot;: 0.026889999979175627,
+      &quot;seconds_per_step&quot;: 0.00013444999989587814
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261606,
+      &quot;total_seconds&quot;: 0.03460379102034494,
+      &quot;seconds_per_step&quot;: 0.00017301895510172472
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261607,
+      &quot;total_seconds&quot;: 0.02900345902889967,
+      &quot;seconds_per_step&quot;: 0.00014501729514449836
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261608,
+      &quot;total_seconds&quot;: 0.054711417004000396,
+      &quot;seconds_per_step&quot;: 0.00027355708502000195
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261609,
+      &quot;total_seconds&quot;: 0.02808483300032094,
+      &quot;seconds_per_step&quot;: 0.00014042416500160471
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261610,
+      &quot;total_seconds&quot;: 0.028278375044465065,
+      &quot;seconds_per_step&quot;: 0.00014139187522232532
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261611,
+      &quot;total_seconds&quot;: 0.028215291968081146,
+      &quot;seconds_per_step&quot;: 0.00014107645984040573
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261612,
+      &quot;total_seconds&quot;: 0.02808133402140811,
+      &quot;seconds_per_step&quot;: 0.00014040667010704056
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261613,
+      &quot;total_seconds&quot;: 0.027831749990582466,
+      &quot;seconds_per_step&quot;: 0.00013915874995291234
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261614,
+      &quot;total_seconds&quot;: 0.02785979100735858,
+      &quot;seconds_per_step&quot;: 0.00013929895503679291
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261615,
+      &quot;total_seconds&quot;: 0.027892125013750046,
+      &quot;seconds_per_step&quot;: 0.00013946062506875023
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261616,
+      &quot;total_seconds&quot;: 0.027795417001470923,
+      &quot;seconds_per_step&quot;: 0.00013897708500735462
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261617,
+      &quot;total_seconds&quot;: 0.02764204202685505,
+      &quot;seconds_per_step&quot;: 0.00013821021013427526
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261618,
+      &quot;total_seconds&quot;: 0.02888862497638911,
+      &quot;seconds_per_step&quot;: 0.00014444312488194556
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261619,
+      &quot;total_seconds&quot;: 0.02785250003216788,
+      &quot;seconds_per_step&quot;: 0.00013926250016083942
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261620,
+      &quot;total_seconds&quot;: 0.027689250011462718,
+      &quot;seconds_per_step&quot;: 0.00013844625005731358
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261621,
+      &quot;total_seconds&quot;: 0.028253916010726243,
+      &quot;seconds_per_step&quot;: 0.0001412695800536312
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261622,
+      &quot;total_seconds&quot;: 0.027865917014423758,
+      &quot;seconds_per_step&quot;: 0.00013932958507211878
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261623,
+      &quot;total_seconds&quot;: 0.027680874976795167,
+      &quot;seconds_per_step&quot;: 0.00013840437488397584
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261624,
+      &quot;total_seconds&quot;: 0.027886625030077994,
+      &quot;seconds_per_step&quot;: 0.00013943312515038997
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 5,
+      &quot;seed&quot;: 20261625,
+      &quot;total_seconds&quot;: 0.028113540960475802,
+      &quot;seconds_per_step&quot;: 0.000140567704802379
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262106,
+      &quot;total_seconds&quot;: 0.028229542018380016,
+      &quot;seconds_per_step&quot;: 0.00014114771009190007
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262107,
+      &quot;total_seconds&quot;: 0.02827129198703915,
+      &quot;seconds_per_step&quot;: 0.00014135645993519576
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262108,
+      &quot;total_seconds&quot;: 0.028189208009280264,
+      &quot;seconds_per_step&quot;: 0.0001409460400464013
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262109,
+      &quot;total_seconds&quot;: 0.028125125041697174,
+      &quot;seconds_per_step&quot;: 0.00014062562520848588
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262110,
+      &quot;total_seconds&quot;: 0.028367999999318272,
+      &quot;seconds_per_step&quot;: 0.00014183999999659136
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262111,
+      &quot;total_seconds&quot;: 0.028921083023305982,
+      &quot;seconds_per_step&quot;: 0.00014460541511652992
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262112,
+      &quot;total_seconds&quot;: 0.030160041991621256,
+      &quot;seconds_per_step&quot;: 0.00015080020995810627
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262113,
+      &quot;total_seconds&quot;: 0.030646874976810068,
+      &quot;seconds_per_step&quot;: 0.00015323437488405035
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262114,
+      &quot;total_seconds&quot;: 0.030520749976858497,
+      &quot;seconds_per_step&quot;: 0.00015260374988429248
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262115,
+      &quot;total_seconds&quot;: 0.030182708986103535,
+      &quot;seconds_per_step&quot;: 0.00015091354493051767
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262116,
+      &quot;total_seconds&quot;: 0.030800290987826884,
+      &quot;seconds_per_step&quot;: 0.00015400145493913442
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262117,
+      &quot;total_seconds&quot;: 0.030609541980084032,
+      &quot;seconds_per_step&quot;: 0.00015304770990042015
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262118,
+      &quot;total_seconds&quot;: 0.030809084011707455,
+      &quot;seconds_per_step&quot;: 0.00015404542005853728
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262119,
+      &quot;total_seconds&quot;: 0.028608750028070062,
+      &quot;seconds_per_step&quot;: 0.00014304375014035031
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262120,
+      &quot;total_seconds&quot;: 0.028235542005859315,
+      &quot;seconds_per_step&quot;: 0.00014117771002929657
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262121,
+      &quot;total_seconds&quot;: 0.028319750039372593,
+      &quot;seconds_per_step&quot;: 0.00014159875019686296
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262122,
+      &quot;total_seconds&quot;: 0.02872495900373906,
+      &quot;seconds_per_step&quot;: 0.0001436247950186953
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262123,
+      &quot;total_seconds&quot;: 0.028422042028978467,
+      &quot;seconds_per_step&quot;: 0.00014211021014489233
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262124,
+      &quot;total_seconds&quot;: 0.028253500000573695,
+      &quot;seconds_per_step&quot;: 0.00014126750000286847
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 10,
+      &quot;seed&quot;: 20262125,
+      &quot;total_seconds&quot;: 0.028516083024442196,
+      &quot;seconds_per_step&quot;: 0.00014258041512221097
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263106,
+      &quot;total_seconds&quot;: 0.039243875013198704,
+      &quot;seconds_per_step&quot;: 0.0001962193750659935
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263107,
+      &quot;total_seconds&quot;: 0.030262582993600518,
+      &quot;seconds_per_step&quot;: 0.00015131291496800259
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263108,
+      &quot;total_seconds&quot;: 0.029197124997153878,
+      &quot;seconds_per_step&quot;: 0.0001459856249857694
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263109,
+      &quot;total_seconds&quot;: 0.02891183301107958,
+      &quot;seconds_per_step&quot;: 0.0001445591650553979
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263110,
+      &quot;total_seconds&quot;: 0.02882716601016,
+      &quot;seconds_per_step&quot;: 0.0001441358300508
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263111,
+      &quot;total_seconds&quot;: 0.028855125012341887,
+      &quot;seconds_per_step&quot;: 0.00014427562506170945
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263112,
+      &quot;total_seconds&quot;: 0.028789291973225772,
+      &quot;seconds_per_step&quot;: 0.00014394645986612887
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263113,
+      &quot;total_seconds&quot;: 0.028731875005178154,
+      &quot;seconds_per_step&quot;: 0.00014365937502589077
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263114,
+      &quot;total_seconds&quot;: 0.029191915993578732,
+      &quot;seconds_per_step&quot;: 0.00014595957996789367
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263115,
+      &quot;total_seconds&quot;: 0.02876708301482722,
+      &quot;seconds_per_step&quot;: 0.00014383541507413612
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263116,
+      &quot;total_seconds&quot;: 0.02872854203451425,
+      &quot;seconds_per_step&quot;: 0.00014364271017257125
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263117,
+      &quot;total_seconds&quot;: 0.029226207989268005,
+      &quot;seconds_per_step&quot;: 0.00014613103994634002
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263118,
+      &quot;total_seconds&quot;: 0.02902420802274719,
+      &quot;seconds_per_step&quot;: 0.00014512104011373594
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263119,
+      &quot;total_seconds&quot;: 0.029006958997342736,
+      &quot;seconds_per_step&quot;: 0.0001450347949867137
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263120,
+      &quot;total_seconds&quot;: 0.029297249973751605,
+      &quot;seconds_per_step&quot;: 0.00014648624986875802
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263121,
+      &quot;total_seconds&quot;: 0.02888358401833102,
+      &quot;seconds_per_step&quot;: 0.0001444179200916551
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263122,
+      &quot;total_seconds&quot;: 0.02892191696446389,
+      &quot;seconds_per_step&quot;: 0.00014460958482231945
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263123,
+      &quot;total_seconds&quot;: 0.029135583026800305,
+      &quot;seconds_per_step&quot;: 0.00014567791513400152
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263124,
+      &quot;total_seconds&quot;: 0.02886141702765599,
+      &quot;seconds_per_step&quot;: 0.00014430708513827996
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 20,
+      &quot;seed&quot;: 20263125,
+      &quot;total_seconds&quot;: 0.028826416993979365,
+      &quot;seconds_per_step&quot;: 0.00014413208496989684
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266106,
+      &quot;total_seconds&quot;: 0.031518290983513,
+      &quot;seconds_per_step&quot;: 0.000157591454917565
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266107,
+      &quot;total_seconds&quot;: 0.030550124996807426,
+      &quot;seconds_per_step&quot;: 0.00015275062498403712
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266108,
+      &quot;total_seconds&quot;: 0.031375749967992306,
+      &quot;seconds_per_step&quot;: 0.00015687874983996152
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266109,
+      &quot;total_seconds&quot;: 0.03185237501747906,
+      &quot;seconds_per_step&quot;: 0.00015926187508739532
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266110,
+      &quot;total_seconds&quot;: 0.03229945799103007,
+      &quot;seconds_per_step&quot;: 0.00016149728995515033
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266111,
+      &quot;total_seconds&quot;: 0.0321779579971917,
+      &quot;seconds_per_step&quot;: 0.00016088978998595848
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266112,
+      &quot;total_seconds&quot;: 0.03262933297082782,
+      &quot;seconds_per_step&quot;: 0.00016314666485413908
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266113,
+      &quot;total_seconds&quot;: 0.060445541981607676,
+      &quot;seconds_per_step&quot;: 0.00030222770990803835
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266114,
+      &quot;total_seconds&quot;: 0.03132449998520315,
+      &quot;seconds_per_step&quot;: 0.00015662249992601574
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266115,
+      &quot;total_seconds&quot;: 0.03150974999880418,
+      &quot;seconds_per_step&quot;: 0.0001575487499940209
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266116,
+      &quot;total_seconds&quot;: 0.03113133297301829,
+      &quot;seconds_per_step&quot;: 0.00015565666486509145
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266117,
+      &quot;total_seconds&quot;: 0.031834500026889145,
+      &quot;seconds_per_step&quot;: 0.00015917250013444573
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266118,
+      &quot;total_seconds&quot;: 0.0310220830142498,
+      &quot;seconds_per_step&quot;: 0.00015511041507124902
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266119,
+      &quot;total_seconds&quot;: 0.031126209010835737,
+      &quot;seconds_per_step&quot;: 0.0001556310450541787
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266120,
+      &quot;total_seconds&quot;: 0.0312062919838354,
+      &quot;seconds_per_step&quot;: 0.00015603145991917699
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266121,
+      &quot;total_seconds&quot;: 0.031118083046749234,
+      &quot;seconds_per_step&quot;: 0.00015559041523374617
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266122,
+      &quot;total_seconds&quot;: 0.03101595799671486,
+      &quot;seconds_per_step&quot;: 0.0001550797899835743
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266123,
+      &quot;total_seconds&quot;: 0.03240804199595004,
+      &quot;seconds_per_step&quot;: 0.0001620402099797502
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266124,
+      &quot;total_seconds&quot;: 0.03109304199460894,
+      &quot;seconds_per_step&quot;: 0.0001554652099730447
+    },
+    {
+      &quot;scenario&quot;: &quot;E&quot;,
+      &quot;agents&quot;: 50,
+      &quot;seed&quot;: 20266125,
+      &quot;total_seconds&quot;: 0.031100750027690083,
+      &quot;seconds_per_step&quot;: 0.0001555037501384504
+    }
+  ],
+  &quot;scaling&quot;: [
+    {
+      &quot;agents&quot;: 1,
+      &quot;simulations&quot;: 100,
+      &quot;median_total_seconds&quot;: 0.011507541523315012,
+      &quot;median_step_seconds&quot;: 5.7537707616575064e-05
+    },
+    {
+      &quot;agents&quot;: 5,
+      &quot;simulations&quot;: 100,
+      &quot;median_total_seconds&quot;: 0.012084395973943174,
+      &quot;median_step_seconds&quot;: 6.042197986971587e-05
+    },
+    {
+      &quot;agents&quot;: 10,
+      &quot;simulations&quot;: 100,
+      &quot;median_total_seconds&quot;: 0.0123556875041686,
+      &quot;median_step_seconds&quot;: 6.1778437520843e-05
+    },
+    {
+      &quot;agents&quot;: 20,
+      &quot;simulations&quot;: 100,
+      &quot;median_total_seconds&quot;: 0.013025770982494578,
+      &quot;median_step_seconds&quot;: 6.512885491247289e-05
+    },
+    {
+      &quot;agents&quot;: 50,
+      &quot;simulations&quot;: 100,
+      &quot;median_total_seconds&quot;: 0.015383479476440698,
+      &quot;median_step_seconds&quot;: 7.69173973822035e-05
+    }
+  ],
+  &quot;total_seconds&quot;: 10.423513083020225,
+  &quot;network_bytes_this_run&quot;: 0,
+  &quot;source_response_bytes&quot;: 0,
+  &quot;process_peak_rss_bytes&quot;: 375914496,
+  &quot;rss_scope&quot;: &quot;Whole process lifetime peak; no unmeasured hard RSS guarantee&quot;
+}</pre><footer>Original software Apache License2.0. Third-party source data retains its own licence. AI hypotheses do not generate these measurements. Offline research, no operational control.</footer></body></html>
