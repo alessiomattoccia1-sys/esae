@@ -82,3 +82,40 @@ GUI/tests/addons/tools. Completion is not proof of every path or all platforms.
 Full conditions and initial partial baseline: reports/scalability.json/html.
 The original Godot full-repository rejection and partial coverage are retained
 as evidence; they are not turned into a completed million-line scan.
+
+## Genomics Evidence Engine v0.1
+
+Independent public-variant research prototype. Not a diagnostic system,
+treatment recommender, clinical classification tool or medical device. No
+personal genetic data/upload API. Germline human BRCA1/BRCA2 evidence only in
+GEE-001; somatic-only assertions, haplotypes and unsupported records are excluded
+with counts. No full genome, complete literature review or clinical validation.
+
+The deterministic lowest-ID sample is nonrandom and can favor older, more
+studied variants. It does not estimate population discordance. VCV/RCV/SCV
+denominators remain different. Only exact NCBI-mapped condition sets and known
+independent organization IDs support same-condition comparisons; unresolved
+records remain noncomparable. Source classifications/review status are preserved.
+Different SCV labels, dates or conditions are not automatically contradictions.
+Contributing/noncontributing assertions remain separate, including expert-panel
+precedence. No experimental reliability/pathogenicity score is invented.
+
+GRCh37 and GRCh38 are separate. Ensembl correlation is qualified only for exact
+GRCh38 SNVs with matching forward reference/alternate representation and
+independently resolved gene IDs. No implicit lift-over, generic indel
+left-normalization or gene-name-only join. Molecular consequence is not clinical
+pathogenicity or biological causality. API errors/availability limits remain
+visible; a partial acquisition is not presented as a complete experiment.
+
+Raw public API responses may contain upstream patient/sample narratives; the
+parser explicitly ignores those and indexes/exports only variant/organization/
+classification metadata. Raw cache remains local for provenance, excluded from
+source release/site. No scientific articles or restricted VEP colocated data
+are redistributed. Cache/source hashes verify retained bytes, not independent
+scientific truth. An absent API release date remains unknown.
+
+Ollama is optional, bounded and explicit. Hypotheses require supplied accession
+references and remain unverified, not numerical results, new evidence, model
+training or clinical advice. No cloud fallback. Core operation works without it.
+Local execution qualified only on the Mini's macOS/Python profile; Windows/Linux
+and complete OS reboot/service recovery are not claimed for this prototype.

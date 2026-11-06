@@ -6,3 +6,11 @@ Research prototype; no certification, suitability or absence-of-defects claim.
 Cppcheck and LLVM/clang-tidy remain separate third-party executables under their
 own licenses. They are not included in ESAE source or release archives.
 See THIRD_PARTY.md. No proprietary application repository or user scan is included.
+
+Research Engines / Genomics Evidence Engine (GEE) / Shared Research Core
+Copyright 2026 Alessio Mattoccia / Mattoccia Labs
+New original software: Apache License 2.0. Public-source scientific research,
+not a diagnostic or treatment system. NCBI ClinVar and Ensembl data retain
+their source conditions and attribution; they are not relicensed Apache-2.0.
+No patient observations, full scientific papers, models or raw data caches are
+included in the source release. See DATA_SOURCES.md and THIRD_PARTY_NOTICES.md.

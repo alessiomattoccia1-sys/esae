@@ -1,0 +1,1 @@
+GEE-001 normalized public variant evidence. Sources: NCBI ClinVar / Ensembl EMBL-EBI. Original software Apache-2.0; data retain upstream terms. Attribution and methods: DATA_SOURCES.md, METHODOLOGY.md, THIRD_PARTY_NOTICES.md. No patient observations, full clinical narratives, restricted colocated annotations or scientific articles included. Research only, no diagnostic use.

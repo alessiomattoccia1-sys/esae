@@ -1,0 +1,534 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>Research Engines · GEE-001</title><style>
+body{font:16px/1.75 system-ui,sans-serif;color:#182026;background:#f5f3ee;max-width:1180px;margin:0 auto;padding:48px 24px}h1{font-size:clamp(38px,6vw,72px);line-height:1.08;letter-spacing:-.05em;font-weight:500}h2{margin-top:52px;letter-spacing:-.03em}a{color:#315e72}.label{font:11px/1.8 monospace;letter-spacing:.15em}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #ccd1d1;border-radius:16px;overflow:hidden}.stats>div{padding:25px}.stats b{display:block;font-size:32px}.stats span{font-size:12px;color:#56646a}article{background:#fffefa;border:1px solid #d5d9d7;border-radius:14px;padding:24px;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:12px}td,th{text-align:left;padding:12px 10px;border-bottom:1px solid #d5d9d7;vertical-align:top}code{overflow-wrap:anywhere}td code{font-size:10px}.table{overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.notice{border-left:3px solid #9c7b46;padding-left:20px}.sources td{max-width:280px}footer{border-top:1px solid #ccd1d1;padding-top:25px;margin-top:45px;color:#56646a;font-size:13px}@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}body{padding:24px 18px}}@media print{article{break-inside:avoid}body{padding:10px}}
+</style></head><body><header><p class="label">MATTOCCIA LABS / RESEARCH ENGINES / ENGINE 02</p><h1>Genomics Evidence Engine.<br>Experiment GEE-001.</h1><p>Classificatory discordance in public BRCA1/BRCA2 variant evidence.</p></header><p class="notice">Experimental research only. Not a diagnostic system, medical advice or a clinical reassessment. Public variant-level data attributed to NCBI ClinVar and Ensembl; original software Apache-2.0. No personal genetic data, patient observations or AI-generated numeric results.</p><p>Acquired: 2026-11-06T00:53:36.456082+00:00 · method gee-001-1.0 · analysis SHA256 <code>7a8667032c123a7bd4841d34769d179e3a2f8dd7c7d876a5c180dc6c38b9e1b0</code></p><div class="stats"><div><b>80</b><span>Unique variants</span></div><div><b>543</b><span>Condition records / RCV</span></div><div><b>1770</b><span>Germline submissions / SCV</span></div><div><b>164</b><span>Unique submitter IDs</span></div></div><h2>Selection and denominators</h2><pre>{
+  &quot;genes&quot;: [
+    &quot;BRCA1&quot;,
+    &quot;BRCA2&quot;
+  ],
+  &quot;rule&quot;: &quot;First N unique numeric ascending Variation IDs per official gene AND single_gene query; selected before classifications are fetched&quot;,
+  &quot;per_gene_requested&quot;: 40,
+  &quot;searches&quot;: {
+    &quot;BRCA1&quot;: {
+      &quot;query&quot;: &quot;BRCA1[gene] AND single_gene[prop]&quot;,
+      &quot;available_ids&quot;: 14132,
+      &quot;selected_ids&quot;: [
+        17660,
+        17661,
+        17662,
+        17665,
+        17666,
+        17667,
+        17669,
+        17670,
+        17675,
+        17676,
+        17677,
+        17679,
+        17681,
+        17682,
+        17683,
+        17685,
+        17690,
+        17693,
+        17694,
+        17695,
+        37386,
+        37387,
+        37388,
+        37389,
+        37390,
+        37391,
+        37392,
+        37393,
+        37394,
+        37395,
+        37396,
+        37397,
+        37398,
+        37399,
+        37400,
+        37401,
+        37402,
+        37403,
+        37404,
+        37405
+      ],
+      &quot;not_selected&quot;: 14092,
+      &quot;source_id&quot;: &quot;e70b327ae158dae56a039992e05d2c7c0df5f727508b90d25632414613856a67&quot;
+    },
+    &quot;BRCA2&quot;: {
+      &quot;query&quot;: &quot;BRCA2[gene] AND single_gene[prop]&quot;,
+      &quot;available_ids&quot;: 22046,
+      &quot;selected_ids&quot;: [
+        9317,
+        9318,
+        9319,
+        9320,
+        9322,
+        9324,
+        9325,
+        9326,
+        9328,
+        9329,
+        9339,
+        9340,
+        9342,
+        9343,
+        9344,
+        9345,
+        9346,
+        9347,
+        9348,
+        9349,
+        37714,
+        37715,
+        37716,
+        37717,
+        37718,
+        37719,
+        37720,
+        37721,
+        37722,
+        37723,
+        37724,
+        37725,
+        37726,
+        37727,
+        37728,
+        37729,
+        37730,
+        37731,
+        37732,
+        37733
+      ],
+      &quot;not_selected&quot;: 22006,
+      &quot;source_id&quot;: &quot;ad55e9d803cb35c6f1a71e27977e81fa9f790f55acd59e5c92a801c4ecf8744d&quot;
+    }
+  },
+  &quot;selected_unique_ids&quot;: [
+    9317,
+    9318,
+    9319,
+    9320,
+    9322,
+    9324,
+    9325,
+    9326,
+    9328,
+    9329,
+    9339,
+    9340,
+    9342,
+    9343,
+    9344,
+    9345,
+    9346,
+    9347,
+    9348,
+    9349,
+    17660,
+    17661,
+    17662,
+    17665,
+    17666,
+    17667,
+    17669,
+    17670,
+    17675,
+    17676,
+    17677,
+    17679,
+    17681,
+    17682,
+    17683,
+    17685,
+    17690,
+    17693,
+    17694,
+    17695,
+    37386,
+    37387,
+    37388,
+    37389,
+    37390,
+    37391,
+    37392,
+    37393,
+    37394,
+    37395,
+    37396,
+    37397,
+    37398,
+    37399,
+    37400,
+    37401,
+    37402,
+    37403,
+    37404,
+    37405,
+    37714,
+    37715,
+    37716,
+    37717,
+    37718,
+    37719,
+    37720,
+    37721,
+    37722,
+    37723,
+    37724,
+    37725,
+    37726,
+    37727,
+    37728,
+    37729,
+    37730,
+    37731,
+    37732,
+    37733
+  ],
+  &quot;sample_type&quot;: &quot;deterministic_nonrandom_not_prevalence_estimate&quot;,
+  &quot;ensembl_selection_rule&quot;: &quot;Round-robin by gene, ascending selected Variation ID among exact GRCh38 SNVs; fixed limit before VEP responses&quot;,
+  &quot;ensembl_selected_ids&quot;: [
+    &quot;17660&quot;,
+    &quot;9329&quot;,
+    &quot;17661&quot;,
+    &quot;9339&quot;,
+    &quot;17670&quot;,
+    &quot;9340&quot;,
+    &quot;17675&quot;,
+    &quot;9343&quot;,
+    &quot;17676&quot;,
+    &quot;9344&quot;,
+    &quot;17681&quot;,
+    &quot;9345&quot;
+  ]
+}</pre><p>This is a deterministic lowest-ID sample, not a random sample or estimate of all BRCA variants. RCVs and SCVs are not counted as variants. Scope excludes nonclassified/haplotype/nonhuman/other-gene records with reasons retained below.</p><h2>1 / Quantitative results</h2><p>Official aggregate germline conflict: <b>12 / 80 (15.0%)</b>. Same-condition cross-band SCV difference: <b>28 / 75 (37.333%)</b> of variants with at least one comparable condition group.</p><table><thead><tr><th>Official source label</th><th>Count</th></tr></thead><tbody><tr><td>Benign</td><td>8</td></tr><tr><td>Benign/Likely benign</td><td>3</td></tr><tr><td>Conflicting classifications of pathogenicity</td><td>12</td></tr><tr><td>Likely benign</td><td>2</td></tr><tr><td>Pathogenic</td><td>50</td></tr><tr><td>Pathogenic/Likely pathogenic</td><td>4</td></tr><tr><td>Uncertain significance</td><td>1</td></tr></tbody></table><h2>2 / Documented examples</h2><article><p class="label">OBSERVED DATA / COMPUTATIONAL COMPARISON</p><h3><a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/37388/">VCV000037388.28</a></h3><p>NM_007294.4(BRCA1):c.1033G&gt;T (p.Asp345Tyr)</p><p>Official VCV aggregate: Conflicting classifications of pathogenicity · criteria provided, conflicting classifications</p><p><b>MedGen:C0027672</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 3 SCVs; 3 submitters.</p><p>RCVs: RCV000509756.15</p><div class="table"><table><thead><tr><th>SCV</th><th>Submitter</th><th>Classification</th><th>Review</th><th>Evaluation</th><th>Contributes</th></tr></thead><tbody><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000607932.6">SCV000607932.6</a></td><td>Ambry Genetics</td><td>Uncertain significance</td><td>criteria provided, single submitter</td><td>2025-05-01</td><td>True</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000688313.4">SCV000688313.4</a></td><td>Color Diagnostics, LLC DBA Color Health</td><td>Uncertain significance</td><td>criteria provided, single submitter</td><td>2020-09-30</td><td>True</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV003846214.1">SCV003846214.1</a></td><td>University of Washington Department of Laboratory Medicine, University of Washington</td><td>Likely benign</td><td>criteria provided, single submitter</td><td>2023-03-23</td><td>True</td></tr></tbody></table></div></article><article><p class="label">OBSERVED DATA / COMPUTATIONAL COMPARISON</p><h3><a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/37398/">VCV000037398.31</a></h3><p>NM_007294.4(BRCA1):c.1202G&gt;A (p.Gly401Glu)</p><p>Official VCV aggregate: Conflicting classifications of pathogenicity · criteria provided, conflicting classifications</p><p><b>MedGen:C0027672</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 3 SCVs; 3 submitters.</p><p>RCVs: RCV000130767.18</p><div class="table"><table><thead><tr><th>SCV</th><th>Submitter</th><th>Classification</th><th>Review</th><th>Evaluation</th><th>Contributes</th></tr></thead><tbody><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000185660.9">SCV000185660.9</a></td><td>Ambry Genetics</td><td>Likely benign</td><td>criteria provided, single submitter</td><td>2024-04-15</td><td>True</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000688321.5">SCV000688321.5</a></td><td>Color Diagnostics, LLC DBA Color Health</td><td>Uncertain significance</td><td>criteria provided, single submitter</td><td>2025-05-13</td><td>True</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV003846107.1">SCV003846107.1</a></td><td>University of Washington Department of Laboratory Medicine, University of Washington</td><td>Likely benign</td><td>criteria provided, single submitter</td><td>2023-03-23</td><td>True</td></tr></tbody></table></div></article><article><p class="label">OBSERVED DATA / COMPUTATIONAL COMPARISON</p><h3><a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/37399/">VCV000037399.26</a></h3><p>NM_007294.4(BRCA1):c.1222A&gt;G (p.Lys408Glu)</p><p>Official VCV aggregate: Conflicting classifications of pathogenicity · criteria provided, conflicting classifications</p><p><b>MedGen:C2676676</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 3 SCVs; 3 submitters.</p><p>RCVs: RCV000030980.11</p><div class="table"><table><thead><tr><th>SCV</th><th>Submitter</th><th>Classification</th><th>Review</th><th>Evaluation</th><th>Contributes</th></tr></thead><tbody><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000053572.3">SCV000053572.3</a></td><td>Sharing Clinical Reports Project (SCRP)</td><td>Benign</td><td>no assertion criteria provided</td><td>2009-11-06</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000144033.1">SCV000144033.1</a></td><td>Breast Cancer Information Core (BIC) (BRCA1)</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2002-06-20</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV004244133.1">SCV004244133.1</a></td><td>BRCAlab, Lund University</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2020-03-02</td><td>False</td></tr></tbody></table></div></article><article><p class="label">OBSERVED DATA / COMPUTATIONAL COMPARISON</p><h3><a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/37402/">VCV000037402.33</a></h3><p>NM_007294.4(BRCA1):c.134A&gt;C (p.Lys45Thr)</p><p>Official VCV aggregate: Conflicting classifications of pathogenicity · criteria provided, conflicting classifications</p><p><b>MedGen:C2676676</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 4 SCVs; 4 submitters.</p><p>RCVs: RCV000030983.21</p><div class="table"><table><thead><tr><th>SCV</th><th>Submitter</th><th>Classification</th><th>Review</th><th>Evaluation</th><th>Contributes</th></tr></thead><tbody><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000053575.4">SCV000053575.4</a></td><td>Sharing Clinical Reports Project (SCRP)</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2010-05-03</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000144426.1">SCV000144426.1</a></td><td>Breast Cancer Information Core (BIC) (BRCA1)</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2004-02-20</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000488132.3">SCV000488132.3</a></td><td>Counsyl</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2016-02-19</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV004823696.1">SCV004823696.1</a></td><td>All of Us Research Program, National Institutes of Health</td><td>Likely Benign</td><td>criteria provided, single submitter</td><td>2023-09-04</td><td>True</td></tr></tbody></table></div></article><article><p class="label">OBSERVED DATA / COMPUTATIONAL COMPARISON</p><h3><a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/37405/">VCV000037405.20</a></h3><p>NM_007294.4(BRCA1):c.135-8dup</p><p>Official VCV aggregate: Conflicting classifications of pathogenicity · criteria provided, conflicting classifications</p><p><b>MedGen:C0027672</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 2 SCVs; 2 submitters.</p><p>RCVs: RCV001176119.15</p><p><b>MedGen:C2676676</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 3 SCVs; 3 submitters.</p><p>RCVs: RCV000030986.15</p><div class="table"><table><thead><tr><th>SCV</th><th>Submitter</th><th>Classification</th><th>Review</th><th>Evaluation</th><th>Contributes</th></tr></thead><tbody><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000053578.3">SCV000053578.3</a></td><td>Sharing Clinical Reports Project (SCRP)</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2011-06-01</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV001339967.4">SCV001339967.4</a></td><td>Color Diagnostics, LLC DBA Color Health</td><td>Likely benign</td><td>criteria provided, single submitter</td><td>2023-09-04</td><td>True</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV002538016.1">SCV002538016.1</a></td><td>Sema4, Sema4</td><td>Uncertain significance</td><td>criteria provided, single submitter</td><td>2021-05-19</td><td>True</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV004244191.1">SCV004244191.1</a></td><td>BRCAlab, Lund University</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2020-03-02</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV004828697.1">SCV004828697.1</a></td><td>All of Us Research Program, National Institutes of Health</td><td>Likely Benign</td><td>criteria provided, single submitter</td><td>2023-09-17</td><td>True</td></tr></tbody></table></div></article><article><p class="label">OBSERVED DATA / COMPUTATIONAL COMPARISON</p><h3><a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/37715/">VCV000037715.26</a></h3><p>NM_000059.4(BRCA2):c.-39-12_-39-10del</p><p>Official VCV aggregate: Conflicting classifications of pathogenicity · criteria provided, conflicting classifications</p><p><b>MedGen:C2675520</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 3 SCVs; 3 submitters.</p><p>RCVs: RCV000031296.9</p><div class="table"><table><thead><tr><th>SCV</th><th>Submitter</th><th>Classification</th><th>Review</th><th>Evaluation</th><th>Contributes</th></tr></thead><tbody><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000053901.4">SCV000053901.4</a></td><td>Sharing Clinical Reports Project (SCRP)</td><td>Benign</td><td>no assertion criteria provided</td><td>2010-12-17</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000145913.1">SCV000145913.1</a></td><td>Breast Cancer Information Core (BIC) (BRCA2)</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2002-05-29</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV002761800.1">SCV002761800.1</a></td><td>Genetics and Molecular Pathology, SA Pathology</td><td>Uncertain significance</td><td>criteria provided, single submitter</td><td>2020-04-27</td><td>True</td></tr></tbody></table></div></article><article><p class="label">OBSERVED DATA / COMPUTATIONAL COMPARISON</p><h3><a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/37717/">VCV000037717.29</a></h3><p>NM_000059.4(BRCA2):c.-9T&gt;C</p><p>Official VCV aggregate: Conflicting classifications of pathogenicity · criteria provided, conflicting classifications</p><p><b>MedGen:C2675520</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 3 SCVs; 3 submitters.</p><p>RCVs: RCV000031298.9</p><div class="table"><table><thead><tr><th>SCV</th><th>Submitter</th><th>Classification</th><th>Review</th><th>Evaluation</th><th>Contributes</th></tr></thead><tbody><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000053903.3">SCV000053903.3</a></td><td>Sharing Clinical Reports Project (SCRP)</td><td>Likely benign</td><td>no assertion criteria provided</td><td>2011-12-01</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000145989.1">SCV000145989.1</a></td><td>Breast Cancer Information Core (BIC) (BRCA2)</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2002-05-29</td><td>False</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000785751.3">SCV000785751.3</a></td><td>Counsyl</td><td>Uncertain significance</td><td>no assertion criteria provided</td><td>2017-11-20</td><td>False</td></tr></tbody></table></div></article><article><p class="label">OBSERVED DATA / COMPUTATIONAL COMPARISON</p><h3><a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/37718/">VCV000037718.27</a></h3><p>NM_000059.4(BRCA2):c.10024G&gt;A (p.Glu3342Lys)</p><p>Official VCV aggregate: Conflicting classifications of pathogenicity · criteria provided, conflicting classifications</p><p><b>MedGen:C0027672</b> · [&#x27;B/LB&#x27;, &#x27;VUS&#x27;] · 2 SCVs; 2 submitters.</p><p>RCVs: RCV000220854.11</p><div class="table"><table><thead><tr><th>SCV</th><th>Submitter</th><th>Classification</th><th>Review</th><th>Evaluation</th><th>Contributes</th></tr></thead><tbody><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000274258.7">SCV000274258.7</a></td><td>Ambry Genetics</td><td>Uncertain significance</td><td>criteria provided, single submitter</td><td>2025-06-10</td><td>True</td></tr><tr><td><a href="https://www.ncbi.nlm.nih.gov/clinvar/?term=SCV000911853.1">SCV000911853.1</a></td><td>Color Diagnostics, LLC DBA Color Health</td><td>Likely benign</td><td>criteria provided, single submitter</td><td>2018-01-03</td><td>True</td></tr></tbody></table></div></article><h2>3 / Documentary completeness</h2><table><thead><tr><th>Official source label</th><th>Count</th></tr></thead><tbody><tr><td>criteria provided, conflicting classifications</td><td>12</td></tr><tr><td>criteria provided, multiple submitters, no conflicts</td><td>11</td></tr><tr><td>criteria provided, single submitter</td><td>3</td></tr><tr><td>no assertion criteria provided</td><td>2</td></tr><tr><td>reviewed by expert panel</td><td>52</td></tr></tbody></table><p>SCVs with declared criteria: 1287 / 1770 (72.712%); evaluation date: 1606 / 1770 (90.734%); citation identifiers: 1112 / 1770 (62.825%). These are metadata availability indicators, not scientific reliability scores.</p><p>Expert-panel VCVs: 52 / 80 (65.0%). Submitter organization categories below are SCV-weighted, denominator 1770 submissions, not unique organizations.</p><table><thead><tr><th>Official source label</th><th>Count</th></tr></thead><tbody><tr><td>clinic</td><td>75</td></tr><tr><td>consortium</td><td>228</td></tr><tr><td>laboratory</td><td>1338</td></tr><tr><td>locus-specific database (LSDB)</td><td>58</td></tr><tr><td>other</td><td>11</td></tr><tr><td>patient registry</td><td>7</td></tr><tr><td>resource</td><td>53</td></tr></tbody></table><h3>Distinct submitter organizations</h3><p>Organization IDs deduplicated across the study; denominator 164 organizations. A combined label is retained if source categories differ.</p><table><thead><tr><th>Official source label</th><th>Count</th></tr></thead><tbody><tr><td>clinic</td><td>11</td></tr><tr><td>consortium</td><td>10</td></tr><tr><td>laboratory</td><td>133</td></tr><tr><td>locus-specific database (LSDB)</td><td>2</td></tr><tr><td>other</td><td>5</td></tr><tr><td>patient registry</td><td>1</td></tr><tr><td>resource</td><td>2</td></tr></tbody></table><h2>Cross-source annotation</h2><p>Exact GRCh38 SNV match to Ensembl VEP: 12 / 12 (100.0%) attempted compatible variants. Predicted molecular consequence is independent of the clinical classification.</p><pre>{
+  &quot;server_release&quot;: {
+    &quot;releases&quot;: [
+      116
+    ]
+  },
+  &quot;attempted&quot;: 12,
+  &quot;matched_variants&quot;: [
+    {
+      &quot;vcv&quot;: &quot;VCV000009329.101&quot;,
+      &quot;variation_id&quot;: &quot;9329&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000013.11&quot;,
+        &quot;chromosome&quot;: &quot;13&quot;,
+        &quot;position&quot;: 32332592,
+        &quot;start&quot;: 32332592,
+        &quot;stop&quot;: 32332592,
+        &quot;reference&quot;: &quot;A&quot;,
+        &quot;alternate&quot;: &quot;C&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;missense_variant&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000139618&quot;
+      ],
+      &quot;transcript_count&quot;: 15,
+      &quot;source_id&quot;: &quot;2dc0ee6448b630f57f54f576641e84ffc2ca95a6a8fc06e163fe871a374545f1&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000009339.8&quot;,
+      &quot;variation_id&quot;: &quot;9339&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000013.11&quot;,
+        &quot;chromosome&quot;: &quot;13&quot;,
+        &quot;position&quot;: 32376769,
+        &quot;start&quot;: 32376769,
+        &quot;stop&quot;: 32376769,
+        &quot;reference&quot;: &quot;C&quot;,
+        &quot;alternate&quot;: &quot;A&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;missense_variant&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000139618&quot;
+      ],
+      &quot;transcript_count&quot;: 15,
+      &quot;source_id&quot;: &quot;692622de3862487af511f812e09360cbe1f409ed2eed7593067da3fbd6e2333f&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000009340.65&quot;,
+      &quot;variation_id&quot;: &quot;9340&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000013.11&quot;,
+        &quot;chromosome&quot;: &quot;13&quot;,
+        &quot;position&quot;: 32363367,
+        &quot;start&quot;: 32363367,
+        &quot;stop&quot;: 32363367,
+        &quot;reference&quot;: &quot;C&quot;,
+        &quot;alternate&quot;: &quot;G&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;missense_variant&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000139618&quot;
+      ],
+      &quot;transcript_count&quot;: 14,
+      &quot;source_id&quot;: &quot;541a61c0e85d9806e079a5719c086daf12abbfd61b6541082032c3ee01c11351&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000009343.12&quot;,
+      &quot;variation_id&quot;: &quot;9343&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000013.11&quot;,
+        &quot;chromosome&quot;: &quot;13&quot;,
+        &quot;position&quot;: 32363421,
+        &quot;start&quot;: 32363421,
+        &quot;stop&quot;: 32363421,
+        &quot;reference&quot;: &quot;T&quot;,
+        &quot;alternate&quot;: &quot;A&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;stop_gained&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000139618&quot;
+      ],
+      &quot;transcript_count&quot;: 14,
+      &quot;source_id&quot;: &quot;020372bea2b1214f88b04cf3ccd6c101ddbf363300b0804e0fefb90ab3eac70f&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000009344.24&quot;,
+      &quot;variation_id&quot;: &quot;9344&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000013.11&quot;,
+        &quot;chromosome&quot;: &quot;13&quot;,
+        &quot;position&quot;: 32339003,
+        &quot;start&quot;: 32339003,
+        &quot;stop&quot;: 32339003,
+        &quot;reference&quot;: &quot;G&quot;,
+        &quot;alternate&quot;: &quot;T&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;stop_gained&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000139618&quot;
+      ],
+      &quot;transcript_count&quot;: 14,
+      &quot;source_id&quot;: &quot;b0cd89b059379f64bac9dbc6d18c8f4a7c12e1253da20431342dc1f600fccb85&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000009345.25&quot;,
+      &quot;variation_id&quot;: &quot;9345&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000013.11&quot;,
+        &quot;chromosome&quot;: &quot;13&quot;,
+        &quot;position&quot;: 32356521,
+        &quot;start&quot;: 32356521,
+        &quot;stop&quot;: 32356521,
+        &quot;reference&quot;: &quot;T&quot;,
+        &quot;alternate&quot;: &quot;C&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;missense_variant&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000139618&quot;
+      ],
+      &quot;transcript_count&quot;: 14,
+      &quot;source_id&quot;: &quot;6ec11a065d8acc07867714d36f25a352d411f5f771e98e7e1d02ca69e8888cf3&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000017660.43&quot;,
+      &quot;variation_id&quot;: &quot;17660&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000017.11&quot;,
+        &quot;chromosome&quot;: &quot;17&quot;,
+        &quot;position&quot;: 43106478,
+        &quot;start&quot;: 43106478,
+        &quot;stop&quot;: 43106478,
+        &quot;reference&quot;: &quot;A&quot;,
+        &quot;alternate&quot;: &quot;C&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;stop_lost&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000012048&quot;
+      ],
+      &quot;transcript_count&quot;: 53,
+      &quot;source_id&quot;: &quot;c760148fbd06c8bc6d0a4511c89b3da4d840fff83295aaa6d044c669b2f6af99&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000017661.165&quot;,
+      &quot;variation_id&quot;: &quot;17661&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000017.11&quot;,
+        &quot;chromosome&quot;: &quot;17&quot;,
+        &quot;position&quot;: 43106487,
+        &quot;start&quot;: 43106487,
+        &quot;stop&quot;: 43106487,
+        &quot;reference&quot;: &quot;A&quot;,
+        &quot;alternate&quot;: &quot;C&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;missense_variant&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000012048&quot;
+      ],
+      &quot;transcript_count&quot;: 53,
+      &quot;source_id&quot;: &quot;52f3c15db232bb29a1eef3729e9254decc2fb31c18053bf80dfc749b9e5c7fba&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000017670.129&quot;,
+      &quot;variation_id&quot;: &quot;17670&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000017.11&quot;,
+        &quot;chromosome&quot;: &quot;17&quot;,
+        &quot;position&quot;: 43092412,
+        &quot;start&quot;: 43092412,
+        &quot;stop&quot;: 43092412,
+        &quot;reference&quot;: &quot;C&quot;,
+        &quot;alternate&quot;: &quot;T&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;missense_variant&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000012048&quot;
+      ],
+      &quot;transcript_count&quot;: 50,
+      &quot;source_id&quot;: &quot;f8e531ed466cc88cf2602825f233cda9ed500b7b510127012558fb9bda59f324&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000017675.112&quot;,
+      &quot;variation_id&quot;: &quot;17675&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000017.11&quot;,
+        &quot;chromosome&quot;: &quot;17&quot;,
+        &quot;position&quot;: 43082434,
+        &quot;start&quot;: 43082434,
+        &quot;stop&quot;: 43082434,
+        &quot;reference&quot;: &quot;G&quot;,
+        &quot;alternate&quot;: &quot;A&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;stop_gained&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000012048&quot;
+      ],
+      &quot;transcript_count&quot;: 48,
+      &quot;source_id&quot;: &quot;51d93c76560c92830118ed3cbdec9c33af96090bb442f1e9792439e0ef96e71b&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000017676.78&quot;,
+      &quot;variation_id&quot;: &quot;17676&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000017.11&quot;,
+        &quot;chromosome&quot;: &quot;17&quot;,
+        &quot;position&quot;: 43082434,
+        &quot;start&quot;: 43082434,
+        &quot;stop&quot;: 43082434,
+        &quot;reference&quot;: &quot;G&quot;,
+        &quot;alternate&quot;: &quot;C&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;missense_variant&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000012048&quot;
+      ],
+      &quot;transcript_count&quot;: 48,
+      &quot;source_id&quot;: &quot;851aab031256dfb28e254748904d4ec6c40f58823fee62fa818d942f3f85071a&quot;
+    },
+    {
+      &quot;vcv&quot;: &quot;VCV000017681.112&quot;,
+      &quot;variation_id&quot;: &quot;17681&quot;,
+      &quot;location&quot;: {
+        &quot;assembly&quot;: &quot;GRCh38&quot;,
+        &quot;sequence_accession&quot;: &quot;NC_000017.11&quot;,
+        &quot;chromosome&quot;: &quot;17&quot;,
+        &quot;position&quot;: 43093010,
+        &quot;start&quot;: 43093010,
+        &quot;stop&quot;: 43093010,
+        &quot;reference&quot;: &quot;G&quot;,
+        &quot;alternate&quot;: &quot;A&quot;,
+        &quot;representation&quot;: &quot;VCF 1-based forward genomic&quot;
+      },
+      &quot;consequence&quot;: &quot;missense_variant&quot;,
+      &quot;verified_gene_ids&quot;: [
+        &quot;ENSG00000012048&quot;
+      ],
+      &quot;transcript_count&quot;: 50,
+      &quot;source_id&quot;: &quot;723e2a2d7d6c33c5967ae15630eaa8774cc739aa90372dd700d759360068f4be&quot;
+    }
+  ]
+}</pre><h2>Research findings</h2><article><p class="label">computational_result</p><h3>Variant-level classification and conflict counts</h3><p>Unique Variation IDs, germline VCV classification; explicit denominator for each ratio</p><pre>{
+  &quot;classification_distribution&quot;: {
+    &quot;Benign&quot;: 8,
+    &quot;Benign/Likely benign&quot;: 3,
+    &quot;Conflicting classifications of pathogenicity&quot;: 12,
+    &quot;Likely benign&quot;: 2,
+    &quot;Pathogenic&quot;: 50,
+    &quot;Pathogenic/Likely pathogenic&quot;: 4,
+    &quot;Uncertain significance&quot;: 1
+  },
+  &quot;official_conflicts&quot;: {
+    &quot;numerator&quot;: 12,
+    &quot;denominator&quot;: 80,
+    &quot;percent&quot;: 15.0
+  },
+  &quot;same_condition_differences&quot;: {
+    &quot;numerator&quot;: 28,
+    &quot;denominator&quot;: 75,
+    &quot;percent&quot;: 37.333
+  }
+}</pre><p>Deterministic lowest-ID sample, not random and not a population prevalence estimate.</p></article><article><p class="label">computational_result</p><h3>Documented classification differences</h3><p>Current germline SCVs, exact NCBI MedGen condition-set match, independent organization IDs; P/LP and B/LB grouped separately from VUS</p><pre>{
+  &quot;example_accessions&quot;: [
+    &quot;VCV000037388.28&quot;,
+    &quot;VCV000037398.31&quot;,
+    &quot;VCV000037399.26&quot;,
+    &quot;VCV000037402.33&quot;,
+    &quot;VCV000037405.20&quot;,
+    &quot;VCV000037715.26&quot;,
+    &quot;VCV000037717.29&quot;,
+    &quot;VCV000037718.27&quot;
+  ],
+  &quot;examples_found&quot;: 8
+}</pre><p>Current submission-level differences are not necessarily ClinVar aggregate conflicts; dates, review tiers and noncontributing submissions remain explicit.</p></article><article><p class="label">computational_result</p><h3>Review status and documentary completeness</h3><p>Count official review labels and available SCV metadata, without invented reliability score</p><pre>{
+  &quot;review_distribution&quot;: {
+    &quot;criteria provided, conflicting classifications&quot;: 12,
+    &quot;criteria provided, multiple submitters, no conflicts&quot;: 11,
+    &quot;criteria provided, single submitter&quot;: 3,
+    &quot;no assertion criteria provided&quot;: 2,
+    &quot;reviewed by expert panel&quot;: 52
+  },
+  &quot;criteria&quot;: {
+    &quot;numerator&quot;: 1287,
+    &quot;denominator&quot;: 1770,
+    &quot;percent&quot;: 72.712
+  },
+  &quot;dates&quot;: {
+    &quot;numerator&quot;: 1606,
+    &quot;denominator&quot;: 1770,
+    &quot;percent&quot;: 90.734
+  },
+  &quot;citations&quot;: {
+    &quot;numerator&quot;: 1112,
+    &quot;denominator&quot;: 1770,
+    &quot;percent&quot;: 62.825
+  }
+}</pre><p>Declared criteria/review tier do not establish correctness; missing metadata is not evidence of invalidity.</p></article><h2>Excluded/invalid records and acquisition errors</h2><pre>{
+  &quot;exclusions&quot;: {
+    &quot;selected_variants&quot;: 80,
+    &quot;imported_variants&quot;: 80,
+    &quot;excluded_variants&quot;: 0,
+    &quot;reasons&quot;: {},
+    &quot;not_selected_query_ids&quot;: {
+      &quot;BRCA1&quot;: 14092,
+      &quot;BRCA2&quot;: 22006
+    }
+  },
+  &quot;errors&quot;: []
+}</pre><h2>Scientific limits</h2><ul><li>Research only: no diagnosis, treatment or individual genetic analysis.</li><li>Sample is deterministic by lowest Variation ID within the official single-gene query; no representativeness claim.</li><li>VCV, RCV and SCV denominators are distinct. Germline classifications only.</li><li>Same-condition comparison requires identical NCBI-mapped MedGen condition sets; unresolved mappings are not forced.</li><li>P/LP and B/LB likelihood-only differences are separated from cross-band differences.</li><li>Contributing and noncontributing SCVs are reported separately; dates do not prove causes of disagreement.</li><li>VEP molecular consequence is independent of clinical classification; only exact GRCh38 SNVs qualified.</li><li>No artificial confidence/pathogenicity score, causal conclusion, clinical validation or model-weight learning.</li></ul><h2>Sources and reproducibility manifest</h2><p>Each SHA256 refers to a complete cached API response, not the whole ClinVar database. Prefix probes of large TSV files are recorded separately and are not full-file checksums. API record versions are preserved; a common release timestamp is not assumed.</p><div class="table sources"><table><thead><tr><th>Official source URL</th><th>Acquisition UTC</th><th>Release/date metadata</th><th>Full response SHA256</th><th>Record counts</th></tr></thead><tbody><tr><td><a href="https://rest.ensembl.org/vep/human/region/13:32363421-32363421:1/A?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:45:14.296569+00:00</td><td>API response; see accession versions</td><td><code>bb0e8b8cee31753642ee6905e1c5cd182d1c8358c5d14370c7374d18ffd72ef7</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37387">NCBI ClinVar</a></td><td>2026-11-06T00:42:48.777789+00:00</td><td>API response; see accession versions</td><td><code>8aefb0ad25a066e56a181c4166d5dc053e8d3d851abf104596e104205b871e03</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 5, &#x27;current_germline_scv_records&#x27;: 12, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9347">NCBI ClinVar</a></td><td>2026-11-06T00:42:00.796620+00:00</td><td>API response; see accession versions</td><td><code>acee4ba0f2e4f37fc9e26ce11ea29851df1126dc3a4577a5fb194be039f540e9</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 10, &#x27;current_germline_scv_records&#x27;: 26, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17677">NCBI ClinVar</a></td><td>2026-11-06T00:42:34.124783+00:00</td><td>API response; see accession versions</td><td><code>c63bf826107631756dd07cc76ea71c4183fec2a2626ae9676ab89b0af8f2e8f8</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 17, &#x27;current_germline_scv_records&#x27;: 101, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37728">NCBI ClinVar</a></td><td>2026-11-06T00:43:19.755122+00:00</td><td>API response; see accession versions</td><td><code>233d8fe5e13cdec62686306b842876438cb49654a57b30f4b2aeb5bf73774218</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 1, &#x27;current_germline_scv_records&#x27;: 3, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=clinvarset&amp;retmode=xml&amp;id=RCV000009909.18">NCBI ClinVar</a></td><td>2026-11-06T00:50:03.164794+00:00</td><td>API response; see accession versions</td><td><code>545804f4af50a1d9ef8392f723ab8cb03d201a4e3bb02d8be1390c9f97a4c055</code></td><td>{&#x27;rcv_records&#x27;: 1, &#x27;matched_versioned_rcv&#x27;: 1}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17661">NCBI ClinVar</a></td><td>2026-11-06T00:42:04.991901+00:00</td><td>API response; see accession versions</td><td><code>f14ff968d05fee9e6a9cdb858b655a35b98aab00deb54118e6c5ba134c3b427f</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 14, &#x27;current_germline_scv_records&#x27;: 76, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37731">NCBI ClinVar</a></td><td>2026-11-06T00:43:21.819371+00:00</td><td>API response; see accession versions</td><td><code>6afd202d4b05f4e0e1a16e81296cee439374dba4a19c7a7d8fb8b78c1ce85e51</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 19, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37399">NCBI ClinVar</a></td><td>2026-11-06T00:43:03.162142+00:00</td><td>API response; see accession versions</td><td><code>738a08a741c1011d804edcb022fa3a0fc30a817bbbeee59ba81d693b31edf959</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 12, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37717">NCBI ClinVar</a></td><td>2026-11-06T00:43:11.816652+00:00</td><td>API response; see accession versions</td><td><code>f2487d977f8666a0708a6ace9802c69b5354e84466167c92a8937fc2a2ef8195</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 11, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37388">NCBI ClinVar</a></td><td>2026-11-06T00:42:50.023361+00:00</td><td>API response; see accession versions</td><td><code>9002964d42648aa9cbd82b783b1a583be37e84ce4747b79795c820043487756b</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 11, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37396">NCBI ClinVar</a></td><td>2026-11-06T00:42:59.555067+00:00</td><td>API response; see accession versions</td><td><code>31ff675c326def7ee363368c1222ad43165fa136e2818c514d770ed83aa92add</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 1, &#x27;current_germline_scv_records&#x27;: 2, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9339">NCBI ClinVar</a></td><td>2026-11-06T00:41:54.454682+00:00</td><td>API response; see accession versions</td><td><code>5bb5bfd14d2b363c3d6a7efd713082495507987ce45627c2826d6fb34a90e69e</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 2, &#x27;current_germline_scv_records&#x27;: 2, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17669">NCBI ClinVar</a></td><td>2026-11-06T00:42:26.927027+00:00</td><td>API response; see accession versions</td><td><code>0c4a55d9118e41c7eda54cc5455479a88608b5297122553f32436dbf51fa6bb3</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 4, &#x27;current_germline_scv_records&#x27;: 20, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9319">NCBI ClinVar</a></td><td>2026-11-06T00:41:35.681151+00:00</td><td>API response; see accession versions</td><td><code>f599c7303c0f39437ec6f323cbc0b5460f08eb72038f25fbc4ecbbd807f0986c</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 10, &#x27;current_germline_scv_records&#x27;: 37, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37389">NCBI ClinVar</a></td><td>2026-11-06T00:42:51.341846+00:00</td><td>API response; see accession versions</td><td><code>accac92c0fd5e020a9eab6559a7ecf4d082dbdcf29fc903654e88db242033ac5</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 16, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17694">NCBI ClinVar</a></td><td>2026-11-06T00:42:44.747985+00:00</td><td>API response; see accession versions</td><td><code>0a9db81e52253458b671ea454d4b55af2ffa0e1cc03042de66250da6692ab898</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 28, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17662">NCBI ClinVar</a></td><td>2026-11-06T00:42:06.608426+00:00</td><td>API response; see accession versions</td><td><code>16d3b2ec0f7d3116cada146d4087f2c0787986e6d14af2cc81f1b702c70b317d</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 18, &#x27;current_germline_scv_records&#x27;: 97, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37392">NCBI ClinVar</a></td><td>2026-11-06T00:42:54.856845+00:00</td><td>API response; see accession versions</td><td><code>d3038e531b340f21d21d1eb91d4e7e08c4ad4177ef0cc4c099ac1565d8c48dfc</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 20, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37391">NCBI ClinVar</a></td><td>2026-11-06T00:42:53.802553+00:00</td><td>API response; see accession versions</td><td><code>3543ac8db2d62e156f196376d315337f7e43a8ae261abe136ec0b2ad3e05214e</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 4, &#x27;current_germline_scv_records&#x27;: 13, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9322">NCBI ClinVar</a></td><td>2026-11-06T00:41:48.628391+00:00</td><td>API response; see accession versions</td><td><code>892d1c780aa55e4350ae47c0463a8267d8f6e98678f571e94938ccd83747862d</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 17, &#x27;current_germline_scv_records&#x27;: 72, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9349">NCBI ClinVar</a></td><td>2026-11-06T00:42:02.378981+00:00</td><td>API response; see accession versions</td><td><code>b0253aa166283bf21cbaf152d319a8dda0fee584ff7af6ea237f52c43e0147f5</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 11, &#x27;current_germline_scv_records&#x27;: 28, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9318">NCBI ClinVar</a></td><td>2026-11-06T00:41:31.217622+00:00</td><td>API response; see accession versions</td><td><code>5584d450db5dd0c144dd8781d4cefbfcecb65cafad95c46fca8471c780763b92</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 13, &#x27;current_germline_scv_records&#x27;: 60, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/13:32332592-32332592:1/C?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:43:31.526438+00:00</td><td>API response; see accession versions</td><td><code>572897a47dfaeb7ff837793bca0259cfef2eab49243e6d00a7c2a45e6d5d5127</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17682">NCBI ClinVar</a></td><td>2026-11-06T00:42:38.366552+00:00</td><td>API response; see accession versions</td><td><code>ab611eb20b716ed3e39e75558714f016dddc80604c4183f0c349fd3833e8c845</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 22, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=clinvarset&amp;retmode=xml&amp;id=RCV000048522.26">NCBI ClinVar</a></td><td>2026-11-06T00:50:07.917698+00:00</td><td>API response; see accession versions</td><td><code>f78039662d54e368b9ac7898810681e018b85d929dad505f46b4982277eb2fda</code></td><td>{&#x27;rcv_records&#x27;: 1, &#x27;matched_versioned_rcv&#x27;: 1}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37729">NCBI ClinVar</a></td><td>2026-11-06T00:43:20.279064+00:00</td><td>API response; see accession versions</td><td><code>37900c5a5804bdecef84d1d03303a3af1732c1874d212b0a75e80e9fa79ac9c4</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 3, &#x27;current_germline_scv_records&#x27;: 4, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37400">NCBI ClinVar</a></td><td>2026-11-06T00:43:04.120023+00:00</td><td>API response; see accession versions</td><td><code>36194d5f4d11304c1ba0e938155a77c2cef98e8820844e0084d113b1c53f1337</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 4, &#x27;current_germline_scv_records&#x27;: 5, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/lookup/symbol/homo_sapiens/BRCA1?content-type=application/json">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:43:23.976697+00:00</td><td>API response; see accession versions</td><td><code>bbfaf5b2a3dc1cd77f35e10b9e1659848e29cf19e4a76735e10803bccf1defb7</code></td><td>{&#x27;gene_records&#x27;: 1}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9348">NCBI ClinVar</a></td><td>2026-11-06T00:42:01.487882+00:00</td><td>API response; see accession versions</td><td><code>f1ad5fda2fdc0298a3761991a4fece5103e9248f0fb41487f6583cb27fa88943</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 11, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37726">NCBI ClinVar</a></td><td>2026-11-06T00:43:18.690658+00:00</td><td>API response; see accession versions</td><td><code>b262dcc54475e1de1e187048d379a6873ff110253559a8d0224d30904c7bb0ef</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 4, &#x27;current_germline_scv_records&#x27;: 6, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37725">NCBI ClinVar</a></td><td>2026-11-06T00:43:17.949547+00:00</td><td>API response; see accession versions</td><td><code>6b883254facfe591d99e0e2c8eb4d32b66d1eaa2cb62cc1d3e1cea3ab51b3e89</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 17, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37723">NCBI ClinVar</a></td><td>2026-11-06T00:43:16.442564+00:00</td><td>API response; see accession versions</td><td><code>94da40ac0d46385493afffd0e1534787b33d1217a327db6d31eaf764b85a97dd</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 9, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17690">NCBI ClinVar</a></td><td>2026-11-06T00:42:42.136511+00:00</td><td>API response; see accession versions</td><td><code>bc39dc8dac37b24fe0a139f4a4fff8254826287b282bbcecf3a61c02550d45c7</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 1, &#x27;current_germline_scv_records&#x27;: 1, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9317">NCBI ClinVar</a></td><td>2026-11-06T00:41:27.101007+00:00</td><td>API response; see accession versions</td><td><code>d2ab7a4fedc1992f53d902771f46033635820c423e1a9cc6a8ae8b49bf1fadf4</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 3, &#x27;current_germline_scv_records&#x27;: 3, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37401">NCBI ClinVar</a></td><td>2026-11-06T00:43:05.139812+00:00</td><td>API response; see accession versions</td><td><code>738eb70bdbb3d1c9d7ceb5e49f02700e5fd7fb5cd9626b90b1358c1fb1398545</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 4, &#x27;current_germline_scv_records&#x27;: 9, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17679">NCBI ClinVar</a></td><td>2026-11-06T00:42:35.289498+00:00</td><td>API response; see accession versions</td><td><code>b140503e23bc5121601d7883aa630ba6bd2797d379a0b2fecba1e234b29948c2</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 1, &#x27;current_germline_scv_records&#x27;: 3, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17681">NCBI ClinVar</a></td><td>2026-11-06T00:42:36.905350+00:00</td><td>API response; see accession versions</td><td><code>5dbcbe2fb0a72d45a95d2bbf9add33b0ed7c8a5632db1d1ace9244f1de3b8ab3</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 43, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37714">NCBI ClinVar</a></td><td>2026-11-06T00:43:09.991813+00:00</td><td>API response; see accession versions</td><td><code>3b1d1416c4b8f780821af2b7c95f0d4fcb61fde2b79c26264df4aa87633db3f3</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 11, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17666">NCBI ClinVar</a></td><td>2026-11-06T00:42:11.377187+00:00</td><td>API response; see accession versions</td><td><code>59fa46bd1b0267e52337a0fc840f7d04b09d135fc702cd67a47de1a916b84343</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 18, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=clinvarset&amp;retmode=xml&amp;id=RCV000031723.19">NCBI ClinVar</a></td><td>2026-11-06T00:50:03.959953+00:00</td><td>API response; see accession versions</td><td><code>01456287798362600f7d97933beb45ee8501bf07d16809f7dcbc860a914bdf8f</code></td><td>{&#x27;rcv_records&#x27;: 1, &#x27;matched_versioned_rcv&#x27;: 1}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/17:43082434-43082434:1/A?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:49:40.083365+00:00</td><td>API response; see accession versions</td><td><code>a84369a08af1d703899b2bef52b0bc5a81c9deaf145a76ea99c5bde2e3279a4a</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/17:43106487-43106487:1/C?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:48:35.025658+00:00</td><td>API response; see accession versions</td><td><code>b53ec05d978aa0c70d957258b51a527d0b3b42ad706ff864b0e0dc851466cc3c</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/13:32363367-32363367:1/G?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:43:59.622594+00:00</td><td>API response; see accession versions</td><td><code>0bce032ec5075ab54d064952071e9f7b7b35ac215cb92840c6094da730feff1d</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37730">NCBI ClinVar</a></td><td>2026-11-06T00:43:20.880236+00:00</td><td>API response; see accession versions</td><td><code>733d7bc08cb168cddfdea18c31da407de12020bded2367b580c342e4586a3766</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 14, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9340">NCBI ClinVar</a></td><td>2026-11-06T00:41:55.337123+00:00</td><td>API response; see accession versions</td><td><code>b7f58767d6f2b1d88fe930fd60b5e10a697d65d3140acb203659cd314c689406</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 23, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9325">NCBI ClinVar</a></td><td>2026-11-06T00:41:51.007623+00:00</td><td>API response; see accession versions</td><td><code>bb2532052b876e65dcbedb749249d624ddc7b18cc65362732df59fceb815fb18</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 17, &#x27;current_germline_scv_records&#x27;: 89, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/13:32376769-32376769:1/A?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:43:40.225752+00:00</td><td>API response; see accession versions</td><td><code>79885800e742dbcd45d473bd7adb52a154ef2025541f04b46ff99208f1a0ca03</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9326">NCBI ClinVar</a></td><td>2026-11-06T00:41:52.031493+00:00</td><td>API response; see accession versions</td><td><code>a29a7bce7d90a2ebe8545fca75429ea36aee9237ad8c51eeea4b9e82f889787a</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 9, &#x27;current_germline_scv_records&#x27;: 36, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/13:32356521-32356521:1/C?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:47:20.666863+00:00</td><td>API response; see accession versions</td><td><code>6e91a4f72a549b23290cedd5b7034ae0ab8ee1f4605ce8923760b1bcabdff872</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37716">NCBI ClinVar</a></td><td>2026-11-06T00:43:11.172922+00:00</td><td>API response; see accession versions</td><td><code>e03f956fc78c789e8f19d4c27a8bd1b1589a406e401d606a1789a030bacd9285</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 2, &#x27;current_germline_scv_records&#x27;: 2, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/17:43093010-43093010:1/A?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:50:02.545387+00:00</td><td>API response; see accession versions</td><td><code>00a36e98caf29be9a2c78873a691d6520fbee3d009f68e3a2e488d1f6f3dc43b</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9343">NCBI ClinVar</a></td><td>2026-11-06T00:41:57.925818+00:00</td><td>API response; see accession versions</td><td><code>db47fdde7f0137987d9e514506682e1aaac64b3ee987b446e215b88ee7672022</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 4, &#x27;current_germline_scv_records&#x27;: 5, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17665">NCBI ClinVar</a></td><td>2026-11-06T00:42:07.788860+00:00</td><td>API response; see accession versions</td><td><code>d6c370c2e9c1ac03f961f946003fb9d690c77d18f972507809613b42d786b41e</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 9, &#x27;current_germline_scv_records&#x27;: 31, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9320">NCBI ClinVar</a></td><td>2026-11-06T00:41:46.891652+00:00</td><td>API response; see accession versions</td><td><code>309ecdb009cbcfd67984bd61cb134ec1ea7f40941376ae9be6a010155dfd2e37</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 13, &#x27;current_germline_scv_records&#x27;: 50, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9329">NCBI ClinVar</a></td><td>2026-11-06T00:41:53.775176+00:00</td><td>API response; see accession versions</td><td><code>120cb72a0f6ff2cba3b89c9b87dd69dcf0f753601daf3d69eee946e313ce171b</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 11, &#x27;current_germline_scv_records&#x27;: 42, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17693">NCBI ClinVar</a></td><td>2026-11-06T00:42:43.408076+00:00</td><td>API response; see accession versions</td><td><code>21363efe8270a6c70b3840ed5f2caea05d627b50e2b77288d5e7385dd1e27590</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 36, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37398">NCBI ClinVar</a></td><td>2026-11-06T00:43:01.867157+00:00</td><td>API response; see accession versions</td><td><code>41d0c0fe7dc453a3fb37e936b13a8a81b9c79208c7f59664fdafeab04c9aae60</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 9, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=clinvarset&amp;retmode=xml&amp;id=RCV000113772.5">NCBI ClinVar</a></td><td>2026-11-06T00:50:04.555314+00:00</td><td>API response; see accession versions</td><td><code>0278309b8624f211bff6a49438be296978d3d4bcd0e01674b6359afa0e95eafe</code></td><td>{&#x27;rcv_records&#x27;: 1, &#x27;matched_versioned_rcv&#x27;: 1}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37405">NCBI ClinVar</a></td><td>2026-11-06T00:43:09.389806+00:00</td><td>API response; see accession versions</td><td><code>010459d967923d0c508314487e9a335fb10ae3bdde501b0baa0e3aba6e77935c</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 4, &#x27;current_germline_scv_records&#x27;: 7, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37393">NCBI ClinVar</a></td><td>2026-11-06T00:42:55.897984+00:00</td><td>API response; see accession versions</td><td><code>183bea8ccf6393c1a2a997f4b1a5ff6a7725171ea7eea135f339e22828af9f14</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 5, &#x27;current_germline_scv_records&#x27;: 8, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/17:43082434-43082434:1/C?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:49:45.663442+00:00</td><td>API response; see accession versions</td><td><code>d836b84fb315f159ff7ba3926bc7e4b701e9c09ffb454bdc2fa6527ef36984d4</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17675">NCBI ClinVar</a></td><td>2026-11-06T00:42:30.377811+00:00</td><td>API response; see accession versions</td><td><code>78db9efc29b67228bf7bd4c665d70e4e03ab4b8ea0f1bafaba3aa52f8adf123d</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 13, &#x27;current_germline_scv_records&#x27;: 60, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/lookup/symbol/homo_sapiens/BRCA2?content-type=application/json">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:43:24.393725+00:00</td><td>API response; see accession versions</td><td><code>7e3b9f0bad3edc3d66f9cd37a35860ac00dce97718d84d561481afaa0acbc410</code></td><td>{&#x27;gene_records&#x27;: 1}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37721">NCBI ClinVar</a></td><td>2026-11-06T00:43:14.641853+00:00</td><td>API response; see accession versions</td><td><code>af0505d68ee511e18f0b104427333a77e90d22afe852ce36a8b811c00c087aa4</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 8, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17670">NCBI ClinVar</a></td><td>2026-11-06T00:42:28.408684+00:00</td><td>API response; see accession versions</td><td><code>59337ffe67560604ba7ec5f98cafccbd86477a226364b8319fb7a352e9b6e8b2</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 44, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9342">NCBI ClinVar</a></td><td>2026-11-06T00:41:57.170026+00:00</td><td>API response; see accession versions</td><td><code>784c9b950bde09f3f2bff21e09724f76b19cb76733145fafa92c727679bf2e56</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 21, &#x27;current_germline_scv_records&#x27;: 73, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37715">NCBI ClinVar</a></td><td>2026-11-06T00:43:10.694963+00:00</td><td>API response; see accession versions</td><td><code>8d681a621b6a2bba1bcc0785233b4a5faf0e119a9d908fb71f08ecc38477a2fa</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 11, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17660">NCBI ClinVar</a></td><td>2026-11-06T00:42:03.600723+00:00</td><td>API response; see accession versions</td><td><code>c3891cef1a3be003c93b505936098fb79cce64a0ee7efe21382d496c5c4f803f</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 16, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37390">NCBI ClinVar</a></td><td>2026-11-06T00:42:52.571484+00:00</td><td>API response; see accession versions</td><td><code>029ee1afba3a389c48c2e14e5ce8b94a9eec34620afbc9e3250af3f513f55c0a</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 15, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9344">NCBI ClinVar</a></td><td>2026-11-06T00:41:58.780161+00:00</td><td>API response; see accession versions</td><td><code>699dc2b4806a9ddecb239b9bbb3011a137bb6db1eb6074dcda4dd41ea7fcb96c</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 9, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37394">NCBI ClinVar</a></td><td>2026-11-06T00:42:57.195310+00:00</td><td>API response; see accession versions</td><td><code>c15700dcd09810a0e04d9bd1b0e013ffff5e792a1c216e5208c2134543ed9da6</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 1, &#x27;current_germline_scv_records&#x27;: 2, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37395">NCBI ClinVar</a></td><td>2026-11-06T00:42:58.232982+00:00</td><td>API response; see accession versions</td><td><code>4dbfd3a4cd093496eca6c7c7d9bd0f63993bffd0cc30da503a81ea33321f4278</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 1, &#x27;current_germline_scv_records&#x27;: 1, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=clinvar&amp;term=BRCA2%5Bgene%5D+AND+single_gene%5Bprop%5D&amp;retmode=json&amp;retmax=100000">NCBI ClinVar</a></td><td>2026-11-06T00:41:25.615252+00:00</td><td>API response; see accession versions</td><td><code>eb19fc7ccb359100f53fe82c378c8e18a6c9849d422fead8e5e8e365d1526fbe</code></td><td>{&#x27;examined_query_ids&#x27;: 22046, &#x27;selected&#x27;: 40, &#x27;not_selected&#x27;: 22006, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/13:32339003-32339003:1/T?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:53:36.226885+00:00</td><td>API response; see accession versions</td><td><code>f14effb1978220322ced811379c963b0b6a4d0a13652ba740aae998464d2e091</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37727">NCBI ClinVar</a></td><td>2026-11-06T00:43:19.328412+00:00</td><td>API response; see accession versions</td><td><code>9f56998f8dbe83e49d300f531cb434a25543a3ae9bc9bdf8009270a4a9c8fd6b</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 12, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37404">NCBI ClinVar</a></td><td>2026-11-06T00:43:08.591659+00:00</td><td>API response; see accession versions</td><td><code>9b12b6e91366ec97ffd0b7a577c707af7048187392be792ee47165ba1d37f124</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 21, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37720">NCBI ClinVar</a></td><td>2026-11-06T00:43:14.007263+00:00</td><td>API response; see accession versions</td><td><code>9404ae23a72487d76b55f1364815454f98dcd75ac820ef2821b574a30a5950dc</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 17, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37722">NCBI ClinVar</a></td><td>2026-11-06T00:43:15.679775+00:00</td><td>API response; see accession versions</td><td><code>f754b64934788826492600bed7f2518581118bee6bbf6da0d01685604290863d</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 17, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=clinvarset&amp;retmode=xml&amp;id=RCV000019239.35">NCBI ClinVar</a></td><td>2026-11-06T00:50:06.678240+00:00</td><td>API response; see accession versions</td><td><code>ff9b1a2e49b5b55f95ecb5c1f60b9e539d2e4305a89df0bb932f03b1d1ab4403</code></td><td>{&#x27;rcv_records&#x27;: 1, &#x27;matched_versioned_rcv&#x27;: 1}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17683">NCBI ClinVar</a></td><td>2026-11-06T00:42:39.691945+00:00</td><td>API response; see accession versions</td><td><code>c7bb3c5bc52be0f6bc700b668eb3e194c6708d238e05e0c5d41127192286bef0</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 8, &#x27;current_germline_scv_records&#x27;: 38, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9328">NCBI ClinVar</a></td><td>2026-11-06T00:41:52.907362+00:00</td><td>API response; see accession versions</td><td><code>ff1ad484e8b3082b5fd71c9ef9072f47cfac45867a7242990685da7deb1b23ba</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 10, &#x27;current_germline_scv_records&#x27;: 30, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37386">NCBI ClinVar</a></td><td>2026-11-06T00:42:47.668599+00:00</td><td>API response; see accession versions</td><td><code>16584f9f2b62d27e322d9ade938ff83ec0be69203c01e2a051565bcef4cc7ed9</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 18, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/17:43106478-43106478:1/C?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:47:49.363228+00:00</td><td>API response; see accession versions</td><td><code>57015d3467efe2f4cb3044042d9a36a9e602ba1f3f52f16803690402c237c542</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37724">NCBI ClinVar</a></td><td>2026-11-06T00:43:17.001758+00:00</td><td>API response; see accession versions</td><td><code>3635f76cdb7fff565aa6ab964a1247582da75f8a340e2a933c21d6db23ccea0b</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 5, &#x27;current_germline_scv_records&#x27;: 17, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9346">NCBI ClinVar</a></td><td>2026-11-06T00:42:00.098919+00:00</td><td>API response; see accession versions</td><td><code>9465e5ee7d5c11a875f20399fe7a9ddad4f6b5562a04f39a72c541dca56b6752</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 13, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37719">NCBI ClinVar</a></td><td>2026-11-06T00:43:13.128551+00:00</td><td>API response; see accession versions</td><td><code>fa7cf391b918e7e895a462c10a2e64c4b95488c95f7fc8f69009630fd29b7c99</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 21, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9345">NCBI ClinVar</a></td><td>2026-11-06T00:41:59.569092+00:00</td><td>API response; see accession versions</td><td><code>c6908dfab0774442a7127e6a73c7f75b3a02211ff7a8e8f39237de2a7cb33d8c</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 14, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37732">NCBI ClinVar</a></td><td>2026-11-06T00:43:22.450311+00:00</td><td>API response; see accession versions</td><td><code>16d11b532004e00092c9e93fda3f38762f70703387a2bbe2fc1f32633ee390f4</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 2, &#x27;current_germline_scv_records&#x27;: 4, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37397">NCBI ClinVar</a></td><td>2026-11-06T00:43:00.567940+00:00</td><td>API response; see accession versions</td><td><code>2e810a0ca41ef78ee3c421585aeac31c55c535bb2fd15d59494f236823f47311</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 1, &#x27;current_germline_scv_records&#x27;: 2, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37402">NCBI ClinVar</a></td><td>2026-11-06T00:43:06.305895+00:00</td><td>API response; see accession versions</td><td><code>4e76cc08466a250a55601319a8a65badbe66a60e3c71cf1c836620235bc2e98f</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 5, &#x27;current_germline_scv_records&#x27;: 10, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/info/data?content-type=application/json">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:43:23.470297+00:00</td><td>API response; see accession versions</td><td><code>86e87c46ae1a424702676493d024d0508ce60f6c951b0b2803ce10269e09c20c</code></td><td>{&#x27;metadata_records&#x27;: 1}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=9324">NCBI ClinVar</a></td><td>2026-11-06T00:41:49.707851+00:00</td><td>API response; see accession versions</td><td><code>06e05cd8d19983d4c82d5b3d79abafa8f0db84b1d5213a97381dcb63e5ecffe7</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 2, &#x27;current_germline_scv_records&#x27;: 3, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37733">NCBI ClinVar</a></td><td>2026-11-06T00:43:23.230750+00:00</td><td>API response; see accession versions</td><td><code>fcc2ce13a2429c5d0a630a3f1c33b441aed991c62c04f95428bbc7c6e84813f6</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 15, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=clinvar&amp;term=BRCA1%5Bgene%5D+AND+single_gene%5Bprop%5D&amp;retmode=json&amp;retmax=100000">NCBI ClinVar</a></td><td>2026-11-06T00:41:23.231595+00:00</td><td>API response; see accession versions</td><td><code>bc9e3a899740d84a68c15a3444b9260a4588ed9f87dc00770594b79f300468a9</code></td><td>{&#x27;examined_query_ids&#x27;: 14132, &#x27;selected&#x27;: 40, &#x27;not_selected&#x27;: 14092, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=clinvarset&amp;retmode=xml&amp;id=RCV000019228.26">NCBI ClinVar</a></td><td>2026-11-06T00:50:05.671107+00:00</td><td>API response; see accession versions</td><td><code>089d90aa3b699bf8257b18be424ce6a18c971e1abc41a54922ecce02b2c94ed9</code></td><td>{&#x27;rcv_records&#x27;: 1, &#x27;matched_versioned_rcv&#x27;: 1}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17667">NCBI ClinVar</a></td><td>2026-11-06T00:42:16.145752+00:00</td><td>API response; see accession versions</td><td><code>6011392050309573feb2f1e434272cbd7a66cb4ab6f9bb503a13ecb3184b3f8c</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 6, &#x27;current_germline_scv_records&#x27;: 30, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17676">NCBI ClinVar</a></td><td>2026-11-06T00:42:31.966738+00:00</td><td>API response; see accession versions</td><td><code>14d1166c6703bdd0aadb5d4af8a568e1ab7996ede47dfb604d4dfc7c0a9dde92</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 7, &#x27;current_germline_scv_records&#x27;: 22, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17695">NCBI ClinVar</a></td><td>2026-11-06T00:42:46.011437+00:00</td><td>API response; see accession versions</td><td><code>27f17d79b4c992c85c51d33b8489fbecf4f2f03377f1bf532e7b740c36f0e8f3</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 3, &#x27;current_germline_scv_records&#x27;: 9, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 1, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37403">NCBI ClinVar</a></td><td>2026-11-06T00:43:07.264797+00:00</td><td>API response; see accession versions</td><td><code>58b13205f432dbcefdeb523331d4469c0de8a4c2c707c1095405bca16cd6c4ca</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 3, &#x27;current_germline_scv_records&#x27;: 5, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://rest.ensembl.org/vep/human/region/17:43092412-43092412:1/T?content-type=application%2Fjson&amp;canonical=1&amp;check_ref=1">EMBL-EBI Ensembl</a></td><td>2026-11-06T00:48:57.826489+00:00</td><td>API response; see accession versions</td><td><code>5a8ff34114fd96817a14c011523067634116e1ce494c8de76c4d2484d93d9334</code></td><td>{&#x27;examined&#x27;: 1, &#x27;matched&#x27;: 1, &#x27;invalid&#x27;: 0}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=17685">NCBI ClinVar</a></td><td>2026-11-06T00:42:41.583340+00:00</td><td>API response; see accession versions</td><td><code>3791dafbb5db4d2738feeb45ae8c17532411b47ce438164efc49b23947aa62ba</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 5, &#x27;current_germline_scv_records&#x27;: 25, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr><tr><td><a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&amp;rettype=vcv&amp;is_variationid=true&amp;retmode=xml&amp;id=37718">NCBI ClinVar</a></td><td>2026-11-06T00:43:12.417339+00:00</td><td>API response; see accession versions</td><td><code>a266fbc7bbf3b3a42477a016e56184978f4056e48d0e41b0ef0064e9141936f9</code></td><td>{&#x27;examined&#x27;: 1, &#x27;imported&#x27;: 1, &#x27;excluded&#x27;: 0, &#x27;invalid&#x27;: 0, &#x27;rcv_records&#x27;: 5, &#x27;current_germline_scv_records&#x27;: 8, &#x27;excluded_scv_records&#x27;: {&#x27;non_current_scv&#x27;: 0, &#x27;non_germline_scv&#x27;: 0, &#x27;duplicate_scv&#x27;: 0}}</td></tr></tbody></table></div><footer>NCBI ClinVar data source: <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/maintenance_use/">data-use policy and attribution</a>. Ensembl: <a href="https://www.ensembl.org/about/articles/ensembl-content-disclaimer">data reuse terms</a>. No endorsement by NCBI/NIH, EMBL-EBI or submitters implied. Results do not modify the source classifications.</footer></body></html>

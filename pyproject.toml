@@ -14,13 +14,15 @@ test = ["pytest>=8,<10"]
 
 [project.scripts]
 esae = "esae.cli:main"
+gee = "genomics.cli:main"
 
 [tool.setuptools.package-data]
 esae = ["static/*"]
 benchmarks = ["*.json"]
+genomics = ["static/*"]
 
 [tool.setuptools.packages.find]
-include = ["esae*", "benchmarks*"]
+include = ["esae*", "benchmarks*", "research_core*", "genomics*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

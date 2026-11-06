@@ -1,0 +1,2920 @@
+{
+  "experiment": "GEE-001",
+  "engine_version": "0.1.0",
+  "parser_version": "gee-0.1.0",
+  "selection": {
+    "genes": [
+      "BRCA1",
+      "BRCA2"
+    ],
+    "rule": "First N unique numeric ascending Variation IDs per official gene AND single_gene query; selected before classifications are fetched",
+    "per_gene_requested": 40,
+    "searches": {
+      "BRCA1": {
+        "query": "BRCA1[gene] AND single_gene[prop]",
+        "available_ids": 14132,
+        "selected_ids": [
+          17660,
+          17661,
+          17662,
+          17665,
+          17666,
+          17667,
+          17669,
+          17670,
+          17675,
+          17676,
+          17677,
+          17679,
+          17681,
+          17682,
+          17683,
+          17685,
+          17690,
+          17693,
+          17694,
+          17695,
+          37386,
+          37387,
+          37388,
+          37389,
+          37390,
+          37391,
+          37392,
+          37393,
+          37394,
+          37395,
+          37396,
+          37397,
+          37398,
+          37399,
+          37400,
+          37401,
+          37402,
+          37403,
+          37404,
+          37405
+        ],
+        "not_selected": 14092,
+        "source_id": "e70b327ae158dae56a039992e05d2c7c0df5f727508b90d25632414613856a67"
+      },
+      "BRCA2": {
+        "query": "BRCA2[gene] AND single_gene[prop]",
+        "available_ids": 22046,
+        "selected_ids": [
+          9317,
+          9318,
+          9319,
+          9320,
+          9322,
+          9324,
+          9325,
+          9326,
+          9328,
+          9329,
+          9339,
+          9340,
+          9342,
+          9343,
+          9344,
+          9345,
+          9346,
+          9347,
+          9348,
+          9349,
+          37714,
+          37715,
+          37716,
+          37717,
+          37718,
+          37719,
+          37720,
+          37721,
+          37722,
+          37723,
+          37724,
+          37725,
+          37726,
+          37727,
+          37728,
+          37729,
+          37730,
+          37731,
+          37732,
+          37733
+        ],
+        "not_selected": 22006,
+        "source_id": "ad55e9d803cb35c6f1a71e27977e81fa9f790f55acd59e5c92a801c4ecf8744d"
+      }
+    },
+    "selected_unique_ids": [
+      9317,
+      9318,
+      9319,
+      9320,
+      9322,
+      9324,
+      9325,
+      9326,
+      9328,
+      9329,
+      9339,
+      9340,
+      9342,
+      9343,
+      9344,
+      9345,
+      9346,
+      9347,
+      9348,
+      9349,
+      17660,
+      17661,
+      17662,
+      17665,
+      17666,
+      17667,
+      17669,
+      17670,
+      17675,
+      17676,
+      17677,
+      17679,
+      17681,
+      17682,
+      17683,
+      17685,
+      17690,
+      17693,
+      17694,
+      17695,
+      37386,
+      37387,
+      37388,
+      37389,
+      37390,
+      37391,
+      37392,
+      37393,
+      37394,
+      37395,
+      37396,
+      37397,
+      37398,
+      37399,
+      37400,
+      37401,
+      37402,
+      37403,
+      37404,
+      37405,
+      37714,
+      37715,
+      37716,
+      37717,
+      37718,
+      37719,
+      37720,
+      37721,
+      37722,
+      37723,
+      37724,
+      37725,
+      37726,
+      37727,
+      37728,
+      37729,
+      37730,
+      37731,
+      37732,
+      37733
+    ],
+    "sample_type": "deterministic_nonrandom_not_prevalence_estimate",
+    "ensembl_selection_rule": "Round-robin by gene, ascending selected Variation ID among exact GRCh38 SNVs; fixed limit before VEP responses",
+    "ensembl_selected_ids": [
+      "17660",
+      "9329",
+      "17661",
+      "9339",
+      "17670",
+      "9340",
+      "17675",
+      "9343",
+      "17676",
+      "9344",
+      "17681",
+      "9345"
+    ]
+  },
+  "sources": [
+    {
+      "id": "020372bea2b1214f88b04cf3ccd6c101ddbf363300b0804e0fefb90ab3eac70f",
+      "url": "https://rest.ensembl.org/vep/human/region/13:32363421-32363421:1/A?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:45:14.296569+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:45:14 GMT",
+      "sha256": "bb0e8b8cee31753642ee6905e1c5cd182d1c8358c5d14370c7374d18ffd72ef7",
+      "bytes": 6225,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "08bfc8b7b9b7bc578eb663224774063a31c27f1280203dd79d721554a6e043ed",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37387",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:48.777789+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:47 GMT",
+      "sha256": "8aefb0ad25a066e56a181c4166d5dc053e8d3d851abf104596e104205b871e03",
+      "bytes": 281433,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 5,
+        "current_germline_scv_records": 12,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "099373377657220490654207bba5119c4ccdca68a4fdea3ddf8dde4d7c597818",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9347",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:00.796620+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:00 GMT",
+      "sha256": "acee4ba0f2e4f37fc9e26ce11ea29851df1126dc3a4577a5fb194be039f540e9",
+      "bytes": 151217,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 10,
+        "current_germline_scv_records": 26,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "0bf832d72d5e058b071d2ce5a210f3fc1d807b2729eb01ab457beb15e9c66386",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17677",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:34.124783+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:32 GMT",
+      "sha256": "c63bf826107631756dd07cc76ea71c4183fec2a2626ae9676ab89b0af8f2e8f8",
+      "bytes": 704650,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 17,
+        "current_germline_scv_records": 101,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "0bfd62b9ec1765ceaec37c7818d4b9b2749c5a5346f50cf2d30626e2fda19a5c",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37728",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:19.755122+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:19 GMT",
+      "sha256": "233d8fe5e13cdec62686306b842876438cb49654a57b30f4b2aeb5bf73774218",
+      "bytes": 25083,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 1,
+        "current_germline_scv_records": 3,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "0d5de83aabc5584fd2651dda221c2e0a037308b3caa008859133bdc8d54c2ae2",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=clinvarset&retmode=xml&id=RCV000009909.18",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:50:03.164794+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:50:02 GMT",
+      "sha256": "545804f4af50a1d9ef8392f723ab8cb03d201a4e3bb02d8be1390c9f97a4c055",
+      "bytes": 20946,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "rcv_records": 1,
+        "matched_versioned_rcv": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "0f243b8d2e1c731359930ddb89acc5cd6c3666ed9c287af44ca87c83d21b4899",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17661",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:04.991901+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:03 GMT",
+      "sha256": "f14ff968d05fee9e6a9cdb858b655a35b98aab00deb54118e6c5ba134c3b427f",
+      "bytes": 555687,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 14,
+        "current_germline_scv_records": 76,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "1065129d71c3f106fec7b9e7dea62e51605da686937ded10feacfd3ac8a2d734",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37731",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:21.819371+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:21 GMT",
+      "sha256": "6afd202d4b05f4e0e1a16e81296cee439374dba4a19c7a7d8fb8b78c1ce85e51",
+      "bytes": 119919,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 19,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "11bc7feffe2eb75b6811e09af0ea6e11a41ed9f4e7c130dd77c5142a2dbfadd6",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37399",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:03.162142+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:02 GMT",
+      "sha256": "738a08a741c1011d804edcb022fa3a0fc30a817bbbeee59ba81d693b31edf959",
+      "bytes": 281017,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 12,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "139b8892a0e27086f72aaa4e12cf7f682bc7efd2c0eafe581ea340cb7545454f",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37717",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:11.816652+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:11 GMT",
+      "sha256": "f2487d977f8666a0708a6ace9802c69b5354e84466167c92a8937fc2a2ef8195",
+      "bytes": 82841,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 11,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "150d4c81e9d4fccf34b45f1d0d6541be470a0f92d7970d7024b65490acd8450f",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37388",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:50.023361+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:48 GMT",
+      "sha256": "9002964d42648aa9cbd82b783b1a583be37e84ce4747b79795c820043487756b",
+      "bytes": 280972,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 11,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "15955493debd8dc872751524c68b29925cd53a61ad531fa2613d799eb8599d49",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37396",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:59.555067+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:58 GMT",
+      "sha256": "31ff675c326def7ee363368c1222ad43165fa136e2818c514d770ed83aa92add",
+      "bytes": 227084,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 1,
+        "current_germline_scv_records": 2,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "1846ed6211f073a656811ffb106589bbe142ed68ea79ca3c0fb8350a8eef8276",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9339",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:54.454682+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:54 GMT",
+      "sha256": "5bb5bfd14d2b363c3d6a7efd713082495507987ce45627c2826d6fb34a90e69e",
+      "bytes": 29818,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 2,
+        "current_germline_scv_records": 2,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "1981ee1138ed9236a389193a07ec107ac6a745212edd2f706c40466c1eb9b4fb",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17669",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:26.927027+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:16 GMT",
+      "sha256": "0c4a55d9118e41c7eda54cc5455479a88608b5297122553f32436dbf51fa6bb3",
+      "bytes": 300822,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 4,
+        "current_germline_scv_records": 20,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "1b38885bdfc672fb08978e807d241ca3df104870cdc0ae95d511fd96b1dd2176",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9319",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:35.681151+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:32 GMT",
+      "sha256": "f599c7303c0f39437ec6f323cbc0b5460f08eb72038f25fbc4ecbbd807f0986c",
+      "bytes": 181980,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 10,
+        "current_germline_scv_records": 37,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "1b3e4b6658deffeed8114e8e8f6978272371c4610898264443afd3769fa7d018",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37389",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:51.341846+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:50 GMT",
+      "sha256": "accac92c0fd5e020a9eab6559a7ecf4d082dbdcf29fc903654e88db242033ac5",
+      "bytes": 322456,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 16,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "1df952a2b0e237f0270a78622078f770c46af877cebfa9b3a8f8d6639ccf3c22",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17694",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:44.747985+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:43 GMT",
+      "sha256": "0a9db81e52253458b671ea454d4b55af2ffa0e1cc03042de66250da6692ab898",
+      "bytes": 398686,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 28,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "1e138a159509c2200741fb883e01acc6845fbe1b8734826e1d2183fa6f5605ac",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17662",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:06.608426+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:05 GMT",
+      "sha256": "16d3b2ec0f7d3116cada146d4087f2c0787986e6d14af2cc81f1b702c70b317d",
+      "bytes": 663290,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 18,
+        "current_germline_scv_records": 97,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "2103f9be08c1f3e864f244397fb34004224a9daec1ed4af74cade135b2fc7084",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37392",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:54.856845+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:53 GMT",
+      "sha256": "d3038e531b340f21d21d1eb91d4e7e08c4ad4177ef0cc4c099ac1565d8c48dfc",
+      "bytes": 288747,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 20,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "2363e05d7c0c3abeaa84a85b7d4fbadb01fa5940239448d34cd846246fa114d1",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37391",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:53.802553+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:52 GMT",
+      "sha256": "3543ac8db2d62e156f196376d315337f7e43a8ae261abe136ec0b2ad3e05214e",
+      "bytes": 280099,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 4,
+        "current_germline_scv_records": 13,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "2724a308259c2cc38a8c3760f834484a6824d8c83605851ebd2bd012d16a421a",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9322",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:48.628391+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:47 GMT",
+      "sha256": "892d1c780aa55e4350ae47c0463a8267d8f6e98678f571e94938ccd83747862d",
+      "bytes": 383180,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 17,
+        "current_germline_scv_records": 72,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "29700131da046686ec78c536bd8637486fef3ed1d35abe18033c501db670e28f",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9349",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:02.378981+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:00 GMT",
+      "sha256": "b0253aa166283bf21cbaf152d319a8dda0fee584ff7af6ea237f52c43e0147f5",
+      "bytes": 189102,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 11,
+        "current_germline_scv_records": 28,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "2d385b7dde9388093681840bcfcf0d03e2ff2c6f4ebf8b186105f5e8a25e63f9",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9318",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:31.217622+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:27 GMT",
+      "sha256": "5584d450db5dd0c144dd8781d4cefbfcecb65cafad95c46fca8471c780763b92",
+      "bytes": 298749,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 13,
+        "current_germline_scv_records": 60,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "2dc0ee6448b630f57f54f576641e84ffc2ca95a6a8fc06e163fe871a374545f1",
+      "url": "https://rest.ensembl.org/vep/human/region/13:32332592-32332592:1/C?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:43:31.526438+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:31 GMT",
+      "sha256": "572897a47dfaeb7ff837793bca0259cfef2eab49243e6d00a7c2a45e6d5d5127",
+      "bytes": 10149,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "2e046531031c687ee28eda08692954b056ac15a58316f8308b9929f850ce07e8",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17682",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:38.366552+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:36 GMT",
+      "sha256": "ab611eb20b716ed3e39e75558714f016dddc80604c4183f0c349fd3833e8c845",
+      "bytes": 308839,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 22,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "31a66f591665529aed953c587ae1c00a9fcf088686c035df07ba4530d14f94db",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=clinvarset&retmode=xml&id=RCV000048522.26",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:50:07.917698+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:50:06 GMT",
+      "sha256": "f78039662d54e368b9ac7898810681e018b85d929dad505f46b4982277eb2fda",
+      "bytes": 266283,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "rcv_records": 1,
+        "matched_versioned_rcv": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "380b14a6da5cc47011bff5536ccfcaa9e749985299d9aca418d2739b6c784165",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37729",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:20.279064+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:19 GMT",
+      "sha256": "37900c5a5804bdecef84d1d03303a3af1732c1874d212b0a75e80e9fa79ac9c4",
+      "bytes": 43013,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 3,
+        "current_germline_scv_records": 4,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "39071afa54e15a9b5b3b123f7ac1a23fe1997d71fd8d4071be0430388784cde5",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37400",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:04.120023+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:03 GMT",
+      "sha256": "36194d5f4d11304c1ba0e938155a77c2cef98e8820844e0084d113b1c53f1337",
+      "bytes": 190223,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 4,
+        "current_germline_scv_records": 5,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "3a31e4f158d28cefcb97b1da86360f618d5f4fe3d45108a8ab0ca40509ba5de3",
+      "url": "https://rest.ensembl.org/lookup/symbol/homo_sapiens/BRCA1?content-type=application/json",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:43:23.976697+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:35:06 GMT",
+      "sha256": "bbfaf5b2a3dc1cd77f35e10b9e1659848e29cf19e4a76735e10803bccf1defb7",
+      "bytes": 438,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "gene_records": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "416cfcd952e8738d205cf8ae0af3de4accd4976d20d0e18ba8a4614a18f483ae",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9348",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:01.487882+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:00 GMT",
+      "sha256": "f1ad5fda2fdc0298a3761991a4fece5103e9248f0fb41487f6583cb27fa88943",
+      "bytes": 85717,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 11,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "424c3398d8996f1bec609b598ef85bb6401a03cb6432b9343dfd57fcf031e3a3",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37726",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:18.690658+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:17 GMT",
+      "sha256": "b262dcc54475e1de1e187048d379a6873ff110253559a8d0224d30904c7bb0ef",
+      "bytes": 48930,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 4,
+        "current_germline_scv_records": 6,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "43e8b17f3e9e8eb74507509002a9fa9ee3fd169467981570ad6a172a3c3ff1c2",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37725",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:17.949547+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:17 GMT",
+      "sha256": "6b883254facfe591d99e0e2c8eb4d32b66d1eaa2cb62cc1d3e1cea3ab51b3e89",
+      "bytes": 96904,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 17,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "448fcd5beaa36f2d9c7dda02a5b09e89df16fc50e807b5279048a04419608e3f",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37723",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:16.442564+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:15 GMT",
+      "sha256": "94da40ac0d46385493afffd0e1534787b33d1217a327db6d31eaf764b85a97dd",
+      "bytes": 63929,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 9,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "45ed34f72124fbbf79bf6f4d516e09e6116de36435feac373e02f5aeb1fc9df0",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17690",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:42.136511+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:41 GMT",
+      "sha256": "bc39dc8dac37b24fe0a139f4a4fff8254826287b282bbcecf3a61c02550d45c7",
+      "bytes": 17115,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 1,
+        "current_germline_scv_records": 1,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "46e8f8af822d56b5afd415c9e1580f62104994322d2ae99099e26be63f1fbb80",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9317",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:27.101007+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:25 GMT",
+      "sha256": "d2ab7a4fedc1992f53d902771f46033635820c423e1a9cc6a8ae8b49bf1fadf4",
+      "bytes": 41240,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 3,
+        "current_germline_scv_records": 3,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "493b655303f21221f1cd4622c5cd3edb2c2fa36bf800fde6c5b3b7a84e2abb9a",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37401",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:05.139812+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:03 GMT",
+      "sha256": "738eb70bdbb3d1c9d7ceb5e49f02700e5fd7fb5cd9626b90b1358c1fb1398545",
+      "bytes": 273012,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 4,
+        "current_germline_scv_records": 9,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "4bd552b3065856aa51d47cde969d18321b0ed9cfad1345f96d6f2d42b93ce3bd",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17679",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:35.289498+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:33 GMT",
+      "sha256": "b140503e23bc5121601d7883aa630ba6bd2797d379a0b2fecba1e234b29948c2",
+      "bytes": 258682,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 1,
+        "current_germline_scv_records": 3,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "4cb19bbbdcc7b0d72b0c9ddbeb5be504efc86d7a507a6c2fb276db2bb2892ba1",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17681",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:36.905350+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:35 GMT",
+      "sha256": "5dbcbe2fb0a72d45a95d2bbf9add33b0ed7c8a5632db1d1ace9244f1de3b8ab3",
+      "bytes": 408741,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 43,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "4e07db744a7f39441fe684078390fa782a8378180120a3a4e69a7e93914cf5dc",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37714",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:09.991813+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:09 GMT",
+      "sha256": "3b1d1416c4b8f780821af2b7c95f0d4fcb61fde2b79c26264df4aa87633db3f3",
+      "bytes": 71047,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 11,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "5036dc51e53ac2a01c7d8812634cbe51b9ad65545eb8fe7ea710d26be29fb36f",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17666",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:11.377187+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:08 GMT",
+      "sha256": "59fa46bd1b0267e52337a0fc840f7d04b09d135fc702cd67a47de1a916b84343",
+      "bytes": 295350,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 18,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "5072a3bef90124522458a809f91628bd2ba56766071e694951a6c5f97ad7e386",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=clinvarset&retmode=xml&id=RCV000031723.19",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:50:03.959953+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:50:03 GMT",
+      "sha256": "01456287798362600f7d97933beb45ee8501bf07d16809f7dcbc860a914bdf8f",
+      "bytes": 42584,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "rcv_records": 1,
+        "matched_versioned_rcv": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "51d93c76560c92830118ed3cbdec9c33af96090bb442f1e9792439e0ef96e71b",
+      "url": "https://rest.ensembl.org/vep/human/region/17:43082434-43082434:1/A?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:49:40.083365+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:49:39 GMT",
+      "sha256": "a84369a08af1d703899b2bef52b0bc5a81c9deaf145a76ea99c5bde2e3279a4a",
+      "bytes": 20457,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "52f3c15db232bb29a1eef3729e9254decc2fb31c18053bf80dfc749b9e5c7fba",
+      "url": "https://rest.ensembl.org/vep/human/region/17:43106487-43106487:1/C?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:48:35.025658+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:48:34 GMT",
+      "sha256": "b53ec05d978aa0c70d957258b51a527d0b3b42ad706ff864b0e0dc851466cc3c",
+      "bytes": 26386,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "541a61c0e85d9806e079a5719c086daf12abbfd61b6541082032c3ee01c11351",
+      "url": "https://rest.ensembl.org/vep/human/region/13:32363367-32363367:1/G?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:43:59.622594+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:59 GMT",
+      "sha256": "0bce032ec5075ab54d064952071e9f7b7b35ac215cb92840c6094da730feff1d",
+      "bytes": 8246,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "595bc390b98b6dfa09a939ba6365858f6ffb83f7f99bfacf2a4299f5dc17babc",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37730",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:20.880236+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:20 GMT",
+      "sha256": "733d7bc08cb168cddfdea18c31da407de12020bded2367b580c342e4586a3766",
+      "bytes": 86361,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 14,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "644098fcaf965c6bea48d2e79e21edce09bf1152a8766898719400640ce955fd",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9340",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:55.337123+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:54 GMT",
+      "sha256": "b7f58767d6f2b1d88fe930fd60b5e10a697d65d3140acb203659cd314c689406",
+      "bytes": 125850,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 23,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "6685a49d1ca92ee2967f7152f8a46726aba4fa852f6644f762e1045685dc9c94",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9325",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:51.007623+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:49 GMT",
+      "sha256": "bb2532052b876e65dcbedb749249d624ddc7b18cc65362732df59fceb815fb18",
+      "bytes": 445959,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 17,
+        "current_germline_scv_records": 89,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "692622de3862487af511f812e09360cbe1f409ed2eed7593067da3fbd6e2333f",
+      "url": "https://rest.ensembl.org/vep/human/region/13:32376769-32376769:1/A?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:43:40.225752+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:40 GMT",
+      "sha256": "79885800e742dbcd45d473bd7adb52a154ef2025541f04b46ff99208f1a0ca03",
+      "bytes": 7429,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "6a6a340f6caae1fda247699c2a0c55c206b276a40d08cd652191b3d3ecfc7dd4",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9326",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:52.031493+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:51 GMT",
+      "sha256": "a29a7bce7d90a2ebe8545fca75429ea36aee9237ad8c51eeea4b9e82f889787a",
+      "bytes": 177149,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 9,
+        "current_germline_scv_records": 36,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "6ec11a065d8acc07867714d36f25a352d411f5f771e98e7e1d02ca69e8888cf3",
+      "url": "https://rest.ensembl.org/vep/human/region/13:32356521-32356521:1/C?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:47:20.666863+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:47:20 GMT",
+      "sha256": "6e91a4f72a549b23290cedd5b7034ae0ab8ee1f4605ce8923760b1bcabdff872",
+      "bytes": 8021,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "708e8036ffd6c579bd046a15dc61b32f992f85dcbe5b87ccebecf16510d4f5c2",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37716",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:11.172922+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:10 GMT",
+      "sha256": "e03f956fc78c789e8f19d4c27a8bd1b1589a406e401d606a1789a030bacd9285",
+      "bytes": 31723,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 2,
+        "current_germline_scv_records": 2,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "723e2a2d7d6c33c5967ae15630eaa8774cc739aa90372dd700d759360068f4be",
+      "url": "https://rest.ensembl.org/vep/human/region/17:43093010-43093010:1/A?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:50:02.545387+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:50:02 GMT",
+      "sha256": "00a36e98caf29be9a2c78873a691d6520fbee3d009f68e3a2e488d1f6f3dc43b",
+      "bytes": 20717,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "76d858658a7b13d3114e03638a97485bf33d3e71edbe2ace7d5322ccd0d08830",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9343",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:57.925818+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:57 GMT",
+      "sha256": "db47fdde7f0137987d9e514506682e1aaac64b3ee987b446e215b88ee7672022",
+      "bytes": 50376,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 4,
+        "current_germline_scv_records": 5,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "77abdbf6c5918d6799a1befb6abb9962501993e07d46f94877ead478057672cf",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17665",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:07.788860+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:06 GMT",
+      "sha256": "d6c370c2e9c1ac03f961f946003fb9d690c77d18f972507809613b42d786b41e",
+      "bytes": 363519,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 9,
+        "current_germline_scv_records": 31,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "7b3a337c223f2c0756a542cbc0adb28b1691dda448a734cef9d85573f26ea923",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9320",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:46.891652+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:36 GMT",
+      "sha256": "309ecdb009cbcfd67984bd61cb134ec1ea7f40941376ae9be6a010155dfd2e37",
+      "bytes": 270461,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 13,
+        "current_germline_scv_records": 50,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "7ba1b51c0fe808f671004f0d43d2524c12d9925bf379c77fc0b2745bc729c114",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9329",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:53.775176+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:52 GMT",
+      "sha256": "120cb72a0f6ff2cba3b89c9b87dd69dcf0f753601daf3d69eee946e313ce171b",
+      "bytes": 212652,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 11,
+        "current_germline_scv_records": 42,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "7ffdf1ef03c54dd55457285f6f75e2e3f67b8a3f78772f96c9b641205e52f520",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17693",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:43.408076+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:42 GMT",
+      "sha256": "21363efe8270a6c70b3840ed5f2caea05d627b50e2b77288d5e7385dd1e27590",
+      "bytes": 381500,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 36,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "8111cb6e1755c1c30d50cbbf62ab282665225e8a491dbfe0c7a8171b1338f540",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37398",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:01.867157+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:01 GMT",
+      "sha256": "41d0c0fe7dc453a3fb37e936b13a8a81b9c79208c7f59664fdafeab04c9aae60",
+      "bytes": 281951,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 9,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "8134b1cbfe88d965531bb4e52d38e4385a0c80d9b1e5f7232c77d73d8417978b",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=clinvarset&retmode=xml&id=RCV000113772.5",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:50:04.555314+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:50:03 GMT",
+      "sha256": "0278309b8624f211bff6a49438be296978d3d4bcd0e01674b6359afa0e95eafe",
+      "bytes": 25915,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "rcv_records": 1,
+        "matched_versioned_rcv": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "82f0835b5eca1b24ade4aea88ba1246d6241f59ee04b0947a3145f89dc4a8915",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37405",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:09.389806+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:08 GMT",
+      "sha256": "010459d967923d0c508314487e9a335fb10ae3bdde501b0baa0e3aba6e77935c",
+      "bytes": 187005,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 4,
+        "current_germline_scv_records": 7,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "8334ea3a2c2be3d55ea54ca581f7d1c8af9a241cf1e85d253eee853e2ddc48c3",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37393",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:55.897984+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:54 GMT",
+      "sha256": "183bea8ccf6393c1a2a997f4b1a5ff6a7725171ea7eea135f339e22828af9f14",
+      "bytes": 230438,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 5,
+        "current_germline_scv_records": 8,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "851aab031256dfb28e254748904d4ec6c40f58823fee62fa818d942f3f85071a",
+      "url": "https://rest.ensembl.org/vep/human/region/17:43082434-43082434:1/C?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:49:45.663442+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:49:45 GMT",
+      "sha256": "d836b84fb315f159ff7ba3926bc7e4b701e9c09ffb454bdc2fa6527ef36984d4",
+      "bytes": 24861,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "8c2e28183e794ceab3cb9863deecd7562f78cdfc24f179ad57ac447c752c81ba",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17675",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:30.377811+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:28 GMT",
+      "sha256": "78db9efc29b67228bf7bd4c665d70e4e03ab4b8ea0f1bafaba3aa52f8adf123d",
+      "bytes": 554482,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 13,
+        "current_germline_scv_records": 60,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "945eceec20aba839fc914a8feac0f2bab9792c0ccaaa04c2dde5f3bfae934eec",
+      "url": "https://rest.ensembl.org/lookup/symbol/homo_sapiens/BRCA2?content-type=application/json",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:43:24.393725+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:38:35 GMT",
+      "sha256": "7e3b9f0bad3edc3d66f9cd37a35860ac00dce97718d84d561481afaa0acbc410",
+      "bytes": 437,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "gene_records": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "9978360165971d60f57318231f8f4a35d93331d8242f88ad8ef4b96f7d73c423",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37721",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:14.641853+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:14 GMT",
+      "sha256": "af0505d68ee511e18f0b104427333a77e90d22afe852ce36a8b811c00c087aa4",
+      "bytes": 56191,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 8,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "997c70982bbd66273c1e286c03da1ac8559a04ac24ef3c06b970de67dc27315e",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17670",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:28.408684+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:26 GMT",
+      "sha256": "59337ffe67560604ba7ec5f98cafccbd86477a226364b8319fb7a352e9b6e8b2",
+      "bytes": 405046,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 44,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "99e42a5e374b1a7d18ef58a90c8ea1c5c3787846f5da82fdc1ee583827e38dd9",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9342",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:57.170026+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:55 GMT",
+      "sha256": "784c9b950bde09f3f2bff21e09724f76b19cb76733145fafa92c727679bf2e56",
+      "bytes": 414386,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 21,
+        "current_germline_scv_records": 73,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "9c6370051709b0f5a4674521af8239fa572574ca80824fed7fbd0ce0da04f802",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37715",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:10.694963+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:10 GMT",
+      "sha256": "8d681a621b6a2bba1bcc0785233b4a5faf0e119a9d908fb71f08ecc38477a2fa",
+      "bytes": 88095,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 11,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "9cfa85d977b24b65adfbfbde1701937bc322036e0d019e256308d3abd525e6ca",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17660",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:03.600723+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:02 GMT",
+      "sha256": "c3891cef1a3be003c93b505936098fb79cce64a0ee7efe21382d496c5c4f803f",
+      "bytes": 321617,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 16,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "a0b601d73269f6e8c3244a9cd62dd10ca941b113386ca6313a7a0f98f74d10db",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37390",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:52.571484+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:50 GMT",
+      "sha256": "029ee1afba3a389c48c2e14e5ce8b94a9eec34620afbc9e3250af3f513f55c0a",
+      "bytes": 289946,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 15,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "a9e8ab798ea537ad26eaff2abb5d0b4edfe2ec9c6f3be12da844644540f26855",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9344",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:58.780161+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:58 GMT",
+      "sha256": "699dc2b4806a9ddecb239b9bbb3011a137bb6db1eb6074dcda4dd41ea7fcb96c",
+      "bytes": 78206,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 9,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "aabbe5f1b63ae839ba6ae5371ed1389cd780b7bf8d3307aaaf21c48528f5e172",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37394",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:57.195310+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:55 GMT",
+      "sha256": "c15700dcd09810a0e04d9bd1b0e013ffff5e792a1c216e5208c2134543ed9da6",
+      "bytes": 227070,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 1,
+        "current_germline_scv_records": 2,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "ab9fa66f7396cf41c2ccad6049b0605d5b6f1dbd4c93825472267b8766035d80",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37395",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:58.232982+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:57 GMT",
+      "sha256": "4dbfd3a4cd093496eca6c7c7d9bd0f63993bffd0cc30da503a81ea33321f4278",
+      "bytes": 220295,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 1,
+        "current_germline_scv_records": 1,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "ad55e9d803cb35c6f1a71e27977e81fa9f790f55acd59e5c92a801c4ecf8744d",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=clinvar&term=BRCA2%5Bgene%5D+AND+single_gene%5Bprop%5D&retmode=json&retmax=100000",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:25.615252+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:22 GMT",
+      "sha256": "eb19fc7ccb359100f53fe82c378c8e18a6c9849d422fead8e5e8e365d1526fbe",
+      "bytes": 205249,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined_query_ids": 22046,
+        "selected": 40,
+        "not_selected": 22006,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "b0cd89b059379f64bac9dbc6d18c8f4a7c12e1253da20431342dc1f600fccb85",
+      "url": "https://rest.ensembl.org/vep/human/region/13:32339003-32339003:1/T?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:53:36.226885+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:53:36 GMT",
+      "sha256": "f14effb1978220322ced811379c963b0b6a4d0a13652ba740aae998464d2e091",
+      "bytes": 7434,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "b175bdab4810c9ab96d7eab032b870dacd765300309303969fa51a81509395bc",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37727",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:19.328412+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:18 GMT",
+      "sha256": "9f56998f8dbe83e49d300f531cb434a25543a3ae9bc9bdf8009270a4a9c8fd6b",
+      "bytes": 77988,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 12,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "b3f1609694ede16022b9e14bdf1c44722512c8d78eb0e306bcb4c430075633d9",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37404",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:08.591659+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:07 GMT",
+      "sha256": "9b12b6e91366ec97ffd0b7a577c707af7048187392be792ee47165ba1d37f124",
+      "bytes": 292239,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 21,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "b56c3d1a0ea22cc07eb6bcb914ae01a043ca7513f99ecffe33218dc26c9f0b47",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37720",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:14.007263+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:13 GMT",
+      "sha256": "9404ae23a72487d76b55f1364815454f98dcd75ac820ef2821b574a30a5950dc",
+      "bytes": 128733,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 17,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "b5a0951104bf655f4badb7185d9dcf9a4fd199601105387b85a06dc4868bbe53",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37722",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:15.679775+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:14 GMT",
+      "sha256": "f754b64934788826492600bed7f2518581118bee6bbf6da0d01685604290863d",
+      "bytes": 95672,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 17,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "b7e5a7217fc2c01dcdb7ee77158274ae90311a963d8a45875be9ca55a1dfbbeb",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=clinvarset&retmode=xml&id=RCV000019239.35",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:50:06.678240+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:50:05 GMT",
+      "sha256": "ff9b1a2e49b5b55f95ecb5c1f60b9e539d2e4305a89df0bb932f03b1d1ab4403",
+      "bytes": 272237,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "rcv_records": 1,
+        "matched_versioned_rcv": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "b7eace10d0068b5939e16de47775b0829a530d26a622d581fd6fb11176f0a31f",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17683",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:39.691945+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:38 GMT",
+      "sha256": "c7bb3c5bc52be0f6bc700b668eb3e194c6708d238e05e0c5d41127192286bef0",
+      "bytes": 388521,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 8,
+        "current_germline_scv_records": 38,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "bd82e00777449d905c6c15f3e61be02d6d29b5ca9ee046f38ceb19d9f2262be7",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9328",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:52.907362+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:52 GMT",
+      "sha256": "ff1ad484e8b3082b5fd71c9ef9072f47cfac45867a7242990685da7deb1b23ba",
+      "bytes": 178093,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 10,
+        "current_germline_scv_records": 30,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "bf534aee7910a2d7fa1d4ec2578456550da59a12b272d8e39edebcb3dea5f026",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37386",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:47.668599+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:46 GMT",
+      "sha256": "16584f9f2b62d27e322d9ade938ff83ec0be69203c01e2a051565bcef4cc7ed9",
+      "bytes": 296751,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 18,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "c760148fbd06c8bc6d0a4511c89b3da4d840fff83295aaa6d044c669b2f6af99",
+      "url": "https://rest.ensembl.org/vep/human/region/17:43106478-43106478:1/C?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:47:49.363228+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:47:48 GMT",
+      "sha256": "57015d3467efe2f4cb3044042d9a36a9e602ba1f3f52f16803690402c237c542",
+      "bytes": 25453,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "cb67b1bfe26fac8025572d3693222c96cdf9d465b890de6cd2a336c24b88eaae",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37724",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:17.001758+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:16 GMT",
+      "sha256": "3635f76cdb7fff565aa6ab964a1247582da75f8a340e2a933c21d6db23ccea0b",
+      "bytes": 95733,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 5,
+        "current_germline_scv_records": 17,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "cd76999549ec113952b3f0a1a2ed9698f15dd195effdc4a416bc9c7fc368e9be",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9346",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:00.098919+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:59 GMT",
+      "sha256": "9465e5ee7d5c11a875f20399fe7a9ddad4f6b5562a04f39a72c541dca56b6752",
+      "bytes": 82082,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 13,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "d1ee369eb2d5f75dbd6a29026f34556e006f7f86543a48964d27cb13ba7c5b13",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37719",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:13.128551+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:12 GMT",
+      "sha256": "fa7cf391b918e7e895a462c10a2e64c4b95488c95f7fc8f69009630fd29b7c99",
+      "bytes": 126355,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 21,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "d488136e069ec8448094599898f30c47eafc53e50a524b247645832f93305cb7",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9345",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:59.569092+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:58 GMT",
+      "sha256": "c6908dfab0774442a7127e6a73c7f75b3a02211ff7a8e8f39237de2a7cb33d8c",
+      "bytes": 91525,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 14,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "d66394e583a55781205ee81f1e2e5eb6d7a6a7dbbb21ee6b83bab9fb89c6d2b3",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37732",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:22.450311+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:22 GMT",
+      "sha256": "16d11b532004e00092c9e93fda3f38762f70703387a2bbe2fc1f32633ee390f4",
+      "bytes": 30124,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 2,
+        "current_germline_scv_records": 4,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "d7d666968c4c89693c408587f62d75eefaf39de78b6e7dcd49a60d677dacf09a",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37397",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:00.567940+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:59 GMT",
+      "sha256": "2e810a0ca41ef78ee3c421585aeac31c55c535bb2fd15d59494f236823f47311",
+      "bytes": 227085,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 1,
+        "current_germline_scv_records": 2,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "d82ca1964f68796374a444ccaa589b03913584c6bbfe37c6cceb7e7851389730",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37402",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:06.305895+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:04 GMT",
+      "sha256": "4e76cc08466a250a55601319a8a65badbe66a60e3c71cf1c836620235bc2e98f",
+      "bytes": 237649,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 5,
+        "current_germline_scv_records": 10,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "d8eff03ef00e487d355c233d95d33ad1d504cb610dba7ba4c19f79380e9c3fc3",
+      "url": "https://rest.ensembl.org/info/data?content-type=application/json",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:43:23.470297+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:33:53 GMT",
+      "sha256": "86e87c46ae1a424702676493d024d0508ce60f6c951b0b2803ce10269e09c20c",
+      "bytes": 18,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "metadata_records": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "debba618239c20ec5232ca1cbed9c6d3227542c558b56ffeefdaf89392f33fe8",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=9324",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:49.707851+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:49 GMT",
+      "sha256": "06e05cd8d19983d4c82d5b3d79abafa8f0db84b1d5213a97381dcb63e5ecffe7",
+      "bytes": 28260,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 2,
+        "current_germline_scv_records": 3,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "e6ba0f5d08a7a0274629a65919d9553b826abb85e84f171364a16f67a3f07167",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37733",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:23.230750+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:22 GMT",
+      "sha256": "fcc2ce13a2429c5d0a630a3f1c33b441aed991c62c04f95428bbc7c6e84813f6",
+      "bytes": 93357,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 15,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "e70b327ae158dae56a039992e05d2c7c0df5f727508b90d25632414613856a67",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=clinvar&term=BRCA1%5Bgene%5D+AND+single_gene%5Bprop%5D&retmode=json&retmax=100000",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:41:23.231595+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:41:22 GMT",
+      "sha256": "bc9e3a899740d84a68c15a3444b9260a4588ed9f87dc00770594b79f300468a9",
+      "bytes": 129534,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined_query_ids": 14132,
+        "selected": 40,
+        "not_selected": 14092,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "e7f8a8769c186565983db77b12fba1d968e84f83040bfdf9304cc0fa8aadfc3b",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=clinvarset&retmode=xml&id=RCV000019228.26",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:50:05.671107+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:50:04 GMT",
+      "sha256": "089d90aa3b699bf8257b18be424ce6a18c971e1abc41a54922ecce02b2c94ed9",
+      "bytes": 252859,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "rcv_records": 1,
+        "matched_versioned_rcv": 1
+      },
+      "errors": []
+    },
+    {
+      "id": "ea327cad4d047ec205068bca96ff952905895b22808c2c447ff8d8daba353f56",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17667",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:16.145752+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:12 GMT",
+      "sha256": "6011392050309573feb2f1e434272cbd7a66cb4ab6f9bb503a13ecb3184b3f8c",
+      "bytes": 350597,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 6,
+        "current_germline_scv_records": 30,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "f6847bae2d0a3fd63c32e4a1b600d1165b3589ed2fb09541f3a4a5eeb74e56d9",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17676",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:31.966738+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:30 GMT",
+      "sha256": "14d1166c6703bdd0aadb5d4af8a568e1ab7996ede47dfb604d4dfc7c0a9dde92",
+      "bytes": 351727,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 7,
+        "current_germline_scv_records": 22,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "f6e8adf1894c214105c395720d2bc515a656d0bdbcc43ba5dd60433dd18208a0",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17695",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:46.011437+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:44 GMT",
+      "sha256": "27f17d79b4c992c85c51d33b8489fbecf4f2f03377f1bf532e7b740c36f0e8f3",
+      "bytes": 308912,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 3,
+        "current_germline_scv_records": 9,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 1,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "f89150890124817c422aeadc7eeb548c20630717c45f285fa7e95bcab9dd5222",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37403",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:07.264797+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:06 GMT",
+      "sha256": "58b13205f432dbcefdeb523331d4469c0de8a4c2c707c1095405bca16cd6c4ca",
+      "bytes": 181373,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 3,
+        "current_germline_scv_records": 5,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "f8e531ed466cc88cf2602825f233cda9ed500b7b510127012558fb9bda59f324",
+      "url": "https://rest.ensembl.org/vep/human/region/17:43092412-43092412:1/T?content-type=application%2Fjson&canonical=1&check_ref=1",
+      "organization": "EMBL-EBI Ensembl",
+      "acquired_at": "2026-11-06T00:48:57.826489+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:48:57 GMT",
+      "sha256": "5a8ff34114fd96817a14c011523067634116e1ce494c8de76c4d2484d93d9334",
+      "bytes": 21312,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "matched": 1,
+        "invalid": 0
+      },
+      "errors": []
+    },
+    {
+      "id": "fb84c12944f984d20a6f683ad934c47505ccf93ab83482812247b1c6ad745555",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=17685",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:42:41.583340+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:42:39 GMT",
+      "sha256": "3791dafbb5db4d2738feeb45ae8c17532411b47ce438164efc49b23947aa62ba",
+      "bytes": 319705,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 5,
+        "current_germline_scv_records": 25,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    },
+    {
+      "id": "fbdcd8db1ff80abb252d4724bf5c799009d8359ba84ae51bc60352fac3e70dcb",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=vcv&is_variationid=true&retmode=xml&id=37718",
+      "organization": "NCBI ClinVar",
+      "acquired_at": "2026-11-06T00:43:12.417339+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 00:43:11 GMT",
+      "sha256": "a266fbc7bbf3b3a42477a016e56184978f4056e48d0e41b0ef0064e9141936f9",
+      "bytes": 58811,
+      "http_status": 200,
+      "parser_version": "gee-0.1.0",
+      "record_counts": {
+        "examined": 1,
+        "imported": 1,
+        "excluded": 0,
+        "invalid": 0,
+        "rcv_records": 5,
+        "current_germline_scv_records": 8,
+        "excluded_scv_records": {
+          "non_current_scv": 0,
+          "non_germline_scv": 0,
+          "duplicate_scv": 0
+        }
+      },
+      "errors": []
+    }
+  ],
+  "analysis_sha256": "7a8667032c123a7bd4841d34769d179e3a2f8dd7c7d876a5c180dc6c38b9e1b0",
+  "variant_versions": {
+    "9317": "VCV000009317.14",
+    "9318": "VCV000009318.118",
+    "9319": "VCV000009319.55",
+    "9320": "VCV000009320.121",
+    "9322": "VCV000009322.176",
+    "9324": "VCV000009324.5",
+    "9325": "VCV000009325.172",
+    "9326": "VCV000009326.91",
+    "9328": "VCV000009328.55",
+    "9329": "VCV000009329.101",
+    "9339": "VCV000009339.8",
+    "9340": "VCV000009340.65",
+    "9342": "VCV000009342.129",
+    "9343": "VCV000009343.12",
+    "9344": "VCV000009344.24",
+    "9345": "VCV000009345.25",
+    "9346": "VCV000009346.23",
+    "9347": "VCV000009347.48",
+    "9348": "VCV000009348.26",
+    "9349": "VCV000009349.57",
+    "17660": "VCV000017660.43",
+    "17661": "VCV000017661.165",
+    "17662": "VCV000017662.188",
+    "17665": "VCV000017665.62",
+    "17666": "VCV000017666.29",
+    "17667": "VCV000017667.55",
+    "17669": "VCV000017669.37",
+    "17670": "VCV000017670.129",
+    "17675": "VCV000017675.112",
+    "17676": "VCV000017676.78",
+    "17677": "VCV000017677.176",
+    "17679": "VCV000017679.4",
+    "17681": "VCV000017681.112",
+    "17682": "VCV000017682.36",
+    "17683": "VCV000017683.57",
+    "17685": "VCV000017685.62",
+    "17690": "VCV000017690.4",
+    "17693": "VCV000017693.124",
+    "17694": "VCV000017694.52",
+    "17695": "VCV000017695.16",
+    "37386": "VCV000037386.26",
+    "37387": "VCV000037387.30",
+    "37388": "VCV000037388.28",
+    "37389": "VCV000037389.31",
+    "37390": "VCV000037390.29",
+    "37391": "VCV000037391.26",
+    "37392": "VCV000037392.73",
+    "37393": "VCV000037393.26",
+    "37394": "VCV000037394.3",
+    "37395": "VCV000037395.3",
+    "37396": "VCV000037396.3",
+    "37397": "VCV000037397.3",
+    "37398": "VCV000037398.31",
+    "37399": "VCV000037399.26",
+    "37400": "VCV000037400.14",
+    "37401": "VCV000037401.20",
+    "37402": "VCV000037402.33",
+    "37403": "VCV000037403.14",
+    "37404": "VCV000037404.66",
+    "37405": "VCV000037405.20",
+    "37714": "VCV000037714.45",
+    "37715": "VCV000037715.26",
+    "37716": "VCV000037716.11",
+    "37717": "VCV000037717.29",
+    "37718": "VCV000037718.27",
+    "37719": "VCV000037719.38",
+    "37720": "VCV000037720.40",
+    "37721": "VCV000037721.22",
+    "37722": "VCV000037722.61",
+    "37723": "VCV000037723.60",
+    "37724": "VCV000037724.63",
+    "37725": "VCV000037725.75",
+    "37726": "VCV000037726.27",
+    "37727": "VCV000037727.53",
+    "37728": "VCV000037728.3",
+    "37729": "VCV000037729.16",
+    "37730": "VCV000037730.30",
+    "37731": "VCV000037731.40",
+    "37732": "VCV000037732.5",
+    "37733": "VCV000037733.69"
+  },
+  "source_code_sha256": {
+    "service.py": "33855d2fb7bf8441a1514b5043d517ba959006f614fbf8fd34804544e8ff631f",
+    "connectors.py": "9733ef9fbfe9b0c252340ef1b891a138db7f00e7c6090c9487e7da5758d58d7f",
+    "analysis.py": "e80b5426a80f53032fdc6500134e5fcf8285ed4b820fcd579d6f79b733010abc",
+    "ai.py": "9ff51d8441e78a35b0fb5258e0acf7e9e9f2ff59a346caed41f3e44805974837",
+    "__init__.py": "4b4e14cd90c86e17b2a431b718eb04e0e43c069fa957f4673ac8e6cf58cd159e",
+    "parsers.py": "9d294dd43f3fb6faaa2866731cfe04418652529631ac79e6dc878ed17eed681d",
+    "api.py": "ed3c80337e596c076f552167d2e0ff069ed01bbdc8788053d0112e6ca294f6c1",
+    "cli.py": "a39979e18b6a1336f846f0d5f6a64bd05676ca961c2ccc983f77eb69a2a930dd",
+    "storage.py": "8cebf1ceea24cb596387234b0c74285ba4cc0cfb2509405489b79f73e6403550",
+    "report.py": "4dd2ef3d9773c5293a6a8f33b62031476bfe4ebbd8e3fe77eeeb5a635bb3afb2"
+  },
+  "data_policy": "Public variant/organization metadata only; no Sample/ObservedData/free-text clinical narratives in indexed/exported results",
+  "reproduce": "python -m genomics.cli verify --data SAME_LOCAL_ARCHIVE --job JOB_ID (raw cache required; no network)",
+  "offline_verification": {
+    "passed": true,
+    "raw_sources_verified": 103,
+    "variants_reparsed": 80,
+    "analysis_sha256": "7a8667032c123a7bd4841d34769d179e3a2f8dd7c7d876a5c180dc6c38b9e1b0",
+    "expected_analysis_sha256": "7a8667032c123a7bd4841d34769d179e3a2f8dd7c7d876a5c180dc6c38b9e1b0",
+    "observations_match": true,
+    "network_used": false,
+    "verified_at": "2026-11-06T01:36:58.227580+00:00"
+  },
+  "final_verification_source_sha256": {
+    "service.py": "33855d2fb7bf8441a1514b5043d517ba959006f614fbf8fd34804544e8ff631f",
+    "connectors.py": "9733ef9fbfe9b0c252340ef1b891a138db7f00e7c6090c9487e7da5758d58d7f",
+    "analysis.py": "e80b5426a80f53032fdc6500134e5fcf8285ed4b820fcd579d6f79b733010abc",
+    "ai.py": "ef37c762ba169b714f75369158c7589f35b5e4475a8b56f2044748b955b2e054",
+    "__init__.py": "4b4e14cd90c86e17b2a431b718eb04e0e43c069fa957f4673ac8e6cf58cd159e",
+    "parsers.py": "b75eda020a9a807205bdb64f53bc40eef4cba4d17fb559814887d1bd7233b4a7",
+    "export.py": "9f726baaf70a20c83c161aad233d2688e8f98cc273310b02555b5597a75d0f2d",
+    "api.py": "5e2f85415d43f93ece464d7ef363586dbac42d8a0b7fc9dd7e1c4c3ab3ec19b3",
+    "replay.py": "bde2ae38f905179fb8a0c36edb01539e3af12112d205b0dbb69b01fecd782ed2",
+    "cli.py": "a39979e18b6a1336f846f0d5f6a64bd05676ca961c2ccc983f77eb69a2a930dd",
+    "storage.py": "8cebf1ceea24cb596387234b0c74285ba4cc0cfb2509405489b79f73e6403550",
+    "report.py": "c286982d62c09240c98bb8a3c92da2e7977a89301e7fc72ac2375c9362687729"
+  },
+  "published_input": "gee-001-input.json.gz: normalized public variant/organization metadata; no raw Sample/ObservedData or clinical narratives"
+}
