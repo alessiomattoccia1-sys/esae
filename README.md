@@ -1,8 +1,9 @@
 # Embedded Software Analysis Engine — ESAE v0.1.1
 
 Part of **Research Engines**: this existing repository also contains the
-independent [Genomics Evidence Engine 0.1](GENOMICS_README.md), public-source
-ClinVar/Ensembl analysis and a small shared research core. Existing ESAE
+independent [Genomics Evidence Engine 0.1](GENOMICS_README.md),
+[Materials Discovery Engine 0.1](materials/README.md), public-source
+ClinVar/Ensembl analysis, real JARVIS photovoltaic screening and a small shared research core. Existing ESAE
 algorithms, APIs, local UI and native sandbox are preserved. See
 [architecture/reuse assessment](ARCHITECTURE_REUSE.md).
 

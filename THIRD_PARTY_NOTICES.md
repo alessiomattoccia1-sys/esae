@@ -40,3 +40,12 @@ stay in the operator's local reproducibility archive. Neither upstream sources
 nor their organizations endorse this experimental engine.
 
 Primary terms checked 6 November 2026: https://www.ensembl.org/about/articles/ensembl-content-disclaimer and https://www.ebi.ac.uk/about/terms-of-use/ (revised 14 October 2026). Ensembl-generated data are available for reuse; third-party restrictions remain applicable. This project exports no restricted colocated records.
+
+## Materials Discovery Engine
+
+Original MDE software is Apache-2.0. NIST JARVIS data are CC BY4.0 with separate
+attribution and declared normalization/screening modifications, not Apache data.
+See [materials/THIRD_PARTY_NOTICES.md](materials/THIRD_PARTY_NOTICES.md),
+[materials/DATA_SOURCES.md](materials/DATA_SOURCES.md) and the installed dependency
+license metadata/hashes in materials/DEPENDENCY_LICENSES.json. No raw archive,
+third-party wheel, model or executable is bundled.

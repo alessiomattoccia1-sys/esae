@@ -1,0 +1,9 @@
+Materials Discovery Engine 0.1.0 — Research Engines / Mattoccia Labs
+Original software Copyright 2026 Mattoccia Labs / Alessio Mattoccia.
+Licensed under the Apache License, Version2.0; see ../LICENSE.
+
+Scientific source:NIST JARVIS-DFT / Kamal Choudhary et al.
+DOI10.6084/m9.figshare.6815699.v11, CC BY4.0.
+Modified by normalization, selection and computational screening.
+No NIST endorsement. Data are not relicensed as Apache2.0.
+Third-party dependencies retain their own terms; see THIRD_PARTY_NOTICES.md.

@@ -1,0 +1,904 @@
+{
+  "status": "QUALIFIED",
+  "experiment": "MDE-001",
+  "engine_version": "0.1.0",
+  "completed_at": "2026-11-06T04:33:42.775493+00:00",
+  "analysis_sha256": "1ae88ce32871d91d0ba984a557d92c84be508584ca015bf9716f0817d261eec7",
+  "dataset": {
+    "dataset": "JARVIS-DFT 3D",
+    "article_id": 6815699,
+    "article_version": 11,
+    "doi": "10.6084/m9.figshare.6815699.v11",
+    "snapshot": "jdft_3d-9-24-2025.json.zip",
+    "snapshot_date": "2025-09-24",
+    "published_date": "2026-05-09T07:44:20Z",
+    "license": {
+      "value": 1,
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "attribution": "NIST JARVIS-DFT / Kamal Choudhary et al.",
+    "file_id": 64391379,
+    "url": "https://ndownloader.figshare.com/files/64391379",
+    "zip_member": "jdft_3d-9-24-2025.json",
+    "official_md5": "c3179161ef0d029cf1fa70da463aac6e",
+    "metadata_source": {
+      "id": "17a483129f4b813b3f4ecf420fe8bd1c95a122c1be29e2b4d1ff93fdbb79bbc2",
+      "url": "https://api.figshare.com/v2/articles/6815699/versions/11",
+      "organization": "NIST JARVIS-DFT / Figshare",
+      "acquired_at": "2026-11-06T04:08:30.684475+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 04:08:30 GMT",
+      "sha256": "8456edaa9e774267dd9db1c5176c25f6075747efab6ada25df446b7cca20d726",
+      "bytes": 6877,
+      "http_status": 200,
+      "parser_version": "mde-0.1.0",
+      "record_counts": null,
+      "errors": []
+    },
+    "source": {
+      "id": "8d8aa673073121da033aff292876d89c34097d785b360e0ca431a48723e839ed",
+      "url": "https://ndownloader.figshare.com/files/64391379",
+      "organization": "NIST JARVIS-DFT / Figshare",
+      "acquired_at": "2026-11-06T04:08:46.305248+00:00",
+      "release_date": "Sat, 09 May 2026 07:44:11 GMT",
+      "etag": "\"c3179161ef0d029cf1fa70da463aac6e\"",
+      "server_date": "Fri, 06 Nov 2026 04:08:31 GMT",
+      "sha256": "f9e0a3309f0000d5de1ec9e49c93963109ea45e63f451103f8f6595d2eabf7f5",
+      "bytes": 48447610,
+      "http_status": 200,
+      "parser_version": "mde-0.1.0",
+      "record_counts": null,
+      "errors": []
+    }
+  },
+  "configuration": {
+    "gap_min": 0.8,
+    "gap_max": 2.2,
+    "target_gap": 1.5,
+    "hull_max": 0.1,
+    "slme_min": 10,
+    "exclude_elements": [],
+    "require_dielectric": false
+  },
+  "metrics": {
+    "records_acquired": 93902,
+    "valid_unique_materials": 93902,
+    "invalid_records": 0,
+    "duplicate_records": 0,
+    "excluded_reasons": {},
+    "availability": {
+      "gap_mbj": {
+        "numerator": 21559,
+        "denominator": 93902,
+        "percent": 22.959042
+      },
+      "gap_opt": {
+        "numerator": 93902,
+        "denominator": 93902,
+        "percent": 100.0
+      },
+      "formation_ev_atom": {
+        "numerator": 93902,
+        "denominator": 93902,
+        "percent": 100.0
+      },
+      "hull_ev_atom": {
+        "numerator": 93902,
+        "denominator": 93902,
+        "percent": 100.0
+      },
+      "slme_percent": {
+        "numerator": 10022,
+        "denominator": 93902,
+        "percent": 10.672829
+      },
+      "tbmbj_dielectric_complete": {
+        "numerator": 19834,
+        "denominator": 93902,
+        "percent": 21.122021
+      }
+    },
+    "screen_counts": {
+      "gap_only": {
+        "numerator": 2561,
+        "denominator": 93902,
+        "percent": 2.727311
+      },
+      "stability": {
+        "numerator": 415,
+        "denominator": 93902,
+        "percent": 0.44195
+      },
+      "optical": {
+        "numerator": 415,
+        "denominator": 93902,
+        "percent": 0.44195
+      }
+    },
+    "screen_exclusions": {
+      "above_hull_threshold": 2146,
+      "outside_gap_interval": 18998,
+      "missing_tbmbj_gap": 72343
+    },
+    "formula_count": 65395,
+    "crystal_systems": {
+      "cubic": 22697,
+      "hexagonal": 10784,
+      "monoclinic": 12170,
+      "orthorhombic": 14603,
+      "tetragonal": 20322,
+      "triclinic": 4117,
+      "trigonal": 9209
+    }
+  },
+  "candidate_examples": [
+    {
+      "rank": 1,
+      "tier": "optical",
+      "jid": "JVASP-12913",
+      "formula": "SbI2F6",
+      "properties": {
+        "gap_mbj": 1.34,
+        "gap_opt": 0.394,
+        "formation_ev_atom": -1.78999,
+        "hull_ev_atom": 0.0,
+        "slme_percent": 33.98,
+        "eps_diagonal": [
+          4.3971,
+          5.7265,
+          5.1842
+        ],
+        "meps_diagonal": [
+          3.7086,
+          4.3607,
+          4.3314
+        ]
+      },
+      "methods": {
+        "gap_mbj": "TB-mBJ",
+        "gap_opt": "OptB88vdW",
+        "formation_and_hull": "OptB88vdW",
+        "slme": "Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded",
+        "dielectric_eps": "OptB88vdW",
+        "dielectric_meps": "TB-mBJ"
+      },
+      "chemical_family": "halide+pnictide",
+      "crystal_system": "triclinic",
+      "n_elements": 3,
+      "structure_sha256": "495cdbf3b2776c67a0f30a127ace6821fb2db1454b0af54d6d9921574df0819f",
+      "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-12913.html",
+      "selection_reason": "Gap and hull criteria plus reported SLME threshold; ordered by SLME descending, hull and gap distance",
+      "evidence_kind": "observed_data_and_computed_result",
+      "not_verified": "No experimental device efficiency, synthesis feasibility, optical-condition equivalence or new-material discovery is established."
+    },
+    {
+      "rank": 2,
+      "tier": "optical",
+      "jid": "JVASP-3951",
+      "formula": "Rb2PdBr6",
+      "properties": {
+        "gap_mbj": 1.343,
+        "gap_opt": 0.515,
+        "formation_ev_atom": -1.05862,
+        "hull_ev_atom": 0.0,
+        "slme_percent": 33.97,
+        "eps_diagonal": [
+          7.4084,
+          7.4084,
+          7.4084
+        ],
+        "meps_diagonal": [
+          6.006,
+          6.0043,
+          6.0144
+        ]
+      },
+      "methods": {
+        "gap_mbj": "TB-mBJ",
+        "gap_opt": "OptB88vdW",
+        "formation_and_hull": "OptB88vdW",
+        "slme": "Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded",
+        "dielectric_eps": "OptB88vdW",
+        "dielectric_meps": "TB-mBJ"
+      },
+      "chemical_family": "halide",
+      "crystal_system": "cubic",
+      "n_elements": 3,
+      "structure_sha256": "ce817fc28128463d24bd5e159c5ca07b66d50f502ac676ffdc09c08cecd08c69",
+      "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-3951.html",
+      "selection_reason": "Gap and hull criteria plus reported SLME threshold; ordered by SLME descending, hull and gap distance",
+      "evidence_kind": "observed_data_and_computed_result",
+      "not_verified": "No experimental device efficiency, synthesis feasibility, optical-condition equivalence or new-material discovery is established."
+    },
+    {
+      "rank": 3,
+      "tier": "optical",
+      "jid": "JVASP-8125",
+      "formula": "NaCuSe",
+      "properties": {
+        "gap_mbj": 1.342,
+        "gap_opt": 0.234,
+        "formation_ev_atom": -0.64082,
+        "hull_ev_atom": 0.0,
+        "slme_percent": 33.97,
+        "eps_diagonal": [
+          12.7549,
+          12.7549,
+          8.2257
+        ],
+        "meps_diagonal": [
+          5.006,
+          5.006,
+          5.5849
+        ]
+      },
+      "methods": {
+        "gap_mbj": "TB-mBJ",
+        "gap_opt": "OptB88vdW",
+        "formation_and_hull": "OptB88vdW",
+        "slme": "Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded",
+        "dielectric_eps": "OptB88vdW",
+        "dielectric_meps": "TB-mBJ"
+      },
+      "chemical_family": "chalcogenide",
+      "crystal_system": "tetragonal",
+      "n_elements": 3,
+      "structure_sha256": "70579bad15c3b7cc7180af228c4505e3ce5470503b9973e101c3c26b79fb32cb",
+      "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-8125.html",
+      "selection_reason": "Gap and hull criteria plus reported SLME threshold; ordered by SLME descending, hull and gap distance",
+      "evidence_kind": "observed_data_and_computed_result",
+      "not_verified": "No experimental device efficiency, synthesis feasibility, optical-condition equivalence or new-material discovery is established."
+    },
+    {
+      "rank": 4,
+      "tier": "optical",
+      "jid": "JVASP-7827",
+      "formula": "Rb3Sb",
+      "properties": {
+        "gap_mbj": 1.349,
+        "gap_opt": 0.13,
+        "formation_ev_atom": -0.46003,
+        "hull_ev_atom": 0.0001,
+        "slme_percent": 33.94,
+        "eps_diagonal": [
+          8.1977,
+          8.1977,
+          9.7961
+        ],
+        "meps_diagonal": [
+          3.6454,
+          3.6466,
+          3.6633
+        ]
+      },
+      "methods": {
+        "gap_mbj": "TB-mBJ",
+        "gap_opt": "OptB88vdW",
+        "formation_and_hull": "OptB88vdW",
+        "slme": "Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded",
+        "dielectric_eps": "OptB88vdW",
+        "dielectric_meps": "TB-mBJ"
+      },
+      "chemical_family": "pnictide",
+      "crystal_system": "hexagonal",
+      "n_elements": 2,
+      "structure_sha256": "ec62f15fd7433d5103df862e34cde61ced0fd57b9970d161948140bb5a1b6658",
+      "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-7827.html",
+      "selection_reason": "Gap and hull criteria plus reported SLME threshold; ordered by SLME descending, hull and gap distance",
+      "evidence_kind": "observed_data_and_computed_result",
+      "not_verified": "No experimental device efficiency, synthesis feasibility, optical-condition equivalence or new-material discovery is established."
+    },
+    {
+      "rank": 5,
+      "tier": "optical",
+      "jid": "JVASP-19759",
+      "formula": "TbSe",
+      "properties": {
+        "gap_mbj": 1.348,
+        "gap_opt": 0.0,
+        "formation_ev_atom": -1.83659,
+        "hull_ev_atom": 0.0204,
+        "slme_percent": 33.94,
+        "eps_diagonal": [
+          73.076,
+          73.076,
+          73.076
+        ],
+        "meps_diagonal": [
+          145.8155,
+          145.8161,
+          145.8159
+        ]
+      },
+      "methods": {
+        "gap_mbj": "TB-mBJ",
+        "gap_opt": "OptB88vdW",
+        "formation_and_hull": "OptB88vdW",
+        "slme": "Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded",
+        "dielectric_eps": "OptB88vdW",
+        "dielectric_meps": "TB-mBJ"
+      },
+      "chemical_family": "chalcogenide",
+      "crystal_system": "cubic",
+      "n_elements": 2,
+      "structure_sha256": "7a20d0dd83990178b46e1ab17f8faaba37358dea2e9cd589145db6ccdfd2a389",
+      "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-19759.html",
+      "selection_reason": "Gap and hull criteria plus reported SLME threshold; ordered by SLME descending, hull and gap distance",
+      "evidence_kind": "observed_data_and_computed_result",
+      "not_verified": "No experimental device efficiency, synthesis feasibility, optical-condition equivalence or new-material discovery is established."
+    },
+    {
+      "rank": 6,
+      "tier": "optical",
+      "jid": "JVASP-102790",
+      "formula": "Cd2TeSe",
+      "properties": {
+        "gap_mbj": 1.362,
+        "gap_opt": 0.279,
+        "formation_ev_atom": -0.49745,
+        "hull_ev_atom": 0.0,
+        "slme_percent": 33.93,
+        "eps_diagonal": [
+          3.1554,
+          3.1554,
+          7.2745
+        ],
+        "meps_diagonal": [
+          6.3398,
+          6.3398,
+          6.3333
+        ]
+      },
+      "methods": {
+        "gap_mbj": "TB-mBJ",
+        "gap_opt": "OptB88vdW",
+        "formation_and_hull": "OptB88vdW",
+        "slme": "Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded",
+        "dielectric_eps": "OptB88vdW",
+        "dielectric_meps": "TB-mBJ"
+      },
+      "chemical_family": "chalcogenide",
+      "crystal_system": "tetragonal",
+      "n_elements": 3,
+      "structure_sha256": "7d222d8b335c602f6b27dac2dc9c11bffc7e1788a7d1319d2d8ae73b6c289bff",
+      "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-102790.html",
+      "selection_reason": "Gap and hull criteria plus reported SLME threshold; ordered by SLME descending, hull and gap distance",
+      "evidence_kind": "observed_data_and_computed_result",
+      "not_verified": "No experimental device efficiency, synthesis feasibility, optical-condition equivalence or new-material discovery is established."
+    }
+  ],
+  "robust_across_all12_criteria": {
+    "count": 95,
+    "jids": [
+      "JVASP-100879",
+      "JVASP-100931",
+      "JVASP-10118",
+      "JVASP-10119",
+      "JVASP-101264",
+      "JVASP-10132",
+      "JVASP-102790",
+      "JVASP-104498",
+      "JVASP-105026",
+      "JVASP-106413",
+      "JVASP-106637",
+      "JVASP-106853",
+      "JVASP-106909",
+      "JVASP-107136",
+      "JVASP-107267",
+      "JVASP-107598",
+      "JVASP-107624",
+      "JVASP-108019",
+      "JVASP-108604",
+      "JVASP-109006",
+      "JVASP-109250",
+      "JVASP-109475",
+      "JVASP-109889",
+      "JVASP-110076",
+      "JVASP-110084",
+      "JVASP-110356",
+      "JVASP-110673",
+      "JVASP-115833",
+      "JVASP-116453",
+      "JVASP-118261",
+      "JVASP-121589",
+      "JVASP-12524",
+      "JVASP-12887",
+      "JVASP-12903",
+      "JVASP-12913",
+      "JVASP-13315",
+      "JVASP-138749",
+      "JVASP-13927",
+      "JVASP-14038",
+      "JVASP-14049",
+      "JVASP-14351",
+      "JVASP-149919",
+      "JVASP-150048",
+      "JVASP-159086",
+      "JVASP-183536",
+      "JVASP-185703",
+      "JVASP-1948",
+      "JVASP-21211",
+      "JVASP-22561",
+      "JVASP-22732",
+      "JVASP-25144",
+      "JVASP-2529",
+      "JVASP-2547",
+      "JVASP-2559",
+      "JVASP-2703",
+      "JVASP-2922",
+      "JVASP-31179",
+      "JVASP-3141",
+      "JVASP-3216",
+      "JVASP-3270",
+      "JVASP-3273",
+      "JVASP-32828",
+      "JVASP-3423",
+      "JVASP-35067",
+      "JVASP-35895",
+      "JVASP-35908",
+      "JVASP-3762",
+      "JVASP-38110",
+      "JVASP-38128",
+      "JVASP-38208",
+      "JVASP-3951",
+      "JVASP-5464",
+      "JVASP-5578",
+      "JVASP-5815",
+      "JVASP-59035",
+      "JVASP-65633",
+      "JVASP-65769",
+      "JVASP-66686",
+      "JVASP-69329",
+      "JVASP-7651",
+      "JVASP-7790",
+      "JVASP-8125",
+      "JVASP-82128",
+      "JVASP-828",
+      "JVASP-85121",
+      "JVASP-8765",
+      "JVASP-8793",
+      "JVASP-88791",
+      "JVASP-895",
+      "JVASP-90623",
+      "JVASP-90847",
+      "JVASP-91697",
+      "JVASP-99413",
+      "JVASP-99528",
+      "JVASP-99962"
+    ],
+    "list_limit": 100
+  },
+  "sensitivity": [
+    {
+      "gap_min": 0.8,
+      "gap_max": 2.2,
+      "hull_max": 0.0,
+      "slme_min": 10,
+      "gap_count": 2561,
+      "stability_count": 216,
+      "optical_count": 216,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769",
+        "JVASP-14049",
+        "JVASP-59035"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 8,
+        "denominator": 12,
+        "percent": 66.666667
+      }
+    },
+    {
+      "gap_min": 0.8,
+      "gap_max": 2.2,
+      "hull_max": 0.05,
+      "slme_min": 10,
+      "gap_count": 2561,
+      "stability_count": 347,
+      "optical_count": 347,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 10,
+        "denominator": 10,
+        "percent": 100.0
+      }
+    },
+    {
+      "gap_min": 0.8,
+      "gap_max": 2.2,
+      "hull_max": 0.1,
+      "slme_min": 10,
+      "gap_count": 2561,
+      "stability_count": 415,
+      "optical_count": 415,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 10,
+        "denominator": 10,
+        "percent": 100.0
+      }
+    },
+    {
+      "gap_min": 0.8,
+      "gap_max": 2.2,
+      "hull_max": 0.2,
+      "slme_min": 10,
+      "gap_count": 2561,
+      "stability_count": 521,
+      "optical_count": 521,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-52256",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 9,
+        "denominator": 11,
+        "percent": 81.818182
+      }
+    },
+    {
+      "gap_min": 1.0,
+      "gap_max": 2.0,
+      "hull_max": 0.0,
+      "slme_min": 10,
+      "gap_count": 1802,
+      "stability_count": 155,
+      "optical_count": 155,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769",
+        "JVASP-14049",
+        "JVASP-59035"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 8,
+        "denominator": 12,
+        "percent": 66.666667
+      }
+    },
+    {
+      "gap_min": 1.0,
+      "gap_max": 2.0,
+      "hull_max": 0.05,
+      "slme_min": 10,
+      "gap_count": 1802,
+      "stability_count": 243,
+      "optical_count": 243,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 10,
+        "denominator": 10,
+        "percent": 100.0
+      }
+    },
+    {
+      "gap_min": 1.0,
+      "gap_max": 2.0,
+      "hull_max": 0.1,
+      "slme_min": 10,
+      "gap_count": 1802,
+      "stability_count": 297,
+      "optical_count": 297,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 10,
+        "denominator": 10,
+        "percent": 100.0
+      }
+    },
+    {
+      "gap_min": 1.0,
+      "gap_max": 2.0,
+      "hull_max": 0.2,
+      "slme_min": 10,
+      "gap_count": 1802,
+      "stability_count": 367,
+      "optical_count": 367,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-52256",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 9,
+        "denominator": 11,
+        "percent": 81.818182
+      }
+    },
+    {
+      "gap_min": 1.2,
+      "gap_max": 1.8,
+      "hull_max": 0.0,
+      "slme_min": 10,
+      "gap_count": 1091,
+      "stability_count": 95,
+      "optical_count": 95,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769",
+        "JVASP-14049",
+        "JVASP-59035"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 8,
+        "denominator": 12,
+        "percent": 66.666667
+      }
+    },
+    {
+      "gap_min": 1.2,
+      "gap_max": 1.8,
+      "hull_max": 0.05,
+      "slme_min": 10,
+      "gap_count": 1091,
+      "stability_count": 152,
+      "optical_count": 152,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 10,
+        "denominator": 10,
+        "percent": 100.0
+      }
+    },
+    {
+      "gap_min": 1.2,
+      "gap_max": 1.8,
+      "hull_max": 0.1,
+      "slme_min": 10,
+      "gap_count": 1091,
+      "stability_count": 189,
+      "optical_count": 189,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475",
+        "JVASP-65769"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 10,
+        "denominator": 10,
+        "percent": 100.0
+      }
+    },
+    {
+      "gap_min": 1.2,
+      "gap_max": 1.8,
+      "hull_max": 0.2,
+      "slme_min": 10,
+      "gap_count": 1091,
+      "stability_count": 228,
+      "optical_count": 228,
+      "top10_jids": [
+        "JVASP-12913",
+        "JVASP-52256",
+        "JVASP-3951",
+        "JVASP-8125",
+        "JVASP-7827",
+        "JVASP-19759",
+        "JVASP-102790",
+        "JVASP-35067",
+        "JVASP-99962",
+        "JVASP-109475"
+      ],
+      "top10_overlap_with_configured_optical": {
+        "numerator": 9,
+        "denominator": 11,
+        "percent": 81.818182
+      }
+    }
+  ],
+  "external_detail_checks": [
+    {
+      "jid": "JVASP-12913",
+      "status": "acquired",
+      "source": {
+        "id": "c312601727e0d4c8713d6694a61d192a9ab4f7ddc2e9c2dda99c970bc577dccc",
+        "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-12913.html",
+        "organization": "NIST JARVIS-DFT / Figshare",
+        "acquired_at": "2026-11-06T04:22:07.041013+00:00",
+        "release_date": "Thu, 05 Sep 2019 15:42:46 GMT",
+        "etag": null,
+        "server_date": "Fri, 06 Nov 2026 04:22:06 GMT",
+        "sha256": "4054fa964a565e57c1a443ce8ee083ab267db702056765c6c82b164eb24f7c70",
+        "bytes": 36974,
+        "http_status": 200,
+        "parser_version": "mde-0.1.0",
+        "record_counts": null,
+        "errors": []
+      },
+      "page_fields": {
+        "jid": "JVASP-12913",
+        "formula": "Sb(IF3)2",
+        "mbj_gap_ev": 1.3401,
+        "slme_percent": 33.08,
+        "page_reports_500nm_300K": true,
+        "version": null
+      },
+      "snapshot_gap_ev": 1.34,
+      "snapshot_slme_percent": 33.98,
+      "formula_equivalent": true,
+      "gap_absolute_difference_ev": 9.999999999998899e-05,
+      "slme_absolute_difference_percentage_points": 0.8999999999999986,
+      "reported_slme_differs": true,
+      "scope": "Same-provider rendering cross-check, not an independent database. Page version unspecified; differences cannot be attributed to a cause from available metadata."
+    },
+    {
+      "jid": "JVASP-3951",
+      "status": "acquired",
+      "source": {
+        "id": "535470c74b4262c8f41a9ae5eb543244ad7394a69ffdbe9cab3a3b2e6e928ed9",
+        "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-3951.html",
+        "organization": "NIST JARVIS-DFT / Figshare",
+        "acquired_at": "2026-11-06T04:22:07.683036+00:00",
+        "release_date": "Thu, 05 Sep 2019 15:17:41 GMT",
+        "etag": null,
+        "server_date": "Fri, 06 Nov 2026 04:22:07 GMT",
+        "sha256": "97b6ad4e0cbce85ced2108ae9d4fdcffbfdbb629790dee2c9dd4efd97f6504e8",
+        "bytes": 34398,
+        "http_status": 200,
+        "parser_version": "mde-0.1.0",
+        "record_counts": null,
+        "errors": []
+      },
+      "page_fields": {
+        "jid": "JVASP-3951",
+        "formula": "Rb2PdBr6",
+        "mbj_gap_ev": 1.3433,
+        "slme_percent": 33.34,
+        "page_reports_500nm_300K": true,
+        "version": null
+      },
+      "snapshot_gap_ev": 1.343,
+      "snapshot_slme_percent": 33.97,
+      "formula_equivalent": true,
+      "gap_absolute_difference_ev": 0.00029999999999996696,
+      "slme_absolute_difference_percentage_points": 0.6299999999999955,
+      "reported_slme_differs": true,
+      "scope": "Same-provider rendering cross-check, not an independent database. Page version unspecified; differences cannot be attributed to a cause from available metadata."
+    },
+    {
+      "jid": "JVASP-8125",
+      "status": "acquired",
+      "source": {
+        "id": "e0ec3c6c0bf153ed04ee1646657d4ad75a779ed3b7c12fa391c7fd38c54ad049",
+        "url": "https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-8125.html",
+        "organization": "NIST JARVIS-DFT / Figshare",
+        "acquired_at": "2026-11-06T04:22:08.210695+00:00",
+        "release_date": "Thu, 05 Sep 2019 18:39:50 GMT",
+        "etag": null,
+        "server_date": "Fri, 06 Nov 2026 04:22:08 GMT",
+        "sha256": "6a28c5b35152137cebcab005d6408deff67775d5d3182fc9cd9fd8aaa847b4f0",
+        "bytes": 33351,
+        "http_status": 200,
+        "parser_version": "mde-0.1.0",
+        "record_counts": null,
+        "errors": []
+      },
+      "page_fields": {
+        "jid": "JVASP-8125",
+        "formula": "NaCuSe",
+        "mbj_gap_ev": 1.3419,
+        "slme_percent": 33.97,
+        "page_reports_500nm_300K": true,
+        "version": null
+      },
+      "snapshot_gap_ev": 1.342,
+      "snapshot_slme_percent": 33.97,
+      "formula_equivalent": true,
+      "gap_absolute_difference_ev": 9.999999999998899e-05,
+      "slme_absolute_difference_percentage_points": 0.0,
+      "reported_slme_differs": false,
+      "scope": "Same-provider rendering cross-check, not an independent database. Page version unspecified; differences cannot be attributed to a cause from available metadata."
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "network_used": false,
+    "materials_reparsed": 93902,
+    "records_reparsed": 93902,
+    "source_sha256": "f9e0a3309f0000d5de1ec9e49c93963109ea45e63f451103f8f6595d2eabf7f5",
+    "analysis_sha256": "1ae88ce32871d91d0ba984a557d92c84be508584ca015bf9716f0817d261eec7",
+    "expected": "1ae88ce32871d91d0ba984a557d92c84be508584ca015bf9716f0817d261eec7",
+    "verified_at": "2026-11-06T05:01:23.908535+00:00"
+  },
+  "original_code_license": "Apache-2.0",
+  "data_license": "CC BY4.0",
+  "ai_used_for_numeric_results": false
+}

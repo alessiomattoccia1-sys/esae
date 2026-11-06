@@ -79,3 +79,18 @@ Only a qualified static export, real screenshots, source/release links and
 reports are published. SQLite, raw cache, internal APIs and filesystem paths
 remain on the user's computer. The VPS performs no genomic or C++ calculation.
 Deployment remains the established allowlisted static TCP2223 pipeline.
+
+## ENGINE03 / MATTER — implemented MDE0.1.0
+
+The existing family now includes `materials/`, a separate domain engine for
+NIST JARVIS crystal/property normalization, photovoltaic screening and reproducible
+MDE-001 results. It uses the shared job/cache/provenance/local-boundary contracts,
+with optional source-policy injection preserving GEE defaults. No ESAE/GEE
+algorithm, API or dashboard replacement. Numerical dependencies live in the
+separate `.venv-mde`; its local dashboard defaults to port4202.
+
+See [materials/ARCHITECTURE.md](materials/ARCHITECTURE.md), the actual
+[reuse matrix](materials/ARCHITECTURE_REUSE.md), and
+[scientific methodology](materials/SCIENTIFIC_METHODOLOGY.md). The public site
+extends the same master page to CODE/LIFE/MATTER and publishes static scientific
+results only. No VPS materials calculation, local database or raw archive is exposed.

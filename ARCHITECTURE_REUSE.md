@@ -73,3 +73,13 @@ Missing access or fields remain visible. No clinical recommendations, personal
 genetic data, invented confidence score, model-weight learning or cloud transport.
 Rerun ESAE's existing regressions after integration; original runtime file hashes
 will be compared against this baseline before release.
+
+## Third-domain assessment — completed6November2026
+
+The original genomics assessment above remains historical evidence. The MDE
+assessment, written before its implementation and after113baseline tests, is
+[materials/ARCHITECTURE_REUSE.md](materials/ARCHITECTURE_REUSE.md). It records
+actual reuse of ingestion, database, orchestration, localAI, UI, reports,
+provenance and charts; material algorithms remain independent. New optional
+HTTP source policy/metadata parameters preserve original GEE defaults. Existing
+ESAE/GEE runtime hashes and original-environment regressions are checked separately.

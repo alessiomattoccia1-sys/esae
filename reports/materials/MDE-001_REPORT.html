@@ -1,0 +1,716 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>MDE-001 · Materials Discovery Engine</title><style>
+body{font:16px/1.8 system-ui,sans-serif;color:#172229;background:#f5f3ed;max-width:1180px;margin:auto;padding:48px 24px}h1{font-size:clamp(36px,6vw,72px);font-weight:500;letter-spacing:-.05em;line-height:1.1}h2{margin-top:54px;font-weight:500;font-size:32px;line-height:1.2}a{color:#2f5d70}code{overflow-wrap:anywhere}.eyebrow{font:11px monospace;letter-spacing:.13em}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #cbd0ce;border-radius:15px}.stats>div{padding:22px}.stats b{font-size:30px;display:block}.stats span{font-size:12px}table{border-collapse:collapse;width:100%;font-size:12px}td,th{padding:12px;border-bottom:1px solid #d2d6d3;text-align:left;vertical-align:top}.table{overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#fffdf8;border:1px solid #d1d7d4;border-radius:12px;padding:20px}.bar{display:grid;grid-template-columns:130px 1fr 70px;gap:15px;margin:8px 0;font-size:12px}.bar meter{width:100%;height:24px}footer{border-top:1px solid #ccd2d0;margin-top:50px;padding-top:25px;font-size:13px}.notice{border-left:3px solid #9d8059;padding-left:20px}@media(max-width:700px){body{padding:24px 18px}.stats{grid-template-columns:1fr 1fr}.bar{grid-template-columns:100px 1fr 45px;gap:8px}}
+</style></head><body><p class="eyebrow">MATTOCCIA LABS / RESEARCH ENGINES / ENGINE03 — MATTER</p><h1>Computational Screening<br>of Photovoltaic Materials.</h1><p class="notice">Public-data research screening, not new-material discovery or experimental photovoltaic efficiency. No DFT simulation or physical experiment performed.</p><p>Experiment MDE-001 · 2026-11-06T04:33:42.775493+00:00 · analysis <code>1ae88ce32871d91d0ba984a557d92c84be508584ca015bf9716f0817d261eec7</code></p><div class="stats"><div><b>93902</b><span>Records acquired</span></div><div><b>93902</b><span>Valid unique materials</span></div><div><b>2561</b><span>Gap candidates</span></div><div><b>415</b><span>Gap + hull + SLME candidates</span></div></div><h2>Research findings</h2><ol><li><b>Coverage.</b> 21559 of 93902 valid materials have a TB-mBJ gap; 72343 do not. Source methods remain separate.</li><li><b>Candidates.</b> 2561 pass the gap criteria; 415 also pass hull and 415 also pass reported SLME. These are existing database crystals, not new discoveries.</li><li><b>Sensitivity.</b> 95 materials remain eligible across all twelve gap/hull combinations. Threshold choices and missingness affect interpretation.</li></ol><h2>Objective and dataset</h2><p>Explore a fixed public JARVIS bulk-material snapshot for candidates warranting further computational or experimental research.</p><pre>{
+  &quot;dataset&quot;: &quot;JARVIS-DFT 3D&quot;,
+  &quot;article_id&quot;: 6815699,
+  &quot;article_version&quot;: 11,
+  &quot;doi&quot;: &quot;10.6084/m9.figshare.6815699.v11&quot;,
+  &quot;snapshot&quot;: &quot;jdft_3d-9-24-2025.json.zip&quot;,
+  &quot;snapshot_date&quot;: &quot;2025-09-24&quot;,
+  &quot;published_date&quot;: &quot;2026-05-09T07:44:20Z&quot;,
+  &quot;license&quot;: {
+    &quot;value&quot;: 1,
+    &quot;name&quot;: &quot;CC BY 4.0&quot;,
+    &quot;url&quot;: &quot;https://creativecommons.org/licenses/by/4.0/&quot;
+  },
+  &quot;attribution&quot;: &quot;NIST JARVIS-DFT / Kamal Choudhary et al.&quot;,
+  &quot;file_id&quot;: 64391379,
+  &quot;url&quot;: &quot;https://ndownloader.figshare.com/files/64391379&quot;,
+  &quot;zip_member&quot;: &quot;jdft_3d-9-24-2025.json&quot;,
+  &quot;official_md5&quot;: &quot;c3179161ef0d029cf1fa70da463aac6e&quot;,
+  &quot;metadata_source&quot;: {
+    &quot;id&quot;: &quot;17a483129f4b813b3f4ecf420fe8bd1c95a122c1be29e2b4d1ff93fdbb79bbc2&quot;,
+    &quot;url&quot;: &quot;https://api.figshare.com/v2/articles/6815699/versions/11&quot;,
+    &quot;organization&quot;: &quot;NIST JARVIS-DFT / Figshare&quot;,
+    &quot;acquired_at&quot;: &quot;2026-11-06T04:08:30.684475+00:00&quot;,
+    &quot;release_date&quot;: null,
+    &quot;etag&quot;: null,
+    &quot;server_date&quot;: &quot;Fri, 06 Nov 2026 04:08:30 GMT&quot;,
+    &quot;sha256&quot;: &quot;8456edaa9e774267dd9db1c5176c25f6075747efab6ada25df446b7cca20d726&quot;,
+    &quot;bytes&quot;: 6877,
+    &quot;http_status&quot;: 200,
+    &quot;parser_version&quot;: &quot;mde-0.1.0&quot;,
+    &quot;record_counts&quot;: null,
+    &quot;errors&quot;: []
+  },
+  &quot;source&quot;: {
+    &quot;id&quot;: &quot;8d8aa673073121da033aff292876d89c34097d785b360e0ca431a48723e839ed&quot;,
+    &quot;url&quot;: &quot;https://ndownloader.figshare.com/files/64391379&quot;,
+    &quot;organization&quot;: &quot;NIST JARVIS-DFT / Figshare&quot;,
+    &quot;acquired_at&quot;: &quot;2026-11-06T04:08:46.305248+00:00&quot;,
+    &quot;release_date&quot;: &quot;Sat, 09 May 2026 07:44:11 GMT&quot;,
+    &quot;etag&quot;: &quot;\&quot;c3179161ef0d029cf1fa70da463aac6e\&quot;&quot;,
+    &quot;server_date&quot;: &quot;Fri, 06 Nov 2026 04:08:31 GMT&quot;,
+    &quot;sha256&quot;: &quot;f9e0a3309f0000d5de1ec9e49c93963109ea45e63f451103f8f6595d2eabf7f5&quot;,
+    &quot;bytes&quot;: 48447610,
+    &quot;http_status&quot;: 200,
+    &quot;parser_version&quot;: &quot;mde-0.1.0&quot;,
+    &quot;record_counts&quot;: null,
+    &quot;errors&quot;: []
+  }
+}</pre><h2>Method and parameters</h2><p>TB-mBJ band-gap window and optional composition filter; known energy above hull; reported theoretical SLME. Each stage has an explicit, lexicographic ordering and JID tie break. Target gap is an exploratory midpoint, not an efficiency optimum.</p><pre>{
+  &quot;configuration&quot;: {
+    &quot;gap_min&quot;: 0.8,
+    &quot;gap_max&quot;: 2.2,
+    &quot;target_gap&quot;: 1.5,
+    &quot;hull_max&quot;: 0.1,
+    &quot;slme_min&quot;: 10,
+    &quot;exclude_elements&quot;: [],
+    &quot;require_dielectric&quot;: false
+  },
+  &quot;ranking&quot;: {
+    &quot;gap_only&quot;: &quot;abs(TB-mBJ gap - configured target), JID&quot;,
+    &quot;stability&quot;: &quot;energy_above_hull, gap distance, JID&quot;,
+    &quot;optical&quot;: &quot;reported SLME descending, hull, gap distance, JID&quot;,
+    &quot;composite_probability_score&quot;: false
+  }
+}</pre><h2>1 / Property distributions and exclusions</h2><h3>gap_mbj — N=21559 available, 72343 missing</h3><div class="bar"><span>0–0.8 eV</span><meter min="0" max="13527" value="13527"></meter><b>13527</b></div><div class="bar"><span>0.8–1.2 eV</span><meter min="0" max="13527" value="726"></meter><b>726</b></div><div class="bar"><span>1.2–1.6 eV</span><meter min="0" max="13527" value="689"></meter><b>689</b></div><div class="bar"><span>1.6–2.2 eV</span><meter min="0" max="13527" value="1144"></meter><b>1144</b></div><div class="bar"><span>2.2–3 eV</span><meter min="0" max="13527" value="1360"></meter><b>1360</b></div><div class="bar"><span>3–5 eV</span><meter min="0" max="13527" value="2212"></meter><b>2212</b></div><div class="bar"><span>5–10 eV</span><meter min="0" max="13527" value="1760"></meter><b>1760</b></div><div class="bar"><span>10–∞ eV</span><meter min="0" max="13527" value="141"></meter><b>141</b></div><h3>gap_opt — N=93902 available, 0 missing</h3><div class="bar"><span>0–0.8 eV</span><meter min="0" max="75523" value="75523"></meter><b>75523</b></div><div class="bar"><span>0.8–1.2 eV</span><meter min="0" max="75523" value="2745"></meter><b>2745</b></div><div class="bar"><span>1.2–1.6 eV</span><meter min="0" max="75523" value="2314"></meter><b>2314</b></div><div class="bar"><span>1.6–2.2 eV</span><meter min="0" max="75523" value="3124"></meter><b>3124</b></div><div class="bar"><span>2.2–3 eV</span><meter min="0" max="75523" value="3264"></meter><b>3264</b></div><div class="bar"><span>3–5 eV</span><meter min="0" max="75523" value="5031"></meter><b>5031</b></div><div class="bar"><span>5–10 eV</span><meter min="0" max="75523" value="1882"></meter><b>1882</b></div><div class="bar"><span>10–∞ eV</span><meter min="0" max="75523" value="19"></meter><b>19</b></div><pre>{
+  &quot;records_acquired&quot;: 93902,
+  &quot;valid_unique_materials&quot;: 93902,
+  &quot;invalid_records&quot;: 0,
+  &quot;duplicate_records&quot;: 0,
+  &quot;excluded_reasons&quot;: {},
+  &quot;availability&quot;: {
+    &quot;gap_mbj&quot;: {
+      &quot;numerator&quot;: 21559,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 22.959042
+    },
+    &quot;gap_opt&quot;: {
+      &quot;numerator&quot;: 93902,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 100.0
+    },
+    &quot;formation_ev_atom&quot;: {
+      &quot;numerator&quot;: 93902,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 100.0
+    },
+    &quot;hull_ev_atom&quot;: {
+      &quot;numerator&quot;: 93902,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 100.0
+    },
+    &quot;slme_percent&quot;: {
+      &quot;numerator&quot;: 10022,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 10.672829
+    },
+    &quot;tbmbj_dielectric_complete&quot;: {
+      &quot;numerator&quot;: 19834,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 21.122021
+    }
+  },
+  &quot;screen_counts&quot;: {
+    &quot;gap_only&quot;: {
+      &quot;numerator&quot;: 2561,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 2.727311
+    },
+    &quot;stability&quot;: {
+      &quot;numerator&quot;: 415,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 0.44195
+    },
+    &quot;optical&quot;: {
+      &quot;numerator&quot;: 415,
+      &quot;denominator&quot;: 93902,
+      &quot;percent&quot;: 0.44195
+    }
+  },
+  &quot;screen_exclusions&quot;: {
+    &quot;above_hull_threshold&quot;: 2146,
+    &quot;outside_gap_interval&quot;: 18998,
+    &quot;missing_tbmbj_gap&quot;: 72343
+  },
+  &quot;formula_count&quot;: 65395,
+  &quot;crystal_systems&quot;: {
+    &quot;cubic&quot;: 22697,
+    &quot;hexagonal&quot;: 10784,
+    &quot;monoclinic&quot;: 12170,
+    &quot;orthorhombic&quot;: 14603,
+    &quot;tetragonal&quot;: 20322,
+    &quot;triclinic&quot;: 4117,
+    &quot;trigonal&quot;: 9209
+  }
+}</pre><h2>2 / Reproducible candidates</h2><p>First20 rows of each ranking below; all eligible ranks are in the accompanying CSV. Formation energy is not substituted for missing hull energy.</p><h3>gap_only — 2561 candidates</h3><div class="table"><table><thead><tr><th>Rank</th><th>JARVIS / formula</th><th>TB-mBJ gap / eV</th><th>Hull / eV atom⁻¹</th><th>SLME / %</th></tr></thead><tbody><tr><td>1</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-85715.html">JVASP-85715</a><br>Cd2P3Cl</td><td>1.5</td><td>1.0984</td><td>32.33</td></tr><tr><td>2</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-102337.html">JVASP-102337</a><br>InAgGeSe4</td><td>1.5</td><td>0.8625</td><td>32.33</td></tr><tr><td>3</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-8181.html">JVASP-8181</a><br>Na3As</td><td>1.501</td><td>0.0102</td><td>32.33</td></tr><tr><td>4</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-13355.html">JVASP-13355</a><br>CaNd2Te4</td><td>1.499</td><td>0.835</td><td>32.35</td></tr><tr><td>5</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-35748.html">JVASP-35748</a><br>AlSb</td><td>1.501</td><td>0.9811</td><td>32.33</td></tr><tr><td>6</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-36816.html">JVASP-36816</a><br>CdAuO2</td><td>1.501</td><td>0.6654</td><td>32.33</td></tr><tr><td>7</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-55540.html">JVASP-55540</a><br>InAgP2Se6</td><td>1.499</td><td>1.6012</td><td>32.35</td></tr><tr><td>8</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-11609.html">JVASP-11609</a><br>ZnSb2O4</td><td>1.498</td><td>1.6647</td><td>32.35</td></tr><tr><td>9</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-52496.html">JVASP-52496</a><br>LiBiF5</td><td>1.502</td><td>0.0364</td><td>32.31</td></tr><tr><td>10</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-103737.html">JVASP-103737</a><br>CaGe2N2</td><td>1.498</td><td>2.3563</td><td>32.35</td></tr><tr><td>11</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-109825.html">JVASP-109825</a><br>VOF</td><td>1.498</td><td>1.0964</td><td>32.35</td></tr><tr><td>12</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-2838.html">JVASP-2838</a><br>K2PtSe2</td><td>1.503</td><td>0.5604</td><td>32.28</td></tr><tr><td>13</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-109363.html">JVASP-109363</a><br>SnSeS</td><td>1.497</td><td>0.9684</td><td>32.37</td></tr><tr><td>14</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-109495.html">JVASP-109495</a><br>YO2</td><td>1.497</td><td>1.3263</td><td>32.37</td></tr><tr><td>15</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-139176.html">JVASP-139176</a><br>TlIO</td><td>1.497</td><td>0.3403</td><td>32.37</td></tr><tr><td>16</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-3972.html">JVASP-3972</a><br>PdS2Cl6</td><td>1.496</td><td>0.7627</td><td>32.37</td></tr><tr><td>17</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-29506.html">JVASP-29506</a><br>V2MoO8</td><td>1.496</td><td>3.5333</td><td>32.37</td></tr><tr><td>18</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-45372.html">JVASP-45372</a><br>Tb2S3</td><td>1.504</td><td>1.3684</td><td>32.28</td></tr><tr><td>19</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-50106.html">JVASP-50106</a><br>HgO2</td><td>1.504</td><td>1.0972</td><td>32.28</td></tr><tr><td>20</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-9806.html">JVASP-9806</a><br>ZnBi2O4</td><td>1.495</td><td>1.4328</td><td>32.39</td></tr></tbody></table></div><h3>stability — 415 candidates</h3><div class="table"><table><thead><tr><th>Rank</th><th>JARVIS / formula</th><th>TB-mBJ gap / eV</th><th>Hull / eV atom⁻¹</th><th>SLME / %</th></tr></thead><tbody><tr><td>1</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-5578.html">JVASP-5578</a><br>NdI2</td><td>1.493</td><td>0.0</td><td>32.41</td></tr><tr><td>2</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-138749.html">JVASP-138749</a><br>NaCuTe</td><td>1.488</td><td>0.0</td><td>32.47</td></tr><tr><td>3</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-116453.html">JVASP-116453</a><br>CaAuF</td><td>1.476</td><td>0.0</td><td>32.65</td></tr><tr><td>4</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-110356.html">JVASP-110356</a><br>K2AgBiI6</td><td>1.473</td><td>0.0</td><td>32.68</td></tr><tr><td>5</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-107624.html">JVASP-107624</a><br>Rb2ScAuI6</td><td>1.528</td><td>0.0</td><td>32.04</td></tr><tr><td>6</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-65633.html">JVASP-65633</a><br>Ba2BiCl</td><td>1.471</td><td>0.0</td><td>32.7</td></tr><tr><td>7</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-3273.html">JVASP-3273</a><br>K3As</td><td>1.534</td><td>0.0</td><td>31.95</td></tr><tr><td>8</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-107136.html">JVASP-107136</a><br>Na2HgPdF6</td><td>1.466</td><td>0.0</td><td>32.78</td></tr><tr><td>9</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-121589.html">JVASP-121589</a><br>Rb4InSbCl12</td><td>1.536</td><td>0.0</td><td>31.92</td></tr><tr><td>10</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-1948.html">JVASP-1948</a><br>CuBr</td><td>1.546</td><td>0.0</td><td>31.73</td></tr><tr><td>11</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-149919.html">JVASP-149919</a><br>K2AgBi</td><td>1.451</td><td>0.0</td><td>32.99</td></tr><tr><td>12</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-108019.html">JVASP-108019</a><br>InAg3F6</td><td>1.55</td><td>0.0</td><td>31.66</td></tr><tr><td>13</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-31179.html">JVASP-31179</a><br>Na2HF4</td><td>1.448</td><td>0.0</td><td>33.04</td></tr><tr><td>14</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-185703.html">JVASP-185703</a><br>Zn2S</td><td>1.442</td><td>0.0</td><td>33.09</td></tr><tr><td>15</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-150048.html">JVASP-150048</a><br>AgSnF6</td><td>1.426</td><td>0.0</td><td>33.34</td></tr><tr><td>16</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-2547.html">JVASP-2547</a><br>Na2AgSb</td><td>1.425</td><td>0.0</td><td>33.37</td></tr><tr><td>17</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-106637.html">JVASP-106637</a><br>K2NaPdF6</td><td>1.424</td><td>0.0</td><td>33.37</td></tr><tr><td>18</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-38208.html">JVASP-38208</a><br>Rb3P</td><td>1.577</td><td>0.0</td><td>31.21</td></tr><tr><td>19</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-10118.html">JVASP-10118</a><br>NaAgF4</td><td>1.418</td><td>0.0</td><td>33.46</td></tr><tr><td>20</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-107598.html">JVASP-107598</a><br>K2NaInI6</td><td>1.586</td><td>0.0</td><td>31.02</td></tr></tbody></table></div><h3>optical — 415 candidates</h3><div class="table"><table><thead><tr><th>Rank</th><th>JARVIS / formula</th><th>TB-mBJ gap / eV</th><th>Hull / eV atom⁻¹</th><th>SLME / %</th></tr></thead><tbody><tr><td>1</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-12913.html">JVASP-12913</a><br>SbI2F6</td><td>1.34</td><td>0.0</td><td>33.98</td></tr><tr><td>2</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-3951.html">JVASP-3951</a><br>Rb2PdBr6</td><td>1.343</td><td>0.0</td><td>33.97</td></tr><tr><td>3</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-8125.html">JVASP-8125</a><br>NaCuSe</td><td>1.342</td><td>0.0</td><td>33.97</td></tr><tr><td>4</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-7827.html">JVASP-7827</a><br>Rb3Sb</td><td>1.349</td><td>0.0001</td><td>33.94</td></tr><tr><td>5</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-19759.html">JVASP-19759</a><br>TbSe</td><td>1.348</td><td>0.0204</td><td>33.94</td></tr><tr><td>6</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-102790.html">JVASP-102790</a><br>Cd2TeSe</td><td>1.362</td><td>0.0</td><td>33.93</td></tr><tr><td>7</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-35067.html">JVASP-35067</a><br>KMgBi</td><td>1.36</td><td>0.0</td><td>33.93</td></tr><tr><td>8</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-99962.html">JVASP-99962</a><br>MgCdS2</td><td>1.36</td><td>0.0</td><td>33.93</td></tr><tr><td>9</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-109475.html">JVASP-109475</a><br>Rb2TlAgF6</td><td>1.354</td><td>0.0</td><td>33.93</td></tr><tr><td>10</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-65769.html">JVASP-65769</a><br>Ba2SbBr</td><td>1.353</td><td>0.0</td><td>33.93</td></tr><tr><td>11</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-7812.html">JVASP-7812</a><br>KZnAs</td><td>1.355</td><td>0.0035</td><td>33.93</td></tr><tr><td>12</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-91686.html">JVASP-91686</a><br>InSe</td><td>1.359</td><td>0.0884</td><td>33.93</td></tr><tr><td>13</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-26948.html">JVASP-26948</a><br>Rb7Au5O2</td><td>1.355</td><td>0.0997</td><td>33.93</td></tr><tr><td>14</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-108570.html">JVASP-108570</a><br>LiZnSb</td><td>1.369</td><td>0.0774</td><td>33.92</td></tr><tr><td>15</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-25000.html">JVASP-25000</a><br>AsI2F6</td><td>1.372</td><td>0.0267</td><td>33.89</td></tr><tr><td>16</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-14731.html">JVASP-14731</a><br>HoSe</td><td>1.379</td><td>0.0364</td><td>33.88</td></tr><tr><td>17</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-14574.html">JVASP-14574</a><br>ErSe</td><td>1.378</td><td>0.04</td><td>33.88</td></tr><tr><td>18</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-74304.html">JVASP-74304</a><br>SrBeBr2</td><td>1.375</td><td>0.0747</td><td>33.88</td></tr><tr><td>19</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-14049.html">JVASP-14049</a><br>KAuBr4</td><td>1.327</td><td>0.0</td><td>33.86</td></tr><tr><td>20</td><td><a href="https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-59035.html">JVASP-59035</a><br>KAuBr4</td><td>1.327</td><td>-0.0</td><td>33.86</td></tr></tbody></table></div><h2>3 / Comparative analysis</h2><div class="table"><table><thead><tr><th>Gap window / eV</th><th>Hull max / eV atom⁻¹</th><th>Gap</th><th>Stability</th><th>Optical</th><th>Top10 overlap numerator / union</th></tr></thead><tbody><tr><td>0.8–2.2</td><td>0.0</td><td>2561</td><td>216</td><td>216</td><td>8 / 12</td></tr><tr><td>0.8–2.2</td><td>0.05</td><td>2561</td><td>347</td><td>347</td><td>10 / 10</td></tr><tr><td>0.8–2.2</td><td>0.1</td><td>2561</td><td>415</td><td>415</td><td>10 / 10</td></tr><tr><td>0.8–2.2</td><td>0.2</td><td>2561</td><td>521</td><td>521</td><td>9 / 11</td></tr><tr><td>1.0–2.0</td><td>0.0</td><td>1802</td><td>155</td><td>155</td><td>8 / 12</td></tr><tr><td>1.0–2.0</td><td>0.05</td><td>1802</td><td>243</td><td>243</td><td>10 / 10</td></tr><tr><td>1.0–2.0</td><td>0.1</td><td>1802</td><td>297</td><td>297</td><td>10 / 10</td></tr><tr><td>1.0–2.0</td><td>0.2</td><td>1802</td><td>367</td><td>367</td><td>9 / 11</td></tr><tr><td>1.2–1.8</td><td>0.0</td><td>1091</td><td>95</td><td>95</td><td>8 / 12</td></tr><tr><td>1.2–1.8</td><td>0.05</td><td>1091</td><td>152</td><td>152</td><td>10 / 10</td></tr><tr><td>1.2–1.8</td><td>0.1</td><td>1091</td><td>189</td><td>189</td><td>10 / 10</td></tr><tr><td>1.2–1.8</td><td>0.2</td><td>1091</td><td>228</td><td>228</td><td>9 / 11</td></tr></tbody></table></div><pre>{
+  &quot;robust_candidates&quot;: {
+    &quot;count&quot;: 95,
+    &quot;jids&quot;: [
+      &quot;JVASP-100879&quot;,
+      &quot;JVASP-100931&quot;,
+      &quot;JVASP-10118&quot;,
+      &quot;JVASP-10119&quot;,
+      &quot;JVASP-101264&quot;,
+      &quot;JVASP-10132&quot;,
+      &quot;JVASP-102790&quot;,
+      &quot;JVASP-104498&quot;,
+      &quot;JVASP-105026&quot;,
+      &quot;JVASP-106413&quot;,
+      &quot;JVASP-106637&quot;,
+      &quot;JVASP-106853&quot;,
+      &quot;JVASP-106909&quot;,
+      &quot;JVASP-107136&quot;,
+      &quot;JVASP-107267&quot;,
+      &quot;JVASP-107598&quot;,
+      &quot;JVASP-107624&quot;,
+      &quot;JVASP-108019&quot;,
+      &quot;JVASP-108604&quot;,
+      &quot;JVASP-109006&quot;,
+      &quot;JVASP-109250&quot;,
+      &quot;JVASP-109475&quot;,
+      &quot;JVASP-109889&quot;,
+      &quot;JVASP-110076&quot;,
+      &quot;JVASP-110084&quot;,
+      &quot;JVASP-110356&quot;,
+      &quot;JVASP-110673&quot;,
+      &quot;JVASP-115833&quot;,
+      &quot;JVASP-116453&quot;,
+      &quot;JVASP-118261&quot;,
+      &quot;JVASP-121589&quot;,
+      &quot;JVASP-12524&quot;,
+      &quot;JVASP-12887&quot;,
+      &quot;JVASP-12903&quot;,
+      &quot;JVASP-12913&quot;,
+      &quot;JVASP-13315&quot;,
+      &quot;JVASP-138749&quot;,
+      &quot;JVASP-13927&quot;,
+      &quot;JVASP-14038&quot;,
+      &quot;JVASP-14049&quot;,
+      &quot;JVASP-14351&quot;,
+      &quot;JVASP-149919&quot;,
+      &quot;JVASP-150048&quot;,
+      &quot;JVASP-159086&quot;,
+      &quot;JVASP-183536&quot;,
+      &quot;JVASP-185703&quot;,
+      &quot;JVASP-1948&quot;,
+      &quot;JVASP-21211&quot;,
+      &quot;JVASP-22561&quot;,
+      &quot;JVASP-22732&quot;,
+      &quot;JVASP-25144&quot;,
+      &quot;JVASP-2529&quot;,
+      &quot;JVASP-2547&quot;,
+      &quot;JVASP-2559&quot;,
+      &quot;JVASP-2703&quot;,
+      &quot;JVASP-2922&quot;,
+      &quot;JVASP-31179&quot;,
+      &quot;JVASP-3141&quot;,
+      &quot;JVASP-3216&quot;,
+      &quot;JVASP-3270&quot;,
+      &quot;JVASP-3273&quot;,
+      &quot;JVASP-32828&quot;,
+      &quot;JVASP-3423&quot;,
+      &quot;JVASP-35067&quot;,
+      &quot;JVASP-35895&quot;,
+      &quot;JVASP-35908&quot;,
+      &quot;JVASP-3762&quot;,
+      &quot;JVASP-38110&quot;,
+      &quot;JVASP-38128&quot;,
+      &quot;JVASP-38208&quot;,
+      &quot;JVASP-3951&quot;,
+      &quot;JVASP-5464&quot;,
+      &quot;JVASP-5578&quot;,
+      &quot;JVASP-5815&quot;,
+      &quot;JVASP-59035&quot;,
+      &quot;JVASP-65633&quot;,
+      &quot;JVASP-65769&quot;,
+      &quot;JVASP-66686&quot;,
+      &quot;JVASP-69329&quot;,
+      &quot;JVASP-7651&quot;,
+      &quot;JVASP-7790&quot;,
+      &quot;JVASP-8125&quot;,
+      &quot;JVASP-82128&quot;,
+      &quot;JVASP-828&quot;,
+      &quot;JVASP-85121&quot;,
+      &quot;JVASP-8765&quot;,
+      &quot;JVASP-8793&quot;,
+      &quot;JVASP-88791&quot;,
+      &quot;JVASP-895&quot;,
+      &quot;JVASP-90623&quot;,
+      &quot;JVASP-90847&quot;,
+      &quot;JVASP-91697&quot;,
+      &quot;JVASP-99413&quot;,
+      &quot;JVASP-99528&quot;,
+      &quot;JVASP-99962&quot;
+    ],
+    &quot;list_limit&quot;: 100
+  },
+  &quot;comparisons&quot;: {
+    &quot;gap_only_vs_stability&quot;: {
+      &quot;top10_jaccard&quot;: {
+        &quot;numerator&quot;: 0,
+        &quot;denominator&quot;: 20,
+        &quot;percent&quot;: 0.0
+      },
+      &quot;top10_common&quot;: [],
+      &quot;lost_on_additional_filter&quot;: 2146,
+      &quot;note&quot;: &quot;Changed cohort eligibility and ordering are distinct; raw rank shifts are not proof of physical improvement.&quot;
+    },
+    &quot;stability_vs_optical&quot;: {
+      &quot;top10_jaccard&quot;: {
+        &quot;numerator&quot;: 0,
+        &quot;denominator&quot;: 20,
+        &quot;percent&quot;: 0.0
+      },
+      &quot;top10_common&quot;: [],
+      &quot;lost_on_additional_filter&quot;: 0,
+      &quot;note&quot;: &quot;Changed cohort eligibility and ordering are distinct; raw rank shifts are not proof of physical improvement.&quot;
+    },
+    &quot;gap_only_vs_optical&quot;: {
+      &quot;top10_jaccard&quot;: {
+        &quot;numerator&quot;: 0,
+        &quot;denominator&quot;: 20,
+        &quot;percent&quot;: 0.0
+      },
+      &quot;top10_common&quot;: [],
+      &quot;lost_on_additional_filter&quot;: 2146,
+      &quot;note&quot;: &quot;Changed cohort eligibility and ordering are distinct; raw rank shifts are not proof of physical improvement.&quot;
+    }
+  },
+  &quot;chemical_groups&quot;: {
+    &quot;chalcogenide&quot;: {
+      &quot;count&quot;: 9176,
+      &quot;mbj_gap_median&quot;: 0.865,
+      &quot;mbj_gap_denominator&quot;: 2699
+    },
+    &quot;chalcogenide+halide&quot;: {
+      &quot;count&quot;: 872,
+      &quot;mbj_gap_median&quot;: 1.824,
+      &quot;mbj_gap_denominator&quot;: 254
+    },
+    &quot;chalcogenide+halide+pnictide&quot;: {
+      &quot;count&quot;: 190,
+      &quot;mbj_gap_median&quot;: 2.173,
+      &quot;mbj_gap_denominator&quot;: 44
+    },
+    &quot;chalcogenide+pnictide&quot;: {
+      &quot;count&quot;: 1230,
+      &quot;mbj_gap_median&quot;: 1.32,
+      &quot;mbj_gap_denominator&quot;: 370
+    },
+    &quot;halide&quot;: {
+      &quot;count&quot;: 8195,
+      &quot;mbj_gap_median&quot;: 1.885,
+      &quot;mbj_gap_denominator&quot;: 2193
+    },
+    &quot;halide+pnictide&quot;: {
+      &quot;count&quot;: 1206,
+      &quot;mbj_gap_median&quot;: 2.401,
+      &quot;mbj_gap_denominator&quot;: 332
+    },
+    &quot;other&quot;: {
+      &quot;count&quot;: 39156,
+      &quot;mbj_gap_median&quot;: 0.0,
+      &quot;mbj_gap_denominator&quot;: 8168
+    },
+    &quot;oxide&quot;: {
+      &quot;count&quot;: 16266,
+      &quot;mbj_gap_median&quot;: 2.3975,
+      &quot;mbj_gap_denominator&quot;: 3420
+    },
+    &quot;oxide+chalcogenide&quot;: {
+      &quot;count&quot;: 1586,
+      &quot;mbj_gap_median&quot;: 2.823,
+      &quot;mbj_gap_denominator&quot;: 321
+    },
+    &quot;oxide+chalcogenide+halide&quot;: {
+      &quot;count&quot;: 229,
+      &quot;mbj_gap_median&quot;: 4.899,
+      &quot;mbj_gap_denominator&quot;: 37
+    },
+    &quot;oxide+chalcogenide+halide+pnictide&quot;: {
+      &quot;count&quot;: 11,
+      &quot;mbj_gap_median&quot;: 3.8585000000000003,
+      &quot;mbj_gap_denominator&quot;: 4
+    },
+    &quot;oxide+chalcogenide+pnictide&quot;: {
+      &quot;count&quot;: 126,
+      &quot;mbj_gap_median&quot;: 2.282,
+      &quot;mbj_gap_denominator&quot;: 18
+    },
+    &quot;oxide+halide&quot;: {
+      &quot;count&quot;: 3162,
+      &quot;mbj_gap_median&quot;: 2.9115,
+      &quot;mbj_gap_denominator&quot;: 668
+    },
+    &quot;oxide+halide+pnictide&quot;: {
+      &quot;count&quot;: 290,
+      &quot;mbj_gap_median&quot;: 3.643,
+      &quot;mbj_gap_denominator&quot;: 68
+    },
+    &quot;oxide+pnictide&quot;: {
+      &quot;count&quot;: 3524,
+      &quot;mbj_gap_median&quot;: 2.649,
+      &quot;mbj_gap_denominator&quot;: 638
+    },
+    &quot;pnictide&quot;: {
+      &quot;count&quot;: 8683,
+      &quot;mbj_gap_median&quot;: 0.0,
+      &quot;mbj_gap_denominator&quot;: 2325
+    }
+  },
+  &quot;paired_correlations&quot;: {
+    &quot;gap_mbj_vs_slme_percent&quot;: {
+      &quot;n_pairs&quot;: 9377,
+      &quot;status&quot;: &quot;computed&quot;,
+      &quot;pearson&quot;: -0.623170093866,
+      &quot;spearman&quot;: -0.821802481387,
+      &quot;meaning&quot;: &quot;Descriptive paired-complete-case coefficients. No causal or population-inference claim.&quot;
+    },
+    &quot;gap_mbj_vs_hull_ev_atom&quot;: {
+      &quot;n_pairs&quot;: 21559,
+      &quot;status&quot;: &quot;computed&quot;,
+      &quot;pearson&quot;: -0.116529735855,
+      &quot;spearman&quot;: -0.14948394853,
+      &quot;meaning&quot;: &quot;Descriptive paired-complete-case coefficients. No causal or population-inference claim.&quot;
+    },
+    &quot;slme_percent_vs_hull_ev_atom&quot;: {
+      &quot;n_pairs&quot;: 10022,
+      &quot;status&quot;: &quot;computed&quot;,
+      &quot;pearson&quot;: -0.052808512857,
+      &quot;spearman&quot;: -0.039540162732,
+      &quot;meaning&quot;: &quot;Descriptive paired-complete-case coefficients. No causal or population-inference claim.&quot;
+    }
+  },
+  &quot;outlier_flags&quot;: {
+    &quot;gap_mbj&quot;: {
+      &quot;status&quot;: &quot;computed&quot;,
+      &quot;method&quot;: &quot;Tukey 1.5 IQR, descriptive flags not invalid-material decisions&quot;,
+      &quot;n&quot;: 21559,
+      &quot;q1&quot;: 0.0,
+      &quot;q3&quot;: 2.2455,
+      &quot;lower&quot;: -3.3682499999999997,
+      &quot;upper&quot;: 5.61375,
+      &quot;count&quot;: 1454,
+      &quot;example_jids&quot;: [
+        &quot;JVASP-17&quot;,
+        &quot;JVASP-32&quot;,
+        &quot;JVASP-41&quot;,
+        &quot;JVASP-116&quot;,
+        &quot;JVASP-164&quot;,
+        &quot;JVASP-170&quot;,
+        &quot;JVASP-801&quot;,
+        &quot;JVASP-819&quot;,
+        &quot;JVASP-907&quot;,
+        &quot;JVASP-1047&quot;,
+        &quot;JVASP-1130&quot;,
+        &quot;JVASP-1136&quot;,
+        &quot;JVASP-1145&quot;,
+        &quot;JVASP-1245&quot;,
+        &quot;JVASP-1256&quot;,
+        &quot;JVASP-1291&quot;,
+        &quot;JVASP-1360&quot;,
+        &quot;JVASP-1549&quot;,
+        &quot;JVASP-1567&quot;,
+        &quot;JVASP-1600&quot;
+      ]
+    },
+    &quot;hull_ev_atom&quot;: {
+      &quot;status&quot;: &quot;computed&quot;,
+      &quot;method&quot;: &quot;Tukey 1.5 IQR, descriptive flags not invalid-material decisions&quot;,
+      &quot;n&quot;: 93902,
+      &quot;q1&quot;: 0.6555,
+      &quot;q3&quot;: 2.7339,
+      &quot;lower&quot;: -2.4621000000000004,
+      &quot;upper&quot;: 5.851500000000001,
+      &quot;count&quot;: 817,
+      &quot;example_jids&quot;: [
+        &quot;JVASP-4987&quot;,
+        &quot;JVASP-5587&quot;,
+        &quot;JVASP-8685&quot;,
+        &quot;JVASP-8764&quot;,
+        &quot;JVASP-9110&quot;,
+        &quot;JVASP-9141&quot;,
+        &quot;JVASP-9162&quot;,
+        &quot;JVASP-10675&quot;,
+        &quot;JVASP-11133&quot;,
+        &quot;JVASP-11984&quot;,
+        &quot;JVASP-12368&quot;,
+        &quot;JVASP-12388&quot;,
+        &quot;JVASP-12760&quot;,
+        &quot;JVASP-12771&quot;,
+        &quot;JVASP-13790&quot;,
+        &quot;JVASP-13894&quot;,
+        &quot;JVASP-14175&quot;,
+        &quot;JVASP-14890&quot;,
+        &quot;JVASP-15113&quot;,
+        &quot;JVASP-15702&quot;
+      ]
+    },
+    &quot;slme_percent&quot;: {
+      &quot;status&quot;: &quot;computed&quot;,
+      &quot;method&quot;: &quot;Tukey 1.5 IQR, descriptive flags not invalid-material decisions&quot;,
+      &quot;n&quot;: 10022,
+      &quot;q1&quot;: 0.0,
+      &quot;q3&quot;: 23.34,
+      &quot;lower&quot;: -35.01,
+      &quot;upper&quot;: 58.349999999999994,
+      &quot;count&quot;: 0,
+      &quot;example_jids&quot;: []
+    }
+  }
+}</pre><h2>Source-level validation</h2><p class="notice">2 of 3 separately acquired NIST pages report SLME different from the pinned snapshot. JVASP-12913: snapshot 33.98% versus page 33.08%; JVASP-3951: snapshot 33.97% versus page 33.34%. The cause and optical-condition equivalence are not established; ranking remains tied to the pinned snapshot, not an independent optical validation.</p><pre>{
+  &quot;archive_and_geometry_checks&quot;: [
+    {
+      &quot;jid&quot;: &quot;JVASP-3951&quot;,
+      &quot;source_array_index&quot;: 15288,
+      &quot;formula_matches&quot;: true,
+      &quot;all_whitelisted_properties_match&quot;: true,
+      &quot;jarvis_tools_independent_geometry_and_composition&quot;: true,
+      &quot;units&quot;: {
+        &quot;bandgap&quot;: &quot;eV&quot;,
+        &quot;formation&quot;: &quot;eV/atom&quot;,
+        &quot;hull&quot;: &quot;eV/atom&quot;,
+        &quot;slme&quot;: &quot;%&quot;,
+        &quot;dielectric&quot;: &quot;dimensionless&quot;,
+        &quot;lattice&quot;: &quot;angstrom&quot;
+      },
+      &quot;method&quot;: {
+        &quot;gap_mbj&quot;: &quot;TB-mBJ&quot;,
+        &quot;gap_opt&quot;: &quot;OptB88vdW&quot;,
+        &quot;formation_and_hull&quot;: &quot;OptB88vdW&quot;,
+        &quot;slme&quot;: &quot;Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded&quot;,
+        &quot;dielectric_eps&quot;: &quot;OptB88vdW&quot;,
+        &quot;dielectric_meps&quot;: &quot;TB-mBJ&quot;
+      },
+      &quot;passed&quot;: true,
+      &quot;scope&quot;: &quot;Original archive record round-trip plus JARVIS-library crystal check; not a second database or independent physical validation&quot;,
+      &quot;source_url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-3951.html&quot;
+    },
+    {
+      &quot;jid&quot;: &quot;JVASP-102790&quot;,
+      &quot;source_array_index&quot;: 20654,
+      &quot;formula_matches&quot;: true,
+      &quot;all_whitelisted_properties_match&quot;: true,
+      &quot;jarvis_tools_independent_geometry_and_composition&quot;: true,
+      &quot;units&quot;: {
+        &quot;bandgap&quot;: &quot;eV&quot;,
+        &quot;formation&quot;: &quot;eV/atom&quot;,
+        &quot;hull&quot;: &quot;eV/atom&quot;,
+        &quot;slme&quot;: &quot;%&quot;,
+        &quot;dielectric&quot;: &quot;dimensionless&quot;,
+        &quot;lattice&quot;: &quot;angstrom&quot;
+      },
+      &quot;method&quot;: {
+        &quot;gap_mbj&quot;: &quot;TB-mBJ&quot;,
+        &quot;gap_opt&quot;: &quot;OptB88vdW&quot;,
+        &quot;formation_and_hull&quot;: &quot;OptB88vdW&quot;,
+        &quot;slme&quot;: &quot;Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded&quot;,
+        &quot;dielectric_eps&quot;: &quot;OptB88vdW&quot;,
+        &quot;dielectric_meps&quot;: &quot;TB-mBJ&quot;
+      },
+      &quot;passed&quot;: true,
+      &quot;scope&quot;: &quot;Original archive record round-trip plus JARVIS-library crystal check; not a second database or independent physical validation&quot;,
+      &quot;source_url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-102790.html&quot;
+    },
+    {
+      &quot;jid&quot;: &quot;JVASP-12913&quot;,
+      &quot;source_array_index&quot;: 21495,
+      &quot;formula_matches&quot;: true,
+      &quot;all_whitelisted_properties_match&quot;: true,
+      &quot;jarvis_tools_independent_geometry_and_composition&quot;: true,
+      &quot;units&quot;: {
+        &quot;bandgap&quot;: &quot;eV&quot;,
+        &quot;formation&quot;: &quot;eV/atom&quot;,
+        &quot;hull&quot;: &quot;eV/atom&quot;,
+        &quot;slme&quot;: &quot;%&quot;,
+        &quot;dielectric&quot;: &quot;dimensionless&quot;,
+        &quot;lattice&quot;: &quot;angstrom&quot;
+      },
+      &quot;method&quot;: {
+        &quot;gap_mbj&quot;: &quot;TB-mBJ&quot;,
+        &quot;gap_opt&quot;: &quot;OptB88vdW&quot;,
+        &quot;formation_and_hull&quot;: &quot;OptB88vdW&quot;,
+        &quot;slme&quot;: &quot;Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded&quot;,
+        &quot;dielectric_eps&quot;: &quot;OptB88vdW&quot;,
+        &quot;dielectric_meps&quot;: &quot;TB-mBJ&quot;
+      },
+      &quot;passed&quot;: true,
+      &quot;scope&quot;: &quot;Original archive record round-trip plus JARVIS-library crystal check; not a second database or independent physical validation&quot;,
+      &quot;source_url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-12913.html&quot;
+    },
+    {
+      &quot;jid&quot;: &quot;JVASP-8125&quot;,
+      &quot;source_array_index&quot;: 24156,
+      &quot;formula_matches&quot;: true,
+      &quot;all_whitelisted_properties_match&quot;: true,
+      &quot;jarvis_tools_independent_geometry_and_composition&quot;: true,
+      &quot;units&quot;: {
+        &quot;bandgap&quot;: &quot;eV&quot;,
+        &quot;formation&quot;: &quot;eV/atom&quot;,
+        &quot;hull&quot;: &quot;eV/atom&quot;,
+        &quot;slme&quot;: &quot;%&quot;,
+        &quot;dielectric&quot;: &quot;dimensionless&quot;,
+        &quot;lattice&quot;: &quot;angstrom&quot;
+      },
+      &quot;method&quot;: {
+        &quot;gap_mbj&quot;: &quot;TB-mBJ&quot;,
+        &quot;gap_opt&quot;: &quot;OptB88vdW&quot;,
+        &quot;formation_and_hull&quot;: &quot;OptB88vdW&quot;,
+        &quot;slme&quot;: &quot;Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded&quot;,
+        &quot;dielectric_eps&quot;: &quot;OptB88vdW&quot;,
+        &quot;dielectric_meps&quot;: &quot;TB-mBJ&quot;
+      },
+      &quot;passed&quot;: true,
+      &quot;scope&quot;: &quot;Original archive record round-trip plus JARVIS-library crystal check; not a second database or independent physical validation&quot;,
+      &quot;source_url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-8125.html&quot;
+    },
+    {
+      &quot;jid&quot;: &quot;JVASP-7827&quot;,
+      &quot;source_array_index&quot;: 24598,
+      &quot;formula_matches&quot;: true,
+      &quot;all_whitelisted_properties_match&quot;: true,
+      &quot;jarvis_tools_independent_geometry_and_composition&quot;: true,
+      &quot;units&quot;: {
+        &quot;bandgap&quot;: &quot;eV&quot;,
+        &quot;formation&quot;: &quot;eV/atom&quot;,
+        &quot;hull&quot;: &quot;eV/atom&quot;,
+        &quot;slme&quot;: &quot;%&quot;,
+        &quot;dielectric&quot;: &quot;dimensionless&quot;,
+        &quot;lattice&quot;: &quot;angstrom&quot;
+      },
+      &quot;method&quot;: {
+        &quot;gap_mbj&quot;: &quot;TB-mBJ&quot;,
+        &quot;gap_opt&quot;: &quot;OptB88vdW&quot;,
+        &quot;formation_and_hull&quot;: &quot;OptB88vdW&quot;,
+        &quot;slme&quot;: &quot;Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded&quot;,
+        &quot;dielectric_eps&quot;: &quot;OptB88vdW&quot;,
+        &quot;dielectric_meps&quot;: &quot;TB-mBJ&quot;
+      },
+      &quot;passed&quot;: true,
+      &quot;scope&quot;: &quot;Original archive record round-trip plus JARVIS-library crystal check; not a second database or independent physical validation&quot;,
+      &quot;source_url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-7827.html&quot;
+    },
+    {
+      &quot;jid&quot;: &quot;JVASP-19759&quot;,
+      &quot;source_array_index&quot;: 46208,
+      &quot;formula_matches&quot;: true,
+      &quot;all_whitelisted_properties_match&quot;: true,
+      &quot;jarvis_tools_independent_geometry_and_composition&quot;: true,
+      &quot;units&quot;: {
+        &quot;bandgap&quot;: &quot;eV&quot;,
+        &quot;formation&quot;: &quot;eV/atom&quot;,
+        &quot;hull&quot;: &quot;eV/atom&quot;,
+        &quot;slme&quot;: &quot;%&quot;,
+        &quot;dielectric&quot;: &quot;dimensionless&quot;,
+        &quot;lattice&quot;: &quot;angstrom&quot;
+      },
+      &quot;method&quot;: {
+        &quot;gap_mbj&quot;: &quot;TB-mBJ&quot;,
+        &quot;gap_opt&quot;: &quot;OptB88vdW&quot;,
+        &quot;formation_and_hull&quot;: &quot;OptB88vdW&quot;,
+        &quot;slme&quot;: &quot;Reported JARVIS SLME / TB-mBJ documentation; per-record thickness/temperature not encoded&quot;,
+        &quot;dielectric_eps&quot;: &quot;OptB88vdW&quot;,
+        &quot;dielectric_meps&quot;: &quot;TB-mBJ&quot;
+      },
+      &quot;passed&quot;: true,
+      &quot;scope&quot;: &quot;Original archive record round-trip plus JARVIS-library crystal check; not a second database or independent physical validation&quot;,
+      &quot;source_url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-19759.html&quot;
+    }
+  ],
+  &quot;same_provider_rendering_checks&quot;: [
+    {
+      &quot;jid&quot;: &quot;JVASP-12913&quot;,
+      &quot;status&quot;: &quot;acquired&quot;,
+      &quot;source&quot;: {
+        &quot;id&quot;: &quot;c312601727e0d4c8713d6694a61d192a9ab4f7ddc2e9c2dda99c970bc577dccc&quot;,
+        &quot;url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-12913.html&quot;,
+        &quot;organization&quot;: &quot;NIST JARVIS-DFT / Figshare&quot;,
+        &quot;acquired_at&quot;: &quot;2026-11-06T04:22:07.041013+00:00&quot;,
+        &quot;release_date&quot;: &quot;Thu, 05 Sep 2019 15:42:46 GMT&quot;,
+        &quot;etag&quot;: null,
+        &quot;server_date&quot;: &quot;Fri, 06 Nov 2026 04:22:06 GMT&quot;,
+        &quot;sha256&quot;: &quot;4054fa964a565e57c1a443ce8ee083ab267db702056765c6c82b164eb24f7c70&quot;,
+        &quot;bytes&quot;: 36974,
+        &quot;http_status&quot;: 200,
+        &quot;parser_version&quot;: &quot;mde-0.1.0&quot;,
+        &quot;record_counts&quot;: null,
+        &quot;errors&quot;: []
+      },
+      &quot;page_fields&quot;: {
+        &quot;jid&quot;: &quot;JVASP-12913&quot;,
+        &quot;formula&quot;: &quot;Sb(IF3)2&quot;,
+        &quot;mbj_gap_ev&quot;: 1.3401,
+        &quot;slme_percent&quot;: 33.08,
+        &quot;page_reports_500nm_300K&quot;: true,
+        &quot;version&quot;: null
+      },
+      &quot;snapshot_gap_ev&quot;: 1.34,
+      &quot;snapshot_slme_percent&quot;: 33.98,
+      &quot;formula_equivalent&quot;: true,
+      &quot;gap_absolute_difference_ev&quot;: 9.999999999998899e-05,
+      &quot;slme_absolute_difference_percentage_points&quot;: 0.8999999999999986,
+      &quot;reported_slme_differs&quot;: true,
+      &quot;scope&quot;: &quot;Same-provider rendering cross-check, not an independent database. Page version unspecified; differences cannot be attributed to a cause from available metadata.&quot;
+    },
+    {
+      &quot;jid&quot;: &quot;JVASP-3951&quot;,
+      &quot;status&quot;: &quot;acquired&quot;,
+      &quot;source&quot;: {
+        &quot;id&quot;: &quot;535470c74b4262c8f41a9ae5eb543244ad7394a69ffdbe9cab3a3b2e6e928ed9&quot;,
+        &quot;url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-3951.html&quot;,
+        &quot;organization&quot;: &quot;NIST JARVIS-DFT / Figshare&quot;,
+        &quot;acquired_at&quot;: &quot;2026-11-06T04:22:07.683036+00:00&quot;,
+        &quot;release_date&quot;: &quot;Thu, 05 Sep 2019 15:17:41 GMT&quot;,
+        &quot;etag&quot;: null,
+        &quot;server_date&quot;: &quot;Fri, 06 Nov 2026 04:22:07 GMT&quot;,
+        &quot;sha256&quot;: &quot;97b6ad4e0cbce85ced2108ae9d4fdcffbfdbb629790dee2c9dd4efd97f6504e8&quot;,
+        &quot;bytes&quot;: 34398,
+        &quot;http_status&quot;: 200,
+        &quot;parser_version&quot;: &quot;mde-0.1.0&quot;,
+        &quot;record_counts&quot;: null,
+        &quot;errors&quot;: []
+      },
+      &quot;page_fields&quot;: {
+        &quot;jid&quot;: &quot;JVASP-3951&quot;,
+        &quot;formula&quot;: &quot;Rb2PdBr6&quot;,
+        &quot;mbj_gap_ev&quot;: 1.3433,
+        &quot;slme_percent&quot;: 33.34,
+        &quot;page_reports_500nm_300K&quot;: true,
+        &quot;version&quot;: null
+      },
+      &quot;snapshot_gap_ev&quot;: 1.343,
+      &quot;snapshot_slme_percent&quot;: 33.97,
+      &quot;formula_equivalent&quot;: true,
+      &quot;gap_absolute_difference_ev&quot;: 0.00029999999999996696,
+      &quot;slme_absolute_difference_percentage_points&quot;: 0.6299999999999955,
+      &quot;reported_slme_differs&quot;: true,
+      &quot;scope&quot;: &quot;Same-provider rendering cross-check, not an independent database. Page version unspecified; differences cannot be attributed to a cause from available metadata.&quot;
+    },
+    {
+      &quot;jid&quot;: &quot;JVASP-8125&quot;,
+      &quot;status&quot;: &quot;acquired&quot;,
+      &quot;source&quot;: {
+        &quot;id&quot;: &quot;e0ec3c6c0bf153ed04ee1646657d4ad75a779ed3b7c12fa391c7fd38c54ad049&quot;,
+        &quot;url&quot;: &quot;https://www.ctcms.nist.gov/~knc6/jsmol/JVASP-8125.html&quot;,
+        &quot;organization&quot;: &quot;NIST JARVIS-DFT / Figshare&quot;,
+        &quot;acquired_at&quot;: &quot;2026-11-06T04:22:08.210695+00:00&quot;,
+        &quot;release_date&quot;: &quot;Thu, 05 Sep 2019 18:39:50 GMT&quot;,
+        &quot;etag&quot;: null,
+        &quot;server_date&quot;: &quot;Fri, 06 Nov 2026 04:22:08 GMT&quot;,
+        &quot;sha256&quot;: &quot;6a28c5b35152137cebcab005d6408deff67775d5d3182fc9cd9fd8aaa847b4f0&quot;,
+        &quot;bytes&quot;: 33351,
+        &quot;http_status&quot;: 200,
+        &quot;parser_version&quot;: &quot;mde-0.1.0&quot;,
+        &quot;record_counts&quot;: null,
+        &quot;errors&quot;: []
+      },
+      &quot;page_fields&quot;: {
+        &quot;jid&quot;: &quot;JVASP-8125&quot;,
+        &quot;formula&quot;: &quot;NaCuSe&quot;,
+        &quot;mbj_gap_ev&quot;: 1.3419,
+        &quot;slme_percent&quot;: 33.97,
+        &quot;page_reports_500nm_300K&quot;: true,
+        &quot;version&quot;: null
+      },
+      &quot;snapshot_gap_ev&quot;: 1.342,
+      &quot;snapshot_slme_percent&quot;: 33.97,
+      &quot;formula_equivalent&quot;: true,
+      &quot;gap_absolute_difference_ev&quot;: 9.999999999998899e-05,
+      &quot;slme_absolute_difference_percentage_points&quot;: 0.0,
+      &quot;reported_slme_differs&quot;: false,
+      &quot;scope&quot;: &quot;Same-provider rendering cross-check, not an independent database. Page version unspecified; differences cannot be attributed to a cause from available metadata.&quot;
+    }
+  ]
+}</pre><h2>Scientific limits</h2><ul><li>Experimental public-data screening, not a new DFT calculation or physical experiment.</li><li>TB-mBJ and optB88vdW band gaps are not pooled or treated as interchangeable.</li><li>Formation energy is separate from energy above hull; missing hull is excluded at the stability stage.</li><li>Hull threshold is exploratory and does not establish synthesis feasibility or finite-temperature stability.</li><li>SLME is a reported theoretical percentage, not experimental efficiency; per-record optical thickness/temperature are not encoded or independently verified.</li><li>Absorption spectra are not present in this bulk snapshot; dielectric diagonals are scalar descriptors, not full spectra.</li><li>Ranking uses transparent lexicographic order, not a learned probability or arbitrary confidence score.</li><li>Correlations are paired descriptive statistics, not causal laws. Source sampling and missingness limit comparisons.</li><li>Polymorphs retain separate JARVIS IDs; materials are not deduplicated by formula.</li><li>No toxicity, availability, manufacturing, environmental or economic suitability validation.</li></ul><h2>Sources and reproduction</h2><p>NIST JARVIS-DFT / Kamal Choudhary et al., <a href="https://doi.org/10.6084/m9.figshare.6815699.v11">10.6084/m9.figshare.6815699.v11</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY4.0</a>. Normalization and screening are modifications. No endorsement implied. Original software Apache-2.0.</p><p>Full dataset SHA256: <code>f9e0a3309f0000d5de1ec9e49c93963109ea45e63f451103f8f6595d2eabf7f5</code>. See MDE-001_MANIFEST.json and MDE-001_METHODOLOGY.md for pinned URL, versions, software, hashes and parameters.</p><footer>Run the local source release with the pinned official snapshot, then verify cached raw data without network. A normalized public replay is a separate numeric reproducibility check. Neither route replaces independent scientific validation or establishes device suitability.</footer></body></html>

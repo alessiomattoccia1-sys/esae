@@ -11,7 +11,18 @@
     "SESSION": "Owned server process metadata; stop only the recorded matching process when no scan is active",
     "EPHEMERAL": "Only owned unused files created in TMPDIR; remove at the end of their operation"
   },
-  "thresholds": {"temporary_growth_warn_bytes": 5000000000, "temporary_growth_stop_bytes": 10000000000, "free_warn_bytes": 50000000000, "free_bulk_stop_bytes": 30000000000},
-  "private_git_exclusions": [".local/", "evidence/", ".toolchain/", ".venv/"],
-  "public_reports": "Owned demo, owner-requested redacted benchmark aggregates/recipe/hashes, and qualified public-source GEE-001 variant/organization metadata and scientific results only; no host paths, raw scans/cache, Sample/ObservedData, clinical narratives, credentials, full articles or third-party source"
+  "thresholds": {
+    "temporary_growth_warn_bytes": 5000000000,
+    "temporary_growth_stop_bytes": 10000000000,
+    "free_warn_bytes": 50000000000,
+    "free_bulk_stop_bytes": 30000000000
+  },
+  "private_git_exclusions": [
+    ".local/",
+    "evidence/",
+    ".toolchain/",
+    ".venv/",
+    ".venv-mde/"
+  ],
+  "public_reports": "Owned demo, owner-requested redacted benchmark aggregates/recipe/hashes, and qualified public-source GEE-001 variant/organization metadata and scientific results only; no host paths, raw scans/cache, Sample/ObservedData, clinical narratives, credentials, full articles or third-party source; qualified CC BY4.0 NIST JARVIS scalar/composition/crystal descriptors and MDE-001 results with attribution, excluding full raw archive, HTML and atom coordinates"
 }

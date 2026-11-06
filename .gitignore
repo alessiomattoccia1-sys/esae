@@ -13,3 +13,5 @@ demo/build/
 /AGENTS.md
 /scripts/qualify_demo.py
 /scripts/verify-browser.cjs
+
+.venv-mde/
