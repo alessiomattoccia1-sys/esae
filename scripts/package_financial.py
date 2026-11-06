@@ -80,7 +80,7 @@ def main():
         raise ValueError("Scientific public replay failed")
     manifest = {
         "name": "Research Engines",
-        "version": "0.3.0",
+        "version": "0.3.1",
         "components": {
             "ESAE": "0.1.1 runtime preserved",
             "GEE": "0.1.0 runtime preserved",
@@ -119,7 +119,7 @@ def main():
         ) as z:
             for name, b in sorted(data.items()):
                 info = zipfile.ZipInfo(
-                    "Research-Engines-0.3.0/" + name, date_time=(2026, 11, 6, 0, 0, 0)
+                    "Research-Engines-0.3.1/" + name, date_time=(2026, 11, 6, 0, 0, 0)
                 )
                 info.compress_type = zipfile.ZIP_DEFLATED
                 info.external_attr = (
@@ -131,9 +131,9 @@ def main():
     b = build()
     assert b == build()
     digest = hashlib.sha256(b).hexdigest()
-    out = ROOT / "dist/research-engines-0.3.0"
+    out = ROOT / "dist/research-engines-0.3.1"
     out.mkdir(parents=True, exist_ok=True)
-    dest = out / "Research-Engines-0.3.0-source.zip"
+    dest = out / "Research-Engines-0.3.1-source.zip"
     if dest.exists() and dest.read_bytes() != b:
         prior = dest.read_bytes()
         saved = out / "history" / hashlib.sha256(prior).hexdigest() / dest.name

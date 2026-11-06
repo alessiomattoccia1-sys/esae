@@ -17,3 +17,5 @@ demo/build/
 .venv-mde/
 
 .venv-fsie/
+
+reports/financial/history/

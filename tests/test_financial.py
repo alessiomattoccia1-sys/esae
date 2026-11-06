@@ -317,7 +317,7 @@ def test_incremental_revisions_parquet_and_queries(tmp_path):
     assert store.revisions(changed)["changed_values_vs_prior_acquisition"] == 1
     result = store.write_snapshot(job["id"], rows)
     assert (
-        result["rows"] == 2
+        result["memory_limit_bytes"] == 512_000_000 and result["rows"] == 2
         and result["partitions"] == 2
         and store.explorer(job["id"], start="2001-01-01")["total"] == 1
         and store.series(job["id"])[0]["present"] == 2

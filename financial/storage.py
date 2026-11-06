@@ -169,7 +169,7 @@ class FinancialStore(JobStore):
             "rows": count,
             "partitions": len(list(parts.glob("year=*"))),
             "parquet_bytes": sum(p.stat().st_size for p in parts.rglob("*.parquet")),
-            "memory_limit_bytes": 512 * 1024 * 1024,
+            "memory_limit_bytes": 512_000_000,
             "threads": 2,
         }
 

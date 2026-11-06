@@ -8,7 +8,7 @@ moving blocks, 999 replicates, seed 20261106; full 28-test HAC/Holm lag family;
 past-only 104-week median/MAD anomalies with minimum 52 prior observations,
 scale 1.4826 and threshold |z| >= 4. All windows and subperiods are retained.
 
-The actual study was completed at 2026-11-06T06:21:36.843583+00:00 using 13 real HTTPS files.
+The actual study was completed at 2026-11-06T06:47:59.825384+00:00 using 13 real HTTPS files.
 Source acquisition covers the Treasury historical archive and later annual XML,
 current Chicago indices, and SOFR annual JSON. Raw files include observations
 outside the target period; exclusions are explicit rather than fabricated fills.

@@ -767,7 +767,7 @@
     "rows": 98286,
     "partitions": 27,
     "parquet_bytes": 325598,
-    "memory_limit_bytes": 536870912,
+    "memory_limit_bytes": 512000000,
     "threads": 2
   },
   "revisions": {
@@ -796,12 +796,12 @@
     "export.py": "a23826f378ad90737cd71c8c53cca4165545593844db03babdda2b64be97de3f",
     "api.py": "6a693c9e11465e6e9e6bbfa20066b28776825abee5fbf7530a9dcd818f94ecb9",
     "cli.py": "0ecf3816916be6464db1c54822ce90b2706a1efc0041f0d2ec9aa881b10fa50f",
-    "storage.py": "f27e901962a07496dbf4e4e08c41199490cee41235783c7edc5a02eb5dcc8696",
+    "storage.py": "1e3ecfd4eced3f8c7df9f3e7eda2d21c0ac7f19761914c90e576ca3b147241da",
     "report.py": "aa2daafd647b515f2d4fed4e6e8b5b519f059a3c55d8ceb7b6192e870da712cf"
   },
   "dates_policy": "Observation date distinct from publication, source update, acquisition and vintage. Historical publication timestamps unavailable -> null; retrospective current-vintage study only.",
   "source_license_policy": "Institutional terms separate from Apache2.0 originalcode; raw responses/fullseries staylocal, no blanket publicredistribution",
   "nyfed_notice": "SOFR data and derived research results are subject to the Terms of Use at https://www.newyorkfed.org/privacy/termsofuse. The New York Fed is not responsible for publication of these results by Mattoccia Labs, does not endorse this republication, and has no liability for your use. Mattoccia Labs is not affiliated with the New York Fed. The New York Fed does not sanction, endorse, or recommend products or services offered by Mattoccia Labs. SOFR data are calculated using data provided under a license granted to the New York Fed by DTCC Solutions LLC; those parties have no liability for this material.",
-  "duration_seconds": 3.548,
+  "duration_seconds": 3.501,
   "errors": []
 }

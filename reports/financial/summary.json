@@ -3,7 +3,7 @@
   "engine_version": "0.1.0",
   "experiment": "FSIE-001",
   "analysis_sha256": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
-  "completed_at": "2026-11-06T06:21:36.843583+00:00",
+  "completed_at": "2026-11-06T06:47:59.825384+00:00",
   "period": {
     "daily_start": "2000-01-03",
     "daily_end": "2026-10-30",
@@ -30,7 +30,7 @@
     "stored_unique_period_observations": 98286,
     "analysis_sha256": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
     "expected": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
-    "verified_at": "2026-11-06T06:22:13.418753+00:00",
+    "verified_at": "2026-11-06T06:48:04.265841+00:00",
     "scope": "Full raw immutable response replay of the exact acquired vintage; no historical real-time predictive claim"
   },
   "yield_curve": {
