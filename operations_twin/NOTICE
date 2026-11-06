@@ -1,0 +1,15 @@
+Operations Twin Engine / Dynamics Lab
+Copyright 2026 Alessio Mattoccia. Original code licensed under Apache License2.0.
+
+Shared original modules remain in the same Research Engines repository. This module adds generic discrete-event and seeded-experiment adapters without changing pre-existing algorithms or interfaces.
+
+BPI Challenge2019, version1: Boudewijn van Dongen; 4TU.ResearchData.
+DOI10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1.
+Dataset and attributed derived dataset material: Creative Commons Attribution4.0.
+Transformations: schema normalization, pseudonymization, temporal ordering,
+category-specific statistics, process graphs and explicitly identified simulations.
+Apache2.0 applies to original code, not ownership of the original business data.
+
+SimPy4.1.2 is MIT; defusedxml0.7.1 uses the Python Software Foundation licence.
+Other distribution licences/attributions are listed in DEPENDENCIES.json and
+THIRD_PARTY_NOTICES.md. No PM4Py/AGPL code is included.

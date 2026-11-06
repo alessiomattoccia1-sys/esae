@@ -21,3 +21,5 @@ demo/build/
 reports/financial/history/
 
 .venv-fpre/
+
+.venv-ote/

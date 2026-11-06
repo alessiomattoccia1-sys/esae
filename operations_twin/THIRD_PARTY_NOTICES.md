@@ -1,0 +1,7 @@
+# Third-party licences and attribution
+
+Original Operations Twin and generic Dynamics adapters: ApacheLicense2.0, Alessio Mattoccia. Existing shared original sources preserve their Apache2.0 headers. Full official text is in LICENSE; it is not applied to datasets or third-party code.
+
+Pinned distributions and declared licence metadata are inventoried in DEPENDENCIES.json. SimPy4.1.2: MIT, https://simpy.readthedocs.io/en/latest/; defusedxml0.7.1: PythonSoftwareFoundation, https://github.com/tiran/defusedxml. NumPy/SciPy/Pandas/NetworkX use BSD-family licences; FastAPI/pytest use MIT; HTTPX BSD-3-Clause; PyArrowApache2.0; DuckDBMIT; MatplotlibPSF-compatible. Certifi is MPL2.0: its unmodified separately installed CA bundle retains the file-level licence; it is not relicensed as original Apache code. Transitive packages retain their own licences (including BSD/Apache/MIT/PSF, NumPy bundled notices, Pillow MIT-CMU and certifi MPL2.0); wheel licence payloads remain with the installed distributions. No PM4Py, AGPL implementation or copied process-mining source is included.
+
+BPI Challenge2019, Boudewijn van Dongen,4TU.ResearchData,DOI10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1,version1,CC BY4.0. Source bytes are acquired separately and kept local. Derived tables/graphs attribute the source and describe transformations. Preserve this attribution when reusing report material. No complete third-party scientific article is reproduced.
