@@ -1,0 +1,9 @@
+{
+  "creator": "Codex per Alessio",
+  "date": "2026-11-06",
+  "classification": "PROJECT",
+  "purpose": "Dynamics Lab Engine02 original source, documentation and reproducible public business process research",
+  "deletion_condition": "Explicit retirement only",
+  "local_data": "Original XES, caches, normalized events and fitted parameters are EVIDENCE kept separately, excluded from source release",
+  "public_data": "Attributed aggregate reports and synthetic event replays only; source dataset CC BY4.0 distinct from original-code Apache2.0"
+}

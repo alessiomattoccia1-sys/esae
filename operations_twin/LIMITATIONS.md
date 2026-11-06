@@ -12,3 +12,5 @@
 - Local API/dashboard and static public replays are implemented. The site does not execute the scientific backend. Private import creates normalized files only; it does not automatically validate another process.
 - Optional Ollama output is an unverified hypothesis; no cloud service or model weights are required. No quality claim is made for a local generation unless a real accepted generation is recorded.
 - Standalone wheel distribution is qualified only on native macOSAppleSilicon/Python3.12. Windows/Linux not tested. Event generator checkpointing is not implemented; deterministic reruns are.
+
+The official2018description refers to the purchase-order cohort; later event dates can be legitimate. Out-of-year flags are descriptive and not a blanket invalidity classification. The1948extreme merits verification but is not silently changed.

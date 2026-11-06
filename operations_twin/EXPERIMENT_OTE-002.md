@@ -1,0 +1,19 @@
+# OTE-002 — Digital Twin Calibration & Validation
+
+COMPUTED RESULT · completed 2026-11-06T12:20:23.820003+00:00
+
+# OTE-002 Methodology
+
+Preregistered core projection excludes SRM administrative activities only from the twin. Eligible core cases begin Create Purchase Order Item, end Clear Invoice, remain entirely in one2018quarter, and exclude Consignment/unknown categories. This is an observed endpoint proxy, not proof of closure. Q1+Q2calibration, Q3validation,Q4test; documents crossing sets excluded. SHA-selected heldoutsamples are capped3000cases per set. Pooled trace bootstrap, category trace bootstrap and category semi-Markov elapsed-time models use identical observed arrival schedules and fixed92day windows.20seeded replicas per model/set. Seven unweighted validation errors select one model before independent testing. All model test metrics are reported.90percent marginal duration intervals derive only from calibration; actual heldoutcoverage is measured.95percent Student-t intervals quantify independent MC mean uncertainty conditional on the model;499whole-document bootstrap repetitions quantify observed sample uncertainty separately. Experimental acceptance tolerances and minimum100cases are preregistered engineering bounds, not official standards. Quarter/end-point selection and retrospective arrival conditioning preclude prospective prediction claims.
+
+- Observed invoice endpoints and quarter containment create selection bias; results do not validate all251734cases or future periods.
+- Only2calibration and1test 2-way matching cases: insufficient evidence, regardless of numerical fit.
+- A semi-Markov model may lose path dependence and perform worse than whole-trace bootstrap; all results are reported.
+- Simulation CIs condition on fitted model and fixed data; separate purchase-document bootstrap assumes cluster exchangeability.
+- A90percent marginal duration interval is evaluated for coverage; a successful mean fit does not imply individual case prediction calibration.
+- Administrative SRM events excluded only from the model projection; complete observed reconstruction remains unchanged.
+
+
+Result fingerprint: `5947b4bc8b35778d6c4735b21e43849dcb9ea17767bf8ca53dc7114a4cb5e4cd`
+
+Outputs: `reports/operations-twin/OTE-002_REPORT.html`, results JSON, metrics CSV, manifest, methodology and reproducibility files. The same results feed the local dashboard and public page.

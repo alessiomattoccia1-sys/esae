@@ -1,0 +1,182 @@
+{
+  "experiment_id": "OTE-002",
+  "engine": "Operations Twin",
+  "engine_version": "0.1.0",
+  "parser_version": "ote-parser-1.0",
+  "git_commit_at_execution": "b15aaa4f7dea7132de1d88042e99b57b461c70ce",
+  "working_source_files_sha256": {
+    "operations_twin/service.py": "43ebc545c52cb319a9d5f3155e0d6be555e8dc72b9fbd4dedaebcc4eaabe650f",
+    "operations_twin/ingestion.py": "3e856ed0a6b301f11f7bd7bfe804800d51226e687c1ebbf72fe9460143d6afe8",
+    "operations_twin/twin.py": "da5f9ae920a473327234582b97c34f24afc44542502adc3927026535f2f3fbb3",
+    "operations_twin/discovery.py": "933d43ba0a92ab783080b310c5aabd4f268c0fdf45ce4021ae615e8c2f4e4fb9",
+    "operations_twin/process_models.py": "9f4b3334ac4f9406d4848a603e205c0022c4e5e6f0be106fc0c61f20add90ed7",
+    "operations_twin/__init__.py": "8bdfd1e4ce15fb9a36b4f1c737820aba044af364e5811fb8014c21577006c23f",
+    "operations_twin/api.py": "c8ddc1e9cb5ec6c5c035642f082e1a0667a4810d32758685dae3eafa204fd594",
+    "operations_twin/setup.py": "797ef190de5beac9fe9dc6e45e0599e6e088d82cd06f145c35a3e9642b43274f",
+    "operations_twin/experiments.py": "2c02e0e8de04023cd1c91a5f87afc81841505175cfad777dfc50964612903d55",
+    "operations_twin/cli.py": "e956db223c5ce8236364d79356cf0f758e3b50a80b5807f50ef054337a727342",
+    "operations_twin/reporting.py": "f28135ac07a4925b6f49addf35c5a18c6922fd1841997e3c88fcda878c7cb613",
+    "dynamics/events.py": "50e10b6a9ad0566db78778ab2c992e0e8e320c34677906e6a0bd4f1441512746",
+    "dynamics/experiment_core.py": "61cb9cc7d161c961eedcb01cb23bdacc1eadee531bfc3a69353d1bd71c53a7dd",
+    "dynamics/experiments.py": "72c5450bc4dbb2c938b1b5f60975e56a91fc274ad3eb91d64b5fc6f3c7060ae6"
+  },
+  "dataset": {
+    "dataset": "BPI Challenge2019",
+    "doi": "10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1",
+    "version": 1,
+    "author": [
+      "Boudewijn van Dongen"
+    ],
+    "publisher": "4TU.ResearchData",
+    "license": {
+      "value": 1,
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "metadata_url": "https://data.4tu.nl/v2/articles/12715853",
+    "original_file_url": "https://data.4tu.nl/file/35ed7122-966a-484e-a0e1-749b64e3366d/864493d1-3a58-47f6-ad6f-27f95f995828",
+    "acquired_at": "2026-11-06T11:24:17.701083+00:00",
+    "original": {
+      "bytes": 728558522,
+      "sha256": "af63bc687fc4152f2123b05c3af7772b37ef3fce2d3f67f812666c9e356baae7",
+      "md5": "4eb909242351193a61e1c15b9c3cc814",
+      "official_md5_verified": true,
+      "gzip_bytes": 16901365
+    },
+    "sources": [
+      {
+        "id": "e01b148a7f84d278fdba47bd42b940f6a031b6dc43b33a0822a7c7d0ada80d51",
+        "url": "https://data.4tu.nl/v2/articles/12715853",
+        "organization": "4TU.ResearchData / ICPM2019",
+        "acquired_at": "2026-11-06T11:24:15.195956+00:00",
+        "release_date": null,
+        "etag": null,
+        "server_date": "Fri, 06 Nov 2026 11:24:15 GMT",
+        "sha256": "6632a3b7c43ccb2fd6981055ff117ea15a8fd3de51282dd0eddfe54284ec70cb",
+        "bytes": 8102,
+        "http_status": 200,
+        "parser_version": "ote-acquisition-1.0",
+        "record_counts": null,
+        "errors": []
+      },
+      {
+        "id": "88c88c0cb5be03f466336af405c1980a92cb95b89a2a6385c725c7433aff6d8c",
+        "url": "https://icpmconference.org/2019/wp-content/uploads/sites/6/2019/01/log_IEEE.xes_.gz",
+        "organization": "4TU.ResearchData / ICPM2019",
+        "acquired_at": "2026-11-06T11:24:17.701083+00:00",
+        "release_date": "Wed, 22 May 2024 20:43:25 GMT",
+        "etag": "\"101e4f5-61910fc69240c\"",
+        "server_date": "Fri, 06 Nov 2026 11:24:15 GMT",
+        "sha256": "43edc7abe7b53c75f53f91b6720ba20878de8a3216b5202ae22a0442b92e9c9a",
+        "bytes": 16901365,
+        "http_status": 200,
+        "parser_version": "ote-acquisition-1.0",
+        "record_counts": null,
+        "errors": []
+      }
+    ],
+    "source_coverage": "2018, declared in official metadata; out-of-period observations audited separately",
+    "amounts": "Anonymized monetary values are excluded; no costs/savings inferred"
+  },
+  "acquired_at": "2026-11-06T11:24:17.701083+00:00",
+  "executed_at": "2026-11-06T12:20:23.643683+00:00",
+  "seed": 20261106,
+  "parameters": {
+    "offline": true
+  },
+  "scientific_result_sha256": "5947b4bc8b35778d6c4735b21e43849dcb9ea17767bf8ca53dc7114a4cb5e4cd",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "machine": "arm64",
+    "hardware": "Apple M1",
+    "logical_cpus": 8
+  },
+  "dependencies": {
+    "uvicorn": "0.54.0",
+    "kiwisolver": "1.5.1",
+    "starlette": "1.10.0",
+    "pandas": "3.1.1",
+    "simpy": "4.1.2",
+    "click": "8.5.0",
+    "packaging": "26.3",
+    "networkx": "3.7",
+    "Pygments": "2.21.0",
+    "defusedxml": "0.7.1",
+    "certifi": "2026.10.23",
+    "pydantic": "2.14.3",
+    "iniconfig": "2.3.1",
+    "pyarrow": "26.0.1",
+    "httpcore": "1.0.9",
+    "numpy": "2.5.4",
+    "duckdb": "2.0.0",
+    "pydantic_core": "2.50.4",
+    "pillow": "13.0.0",
+    "contourpy": "1.4.0",
+    "pip": "26.2.1",
+    "pluggy": "1.7.0",
+    "opentelemetry-api": "1.45.2",
+    "typing-inspection": "0.4.5",
+    "h11": "0.16.0",
+    "matplotlib": "3.11.2",
+    "pytest": "9.2.0",
+    "cycler": "0.12.1",
+    "annotated-types": "0.8.0",
+    "fonttools": "4.68.0",
+    "tzdata": "2026.6",
+    "annotated-doc": "0.0.5",
+    "fastapi": "0.162.0",
+    "anyio": "4.16.0",
+    "httpx": "0.28.1",
+    "typing_extensions": "4.16.0",
+    "python-dateutil": "4.0.0",
+    "pyparsing": "3.3.3",
+    "scipy": "1.18.1",
+    "idna": "3.20"
+  },
+  "validation_status": "PARTIAL OR NO VALIDATION; see per-category checks",
+  "performance": {
+    "total_seconds_before_export": 29.945398500014562,
+    "normalization_seconds": 42.900706541957334,
+    "normalized_parquet_bytes": 65520493,
+    "stages": {
+      "evaluation_seconds": 28.9070857919869,
+      "simulations": 120,
+      "prediction_interval_draws_per_semi_markov_category": 4096
+    },
+    "peak_process_RSS_bytes": 1024278528,
+    "RSS_scope": "Process lifetime high-water mark, not incremental allocation of this job",
+    "network_bytes_this_run": 0
+  },
+  "import": {
+    "events": {
+      "source_cases_or_rows": 251734,
+      "source_events": 1595923,
+      "missing_lifecycle_events": 1595923,
+      "imported_events": 1595923,
+      "missing_resource_events": 399090,
+      "events_outside_declared_2018": 45455
+    },
+    "parts": 160,
+    "input_sha256": "af63bc687fc4152f2123b05c3af7772b37ef3fce2d3f67f812666c9e356baae7"
+  },
+  "reproduction": "Pinned original/source hashes; offline original+partitions; rerun numerical pipeline; no LLM",
+  "output_files": [
+    "OTE-002_REPORT.html",
+    "OTE-002_RESULTS.json",
+    "OTE-002_METRICS.csv",
+    "OTE-002_MANIFEST.json",
+    "OTE-002_METHODOLOGY.md",
+    "OTE-002_REPRODUCIBILITY.md"
+  ],
+  "output_sha256": {
+    "OTE-002_FIGURE.png": "b6c2eddcc6ec4ff1e812a2fe718934cf3dd51c97cab73f3266b8b852484894ca",
+    "OTE-002_REPLAY_selected.json": "463758fba15119ba02a301fb1d13ef067a49fa310545eed76028d6e379f015a9",
+    "OTE-002_METHODOLOGY.md": "5c4d4ad002187623354a8994d606bb0f265b1e45e7f7d2b790b1a940ef385e7b",
+    "OTE-002_REPRODUCIBILITY.md": "f5fd983b9c519028120956b89bb44dfa2e39b98ebdb17163d63785697ea2be08",
+    "OTE-002_METRICS.csv": "1e42e6d1c23e2b6728889b4a958098b5a2122c14cb443f692e6edd7be3cd730a",
+    "OTE-002_RESULTS.json": "4fd92145221c62109d9fbd91c816c2935638fb85a752b4c91e7d0b46640fe118",
+    "report.css": "bab12c4397a1272a7139db1f3499964c9dbfc963d8028d37c4c2e68e937da4ff",
+    "OTE-002_REPORT.html": "42cc46a75f21ed37002d0e08717ffb5a422106864917fb2dd350c1ca961d0e17"
+  }
+}

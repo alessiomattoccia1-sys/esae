@@ -1,0 +1,3650 @@
+{
+  "family": "Dynamics Lab",
+  "engine_number": 2,
+  "engine": "Operations Twin Engine",
+  "version": "0.1.0",
+  "status": "FUNCTIONAL_WITH_VALIDATION_LIMITS",
+  "counts": {
+    "cases": 251734,
+    "purchase_documents": 76349,
+    "events": 1595923,
+    "variants": 11973,
+    "cases_with_repeated_activities": 22438,
+    "repeated_activity_occurrences": 290532,
+    "cases_with_change_cancel_proxy": 37923,
+    "change_cancel_events": 55855,
+    "cases_outside_2018": 32920,
+    "first_observation": "1948-01-26T22:59:00Z",
+    "last_observation": "2020-04-09T21:59:00Z",
+    "activities": 42,
+    "identifiable_resource_tokens": 627,
+    "reported_batch_tokens": 20,
+    "lifecycle_values": 0,
+    "transition_types": 498
+  },
+  "data_quality": {
+    "source_cases_or_rows": 251734,
+    "source_events": 1595923,
+    "missing_lifecycle_events": 1595923,
+    "imported_events": 1595923,
+    "missing_resource_events": 399090,
+    "events_outside_declared_2018": 45455,
+    "exact_duplicate_candidates_retained": 132748,
+    "source_order_time_reversals": 0,
+    "same_timestamp_adjacent_pairs": 233463,
+    "category_conflict_cases": 0,
+    "cases_without_create_item": 0,
+    "source_closed_case_status": "Not supplied; last observed event is not proof of business closure",
+    "service_and_waiting_times_identifiable": false,
+    "excluded_events": 0,
+    "excluded_percent": 0.0
+  },
+  "category_performance": [
+    {
+      "category": "3-way match, invoice before GR",
+      "cases": 221010,
+      "events": 1234708,
+      "variants": 7832,
+      "elapsed_mean_day": 74.46582826191877,
+      "elapsed_median_day": 66.34791666666666,
+      "elapsed_p90_day": 127.04166666666667,
+      "elapsed_p95_day": 142.24076388888878,
+      "elapsed_min_day": 0.0,
+      "elapsed_max_day": 25670.547916666666,
+      "repeated_activity_case_rate": 0.06899235328718158,
+      "change_cancel_case_rate": 0.1473326998778336,
+      "cases_outside_2018": 29880
+    },
+    {
+      "category": "3-way match, invoice after GR",
+      "cases": 15182,
+      "events": 319233,
+      "variants": 4228,
+      "elapsed_mean_day": 74.95906126041072,
+      "elapsed_median_day": 63.422222222222224,
+      "elapsed_p90_day": 133.96743055555552,
+      "elapsed_p95_day": 189.51111111111112,
+      "elapsed_min_day": 0.0,
+      "elapsed_max_day": 6567.7451388888885,
+      "repeated_activity_case_rate": 0.3469898564089053,
+      "change_cancel_case_rate": 0.1810696877881702,
+      "cases_outside_2018": 1975
+    },
+    {
+      "category": "Consignment",
+      "cases": 14498,
+      "events": 36084,
+      "variants": 281,
+      "elapsed_mean_day": 24.10357932511764,
+      "elapsed_median_day": 19.926041666666666,
+      "elapsed_p90_day": 48.67868055555556,
+      "elapsed_p95_day": 62.12656249999993,
+      "elapsed_min_day": 0.0,
+      "elapsed_max_day": 229.86388888888888,
+      "repeated_activity_case_rate": 0.10139329562698303,
+      "change_cancel_case_rate": 0.1081528486687819,
+      "cases_outside_2018": 661
+    },
+    {
+      "category": "2-way match",
+      "cases": 1044,
+      "events": 5898,
+      "variants": 148,
+      "elapsed_mean_day": 57.45366844934014,
+      "elapsed_median_day": 23.68611111111111,
+      "elapsed_p90_day": 196.8643055555556,
+      "elapsed_p95_day": 250.1340277777778,
+      "elapsed_min_day": 0.001388888888888889,
+      "elapsed_max_day": 581.3597222222222,
+      "repeated_activity_case_rate": 0.4329501915708812,
+      "change_cancel_case_rate": 1.0,
+      "cases_outside_2018": 404
+    }
+  ],
+  "strict_2018_sensitivity": [
+    {
+      "category": "2-way match",
+      "cases": 640,
+      "elapsed_mean_day": 64.16330295138889,
+      "elapsed_median_day": 25.54409722222222,
+      "elapsed_p90_day": 206.0013888888889
+    },
+    {
+      "category": "3-way match, invoice after GR",
+      "cases": 13207,
+      "elapsed_mean_day": 63.62608076104423,
+      "elapsed_median_day": 62.2125,
+      "elapsed_p90_day": 125.83680555555556
+    },
+    {
+      "category": "3-way match, invoice before GR",
+      "cases": 191130,
+      "elapsed_mean_day": 72.36833239592599,
+      "elapsed_median_day": 68.2375,
+      "elapsed_p90_day": 126.74097222222223
+    },
+    {
+      "category": "Consignment",
+      "cases": 13837,
+      "elapsed_mean_day": 23.19959900187099,
+      "elapsed_median_day": 19.120833333333334,
+      "elapsed_p90_day": 47.63388888888889
+    }
+  ],
+  "dataset": {
+    "dataset": "BPI Challenge2019",
+    "doi": "10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1",
+    "version": 1,
+    "author": [
+      "Boudewijn van Dongen"
+    ],
+    "publisher": "4TU.ResearchData",
+    "license": {
+      "value": 1,
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "metadata_url": "https://data.4tu.nl/v2/articles/12715853",
+    "original_file_url": "https://data.4tu.nl/file/35ed7122-966a-484e-a0e1-749b64e3366d/864493d1-3a58-47f6-ad6f-27f95f995828",
+    "acquired_at": "2026-11-06T11:24:17.701083+00:00",
+    "original": {
+      "bytes": 728558522,
+      "sha256": "af63bc687fc4152f2123b05c3af7772b37ef3fce2d3f67f812666c9e356baae7",
+      "md5": "4eb909242351193a61e1c15b9c3cc814",
+      "official_md5_verified": true,
+      "gzip_bytes": 16901365
+    },
+    "sources": [
+      {
+        "id": "e01b148a7f84d278fdba47bd42b940f6a031b6dc43b33a0822a7c7d0ada80d51",
+        "url": "https://data.4tu.nl/v2/articles/12715853",
+        "organization": "4TU.ResearchData / ICPM2019",
+        "acquired_at": "2026-11-06T11:24:15.195956+00:00",
+        "release_date": null,
+        "etag": null,
+        "server_date": "Fri, 06 Nov 2026 11:24:15 GMT",
+        "sha256": "6632a3b7c43ccb2fd6981055ff117ea15a8fd3de51282dd0eddfe54284ec70cb",
+        "bytes": 8102,
+        "http_status": 200,
+        "parser_version": "ote-acquisition-1.0",
+        "record_counts": null,
+        "errors": []
+      },
+      {
+        "id": "88c88c0cb5be03f466336af405c1980a92cb95b89a2a6385c725c7433aff6d8c",
+        "url": "https://icpmconference.org/2019/wp-content/uploads/sites/6/2019/01/log_IEEE.xes_.gz",
+        "organization": "4TU.ResearchData / ICPM2019",
+        "acquired_at": "2026-11-06T11:24:17.701083+00:00",
+        "release_date": "Wed, 22 May 2024 20:43:25 GMT",
+        "etag": "\"101e4f5-61910fc69240c\"",
+        "server_date": "Fri, 06 Nov 2026 11:24:15 GMT",
+        "sha256": "43edc7abe7b53c75f53f91b6720ba20878de8a3216b5202ae22a0442b92e9c9a",
+        "bytes": 16901365,
+        "http_status": 200,
+        "parser_version": "ote-acquisition-1.0",
+        "record_counts": null,
+        "errors": []
+      }
+    ],
+    "source_coverage": "2018, declared in official metadata; out-of-period observations audited separately",
+    "amounts": "Anonymized monetary values are excluded; no costs/savings inferred"
+  },
+  "experiments": {
+    "OTE-001": {
+      "title": "Enterprise Process Reconstruction",
+      "kind": "OBSERVED",
+      "completed_at": "2026-11-06T12:19:53.612999+00:00",
+      "analysis_sha256": "532a63990523a89438a28fd0b68fb52db5cca98183be0b59a7fc1c340ec9c3ea",
+      "performance": {
+        "total_seconds_before_export": 9.220312667021062,
+        "normalization_seconds": 42.900706541957334,
+        "normalized_parquet_bytes": 65520493,
+        "stages": {
+          "case_reconstruction_seconds": 2.4842953750048764,
+          "graph_and_variant_seconds": 1.4254405000247061,
+          "model_cohort_seconds": 2.076416917028837,
+          "performance_analysis_seconds": 1.8864333329256624,
+          "total_discovery_seconds": 7.872590499988291
+        },
+        "peak_process_RSS_bytes": 876167168,
+        "RSS_scope": "Process lifetime high-water mark, not incremental allocation of this job",
+        "network_bytes_this_run": 0,
+        "total_seconds": 9.786274042038713
+      }
+    },
+    "OTE-002": {
+      "title": "Digital Twin Calibration & Validation",
+      "kind": "COMPUTED RESULT",
+      "completed_at": "2026-11-06T12:20:23.820003+00:00",
+      "analysis_sha256": "5947b4bc8b35778d6c4735b21e43849dcb9ea17767bf8ca53dc7114a4cb5e4cd",
+      "performance": {
+        "total_seconds_before_export": 29.945398500014562,
+        "normalization_seconds": 42.900706541957334,
+        "normalized_parquet_bytes": 65520493,
+        "stages": {
+          "evaluation_seconds": 28.9070857919869,
+          "simulations": 120,
+          "prediction_interval_draws_per_semi_markov_category": 4096
+        },
+        "peak_process_RSS_bytes": 1024278528,
+        "RSS_scope": "Process lifetime high-water mark, not incremental allocation of this job",
+        "network_bytes_this_run": 0,
+        "total_seconds": 30.157353625050746
+      }
+    },
+    "OTE-003": {
+      "title": "Enterprise What-If Simulation",
+      "kind": "HYPOTHETICAL SCENARIO",
+      "completed_at": "2026-11-06T12:21:11.367491+00:00",
+      "analysis_sha256": "6855a0170325dffa811a51831f47be6741f66f879d8619900076fddba8db8742",
+      "performance": {
+        "total_seconds_before_export": 47.15937445801683,
+        "normalization_seconds": 42.900706541957334,
+        "normalized_parquet_bytes": 65520493,
+        "stages": {
+          "whatif_seconds": 46.01967141701607,
+          "main_simulations": 350,
+          "sensitivity_simulations": 45,
+          "simulation_seconds": {
+            "n": 350,
+            "mean": 0.10534845783774342,
+            "median": 0.09519112500129268,
+            "p90": 0.13294810869265347,
+            "p95": 0.15563443297287452,
+            "minimum": 0.08485916699282825,
+            "maximum": 0.18473754200385883
+          },
+          "max_main_agents": 975
+        },
+        "peak_process_RSS_bytes": 1024278528,
+        "RSS_scope": "Process lifetime high-water mark, not incremental allocation of this job",
+        "network_bytes_this_run": 0,
+        "total_seconds": 47.51589612499811
+      }
+    }
+  },
+  "calibration_cases": 23886,
+  "validation_cases": 3000,
+  "test_cases": 1757,
+  "test_documents": 654,
+  "selected_model": "pooled_bootstrap",
+  "models": [
+    {
+      "model": "pooled_bootstrap",
+      "metrics": {
+        "mean_relative_error": {
+          "mean": 0.12161291640101375,
+          "median": 0.12175541444188415,
+          "std": 0.010228159138949623,
+          "mean_CI95": [
+            0.11682599057282977,
+            0.12639984222919773
+          ],
+          "outcome_interval95": [
+            0.10636030205825495,
+            0.13980672974147354
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_relative_error": {
+          "mean": 0.10242711812936522,
+          "median": 0.09818554509565716,
+          "std": 0.013175034394179044,
+          "mean_CI95": [
+            0.0962610122278115,
+            0.10859322403091895
+          ],
+          "outcome_interval95": [
+            0.07733601579107194,
+            0.11947502277558453
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_relative_error": {
+          "mean": 0.22519112035613958,
+          "median": 0.22676192873672865,
+          "std": 0.008239755721538207,
+          "mean_CI95": [
+            0.22133479597307876,
+            0.2290474447392004
+          ],
+          "outcome_interval95": [
+            0.20880014839154137,
+            0.23858296014627148
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_relative_error": {
+          "mean": 0.1527888446215139,
+          "median": 0.1539556061468412,
+          "std": 0.007093039257643971,
+          "mean_CI95": [
+            0.14946920006363448,
+            0.15610848917939332
+          ],
+          "outcome_interval95": [
+            0.13998292544109275,
+            0.16294820717131472
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "wasserstein_over_observed_mean": {
+          "mean": 0.13140374215498013,
+          "median": 0.13094564548103088,
+          "std": 0.007772492899499557,
+          "mean_CI95": [
+            0.1277661035042178,
+            0.13504138080574246
+          ],
+          "outcome_interval95": [
+            0.12075397503270048,
+            0.14565238606914993
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "variant_total_variation": {
+          "mean": 0.3723392145702903,
+          "median": 0.37108708025042686,
+          "std": 0.0107063011058375,
+          "mean_CI95": [
+            0.3673285114132888,
+            0.37734991772729176
+          ],
+          "outcome_interval95": [
+            0.35728514513375076,
+            0.38992601024473533
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "proxy_rework_rate_absolute_difference": {
+          "mean": 0.00552077404667046,
+          "median": 0.005406943653955602,
+          "std": 0.004211238739733414,
+          "mean_CI95": [
+            0.0035498536476015557,
+            0.007491694445739364
+          ],
+          "outcome_interval95": [
+            0.0005691519635742659,
+            0.014228799089356856
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "validation_loss": {
+          "mean": 0.15875481861142476,
+          "median": 0.1585475826099037,
+          "std": 0.005746077462855188,
+          "mean_CI95": [
+            0.15606557157840373,
+            0.1614440656444458
+          ],
+          "outcome_interval95": [
+            0.14944079617668013,
+            0.16797775707271628
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_signed_error_day": {
+          "mean": 5.321779212515014,
+          "median": 5.328014924429262,
+          "std": 0.4475840749388018,
+          "mean_CI95": [
+            5.112303417359522,
+            5.531255007670506
+          ],
+          "outcome_interval95": [
+            4.654325060867636,
+            6.117940183709602
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_signed_error_day": {
+          "mean": 4.6846180555555526,
+          "median": 4.490624999999987,
+          "std": 0.6025748369448833,
+          "mean_CI95": [
+            4.402604350919213,
+            4.966631760191892
+          ],
+          "outcome_interval95": [
+            3.53704861111111,
+            5.4643229166666645
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_signed_error_day": {
+          "mean": 14.163770833333327,
+          "median": 14.262569444444445,
+          "std": 0.5182531690323483,
+          "mean_CI95": [
+            13.92122088405341,
+            14.406320782613244
+          ],
+          "outcome_interval95": [
+            13.132833333333316,
+            15.006072916666657
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "activity_total_variation": {
+          "mean": 0.05867279733399592,
+          "median": 0.058844150335858894,
+          "std": 0.007886862789865534,
+          "mean_CI95": [
+            0.05498163192688165,
+            0.06236396274111019
+          ],
+          "outcome_interval95": [
+            0.042577444794085983,
+            0.06980483589559262
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "by_category": [
+        {
+          "category": "2-way match",
+          "observed_cases": 1,
+          "mean_metrics": {
+            "mean_relative_error": 0.36301030347634095,
+            "median_relative_error": 0.36301030347634095,
+            "p90_relative_error": 0.36301030347634095,
+            "throughput_relative_error": 0.0,
+            "wasserstein_over_observed_mean": 0.36301030347634095,
+            "variant_total_variation": 1.0,
+            "proxy_rework_rate_absolute_difference": 1.0,
+            "validation_loss": 0.49314874484362337,
+            "mean_signed_error_day": -21.400000000000002,
+            "median_signed_error_day": -21.400000000000002,
+            "p90_signed_error_day": -21.400000000000002,
+            "activity_total_variation": 0.2976061776061777
+          },
+          "failed_acceptance_checks": [
+            "mean_relative_error",
+            "median_relative_error",
+            "p90_relative_error",
+            "wasserstein_over_observed_mean",
+            "variant_total_variation",
+            "proxy_rework_rate_absolute_difference",
+            "minimum100independent_cohort_cases"
+          ],
+          "status": "NOT VALIDATED"
+        },
+        {
+          "category": "3-way match, invoice after GR",
+          "observed_cases": 104,
+          "mean_metrics": {
+            "mean_relative_error": 0.1421504967343082,
+            "median_relative_error": 0.19670151006298092,
+            "p90_relative_error": 0.28150491892019114,
+            "throughput_relative_error": 0.14375,
+            "wasserstein_over_observed_mean": 0.1864759339667361,
+            "variant_total_variation": 0.6307692307692307,
+            "proxy_rework_rate_absolute_difference": 0.052403846153846155,
+            "validation_loss": 0.23339370522961328,
+            "mean_signed_error_day": 6.111305755876069,
+            "median_signed_error_day": 8.317673611111113,
+            "p90_signed_error_day": 16.612309027777776,
+            "activity_total_variation": 0.47642376411345727
+          },
+          "failed_acceptance_checks": [
+            "p90_relative_error",
+            "variant_total_variation"
+          ],
+          "status": "NOT VALIDATED"
+        },
+        {
+          "category": "3-way match, invoice before GR",
+          "observed_cases": 1652,
+          "mean_metrics": {
+            "mean_relative_error": 0.12074736644269697,
+            "median_relative_error": 0.09597406126855192,
+            "p90_relative_error": 0.22313326051940607,
+            "throughput_relative_error": 0.15345036319612593,
+            "wasserstein_over_observed_mean": 0.12864221651916313,
+            "variant_total_variation": 0.3696428571428571,
+            "proxy_rework_rate_absolute_difference": 0.005962469733656175,
+            "validation_loss": 0.1567932278317796,
+            "mean_signed_error_day": 5.288250773473227,
+            "median_signed_error_day": 4.414340277777776,
+            "p90_signed_error_day": 14.04530902777778,
+            "activity_total_variation": 0.04142795820803251
+          },
+          "failed_acceptance_checks": [
+            "variant_total_variation"
+          ],
+          "status": "NOT VALIDATED"
+        }
+      ]
+    },
+    {
+      "model": "category_bootstrap",
+      "metrics": {
+        "mean_relative_error": {
+          "mean": 0.11723858507538616,
+          "median": 0.1176271680205524,
+          "std": 0.009819281488809995,
+          "mean_CI95": [
+            0.11264301987793064,
+            0.12183415027284168
+          ],
+          "outcome_interval95": [
+            0.10158761505841683,
+            0.13661034148561677
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_relative_error": {
+          "mean": 0.09973428484664434,
+          "median": 0.0978894624962042,
+          "std": 0.006958655015108718,
+          "mean_CI95": [
+            0.09647753405026724,
+            0.10299103564302145
+          ],
+          "outcome_interval95": [
+            0.09224073792894015,
+            0.11888703310051621
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_relative_error": {
+          "mean": 0.21675631988976612,
+          "median": 0.21809913084954158,
+          "std": 0.015856473935327558,
+          "mean_CI95": [
+            0.20933526165301086,
+            0.2241773781265214
+          ],
+          "outcome_interval95": [
+            0.1835441067359159,
+            0.23542627236914135
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_relative_error": {
+          "mean": 0.15065452475811042,
+          "median": 0.15224815025611838,
+          "std": 0.0047943374587047834,
+          "mean_CI95": [
+            0.14841070575819792,
+            0.15289834375802291
+          ],
+          "outcome_interval95": [
+            0.14282868525896414,
+            0.1576835515082527
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "wasserstein_over_observed_mean": {
+          "mean": 0.12785127927777978,
+          "median": 0.12732211264472004,
+          "std": 0.006394218158579607,
+          "mean_CI95": [
+            0.12485869306177268,
+            0.1308438654937869
+          ],
+          "outcome_interval95": [
+            0.11827562336621214,
+            0.14132380186364496
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "variant_total_variation": {
+          "mean": 0.36886738759248716,
+          "median": 0.3665338645418327,
+          "std": 0.01223331838050312,
+          "mean_CI95": [
+            0.3631420183520901,
+            0.37459275683288423
+          ],
+          "outcome_interval95": [
+            0.35054069436539553,
+            0.39379624359704035
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "proxy_rework_rate_absolute_difference": {
+          "mean": 0.006232214001138305,
+          "median": 0.006829823562891295,
+          "std": 0.0036160544710349455,
+          "mean_CI95": [
+            0.0045398484142947886,
+            0.007924579587981822
+          ],
+          "outcome_interval95": [
+            0.0005691519635742725,
+            0.012578258394991455
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "validation_loss": {
+          "mean": 0.1553335136344732,
+          "median": 0.15521610318680024,
+          "std": 0.004408476411423205,
+          "mean_CI95": [
+            0.15327028316356475,
+            0.15739674410538165
+          ],
+          "outcome_interval95": [
+            0.14828865606340447,
+            0.16371481481901318
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_signed_error_day": {
+          "mean": 5.130358545974827,
+          "median": 5.147362929235438,
+          "std": 0.42969159572384785,
+          "mean_CI95": [
+            4.929256688858502,
+            5.331460403091152
+          ],
+          "outcome_interval95": [
+            4.4454723566053165,
+            5.978066286441532
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_signed_error_day": {
+          "mean": 4.561458333333332,
+          "median": 4.47708333333334,
+          "std": 0.3182618189549029,
+          "mean_CI95": [
+            4.412507217049029,
+            4.710409449617634
+          ],
+          "outcome_interval95": [
+            4.218732638888888,
+            5.437430555555554
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_signed_error_day": {
+          "mean": 13.633249999999993,
+          "median": 13.717708333333334,
+          "std": 0.9973193556189857,
+          "mean_CI95": [
+            13.166490173768876,
+            14.10000982623111
+          ],
+          "outcome_interval95": [
+            11.544312499999993,
+            14.807527777777763
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "activity_total_variation": {
+          "mean": 0.05212116117235693,
+          "median": 0.05371391563946121,
+          "std": 0.009715433105216083,
+          "mean_CI95": [
+            0.04757419851450679,
+            0.05666812383020708
+          ],
+          "outcome_interval95": [
+            0.03203977763704455,
+            0.06602624770838186
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "by_category": [
+        {
+          "category": "2-way match",
+          "observed_cases": 1,
+          "mean_metrics": {
+            "mean_relative_error": 0.5227499025931859,
+            "median_relative_error": 0.5227499025931859,
+            "p90_relative_error": 0.5227499025931859,
+            "throughput_relative_error": 0.0,
+            "wasserstein_over_observed_mean": 0.5227499025931859,
+            "variant_total_variation": 0.0,
+            "proxy_rework_rate_absolute_difference": 0.0,
+            "validation_loss": 0.29871423005324915,
+            "mean_signed_error_day": -33.541666666666664,
+            "median_signed_error_day": -33.541666666666664,
+            "p90_signed_error_day": -33.541666666666664,
+            "activity_total_variation": 0.0
+          },
+          "failed_acceptance_checks": [
+            "mean_relative_error",
+            "median_relative_error",
+            "p90_relative_error",
+            "wasserstein_over_observed_mean",
+            "minimum100independent_cohort_cases"
+          ],
+          "status": "NOT VALIDATED"
+        },
+        {
+          "category": "3-way match, invoice after GR",
+          "observed_cases": 104,
+          "mean_metrics": {
+            "mean_relative_error": 0.1457476735090982,
+            "median_relative_error": 0.15023730734174726,
+            "p90_relative_error": 0.33449475158276254,
+            "throughput_relative_error": 0.15673076923076923,
+            "wasserstein_over_observed_mean": 0.2105821088671625,
+            "variant_total_variation": 0.5370192307692309,
+            "proxy_rework_rate_absolute_difference": 0.01923076923076923,
+            "validation_loss": 0.2220060872187914,
+            "mean_signed_error_day": 6.265954861111114,
+            "median_signed_error_day": 6.335572916666669,
+            "p90_signed_error_day": 19.739371527777774,
+            "activity_total_variation": 0.20367038731392345
+          },
+          "failed_acceptance_checks": [
+            "p90_relative_error",
+            "wasserstein_over_observed_mean",
+            "variant_total_variation"
+          ],
+          "status": "NOT VALIDATED"
+        },
+        {
+          "category": "3-way match, invoice before GR",
+          "observed_cases": 1652,
+          "mean_metrics": {
+            "mean_relative_error": 0.11604434857006984,
+            "median_relative_error": 0.09527425905515377,
+            "p90_relative_error": 0.21002035480240971,
+            "throughput_relative_error": 0.15036319612590796,
+            "wasserstein_over_observed_mean": 0.12390983752993978,
+            "variant_total_variation": 0.3643765133171913,
+            "proxy_rework_rate_absolute_difference": 0.0061440677966101715,
+            "validation_loss": 0.15230465388532607,
+            "mean_signed_error_day": 5.082277437281405,
+            "median_signed_error_day": 4.382152777777778,
+            "p90_signed_error_day": 13.219906250000014,
+            "activity_total_variation": 0.027188751038910858
+          },
+          "failed_acceptance_checks": [
+            "variant_total_variation"
+          ],
+          "status": "NOT VALIDATED"
+        }
+      ]
+    },
+    {
+      "model": "semi_markov",
+      "metrics": {
+        "mean_relative_error": {
+          "mean": 0.11565597650838244,
+          "median": 0.11628313778195837,
+          "std": 0.012900013186300094,
+          "mean_CI95": [
+            0.10961858449418707,
+            0.12169336852257781
+          ],
+          "outcome_interval95": [
+            0.09444256285790852,
+            0.13502827348962346
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_relative_error": {
+          "mean": 0.01964925599757064,
+          "median": 0.016808381415122926,
+          "std": 0.01339501608556212,
+          "mean_CI95": [
+            0.01338019549530101,
+            0.025918316499840274
+          ],
+          "outcome_interval95": [
+            0.0035825994533860207,
+            0.04524293956878239
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_relative_error": {
+          "mean": 0.30809076174324723,
+          "median": 0.308223806243044,
+          "std": 0.018827896751380267,
+          "mean_CI95": [
+            0.2992790348210145,
+            0.31690248866548
+          ],
+          "outcome_interval95": [
+            0.2706254306004556,
+            0.3374057647464092
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_relative_error": {
+          "mean": 0.1820147979510529,
+          "median": 0.1815594763801935,
+          "std": 0.008493432018387039,
+          "mean_CI95": [
+            0.17803974940649955,
+            0.18598984649560626
+          ],
+          "outcome_interval95": [
+            0.16841206602162778,
+            0.19671314741035856
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "wasserstein_over_observed_mean": {
+          "mean": 0.1742664864606742,
+          "median": 0.17512882638131763,
+          "std": 0.007407622909049616,
+          "mean_CI95": [
+            0.17079961222191273,
+            0.17773336069943566
+          ],
+          "outcome_interval95": [
+            0.1588542537370234,
+            0.18472753220464214
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "variant_total_variation": {
+          "mean": 0.7809334092202618,
+          "median": 0.7803073420603301,
+          "std": 0.00855802330605261,
+          "mean_CI95": [
+            0.7769281310225518,
+            0.7849386874179718
+          ],
+          "outcome_interval95": [
+            0.7665623221400114,
+            0.7957598178713717
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "proxy_rework_rate_absolute_difference": {
+          "mean": 0.007029026750142291,
+          "median": 0.005691519635742742,
+          "std": 0.006439947485313355,
+          "mean_CI95": [
+            0.004015038550427907,
+            0.010043014949856675
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.02165623221400114
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "validation_loss": {
+          "mean": 0.22680567351876163,
+          "median": 0.22717932713060174,
+          "std": 0.006246247034222321,
+          "mean_CI95": [
+            0.2238823399206879,
+            0.22972900711683536
+          ],
+          "outcome_interval95": [
+            0.21391385515582215,
+            0.23528450954854865
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_signed_error_day": {
+          "mean": 5.061103621229362,
+          "median": 5.088548188199578,
+          "std": 0.5645043639085786,
+          "mean_CI95": [
+            4.796907446433234,
+            5.32529979602549
+          ],
+          "outcome_interval95": [
+            4.132804990356028,
+            5.908835017074553
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_signed_error_day": {
+          "mean": -0.7080555555555573,
+          "median": -0.7041666666666657,
+          "std": 0.8353005958119941,
+          "mean_CI95": [
+            -1.098988268086713,
+            -0.3171228430244017
+          ],
+          "outcome_interval95": [
+            -2.0692361111111173,
+            0.714288194444447
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_signed_error_day": {
+          "mean": 19.37788194444444,
+          "median": 19.386249999999997,
+          "std": 1.1842119460059812,
+          "mean_CI95": [
+            18.82365369345907,
+            19.932110195429807
+          ],
+          "outcome_interval95": [
+            17.02143749999999,
+            21.221697916666653
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "activity_total_variation": {
+          "mean": 0.05135148222237047,
+          "median": 0.05142941465226657,
+          "std": 0.004907736936151042,
+          "mean_CI95": [
+            0.04905459063333263,
+            0.053648373811408315
+          ],
+          "outcome_interval95": [
+            0.043620914822660846,
+            0.058548803895674136
+          ],
+          "replicates": 20,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "by_category": [
+        {
+          "category": "2-way match",
+          "observed_cases": 1,
+          "mean_metrics": {
+            "mean_relative_error": 0.5272928481752457,
+            "median_relative_error": 0.5272928481752457,
+            "p90_relative_error": 0.5272928481752457,
+            "throughput_relative_error": 0.0,
+            "wasserstein_over_observed_mean": 0.5272928481752457,
+            "variant_total_variation": 0.0,
+            "proxy_rework_rate_absolute_difference": 0.0,
+            "validation_loss": 0.3013101989572833,
+            "mean_signed_error_day": -33.83315972222223,
+            "median_signed_error_day": -33.83315972222223,
+            "p90_signed_error_day": -33.83315972222223,
+            "activity_total_variation": 0.0
+          },
+          "failed_acceptance_checks": [
+            "mean_relative_error",
+            "median_relative_error",
+            "p90_relative_error",
+            "wasserstein_over_observed_mean",
+            "minimum100independent_cohort_cases"
+          ],
+          "status": "NOT VALIDATED"
+        },
+        {
+          "category": "3-way match, invoice after GR",
+          "observed_cases": 104,
+          "mean_metrics": {
+            "mean_relative_error": 0.12714736399370535,
+            "median_relative_error": 0.051639391376464706,
+            "p90_relative_error": 0.3874998234837253,
+            "throughput_relative_error": 0.1745192307692308,
+            "wasserstein_over_observed_mean": 0.20612361480678895,
+            "variant_total_variation": 0.8740384615384615,
+            "proxy_rework_rate_absolute_difference": 0.019230769230769225,
+            "validation_loss": 0.26288552217130656,
+            "mean_signed_error_day": 5.466294070512822,
+            "median_signed_error_day": 1.9316319444444467,
+            "p90_signed_error_day": 22.867333333333338,
+            "activity_total_variation": 0.18837335473091013
+          },
+          "failed_acceptance_checks": [
+            "p90_relative_error",
+            "wasserstein_over_observed_mean",
+            "variant_total_variation"
+          ],
+          "status": "NOT VALIDATED"
+        },
+        {
+          "category": "3-way match, invoice before GR",
+          "observed_cases": 1652,
+          "mean_metrics": {
+            "mean_relative_error": 0.11551602555947102,
+            "median_relative_error": 0.022166820165174468,
+            "p90_relative_error": 0.3056925597405178,
+            "throughput_relative_error": 0.1825968523002421,
+            "wasserstein_over_observed_mean": 0.17373449436217128,
+            "variant_total_variation": 0.7766646489104116,
+            "proxy_rework_rate_absolute_difference": 0.007415254237288135,
+            "validation_loss": 0.22625523646789664,
+            "mean_signed_error_day": 5.059139006591335,
+            "median_signed_error_day": -0.90890625,
+            "p90_signed_error_day": 19.24207291666668,
+            "activity_total_variation": 0.027803163763415368
+          },
+          "failed_acceptance_checks": [
+            "p90_relative_error",
+            "variant_total_variation"
+          ],
+          "status": "NOT VALIDATED"
+        }
+      ]
+    }
+  ],
+  "test_coverage": [
+    {
+      "category": "2-way match",
+      "observed_cases": 1,
+      "observed_duration_day": {
+        "n": 1,
+        "mean": 64.16388888888889,
+        "median": 64.16388888888889,
+        "p90": 64.16388888888889,
+        "p95": 64.16388888888889,
+        "minimum": 64.16388888888889,
+        "maximum": 64.16388888888889
+      },
+      "document_cluster_bootstrap": {
+        "status": "INSUFFICIENT EVIDENCE",
+        "clusters": 1
+      },
+      "duration_prediction_intervals": {
+        "pooled_bootstrap": {
+          "interval90_day": [
+            21.26388888888889,
+            80.1859375
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 23886,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 1.0,
+          "observed_cases": 1
+        },
+        "category_bootstrap": {
+          "interval90_day": [
+            8.529097222222223,
+            52.71534722222222
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 2,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 0.0,
+          "observed_cases": 1
+        },
+        "semi_markov": {
+          "interval90_day": [
+            5.907638888888889,
+            55.33680555555555
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 4096,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 0.0,
+          "observed_cases": 1
+        }
+      }
+    },
+    {
+      "category": "3-way match, invoice after GR",
+      "observed_cases": 104,
+      "observed_duration_day": {
+        "n": 104,
+        "mean": 42.99180021367521,
+        "median": 42.28576388888889,
+        "p90": 59.0125,
+        "p95": 62.834722222222226,
+        "minimum": 7.938888888888889,
+        "maximum": 75.97152777777778
+      },
+      "document_cluster_bootstrap": {
+        "mean": 42.99180021367521,
+        "mean_interval95": [
+          39.82432090180668,
+          46.437910959845986
+        ],
+        "clusters": 90,
+        "replicates": 499,
+        "resampling_unit": "whole supplied cluster; within-cluster observations remain together",
+        "limits": "Clusters may share calendar/context; interval conditional on cluster exchangeability"
+      },
+      "duration_prediction_intervals": {
+        "pooled_bootstrap": {
+          "interval90_day": [
+            21.26388888888889,
+            80.1859375
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 23886,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 0.9326923076923077,
+          "observed_cases": 104
+        },
+        "category_bootstrap": {
+          "interval90_day": [
+            21.26388888888889,
+            82.90208333333334
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 1062,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 0.9326923076923077,
+          "observed_cases": 104
+        },
+        "semi_markov": {
+          "interval90_day": [
+            17.739583333333332,
+            94.0032986111111
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 4096,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 0.9423076923076923,
+          "observed_cases": 104
+        }
+      }
+    },
+    {
+      "category": "3-way match, invoice before GR",
+      "observed_cases": 1652,
+      "observed_duration_day": {
+        "n": 1652,
+        "mean": 43.79599265200431,
+        "median": 45.99513888888889,
+        "p90": 62.94583333333333,
+        "p95": 64.80555555555556,
+        "minimum": 6.2444444444444445,
+        "maximum": 87.01388888888889
+      },
+      "document_cluster_bootstrap": {
+        "mean": 43.79599265200431,
+        "mean_interval95": [
+          41.79339878378888,
+          45.52155919194251
+        ],
+        "clusters": 595,
+        "replicates": 499,
+        "resampling_unit": "whole supplied cluster; within-cluster observations remain together",
+        "limits": "Clusters may share calendar/context; interval conditional on cluster exchangeability"
+      },
+      "duration_prediction_intervals": {
+        "pooled_bootstrap": {
+          "interval90_day": [
+            21.26388888888889,
+            80.1859375
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 23886,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 0.9255447941888619,
+          "observed_cases": 1652
+        },
+        "category_bootstrap": {
+          "interval90_day": [
+            21.26388888888889,
+            80.1388888888889
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 22822,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 0.9255447941888619,
+          "observed_cases": 1652
+        },
+        "semi_markov": {
+          "interval90_day": [
+            17.166319444444444,
+            94.6045138888889
+          ],
+          "nominal_coverage": 0.9,
+          "calibration_generated_samples": 4096,
+          "capped_draws_excluded": 0,
+          "observed_coverage": 0.9449152542372882,
+          "observed_cases": 1652
+        }
+      }
+    }
+  ],
+  "validation_scope": "PARTIAL OR NO VALIDATION; see per-category checks",
+  "scenario_results": {
+    "base": {
+      "metrics": {
+        "mean_cycle_day": {
+          "mean": 49.14384371203703,
+          "median": 49.049618518518514,
+          "std": 0.7753109483040757,
+          "mean_CI95": [
+            48.9235027784976,
+            49.364184645576465
+          ],
+          "outcome_interval95": [
+            47.82207080208333,
+            50.80024456365741
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 45.498152777777776,
+          "median": 45.429878472222214,
+          "std": 1.1979852958739496,
+          "mean_CI95": [
+            45.15768912376028,
+            45.83861643179527
+          ],
+          "outcome_interval95": [
+            43.74830729166667,
+            47.51785590277778
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 82.23268173611112,
+          "median": 81.84424305555555,
+          "std": 1.5594020017467882,
+          "mean_CI95": [
+            81.78950459076093,
+            82.67585888146131
+          ],
+          "outcome_interval95": [
+            80.16319097222221,
+            85.36441145833335
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 6.604565217391302,
+          "median": 6.608695652173913,
+          "std": 0.09763833901274649,
+          "mean_CI95": [
+            6.576816708468054,
+            6.632313726314551
+          ],
+          "outcome_interval95": [
+            6.403532608695652,
+            6.771739130434782
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.04049427351170538,
+          "median": 0.03455962982029748,
+          "std": 0.03352475851142174,
+          "mean_CI95": [
+            0.030966642561505612,
+            0.050021904461905145
+          ],
+          "outcome_interval95": [
+            0.005814472356652442,
+            0.1415423212157047
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 9.0,
+          "median": 8.0,
+          "std": 3.4345186514775166,
+          "mean_CI95": [
+            8.023920599108655,
+            9.976079400891345
+          ],
+          "outcome_interval95": [
+            4.225,
+            18.099999999999994
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.096,
+          "median": 0.09466666666666666,
+          "std": 0.010629185850136157,
+          "mean_CI95": [
+            0.0929792188049116,
+            0.0990207811950884
+          ],
+          "outcome_interval95": [
+            0.07763333333333333,
+            0.11703333333333334
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 18.0,
+          "median": 18.0,
+          "std": 0.0,
+          "mean_CI95": [
+            18.0,
+            18.0
+          ],
+          "outcome_interval95": [
+            18.0,
+            18.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "paired_difference_from_base": {
+        "mean_cycle_day": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "parameters": {
+        "model": "semi_markov",
+        "seed": 20261106,
+        "replicate": 2049,
+        "scenario": "base",
+        "resource_layer": true,
+        "horizon_day": 92.0,
+        "service_fraction": 0.05,
+        "designed_basecapacity": 18,
+        "target_utilization": 0.7,
+        "changes": {
+          "demand_growth": 0.0,
+          "capacity_factor": 1.0,
+          "service_factor": 1.0,
+          "rework_factor": 1.0
+        }
+      }
+    },
+    "demand_growth": {
+      "metrics": {
+        "mean_cycle_day": {
+          "mean": 49.98475518019943,
+          "median": 49.85889704415954,
+          "std": 0.7514933599339907,
+          "mean_CI95": [
+            49.771183130380265,
+            50.19832723001859
+          ],
+          "outcome_interval95": [
+            48.86092926282051,
+            51.447142779558405
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 46.30769375,
+          "median": 46.22123263888889,
+          "std": 1.1085926473064047,
+          "mean_CI95": [
+            45.99263520560983,
+            46.62275229439017
+          ],
+          "outcome_interval95": [
+            44.376640625,
+            48.02195572916667
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 83.91495861111112,
+          "median": 83.79916666666666,
+          "std": 1.231711400490395,
+          "mean_CI95": [
+            83.56491010421351,
+            84.26500711800873
+          ],
+          "outcome_interval95": [
+            81.7603732638889,
+            86.18864791666667
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 8.333913043478262,
+          "median": 8.342391304347826,
+          "std": 0.13652309552335976,
+          "mean_CI95": [
+            8.295113609027979,
+            8.372712477928545
+          ],
+          "outcome_interval95": [
+            8.108695652173912,
+            8.584510869565218
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.8482312297484197,
+          "median": 0.8237375091097658,
+          "std": 0.3809139992127991,
+          "mean_CI95": [
+            0.7399766689578393,
+            0.9564857905390001
+          ],
+          "outcome_interval95": [
+            0.28108040456561656,
+            1.6142341276188767
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 38.42,
+          "median": 36.0,
+          "std": 10.692530293697216,
+          "mean_CI95": [
+            35.38121651323842,
+            41.45878348676158
+          ],
+          "outcome_interval95": [
+            21.45,
+            59.324999999999996
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.0961846153846154,
+          "median": 0.09435897435897436,
+          "std": 0.009814203350018303,
+          "mean_CI95": [
+            0.09339544965334454,
+            0.09897378111588626
+          ],
+          "outcome_interval95": [
+            0.08046153846153846,
+            0.1152051282051282
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 18.0,
+          "median": 18.0,
+          "std": 0.0,
+          "mean_CI95": [
+            18.0,
+            18.0
+          ],
+          "outcome_interval95": [
+            18.0,
+            18.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "paired_difference_from_base": {
+        "mean_cycle_day": {
+          "mean": 0.8409114681623941,
+          "median": 0.7920847168803427,
+          "std": 0.5398388475669014,
+          "mean_CI95": [
+            0.6874909652094421,
+            0.9943319711153462
+          ],
+          "outcome_interval95": [
+            -0.09437399991096632,
+            1.910544907318379
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 0.8095409722222203,
+          "median": 0.7645572916666765,
+          "std": 0.5560786997331847,
+          "mean_CI95": [
+            0.6515051543498951,
+            0.9675767900945456
+          ],
+          "outcome_interval95": [
+            0.014952256944445186,
+            1.9644748263888832
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 1.6822768749999986,
+          "median": 1.7135173611110943,
+          "std": 1.257133467018555,
+          "mean_CI95": [
+            1.3250034967348805,
+            2.0395502532651166
+          ],
+          "outcome_interval95": [
+            -0.34065381944446393,
+            4.01074991319444
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 1.7293478260869564,
+          "median": 1.733695652173913,
+          "std": 0.13897732397072593,
+          "mean_CI95": [
+            1.6898509076292647,
+            1.768844744544648
+          ],
+          "outcome_interval95": [
+            1.4470108695652184,
+            1.9673913043478253
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.8077369562367143,
+          "median": 0.8042600290518777,
+          "std": 0.364479308217984,
+          "mean_CI95": [
+            0.7041530829479042,
+            0.9113208295255243
+          ],
+          "outcome_interval95": [
+            0.2583732565813912,
+            1.55307962569697
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 29.42,
+          "median": 29.0,
+          "std": 9.491327943046166,
+          "mean_CI95": [
+            26.72259444410753,
+            32.117405555892475
+          ],
+          "outcome_interval95": [
+            14.45,
+            48.775
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.00018461538461538558,
+          "median": -0.0005128205128205193,
+          "std": 0.004903151724361142,
+          "mean_CI95": [
+            -0.0012088449174665168,
+            0.0015780756866972878
+          ],
+          "outcome_interval95": [
+            -0.008469230769230764,
+            0.008489743589743592
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "parameters": {
+        "model": "semi_markov",
+        "seed": 20261106,
+        "replicate": 2049,
+        "scenario": "demand_growth",
+        "resource_layer": true,
+        "horizon_day": 92.0,
+        "service_fraction": 0.05,
+        "designed_basecapacity": 18,
+        "target_utilization": 0.7,
+        "changes": {
+          "demand_growth": 0.3,
+          "capacity_factor": 1.0,
+          "service_factor": 1.0,
+          "rework_factor": 1.0
+        }
+      }
+    },
+    "capacity_reduction": {
+      "metrics": {
+        "mean_cycle_day": {
+          "mean": 49.94969837037037,
+          "median": 49.78800430555555,
+          "std": 0.9932990095868948,
+          "mean_CI95": [
+            49.66740591527875,
+            50.23199082546199
+          ],
+          "outcome_interval95": [
+            48.20959051967593,
+            51.69115691435185
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 46.340523958333335,
+          "median": 46.38739583333333,
+          "std": 1.4807529379919615,
+          "mean_CI95": [
+            45.91969862958996,
+            46.76134928707671
+          ],
+          "outcome_interval95": [
+            44.30086458333333,
+            48.825849826388904
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 83.73859548611112,
+          "median": 83.61051909722221,
+          "std": 1.6741856461206233,
+          "mean_CI95": [
+            83.26279718996756,
+            84.21439378225469
+          ],
+          "outcome_interval95": [
+            80.54280303819445,
+            86.67865789930558
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 6.428043478260869,
+          "median": 6.429347826086957,
+          "std": 0.12931883608829456,
+          "mean_CI95": [
+            6.391291471688207,
+            6.46479548483353
+          ],
+          "outcome_interval95": [
+            6.20054347826087,
+            6.658152173913043
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.833284380536506,
+          "median": 0.801372007751965,
+          "std": 0.4471360914785844,
+          "mean_CI95": [
+            0.7062097093596413,
+            0.9603590517133707
+          ],
+          "outcome_interval95": [
+            0.22634362026209398,
+            1.7947691565180812
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 29.56,
+          "median": 28.5,
+          "std": 10.280077820717116,
+          "mean_CI95": [
+            26.6384342091008,
+            32.4815657908992
+          ],
+          "outcome_interval95": [
+            13.45,
+            51.775
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.096,
+          "median": 0.09466666666666666,
+          "std": 0.010629185850136157,
+          "mean_CI95": [
+            0.0929792188049116,
+            0.0990207811950884
+          ],
+          "outcome_interval95": [
+            0.07763333333333333,
+            0.11703333333333334
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 14.0,
+          "median": 14.0,
+          "std": 0.0,
+          "mean_CI95": [
+            14.0,
+            14.0
+          ],
+          "outcome_interval95": [
+            14.0,
+            14.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "paired_difference_from_base": {
+        "mean_cycle_day": {
+          "mean": 0.8058546583333336,
+          "median": 0.7819552314814793,
+          "std": 0.4313741309272496,
+          "mean_CI95": [
+            0.683259486781606,
+            0.9284498298850612
+          ],
+          "outcome_interval95": [
+            0.21736456944444935,
+            1.7140413576388855
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 0.8423711805555533,
+          "median": 0.7615798611110982,
+          "std": 0.4706083256194016,
+          "mean_CI95": [
+            0.7086257742444089,
+            0.9761165868666977
+          ],
+          "outcome_interval95": [
+            0.23431553819443868,
+            2.0093133680555546
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 1.5059137499999995,
+          "median": 1.3889670138888803,
+          "std": 1.1145136943350316,
+          "mean_CI95": [
+            1.1891724626630544,
+            1.8226550373369446
+          ],
+          "outcome_interval95": [
+            0.0026632812500043466,
+            3.7523763020833245
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": -0.17652173913043473,
+          "median": -0.15217391304347805,
+          "std": 0.12292724199534612,
+          "mean_CI95": [
+            -0.21145727476027473,
+            -0.14158620350059473
+          ],
+          "outcome_interval95": [
+            -0.4214673913043476,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.7927901070248009,
+          "median": 0.773752128397242,
+          "std": 0.4241018592380362,
+          "mean_CI95": [
+            0.6722616922194583,
+            0.9133185218301435
+          ],
+          "outcome_interval95": [
+            0.21358954216751158,
+            1.68197384547148
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 20.56,
+          "median": 19.5,
+          "std": 8.388913967315458,
+          "mean_CI95": [
+            18.17589702946474,
+            22.94410297053526
+          ],
+          "outcome_interval95": [
+            6.45,
+            38.55
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": -4.0,
+          "median": -4.0,
+          "std": 0.0,
+          "mean_CI95": [
+            -4.0,
+            -4.0
+          ],
+          "outcome_interval95": [
+            -4.0,
+            -4.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "parameters": {
+        "model": "semi_markov",
+        "seed": 20261106,
+        "replicate": 2049,
+        "scenario": "capacity_reduction",
+        "resource_layer": true,
+        "horizon_day": 92.0,
+        "service_fraction": 0.05,
+        "designed_basecapacity": 18,
+        "target_utilization": 0.7,
+        "changes": {
+          "demand_growth": 0.0,
+          "capacity_factor": 0.75,
+          "service_factor": 1.0,
+          "rework_factor": 1.0
+        }
+      }
+    },
+    "automation": {
+      "metrics": {
+        "mean_cycle_day": {
+          "mean": 48.807802342592595,
+          "median": 48.71154028703704,
+          "std": 0.7675136151873637,
+          "mean_CI95": [
+            48.58967738660618,
+            49.025927298579006
+          ],
+          "outcome_interval95": [
+            47.51059469351851,
+            50.44531753356481
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 45.17101819444445,
+          "median": 45.14122743055556,
+          "std": 1.1665667725950284,
+          "mean_CI95": [
+            44.83948358594714,
+            45.50255280294176
+          ],
+          "outcome_interval95": [
+            43.47707239583333,
+            47.234464496527785
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 81.73506881944445,
+          "median": 81.31835486111112,
+          "std": 1.6135660151083386,
+          "mean_CI95": [
+            81.27649843181588,
+            82.19363920707302
+          ],
+          "outcome_interval95": [
+            79.6268984375,
+            84.98688588541668
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 6.632173913043479,
+          "median": 6.635869565217391,
+          "std": 0.09750168038721342,
+          "mean_CI95": [
+            6.6044642420718835,
+            6.659883584015074
+          ],
+          "outcome_interval95": [
+            6.4241847826086955,
+            6.816304347826087
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.0034973830485525662,
+          "median": 0.0025957425034758533,
+          "std": 0.0037251459920554534,
+          "mean_CI95": [
+            0.0024387082713478855,
+            0.004556057825757247
+          ],
+          "outcome_interval95": [
+            0.00013526204710391734,
+            0.012315601506604223
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 3.94,
+          "median": 4.0,
+          "std": 1.9209903908225707,
+          "mean_CI95": [
+            3.394060571490712,
+            4.485939428509288
+          ],
+          "outcome_interval95": [
+            1.0,
+            9.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.096,
+          "median": 0.09466666666666666,
+          "std": 0.010629185850136157,
+          "mean_CI95": [
+            0.0929792188049116,
+            0.0990207811950884
+          ],
+          "outcome_interval95": [
+            0.07763333333333333,
+            0.11703333333333334
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 18.0,
+          "median": 18.0,
+          "std": 0.0,
+          "mean_CI95": [
+            18.0,
+            18.0
+          ],
+          "outcome_interval95": [
+            18.0,
+            18.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "paired_difference_from_base": {
+        "mean_cycle_day": {
+          "mean": -0.3360413694444442,
+          "median": -0.3316179305555522,
+          "std": 0.03341029313763282,
+          "mean_CI95": [
+            -0.34553646969535,
+            -0.32654626919353835
+          ],
+          "outcome_interval95": [
+            -0.4336343988425879,
+            -0.2977783777777715
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": -0.32713458333333406,
+          "median": -0.31258333333333965,
+          "std": 0.10763112095160435,
+          "mean_CI95": [
+            -0.35772300946126057,
+            -0.29654615720540756
+          ],
+          "outcome_interval95": [
+            -0.6140054687500092,
+            -0.17684618055555887
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": -0.4976129166666678,
+          "median": -0.49086944444443503,
+          "std": 0.16958474336813406,
+          "mean_CI95": [
+            -0.5458083674719418,
+            -0.44941746586139375
+          ],
+          "outcome_interval95": [
+            -0.8369818229166543,
+            -0.2057845312499893
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 0.027608695652173908,
+          "median": 0.02173913043478315,
+          "std": 0.019910925829828906,
+          "mean_CI95": [
+            0.021950073141327825,
+            0.03326731816301999
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.07364130434782544
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": -0.0369968904631528,
+          "median": -0.03249511535520813,
+          "std": 0.031054895145818575,
+          "mean_CI95": [
+            -0.045822594011344045,
+            -0.028171186914961555
+          ],
+          "outcome_interval95": [
+            -0.13771345164894094,
+            -0.0054846335329693675
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": -5.06,
+          "median": -4.5,
+          "std": 2.359609099414735,
+          "mean_CI95": [
+            -5.730593486252778,
+            -4.389406513747221
+          ],
+          "outcome_interval95": [
+            -9.775,
+            -2.2250000000000014
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "parameters": {
+        "model": "semi_markov",
+        "seed": 20261106,
+        "replicate": 2049,
+        "scenario": "automation",
+        "resource_layer": true,
+        "horizon_day": 92.0,
+        "service_fraction": 0.05,
+        "designed_basecapacity": 18,
+        "target_utilization": 0.7,
+        "changes": {
+          "demand_growth": 0.0,
+          "capacity_factor": 1.0,
+          "service_factor": 0.8,
+          "rework_factor": 1.0
+        }
+      }
+    },
+    "rework_reduction": {
+      "metrics": {
+        "mean_cycle_day": {
+          "mean": 49.09468690925926,
+          "median": 49.098530879629635,
+          "std": 0.759734274128315,
+          "mean_CI95": [
+            48.87877281753966,
+            49.310601000978856
+          ],
+          "outcome_interval95": [
+            47.89979029513889,
+            50.86669924999999
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 45.45113715277778,
+          "median": 45.43315972222222,
+          "std": 1.1156971709256074,
+          "mean_CI95": [
+            45.13405952511524,
+            45.768214780440324
+          ],
+          "outcome_interval95": [
+            43.52475434027778,
+            47.48561501736111
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 82.0259126388889,
+          "median": 81.81378472222222,
+          "std": 1.7180188752752636,
+          "mean_CI95": [
+            81.53765707685335,
+            82.51416820092444
+          ],
+          "outcome_interval95": [
+            79.17707638888889,
+            85.31161631944447
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 6.6132608695652175,
+          "median": 6.619565217391305,
+          "std": 0.09774200270814577,
+          "mean_CI95": [
+            6.585482899745707,
+            6.641038839384728
+          ],
+          "outcome_interval95": [
+            6.407065217391304,
+            6.800543478260869
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.04402602407075291,
+          "median": 0.035305961369733074,
+          "std": 0.0322632719487913,
+          "mean_CI95": [
+            0.03485690363490283,
+            0.05319514450660298
+          ],
+          "outcome_interval95": [
+            0.0038353222755089845,
+            0.11485882730324447
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 9.58,
+          "median": 9.0,
+          "std": 3.338642031162505,
+          "mean_CI95": [
+            8.63116843311774,
+            10.52883156688226
+          ],
+          "outcome_interval95": [
+            4.225,
+            16.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.07869333333333334,
+          "median": 0.07733333333333334,
+          "std": 0.009274801890788756,
+          "mean_CI95": [
+            0.07605746380062532,
+            0.08132920286604135
+          ],
+          "outcome_interval95": [
+            0.06296666666666666,
+            0.0982
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 18.0,
+          "median": 18.0,
+          "std": 0.0,
+          "mean_CI95": [
+            18.0,
+            18.0
+          ],
+          "outcome_interval95": [
+            18.0,
+            18.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "paired_difference_from_base": {
+        "mean_cycle_day": {
+          "mean": -0.04915680277777838,
+          "median": 0.0005682638888941938,
+          "std": 0.29274019350783587,
+          "mean_CI95": [
+            -0.1323526452499168,
+            0.03403903969436005
+          ],
+          "outcome_interval95": [
+            -0.6450389004629603,
+            0.4444682974536965
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": -0.047015625000000935,
+          "median": -0.006770833333330728,
+          "std": 0.417749836338334,
+          "mean_CI95": [
+            -0.16573881487121123,
+            0.07170756487120937
+          ],
+          "outcome_interval95": [
+            -0.8364218750000111,
+            0.80305555555555
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": -0.20676909722222261,
+          "median": -0.06186458333334599,
+          "std": 0.8432844929364477,
+          "mean_CI95": [
+            -0.44642789840307207,
+            0.03288970395862684
+          ],
+          "outcome_interval95": [
+            -2.127287065972214,
+            1.1713350694444487
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 0.008695652173913047,
+          "median": 0.010869565217391575,
+          "std": 0.03922152465936357,
+          "mean_CI95": [
+            -0.002450981802026308,
+            0.019842286149852402
+          ],
+          "outcome_interval95": [
+            -0.06277173913043477,
+            0.07364130434782544
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.003531750559047535,
+          "median": 0.0019287474801338409,
+          "std": 0.021346468223442765,
+          "mean_CI95": [
+            -0.002534848585994417,
+            0.009598349704089487
+          ],
+          "outcome_interval95": [
+            -0.0389140141312725,
+            0.03716068634735619
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 0.58,
+          "median": 0.0,
+          "std": 2.080914241777554,
+          "mean_CI95": [
+            -0.011389284069461825,
+            1.1713892840694617
+          ],
+          "outcome_interval95": [
+            -3.0,
+            5.549999999999997
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": -0.017306666666666668,
+          "median": -0.018666666666666665,
+          "std": 0.006080279263189098,
+          "mean_CI95": [
+            -0.019034662913800904,
+            -0.015578670419532432
+          ],
+          "outcome_interval95": [
+            -0.02770000000000001,
+            -0.005633333333333332
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "parameters": {
+        "model": "semi_markov",
+        "seed": 20261106,
+        "replicate": 2049,
+        "scenario": "rework_reduction",
+        "resource_layer": true,
+        "horizon_day": 92.0,
+        "service_fraction": 0.05,
+        "designed_basecapacity": 18,
+        "target_utilization": 0.7,
+        "changes": {
+          "demand_growth": 0.0,
+          "capacity_factor": 1.0,
+          "service_factor": 1.0,
+          "rework_factor": 0.8
+        }
+      }
+    },
+    "disruption": {
+      "metrics": {
+        "mean_cycle_day": {
+          "mean": 49.18484615277778,
+          "median": 49.08861733796296,
+          "std": 0.7699672843251865,
+          "mean_CI95": [
+            48.966023871737974,
+            49.403668433817586
+          ],
+          "outcome_interval95": [
+            47.862655168981476,
+            50.83315564814815
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 45.53573159722223,
+          "median": 45.53114583333333,
+          "std": 1.1792541831104832,
+          "mean_CI95": [
+            45.200591266552046,
+            45.870871927892416
+          ],
+          "outcome_interval95": [
+            43.77297526041667,
+            47.51785590277778
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 82.23722048611113,
+          "median": 81.84424305555555,
+          "std": 1.562975824316838,
+          "mean_CI95": [
+            81.79302767162443,
+            82.68141330059782
+          ],
+          "outcome_interval95": [
+            80.16319097222221,
+            85.36441145833335
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 6.604565217391302,
+          "median": 6.608695652173913,
+          "std": 0.09763833901274649,
+          "mean_CI95": [
+            6.576816708468054,
+            6.632313726314551
+          ],
+          "outcome_interval95": [
+            6.403532608695652,
+            6.771739130434782
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.08086386720522235,
+          "median": 0.07279389487095472,
+          "std": 0.03697675417640786,
+          "mean_CI95": [
+            0.07035518994184864,
+            0.09137254446859605
+          ],
+          "outcome_interval95": [
+            0.03667608035818463,
+            0.1776731702482504
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 13.2,
+          "median": 12.5,
+          "std": 4.261838254336085,
+          "mean_CI95": [
+            11.988798969486274,
+            14.411201030513725
+          ],
+          "outcome_interval95": [
+            7.225,
+            20.775
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.096,
+          "median": 0.09466666666666666,
+          "std": 0.010629185850136157,
+          "mean_CI95": [
+            0.0929792188049116,
+            0.0990207811950884
+          ],
+          "outcome_interval95": [
+            0.07763333333333333,
+            0.11703333333333334
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 18.0,
+          "median": 18.0,
+          "std": 0.0,
+          "mean_CI95": [
+            18.0,
+            18.0
+          ],
+          "outcome_interval95": [
+            18.0,
+            18.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "paired_difference_from_base": {
+        "mean_cycle_day": {
+          "mean": 0.04100244074074112,
+          "median": 0.03608192129629728,
+          "std": 0.03001473524733411,
+          "mean_CI95": [
+            0.03247234736491192,
+            0.049532534116570326
+          ],
+          "outcome_interval95": [
+            0.005419623842595734,
+            0.11190104976852418
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 0.037578819444444064,
+          "median": 0.0,
+          "std": 0.06555747543696916,
+          "mean_CI95": [
+            0.01894759107101888,
+            0.056210047817869244
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.20380598958333948
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 0.0045387499999998224,
+          "median": 0.0,
+          "std": 0.03209380903110317,
+          "mean_CI95": [
+            -0.004582209607520154,
+            0.0136597096075198
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.04036959369351698,
+          "median": 0.03528219161958564,
+          "std": 0.02958771114426946,
+          "mean_CI95": [
+            0.03196085922499964,
+            0.048778328162034326
+          ],
+          "outcome_interval95": [
+            0.005317811366474952,
+            0.11039608225317171
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 4.2,
+          "median": 3.0,
+          "std": 5.213796454541332,
+          "mean_CI95": [
+            2.7182554424245686,
+            5.681744557575431
+          ],
+          "outcome_interval95": [
+            0.0,
+            15.549999999999997
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "parameters": {
+        "model": "semi_markov",
+        "seed": 20261106,
+        "replicate": 2049,
+        "scenario": "disruption",
+        "resource_layer": true,
+        "horizon_day": 92.0,
+        "service_fraction": 0.05,
+        "designed_basecapacity": 18,
+        "target_utilization": 0.7,
+        "changes": {
+          "demand_growth": 0.0,
+          "capacity_factor": 1.0,
+          "service_factor": 1.0,
+          "rework_factor": 1.0
+        }
+      }
+    },
+    "combined": {
+      "metrics": {
+        "mean_cycle_day": {
+          "mean": 48.79715698347579,
+          "median": 48.65903923789174,
+          "std": 0.6342621834577803,
+          "mean_CI95": [
+            48.61690166537723,
+            48.97741230157435
+          ],
+          "outcome_interval95": [
+            47.92268894248576,
+            50.2637840224359
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": 45.14929236111111,
+          "median": 45.01183333333334,
+          "std": 0.8455165928497164,
+          "mean_CI95": [
+            44.90899920415376,
+            45.38958551806846
+          ],
+          "outcome_interval95": [
+            43.778369444444444,
+            46.740866666666655
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": 81.72548622222223,
+          "median": 81.57905694444446,
+          "std": 1.2414878245978893,
+          "mean_CI95": [
+            81.37265928633528,
+            82.07831315810918
+          ],
+          "outcome_interval95": [
+            79.98734118055556,
+            84.19312256944444
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 8.625434782608696,
+          "median": 8.63586956521739,
+          "std": 0.1127720531634161,
+          "mean_CI95": [
+            8.593385319711857,
+            8.657484245505536
+          ],
+          "outcome_interval95": [
+            8.363586956521738,
+            8.786141304347826
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": 0.005144621986294854,
+          "median": 0.0027871351003051327,
+          "std": 0.005821259643069406,
+          "mean_CI95": [
+            0.0034902383007103343,
+            0.006799005671879374
+          ],
+          "outcome_interval95": [
+            0.00014451839917846765,
+            0.020306232306032047
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": 5.34,
+          "median": 4.5,
+          "std": 2.8471969746129084,
+          "mean_CI95": [
+            4.530835572838056,
+            6.149164427161944
+          ],
+          "outcome_interval95": [
+            1.225,
+            11.774999999999999
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": 0.07862564102564101,
+          "median": 0.07692307692307693,
+          "std": 0.008362206551503909,
+          "mean_CI95": [
+            0.07624912821869781,
+            0.08100215383258422
+          ],
+          "outcome_interval95": [
+            0.0661025641025641,
+            0.09538461538461539
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 22.0,
+          "median": 22.0,
+          "std": 0.0,
+          "mean_CI95": [
+            22.0,
+            22.0
+          ],
+          "outcome_interval95": [
+            22.0,
+            22.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "paired_difference_from_base": {
+        "mean_cycle_day": {
+          "mean": -0.34668672856125254,
+          "median": -0.37646895477207565,
+          "std": 0.5042705795647918,
+          "mean_CI95": [
+            -0.4899988415925756,
+            -0.20337461552992947
+          ],
+          "outcome_interval95": [
+            -1.3799504735576935,
+            0.674882403579054
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "median_cycle_day": {
+          "mean": -0.3488604166666683,
+          "median": -0.29803298611111373,
+          "std": 0.7214004434819214,
+          "mean_CI95": [
+            -0.5538801542574554,
+            -0.14384067907588122
+          ],
+          "outcome_interval95": [
+            -1.7317991319444455,
+            1.1060624999999935
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "p90_cycle_day": {
+          "mean": -0.5071955138888913,
+          "median": -0.4842423611111073,
+          "std": 1.0726650675572647,
+          "mean_CI95": [
+            -0.8120435530887805,
+            -0.20234747468900205
+          ],
+          "outcome_interval95": [
+            -2.600845190972238,
+            1.3950096701389063
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "throughput_per_day": {
+          "mean": 2.0208695652173914,
+          "median": 2.0108695652173916,
+          "std": 0.08664651928849056,
+          "mean_CI95": [
+            1.9962448968959523,
+            2.0454942335388306
+          ],
+          "outcome_interval95": [
+            1.891304347826086,
+            2.1991847826086945
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "mean_queue_day": {
+          "mean": -0.035349651525410516,
+          "median": -0.029015474896657456,
+          "std": 0.03251459554304544,
+          "mean_CI95": [
+            -0.044590197336459504,
+            -0.02610910571436153
+          ],
+          "outcome_interval95": [
+            -0.1380562764563059,
+            -0.005352924639026411
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "max_queue": {
+          "mean": -3.66,
+          "median": -4.0,
+          "std": 3.4794440090688195,
+          "mean_CI95": [
+            -4.648847046250815,
+            -2.671152953749186
+          ],
+          "outcome_interval95": [
+            -10.55,
+            2.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "change_cancel_rate": {
+          "mean": -0.01737435897435897,
+          "median": -0.018102564102564098,
+          "std": 0.007745748431613922,
+          "mean_CI95": [
+            -0.01957567632208463,
+            -0.015173041626633313
+          ],
+          "outcome_interval95": [
+            -0.029769230769230763,
+            -0.00023846153846154524
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "unfinished_cases": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "mean_CI95": [
+            0.0,
+            0.0
+          ],
+          "outcome_interval95": [
+            0.0,
+            0.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        },
+        "capacity": {
+          "mean": 4.0,
+          "median": 4.0,
+          "std": 0.0,
+          "mean_CI95": [
+            4.0,
+            4.0
+          ],
+          "outcome_interval95": [
+            4.0,
+            4.0
+          ],
+          "replicates": 50,
+          "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+        }
+      },
+      "parameters": {
+        "model": "semi_markov",
+        "seed": 20261106,
+        "replicate": 2049,
+        "scenario": "combined",
+        "resource_layer": true,
+        "horizon_day": 92.0,
+        "service_fraction": 0.05,
+        "designed_basecapacity": 18,
+        "target_utilization": 0.7,
+        "changes": {
+          "demand_growth": 0.3,
+          "capacity_factor": 1.25,
+          "service_factor": 0.8,
+          "rework_factor": 0.8
+        }
+      }
+    }
+  },
+  "whatif_cases": 750,
+  "whatif_replicates": 50,
+  "sensitivity": [
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.02,
+      "designed_target_utilization": 0.5,
+      "cycle_mean_day": {
+        "mean": 49.25787783333334,
+        "median": 49.515520277777775,
+        "std": 1.6959356638800962,
+        "mean_CI95": [
+          47.15209557622362,
+          51.363660090443055
+        ],
+        "outcome_interval95": [
+          47.211244712962966,
+          51.21798291666667
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 2
+    },
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.02,
+      "designed_target_utilization": 0.7,
+      "cycle_mean_day": {
+        "mean": 49.25787783333334,
+        "median": 49.515520277777775,
+        "std": 1.6959356638800962,
+        "mean_CI95": [
+          47.15209557622362,
+          51.363660090443055
+        ],
+        "outcome_interval95": [
+          47.211244712962966,
+          51.21798291666667
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 2
+    },
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.02,
+      "designed_target_utilization": 0.9,
+      "cycle_mean_day": {
+        "mean": 49.25787783333334,
+        "median": 49.515520277777775,
+        "std": 1.6959356638800962,
+        "mean_CI95": [
+          47.15209557622362,
+          51.363660090443055
+        ],
+        "outcome_interval95": [
+          47.211244712962966,
+          51.21798291666667
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 2
+    },
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.05,
+      "designed_target_utilization": 0.5,
+      "cycle_mean_day": {
+        "mean": 49.19659032407408,
+        "median": 49.425282407407416,
+        "std": 1.7005429474593319,
+        "mean_CI95": [
+          47.08508736881451,
+          51.30809327933365
+        ],
+        "outcome_interval95": [
+          47.16816069444445,
+          51.19091918981482
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 5
+    },
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.05,
+      "designed_target_utilization": 0.7,
+      "cycle_mean_day": {
+        "mean": 49.44045175925926,
+        "median": 49.58405972222222,
+        "std": 1.8207437477470416,
+        "mean_CI95": [
+          47.17969979772717,
+          51.701203720791355
+        ],
+        "outcome_interval95": [
+          47.373254027777776,
+          51.69036199074075
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 4
+    },
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.05,
+      "designed_target_utilization": 0.9,
+      "cycle_mean_day": {
+        "mean": 50.9871,
+        "median": 50.562632175925934,
+        "std": 2.2530503830561703,
+        "mean_CI95": [
+          48.18956845321995,
+          53.78463154678005
+        ],
+        "outcome_interval95": [
+          48.88720733796296,
+          54.15403518518519
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 3
+    },
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.1,
+      "designed_target_utilization": 0.5,
+      "cycle_mean_day": {
+        "mean": 49.1608199074074,
+        "median": 49.370186574074076,
+        "std": 1.7043607411363315,
+        "mean_CI95": [
+          47.044576535186536,
+          51.277063279628265
+        ],
+        "outcome_interval95": [
+          47.12742527777778,
+          51.17223638888889
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 10
+    },
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.1,
+      "designed_target_utilization": 0.7,
+      "cycle_mean_day": {
+        "mean": 49.84504555555556,
+        "median": 49.82135138888889,
+        "std": 2.028403781171778,
+        "mean_CI95": [
+          47.32644960665417,
+          52.36364150445694
+        ],
+        "outcome_interval95": [
+          47.792164166666666,
+          52.53144087962964
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 7
+    },
+    {
+      "cases": 150,
+      "replicates": 5,
+      "assumed_service_fraction": 0.1,
+      "designed_target_utilization": 0.9,
+      "cycle_mean_day": {
+        "mean": 51.04702185185185,
+        "median": 50.637485185185184,
+        "std": 2.2849701404417346,
+        "mean_CI95": [
+          48.20985669149475,
+          53.884187012208955
+        ],
+        "outcome_interval95": [
+          48.786268148148146,
+          54.169822407407416
+        ],
+        "replicates": 5,
+        "assumption": "Independent seeded simulation replicates conditional on fixed data/model; not total epistemic uncertainty"
+      },
+      "abstract_capacity": 6
+    }
+  ],
+  "target_activity": "Clear Invoice",
+  "process_art": {
+    "nodes": [
+      {
+        "activity": "Record Goods Receipt",
+        "events": 314097,
+        "cases": 234479
+      },
+      {
+        "activity": "Create Purchase Order Item",
+        "events": 251734,
+        "cases": 251734
+      },
+      {
+        "activity": "Record Invoice Receipt",
+        "events": 228760,
+        "cases": 211379
+      },
+      {
+        "activity": "Vendor creates invoice",
+        "events": 219919,
+        "cases": 209946
+      },
+      {
+        "activity": "Clear Invoice",
+        "events": 194393,
+        "cases": 183677
+      },
+      {
+        "activity": "Record Service Entry Sheet",
+        "events": 164975,
+        "cases": 5604
+      }
+    ],
+    "edges": [
+      {
+        "category": "3-way match, invoice after GR",
+        "source_activity": "Record Service Entry Sheet",
+        "target_activity": "Record Service Entry Sheet",
+        "frequency": 139107,
+        "cases": 3770,
+        "elapsed_mean_day": 0.0015740331383595203,
+        "elapsed_median_day": 0.0,
+        "elapsed_p90_day": 0.0,
+        "same_timestamp_pairs": 137177
+      },
+      {
+        "category": "3-way match, invoice before GR",
+        "source_activity": "Record Invoice Receipt",
+        "target_activity": "Clear Invoice",
+        "frequency": 125258,
+        "cases": 124621,
+        "elapsed_mean_day": 45.07836889105331,
+        "elapsed_median_day": 37.175694444444446,
+        "elapsed_p90_day": 92.02680555555555,
+        "same_timestamp_pairs": 73
+      },
+      {
+        "category": "3-way match, invoice before GR",
+        "source_activity": "Record Goods Receipt",
+        "target_activity": "Record Invoice Receipt",
+        "frequency": 106525,
+        "cases": 106211,
+        "elapsed_mean_day": 21.002065549297242,
+        "elapsed_median_day": 12.25625,
+        "elapsed_p90_day": 46.93194444444445,
+        "same_timestamp_pairs": 7
+      },
+      {
+        "category": "3-way match, invoice before GR",
+        "source_activity": "Vendor creates invoice",
+        "target_activity": "Record Goods Receipt",
+        "frequency": 103438,
+        "cases": 102431,
+        "elapsed_mean_day": 2.3644841931613354,
+        "elapsed_median_day": 1.4243055555555555,
+        "elapsed_p90_day": 4.778472222222222,
+        "same_timestamp_pairs": 0
+      },
+      {
+        "category": "3-way match, invoice before GR",
+        "source_activity": "Create Purchase Order Item",
+        "target_activity": "Vendor creates invoice",
+        "frequency": 98700,
+        "cases": 98700,
+        "elapsed_mean_day": 11.85763775610717,
+        "elapsed_median_day": 6.3597222222222225,
+        "elapsed_p90_day": 27.724027777777803,
+        "same_timestamp_pairs": 0
+      },
+      {
+        "category": "3-way match, invoice before GR",
+        "source_activity": "Vendor creates invoice",
+        "target_activity": "Record Invoice Receipt",
+        "frequency": 89499,
+        "cases": 89094,
+        "elapsed_mean_day": 11.700972364992284,
+        "elapsed_median_day": 4.551388888888889,
+        "elapsed_p90_day": 33.59027777777778,
+        "same_timestamp_pairs": 0
+      },
+      {
+        "category": "3-way match, invoice before GR",
+        "source_activity": "Record Goods Receipt",
+        "target_activity": "Vendor creates invoice",
+        "frequency": 77049,
+        "cases": 76310,
+        "elapsed_mean_day": 3.184946159803069,
+        "elapsed_median_day": 0.6083333333333333,
+        "elapsed_p90_day": 8.49375,
+        "same_timestamp_pairs": 0
+      },
+      {
+        "category": "3-way match, invoice before GR",
+        "source_activity": "Create Purchase Order Item",
+        "target_activity": "Record Goods Receipt",
+        "frequency": 58869,
+        "cases": 58869,
+        "elapsed_mean_day": 14.695539012232434,
+        "elapsed_median_day": 11.96111111111111,
+        "elapsed_p90_day": 29.13500000000001,
+        "same_timestamp_pairs": 145
+      },
+      {
+        "category": "3-way match, invoice after GR",
+        "source_activity": "Record Goods Receipt",
+        "target_activity": "Record Goods Receipt",
+        "frequency": 40624,
+        "cases": 2806,
+        "elapsed_mean_day": 0.023899613939214914,
+        "elapsed_median_day": 0.0,
+        "elapsed_p90_day": 0.0,
+        "same_timestamp_pairs": 40287
+      },
+      {
+        "category": "3-way match, invoice after GR",
+        "source_activity": "Record Goods Receipt",
+        "target_activity": "Record Service Entry Sheet",
+        "frequency": 23151,
+        "cases": 5105,
+        "elapsed_mean_day": 0.03903980029660346,
+        "elapsed_median_day": 0.0,
+        "elapsed_p90_day": 0.001388888888888889,
+        "same_timestamp_pairs": 15569
+      },
+      {
+        "category": "3-way match, invoice after GR",
+        "source_activity": "Record Service Entry Sheet",
+        "target_activity": "Record Goods Receipt",
+        "frequency": 19183,
+        "cases": 3615,
+        "elapsed_mean_day": 0.11636073172426975,
+        "elapsed_median_day": 0.0,
+        "elapsed_p90_day": 0.002777777777777778,
+        "same_timestamp_pairs": 10041
+      },
+      {
+        "category": "3-way match, invoice before GR",
+        "source_activity": "Record Invoice Receipt",
+        "target_activity": "Record Goods Receipt",
+        "frequency": 14873,
+        "cases": 14829,
+        "elapsed_mean_day": 2.8700342529714544,
+        "elapsed_median_day": 1.1395833333333334,
+        "elapsed_p90_day": 6.002361111111114,
+        "same_timestamp_pairs": 4
+      }
+    ]
+  },
+  "source_commit": "b15aaa4f7dea7132de1d88042e99b57b461c70ce"
+}
