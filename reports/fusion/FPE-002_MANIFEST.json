@@ -1,0 +1,426 @@
+{
+  "experiment_id": "FPE-002",
+  "engine_version": "0.1.0",
+  "git_commit_at_execution": "bfc46455ec78ea3e3897ada20c820adc0bd37921",
+  "working_source_files_sha256": {
+    "signals.py": "0f5cd65cac87b18e62e80d3d8a95176be886a80252371bf4f4806295cded2882",
+    "service.py": "3fc243bb6aa009004a87a0681708c45d8be6297e8cec155a1c0f485130e6abac",
+    "inertial.py": "af868759c44d1712fba0c995dae494db856e271cd52c6f8af8a5c1e3ba4c94ef",
+    "__init__.py": "01088b596af036f540b286088dcab6ccfd435783b7a15b524a838722276306cb",
+    "hdf_worker.py": "c8a2800522edea58faccc06e854d2add2aa0f6bc61c228bf730584ac5304c697",
+    "api.py": "2f9c55ae1b81e17185ccb75c6933ddcf75ffa1e7ab42c9376336bc73d0af7a1d",
+    "physics.py": "71955a75324f61b6935d199a11def613a5eae98aacb859d928b24715907f6ba8",
+    "experiments.py": "95878c0833fa2d296b1e4276df8910806f3e6d3091e44a8539296c1ba57bb8e1",
+    "cli.py": "ef3a3bf3b9a9de416191b03253dc796c361f8cf63f3079e4ef47d470a50655b3",
+    "storage.py": "6312e2d5c60e8fd88e9044e7cf3d61d27b9d1a7de13df9950ec07ce9cf80026b",
+    "acquisition.py": "5112a66ded2e1d49d8ec7c662ae545f57a58c31917f3293e60839582dbc8cb46",
+    "report.py": "3241d6bfb1a7680e5b6141db0a779afcd027e29ca798336e6f3f1911c4c94cd1",
+    "mast.py": "e7aca9d27af27f094b923b369cda53e17dbaeb7226a201873266941e51830a83"
+  },
+  "parser_version": "fpre-parser-1.0",
+  "algorithm_version": "fpre-icf-1.0",
+  "configuration": {
+    "offline": true
+  },
+  "sources": [
+    {
+      "id": "fd5c911293b1661de27dde2c3cfdfc17683983abcec7ec31ee08f6ad525e3ac0",
+      "url": "https://edata.stfc.ac.uk/server/api/core/items/e7a22beb-f55a-45a0-a0c7-bca8eb94d849",
+      "organization": "UKAEA FAIR-MAST / STFC eData",
+      "acquired_at": "2026-11-06T07:09:58.539681+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 07:09:58 GMT",
+      "sha256": "499e622941eb61a7136390fd49c47f50a1291a8b01501c607b2d611469f4c716",
+      "bytes": 9240,
+      "http_status": 200,
+      "parser_version": "fpre-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source": "STFC eData",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "id": "4619d69959cda37aeaed8a33549e91efbf9af54eb70cac372dbbd1a972b856de",
+      "url": "https://edata.stfc.ac.uk/bitstreams/bf56f40c-f70b-4bad-af69-5e6e65ea2a71/download",
+      "organization": "UKAEA FAIR-MAST / STFC eData",
+      "acquired_at": "2026-11-06T07:12:44.929160+00:00",
+      "release_date": "Tue, 17 Jun 2025 16:12:47 GMT",
+      "etag": "\"77ec3c247f4af0383f9b1ac2b08dff8a\"",
+      "server_date": "Fri, 06 Nov 2026 07:12:26 GMT",
+      "sha256": "89928d857b29304d0be65ca0805b398444dfbea9802a37c6473e2f1089dd0966",
+      "bytes": 64965109,
+      "http_status": 200,
+      "parser_version": "fpre-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source": "STFC eData",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "shot_ids": [
+    "109090",
+    "109092",
+    "109093",
+    "109094",
+    "109098",
+    "109099",
+    "109103"
+  ],
+  "diagnostics": [
+    "SLOS-TRXI raw detector frame"
+  ],
+  "random_seed": 20261106,
+  "dependencies": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.1",
+    "xarray": "2026.9.0",
+    "zarr": "3.4.2",
+    "dask": "2026.8.0",
+    "pint": "0.26.2",
+    "pyhdf": "0.11.7",
+    "matplotlib": "3.11.2",
+    "fastapi": "0.162.0"
+  },
+  "execution_environment": {
+    "system": "Darwin",
+    "release": "27.0.0",
+    "architecture": "arm64",
+    "python": "3.12.14"
+  },
+  "created_at": "2026-11-06T08:05:44.994211+00:00",
+  "completed_at": "2026-11-06T08:05:55.942780+00:00",
+  "results_sha256": "01e944055fa62c6996f2ba3e435043563ee897ea2f1749f61c327598f09a6ccc",
+  "validation_status": "computationally_verified_not_new_physical_discovery",
+  "data_derivative_license": "CC-BY-4.0",
+  "source_data_terms_distinct_from_Apache": true,
+  "performance": {
+    "acquisition_cached_seconds": 0.10636945796431974,
+    "parsing_seconds": 1.3490231669857167,
+    "analysis_seconds": 8.071110748918727,
+    "total_before_report_seconds": 10.195639082987327,
+    "plot_generation_seconds": 0.7164392090053298,
+    "total_seconds": 10.940018584020436,
+    "network_bytes_this_run": 0,
+    "source_response_bytes": 64974349,
+    "unique_source_objects": 2,
+    "process_peak_rss_bytes": 485457920,
+    "native_reader_child_peak_rss_bytes": 43335680,
+    "rss_scope": "Whole process lifetime peak and separately reported child peak; not summed concurrent peaks; explicit resource/input/chunk bounds, no unmeasured hard RSS guarantee"
+  },
+  "original_bytes_unchanged": true,
+  "errors": [],
+  "figures": [
+    {
+      "file": "figures/icf-109090-raw.png",
+      "caption": "STFC OMEAG_SAI-23A, shot 109090: original raw detector array displayed with explicit linear P01\u2013P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109090-processed.png",
+      "caption": "Shot 109090: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109090-profiles.png",
+      "caption": "Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109092-raw.png",
+      "caption": "STFC OMEAG_SAI-23A, shot 109092: original raw detector array displayed with explicit linear P01\u2013P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109092-processed.png",
+      "caption": "Shot 109092: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109092-profiles.png",
+      "caption": "Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109093-raw.png",
+      "caption": "STFC OMEAG_SAI-23A, shot 109093: original raw detector array displayed with explicit linear P01\u2013P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109093-processed.png",
+      "caption": "Shot 109093: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109093-profiles.png",
+      "caption": "Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109094-raw.png",
+      "caption": "STFC OMEAG_SAI-23A, shot 109094: original raw detector array displayed with explicit linear P01\u2013P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109094-processed.png",
+      "caption": "Shot 109094: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109094-profiles.png",
+      "caption": "Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109098-raw.png",
+      "caption": "STFC OMEAG_SAI-23A, shot 109098: original raw detector array displayed with explicit linear P01\u2013P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109098-processed.png",
+      "caption": "Shot 109098: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109098-profiles.png",
+      "caption": "Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109099-raw.png",
+      "caption": "STFC OMEAG_SAI-23A, shot 109099: original raw detector array displayed with explicit linear P01\u2013P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109099-processed.png",
+      "caption": "Shot 109099: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109099-profiles.png",
+      "caption": "Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109103-raw.png",
+      "caption": "STFC OMEAG_SAI-23A, shot 109103: original raw detector array displayed with explicit linear P01\u2013P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109103-processed.png",
+      "caption": "Shot 109103: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "figures/icf-109103-profiles.png",
+      "caption": "Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.",
+      "license": "CC-BY-4.0"
+    }
+  ],
+  "qualification": {
+    "raw_replay": {
+      "passed": true,
+      "experiment": "FPE-002",
+      "sources_rehashed": 2,
+      "network_used": false,
+      "actual_results_sha256": "01e944055fa62c6996f2ba3e435043563ee897ea2f1749f61c327598f09a6ccc",
+      "expected_results_sha256": "01e944055fa62c6996f2ba3e435043563ee897ea2f1749f61c327598f09a6ccc",
+      "duration_seconds": 9.991470624983776,
+      "verified_at": "2026-11-06T08:38:31.238337+00:00",
+      "scope": "All original acquired bytes rehashed; selected chunks/HDF reparsed and all deterministic findings recomputed; no substituted vintage"
+    },
+    "independent_numeric_checks": [
+      {
+        "shot_id": "109090",
+        "pixels": 4000000,
+        "valid": 4000000,
+        "mean_raw": 1562.0641205,
+        "centroid_detector_px": [
+          1086.2392632178764,
+          790.4221649938025
+        ],
+        "method_sensitivity": {
+          "x_range_px": 8.482993794463255,
+          "y_range_px": 27.493343077138547,
+          "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+        },
+        "passed": true
+      },
+      {
+        "shot_id": "109092",
+        "pixels": 4000000,
+        "valid": 4000000,
+        "mean_raw": 1706.347387,
+        "centroid_detector_px": [
+          1071.9314847938406,
+          724.1508557007272
+        ],
+        "method_sensitivity": {
+          "x_range_px": 19.662304210247612,
+          "y_range_px": 31.186901151629513,
+          "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+        },
+        "passed": true
+      },
+      {
+        "shot_id": "109093",
+        "pixels": 4000000,
+        "valid": 4000000,
+        "mean_raw": 1601.224684,
+        "centroid_detector_px": [
+          999.1720116519263,
+          780.992256901312
+        ],
+        "method_sensitivity": {
+          "x_range_px": 0.8656053439643756,
+          "y_range_px": 4.9670732604679415,
+          "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+        },
+        "passed": true
+      },
+      {
+        "shot_id": "109094",
+        "pixels": 4000000,
+        "valid": 4000000,
+        "mean_raw": 1597.886932,
+        "centroid_detector_px": [
+          1091.705129306671,
+          800.5721078605079
+        ],
+        "method_sensitivity": {
+          "x_range_px": 5.882454976262807,
+          "y_range_px": 19.39653326914288,
+          "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+        },
+        "passed": true
+      },
+      {
+        "shot_id": "109098",
+        "pixels": 4000000,
+        "valid": 4000000,
+        "mean_raw": 1593.382042,
+        "centroid_detector_px": [
+          1082.8356007731697,
+          743.394051198614
+        ],
+        "method_sensitivity": {
+          "x_range_px": 18.08158473962021,
+          "y_range_px": 37.72015718203966,
+          "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+        },
+        "passed": true
+      },
+      {
+        "shot_id": "109099",
+        "pixels": 4000000,
+        "valid": 4000000,
+        "mean_raw": 1617.0900105,
+        "centroid_detector_px": [
+          989.382715516441,
+          783.2196149598625
+        ],
+        "method_sensitivity": {
+          "x_range_px": 0.8047038626384619,
+          "y_range_px": 4.762418254523141,
+          "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+        },
+        "passed": true
+      },
+      {
+        "shot_id": "109103",
+        "pixels": 4000000,
+        "valid": 4000000,
+        "mean_raw": 1653.855116,
+        "centroid_detector_px": [
+          1087.1791197434009,
+          807.3200627132504
+        ],
+        "method_sensitivity": {
+          "x_range_px": 4.827974601995265,
+          "y_range_px": 8.301585077136565,
+          "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+        },
+        "passed": true
+      }
+    ],
+    "algorithm_and_regression_tests": 246,
+    "source_archive_redistributed": false
+  },
+  "data_source": "STFC eData OMEAG_SAI-23A",
+  "dataset": {
+    "source": "STFC eData OMEAG_SAI-23A",
+    "doi": "10.5286/edata/944",
+    "item_uuid": "e7a22beb-f55a-45a0-a0c7-bca8eb94d849",
+    "authors": [
+      "Khan, Matthew Ben",
+      "Churnetski, Kristen",
+      "Barlow, Duncan",
+      "Betti, Riccardo ",
+      "Freeman, Calum",
+      "Glize, Kevin",
+      "Kunimune, Justin",
+      "Lees, Aarne",
+      "Mancini, Roberto C.",
+      "Nutter, Arun",
+      "Paddock, Robert",
+      "Regan, Sean",
+      "Stoeckl, Christian",
+      "Theobald, Wolfgang",
+      "Woolsey, Nigel",
+      "Scott, R.H.H. "
+    ],
+    "issued": [
+      "2025-06-17"
+    ],
+    "archive_sha256": "89928d857b29304d0be65ca0805b398444dfbea9802a37c6473e2f1089dd0966",
+    "archive_bytes": 64965109,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "type": "real_experimental_detector_data"
+  },
+  "dataset_version": {
+    "source_sha256": {
+      "https://edata.stfc.ac.uk/server/api/core/items/e7a22beb-f55a-45a0-a0c7-bca8eb94d849": "499e622941eb61a7136390fd49c47f50a1291a8b01501c607b2d611469f4c716",
+      "https://edata.stfc.ac.uk/bitstreams/bf56f40c-f70b-4bad-af69-5e6e65ea2a71/download": "89928d857b29304d0be65ca0805b398444dfbea9802a37c6473e2f1089dd0966"
+    },
+    "upstream_ingestion": []
+  },
+  "acquisition_dates": [
+    "2026-11-06T07:09:58.539681+00:00",
+    "2026-11-06T07:12:44.929160+00:00"
+  ],
+  "algorithms": {
+    "version": "fpre-icf-1.0",
+    "details": "FPE-002_METHODOLOGY.md"
+  },
+  "parameters": {},
+  "exporter_source_sha256": "5e12658f8c530000301ea7d9ece7bca675c7b19065c0f18cdb5487d160698018",
+  "output_artifacts_sha256": {
+    "FPE-002_REPORT.html": "00ce3710c1d9ffdf23f37e45cb5efd172b90b37e4d4ef6f6fb974db23052e295",
+    "FPE-002_RESULTS.json": "5b8880c957fd037ad70e9b844e5b9a61eab2f9aeda7463b2bbaac609b0e205d8",
+    "FPE-002_FINDINGS.csv": "a88a0748adf7c35652a9946441e55863e5b46a9e8752f04931c463cfacbaeda4",
+    "FPE-002_METHODOLOGY.md": "210caec11f046d78beea73d4a23fb97718fc963216d237cc547ee0ccf7068788",
+    "FPE-002_REPRODUCIBILITY.md": "fa9909ce8949e986d40a8073fc59c32feb49caca9154d6679f3f0acc01e92139",
+    "figures/icf-109090-raw.png": "7fc136c0d4c474f12374e8b5cdbe0b531f075843b316bb780c8a385024ff1684",
+    "figures/icf-109090-processed.png": "7fc136c0d4c474f12374e8b5cdbe0b531f075843b316bb780c8a385024ff1684",
+    "figures/icf-109090-profiles.png": "f7f5842d651b2a07c90bee2de2f5483cb76a6b4ba3f31ce8a0eb7006cb51e4ac",
+    "figures/icf-109092-raw.png": "854513d8224bc4ef0b67845992105d57a570c4ea44461e7076e9092722d96ed7",
+    "figures/icf-109092-processed.png": "854513d8224bc4ef0b67845992105d57a570c4ea44461e7076e9092722d96ed7",
+    "figures/icf-109092-profiles.png": "12684dc7b3c7bd37403880ff014e725c2d2f9fc4d9a8479afed0c9ba16ff9053",
+    "figures/icf-109093-raw.png": "c181aa28af155fcc40ca0b1cf74fd3a637777861fe4bd44e3323fec635013cca",
+    "figures/icf-109093-processed.png": "c181aa28af155fcc40ca0b1cf74fd3a637777861fe4bd44e3323fec635013cca",
+    "figures/icf-109093-profiles.png": "009bd62b715e6f2b004ffa495dd05e9abfe82793a06ab65833b98ed0d0cabc73",
+    "figures/icf-109094-raw.png": "3d8976373a4bab91ed9c4698ee6001efe1a70b7e5dfad047994b9cc3af5e37d7",
+    "figures/icf-109094-processed.png": "3d8976373a4bab91ed9c4698ee6001efe1a70b7e5dfad047994b9cc3af5e37d7",
+    "figures/icf-109094-profiles.png": "d4070b67febe41b259021a0823ea97d997428a52544efb3483312b7a740b62d7",
+    "figures/icf-109098-raw.png": "1a32ac2d36e76fd228ca651e2004dc09ec90c33e39b8d72483f1017ba0e49453",
+    "figures/icf-109098-processed.png": "1a32ac2d36e76fd228ca651e2004dc09ec90c33e39b8d72483f1017ba0e49453",
+    "figures/icf-109098-profiles.png": "7477eefb77a8aa5fe57bb952201be57043cba237b3e23396d2588e9b0211cd40",
+    "figures/icf-109099-raw.png": "8369a71538254107d263a190f34cd5e9e0865fe66ae05a5e4efb4596f34b8b69",
+    "figures/icf-109099-processed.png": "8369a71538254107d263a190f34cd5e9e0865fe66ae05a5e4efb4596f34b8b69",
+    "figures/icf-109099-profiles.png": "e03b09a19ae2b209de3097f3ad114399b07a4fe7217175a33585340f00f6ae10",
+    "figures/icf-109103-raw.png": "6147d5cd25edc15f93b8e8ec10e30b0a607a4eb09abeca7e98d3712f36039b51",
+    "figures/icf-109103-processed.png": "6147d5cd25edc15f93b8e8ec10e30b0a607a4eb09abeca7e98d3712f36039b51",
+    "figures/icf-109103-profiles.png": "8d692ee0077c4720effcf85ebfeb2e43be0dda9adca3daafdc7f37dcf264210a"
+  }
+}

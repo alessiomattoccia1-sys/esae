@@ -98,3 +98,8 @@ results only. No VPS materials calculation, local database or raw archive is exp
 ## Financial systems extension
 
 ENGINE 04 — MARKETS imports the existing Shared Research Core without changing it. A separate financial environment/archive adds source-vintage preservation, institutional time-series normalization, year-partitioned Parquet, bounded DuckDB, explicit statistical methods and derived-only public reports. Domain algorithms remain separate. See financial/ARCHITECTURE.md.
+
+
+## ENGINE 05 — Fusion Plasma Research
+
+See [fusion/ARCHITECTURE.md](fusion/ARCHITECTURE.md). The two experimental laboratories share acquisition/provenance/jobs/units validation and have independent numerical algorithms. They do not control experimental hardware. The public website uses qualified static reports and authentic screenshots; the scientific backend remains local.

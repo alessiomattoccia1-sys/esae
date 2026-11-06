@@ -13,7 +13,7 @@ archive preserve all earlier environments and databases.
 
 | Component | Classification | Intervention |
 |---|---|---|
-| Existing bounded sandbox runner | Direct reuse unchanged | Read only selected HDF; deny network, CPU/time/output limits; emit row chunks below existing per-file limit |
+| Existing bounded sandbox runner | Direct reuse; one demonstrated exit-race fix | Read only selected HDF; deny network, CPU/time/output limits; emit row chunks below existing per-file limit |
 | Shared PublicCache | Direct reuse with injected policy | Official FAIR-MAST/STFC URLs, bounded responses, immutable raw bytes; content-addressed snapshots per study |
 | JobStore / OperationLock | Direct reuse | Separate fusion SQLite registry, explicit resume/cancel and per-lab runs |
 | Local API boundary | Direct reuse | Loopback Host/Origin/mutation protections and strict CSP |

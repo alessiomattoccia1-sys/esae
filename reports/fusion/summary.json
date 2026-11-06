@@ -1,0 +1,1189 @@
+{
+  "status": "QUALIFIED",
+  "engine_version": "0.1.0",
+  "experiments": {
+    "FPE-001": {
+      "experiment": "FPE-001",
+      "title": "Magnetic Plasma Dynamics \u2014 Quantitative Analysis of Public MAST Discharges",
+      "counts": {
+        "catalog_shots": 11573,
+        "selected_shots": 5,
+        "selected_diagnostic_types": 2,
+        "signals": 10,
+        "samples": 757500,
+        "valid_samples": 757500,
+        "candidate_shots_examined": 5,
+        "excluded_candidates": 0,
+        "computed_signals": 10,
+        "inconclusive_signals": 0
+      },
+      "dataset": {
+        "source": "UKAEA FAIR-MAST",
+        "catalog_url": "https://s3.echo.stfc.ac.uk/mast/fairmast-meta/l2_shots.parquet",
+        "catalog_sha256": "696f34fcfb8ef6e2bfa648f477b495e1c0ed40d460936af9d3057a4b1db21bf3",
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "data_level": 2,
+        "type": "real_experimental_diagnostic_data_source_processed"
+      },
+      "configuration": {
+        "shot_count": 5,
+        "window_seconds": [
+          0.05,
+          0.35
+        ]
+      },
+      "completed_at": "2026-11-06T08:05:43.094929+00:00",
+      "git_commit": "bfc46455ec78ea3e3897ada20c820adc0bd37921",
+      "analysis_sha256": "eda30cddda1943f19425d2b9472d4e773f62c100e298191538fee6b13330a8bd",
+      "findings": [
+        {
+          "id": "MCF-01",
+          "experiment": "FPE-001",
+          "kind": "DERIVED",
+          "title": "Coverage and quality of comparable MAST diagnostics",
+          "method": "Catalog selection fixed before values; explicit unit conversion and finite/regular-sampling checks",
+          "numerical_result": {
+            "catalog_shots": 11573,
+            "selected_shots": 5,
+            "selected_diagnostic_types": 2,
+            "signals": 10,
+            "samples": 757500,
+            "valid_samples": 757500,
+            "candidate_shots_examined": 5,
+            "excluded_candidates": 0,
+            "computed_signals": 10,
+            "inconclusive_signals": 0
+          },
+          "unit": "shots/signals/samples",
+          "evidence": [
+            "selection",
+            "signals.quality"
+          ],
+          "uncertainty": "Missingness is counted; source calibration uncertainty unknown",
+          "verification": "computationally_verified",
+          "limits": "Source Level2 diagnostic processing release retained; instrument/physics validation is not asserted."
+        },
+        {
+          "id": "MCF-02",
+          "experiment": "FPE-001",
+          "kind": "DERIVED",
+          "title": "Temporal and spectral characterization of source measurements",
+          "method": "Finite contiguous regular segments, SciPy FFT/Welch/STFT, explicit Hann/overlap/resolution, derivative excursions",
+          "numerical_result": [
+            {
+              "shot_id": 30421,
+              "diagnostic": "magnetics/ip",
+              "unit": "A",
+              "rms": 592831.2924338278,
+              "peak_hz": 19.53125000000215,
+              "resolution_hz": 19.53125000000215,
+              "candidate_events": 1
+            },
+            {
+              "shot_id": 30421,
+              "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+              "unit": "V",
+              "rms": 0.006361044050117094,
+              "peak_hz": 366.21093749963376,
+              "resolution_hz": 122.07031249987791,
+              "candidate_events": 0
+            },
+            {
+              "shot_id": 30424,
+              "diagnostic": "magnetics/ip",
+              "unit": "A",
+              "rms": 591866.5020935973,
+              "peak_hz": 19.53125000000215,
+              "resolution_hz": 19.53125000000215,
+              "candidate_events": 2
+            },
+            {
+              "shot_id": 30424,
+              "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+              "unit": "V",
+              "rms": 0.006344997549364238,
+              "peak_hz": 244.14062499975583,
+              "resolution_hz": 122.07031249987791,
+              "candidate_events": 0
+            },
+            {
+              "shot_id": 30417,
+              "diagnostic": "magnetics/ip",
+              "unit": "A",
+              "rms": 595148.1644974579,
+              "peak_hz": 19.53125000000215,
+              "resolution_hz": 19.53125000000215,
+              "candidate_events": 5
+            },
+            {
+              "shot_id": 30417,
+              "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+              "unit": "V",
+              "rms": 0.006528670436586266,
+              "peak_hz": 366.21093749963376,
+              "resolution_hz": 122.07031249987791,
+              "candidate_events": 1
+            },
+            {
+              "shot_id": 30425,
+              "diagnostic": "magnetics/ip",
+              "unit": "A",
+              "rms": 589717.8580495752,
+              "peak_hz": 19.53125000000215,
+              "resolution_hz": 19.53125000000215,
+              "candidate_events": 3
+            },
+            {
+              "shot_id": 30425,
+              "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+              "unit": "V",
+              "rms": 0.006353864079767064,
+              "peak_hz": 122.07031249987791,
+              "resolution_hz": 122.07031249987791,
+              "candidate_events": 0
+            },
+            {
+              "shot_id": 30426,
+              "diagnostic": "magnetics/ip",
+              "unit": "A",
+              "rms": 591115.2138045023,
+              "peak_hz": 19.53125000000215,
+              "resolution_hz": 19.53125000000215,
+              "candidate_events": 0
+            },
+            {
+              "shot_id": 30426,
+              "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+              "unit": "V",
+              "rms": 0.0063830213630413895,
+              "peak_hz": 366.21093749963376,
+              "resolution_hz": 122.07031249987791,
+              "candidate_events": 0
+            }
+          ],
+          "unit": "A/V,Hz,s",
+          "evidence": [
+            "signals.spectral",
+            "signals.events",
+            "signals.filter_sensitivity"
+          ],
+          "uncertainty": "Frequency-bin and time-grid resolution; window/filter/threshold sensitivity; no total calibration error",
+          "verification": "computationally_verified",
+          "limits": "Peaks and transients are not identified MHD modes, ELMs or disruptions."
+        },
+        {
+          "id": "MCF-03",
+          "experiment": "FPE-001",
+          "kind": "STATISTICAL",
+          "title": "Cross-shot spread and parameter sensitivity",
+          "method": "Report all selected shots and all declared spectral/filter/event settings; same-shot descriptive correlation only",
+          "numerical_result": [
+            {
+              "diagnostic": "magnetics/ip",
+              "unit": "A",
+              "shot_ids": [
+                30421,
+                30424,
+                30417,
+                30425,
+                30426
+              ],
+              "rms_distribution": {
+                "n": 5,
+                "mean": 592135.806175792,
+                "std_sample": 2032.1546700068814,
+                "rms": 592138.5958350777,
+                "minimum": 589717.8580495752,
+                "maximum": 595148.1644974579,
+                "p05": 589997.3292005607,
+                "p95": 594684.7900847319
+              },
+              "mean_distribution": {
+                "n": 5,
+                "mean": 584080.4758145832,
+                "std_sample": 1817.180002365998,
+                "rms": 584082.7372404691,
+                "minimum": 581892.6515208334,
+                "maximum": 586681.2878645833,
+                "p05": 582139.4509083334,
+                "p95": 586324.9120875
+              },
+              "dominant_frequency_distribution_hz": {
+                "n": 5,
+                "mean": 19.53125000000215,
+                "std_sample": 0.0,
+                "rms": 19.53125000000215,
+                "minimum": 19.53125000000215,
+                "maximum": 19.53125000000215,
+                "p05": 19.53125000000215,
+                "p95": 19.53125000000215
+              },
+              "event_counts": [
+                {
+                  "shot_id": 30421,
+                  "count": 1
+                },
+                {
+                  "shot_id": 30424,
+                  "count": 2
+                },
+                {
+                  "shot_id": 30417,
+                  "count": 5
+                },
+                {
+                  "shot_id": 30425,
+                  "count": 3
+                },
+                {
+                  "shot_id": 30426,
+                  "count": 0
+                }
+              ],
+              "shots_with_candidate_events": 4,
+              "denominator_shots": 5,
+              "interpretation": "Same catalog campaign/shape/current category, not controlled identical experiments; no phase alignment, performance ranking or causal inference."
+            },
+            {
+              "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+              "unit": "V",
+              "shot_ids": [
+                30421,
+                30424,
+                30417,
+                30425,
+                30426
+              ],
+              "rms_distribution": {
+                "n": 5,
+                "mean": 0.006394319495775211,
+                "std_sample": 7.641068882360629e-05,
+                "rms": 0.006394684721606229,
+                "minimum": 0.006344997549364238,
+                "maximum": 0.006528670436586266,
+                "p05": 0.006346770855444803,
+                "p95": 0.006499540621877291
+              },
+              "mean_distribution": {
+                "n": 5,
+                "mean": 0.0063861650649483,
+                "std_sample": 7.594009372340283e-05,
+                "rms": 0.006386526266683157,
+                "minimum": 0.006337163139544427,
+                "maximum": 0.006519698751034836,
+                "p05": 0.006338926882321636,
+                "p95": 0.0064907346341883145
+              },
+              "dominant_frequency_distribution_hz": {
+                "n": 5,
+                "mean": 292.96874999970703,
+                "std_sample": 109.18300671374774,
+                "rms": 308.81617775050944,
+                "minimum": 122.07031249987791,
+                "maximum": 366.21093749963376,
+                "p05": 146.48437499985351,
+                "p95": 366.21093749963376
+              },
+              "event_counts": [
+                {
+                  "shot_id": 30421,
+                  "count": 0
+                },
+                {
+                  "shot_id": 30424,
+                  "count": 0
+                },
+                {
+                  "shot_id": 30417,
+                  "count": 1
+                },
+                {
+                  "shot_id": 30425,
+                  "count": 0
+                },
+                {
+                  "shot_id": 30426,
+                  "count": 0
+                }
+              ],
+              "shots_with_candidate_events": 1,
+              "denominator_shots": 5,
+              "interpretation": "Same catalog campaign/shape/current category, not controlled identical experiments; no phase alignment, performance ranking or causal inference."
+            }
+          ],
+          "unit": "A/V,Hz,counts",
+          "evidence": [
+            "cross_shot",
+            "within_shot_correlations"
+          ],
+          "uncertainty": "Observed cross-shot dispersion and method sensitivity; small selected cohort, not population inference",
+          "verification": "computationally_verified",
+          "limits": "Differences may reflect unmeasured experimental settings or processing; no causal plasma conclusion."
+        }
+      ],
+      "performance": {
+        "acquisition_selection_seconds": 0.38604541798122227,
+        "analysis_seconds": 1.1593008740455844,
+        "total_before_report_seconds": 3.715327707992401,
+        "plot_generation_seconds": 2.4670260419952683,
+        "total_seconds": 6.225488500029314,
+        "network_bytes_this_run": 0,
+        "source_response_bytes": 25549783,
+        "unique_source_objects": 80,
+        "process_peak_rss_bytes": 432816128,
+        "native_reader_child_peak_rss_bytes": 4276224,
+        "rss_scope": "Whole process lifetime peak and separately reported child peak; not summed concurrent peaks; explicit resource/input/chunk bounds, no unmeasured hard RSS guarantee"
+      },
+      "independent_verification": true,
+      "raw_replay": {
+        "passed": true,
+        "experiment": "FPE-001",
+        "sources_rehashed": 80,
+        "network_used": false,
+        "actual_results_sha256": "eda30cddda1943f19425d2b9472d4e773f62c100e298191538fee6b13330a8bd",
+        "expected_results_sha256": "eda30cddda1943f19425d2b9472d4e773f62c100e298191538fee6b13330a8bd",
+        "duration_seconds": 3.567596249980852,
+        "verified_at": "2026-11-06T08:38:21.101704+00:00",
+        "scope": "All original acquired bytes rehashed; selected chunks/HDF reparsed and all deterministic findings recomputed; no substituted vintage"
+      },
+      "data_derivative_license": "CC-BY-SA-4.0",
+      "limitations": [
+        "Legacy mastapp JSON service timed out; current official documentation points to the public S3 Parquet catalogs actually used.",
+        "Level2 magnetics metadata identifies source ingestion commit/release; a processed diagnostic is not a direct equilibrium reconstruction.",
+        "No interpolation, missing-to-zero conversion or sorting of bad time axes; spectral analysis uses declared contiguous segments.",
+        "Sample deliberately matches catalog categories, not all physical operating conditions; no cross-shot phase alignment.",
+        "Source release documents ongoing corrections; quality metrics and source-version metadata accompany every result.",
+        "No new instability, confinement improvement, disruption forecast, physical law or causal effect established.",
+        "Statistical block intervals and discretization/sensitivity do not quantify unknown instrument/calibration systematics."
+      ],
+      "measurements": [
+        {
+          "shot_id": 30421,
+          "diagnostic": "magnetics/ip",
+          "unit": "A",
+          "samples": 1500,
+          "valid": 1500,
+          "mean": 584899.4089791666,
+          "rms": 592831.2924338278,
+          "peak_hz": 19.53125000000215,
+          "frequency_half_bin_hz": 9.765625000001075,
+          "mean_interval": {
+            "lower": 558023.6141614583,
+            "upper": 615017.30925,
+            "block_samples": 38,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 1,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 4
+            },
+            {
+              "threshold": 6,
+              "events": 1
+            },
+            {
+              "threshold": 8,
+              "events": 1
+            }
+          ],
+          "source_ingestion": "2026-09-24T17:15:15Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30421,
+          "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+          "unit": "V",
+          "samples": 150000,
+          "valid": 150000,
+          "mean": 0.006353103413929542,
+          "rms": 0.006361044050117094,
+          "peak_hz": 366.21093749963376,
+          "frequency_half_bin_hz": 61.03515624993896,
+          "mean_interval": {
+            "lower": 0.006340805226130411,
+            "upper": 0.006364997004229576,
+            "block_samples": 387,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 0,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 0
+            },
+            {
+              "threshold": 6,
+              "events": 0
+            },
+            {
+              "threshold": 8,
+              "events": 0
+            }
+          ],
+          "source_ingestion": "2026-09-24T17:15:15Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30424,
+          "diagnostic": "magnetics/ip",
+          "unit": "A",
+          "samples": 1500,
+          "valid": 1500,
+          "mean": 583802.38225,
+          "rms": 591866.5020935973,
+          "peak_hz": 19.53125000000215,
+          "frequency_half_bin_hz": 9.765625000001075,
+          "mean_interval": {
+            "lower": 556200.1596375,
+            "upper": 613622.1638989584,
+            "block_samples": 38,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 2,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 4
+            },
+            {
+              "threshold": 6,
+              "events": 2
+            },
+            {
+              "threshold": 8,
+              "events": 2
+            }
+          ],
+          "source_ingestion": "2026-09-24T17:04:51Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30424,
+          "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+          "unit": "V",
+          "samples": 150000,
+          "valid": 150000,
+          "mean": 0.006337163139544427,
+          "rms": 0.006344997549364238,
+          "peak_hz": 244.14062499975583,
+          "frequency_half_bin_hz": 61.03515624993896,
+          "mean_interval": {
+            "lower": 0.006324278052873288,
+            "upper": 0.00634849956976374,
+            "block_samples": 387,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 0,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 1
+            },
+            {
+              "threshold": 6,
+              "events": 0
+            },
+            {
+              "threshold": 8,
+              "events": 0
+            }
+          ],
+          "source_ingestion": "2026-09-24T17:04:51Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30417,
+          "diagnostic": "magnetics/ip",
+          "unit": "A",
+          "samples": 1500,
+          "valid": 1500,
+          "mean": 586681.2878645833,
+          "rms": 595148.1644974579,
+          "peak_hz": 19.53125000000215,
+          "frequency_half_bin_hz": 9.765625000001075,
+          "mean_interval": {
+            "lower": 558761.519971875,
+            "upper": 617241.8874729166,
+            "block_samples": 38,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 5,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 6
+            },
+            {
+              "threshold": 6,
+              "events": 5
+            },
+            {
+              "threshold": 8,
+              "events": 2
+            }
+          ],
+          "source_ingestion": "2026-09-24T17:18:59Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30417,
+          "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+          "unit": "V",
+          "samples": 150000,
+          "valid": 150000,
+          "mean": 0.006519698751034836,
+          "rms": 0.006528670436586266,
+          "peak_hz": 366.21093749963376,
+          "frequency_half_bin_hz": 61.03515624993896,
+          "mean_interval": {
+            "lower": 0.006507762119680022,
+            "upper": 0.006532922559568659,
+            "block_samples": 387,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 1,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 2
+            },
+            {
+              "threshold": 6,
+              "events": 1
+            },
+            {
+              "threshold": 8,
+              "events": 0
+            }
+          ],
+          "source_ingestion": "2026-09-24T17:18:59Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30425,
+          "diagnostic": "magnetics/ip",
+          "unit": "A",
+          "samples": 1500,
+          "valid": 1500,
+          "mean": 581892.6515208334,
+          "rms": 589717.8580495752,
+          "peak_hz": 19.53125000000215,
+          "frequency_half_bin_hz": 9.765625000001075,
+          "mean_interval": {
+            "lower": 555223.4620270833,
+            "upper": 611704.4827260417,
+            "block_samples": 38,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 3,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 5
+            },
+            {
+              "threshold": 6,
+              "events": 3
+            },
+            {
+              "threshold": 8,
+              "events": 1
+            }
+          ],
+          "source_ingestion": "2026-09-24T17:09:07Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30425,
+          "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+          "unit": "V",
+          "samples": 150000,
+          "valid": 150000,
+          "mean": 0.00634598185343047,
+          "rms": 0.006353864079767064,
+          "peak_hz": 122.07031249987791,
+          "frequency_half_bin_hz": 61.03515624993896,
+          "mean_interval": {
+            "lower": 0.006333343831304461,
+            "upper": 0.006357917873101309,
+            "block_samples": 387,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 0,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 0
+            },
+            {
+              "threshold": 6,
+              "events": 0
+            },
+            {
+              "threshold": 8,
+              "events": 0
+            }
+          ],
+          "source_ingestion": "2026-09-24T17:09:07Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30426,
+          "diagnostic": "magnetics/ip",
+          "unit": "A",
+          "samples": 1500,
+          "valid": 1500,
+          "mean": 583126.6484583333,
+          "rms": 591115.2138045023,
+          "peak_hz": 19.53125000000215,
+          "frequency_half_bin_hz": 9.765625000001075,
+          "mean_interval": {
+            "lower": 555639.6458260417,
+            "upper": 612854.4043625001,
+            "block_samples": 38,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 0,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 2
+            },
+            {
+              "threshold": 6,
+              "events": 0
+            },
+            {
+              "threshold": 8,
+              "events": 0
+            }
+          ],
+          "source_ingestion": "2026-09-24T16:57:47Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        },
+        {
+          "shot_id": 30426,
+          "diagnostic": "magnetics/b_field_pol_probe_omv_voltage",
+          "unit": "V",
+          "samples": 150000,
+          "valid": 150000,
+          "mean": 0.006374878166802228,
+          "rms": 0.0063830213630413895,
+          "peak_hz": 366.21093749963376,
+          "frequency_half_bin_hz": 61.03515624993896,
+          "mean_interval": {
+            "lower": 0.006363399022089317,
+            "upper": 0.006385518176118533,
+            "block_samples": 387,
+            "replicates": 499,
+            "seed": 20261106,
+            "kind": "Conditional moving-block percentile interval for segment mean; assumes locally representative dependence",
+            "systematic_calibration_uncertainty": null,
+            "not_total_measurement_error": true
+          },
+          "candidate_events": 0,
+          "event_threshold_sensitivity": [
+            {
+              "threshold": 4,
+              "events": 0
+            },
+            {
+              "threshold": 6,
+              "events": 0
+            },
+            {
+              "threshold": 8,
+              "events": 0
+            }
+          ],
+          "source_ingestion": "2026-09-24T16:57:47Z",
+          "source_commit": "https://github.com/ukaea/fair-mast-ingestion/tree/ed6ea4e2a81f2317ae474f7c5421071994220948"
+        }
+      ]
+    },
+    "FPE-002": {
+      "experiment": "FPE-002",
+      "title": "Inertial Fusion Diagnostics \u2014 Quantitative Assessment of Published Experimental Measurements",
+      "counts": {
+        "entries": 74,
+        "files": 63,
+        "directories": 11,
+        "expanded_bytes": 81949600,
+        "formats": {
+          "txt": 15,
+          "csv": 25,
+          "hdf": 7,
+          "pdf": 8,
+          "xlsx": 1,
+          "ps": 7
+        },
+        "selected_raw_hdf_files": 7,
+        "recognized_diagnostic_families": 3,
+        "raw_images_analyzed": 7,
+        "selected_measurements": 7,
+        "detector_pixels": 28000000,
+        "valid_detector_pixels": 28000000,
+        "source_processed_PSL_arrays_not_analyzed": 7,
+        "inconclusive_images": 0
+      },
+      "dataset": {
+        "source": "STFC eData OMEAG_SAI-23A",
+        "doi": "10.5286/edata/944",
+        "item_uuid": "e7a22beb-f55a-45a0-a0c7-bca8eb94d849",
+        "authors": [
+          "Khan, Matthew Ben",
+          "Churnetski, Kristen",
+          "Barlow, Duncan",
+          "Betti, Riccardo ",
+          "Freeman, Calum",
+          "Glize, Kevin",
+          "Kunimune, Justin",
+          "Lees, Aarne",
+          "Mancini, Roberto C.",
+          "Nutter, Arun",
+          "Paddock, Robert",
+          "Regan, Sean",
+          "Stoeckl, Christian",
+          "Theobald, Wolfgang",
+          "Woolsey, Nigel",
+          "Scott, R.H.H. "
+        ],
+        "issued": [
+          "2025-06-17"
+        ],
+        "archive_sha256": "89928d857b29304d0be65ca0805b398444dfbea9802a37c6473e2f1089dd0966",
+        "archive_bytes": 64965109,
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "type": "real_experimental_detector_data"
+      },
+      "configuration": {},
+      "completed_at": "2026-11-06T08:05:55.942780+00:00",
+      "git_commit": "bfc46455ec78ea3e3897ada20c820adc0bd37921",
+      "analysis_sha256": "01e944055fa62c6996f2ba3e435043563ee897ea2f1749f61c327598f09a6ccc",
+      "findings": [
+        {
+          "id": "ICF-01",
+          "experiment": "FPE-002",
+          "kind": "OBSERVED",
+          "title": "Verified experimental diagnostic inventory",
+          "method": "Bounded ZIP path/type/size validation, hashes, original HDF4 layout inspection",
+          "numerical_result": {
+            "entries": 74,
+            "files": 63,
+            "directories": 11,
+            "expanded_bytes": 81949600,
+            "formats": {
+              "txt": 15,
+              "csv": 25,
+              "hdf": 7,
+              "pdf": 8,
+              "xlsx": 1,
+              "ps": 7
+            },
+            "selected_raw_hdf_files": 7,
+            "recognized_diagnostic_families": 3,
+            "raw_images_analyzed": 7,
+            "selected_measurements": 7,
+            "detector_pixels": 28000000,
+            "valid_detector_pixels": 28000000,
+            "source_processed_PSL_arrays_not_analyzed": 7,
+            "inconclusive_images": 0
+          },
+          "unit": "files/arrays/pixels",
+          "evidence": [
+            "inventory",
+            "images.identity"
+          ],
+          "uncertainty": "Inventory counts exact for the acquired archive; calibration completeness not assumed",
+          "verification": "computationally_verified",
+          "limits": "Only raw detector image arrays analyzed numerically; target/operating/performance and processed nuclear diagnostics excluded."
+        },
+        {
+          "id": "ICF-02",
+          "experiment": "FPE-002",
+          "kind": "DERIVED",
+          "title": "Raw detector-frame intensity and coordinate characterization",
+          "method": "Original gel_raw arrays, finite pixels, declared border background and positive detector-intensity weights",
+          "numerical_result": [
+            {
+              "shot_id": "109090",
+              "shape": [
+                2000,
+                2000
+              ],
+              "mean_raw": 1562.0641205,
+              "invalid_pixels": 0,
+              "centroid_detector_px": {
+                "x_px": 1086.2392632178764,
+                "y_px": 790.4221649938025
+              }
+            },
+            {
+              "shot_id": "109092",
+              "shape": [
+                2000,
+                2000
+              ],
+              "mean_raw": 1706.347387,
+              "invalid_pixels": 0,
+              "centroid_detector_px": {
+                "x_px": 1071.9314847938406,
+                "y_px": 724.1508557007272
+              }
+            },
+            {
+              "shot_id": "109093",
+              "shape": [
+                2000,
+                2000
+              ],
+              "mean_raw": 1601.224684,
+              "invalid_pixels": 0,
+              "centroid_detector_px": {
+                "x_px": 999.1720116519263,
+                "y_px": 780.992256901312
+              }
+            },
+            {
+              "shot_id": "109094",
+              "shape": [
+                2000,
+                2000
+              ],
+              "mean_raw": 1597.886932,
+              "invalid_pixels": 0,
+              "centroid_detector_px": {
+                "x_px": 1091.705129306671,
+                "y_px": 800.5721078605079
+              }
+            },
+            {
+              "shot_id": "109098",
+              "shape": [
+                2000,
+                2000
+              ],
+              "mean_raw": 1593.382042,
+              "invalid_pixels": 0,
+              "centroid_detector_px": {
+                "x_px": 1082.8356007731697,
+                "y_px": 743.394051198614
+              }
+            },
+            {
+              "shot_id": "109099",
+              "shape": [
+                2000,
+                2000
+              ],
+              "mean_raw": 1617.0900105,
+              "invalid_pixels": 0,
+              "centroid_detector_px": {
+                "x_px": 989.382715516441,
+                "y_px": 783.2196149598625
+              }
+            },
+            {
+              "shot_id": "109103",
+              "shape": [
+                2000,
+                2000
+              ],
+              "mean_raw": 1653.855116,
+              "invalid_pixels": 0,
+              "centroid_detector_px": {
+                "x_px": 1087.1791197434009,
+                "y_px": 807.3200627132504
+              }
+            }
+          ],
+          "unit": "uncalibrated detector units and detector pixels",
+          "evidence": [
+            "images.baseline",
+            "images.source_array_sha256"
+          ],
+          "uncertainty": "Pixel-grid half-pixel descriptor; total calibration/systematic error not available",
+          "verification": "computationally_verified",
+          "limits": "No physical plasma size, object-plane geometry, temperature, yield or implosion performance reconstructed."
+        },
+        {
+          "id": "ICF-03",
+          "experiment": "FPE-002",
+          "kind": "DERIVED",
+          "title": "Same-measurement preprocessing robustness",
+          "method": "All6fixed combinations of borderquantile25/50/75 and whole/central80percentROI; no outcome optimization",
+          "numerical_result": [
+            {
+              "shot_id": "109090",
+              "sensitivity": {
+                "x_range_px": 8.482993794463255,
+                "y_range_px": 27.493343077138547,
+                "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+              }
+            },
+            {
+              "shot_id": "109092",
+              "sensitivity": {
+                "x_range_px": 19.662304210247612,
+                "y_range_px": 31.186901151629513,
+                "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+              }
+            },
+            {
+              "shot_id": "109093",
+              "sensitivity": {
+                "x_range_px": 0.8656053439643756,
+                "y_range_px": 4.9670732604679415,
+                "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+              }
+            },
+            {
+              "shot_id": "109094",
+              "sensitivity": {
+                "x_range_px": 5.882454976262807,
+                "y_range_px": 19.39653326914288,
+                "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+              }
+            },
+            {
+              "shot_id": "109098",
+              "sensitivity": {
+                "x_range_px": 18.08158473962021,
+                "y_range_px": 37.72015718203966,
+                "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+              }
+            },
+            {
+              "shot_id": "109099",
+              "sensitivity": {
+                "x_range_px": 0.8047038626384619,
+                "y_range_px": 4.762418254523141,
+                "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+              }
+            },
+            {
+              "shot_id": "109103",
+              "sensitivity": {
+                "x_range_px": 4.827974601995265,
+                "y_range_px": 8.301585077136565,
+                "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+              }
+            }
+          ],
+          "unit": "detector pixels; sensitivity range, not confidence interval",
+          "evidence": [
+            "images.sensitivity"
+          ],
+          "uncertainty": "Observed parameter-sensitivity spread; not total physical uncertainty",
+          "verification": "computationally_verified",
+          "limits": "Explicit substitution for cross-implosion/performance comparison. No operating-parameter joins or best-performing shot ranking."
+        }
+      ],
+      "performance": {
+        "acquisition_cached_seconds": 0.10636945796431974,
+        "parsing_seconds": 1.3490231669857167,
+        "analysis_seconds": 8.071110748918727,
+        "total_before_report_seconds": 10.195639082987327,
+        "plot_generation_seconds": 0.7164392090053298,
+        "total_seconds": 10.940018584020436,
+        "network_bytes_this_run": 0,
+        "source_response_bytes": 64974349,
+        "unique_source_objects": 2,
+        "process_peak_rss_bytes": 485457920,
+        "native_reader_child_peak_rss_bytes": 43335680,
+        "rss_scope": "Whole process lifetime peak and separately reported child peak; not summed concurrent peaks; explicit resource/input/chunk bounds, no unmeasured hard RSS guarantee"
+      },
+      "independent_verification": true,
+      "raw_replay": {
+        "passed": true,
+        "experiment": "FPE-002",
+        "sources_rehashed": 2,
+        "network_used": false,
+        "actual_results_sha256": "01e944055fa62c6996f2ba3e435043563ee897ea2f1749f61c327598f09a6ccc",
+        "expected_results_sha256": "01e944055fa62c6996f2ba3e435043563ee897ea2f1749f61c327598f09a6ccc",
+        "duration_seconds": 9.991470624983776,
+        "verified_at": "2026-11-06T08:38:31.238337+00:00",
+        "scope": "All original acquired bytes rehashed; selected chunks/HDF reparsed and all deterministic findings recomputed; no substituted vintage"
+      },
+      "data_derivative_license": "CC-BY-4.0",
+      "limitations": [
+        "Instrument detector values and pixel coordinates only; no conversion to physical plasma dimensions or radiometric quantities.",
+        "Processed PSL images, neutron/proton performance diagnostics, target specifications and operating parameters are not analyzed.",
+        "Raw gel and source-processed PSL arrays remain distinct; originals remain unchanged.",
+        "No absolute yield, temperature, areal density, ignition, implosion model or performance optimization inferred.",
+        "ICF03 is methodological robustness of the same measurements, explicitly replacing cross-implosion comparison.",
+        "Sensor full scale, calibration errors and systematic uncertainties remain unknown."
+      ],
+      "measurements": [
+        {
+          "shot_id": "109090",
+          "shape": [
+            2000,
+            2000
+          ],
+          "valid_pixels": 4000000,
+          "mean_raw": 1562.0641205,
+          "centroid_detector_px": {
+            "x_px": 1086.2392632178764,
+            "y_px": 790.4221649938025
+          },
+          "method_sensitivity": {
+            "x_range_px": 8.482993794463255,
+            "y_range_px": 27.493343077138547,
+            "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+          }
+        },
+        {
+          "shot_id": "109092",
+          "shape": [
+            2000,
+            2000
+          ],
+          "valid_pixels": 4000000,
+          "mean_raw": 1706.347387,
+          "centroid_detector_px": {
+            "x_px": 1071.9314847938406,
+            "y_px": 724.1508557007272
+          },
+          "method_sensitivity": {
+            "x_range_px": 19.662304210247612,
+            "y_range_px": 31.186901151629513,
+            "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+          }
+        },
+        {
+          "shot_id": "109093",
+          "shape": [
+            2000,
+            2000
+          ],
+          "valid_pixels": 4000000,
+          "mean_raw": 1601.224684,
+          "centroid_detector_px": {
+            "x_px": 999.1720116519263,
+            "y_px": 780.992256901312
+          },
+          "method_sensitivity": {
+            "x_range_px": 0.8656053439643756,
+            "y_range_px": 4.9670732604679415,
+            "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+          }
+        },
+        {
+          "shot_id": "109094",
+          "shape": [
+            2000,
+            2000
+          ],
+          "valid_pixels": 4000000,
+          "mean_raw": 1597.886932,
+          "centroid_detector_px": {
+            "x_px": 1091.705129306671,
+            "y_px": 800.5721078605079
+          },
+          "method_sensitivity": {
+            "x_range_px": 5.882454976262807,
+            "y_range_px": 19.39653326914288,
+            "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+          }
+        },
+        {
+          "shot_id": "109098",
+          "shape": [
+            2000,
+            2000
+          ],
+          "valid_pixels": 4000000,
+          "mean_raw": 1593.382042,
+          "centroid_detector_px": {
+            "x_px": 1082.8356007731697,
+            "y_px": 743.394051198614
+          },
+          "method_sensitivity": {
+            "x_range_px": 18.08158473962021,
+            "y_range_px": 37.72015718203966,
+            "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+          }
+        },
+        {
+          "shot_id": "109099",
+          "shape": [
+            2000,
+            2000
+          ],
+          "valid_pixels": 4000000,
+          "mean_raw": 1617.0900105,
+          "centroid_detector_px": {
+            "x_px": 989.382715516441,
+            "y_px": 783.2196149598625
+          },
+          "method_sensitivity": {
+            "x_range_px": 0.8047038626384619,
+            "y_range_px": 4.762418254523141,
+            "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+          }
+        },
+        {
+          "shot_id": "109103",
+          "shape": [
+            2000,
+            2000
+          ],
+          "valid_pixels": 4000000,
+          "mean_raw": 1653.855116,
+          "centroid_detector_px": {
+            "x_px": 1087.1791197434009,
+            "y_px": 807.3200627132504
+          },
+          "method_sensitivity": {
+            "x_range_px": 4.827974601995265,
+            "y_range_px": 8.301585077136565,
+            "method": "All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference"
+          }
+        }
+      ]
+    }
+  },
+  "findings": 6,
+  "original_code_license": "Apache-2.0",
+  "raw_archive_included": false,
+  "simulation_used_as_experiment": false
+}

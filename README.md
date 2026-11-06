@@ -202,3 +202,12 @@ far here, not a maximum established across arbitrary C++ repositories.
 ## ENGINE 04 — MARKETS
 
 Financial Systems Intelligence Engine 0.1.0 adds official Treasury/Chicago/New York Fed acquisition, DuckDB/Parquet storage, dependence-aware statistics, a real FSIE-001 study, seven-area local dashboard and a separate synthetic 20-million-row benchmark. See [financial/README.md](financial/README.md). Code Apache 2.0; institutional data terms separate. Original runtime files of CODE, LIFE and MATTER are preserved.
+
+
+## ENGINE 05 — Fusion Plasma Research Engine
+
+FPRE 0.1.0 adds two independent local laboratories for public experimental diagnostics. Five real MAST shots (ten signals, 757,500 valid samples) and seven original STFC detector frames (28 million valid pixels) produce six reproducible computational findings. Exact raw-source replay, independent numerical checks and all 246 tests pass; prior engine algorithms/APIs remain unchanged; the shared runner has one bounded exited-child handling fix.
+
+Read [FPRE setup](fusion/README.md), [scientific results](fusion/RESULTS.md), [architecture reuse](fusion/ARCHITECTURE_REUSE.md), [source rights](fusion/DATA_SOURCES.md) and [limitations](fusion/LIMITATIONS.md). Start with `python3.12 scripts/setup_fusion.py`, then `.venv-fpre/bin/python -m fusion.cli serve`. The browser dashboard is loopback-only; no service or model is installed automatically.
+
+Original code is Apache 2.0. MAST scientific derivatives remain CC BY-SA 4.0; STFC detector derivatives remain CC BY 4.0. This is retrospective measurement characterization, without apparatus control, implosion optimization or a claim of a new physical discovery. Exact historical replay needs the original manifest-matching cache.

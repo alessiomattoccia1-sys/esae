@@ -87,3 +87,8 @@ ESAE/GEE runtime hashes and original-environment regressions are checked separat
 ## ENGINE 04 — MARKETS assessment
 
 The FSIE assessment and reuse matrix are in financial/ARCHITECTURE_REUSE.md. Actual baseline was 169 passing tests for the first three engines. Shared HTTP/jobs/locks/local-boundary/local-AI functions are imported directly, with a financial source policy; original shared/runtime files remain byte-identical. Financial parsing, statistical algorithms and columnar storage are new domain modules.
+
+
+## ENGINE 05 — FUSION
+
+The actual pre-development assessment is [fusion/ARCHITECTURE_REUSE.md](fusion/ARCHITECTURE_REUSE.md). FPRE imports the unchanged shared HTTP/job/web/AI boundary and existing native sandbox runner. Magnetic signal processing and inertial detector-array analysis remain independent specialist modules. No earlier engine database is migrated.

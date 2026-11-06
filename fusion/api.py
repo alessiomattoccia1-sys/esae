@@ -250,7 +250,7 @@ def create_app(engine, port=4205):
                 "scope": "Only existing selected diagnostics; no operating settings, apparatus control, implosion/yield optimization or new physical measurements",
             }
             computed = {
-                "finding": {k: v for k, v in f.items() if k != "numerical_result"},
+                "finding": f,
                 "summary": r["counts"],
             }
             value = hypothesis(

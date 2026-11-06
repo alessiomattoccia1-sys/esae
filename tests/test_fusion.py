@@ -462,3 +462,12 @@ def test_safe_fixture_export_numeric_csv_and_processed_display(fixture_engine):
     )
     assert len(rows) == 3 and all(json.loads(r["numerical_result_json"]) for r in rows)
     assert (folder / "figures/icf-109090-processed.png").is_file()
+
+
+def test_public_export_refuses_unqualified_results(tmp_path):
+    from fusion.export import export
+
+    q = tmp_path / "qualification.json"
+    q.write_text(json.dumps({"passed": False}))
+    with pytest.raises(ValueError, match="qualification"):
+        export(tmp_path / "local", q, tmp_path / "public")

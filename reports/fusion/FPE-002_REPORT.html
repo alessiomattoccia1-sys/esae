@@ -1,0 +1,236 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>FPE-002 / FPRE</title><style>body{font:16px/1.85 system-ui;background:#f5f3ed;color:#18252c;max-width:1180px;margin:auto;padding:40px 24px}h1{font-size:clamp(35px,5vw,65px);line-height:1.15;font-weight:500;letter-spacing:-.04em}h2{font-size:30px;line-height:1.2;margin-top:55px;font-weight:500}h3{font-size:23px;font-weight:500}pre{font:12px/1.8 monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#fffdf8;padding:22px;border:1px solid #cbd3cf;border-radius:13px}.kind{font:11px/2 monospace;color:#7c6747;letter-spacing:.08em}article{border-top:1px solid #cbd3cf;padding-top:25px;margin-top:35px}.table{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;border-bottom:1px solid #cbd3cf;padding:12px;vertical-align:top}figure{margin:35px 0}img{width:100%;height:auto;border:1px solid #cbd3cf;border-radius:12px}figcaption{font-size:12px;color:#53656b;line-height:1.8}a{color:#3e6877}code,li{overflow-wrap:anywhere}li{margin-bottom:12px}</style></head><body><p class="kind">MATTOCCIA LABS / RESEARCH ENGINES / FUSION</p><h1>Inertial Fusion Diagnostics — Quantitative Assessment of Published Experimental Measurements</h1><p>Real experimental retrospective analysis. Version0.1.0; computational verification does not establish a new physical discovery.</p><h2>Abstract and objective</h2><p>Inventory the published experimental archive and characterize raw detector arrays and pixel-domain processing robustness. No implosion-performance or operating-parameter analysis.</p><h2>Dataset, selection and provenance</h2><pre>{
+  &quot;dataset&quot;: {
+    &quot;source&quot;: &quot;STFC eData OMEAG_SAI-23A&quot;,
+    &quot;doi&quot;: &quot;10.5286/edata/944&quot;,
+    &quot;item_uuid&quot;: &quot;e7a22beb-f55a-45a0-a0c7-bca8eb94d849&quot;,
+    &quot;authors&quot;: [
+      &quot;Khan, Matthew Ben&quot;,
+      &quot;Churnetski, Kristen&quot;,
+      &quot;Barlow, Duncan&quot;,
+      &quot;Betti, Riccardo &quot;,
+      &quot;Freeman, Calum&quot;,
+      &quot;Glize, Kevin&quot;,
+      &quot;Kunimune, Justin&quot;,
+      &quot;Lees, Aarne&quot;,
+      &quot;Mancini, Roberto C.&quot;,
+      &quot;Nutter, Arun&quot;,
+      &quot;Paddock, Robert&quot;,
+      &quot;Regan, Sean&quot;,
+      &quot;Stoeckl, Christian&quot;,
+      &quot;Theobald, Wolfgang&quot;,
+      &quot;Woolsey, Nigel&quot;,
+      &quot;Scott, R.H.H. &quot;
+    ],
+    &quot;issued&quot;: [
+      &quot;2025-06-17&quot;
+    ],
+    &quot;archive_sha256&quot;: &quot;89928d857b29304d0be65ca0805b398444dfbea9802a37c6473e2f1089dd0966&quot;,
+    &quot;archive_bytes&quot;: 64965109,
+    &quot;license&quot;: &quot;https://creativecommons.org/licenses/by/4.0/&quot;,
+    &quot;type&quot;: &quot;real_experimental_detector_data&quot;
+  },
+  &quot;configuration&quot;: {},
+  &quot;counts&quot;: {
+    &quot;entries&quot;: 74,
+    &quot;files&quot;: 63,
+    &quot;directories&quot;: 11,
+    &quot;expanded_bytes&quot;: 81949600,
+    &quot;formats&quot;: {
+      &quot;txt&quot;: 15,
+      &quot;csv&quot;: 25,
+      &quot;hdf&quot;: 7,
+      &quot;pdf&quot;: 8,
+      &quot;xlsx&quot;: 1,
+      &quot;ps&quot;: 7
+    },
+    &quot;selected_raw_hdf_files&quot;: 7,
+    &quot;recognized_diagnostic_families&quot;: 3,
+    &quot;raw_images_analyzed&quot;: 7,
+    &quot;selected_measurements&quot;: 7,
+    &quot;detector_pixels&quot;: 28000000,
+    &quot;valid_detector_pixels&quot;: 28000000,
+    &quot;source_processed_PSL_arrays_not_analyzed&quot;: 7,
+    &quot;inconclusive_images&quot;: 0
+  }
+}</pre><h2>Computational methods</h2><p>Methods and all parameters are in the accompanying METHODOLOGY and manifest. Originals and transformed displays remain distinct. Units and unknown calibrations are explicit.</p><h2>Verified quantitative findings</h2><article><p class="kind">ICF-01 / OBSERVED</p><h3>Verified experimental diagnostic inventory</h3><p>Bounded ZIP path/type/size validation, hashes, original HDF4 layout inspection</p><pre>{
+  &quot;entries&quot;: 74,
+  &quot;files&quot;: 63,
+  &quot;directories&quot;: 11,
+  &quot;expanded_bytes&quot;: 81949600,
+  &quot;formats&quot;: {
+    &quot;txt&quot;: 15,
+    &quot;csv&quot;: 25,
+    &quot;hdf&quot;: 7,
+    &quot;pdf&quot;: 8,
+    &quot;xlsx&quot;: 1,
+    &quot;ps&quot;: 7
+  },
+  &quot;selected_raw_hdf_files&quot;: 7,
+  &quot;recognized_diagnostic_families&quot;: 3,
+  &quot;raw_images_analyzed&quot;: 7,
+  &quot;selected_measurements&quot;: 7,
+  &quot;detector_pixels&quot;: 28000000,
+  &quot;valid_detector_pixels&quot;: 28000000,
+  &quot;source_processed_PSL_arrays_not_analyzed&quot;: 7,
+  &quot;inconclusive_images&quot;: 0
+}</pre><p>Units: files/arrays/pixels</p><p>Uncertainty: Inventory counts exact for the acquired archive; calibration completeness not assumed</p><p>Limits: Only raw detector image arrays analyzed numerically; target/operating/performance and processed nuclear diagnostics excluded.</p></article><article><p class="kind">ICF-02 / DERIVED</p><h3>Raw detector-frame intensity and coordinate characterization</h3><p>Original gel_raw arrays, finite pixels, declared border background and positive detector-intensity weights</p><pre>[
+  {
+    &quot;shot_id&quot;: &quot;109090&quot;,
+    &quot;shape&quot;: [
+      2000,
+      2000
+    ],
+    &quot;mean_raw&quot;: 1562.0641205,
+    &quot;invalid_pixels&quot;: 0,
+    &quot;centroid_detector_px&quot;: {
+      &quot;x_px&quot;: 1086.2392632178764,
+      &quot;y_px&quot;: 790.4221649938025
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109092&quot;,
+    &quot;shape&quot;: [
+      2000,
+      2000
+    ],
+    &quot;mean_raw&quot;: 1706.347387,
+    &quot;invalid_pixels&quot;: 0,
+    &quot;centroid_detector_px&quot;: {
+      &quot;x_px&quot;: 1071.9314847938406,
+      &quot;y_px&quot;: 724.1508557007272
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109093&quot;,
+    &quot;shape&quot;: [
+      2000,
+      2000
+    ],
+    &quot;mean_raw&quot;: 1601.224684,
+    &quot;invalid_pixels&quot;: 0,
+    &quot;centroid_detector_px&quot;: {
+      &quot;x_px&quot;: 999.1720116519263,
+      &quot;y_px&quot;: 780.992256901312
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109094&quot;,
+    &quot;shape&quot;: [
+      2000,
+      2000
+    ],
+    &quot;mean_raw&quot;: 1597.886932,
+    &quot;invalid_pixels&quot;: 0,
+    &quot;centroid_detector_px&quot;: {
+      &quot;x_px&quot;: 1091.705129306671,
+      &quot;y_px&quot;: 800.5721078605079
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109098&quot;,
+    &quot;shape&quot;: [
+      2000,
+      2000
+    ],
+    &quot;mean_raw&quot;: 1593.382042,
+    &quot;invalid_pixels&quot;: 0,
+    &quot;centroid_detector_px&quot;: {
+      &quot;x_px&quot;: 1082.8356007731697,
+      &quot;y_px&quot;: 743.394051198614
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109099&quot;,
+    &quot;shape&quot;: [
+      2000,
+      2000
+    ],
+    &quot;mean_raw&quot;: 1617.0900105,
+    &quot;invalid_pixels&quot;: 0,
+    &quot;centroid_detector_px&quot;: {
+      &quot;x_px&quot;: 989.382715516441,
+      &quot;y_px&quot;: 783.2196149598625
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109103&quot;,
+    &quot;shape&quot;: [
+      2000,
+      2000
+    ],
+    &quot;mean_raw&quot;: 1653.855116,
+    &quot;invalid_pixels&quot;: 0,
+    &quot;centroid_detector_px&quot;: {
+      &quot;x_px&quot;: 1087.1791197434009,
+      &quot;y_px&quot;: 807.3200627132504
+    }
+  }
+]</pre><p>Units: uncalibrated detector units and detector pixels</p><p>Uncertainty: Pixel-grid half-pixel descriptor; total calibration/systematic error not available</p><p>Limits: No physical plasma size, object-plane geometry, temperature, yield or implosion performance reconstructed.</p></article><article><p class="kind">ICF-03 / DERIVED</p><h3>Same-measurement preprocessing robustness</h3><p>All6fixed combinations of borderquantile25/50/75 and whole/central80percentROI; no outcome optimization</p><pre>[
+  {
+    &quot;shot_id&quot;: &quot;109090&quot;,
+    &quot;sensitivity&quot;: {
+      &quot;x_range_px&quot;: 8.482993794463255,
+      &quot;y_range_px&quot;: 27.493343077138547,
+      &quot;method&quot;: &quot;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&quot;
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109092&quot;,
+    &quot;sensitivity&quot;: {
+      &quot;x_range_px&quot;: 19.662304210247612,
+      &quot;y_range_px&quot;: 31.186901151629513,
+      &quot;method&quot;: &quot;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&quot;
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109093&quot;,
+    &quot;sensitivity&quot;: {
+      &quot;x_range_px&quot;: 0.8656053439643756,
+      &quot;y_range_px&quot;: 4.9670732604679415,
+      &quot;method&quot;: &quot;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&quot;
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109094&quot;,
+    &quot;sensitivity&quot;: {
+      &quot;x_range_px&quot;: 5.882454976262807,
+      &quot;y_range_px&quot;: 19.39653326914288,
+      &quot;method&quot;: &quot;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&quot;
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109098&quot;,
+    &quot;sensitivity&quot;: {
+      &quot;x_range_px&quot;: 18.08158473962021,
+      &quot;y_range_px&quot;: 37.72015718203966,
+      &quot;method&quot;: &quot;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&quot;
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109099&quot;,
+    &quot;sensitivity&quot;: {
+      &quot;x_range_px&quot;: 0.8047038626384619,
+      &quot;y_range_px&quot;: 4.762418254523141,
+      &quot;method&quot;: &quot;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&quot;
+    }
+  },
+  {
+    &quot;shot_id&quot;: &quot;109103&quot;,
+    &quot;sensitivity&quot;: {
+      &quot;x_range_px&quot;: 4.827974601995265,
+      &quot;y_range_px&quot;: 8.301585077136565,
+      &quot;method&quot;: &quot;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&quot;
+    }
+  }
+]</pre><p>Units: detector pixels; sensitivity range, not confidence interval</p><p>Uncertainty: Observed parameter-sensitivity spread; not total physical uncertainty</p><p>Limits: Explicit substitution for cross-implosion/performance comparison. No operating-parameter joins or best-performing shot ranking.</p></article><h2>Measurements and comparisons</h2><div class="table"><table><thead><tr><th>Shot</th><th>Shape</th><th>Valid pixels</th><th>Mean raw</th><th>Detector centroid / px</th><th>Sensitivity x/y / px</th></tr></thead><tbody><tr><td>109090</td><td>[2000, 2000]</td><td>4000000</td><td>1562.0641205</td><td>{&#x27;x_px&#x27;: 1086.2392632178764, &#x27;y_px&#x27;: 790.4221649938025}</td><td>{&#x27;x_range_px&#x27;: 8.482993794463255, &#x27;y_range_px&#x27;: 27.493343077138547, &#x27;method&#x27;: &#x27;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&#x27;}</td></tr><tr><td>109092</td><td>[2000, 2000]</td><td>4000000</td><td>1706.347387</td><td>{&#x27;x_px&#x27;: 1071.9314847938406, &#x27;y_px&#x27;: 724.1508557007272}</td><td>{&#x27;x_range_px&#x27;: 19.662304210247612, &#x27;y_range_px&#x27;: 31.186901151629513, &#x27;method&#x27;: &#x27;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&#x27;}</td></tr><tr><td>109093</td><td>[2000, 2000]</td><td>4000000</td><td>1601.224684</td><td>{&#x27;x_px&#x27;: 999.1720116519263, &#x27;y_px&#x27;: 780.992256901312}</td><td>{&#x27;x_range_px&#x27;: 0.8656053439643756, &#x27;y_range_px&#x27;: 4.9670732604679415, &#x27;method&#x27;: &#x27;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&#x27;}</td></tr><tr><td>109094</td><td>[2000, 2000]</td><td>4000000</td><td>1597.886932</td><td>{&#x27;x_px&#x27;: 1091.705129306671, &#x27;y_px&#x27;: 800.5721078605079}</td><td>{&#x27;x_range_px&#x27;: 5.882454976262807, &#x27;y_range_px&#x27;: 19.39653326914288, &#x27;method&#x27;: &#x27;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&#x27;}</td></tr><tr><td>109098</td><td>[2000, 2000]</td><td>4000000</td><td>1593.382042</td><td>{&#x27;x_px&#x27;: 1082.8356007731697, &#x27;y_px&#x27;: 743.394051198614}</td><td>{&#x27;x_range_px&#x27;: 18.08158473962021, &#x27;y_range_px&#x27;: 37.72015718203966, &#x27;method&#x27;: &#x27;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&#x27;}</td></tr><tr><td>109099</td><td>[2000, 2000]</td><td>4000000</td><td>1617.0900105</td><td>{&#x27;x_px&#x27;: 989.382715516441, &#x27;y_px&#x27;: 783.2196149598625}</td><td>{&#x27;x_range_px&#x27;: 0.8047038626384619, &#x27;y_range_px&#x27;: 4.762418254523141, &#x27;method&#x27;: &#x27;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&#x27;}</td></tr><tr><td>109103</td><td>[2000, 2000]</td><td>4000000</td><td>1653.855116</td><td>{&#x27;x_px&#x27;: 1087.1791197434009, &#x27;y_px&#x27;: 807.3200627132504}</td><td>{&#x27;x_range_px&#x27;: 4.827974601995265, &#x27;y_range_px&#x27;: 8.301585077136565, &#x27;method&#x27;: &#x27;All6declared background/fixedROI combinations; range is preprocessing sensitivity, not a confidence interval or physical shot-to-shot difference&#x27;}</td></tr></tbody></table></div><div class="table"><table><thead><tr><th>File</th><th>Format</th><th>Bytes</th><th>Diagnostic</th><th>Selected</th></tr></thead><tbody><tr><td>DataRepo/README.txt</td><td>txt</td><td>2117</td><td>dataset_documentation</td><td>False</td></tr><tr><td>DataRepo/Datasheet.csv</td><td>csv</td><td>3311</td><td>dataset_documentation</td><td>False</td></tr><tr><td>DataRepo/Nuclear Reports/NuclearReport_109090.csv</td><td>csv</td><td>655</td><td>source_nuclear_report</td><td>False</td></tr><tr><td>DataRepo/Nuclear Reports/NuclearReport_109099.csv</td><td>csv</td><td>533</td><td>source_nuclear_report</td><td>False</td></tr><tr><td>DataRepo/Nuclear Reports/NuclearReport_109092.csv</td><td>csv</td><td>655</td><td>source_nuclear_report</td><td>False</td></tr><tr><td>DataRepo/Nuclear Reports/NuclearReport_109094.csv</td><td>csv</td><td>655</td><td>source_nuclear_report</td><td>False</td></tr><tr><td>DataRepo/Nuclear Reports/NuclearReport_109093.csv</td><td>csv</td><td>655</td><td>source_nuclear_report</td><td>False</td></tr><tr><td>DataRepo/Nuclear Reports/NuclearReport_109098.csv</td><td>csv</td><td>655</td><td>source_nuclear_report</td><td>False</td></tr><tr><td>DataRepo/Nuclear Reports/NuclearReport_109103.csv</td><td>csv</td><td>655</td><td>source_nuclear_report</td><td>False</td></tr><tr><td>DataRepo/Nuclear Reports/All Shot - Modernised Report.csv</td><td>csv</td><td>613</td><td>source_nuclear_report</td><td>False</td></tr><tr><td>DataRepo/SLOS-TRXI/Raw Data/slos_trxi_s109090_trxi_-1-[phosphor].hdf</td><td>hdf</td><td>7304893</td><td>xray_detector</td><td>True</td></tr><tr><td>DataRepo/SLOS-TRXI/Raw Data/slos_trxi_s109092_trxi_-1-[phosphor].hdf</td><td>hdf</td><td>7552747</td><td>xray_detector</td><td>True</td></tr><tr><td>DataRepo/SLOS-TRXI/Raw Data/slos_trxi_s109093_trxi_-1-[phosphor].hdf</td><td>hdf</td><td>6654807</td><td>xray_detector</td><td>True</td></tr><tr><td>DataRepo/SLOS-TRXI/Raw Data/slos_trxi_s109094_trxi_-1-[phosphor].hdf</td><td>hdf</td><td>6855292</td><td>xray_detector</td><td>True</td></tr><tr><td>DataRepo/SLOS-TRXI/Raw Data/slos_trxi_s109098_trxi_-1-[phosphor].hdf</td><td>hdf</td><td>6875830</td><td>xray_detector</td><td>True</td></tr><tr><td>DataRepo/SLOS-TRXI/Raw Data/slos_trxi_s109099_trxi_-1-[phosphor].hdf</td><td>hdf</td><td>6671378</td><td>xray_detector</td><td>True</td></tr><tr><td>DataRepo/SLOS-TRXI/Raw Data/slos_trxi_s109103_trxi_-1-[phosphor].hdf</td><td>hdf</td><td>7066846</td><td>xray_detector</td><td>True</td></tr><tr><td>DataRepo/SLOS-TRXI/TRXI Processed/109090_trxi_summary.pdf</td><td>pdf</td><td>2902562</td><td>xray_detector</td><td>False</td></tr><tr><td>DataRepo/SLOS-TRXI/TRXI Processed/109092_trxi_summary.pdf</td><td>pdf</td><td>2911536</td><td>xray_detector</td><td>False</td></tr><tr><td>DataRepo/SLOS-TRXI/TRXI Processed/109093_trxi_summary.pdf</td><td>pdf</td><td>2839218</td><td>xray_detector</td><td>False</td></tr><tr><td>DataRepo/SLOS-TRXI/TRXI Processed/109094_trxi_summary.pdf</td><td>pdf</td><td>2847378</td><td>xray_detector</td><td>False</td></tr><tr><td>DataRepo/SLOS-TRXI/TRXI Processed/109098_trxi_summary.pdf</td><td>pdf</td><td>2889213</td><td>xray_detector</td><td>False</td></tr><tr><td>DataRepo/SLOS-TRXI/TRXI Processed/109099_trxi_summary.pdf</td><td>pdf</td><td>2847716</td><td>xray_detector</td><td>False</td></tr><tr><td>DataRepo/SLOS-TRXI/TRXI Processed/109103_trxi_summary.pdf</td><td>pdf</td><td>2558555</td><td>xray_detector</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/Om230725 WRF summary-1.pdf</td><td>pdf</td><td>883854</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109090_TIM6.csv</td><td>csv</td><td>10840</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109092_NDI.csv</td><td>csv</td><td>5420</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109092_P2.csv</td><td>csv</td><td>5420</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109092_TIM6.csv</td><td>csv</td><td>10989</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109093_NDI.csv</td><td>csv</td><td>2148</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109093_P2.csv</td><td>csv</td><td>2148</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109093_TIM6.csv</td><td>csv</td><td>10227</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109094_NDI.csv</td><td>csv</td><td>2070</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109094_P2.csv</td><td>csv</td><td>2070</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109094_P2_1.csv</td><td>csv</td><td>2070</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109094_TIM6.csv</td><td>csv</td><td>5571</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109098_NDI.csv</td><td>csv</td><td>2140</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109098_P2.csv</td><td>csv</td><td>2140</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109098_TIM6.csv</td><td>csv</td><td>5421</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109099_TIM6.csv</td><td>csv</td><td>5498</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Wedge Range Filter/WRF Data/spectrum_109103_TIM6.csv</td><td>csv</td><td>11131</td><td>proton_spectrometer</td><td>False</td></tr><tr><td>DataRepo/Target Specifications/DDC6064 SAI_12A Type B Final Data.xlsx</td><td>xlsx</td><td>55076</td><td>dataset_documentation</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109090_cryontd.txt</td><td>txt</td><td>43000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109092_cryontd.txt</td><td>txt</td><td>43000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109093_cryontd.txt</td><td>txt</td><td>43000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109094_cryontd.txt</td><td>txt</td><td>43000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109098_cryontd.txt</td><td>txt</td><td>43000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109099_cryontd.txt</td><td>txt</td><td>43000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109103_cryontd.txt</td><td>txt</td><td>43000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109090_cryontd_s.txt</td><td>txt</td><td>30000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109092_cryontd_s.txt</td><td>txt</td><td>30000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109093_cryontd_s.txt</td><td>txt</td><td>30000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109094_cryontd_s.txt</td><td>txt</td><td>30000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109098_cryontd_s.txt</td><td>txt</td><td>30000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109099_cryontd_s.txt</td><td>txt</td><td>30000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/Scintilator Traces/109103_cryontd_s.txt</td><td>txt</td><td>30000</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/NTD Processed/109090_cryontd.ps</td><td>ps</td><td>1664809</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/NTD Processed/109092_cryontd.ps</td><td>ps</td><td>1666652</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/NTD Processed/109093_cryontd.ps</td><td>ps</td><td>1668114</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/NTD Processed/109094_cryontd.ps</td><td>ps</td><td>1630477</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/NTD Processed/109098_cryontd.ps</td><td>ps</td><td>1668414</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/NTD Processed/109099_cryontd.ps</td><td>ps</td><td>1667093</td><td>neutron_temporal</td><td>False</td></tr><tr><td>DataRepo/Neutron Temporal Diagnostic/NTD Processed/109103_cryontd.ps</td><td>ps</td><td>1660333</td><td>neutron_temporal</td><td>False</td></tr></tbody></table></div><h2>Original scientific visualizations</h2><figure><img src="figures/icf-109090-raw.png" alt="STFC OMEAG_SAI-23A, shot 109090: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest." loading="lazy"><figcaption>STFC OMEAG_SAI-23A, shot 109090: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.</figcaption></figure><figure><img src="figures/icf-109090-processed.png" alt="Shot 109090: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0." loading="lazy"><figcaption>Shot 109090: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.</figcaption></figure><figure><img src="figures/icf-109090-profiles.png" alt="Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance." loading="lazy"><figcaption>Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.</figcaption></figure><figure><img src="figures/icf-109092-raw.png" alt="STFC OMEAG_SAI-23A, shot 109092: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest." loading="lazy"><figcaption>STFC OMEAG_SAI-23A, shot 109092: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.</figcaption></figure><figure><img src="figures/icf-109092-processed.png" alt="Shot 109092: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0." loading="lazy"><figcaption>Shot 109092: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.</figcaption></figure><figure><img src="figures/icf-109092-profiles.png" alt="Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance." loading="lazy"><figcaption>Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.</figcaption></figure><figure><img src="figures/icf-109093-raw.png" alt="STFC OMEAG_SAI-23A, shot 109093: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest." loading="lazy"><figcaption>STFC OMEAG_SAI-23A, shot 109093: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.</figcaption></figure><figure><img src="figures/icf-109093-processed.png" alt="Shot 109093: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0." loading="lazy"><figcaption>Shot 109093: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.</figcaption></figure><figure><img src="figures/icf-109093-profiles.png" alt="Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance." loading="lazy"><figcaption>Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.</figcaption></figure><figure><img src="figures/icf-109094-raw.png" alt="STFC OMEAG_SAI-23A, shot 109094: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest." loading="lazy"><figcaption>STFC OMEAG_SAI-23A, shot 109094: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.</figcaption></figure><figure><img src="figures/icf-109094-processed.png" alt="Shot 109094: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0." loading="lazy"><figcaption>Shot 109094: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.</figcaption></figure><figure><img src="figures/icf-109094-profiles.png" alt="Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance." loading="lazy"><figcaption>Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.</figcaption></figure><figure><img src="figures/icf-109098-raw.png" alt="STFC OMEAG_SAI-23A, shot 109098: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest." loading="lazy"><figcaption>STFC OMEAG_SAI-23A, shot 109098: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.</figcaption></figure><figure><img src="figures/icf-109098-processed.png" alt="Shot 109098: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0." loading="lazy"><figcaption>Shot 109098: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.</figcaption></figure><figure><img src="figures/icf-109098-profiles.png" alt="Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance." loading="lazy"><figcaption>Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.</figcaption></figure><figure><img src="figures/icf-109099-raw.png" alt="STFC OMEAG_SAI-23A, shot 109099: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest." loading="lazy"><figcaption>STFC OMEAG_SAI-23A, shot 109099: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.</figcaption></figure><figure><img src="figures/icf-109099-processed.png" alt="Shot 109099: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0." loading="lazy"><figcaption>Shot 109099: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.</figcaption></figure><figure><img src="figures/icf-109099-profiles.png" alt="Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance." loading="lazy"><figcaption>Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.</figcaption></figure><figure><img src="figures/icf-109103-raw.png" alt="STFC OMEAG_SAI-23A, shot 109103: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest." loading="lazy"><figcaption>STFC OMEAG_SAI-23A, shot 109103: original raw detector array displayed with explicit linear P01–P99 scaling and stride; no physical conversion. CC BY4.0; source authors in manifest.</figcaption></figure><figure><img src="figures/icf-109103-processed.png" alt="Shot 109103: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0." loading="lazy"><figcaption>Shot 109103: display-only positive raw-minus-original-border-median, clipped at transformed P99. Detector coordinates and explicit stride; source original unchanged. STFC CC BY4.0.</figcaption></figure><figure><img src="figures/icf-109103-profiles.png" alt="Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance." loading="lazy"><figcaption>Generic detector-pixel profiles after declared border-median subtraction; not plasma dimensions, yield or implosion performance.</figcaption></figure><h2>Uncertainty, discussion and limitations</h2><ul><li>Instrument detector values and pixel coordinates only; no conversion to physical plasma dimensions or radiometric quantities.</li><li>Processed PSL images, neutron/proton performance diagnostics, target specifications and operating parameters are not analyzed.</li><li>Raw gel and source-processed PSL arrays remain distinct; originals remain unchanged.</li><li>No absolute yield, temperature, areal density, ignition, implosion model or performance optimization inferred.</li><li>ICF03 is methodological robustness of the same measurements, explicitly replacing cross-implosion comparison.</li><li>Sensor full scale, calibration errors and systematic uncertainties remain unknown.</li></ul><h2>Validation and conclusions</h2><p>Algorithm controls, independent numerical checks and exact acquired-source replay accompany publication. These are reproducible descriptions of selected real data, not a new plasma law, named instability, ignition result or validated prediction.</p><code>01e944055fa62c6996f2ba3e435043563ee897ea2f1749f61c327598f09a6ccc</code><h2>Sources, data license and attribution</h2><p>Original software: Apache2.0. Data-derived scientific report, plots and selected measurements: CC-BY-4.0. Source attribution and modifications: acquired source arrays, unit normalization, explicit selections, deterministic statistics and labeled display scaling by Mattoccia Labs; no source endorsement.</p><ul><li><a href="https://edata.stfc.ac.uk/server/api/core/items/e7a22beb-f55a-45a0-a0c7-bca8eb94d849">STFC eData</a> · SHA256 <code>499e622941eb61a7136390fd49c47f50a1291a8b01501c607b2d611469f4c716</code></li><li><a href="https://edata.stfc.ac.uk/bitstreams/bf56f40c-f70b-4bad-af69-5e6e65ea2a71/download">STFC eData</a> · SHA256 <code>89928d857b29304d0be65ca0805b398444dfbea9802a37c6473e2f1089dd0966</code></li></ul><h2>Reproduction</h2><pre># Reproduce FPE-002
+
+From the original source release, on qualified macOS Apple Silicon/Python3.12:
+
+```sh
+python3.12 scripts/setup_fusion.py
+.venv-fpre/bin/python -m fusion.cli run --experiment FPE-002 --data .local/fusion
+.venv-fpre/bin/python -m fusion.cli reproduce --experiment FPE-002 --job JOB_ID --data .local/fusion
+```
+
+Initial run acquires official data explicitly. Keep source responses and manifest. Reproduce rehashes original bytes and recomputes without network; missing or modified source objects cause a visible failure. Upstream may replace Zarr objects at the same URL, so fresh acquisition is not automatically the original version. A qualified selected-input public replay is separately labeled; it cannot replace full raw-source validation. No model, apparatus access or cloud is required. Other operating systems are not qualified.
+</pre></body></html>

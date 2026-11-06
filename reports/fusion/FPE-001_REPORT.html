@@ -1,0 +1,275 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>FPE-001 / FPRE</title><style>body{font:16px/1.85 system-ui;background:#f5f3ed;color:#18252c;max-width:1180px;margin:auto;padding:40px 24px}h1{font-size:clamp(35px,5vw,65px);line-height:1.15;font-weight:500;letter-spacing:-.04em}h2{font-size:30px;line-height:1.2;margin-top:55px;font-weight:500}h3{font-size:23px;font-weight:500}pre{font:12px/1.8 monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#fffdf8;padding:22px;border:1px solid #cbd3cf;border-radius:13px}.kind{font:11px/2 monospace;color:#7c6747;letter-spacing:.08em}article{border-top:1px solid #cbd3cf;padding-top:25px;margin-top:35px}.table{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;border-bottom:1px solid #cbd3cf;padding:12px;vertical-align:top}figure{margin:35px 0}img{width:100%;height:auto;border:1px solid #cbd3cf;border-radius:12px}figcaption{font-size:12px;color:#53656b;line-height:1.8}a{color:#3e6877}code,li{overflow-wrap:anywhere}li{margin-bottom:12px}</style></head><body><p class="kind">MATTOCCIA LABS / RESEARCH ENGINES / FUSION</p><h1>Magnetic Plasma Dynamics — Quantitative Analysis of Public MAST Discharges</h1><p>Real experimental retrospective analysis. Version0.1.0; computational verification does not establish a new physical discovery.</p><h2>Abstract and objective</h2><p>Characterize comparable MAST diagnostic signals, their temporal/spectral properties and method sensitivity. Candidate events remain unclassified.</p><h2>Dataset, selection and provenance</h2><pre>{
+  &quot;dataset&quot;: {
+    &quot;source&quot;: &quot;UKAEA FAIR-MAST&quot;,
+    &quot;catalog_url&quot;: &quot;https://s3.echo.stfc.ac.uk/mast/fairmast-meta/l2_shots.parquet&quot;,
+    &quot;catalog_sha256&quot;: &quot;696f34fcfb8ef6e2bfa648f477b495e1c0ed40d460936af9d3057a4b1db21bf3&quot;,
+    &quot;license&quot;: &quot;https://creativecommons.org/licenses/by-sa/4.0/&quot;,
+    &quot;data_level&quot;: 2,
+    &quot;type&quot;: &quot;real_experimental_diagnostic_data_source_processed&quot;
+  },
+  &quot;configuration&quot;: {
+    &quot;shot_count&quot;: 5,
+    &quot;window_seconds&quot;: [
+      0.05,
+      0.35
+    ]
+  },
+  &quot;counts&quot;: {
+    &quot;catalog_shots&quot;: 11573,
+    &quot;selected_shots&quot;: 5,
+    &quot;selected_diagnostic_types&quot;: 2,
+    &quot;signals&quot;: 10,
+    &quot;samples&quot;: 757500,
+    &quot;valid_samples&quot;: 757500,
+    &quot;candidate_shots_examined&quot;: 5,
+    &quot;excluded_candidates&quot;: 0,
+    &quot;computed_signals&quot;: 10,
+    &quot;inconclusive_signals&quot;: 0
+  }
+}</pre><h2>Computational methods</h2><p>Methods and all parameters are in the accompanying METHODOLOGY and manifest. Originals and transformed displays remain distinct. Units and unknown calibrations are explicit.</p><h2>Verified quantitative findings</h2><article><p class="kind">MCF-01 / DERIVED</p><h3>Coverage and quality of comparable MAST diagnostics</h3><p>Catalog selection fixed before values; explicit unit conversion and finite/regular-sampling checks</p><pre>{
+  &quot;catalog_shots&quot;: 11573,
+  &quot;selected_shots&quot;: 5,
+  &quot;selected_diagnostic_types&quot;: 2,
+  &quot;signals&quot;: 10,
+  &quot;samples&quot;: 757500,
+  &quot;valid_samples&quot;: 757500,
+  &quot;candidate_shots_examined&quot;: 5,
+  &quot;excluded_candidates&quot;: 0,
+  &quot;computed_signals&quot;: 10,
+  &quot;inconclusive_signals&quot;: 0
+}</pre><p>Units: shots/signals/samples</p><p>Uncertainty: Missingness is counted; source calibration uncertainty unknown</p><p>Limits: Source Level2 diagnostic processing release retained; instrument/physics validation is not asserted.</p></article><article><p class="kind">MCF-02 / DERIVED</p><h3>Temporal and spectral characterization of source measurements</h3><p>Finite contiguous regular segments, SciPy FFT/Welch/STFT, explicit Hann/overlap/resolution, derivative excursions</p><pre>[
+  {
+    &quot;shot_id&quot;: 30421,
+    &quot;diagnostic&quot;: &quot;magnetics/ip&quot;,
+    &quot;unit&quot;: &quot;A&quot;,
+    &quot;rms&quot;: 592831.2924338278,
+    &quot;peak_hz&quot;: 19.53125000000215,
+    &quot;resolution_hz&quot;: 19.53125000000215,
+    &quot;candidate_events&quot;: 1
+  },
+  {
+    &quot;shot_id&quot;: 30421,
+    &quot;diagnostic&quot;: &quot;magnetics/b_field_pol_probe_omv_voltage&quot;,
+    &quot;unit&quot;: &quot;V&quot;,
+    &quot;rms&quot;: 0.006361044050117094,
+    &quot;peak_hz&quot;: 366.21093749963376,
+    &quot;resolution_hz&quot;: 122.07031249987791,
+    &quot;candidate_events&quot;: 0
+  },
+  {
+    &quot;shot_id&quot;: 30424,
+    &quot;diagnostic&quot;: &quot;magnetics/ip&quot;,
+    &quot;unit&quot;: &quot;A&quot;,
+    &quot;rms&quot;: 591866.5020935973,
+    &quot;peak_hz&quot;: 19.53125000000215,
+    &quot;resolution_hz&quot;: 19.53125000000215,
+    &quot;candidate_events&quot;: 2
+  },
+  {
+    &quot;shot_id&quot;: 30424,
+    &quot;diagnostic&quot;: &quot;magnetics/b_field_pol_probe_omv_voltage&quot;,
+    &quot;unit&quot;: &quot;V&quot;,
+    &quot;rms&quot;: 0.006344997549364238,
+    &quot;peak_hz&quot;: 244.14062499975583,
+    &quot;resolution_hz&quot;: 122.07031249987791,
+    &quot;candidate_events&quot;: 0
+  },
+  {
+    &quot;shot_id&quot;: 30417,
+    &quot;diagnostic&quot;: &quot;magnetics/ip&quot;,
+    &quot;unit&quot;: &quot;A&quot;,
+    &quot;rms&quot;: 595148.1644974579,
+    &quot;peak_hz&quot;: 19.53125000000215,
+    &quot;resolution_hz&quot;: 19.53125000000215,
+    &quot;candidate_events&quot;: 5
+  },
+  {
+    &quot;shot_id&quot;: 30417,
+    &quot;diagnostic&quot;: &quot;magnetics/b_field_pol_probe_omv_voltage&quot;,
+    &quot;unit&quot;: &quot;V&quot;,
+    &quot;rms&quot;: 0.006528670436586266,
+    &quot;peak_hz&quot;: 366.21093749963376,
+    &quot;resolution_hz&quot;: 122.07031249987791,
+    &quot;candidate_events&quot;: 1
+  },
+  {
+    &quot;shot_id&quot;: 30425,
+    &quot;diagnostic&quot;: &quot;magnetics/ip&quot;,
+    &quot;unit&quot;: &quot;A&quot;,
+    &quot;rms&quot;: 589717.8580495752,
+    &quot;peak_hz&quot;: 19.53125000000215,
+    &quot;resolution_hz&quot;: 19.53125000000215,
+    &quot;candidate_events&quot;: 3
+  },
+  {
+    &quot;shot_id&quot;: 30425,
+    &quot;diagnostic&quot;: &quot;magnetics/b_field_pol_probe_omv_voltage&quot;,
+    &quot;unit&quot;: &quot;V&quot;,
+    &quot;rms&quot;: 0.006353864079767064,
+    &quot;peak_hz&quot;: 122.07031249987791,
+    &quot;resolution_hz&quot;: 122.07031249987791,
+    &quot;candidate_events&quot;: 0
+  },
+  {
+    &quot;shot_id&quot;: 30426,
+    &quot;diagnostic&quot;: &quot;magnetics/ip&quot;,
+    &quot;unit&quot;: &quot;A&quot;,
+    &quot;rms&quot;: 591115.2138045023,
+    &quot;peak_hz&quot;: 19.53125000000215,
+    &quot;resolution_hz&quot;: 19.53125000000215,
+    &quot;candidate_events&quot;: 0
+  },
+  {
+    &quot;shot_id&quot;: 30426,
+    &quot;diagnostic&quot;: &quot;magnetics/b_field_pol_probe_omv_voltage&quot;,
+    &quot;unit&quot;: &quot;V&quot;,
+    &quot;rms&quot;: 0.0063830213630413895,
+    &quot;peak_hz&quot;: 366.21093749963376,
+    &quot;resolution_hz&quot;: 122.07031249987791,
+    &quot;candidate_events&quot;: 0
+  }
+]</pre><p>Units: A/V,Hz,s</p><p>Uncertainty: Frequency-bin and time-grid resolution; window/filter/threshold sensitivity; no total calibration error</p><p>Limits: Peaks and transients are not identified MHD modes, ELMs or disruptions.</p></article><article><p class="kind">MCF-03 / STATISTICAL</p><h3>Cross-shot spread and parameter sensitivity</h3><p>Report all selected shots and all declared spectral/filter/event settings; same-shot descriptive correlation only</p><pre>[
+  {
+    &quot;diagnostic&quot;: &quot;magnetics/ip&quot;,
+    &quot;unit&quot;: &quot;A&quot;,
+    &quot;shot_ids&quot;: [
+      30421,
+      30424,
+      30417,
+      30425,
+      30426
+    ],
+    &quot;rms_distribution&quot;: {
+      &quot;n&quot;: 5,
+      &quot;mean&quot;: 592135.806175792,
+      &quot;std_sample&quot;: 2032.1546700068814,
+      &quot;rms&quot;: 592138.5958350777,
+      &quot;minimum&quot;: 589717.8580495752,
+      &quot;maximum&quot;: 595148.1644974579,
+      &quot;p05&quot;: 589997.3292005607,
+      &quot;p95&quot;: 594684.7900847319
+    },
+    &quot;mean_distribution&quot;: {
+      &quot;n&quot;: 5,
+      &quot;mean&quot;: 584080.4758145832,
+      &quot;std_sample&quot;: 1817.180002365998,
+      &quot;rms&quot;: 584082.7372404691,
+      &quot;minimum&quot;: 581892.6515208334,
+      &quot;maximum&quot;: 586681.2878645833,
+      &quot;p05&quot;: 582139.4509083334,
+      &quot;p95&quot;: 586324.9120875
+    },
+    &quot;dominant_frequency_distribution_hz&quot;: {
+      &quot;n&quot;: 5,
+      &quot;mean&quot;: 19.53125000000215,
+      &quot;std_sample&quot;: 0.0,
+      &quot;rms&quot;: 19.53125000000215,
+      &quot;minimum&quot;: 19.53125000000215,
+      &quot;maximum&quot;: 19.53125000000215,
+      &quot;p05&quot;: 19.53125000000215,
+      &quot;p95&quot;: 19.53125000000215
+    },
+    &quot;event_counts&quot;: [
+      {
+        &quot;shot_id&quot;: 30421,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;shot_id&quot;: 30424,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;shot_id&quot;: 30417,
+        &quot;count&quot;: 5
+      },
+      {
+        &quot;shot_id&quot;: 30425,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;shot_id&quot;: 30426,
+        &quot;count&quot;: 0
+      }
+    ],
+    &quot;shots_with_candidate_events&quot;: 4,
+    &quot;denominator_shots&quot;: 5,
+    &quot;interpretation&quot;: &quot;Same catalog campaign/shape/current category, not controlled identical experiments; no phase alignment, performance ranking or causal inference.&quot;
+  },
+  {
+    &quot;diagnostic&quot;: &quot;magnetics/b_field_pol_probe_omv_voltage&quot;,
+    &quot;unit&quot;: &quot;V&quot;,
+    &quot;shot_ids&quot;: [
+      30421,
+      30424,
+      30417,
+      30425,
+      30426
+    ],
+    &quot;rms_distribution&quot;: {
+      &quot;n&quot;: 5,
+      &quot;mean&quot;: 0.006394319495775211,
+      &quot;std_sample&quot;: 7.641068882360629e-05,
+      &quot;rms&quot;: 0.006394684721606229,
+      &quot;minimum&quot;: 0.006344997549364238,
+      &quot;maximum&quot;: 0.006528670436586266,
+      &quot;p05&quot;: 0.006346770855444803,
+      &quot;p95&quot;: 0.006499540621877291
+    },
+    &quot;mean_distribution&quot;: {
+      &quot;n&quot;: 5,
+      &quot;mean&quot;: 0.0063861650649483,
+      &quot;std_sample&quot;: 7.594009372340283e-05,
+      &quot;rms&quot;: 0.006386526266683157,
+      &quot;minimum&quot;: 0.006337163139544427,
+      &quot;maximum&quot;: 0.006519698751034836,
+      &quot;p05&quot;: 0.006338926882321636,
+      &quot;p95&quot;: 0.0064907346341883145
+    },
+    &quot;dominant_frequency_distribution_hz&quot;: {
+      &quot;n&quot;: 5,
+      &quot;mean&quot;: 292.96874999970703,
+      &quot;std_sample&quot;: 109.18300671374774,
+      &quot;rms&quot;: 308.81617775050944,
+      &quot;minimum&quot;: 122.07031249987791,
+      &quot;maximum&quot;: 366.21093749963376,
+      &quot;p05&quot;: 146.48437499985351,
+      &quot;p95&quot;: 366.21093749963376
+    },
+    &quot;event_counts&quot;: [
+      {
+        &quot;shot_id&quot;: 30421,
+        &quot;count&quot;: 0
+      },
+      {
+        &quot;shot_id&quot;: 30424,
+        &quot;count&quot;: 0
+      },
+      {
+        &quot;shot_id&quot;: 30417,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;shot_id&quot;: 30425,
+        &quot;count&quot;: 0
+      },
+      {
+        &quot;shot_id&quot;: 30426,
+        &quot;count&quot;: 0
+      }
+    ],
+    &quot;shots_with_candidate_events&quot;: 1,
+    &quot;denominator_shots&quot;: 5,
+    &quot;interpretation&quot;: &quot;Same catalog campaign/shape/current category, not controlled identical experiments; no phase alignment, performance ranking or causal inference.&quot;
+  }
+]</pre><p>Units: A/V,Hz,counts</p><p>Uncertainty: Observed cross-shot dispersion and method sensitivity; small selected cohort, not population inference</p><p>Limits: Differences may reflect unmeasured experimental settings or processing; no causal plasma conclusion.</p></article><h2>Measurements and comparisons</h2><div class="table"><table><thead><tr><th>Shot</th><th>Diagnostic</th><th>N / valid</th><th>Unit</th><th>RMS</th><th>Peak / Hz</th><th>Resolution / Hz</th><th>Events</th></tr></thead><tbody><tr><td>30421</td><td>magnetics/ip</td><td>1500 / 1500</td><td>A</td><td>592831.2924338278</td><td>19.53125000000215</td><td>19.53125000000215</td><td>1</td></tr><tr><td>30421</td><td>magnetics/b_field_pol_probe_omv_voltage</td><td>150000 / 150000</td><td>V</td><td>0.006361044050117094</td><td>366.21093749963376</td><td>122.07031249987791</td><td>0</td></tr><tr><td>30424</td><td>magnetics/ip</td><td>1500 / 1500</td><td>A</td><td>591866.5020935973</td><td>19.53125000000215</td><td>19.53125000000215</td><td>2</td></tr><tr><td>30424</td><td>magnetics/b_field_pol_probe_omv_voltage</td><td>150000 / 150000</td><td>V</td><td>0.006344997549364238</td><td>244.14062499975583</td><td>122.07031249987791</td><td>0</td></tr><tr><td>30417</td><td>magnetics/ip</td><td>1500 / 1500</td><td>A</td><td>595148.1644974579</td><td>19.53125000000215</td><td>19.53125000000215</td><td>5</td></tr><tr><td>30417</td><td>magnetics/b_field_pol_probe_omv_voltage</td><td>150000 / 150000</td><td>V</td><td>0.006528670436586266</td><td>366.21093749963376</td><td>122.07031249987791</td><td>1</td></tr><tr><td>30425</td><td>magnetics/ip</td><td>1500 / 1500</td><td>A</td><td>589717.8580495752</td><td>19.53125000000215</td><td>19.53125000000215</td><td>3</td></tr><tr><td>30425</td><td>magnetics/b_field_pol_probe_omv_voltage</td><td>150000 / 150000</td><td>V</td><td>0.006353864079767064</td><td>122.07031249987791</td><td>122.07031249987791</td><td>0</td></tr><tr><td>30426</td><td>magnetics/ip</td><td>1500 / 1500</td><td>A</td><td>591115.2138045023</td><td>19.53125000000215</td><td>19.53125000000215</td><td>0</td></tr><tr><td>30426</td><td>magnetics/b_field_pol_probe_omv_voltage</td><td>150000 / 150000</td><td>V</td><td>0.0063830213630413895</td><td>366.21093749963376</td><td>122.07031249987791</td><td>0</td></tr></tbody></table></div><h2>Original scientific visualizations</h2><figure><img src="figures/mast-30421-0.png" alt="MAST 30421 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30421 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30421-1.png" alt="MAST 30421 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30421 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30424-2.png" alt="MAST 30424 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30424 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30424-3.png" alt="MAST 30424 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30424 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30417-4.png" alt="MAST 30417 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30417 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30417-5.png" alt="MAST 30417 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30417 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30425-6.png" alt="MAST 30425 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30425 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30425-7.png" alt="MAST 30425 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30425 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30426-8.png" alt="MAST 30426 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30426 / magnetics/ip / A; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><figure><img src="figures/mast-30426-9.png" alt="MAST 30426 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes." loading="lazy"><figcaption>MAST 30426 / magnetics/b_field_pol_probe_omv_voltage / V; quality/segment/filter parameters in JSON. Signal-processing features are not identified plasma modes.</figcaption></figure><h2>Uncertainty, discussion and limitations</h2><ul><li>Legacy mastapp JSON service timed out; current official documentation points to the public S3 Parquet catalogs actually used.</li><li>Level2 magnetics metadata identifies source ingestion commit/release; a processed diagnostic is not a direct equilibrium reconstruction.</li><li>No interpolation, missing-to-zero conversion or sorting of bad time axes; spectral analysis uses declared contiguous segments.</li><li>Sample deliberately matches catalog categories, not all physical operating conditions; no cross-shot phase alignment.</li><li>Source release documents ongoing corrections; quality metrics and source-version metadata accompany every result.</li><li>No new instability, confinement improvement, disruption forecast, physical law or causal effect established.</li><li>Statistical block intervals and discretization/sensitivity do not quantify unknown instrument/calibration systematics.</li></ul><h2>Validation and conclusions</h2><p>Algorithm controls, independent numerical checks and exact acquired-source replay accompany publication. These are reproducible descriptions of selected real data, not a new plasma law, named instability, ignition result or validated prediction.</p><code>eda30cddda1943f19425d2b9472d4e773f62c100e298191538fee6b13330a8bd</code><h2>Sources, data license and attribution</h2><p>Original software: Apache2.0. Data-derived scientific report, plots and selected measurements: CC-BY-SA-4.0. Source attribution and modifications: acquired source arrays, unit normalization, explicit selections, deterministic statistics and labeled display scaling by Mattoccia Labs; no source endorsement.</p><ul><li><a href="https://s3.echo.stfc.ac.uk/mast/fairmast-meta/l2_shots.parquet">UKAEA FAIR-MAST</a> · SHA256 <code>696f34fcfb8ef6e2bfa648f477b495e1c0ed40d460936af9d3057a4b1db21bf3</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/zarr.json">UKAEA FAIR-MAST</a> · SHA256 <code>b6ffe2e2e0ebae184419de63e3db6977c7c921304f9ce0162b40f5944dcc3bea</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>4eb9cbd8e8ae4ad41d9adb845993c568fe9eb4deedc9806605cdf7f9688025ee</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/ip/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>7f77b9746cf23ecbca0aa654c989d6e468d48e43dda0ff4d0fbe5d1326b65eac</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time_mirnov/c/1">UKAEA FAIR-MAST</a> · SHA256 <code>6748230b64f276c6de035b91d9d418f809399365cc0aab90a74573090646811e</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time_mirnov/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>79d075f73c57b23e25d87d632882c69ff0f0ef62ea25875ac0dee2ba9343dd48</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time_mirnov/c/2">UKAEA FAIR-MAST</a> · SHA256 <code>451934b1607fd71706c4a88e4df3a2c159acf75025dc030e729d0ee10af29f4c</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time_mirnov/c/3">UKAEA FAIR-MAST</a> · SHA256 <code>cff69f1655b97b92ca08beef32ccd896280d88828f25bb80d3d6a101b6bb3794</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time_mirnov/c/4">UKAEA FAIR-MAST</a> · SHA256 <code>f4719f8baa56b8918cbd5cfd74a44e386044b63ceb5efa8ce913e31e3c4a74ec</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time_mirnov/c/5">UKAEA FAIR-MAST</a> · SHA256 <code>89355b1b3434fb47bf46b7e86897bcd6575560224262f2e089e3b967e7f3d8dd</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time_mirnov/c/6">UKAEA FAIR-MAST</a> · SHA256 <code>afd41620ae97938593281e4e7c5332d7165f66db16702408c6e70209cd206d4f</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/time_mirnov/c/7">UKAEA FAIR-MAST</a> · SHA256 <code>4d708d4936b829ac05653bf5aacb06373a050cd55a40369fdc0f8ccdbbaf4678</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/2">UKAEA FAIR-MAST</a> · SHA256 <code>60d98e8518b699725beafa2e039e048ef5914cb6fc39792429ec50343aa4bb43</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/1">UKAEA FAIR-MAST</a> · SHA256 <code>a901bbe66efecf8eabce44f397973050b7624e619cf3a873c47c1394eb776543</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/3">UKAEA FAIR-MAST</a> · SHA256 <code>4edbac40bf5b7e991e45f88a95111f35270500bfb1046e7209204b28e2539ccc</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/4">UKAEA FAIR-MAST</a> · SHA256 <code>0edf81069a0c14318136696c9fd9d356560e654f4fa78aa7e2cf68e3962a1117</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30421.zarr/magnetics/b_field_pol_probe_omv_channel/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>c06a3211128256d259dac683731733a77f411c5eb4bc09010ae19b6e5f0486f1</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/zarr.json">UKAEA FAIR-MAST</a> · SHA256 <code>4f996946a3e0ebf4fb905943a906a9832eab8ae18d0caa833516df2ba0263ac7</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>515393e6b2268f7c01b0cf6d93951da6ded6d2e70c5f8a196fb3fa6b3e29adc9</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/ip/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>b065d5937ee1ac9fa654746fe9a4ec4aafca6b7833b8ec547d38369e4dce2343</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time_mirnov/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>68a4838d6d078bffcdefa5b7d1fcbce411a0aff73249084936bada7435d099e0</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time_mirnov/c/1">UKAEA FAIR-MAST</a> · SHA256 <code>aeafadb32ca634a96fb5fcd74b2c2c262a9565dfdef0341c7d52e24a46800cf9</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time_mirnov/c/2">UKAEA FAIR-MAST</a> · SHA256 <code>2834bdd9b3782763752dadc392541a14be6848e44bc537f764367f1b1fad5ba2</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time_mirnov/c/3">UKAEA FAIR-MAST</a> · SHA256 <code>d47144a18932239850e2fa519bae2c2e907915bc54fbb376e6101374dc8893e7</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time_mirnov/c/4">UKAEA FAIR-MAST</a> · SHA256 <code>55f531ef00b4d2d652360bd59e3f2e8b493629471d3451d27272b342eaf0ef6a</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time_mirnov/c/5">UKAEA FAIR-MAST</a> · SHA256 <code>7d73c49ccf2677914177323cc668d2fdaaac1f59708ebfa6f027fdd9fafd7c83</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time_mirnov/c/6">UKAEA FAIR-MAST</a> · SHA256 <code>bec8a49145e1af83b35816613b9cda352c5c59f86ac63bc1f4bf31826130950f</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/time_mirnov/c/7">UKAEA FAIR-MAST</a> · SHA256 <code>d13b43a32647b964a0cedd062b2ae306da35af8f860064b2782e7530ac2201e4</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/1">UKAEA FAIR-MAST</a> · SHA256 <code>c983d75ddc7aa9d5d22fb40b76d8ffdbac48356f8352ac205ed18d1f51973f60</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/2">UKAEA FAIR-MAST</a> · SHA256 <code>4e5b49a49b46fb2d44ebeb9393c3dd30ae48f8e7788c35418576383ab4c4d56e</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/3">UKAEA FAIR-MAST</a> · SHA256 <code>1df8a28c36d8a6db75002d34486d6866e8ff93521a8e4a253f20ef76ac2ef5ad</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/4">UKAEA FAIR-MAST</a> · SHA256 <code>04e84786a72b552e64bd202a2ae0567a46a0fc1966f6eee4b2944c27c4e8d3d0</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30424.zarr/magnetics/b_field_pol_probe_omv_channel/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>c06a3211128256d259dac683731733a77f411c5eb4bc09010ae19b6e5f0486f1</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/zarr.json">UKAEA FAIR-MAST</a> · SHA256 <code>a237bd48b0dc76c8880facf90c0d4f2d4edbbd13e830902b4f80eda284c747d3</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>fa20c96ddc59fcfde33e94af95759a6a15e45d944af5b6b349d7b9b30559a469</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/ip/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>c52f876d065608e0812dd7a8aa97ec8811e8acfe4cdee67d9bd50d1cd8adb5b4</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time_mirnov/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>884650bac0bbbe117b4646e8a39c432ffa7b1c164c357b83df6f9f85ae2b6704</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time_mirnov/c/1">UKAEA FAIR-MAST</a> · SHA256 <code>11c8889c496bbd1c6810aa9791d8bc5a96fb0479300df6a1fe32a6a9eadab99a</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time_mirnov/c/2">UKAEA FAIR-MAST</a> · SHA256 <code>3e4812c95ab8d09dccd8bb8e1033571ffaafd53c91e39b54de439988afde71f3</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time_mirnov/c/3">UKAEA FAIR-MAST</a> · SHA256 <code>50f7183deaff77aaf192a5be126359e45ab7824a64d1846c43a6564c2b4642c7</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time_mirnov/c/4">UKAEA FAIR-MAST</a> · SHA256 <code>8a2adc7eae2c2dde6d98161cc49220f45cf0e393c7e39f8f2f53b78da245198d</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time_mirnov/c/5">UKAEA FAIR-MAST</a> · SHA256 <code>02c8b6abe20fa22c1d71d4be592a56b24c9c8bf10be7f267eceed5b9dba7f126</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time_mirnov/c/7">UKAEA FAIR-MAST</a> · SHA256 <code>c754cae4df8650bc7b31eb0672d7a54ab8fdfc772a8ea323578ae09f0f7c3aab</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/time_mirnov/c/6">UKAEA FAIR-MAST</a> · SHA256 <code>df91af0a3e50f72d26abc7328053696add2ab303809b8342fa7a9ca4de5a2c4e</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/2">UKAEA FAIR-MAST</a> · SHA256 <code>ad17a30bdbc171f167757b1f36ad0022a68367ae64ec3f51b59ef62fcfa7dffc</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/1">UKAEA FAIR-MAST</a> · SHA256 <code>ce4f780928539ad1307f70d9fff07459362d5919496b76f6838409904f18ba79</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/3">UKAEA FAIR-MAST</a> · SHA256 <code>36dd6e3a52f2f6fac27a71c5f797603e7428855850ab7c7bc923714541c27dba</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/4">UKAEA FAIR-MAST</a> · SHA256 <code>1b91920d7f4ea5f272c70cc3942a49a1635d544846dcd147297cbf0e69d40d2b</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30417.zarr/magnetics/b_field_pol_probe_omv_channel/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>c06a3211128256d259dac683731733a77f411c5eb4bc09010ae19b6e5f0486f1</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/zarr.json">UKAEA FAIR-MAST</a> · SHA256 <code>f450d0b7b82671f6378990131f7a7ab1a29b07cc1ca0d3096baddc30ac4a9d7d</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>959e3a109030089c50ffd1e80bffad3272a26869d537e18c9670d699231d2f51</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/ip/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>9d20665002e99dabe3a926b193dce910e32423323c6110d0f46f05c19567f76b</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time_mirnov/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>e064fb051ad2fa4a187736fc28107dbf363430daf65a49cf6a9365c03ec47785</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time_mirnov/c/1">UKAEA FAIR-MAST</a> · SHA256 <code>1d2db6cd131c75e750de21e5b1b0eb9c9d4b2a136508e46bcd05ed8acf0fa842</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time_mirnov/c/2">UKAEA FAIR-MAST</a> · SHA256 <code>80be51f768fcf315ea643e0ef2cf1b695121334d3fc4118d98a5ab84ccbe5239</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time_mirnov/c/3">UKAEA FAIR-MAST</a> · SHA256 <code>61e5f15accc0d36d15cdcdddbc9d258766dba1076a38b6dcb8437c77264b6ac2</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time_mirnov/c/5">UKAEA FAIR-MAST</a> · SHA256 <code>f4f04aef6f4cff697d3500e231ff7a1f1bb3148fcf61ed9ffa46f8fafeffc9ba</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time_mirnov/c/4">UKAEA FAIR-MAST</a> · SHA256 <code>b0896925e76e7829c4818b5d201e77fc42354b7fd7765fc9425cfeee4ab12d5b</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time_mirnov/c/6">UKAEA FAIR-MAST</a> · SHA256 <code>5a9c3daab1a165f153fa4c24d76e2a2fc5739fea5f201b98b4ed060b407f6acf</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/time_mirnov/c/7">UKAEA FAIR-MAST</a> · SHA256 <code>2d6c8b343925e99a51c4acb70d37baa3c418b5cbd213cd804cf45f921bf5a386</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/1">UKAEA FAIR-MAST</a> · SHA256 <code>431cc885b367c0048ae71d5f52d079756edaa0e5bfc728484d3ef137b50d446b</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/0">UKAEA FAIR-MAST</a> · SHA256 <code>8b33bbde6e0a60a5e568a5cbfa36e56b5d40ee70590c92bf2f8f83bf20c059eb</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/2">UKAEA FAIR-MAST</a> · SHA256 <code>699872902ca3bbf20785e0873a96d5c4f4332fe494a48ff11cec8d5f16b41b22</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30425.zarr/magnetics/b_field_pol_probe_omv_channel/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>c06a3211128256d259dac683731733a77f411c5eb4bc09010ae19b6e5f0486f1</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/zarr.json">UKAEA FAIR-MAST</a> · SHA256 <code>5aa37d246ab01876f1e0b34ef2936401f45fba07d6c65d3901dd12b44ce1df98</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>b977f3fb6326ec2129cd1ab8c78b01f73b9d9def2959c376f0558a1c81eccda3</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/ip/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>5172464dfbc0906426cb0f95c3aa41a689aa7fcbbf5bc908afb105c5d45e67e1</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time_mirnov/c/1">UKAEA FAIR-MAST</a> · SHA256 <code>8e1419bb4785379bfbe356b1a74ec4f9d954594825f8581614bf08988e7aaf2e</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time_mirnov/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>077be8b41bf65da0485f48752011546ca08f335f4f1267127bd792f9541ab8fe</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time_mirnov/c/2">UKAEA FAIR-MAST</a> · SHA256 <code>1246a11b1b00f37ea34e4ff3c481551d29071ffe2c4e98909b184cef3318f628</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time_mirnov/c/3">UKAEA FAIR-MAST</a> · SHA256 <code>95debd5149805b0e53a5bf853c195adbe6eff91f5ec8012b4c7394a16f34eb80</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time_mirnov/c/4">UKAEA FAIR-MAST</a> · SHA256 <code>5ad728047f2bccafc3362d1156dcb27fa255f2e5fb5193197824998d46e908d7</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time_mirnov/c/5">UKAEA FAIR-MAST</a> · SHA256 <code>795de110c592e5cad07be729ced9a3eec700476f1488b376dafce00dd03f8f09</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time_mirnov/c/7">UKAEA FAIR-MAST</a> · SHA256 <code>4bd0ad5cc8941c809b7dfddfbbdc7fcb7c4aa5c1212b4048f855392ead789795</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/time_mirnov/c/6">UKAEA FAIR-MAST</a> · SHA256 <code>de417a096c6ba2bc49923b95917be1a8c03ba596fb683b957d703fa76a8d57f6</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/2">UKAEA FAIR-MAST</a> · SHA256 <code>e6dcd30b35cca94d9f3ae953a31f55fe0a0b4feea7c7da0c85f55a75066b34af</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/1">UKAEA FAIR-MAST</a> · SHA256 <code>3e5d12f611547eaa510022ddc156a3e23a913c10fc5c574d57ce2df277302480</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/3">UKAEA FAIR-MAST</a> · SHA256 <code>631298fafc1a3d811b8ef8e6e93d9bb3f95c17185041ca5df2d63291c9187690</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/b_field_pol_probe_omv_voltage/c/0/4">UKAEA FAIR-MAST</a> · SHA256 <code>9376a1535876918020242ca588868b3f88ef4b374f8c62fb03280798d1e1fa9d</code></li><li><a href="https://s3.echo.stfc.ac.uk/mast/level2/shots/30426.zarr/magnetics/b_field_pol_probe_omv_channel/c/0">UKAEA FAIR-MAST</a> · SHA256 <code>c06a3211128256d259dac683731733a77f411c5eb4bc09010ae19b6e5f0486f1</code></li></ul><h2>Reproduction</h2><pre># Reproduce FPE-001
+
+From the original source release, on qualified macOS Apple Silicon/Python3.12:
+
+```sh
+python3.12 scripts/setup_fusion.py
+.venv-fpre/bin/python -m fusion.cli run --experiment FPE-001 --data .local/fusion
+.venv-fpre/bin/python -m fusion.cli reproduce --experiment FPE-001 --job JOB_ID --data .local/fusion
+```
+
+Initial run acquires official data explicitly. Keep source responses and manifest. Reproduce rehashes original bytes and recomputes without network; missing or modified source objects cause a visible failure. Upstream may replace Zarr objects at the same URL, so fresh acquisition is not automatically the original version. A qualified selected-input public replay is separately labeled; it cannot replace full raw-source validation. No model, apparatus access or cloud is required. Other operating systems are not qualified.
+</pre></body></html>

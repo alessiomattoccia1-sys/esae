@@ -49,3 +49,8 @@ See [materials/THIRD_PARTY_NOTICES.md](materials/THIRD_PARTY_NOTICES.md),
 [materials/DATA_SOURCES.md](materials/DATA_SOURCES.md) and the installed dependency
 license metadata/hashes in materials/DEPENDENCY_LICENSES.json. No raw archive,
 third-party wheel, model or executable is bundled.
+
+
+## Fusion Plasma Research Engine
+
+The isolated FPRE environment and exact upstream license-file hashes are documented in fusion/DEPENDENCY-LICENSE-AUDIT.json and fusion/THIRD_PARTY_NOTICES.md. No native reader binary, external scientific paper, complete MAST archive or STFC ZIP is bundled. FAIR-MAST derivatives remain CC BY-SA 4.0 and STFC derivatives CC BY 4.0 with source authors/changes identified. Original FPRE code remains Apache 2.0.

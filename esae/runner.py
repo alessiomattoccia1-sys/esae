@@ -18,6 +18,20 @@ class ProcessResult:
     duration: float
     error: str | None = None
 
+def _stop_owned_process(child):
+    """Preserve denial for live children; tolerate macOS exit/signal races only."""
+    try:
+        os.killpg(child.pid, signal.SIGKILL)
+    except ProcessLookupError:
+        pass
+    except PermissionError:
+        # A dying sandboxed child can return EPERM before waitpid reports exit.
+        # Never treat a still-running child as terminated or relax its sandbox.
+        try:
+            child.wait(timeout=.25)
+        except subprocess.TimeoutExpired:
+            raise PermissionError('Termination denied for a still-active owned process') from None
+
 def run_tool(command: list[str], work: Path, timeout=45, sandbox=True, output_limit=2_000_000, read_roots=()) -> ProcessResult:
     work.mkdir(parents=True, exist_ok=True, mode=0o700)
     command = [str(x) for x in command]
@@ -51,8 +65,7 @@ def run_tool(command: list[str], work: Path, timeout=45, sandbox=True, output_li
                 elif outpath.stat().st_size + errpath.stat().st_size > output_limit:
                     error = 'Process output limit exceeded; process group terminated'
                 if error:
-                    try: os.killpg(child.pid, signal.SIGKILL)
-                    except ProcessLookupError: pass
+                    _stop_owned_process(child)
                     break
                 time.sleep(.05)
             child.wait(timeout=5)
@@ -60,8 +73,7 @@ def run_tool(command: list[str], work: Path, timeout=45, sandbox=True, output_li
             # Ctrl+C/termination of the explicit local job must not orphan a
             # native analyzer. This does not relax any analyzer boundary.
             if child.poll() is None:
-                try: os.killpg(child.pid, signal.SIGKILL)
-                except ProcessLookupError: pass
+                _stop_owned_process(child)
             child.wait(timeout=5)
             raise
     stdout = outpath.read_bytes()[:output_limit].decode('utf-8', errors='replace')
