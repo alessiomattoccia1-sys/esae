@@ -19,3 +19,5 @@ demo/build/
 .venv-fsie/
 
 reports/financial/history/
+
+.venv-fpre/

@@ -14,11 +14,14 @@ test = ["pytest>=8,<10"]
 materials = ["numpy>=2,<3", "scipy>=1.14,<2", "jarvis-tools==2026.6.12"]
 financial = ["numpy>=2,<3", "scipy>=1.14,<2", "pandas>=3,<4", "statsmodels>=0.15,<1", "duckdb>=2,<3", "pyarrow>=26,<27"]
 
+fusion = ["numpy>=2,<3", "scipy>=1.14,<2", "pandas>=3,<4", "xarray>=2026.9", "dask>=2026.8", "zarr>=3.4,<4", "pint>=0.26,<1", "pyhdf>=0.11", "matplotlib>=3.10,<4", "Pillow>=13,<14", "pyarrow>=26,<27"]
+
 [project.scripts]
 esae = "esae.cli:main"
 gee = "genomics.cli:main"
 mde = "materials.cli:main"
 fsie = "financial.cli:main"
+fpre = "fusion.cli:main"
 
 [tool.setuptools.package-data]
 esae = ["static/*"]
@@ -26,9 +29,10 @@ benchmarks = ["*.json"]
 genomics = ["static/*"]
 materials = ["static/*"]
 financial = ["static/*"]
+fusion = ["static/*"]
 
 [tool.setuptools.packages.find]
-include = ["esae*", "benchmarks*", "research_core*", "genomics*", "materials*", "financial*"]
+include = ["esae*", "benchmarks*", "research_core*", "genomics*", "materials*", "financial*", "fusion*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
