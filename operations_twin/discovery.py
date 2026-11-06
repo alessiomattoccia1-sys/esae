@@ -14,7 +14,7 @@ def connect(folder, normalized=None):
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True, mode=0o700)
     c = duckdb.connect(
-        str(folder / "analysis.duckdb"), config={"memory_limit": "512MB", "threads": 2}
+        str(folder / "analysis.duckdb"), config={"memory_limit": "512MB", "threads": 1}
     )
     c.execute("SET autoinstall_known_extensions=false")
     c.execute("SET autoload_known_extensions=false")
@@ -47,10 +47,10 @@ def build(c, progress=None, cancel=None):
         f"""CREATE OR REPLACE TABLE ordered_edges AS SELECT * FROM (SELECT case_key, category,activity source_activity,lead(activity)OVER w target_activity,(lead(timestamp_us)OVER w-timestamp_us)/{DAY}.0 elapsed_day,timestamp_us,lead(timestamp_us)OVER w next_us,source_row FROM events WINDOW w AS(PARTITION BY case_key ORDER BY timestamp_us,source_row))WHERE target_activity IS NOT NULL"""
     )
     c.execute(
-        """CREATE OR REPLACE TABLE dfg AS SELECT category,source_activity,target_activity,count(*) frequency,count(DISTINCT case_key) cases,avg(elapsed_day) elapsed_mean_day,median(elapsed_day) elapsed_median_day,quantile_cont(elapsed_day,.9) elapsed_p90_day,sum(CASE WHEN elapsed_day=0 THEN 1 ELSE 0 END) same_timestamp_pairs FROM ordered_edges GROUP BY category,source_activity,target_activity"""
+        """CREATE OR REPLACE TABLE dfg AS SELECT category,source_activity,target_activity,count(*) frequency,count(DISTINCT case_key) cases,sum(next_us-timestamp_us)/(count(*)*86400000000.0) elapsed_mean_day,median(elapsed_day) elapsed_median_day,quantile_cont(elapsed_day,.9) elapsed_p90_day,sum(CASE WHEN elapsed_day=0 THEN 1 ELSE 0 END) same_timestamp_pairs FROM ordered_edges GROUP BY category,source_activity,target_activity"""
     )
     c.execute(
-        """CREATE OR REPLACE TABLE variants AS SELECT category,sha256(sequence_json) variant_id,sequence_json,count(*) cases,avg(elapsed_day) elapsed_mean_day,median(elapsed_day) elapsed_median_day FROM cases GROUP BY category,sequence_json"""
+        """CREATE OR REPLACE TABLE variants AS SELECT category,sha256(sequence_json) variant_id,sequence_json,count(*) cases,sum(last_us-first_us)/(count(*)*86400000000.0) elapsed_mean_day,median(elapsed_day) elapsed_median_day FROM cases GROUP BY category,sequence_json"""
     )
     marks["graph_and_variant_seconds"] = time.monotonic() - tick
     if progress:
@@ -103,7 +103,7 @@ def analyze(c, import_manifest, dataset, progress=None, cancel=None):
     totals.update(counts2)
     cats = dicts(
         c,
-        """SELECT category,count(*) cases,sum(n_events) events,count(DISTINCT sequence_json) variants,avg(elapsed_day) elapsed_mean_day,median(elapsed_day) elapsed_median_day,quantile_cont(elapsed_day,.9) elapsed_p90_day,quantile_cont(elapsed_day,.95) elapsed_p95_day,min(elapsed_day) elapsed_min_day,max(elapsed_day) elapsed_max_day,avg(CASE WHEN repeated_activity_occurrences>0 THEN 1.0 ELSE 0 END) repeated_activity_case_rate,avg(CASE WHEN change_cancel_events>0 THEN 1.0 ELSE 0 END) change_cancel_case_rate,sum(CASE WHEN outside_events>0 THEN 1 ELSE 0 END) cases_outside_2018 FROM cases GROUP BY category ORDER BY cases DESC""",
+        """SELECT category,count(*) cases,sum(n_events) events,count(DISTINCT sequence_json) variants,sum(last_us-first_us)/(count(*)*86400000000.0) elapsed_mean_day,median(elapsed_day) elapsed_median_day,quantile_cont(elapsed_day,.9) elapsed_p90_day,quantile_cont(elapsed_day,.95) elapsed_p95_day,min(elapsed_day) elapsed_min_day,max(elapsed_day) elapsed_max_day,avg(CASE WHEN repeated_activity_occurrences>0 THEN 1.0 ELSE 0 END) repeated_activity_case_rate,avg(CASE WHEN change_cancel_events>0 THEN 1.0 ELSE 0 END) change_cancel_case_rate,sum(CASE WHEN outside_events>0 THEN 1 ELSE 0 END) cases_outside_2018 FROM cases GROUP BY category ORDER BY cases DESC""",
     )
     quality = dict(import_manifest["counts"])
     quality["exact_duplicate_candidates_retained"] = dicts(
@@ -134,7 +134,7 @@ def analyze(c, import_manifest, dataset, progress=None, cancel=None):
     quality["excluded_percent"] = 100 * (source - included) / source if source else None
     period = dicts(
         c,
-        f"""SELECT category,count(*) cases,avg(elapsed_day)elapsed_mean_day,median(elapsed_day)elapsed_median_day,quantile_cont(elapsed_day,.9)elapsed_p90_day FROM cases WHERE first_us>={LOW} AND last_us<{HIGH}GROUP BY category ORDER BY category""",
+        f"""SELECT category,count(*) cases,sum(last_us-first_us)/(count(*)*86400000000.0)elapsed_mean_day,median(elapsed_day)elapsed_median_day,quantile_cont(elapsed_day,.9)elapsed_p90_day FROM cases WHERE first_us>={LOW} AND last_us<{HIGH}GROUP BY category ORDER BY category""",
     )
     graph = dicts(
         c,
@@ -146,7 +146,7 @@ def analyze(c, import_manifest, dataset, progress=None, cancel=None):
     )
     topvariants = dicts(
         c,
-        "SELECT category,variant_id,sequence_json,cases,elapsed_median_day FROM variants ORDER BY cases DESC,variant_id LIMIT 30",
+        "SELECT category,variant_id,sequence_json,cases,elapsed_median_day FROM variants ORDER BY cases DESC,variant_id,category LIMIT 30",
     )
     for x in topvariants:
         x["activities"] = json.loads(x.pop("sequence_json"))
