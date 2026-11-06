@@ -1,0 +1,171 @@
+{
+  "benchmark": "FSIE-BIGDATA-001",
+  "classification": "SYNTHETIC_TECHNICAL_ONLY_NOT_FINANCIAL_RESEARCH",
+  "rows": 20000000,
+  "generator": "range(i),10000series,date2000-01-01+floor(i/10000),value=sin(i*.001)+cos((i%10000)*.1);deterministic,no market observations",
+  "duckdb_version": "2.0.0",
+  "machine": {
+    "system": "Darwin",
+    "release": "27.0.0",
+    "architecture": "arm64",
+    "chip": null,
+    "physical_memory_bytes": 0
+  },
+  "settings": {
+    "memory_limit": "512MB",
+    "threads": 2,
+    "row_group_size": 122880,
+    "compression": "ZSTD",
+    "partition": "year"
+  },
+  "generation_parquet_write_seconds": 1.6670334169757552,
+  "parquet_load_into_duckdb_seconds": 0.9034757079789415,
+  "parquet_bytes": 163232364,
+  "parquet_files": 6,
+  "year_partitions": 6,
+  "loaded_database_bytes": 152842240,
+  "process_peak_rss_bytes": 542408704,
+  "rss_scope": "Whole fresh CLI process peak includes Python/imports; not an assertion of engine-only memory",
+  "query_results": {
+    "count_metadata": {
+      "sql": "SELECT count(*) FROM source_parquet",
+      "seconds": [
+        0.03492391703184694,
+        0.005568249966017902,
+        0.005376667017117143
+      ],
+      "median_seconds": 0.005568249966017902,
+      "result_rows": 1,
+      "result_sha256": [
+        "db90fface2ca8d0cdd58f9796cb9215d5d43f7c7ba37513896a3019a58df3682",
+        "db90fface2ca8d0cdd58f9796cb9215d5d43f7c7ba37513896a3019a58df3682",
+        "db90fface2ca8d0cdd58f9796cb9215d5d43f7c7ba37513896a3019a58df3682"
+      ],
+      "first_rows": [
+        [
+          20000000
+        ]
+      ],
+      "cache_state": "firstobserved then warm; OS caches not forcibly dropped"
+    },
+    "time_series_filter": {
+      "sql": "SELECT count(*),avg(value) FROM source_parquet WHERE observation_date BETWEEN DATE '2002-01-01' AND DATE '2002-01-31' AND series_id BETWEEN 100 AND 199",
+      "seconds": [
+        0.004738457966595888,
+        0.004648041038308293,
+        0.004627249960321933
+      ],
+      "median_seconds": 0.004648041038308293,
+      "result_rows": 1,
+      "result_sha256": [
+        "015bc12991bf2d7ccf2cb253a370760bc0ae58f8be4857c12d829faca2fd6f3d",
+        "015bc12991bf2d7ccf2cb253a370760bc0ae58f8be4857c12d829faca2fd6f3d",
+        "015bc12991bf2d7ccf2cb253a370760bc0ae58f8be4857c12d829faca2fd6f3d"
+      ],
+      "first_rows": [
+        [
+          3100,
+          0.16593637854519866
+        ]
+      ],
+      "cache_state": "firstobserved then warm; OS caches not forcibly dropped"
+    },
+    "group_aggregation": {
+      "sql": "SELECT series_id,count(*),avg(value),stddev_samp(value) FROM source_parquet GROUP BY series_id ORDER BY series_id",
+      "seconds": [
+        0.16043474996695295,
+        0.1629356249468401,
+        0.16146604204550385
+      ],
+      "median_seconds": 0.16146604204550385,
+      "result_rows": 10000,
+      "result_sha256": [
+        "fcbab7bab325af8818909df178fb00596f7c6f03cbed456e7d7f38e96a06ceee",
+        "1d1a36ce928a0a64523898c82c4305b73f48525e8bbb5e897d80923070857557",
+        "687434975d806ad502d5fe1d9e08a9aa2294fe01a82a442e5a5982dc8be5472b"
+      ],
+      "first_rows": [
+        [
+          0,
+          2000,
+          0.999840689323466,
+          0.7070946205437231
+        ],
+        [
+          1,
+          2000,
+          0.9948448583415713,
+          0.7070946383031038
+        ],
+        [
+          2,
+          2000,
+          0.9799072748041733,
+          0.7070946568184919
+        ]
+      ],
+      "cache_state": "firstobserved then warm; OS caches not forcibly dropped"
+    },
+    "full_scan_sum": {
+      "sql": "SELECT sum(value),min(value),max(value) FROM source_parquet",
+      "seconds": [
+        0.12969387497287244,
+        0.1274236660101451,
+        0.12653041700832546
+      ],
+      "median_seconds": 0.1274236660101451,
+      "result_rows": 1,
+      "result_sha256": [
+        "531e868fe3d443e1ddb84bd578b7a7a8c34c18d8131e7276473336096403ffa2",
+        "2ba8c260d11de6b7c3b05e8b6a777bd9d182655d3ee3442bee1807650dba9a85",
+        "d8fa8f7cf1fb5e76273f894756e9bbc6ad61a6882a7e7029651f07ab1edb20c0"
+      ],
+      "first_rows": [
+        [
+          17147.93741268067,
+          -1.9999821812607874,
+          1.9999983132773522
+        ]
+      ],
+      "cache_state": "firstobserved then warm; OS caches not forcibly dropped"
+    }
+  },
+  "expected_count": 20000000,
+  "expected_time_filter_rows": 3100,
+  "files": [
+    {
+      "name": "parquet/year=2000/data_0.parquet",
+      "bytes": 29892406,
+      "sha256": "c051b9b8e890aa88a0d38fcb62f6da512fced5265e3a051b6a83ec5126e2ba47"
+    },
+    {
+      "name": "parquet/year=2001/data_0.parquet",
+      "bytes": 29758215,
+      "sha256": "147c35fa12b521da17f85dfb1048cb73c96907f271405c8d65de07b524c87b16"
+    },
+    {
+      "name": "parquet/year=2002/data_0.parquet",
+      "bytes": 29792390,
+      "sha256": "da4d018b84b1873317ca97f37c1673f09d9194123aa50bce29d64ea39ba7d952"
+    },
+    {
+      "name": "parquet/year=2003/data_0.parquet",
+      "bytes": 29758844,
+      "sha256": "b03facedd38b4bd5803ab1273668335f0118fbdf081e6797f5696f0f9b1b7dc0"
+    },
+    {
+      "name": "parquet/year=2004/data_0.parquet",
+      "bytes": 29892341,
+      "sha256": "14d999a11bc24c44a22790dbbd122fee859045e759d187793090b58cbb0642aa"
+    },
+    {
+      "name": "parquet/year=2005/data_0.parquet",
+      "bytes": 14138168,
+      "sha256": "e53503cbd1016c14b990bb406365bf178102648746b8278e2108b3516779cee8"
+    }
+  ],
+  "duration_seconds": 3.7501125420094468,
+  "finished_at": "2026-11-06T06:15:59.723358+00:00",
+  "source_code_sha256": "16b2d24062c03a5a071b7884d48699b67bc9ab0a5aae9b57d347c41566688461",
+  "passed": true
+}

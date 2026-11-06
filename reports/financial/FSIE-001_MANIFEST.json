@@ -1,0 +1,807 @@
+{
+  "experiment": "FSIE-001",
+  "engine_version": "0.1.0",
+  "parser_version": "fsie-parser-1.0",
+  "method_version": "fsie-001-1.0",
+  "configuration": {
+    "start": "2000-01-01",
+    "end": "2026-11-06",
+    "bootstrap_replicates": 999,
+    "block_weeks": 13,
+    "seed": 20261106,
+    "anomaly_window": 104,
+    "anomaly_min_history": 52,
+    "anomaly_z": 4.0
+  },
+  "sources": [
+    {
+      "id": "4b3438889900ecd4a3bc86ad3cd8d80803dbab213ac85be79ce59e95cfa4aef8",
+      "url": "https://home.treasury.gov/system/files/276/yield-curve-rates-1990-2024.csv",
+      "organization": "U.S. Department of the Treasury",
+      "acquired_at": "2026-11-06T05:47:10.724379+00:00",
+      "release_date": "Wed, 19 Aug 2026 16:04:55 GMT",
+      "etag": "W/\"a0f627a2d648ad6284df4593c3c84b00\"",
+      "server_date": "Fri, 06 Nov 2026 05:47:09 GMT",
+      "sha256": "258a594eb64e9d21d9e8574b0b8580b0a5230dce56bb284ec6aa49a9a260897f",
+      "bytes": 555456,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "treasury",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "treasury_csv",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "258a594eb64e9d21d9e8574b0b8580b0a5230dce56bb284ec6aa49a9a260897f",
+        "counts": {
+          "rows_seen": 8757,
+          "observations_seen": 113841,
+          "missing_values": 20258,
+          "valid_unique_observations": 113841
+        },
+        "period": {
+          "start": "1990-01-02",
+          "end": "2024-12-31"
+        },
+        "series": [
+          "UST_10Y",
+          "UST_1M",
+          "UST_1Y",
+          "UST_20Y",
+          "UST_2M",
+          "UST_2Y",
+          "UST_30Y",
+          "UST_3M",
+          "UST_3Y",
+          "UST_4M",
+          "UST_5Y",
+          "UST_6M",
+          "UST_7Y"
+        ]
+      }
+    },
+    {
+      "id": "0dd0db76b2e96492403f202d4ff5a083fbb22d5f8b8077355233601c67f09f8f",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2025",
+      "organization": "U.S. Department of the Treasury",
+      "acquired_at": "2026-11-06T05:47:32.082315+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:31 GMT",
+      "sha256": "165e138f98ec47f648e268058a040a0ef22a3b6dce55e043433d5eba2adbd3b3",
+      "bytes": 345104,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "treasury",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "treasury_xml",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "165e138f98ec47f648e268058a040a0ef22a3b6dce55e043433d5eba2adbd3b3",
+        "counts": {
+          "rows_seen": 249,
+          "observations_seen": 3455,
+          "valid_unique_observations": 3455
+        },
+        "period": {
+          "start": "2025-01-02",
+          "end": "2025-12-31"
+        },
+        "series": [
+          "UST_1.5M",
+          "UST_10Y",
+          "UST_1M",
+          "UST_1Y",
+          "UST_20Y",
+          "UST_2M",
+          "UST_2Y",
+          "UST_30Y",
+          "UST_3M",
+          "UST_3Y",
+          "UST_4M",
+          "UST_5Y",
+          "UST_6M",
+          "UST_7Y"
+        ]
+      }
+    },
+    {
+      "id": "7e15153b8ceb31ca9258d17565fef218257c0bbac33c6ae145459aef1f661353",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "organization": "U.S. Department of the Treasury",
+      "acquired_at": "2026-11-06T05:47:48.835057+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:48 GMT",
+      "sha256": "e96199b32569922ed01f894b55501a7ae11d17498c837f0bae088978b68a4d0b",
+      "bytes": 329758,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "treasury",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "treasury_xml",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "e96199b32569922ed01f894b55501a7ae11d17498c837f0bae088978b68a4d0b",
+        "counts": {
+          "rows_seen": 213,
+          "observations_seen": 2982,
+          "valid_unique_observations": 2982
+        },
+        "period": {
+          "start": "2026-01-02",
+          "end": "2026-11-05"
+        },
+        "series": [
+          "UST_1.5M",
+          "UST_10Y",
+          "UST_1M",
+          "UST_1Y",
+          "UST_20Y",
+          "UST_2M",
+          "UST_2Y",
+          "UST_30Y",
+          "UST_3M",
+          "UST_3Y",
+          "UST_4M",
+          "UST_5Y",
+          "UST_6M",
+          "UST_7Y"
+        ]
+      }
+    },
+    {
+      "id": "1ee4520c7fb0492243c99e60ee79d977d078af623d657c86516f572d9ce76178",
+      "url": "https://api.data.chicagofed.org/NFCI/nfci-data-series-csv.csv",
+      "organization": "Federal Reserve Bank of Chicago",
+      "acquired_at": "2026-11-06T05:47:49.422848+00:00",
+      "release_date": "Wed, 04 Nov 2026 13:30:04 GMT",
+      "etag": "\"f366f471aa73bbace42b5cb46cb9a5ff\"",
+      "server_date": "Fri, 06 Nov 2026 05:47:50 GMT",
+      "sha256": "6dccfc661261e95d823f4b07a8b96e9848860d7c6b7cfc9ab99e8b30a7b716f9",
+      "bytes": 149110,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "chicago",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "nfci_csv",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "6dccfc661261e95d823f4b07a8b96e9848860d7c6b7cfc9ab99e8b30a7b716f9",
+        "counts": {
+          "rows_seen": 2913,
+          "observations_seen": 17478,
+          "valid_unique_observations": 17478
+        },
+        "period": {
+          "start": "1971-01-08",
+          "end": "2026-10-30"
+        },
+        "series": [
+          "ANFCI",
+          "Credit",
+          "Leverage",
+          "NFCI",
+          "Nonfinancial_Leverage",
+          "Risk"
+        ]
+      }
+    },
+    {
+      "id": "e0085f0047fb3a19498ef96e81d52eb3614f5b3038b358e7e25a05953b5fac6e",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2018-04-02&endDate=2018-12-31",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:49.986459+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:49 GMT",
+      "sha256": "0652bd78da1372b5a4a89eb10b54148b6cc0dabf528a139a2ac23b0f7052e46f",
+      "bytes": 44575,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "0652bd78da1372b5a4a89eb10b54148b6cc0dabf528a139a2ac23b0f7052e46f",
+        "counts": {
+          "rows_seen": 188,
+          "observations_seen": 188,
+          "valid_unique_observations": 188
+        },
+        "period": {
+          "start": "2018-04-02",
+          "end": "2018-12-31"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    },
+    {
+      "id": "9ba110d1293473806862fd8a591b402a892f9764c9fa9d30727e83c50713f277",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2019-01-01&endDate=2019-12-31",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:50.401367+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:50 GMT",
+      "sha256": "8ef5f77a6bcf145b83ffc3600beffc1f96ee7d3be17ce16d892a7bcb78926c60",
+      "bytes": 59462,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "8ef5f77a6bcf145b83ffc3600beffc1f96ee7d3be17ce16d892a7bcb78926c60",
+        "counts": {
+          "rows_seen": 250,
+          "observations_seen": 250,
+          "valid_unique_observations": 250
+        },
+        "period": {
+          "start": "2019-01-02",
+          "end": "2019-12-31"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    },
+    {
+      "id": "376494d9c742785b0034bb67f4a726bb8757689f6dcd31a19866124bbf2dd481",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2020-01-01&endDate=2020-12-31",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:50.970117+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:50 GMT",
+      "sha256": "6303924b8ba2eb14fb35c84586cc7ccfa9b62227307f145492902ccdcd86f1d5",
+      "bytes": 59635,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "6303924b8ba2eb14fb35c84586cc7ccfa9b62227307f145492902ccdcd86f1d5",
+        "counts": {
+          "rows_seen": 251,
+          "observations_seen": 251,
+          "valid_unique_observations": 251
+        },
+        "period": {
+          "start": "2020-01-02",
+          "end": "2020-12-31"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    },
+    {
+      "id": "1d4e2a009e72168610178bb057e227820bc75a8c04f416589c73f0601d1b4d65",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2021-01-01&endDate=2021-12-31",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:51.334092+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:51 GMT",
+      "sha256": "1d81e7212f3791a9691e77d552bc933b17b1aacdf11a0200a056961e60c3f8cd",
+      "bytes": 59404,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "1d81e7212f3791a9691e77d552bc933b17b1aacdf11a0200a056961e60c3f8cd",
+        "counts": {
+          "rows_seen": 250,
+          "observations_seen": 250,
+          "valid_unique_observations": 250
+        },
+        "period": {
+          "start": "2021-01-04",
+          "end": "2021-12-31"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    },
+    {
+      "id": "8ca0152f921237eca2086ad65806ae052f7642856272ed911c181d6377ee5f43",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2022-01-01&endDate=2022-12-31",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:51.967591+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:51 GMT",
+      "sha256": "db885b1e5fcb68859e56428441835e8b37e2ebbe227ddc06cc95f62fd1fddd0c",
+      "bytes": 59113,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "db885b1e5fcb68859e56428441835e8b37e2ebbe227ddc06cc95f62fd1fddd0c",
+        "counts": {
+          "rows_seen": 249,
+          "observations_seen": 249,
+          "valid_unique_observations": 249
+        },
+        "period": {
+          "start": "2022-01-03",
+          "end": "2022-12-30"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    },
+    {
+      "id": "e67a3d920a37e021fd6e54d1add9fe03b08b5709530ef0d2786f061f71156037",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2023-01-01&endDate=2023-12-31",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:52.361849+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:52 GMT",
+      "sha256": "e2fcdcea3fbf9dd6b160d8e2ae5ce27463a9fba0642bfdcfbbe38b415c0e461c",
+      "bytes": 59280,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "e2fcdcea3fbf9dd6b160d8e2ae5ce27463a9fba0642bfdcfbbe38b415c0e461c",
+        "counts": {
+          "rows_seen": 249,
+          "observations_seen": 249,
+          "valid_unique_observations": 249
+        },
+        "period": {
+          "start": "2023-01-03",
+          "end": "2023-12-29"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    },
+    {
+      "id": "689ab110c892857cee6079fac32d36d0ae6848b8b564965ecb19b23db5f34ecb",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2024-01-01&endDate=2024-12-31",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:52.985494+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:52 GMT",
+      "sha256": "381fc266d1dac1f2937c8293c2e9657011aa53160e40519dc5b20392a02ce278",
+      "bytes": 59518,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "381fc266d1dac1f2937c8293c2e9657011aa53160e40519dc5b20392a02ce278",
+        "counts": {
+          "rows_seen": 250,
+          "observations_seen": 250,
+          "valid_unique_observations": 250
+        },
+        "period": {
+          "start": "2024-01-02",
+          "end": "2024-12-31"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    },
+    {
+      "id": "c94fa9cb8bbda488c30c710936d7454d5ca3914213d1354f57a597a3827ad0f9",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2025-01-01&endDate=2025-12-31",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:53.365870+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:53 GMT",
+      "sha256": "fafbcc840cf1a71ffdce5314f9b3dac6ba57ec1fb2f14c9b7667d3a19ea5b84d",
+      "bytes": 59280,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "fafbcc840cf1a71ffdce5314f9b3dac6ba57ec1fb2f14c9b7667d3a19ea5b84d",
+        "counts": {
+          "rows_seen": 249,
+          "observations_seen": 249,
+          "valid_unique_observations": 249
+        },
+        "period": {
+          "start": "2025-01-02",
+          "end": "2025-12-31"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    },
+    {
+      "id": "edd640dbc76c18c160a36214d47475a39ec5a75710bc69ae9341b262f0a6acc9",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2026-01-01&endDate=2026-11-06",
+      "organization": "Federal Reserve Bank of New York",
+      "acquired_at": "2026-11-06T05:47:53.992482+00:00",
+      "release_date": null,
+      "etag": null,
+      "server_date": "Fri, 06 Nov 2026 05:47:53 GMT",
+      "sha256": "bbe24ba96a2ddc5fb3254a5a2c6c228cf8584944ca597bdf25aac01d6e9ce697",
+      "bytes": 50236,
+      "http_status": 200,
+      "parser_version": "fsie-parser-1.0",
+      "record_counts": null,
+      "errors": [],
+      "source_id": "newyork",
+      "vintage_kind": "acquisition_snapshot_not_historical_realtime_vintage",
+      "publication_at": null,
+      "parser": "sofr_json",
+      "schema_version": "fsie-parser-1.0",
+      "source_period_and_counts": {
+        "source_sha256": "bbe24ba96a2ddc5fb3254a5a2c6c228cf8584944ca597bdf25aac01d6e9ce697",
+        "counts": {
+          "rows_seen": 211,
+          "observations_seen": 211,
+          "valid_unique_observations": 211
+        },
+        "period": {
+          "start": "2026-01-02",
+          "end": "2026-11-04"
+        },
+        "series": [
+          "SOFR"
+        ]
+      }
+    }
+  ],
+  "ingestion": {
+    "rows_seen": 14279,
+    "observations_seen": 139903,
+    "missing_values": 20258,
+    "valid_unique_observations": 139903,
+    "excluded_outside_configured_period": 41617,
+    "stored_unique_period_observations": 98286
+  },
+  "source_counts": [
+    {
+      "source_sha256": "258a594eb64e9d21d9e8574b0b8580b0a5230dce56bb284ec6aa49a9a260897f",
+      "counts": {
+        "rows_seen": 8757,
+        "observations_seen": 113841,
+        "missing_values": 20258,
+        "valid_unique_observations": 113841
+      },
+      "period": {
+        "start": "1990-01-02",
+        "end": "2024-12-31"
+      },
+      "series": [
+        "UST_10Y",
+        "UST_1M",
+        "UST_1Y",
+        "UST_20Y",
+        "UST_2M",
+        "UST_2Y",
+        "UST_30Y",
+        "UST_3M",
+        "UST_3Y",
+        "UST_4M",
+        "UST_5Y",
+        "UST_6M",
+        "UST_7Y"
+      ]
+    },
+    {
+      "source_sha256": "165e138f98ec47f648e268058a040a0ef22a3b6dce55e043433d5eba2adbd3b3",
+      "counts": {
+        "rows_seen": 249,
+        "observations_seen": 3455,
+        "valid_unique_observations": 3455
+      },
+      "period": {
+        "start": "2025-01-02",
+        "end": "2025-12-31"
+      },
+      "series": [
+        "UST_1.5M",
+        "UST_10Y",
+        "UST_1M",
+        "UST_1Y",
+        "UST_20Y",
+        "UST_2M",
+        "UST_2Y",
+        "UST_30Y",
+        "UST_3M",
+        "UST_3Y",
+        "UST_4M",
+        "UST_5Y",
+        "UST_6M",
+        "UST_7Y"
+      ]
+    },
+    {
+      "source_sha256": "e96199b32569922ed01f894b55501a7ae11d17498c837f0bae088978b68a4d0b",
+      "counts": {
+        "rows_seen": 213,
+        "observations_seen": 2982,
+        "valid_unique_observations": 2982
+      },
+      "period": {
+        "start": "2026-01-02",
+        "end": "2026-11-05"
+      },
+      "series": [
+        "UST_1.5M",
+        "UST_10Y",
+        "UST_1M",
+        "UST_1Y",
+        "UST_20Y",
+        "UST_2M",
+        "UST_2Y",
+        "UST_30Y",
+        "UST_3M",
+        "UST_3Y",
+        "UST_4M",
+        "UST_5Y",
+        "UST_6M",
+        "UST_7Y"
+      ]
+    },
+    {
+      "source_sha256": "6dccfc661261e95d823f4b07a8b96e9848860d7c6b7cfc9ab99e8b30a7b716f9",
+      "counts": {
+        "rows_seen": 2913,
+        "observations_seen": 17478,
+        "valid_unique_observations": 17478
+      },
+      "period": {
+        "start": "1971-01-08",
+        "end": "2026-10-30"
+      },
+      "series": [
+        "ANFCI",
+        "Credit",
+        "Leverage",
+        "NFCI",
+        "Nonfinancial_Leverage",
+        "Risk"
+      ]
+    },
+    {
+      "source_sha256": "0652bd78da1372b5a4a89eb10b54148b6cc0dabf528a139a2ac23b0f7052e46f",
+      "counts": {
+        "rows_seen": 188,
+        "observations_seen": 188,
+        "valid_unique_observations": 188
+      },
+      "period": {
+        "start": "2018-04-02",
+        "end": "2018-12-31"
+      },
+      "series": [
+        "SOFR"
+      ]
+    },
+    {
+      "source_sha256": "8ef5f77a6bcf145b83ffc3600beffc1f96ee7d3be17ce16d892a7bcb78926c60",
+      "counts": {
+        "rows_seen": 250,
+        "observations_seen": 250,
+        "valid_unique_observations": 250
+      },
+      "period": {
+        "start": "2019-01-02",
+        "end": "2019-12-31"
+      },
+      "series": [
+        "SOFR"
+      ]
+    },
+    {
+      "source_sha256": "6303924b8ba2eb14fb35c84586cc7ccfa9b62227307f145492902ccdcd86f1d5",
+      "counts": {
+        "rows_seen": 251,
+        "observations_seen": 251,
+        "valid_unique_observations": 251
+      },
+      "period": {
+        "start": "2020-01-02",
+        "end": "2020-12-31"
+      },
+      "series": [
+        "SOFR"
+      ]
+    },
+    {
+      "source_sha256": "1d81e7212f3791a9691e77d552bc933b17b1aacdf11a0200a056961e60c3f8cd",
+      "counts": {
+        "rows_seen": 250,
+        "observations_seen": 250,
+        "valid_unique_observations": 250
+      },
+      "period": {
+        "start": "2021-01-04",
+        "end": "2021-12-31"
+      },
+      "series": [
+        "SOFR"
+      ]
+    },
+    {
+      "source_sha256": "db885b1e5fcb68859e56428441835e8b37e2ebbe227ddc06cc95f62fd1fddd0c",
+      "counts": {
+        "rows_seen": 249,
+        "observations_seen": 249,
+        "valid_unique_observations": 249
+      },
+      "period": {
+        "start": "2022-01-03",
+        "end": "2022-12-30"
+      },
+      "series": [
+        "SOFR"
+      ]
+    },
+    {
+      "source_sha256": "e2fcdcea3fbf9dd6b160d8e2ae5ce27463a9fba0642bfdcfbbe38b415c0e461c",
+      "counts": {
+        "rows_seen": 249,
+        "observations_seen": 249,
+        "valid_unique_observations": 249
+      },
+      "period": {
+        "start": "2023-01-03",
+        "end": "2023-12-29"
+      },
+      "series": [
+        "SOFR"
+      ]
+    },
+    {
+      "source_sha256": "381fc266d1dac1f2937c8293c2e9657011aa53160e40519dc5b20392a02ce278",
+      "counts": {
+        "rows_seen": 250,
+        "observations_seen": 250,
+        "valid_unique_observations": 250
+      },
+      "period": {
+        "start": "2024-01-02",
+        "end": "2024-12-31"
+      },
+      "series": [
+        "SOFR"
+      ]
+    },
+    {
+      "source_sha256": "fafbcc840cf1a71ffdce5314f9b3dac6ba57ec1fb2f14c9b7667d3a19ea5b84d",
+      "counts": {
+        "rows_seen": 249,
+        "observations_seen": 249,
+        "valid_unique_observations": 249
+      },
+      "period": {
+        "start": "2025-01-02",
+        "end": "2025-12-31"
+      },
+      "series": [
+        "SOFR"
+      ]
+    },
+    {
+      "source_sha256": "bbe24ba96a2ddc5fb3254a5a2c6c228cf8584944ca597bdf25aac01d6e9ce697",
+      "counts": {
+        "rows_seen": 211,
+        "observations_seen": 211,
+        "valid_unique_observations": 211
+      },
+      "period": {
+        "start": "2026-01-02",
+        "end": "2026-11-04"
+      },
+      "series": [
+        "SOFR"
+      ]
+    }
+  ],
+  "storage": {
+    "rows": 98286,
+    "partitions": 27,
+    "parquet_bytes": 325598,
+    "memory_limit_bytes": 536870912,
+    "threads": 2
+  },
+  "revisions": {
+    "new_observation_versions": 0,
+    "changed_values_vs_prior_acquisition": 0
+  },
+  "software": {
+    "duckdb": "2.0.0",
+    "pyarrow": "26.0.1",
+    "pandas": "3.1.1",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "fastapi": "0.162.0",
+    "python": "3.12.14"
+  },
+  "analysis_sha256": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
+  "source_code_sha256": {
+    "service.py": "e58a4564b2adac3a4c93133e6721b72fefca2ba31cda1b61b90e3c17abcfed52",
+    "connectors.py": "75ceb50b531e23330acc43c8440d63b8296f7fba9449a22665100a2ed9c5eb13",
+    "benchmark.py": "16b2d24062c03a5a071b7884d48699b67bc9ab0a5aae9b57d347c41566688461",
+    "analysis.py": "a73743fdfa5bcbeb2ec9b43242902d1bfc2d780fc15e2c3436c93902821fc0c1",
+    "ecb.py": "e93451d53cf10088ada77cf0ed2b89d0893ca3dbb0f76d853889a0d2fc192a77",
+    "__init__.py": "8de75588543da652ace90e2dc44470f4aa7786cb6cf2855fa00f018016ea278d",
+    "parsers.py": "6308f475bcb2d1ed0e100cb33b7b7a9b7e2cd2d71c46b7508cdcf441bcba1542",
+    "export.py": "a23826f378ad90737cd71c8c53cca4165545593844db03babdda2b64be97de3f",
+    "api.py": "6a693c9e11465e6e9e6bbfa20066b28776825abee5fbf7530a9dcd818f94ecb9",
+    "cli.py": "0ecf3816916be6464db1c54822ce90b2706a1efc0041f0d2ec9aa881b10fa50f",
+    "storage.py": "f27e901962a07496dbf4e4e08c41199490cee41235783c7edc5a02eb5dcc8696",
+    "report.py": "aa2daafd647b515f2d4fed4e6e8b5b519f059a3c55d8ceb7b6192e870da712cf"
+  },
+  "dates_policy": "Observation date distinct from publication, source update, acquisition and vintage. Historical publication timestamps unavailable -> null; retrospective current-vintage study only.",
+  "source_license_policy": "Institutional terms separate from Apache2.0 originalcode; raw responses/fullseries staylocal, no blanket publicredistribution",
+  "nyfed_notice": "SOFR data and derived research results are subject to the Terms of Use at https://www.newyorkfed.org/privacy/termsofuse. The New York Fed is not responsible for publication of these results by Mattoccia Labs, does not endorse this republication, and has no liability for your use. Mattoccia Labs is not affiliated with the New York Fed. The New York Fed does not sanction, endorse, or recommend products or services offered by Mattoccia Labs. SOFR data are calculated using data provided under a license granted to the New York Fed by DTCC Solutions LLC; those parties have no liability for this material.",
+  "duration_seconds": 3.548,
+  "errors": []
+}

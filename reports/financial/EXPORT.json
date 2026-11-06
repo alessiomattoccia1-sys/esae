@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "exported_at": "2026-11-06T06:22:13.695923+00:00",
+  "verification": {
+    "passed": true,
+    "network_used": false,
+    "sources_rehashed": 13,
+    "observations_reparsed": 139903,
+    "stored_unique_period_observations": 98286,
+    "analysis_sha256": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
+    "expected": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
+    "verified_at": "2026-11-06T06:22:13.418753+00:00",
+    "scope": "Full raw immutable response replay of the exact acquired vintage; no historical real-time predictive claim"
+  },
+  "raw_responses_included": false,
+  "full_institutional_series_included": false,
+  "files": {
+    "FSIE-001_REPORT.html": "9301b344e9a9ae80b21c4d9d10ffcccb67c095fc2e39e63b2a269874a8f325bf",
+    "FSIE-001_RESULTS.json": "cedcfac662cc6f2b831083dbc0f19cd3d3145969b0730eba8d5c1429febc22fa",
+    "FSIE-001_FINDINGS.csv": "0653d1491a647e5b5689f19c9b6e167f3120449bef31e7c3fbb60162c4b74d84",
+    "FSIE-001_MANIFEST.json": "9a4ef6fcc0449403693736f15b720b9860ffc553f0f0d87d29192fa784e71ad9",
+    "FSIE-001_METHODOLOGY.md": "a64b163c8b9cc761ffa8bf52c1562737362eec72a51468d3141563fd7325a007",
+    "FSIE-001_REPRODUCIBILITY.md": "2a317e8637c811a67383d7d29df46e62036d5e9fbc3540bf86bba2bf5aff9c25",
+    "FSIE-BENCHMARK.json": "b9afdb2692ed532e0610a01a5bd46804fc5b5ae47fa7f27080bd7c990ef4fe53",
+    "summary.json": "79d58f19b0c551701bce14574beeeed21697e815a6ad6817e00507e79a8627b9",
+    "DATA_NOTICE.md": "60426e3c93838f744787441d00dee4660d93dc683b0d957aafe2c683c622920e"
+  }
+}

@@ -198,3 +198,7 @@ The initial pre-correction single-job baseline stopped partially at 305.215s;
 the later run also corrected target macros/configuration selection, so this is
 not a controlled speedup comparison. This is the largest workload qualified so
 far here, not a maximum established across arbitrary C++ repositories.
+
+## ENGINE 04 — MARKETS
+
+Financial Systems Intelligence Engine 0.1.0 adds official Treasury/Chicago/New York Fed acquisition, DuckDB/Parquet storage, dependence-aware statistics, a real FSIE-001 study, seven-area local dashboard and a separate synthetic 20-million-row benchmark. See [financial/README.md](financial/README.md). Code Apache 2.0; institutional data terms separate. Original runtime files of CODE, LIFE and MATTER are preserved.

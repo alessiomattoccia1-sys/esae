@@ -12,20 +12,23 @@ dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.32,<1", "httpx>=0.27,<1", "PyYA
 [project.optional-dependencies]
 test = ["pytest>=8,<10"]
 materials = ["numpy>=2,<3", "scipy>=1.14,<2", "jarvis-tools==2026.6.12"]
+financial = ["numpy>=2,<3", "scipy>=1.14,<2", "pandas>=3,<4", "statsmodels>=0.15,<1", "duckdb>=2,<3", "pyarrow>=26,<27"]
 
 [project.scripts]
 esae = "esae.cli:main"
 gee = "genomics.cli:main"
 mde = "materials.cli:main"
+fsie = "financial.cli:main"
 
 [tool.setuptools.package-data]
 esae = ["static/*"]
 benchmarks = ["*.json"]
 genomics = ["static/*"]
 materials = ["static/*"]
+financial = ["static/*"]
 
 [tool.setuptools.packages.find]
-include = ["esae*", "benchmarks*", "research_core*", "genomics*", "materials*"]
+include = ["esae*", "benchmarks*", "research_core*", "genomics*", "materials*", "financial*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

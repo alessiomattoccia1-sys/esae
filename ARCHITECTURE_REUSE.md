@@ -83,3 +83,7 @@ actual reuse of ingestion, database, orchestration, localAI, UI, reports,
 provenance and charts; material algorithms remain independent. New optional
 HTTP source policy/metadata parameters preserve original GEE defaults. Existing
 ESAE/GEE runtime hashes and original-environment regressions are checked separately.
+
+## ENGINE 04 — MARKETS assessment
+
+The FSIE assessment and reuse matrix are in financial/ARCHITECTURE_REUSE.md. Actual baseline was 169 passing tests for the first three engines. Shared HTTP/jobs/locks/local-boundary/local-AI functions are imported directly, with a financial source policy; original shared/runtime files remain byte-identical. Financial parsing, statistical algorithms and columnar storage are new domain modules.

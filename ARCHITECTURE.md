@@ -94,3 +94,7 @@ See [materials/ARCHITECTURE.md](materials/ARCHITECTURE.md), the actual
 [scientific methodology](materials/SCIENTIFIC_METHODOLOGY.md). The public site
 extends the same master page to CODE/LIFE/MATTER and publishes static scientific
 results only. No VPS materials calculation, local database or raw archive is exposed.
+
+## Financial systems extension
+
+ENGINE 04 — MARKETS imports the existing Shared Research Core without changing it. A separate financial environment/archive adds source-vintage preservation, institutional time-series normalization, year-partitioned Parquet, bounded DuckDB, explicit statistical methods and derived-only public reports. Domain algorithms remain separate. See financial/ARCHITECTURE.md.

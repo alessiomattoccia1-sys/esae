@@ -1,0 +1,644 @@
+{
+  "status": "QUALIFIED",
+  "engine_version": "0.1.0",
+  "experiment": "FSIE-001",
+  "analysis_sha256": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
+  "completed_at": "2026-11-06T06:21:36.843583+00:00",
+  "period": {
+    "daily_start": "2000-01-03",
+    "daily_end": "2026-10-30",
+    "weekly_start": "2000-01-07",
+    "weekly_end": "2026-10-30"
+  },
+  "coverage": {
+    "source_observations_acquired": 139903,
+    "stored_unique_period_observations": 98286,
+    "daily_treasury_sessions": 6711,
+    "weekly_calendar_slots": 1400,
+    "complete_primary_weeks": 1400,
+    "missing_primary_week_slots": 0,
+    "invalid_observations": 0,
+    "duplicates": 0,
+    "excluded_outside_configured_period": 41617
+  },
+  "series_count": 21,
+  "verification": {
+    "passed": true,
+    "network_used": false,
+    "sources_rehashed": 13,
+    "observations_reparsed": 139903,
+    "stored_unique_period_observations": 98286,
+    "analysis_sha256": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
+    "expected": "2b6702e018e1b92aa0973b936457d7f77698c2b52ac514320cc0e8fe406efac4",
+    "verified_at": "2026-11-06T06:22:13.418753+00:00",
+    "scope": "Full raw immutable response replay of the exact acquired vintage; no historical real-time predictive claim"
+  },
+  "yield_curve": {
+    "spread_10y2y_bp": {
+      "valid_sessions": 6711,
+      "inverted_sessions": 1009,
+      "episodes": 20,
+      "distribution_bp": {
+        "n": 6711,
+        "minimum": -108.0,
+        "maximum": 291.0,
+        "mean": 104.365221278498,
+        "median": 100.0,
+        "std_sample": 96.181816651297,
+        "p05": -41.0,
+        "p95": 258.0
+      }
+    },
+    "spread_10y3m_bp": {
+      "valid_sessions": 6708,
+      "inverted_sessions": 1117,
+      "episodes": 38,
+      "distribution_bp": {
+        "n": 6708,
+        "minimum": -189.0,
+        "maximum": 385.0,
+        "mean": 135.661001788909,
+        "median": 148.0,
+        "std_sample": 133.140725655602,
+        "p05": -105.65,
+        "p95": 341.0
+      }
+    }
+  },
+  "lag_test_summary": {
+    "family_size": 28,
+    "estimable": 28,
+    "holm_significant_05": 0,
+    "holm_not_significant_or_not_estimable": 28,
+    "multiple_testing": "Holm family28, HAC/Newey-West13lags on first differences; no unadjusted result selection"
+  },
+  "contemporaneous_correlations": [
+    {
+      "n_pairs": 1400,
+      "status": "computed",
+      "pearson": 0.093241701577,
+      "spearman": -0.150008002916,
+      "inference": "Descriptive; no IID p-value or causality claim",
+      "spread": "spread_10y2y_bp",
+      "index": "NFCI",
+      "transformation": "level",
+      "bootstrap_ci95": {
+        "status": "computed",
+        "method": "Joint overlapping moving blocks; percentile95CI; paired missingness retained; descriptive under temporal dependence",
+        "lower": -0.101448814492,
+        "upper": 0.222914134873,
+        "block_weeks": 13,
+        "replicates": 999,
+        "valid_replicates": 999,
+        "seed": 20261106,
+        "not_realtime_predictive": true
+      }
+    },
+    {
+      "n_pairs": 1399,
+      "status": "computed",
+      "pearson": 0.031412177228,
+      "spearman": -0.075988029395,
+      "inference": "Descriptive; no IID p-value or causality claim",
+      "spread": "spread_10y2y_bp",
+      "index": "NFCI",
+      "transformation": "first_difference",
+      "bootstrap_ci95": {
+        "status": "computed",
+        "method": "Joint overlapping moving blocks; percentile95CI; paired missingness retained; descriptive under temporal dependence",
+        "lower": -0.096233066592,
+        "upper": 0.147955415658,
+        "block_weeks": 13,
+        "replicates": 999,
+        "valid_replicates": 999,
+        "seed": 20261106,
+        "not_realtime_predictive": true
+      }
+    },
+    {
+      "n_pairs": 1400,
+      "status": "computed",
+      "pearson": 0.087452504591,
+      "spearman": -0.189733318635,
+      "inference": "Descriptive; no IID p-value or causality claim",
+      "spread": "spread_10y2y_bp",
+      "index": "ANFCI",
+      "transformation": "level",
+      "bootstrap_ci95": {
+        "status": "computed",
+        "method": "Joint overlapping moving blocks; percentile95CI; paired missingness retained; descriptive under temporal dependence",
+        "lower": -0.105095469907,
+        "upper": 0.217342242505,
+        "block_weeks": 13,
+        "replicates": 999,
+        "valid_replicates": 999,
+        "seed": 20261106,
+        "not_realtime_predictive": true
+      }
+    },
+    {
+      "n_pairs": 1399,
+      "status": "computed",
+      "pearson": 0.020387677533,
+      "spearman": -0.065395953591,
+      "inference": "Descriptive; no IID p-value or causality claim",
+      "spread": "spread_10y2y_bp",
+      "index": "ANFCI",
+      "transformation": "first_difference",
+      "bootstrap_ci95": {
+        "status": "computed",
+        "method": "Joint overlapping moving blocks; percentile95CI; paired missingness retained; descriptive under temporal dependence",
+        "lower": -0.096575360208,
+        "upper": 0.13485094038,
+        "block_weeks": 13,
+        "replicates": 999,
+        "valid_replicates": 999,
+        "seed": 20261106,
+        "not_realtime_predictive": true
+      }
+    },
+    {
+      "n_pairs": 1400,
+      "status": "computed",
+      "pearson": 0.116852653949,
+      "spearman": -0.123083191443,
+      "inference": "Descriptive; no IID p-value or causality claim",
+      "spread": "spread_10y3m_bp",
+      "index": "NFCI",
+      "transformation": "level",
+      "bootstrap_ci95": {
+        "status": "computed",
+        "method": "Joint overlapping moving blocks; percentile95CI; paired missingness retained; descriptive under temporal dependence",
+        "lower": -0.086030098414,
+        "upper": 0.250345375943,
+        "block_weeks": 13,
+        "replicates": 999,
+        "valid_replicates": 999,
+        "seed": 20261106,
+        "not_realtime_predictive": true
+      }
+    },
+    {
+      "n_pairs": 1399,
+      "status": "computed",
+      "pearson": 0.063986057888,
+      "spearman": -0.052302396446,
+      "inference": "Descriptive; no IID p-value or causality claim",
+      "spread": "spread_10y3m_bp",
+      "index": "NFCI",
+      "transformation": "first_difference",
+      "bootstrap_ci95": {
+        "status": "computed",
+        "method": "Joint overlapping moving blocks; percentile95CI; paired missingness retained; descriptive under temporal dependence",
+        "lower": -0.051062837604,
+        "upper": 0.16789838789,
+        "block_weeks": 13,
+        "replicates": 999,
+        "valid_replicates": 999,
+        "seed": 20261106,
+        "not_realtime_predictive": true
+      }
+    },
+    {
+      "n_pairs": 1400,
+      "status": "computed",
+      "pearson": 0.122918729846,
+      "spearman": -0.136075471757,
+      "inference": "Descriptive; no IID p-value or causality claim",
+      "spread": "spread_10y3m_bp",
+      "index": "ANFCI",
+      "transformation": "level",
+      "bootstrap_ci95": {
+        "status": "computed",
+        "method": "Joint overlapping moving blocks; percentile95CI; paired missingness retained; descriptive under temporal dependence",
+        "lower": -0.070264569226,
+        "upper": 0.256156969017,
+        "block_weeks": 13,
+        "replicates": 999,
+        "valid_replicates": 999,
+        "seed": 20261106,
+        "not_realtime_predictive": true
+      }
+    },
+    {
+      "n_pairs": 1399,
+      "status": "computed",
+      "pearson": 0.075364594703,
+      "spearman": -0.051127086671,
+      "inference": "Descriptive; no IID p-value or causality claim",
+      "spread": "spread_10y3m_bp",
+      "index": "ANFCI",
+      "transformation": "first_difference",
+      "bootstrap_ci95": {
+        "status": "computed",
+        "method": "Joint overlapping moving blocks; percentile95CI; paired missingness retained; descriptive under temporal dependence",
+        "lower": -0.051671528536,
+        "upper": 0.185322280913,
+        "block_weeks": 13,
+        "replicates": 999,
+        "valid_replicates": 999,
+        "seed": 20261106,
+        "not_realtime_predictive": true
+      }
+    }
+  ],
+  "anomaly_flags": 115,
+  "anomaly_examples": [
+    {
+      "date": "2020-03-13",
+      "indicator": "ANFCI",
+      "change": 0.26,
+      "unit": "index_points",
+      "robust_z": 16.003826202126,
+      "threshold_abs_z": 4.0,
+      "history_window_weeks": 104,
+      "minimum_prior_weeks": 52,
+      "kind": "extreme_observed_change_not_acquisition_error",
+      "source_ids": [
+        "chicago"
+      ]
+    },
+    {
+      "date": "2020-03-20",
+      "indicator": "ANFCI",
+      "change": 0.234,
+      "unit": "index_points",
+      "robust_z": 14.409575316091,
+      "threshold_abs_z": 4.0,
+      "history_window_weeks": 104,
+      "minimum_prior_weeks": 52,
+      "kind": "extreme_observed_change_not_acquisition_error",
+      "source_ids": [
+        "chicago"
+      ]
+    },
+    {
+      "date": "2020-03-13",
+      "indicator": "NFCI",
+      "change": 0.164,
+      "unit": "index_points",
+      "robust_z": 13.82706056927,
+      "threshold_abs_z": 4.0,
+      "history_window_weeks": 104,
+      "minimum_prior_weeks": 52,
+      "kind": "extreme_observed_change_not_acquisition_error",
+      "source_ids": [
+        "chicago"
+      ]
+    },
+    {
+      "date": "2020-03-06",
+      "indicator": "ANFCI",
+      "change": 0.224,
+      "unit": "index_points",
+      "robust_z": 13.796401898385,
+      "threshold_abs_z": 4.0,
+      "history_window_weeks": 104,
+      "minimum_prior_weeks": 52,
+      "kind": "extreme_observed_change_not_acquisition_error",
+      "source_ids": [
+        "chicago"
+      ]
+    },
+    {
+      "date": "2020-03-06",
+      "indicator": "NFCI",
+      "change": 0.16,
+      "unit": "index_points",
+      "robust_z": 13.489815189532,
+      "threshold_abs_z": 4.0,
+      "history_window_weeks": 104,
+      "minimum_prior_weeks": 52,
+      "kind": "extreme_observed_change_not_acquisition_error",
+      "source_ids": [
+        "chicago"
+      ]
+    },
+    {
+      "date": "2007-08-10",
+      "indicator": "NFCI",
+      "change": 0.12,
+      "unit": "index_points",
+      "robust_z": 13.264984936373,
+      "threshold_abs_z": 4.0,
+      "history_window_weeks": 104,
+      "minimum_prior_weeks": 52,
+      "kind": "extreme_observed_change_not_acquisition_error",
+      "source_ids": [
+        "chicago"
+      ]
+    }
+  ],
+  "money_market_supplement": {
+    "observations": 2144,
+    "start": "2018-04-02",
+    "end": "2026-10-30",
+    "change_distribution_bp": {
+      "n": 2143,
+      "minimum": -270.0,
+      "maximum": 282.0,
+      "mean": 0.10032664489,
+      "median": 0.0,
+      "std_sample": 10.455039791226,
+      "p05": -4.0,
+      "p95": 4.0
+    },
+    "largest_absolute_changes": [
+      {
+        "date": "2019-09-17",
+        "change_bp": 282.0
+      },
+      {
+        "date": "2019-09-18",
+        "change_bp": -270.0
+      },
+      {
+        "date": "2020-03-16",
+        "change_bp": -84.0
+      },
+      {
+        "date": "2022-06-16",
+        "change_bp": 75.0
+      },
+      {
+        "date": "2022-11-03",
+        "change_bp": 75.0
+      }
+    ],
+    "weekly_nfci_correlation": {
+      "n_pairs": 448,
+      "status": "computed",
+      "pearson": 0.271446809048,
+      "spearman": 0.486861453642,
+      "inference": "Descriptive; no IID p-value or causality claim"
+    },
+    "comparison_scope": "Money-market supplement; shorter inception coverage; retrospective not independent crisis ground truth"
+  },
+  "sources": [
+    {
+      "source_id": "treasury",
+      "url": "https://home.treasury.gov/system/files/276/yield-curve-rates-1990-2024.csv",
+      "sha256": "258a594eb64e9d21d9e8574b0b8580b0a5230dce56bb284ec6aa49a9a260897f",
+      "acquired_at": "2026-11-06T05:47:10.724379+00:00",
+      "release_date": "Wed, 19 Aug 2026 16:04:55 GMT"
+    },
+    {
+      "source_id": "treasury",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2025",
+      "sha256": "165e138f98ec47f648e268058a040a0ef22a3b6dce55e043433d5eba2adbd3b3",
+      "acquired_at": "2026-11-06T05:47:32.082315+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "treasury",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
+      "sha256": "e96199b32569922ed01f894b55501a7ae11d17498c837f0bae088978b68a4d0b",
+      "acquired_at": "2026-11-06T05:47:48.835057+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "chicago",
+      "url": "https://api.data.chicagofed.org/NFCI/nfci-data-series-csv.csv",
+      "sha256": "6dccfc661261e95d823f4b07a8b96e9848860d7c6b7cfc9ab99e8b30a7b716f9",
+      "acquired_at": "2026-11-06T05:47:49.422848+00:00",
+      "release_date": "Wed, 04 Nov 2026 13:30:04 GMT"
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2018-04-02&endDate=2018-12-31",
+      "sha256": "0652bd78da1372b5a4a89eb10b54148b6cc0dabf528a139a2ac23b0f7052e46f",
+      "acquired_at": "2026-11-06T05:47:49.986459+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2019-01-01&endDate=2019-12-31",
+      "sha256": "8ef5f77a6bcf145b83ffc3600beffc1f96ee7d3be17ce16d892a7bcb78926c60",
+      "acquired_at": "2026-11-06T05:47:50.401367+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2020-01-01&endDate=2020-12-31",
+      "sha256": "6303924b8ba2eb14fb35c84586cc7ccfa9b62227307f145492902ccdcd86f1d5",
+      "acquired_at": "2026-11-06T05:47:50.970117+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2021-01-01&endDate=2021-12-31",
+      "sha256": "1d81e7212f3791a9691e77d552bc933b17b1aacdf11a0200a056961e60c3f8cd",
+      "acquired_at": "2026-11-06T05:47:51.334092+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2022-01-01&endDate=2022-12-31",
+      "sha256": "db885b1e5fcb68859e56428441835e8b37e2ebbe227ddc06cc95f62fd1fddd0c",
+      "acquired_at": "2026-11-06T05:47:51.967591+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2023-01-01&endDate=2023-12-31",
+      "sha256": "e2fcdcea3fbf9dd6b160d8e2ae5ce27463a9fba0642bfdcfbbe38b415c0e461c",
+      "acquired_at": "2026-11-06T05:47:52.361849+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2024-01-01&endDate=2024-12-31",
+      "sha256": "381fc266d1dac1f2937c8293c2e9657011aa53160e40519dc5b20392a02ce278",
+      "acquired_at": "2026-11-06T05:47:52.985494+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2025-01-01&endDate=2025-12-31",
+      "sha256": "fafbcc840cf1a71ffdce5314f9b3dac6ba57ec1fb2f14c9b7667d3a19ea5b84d",
+      "acquired_at": "2026-11-06T05:47:53.365870+00:00",
+      "release_date": null
+    },
+    {
+      "source_id": "newyork",
+      "url": "https://markets.newyorkfed.org/api/rates/secured/sofr/search.json?startDate=2026-01-01&endDate=2026-11-06",
+      "sha256": "bbe24ba96a2ddc5fb3254a5a2c6c228cf8584944ca597bdf25aac01d6e9ce697",
+      "acquired_at": "2026-11-06T05:47:53.992482+00:00",
+      "release_date": null
+    }
+  ],
+  "benchmark": {
+    "benchmark": "FSIE-BIGDATA-001",
+    "classification": "SYNTHETIC_TECHNICAL_ONLY_NOT_FINANCIAL_RESEARCH",
+    "rows": 20000000,
+    "generator": "range(i),10000series,date2000-01-01+floor(i/10000),value=sin(i*.001)+cos((i%10000)*.1);deterministic,no market observations",
+    "duckdb_version": "2.0.0",
+    "machine": {
+      "system": "Darwin",
+      "release": "27.0.0",
+      "architecture": "arm64",
+      "chip": null,
+      "physical_memory_bytes": 0
+    },
+    "settings": {
+      "memory_limit": "512MB",
+      "threads": 2,
+      "row_group_size": 122880,
+      "compression": "ZSTD",
+      "partition": "year"
+    },
+    "generation_parquet_write_seconds": 1.6670334169757552,
+    "parquet_load_into_duckdb_seconds": 0.9034757079789415,
+    "parquet_bytes": 163232364,
+    "parquet_files": 6,
+    "year_partitions": 6,
+    "loaded_database_bytes": 152842240,
+    "process_peak_rss_bytes": 542408704,
+    "rss_scope": "Whole fresh CLI process peak includes Python/imports; not an assertion of engine-only memory",
+    "query_results": {
+      "count_metadata": {
+        "sql": "SELECT count(*) FROM source_parquet",
+        "seconds": [
+          0.03492391703184694,
+          0.005568249966017902,
+          0.005376667017117143
+        ],
+        "median_seconds": 0.005568249966017902,
+        "result_rows": 1,
+        "result_sha256": [
+          "db90fface2ca8d0cdd58f9796cb9215d5d43f7c7ba37513896a3019a58df3682",
+          "db90fface2ca8d0cdd58f9796cb9215d5d43f7c7ba37513896a3019a58df3682",
+          "db90fface2ca8d0cdd58f9796cb9215d5d43f7c7ba37513896a3019a58df3682"
+        ],
+        "first_rows": [
+          [
+            20000000
+          ]
+        ],
+        "cache_state": "firstobserved then warm; OS caches not forcibly dropped"
+      },
+      "time_series_filter": {
+        "sql": "SELECT count(*),avg(value) FROM source_parquet WHERE observation_date BETWEEN DATE '2002-01-01' AND DATE '2002-01-31' AND series_id BETWEEN 100 AND 199",
+        "seconds": [
+          0.004738457966595888,
+          0.004648041038308293,
+          0.004627249960321933
+        ],
+        "median_seconds": 0.004648041038308293,
+        "result_rows": 1,
+        "result_sha256": [
+          "015bc12991bf2d7ccf2cb253a370760bc0ae58f8be4857c12d829faca2fd6f3d",
+          "015bc12991bf2d7ccf2cb253a370760bc0ae58f8be4857c12d829faca2fd6f3d",
+          "015bc12991bf2d7ccf2cb253a370760bc0ae58f8be4857c12d829faca2fd6f3d"
+        ],
+        "first_rows": [
+          [
+            3100,
+            0.16593637854519866
+          ]
+        ],
+        "cache_state": "firstobserved then warm; OS caches not forcibly dropped"
+      },
+      "group_aggregation": {
+        "sql": "SELECT series_id,count(*),avg(value),stddev_samp(value) FROM source_parquet GROUP BY series_id ORDER BY series_id",
+        "seconds": [
+          0.16043474996695295,
+          0.1629356249468401,
+          0.16146604204550385
+        ],
+        "median_seconds": 0.16146604204550385,
+        "result_rows": 10000,
+        "result_sha256": [
+          "fcbab7bab325af8818909df178fb00596f7c6f03cbed456e7d7f38e96a06ceee",
+          "1d1a36ce928a0a64523898c82c4305b73f48525e8bbb5e897d80923070857557",
+          "687434975d806ad502d5fe1d9e08a9aa2294fe01a82a442e5a5982dc8be5472b"
+        ],
+        "first_rows": [
+          [
+            0,
+            2000,
+            0.999840689323466,
+            0.7070946205437231
+          ],
+          [
+            1,
+            2000,
+            0.9948448583415713,
+            0.7070946383031038
+          ],
+          [
+            2,
+            2000,
+            0.9799072748041733,
+            0.7070946568184919
+          ]
+        ],
+        "cache_state": "firstobserved then warm; OS caches not forcibly dropped"
+      },
+      "full_scan_sum": {
+        "sql": "SELECT sum(value),min(value),max(value) FROM source_parquet",
+        "seconds": [
+          0.12969387497287244,
+          0.1274236660101451,
+          0.12653041700832546
+        ],
+        "median_seconds": 0.1274236660101451,
+        "result_rows": 1,
+        "result_sha256": [
+          "531e868fe3d443e1ddb84bd578b7a7a8c34c18d8131e7276473336096403ffa2",
+          "2ba8c260d11de6b7c3b05e8b6a777bd9d182655d3ee3442bee1807650dba9a85",
+          "d8fa8f7cf1fb5e76273f894756e9bbc6ad61a6882a7e7029651f07ab1edb20c0"
+        ],
+        "first_rows": [
+          [
+            17147.93741268067,
+            -1.9999821812607874,
+            1.9999983132773522
+          ]
+        ],
+        "cache_state": "firstobserved then warm; OS caches not forcibly dropped"
+      }
+    },
+    "expected_count": 20000000,
+    "expected_time_filter_rows": 3100,
+    "files": [
+      {
+        "name": "parquet/year=2000/data_0.parquet",
+        "bytes": 29892406,
+        "sha256": "c051b9b8e890aa88a0d38fcb62f6da512fced5265e3a051b6a83ec5126e2ba47"
+      },
+      {
+        "name": "parquet/year=2001/data_0.parquet",
+        "bytes": 29758215,
+        "sha256": "147c35fa12b521da17f85dfb1048cb73c96907f271405c8d65de07b524c87b16"
+      },
+      {
+        "name": "parquet/year=2002/data_0.parquet",
+        "bytes": 29792390,
+        "sha256": "da4d018b84b1873317ca97f37c1673f09d9194123aa50bce29d64ea39ba7d952"
+      },
+      {
+        "name": "parquet/year=2003/data_0.parquet",
+        "bytes": 29758844,
+        "sha256": "b03facedd38b4bd5803ab1273668335f0118fbdf081e6797f5696f0f9b1b7dc0"
+      },
+      {
+        "name": "parquet/year=2004/data_0.parquet",
+        "bytes": 29892341,
+        "sha256": "14d999a11bc24c44a22790dbbd122fee859045e759d187793090b58cbb0642aa"
+      },
+      {
+        "name": "parquet/year=2005/data_0.parquet",
+        "bytes": 14138168,
+        "sha256": "e53503cbd1016c14b990bb406365bf178102648746b8278e2108b3516779cee8"
+      }
+    ],
+    "duration_seconds": 3.7501125420094468,
+    "finished_at": "2026-11-06T06:15:59.723358+00:00",
+    "source_code_sha256": "16b2d24062c03a5a071b7884d48699b67bc9ab0a5aae9b57d347c41566688461",
+    "passed": true
+  },
+  "rights_scope": "Original computed research findings and source links. No raw/full institutional time-series archive; data terms separate from software Apache2.0.",
+  "nyfed_notice": "SOFR data and derived research results are subject to the Terms of Use at https://www.newyorkfed.org/privacy/termsofuse. The New York Fed is not responsible for publication of these results by Mattoccia Labs, does not endorse this republication, and has no liability for your use. Mattoccia Labs is not affiliated with the New York Fed. The New York Fed does not sanction, endorse, or recommend products or services offered by Mattoccia Labs. SOFR data are calculated using data provided under a license granted to the New York Fed by DTCC Solutions LLC; those parties have no liability for this material.",
+  "ai_numeric_results": false
+}
