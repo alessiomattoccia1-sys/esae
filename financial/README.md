@@ -2,6 +2,8 @@
 
 # Financial Systems Intelligence Engine — FSIE 0.1.0
 
+A project by **Alessio Mattoccia**.
+
 ENGINE 04 / MARKETS in Research Engines, alongside CODE, LIFE and MATTER.
 A local computational research application for institutional time series,
 yield-curve regimes, financial conditions and dependence-aware statistics.

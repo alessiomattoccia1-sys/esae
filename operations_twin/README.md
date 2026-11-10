@@ -1,5 +1,7 @@
 # Operations Twin Engine — v0.1
 
+A project by **Alessio Mattoccia**.
+
 Dynamics Lab / Engine02. **Understand the Process. Model the System. Test the Change.**
 
 A local computational laboratory for reconstructing real business event logs, testing empirical process twins on independent time periods, and simulating explicitly hypothetical capacity and service assumptions. It extends the existing Dynamics family and preserves Drone Dynamics and all five Research Engines.

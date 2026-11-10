@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Qualified FSIE environment, separate from existing ESAE/GEE runtimes."""
 

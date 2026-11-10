@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Safe inventory and generic detector-frame statistics; no implosion design."""
 

@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Small shared contracts; existing ESAE APIs/algorithms remain unchanged."""
 from esae.models import now

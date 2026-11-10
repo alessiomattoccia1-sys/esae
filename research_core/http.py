@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Bounded, hash-verified official public downloads. No arbitrary URL service."""
 import hashlib,json,time,urllib.request,urllib.error

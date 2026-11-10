@@ -21,10 +21,11 @@ Apache License2.0. NIST JARVIS-DFT data / Kamal Choudhary et al.,
 DOI10.6084/m9.figshare.6815699.v11, CC BY4.0. Normalization and screening
 are modifications; no endorsement. Data retain separate upstream terms.
 
-Financial Systems Intelligence Engine original code: Copyright 2026 Mattoccia Labs.
+Financial Systems Intelligence Engine original code: Copyright 2026 Alessio Mattoccia / Mattoccia Labs.
 Institutional data are not relicensed as Apache 2.0. See financial/DATA_GOVERNANCE.md and financial/THIRD_PARTY_NOTICES.md for attribution and separate data terms.
 
 Fusion Plasma Research Engine 0.1.0 original code is Apache-2.0.
+Copyright 2026 Alessio Mattoccia / Mattoccia Labs
 Data-derived FPE-001 reports/figures: UKAEA FAIR-MAST and source contributors,
 CC BY-SA 4.0. Data-derived FPE-002 detector reports/figures: STFC eData
 OMEAG_SAI-23A source authors, CC BY 4.0. See fusion/NOTICE,

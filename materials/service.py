@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Persistent local acquisition, scientific screening and raw-source replay."""
 from pathlib import Path

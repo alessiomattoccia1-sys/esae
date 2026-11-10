@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Second-phase ECB SDMX supplement, separate from FSIE-001 inference."""
 

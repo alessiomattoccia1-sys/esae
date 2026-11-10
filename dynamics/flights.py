@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Historical civil trajectory schema and WGS84 local Cartesian normalization."""
 

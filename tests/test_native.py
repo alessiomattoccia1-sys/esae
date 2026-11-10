@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 import pytest
 
 @pytest.mark.integration

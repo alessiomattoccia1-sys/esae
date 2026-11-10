@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Network-free deterministic replay of the qualified public normalized snapshot."""
 import argparse,gzip,json

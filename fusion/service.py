@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Persistent local jobs, two independent experiment paths and full raw replay."""
 

@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Operations Twin, Engine02 of Dynamics Lab; original software Apache2.0."""
 

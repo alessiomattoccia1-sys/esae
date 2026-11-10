@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Local-only API boundary adapted from ESAE, without changing ESAE's API."""
 from fastapi import Request

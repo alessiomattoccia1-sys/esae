@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Parse compilation databases as data. Never execute a compiler/build command.
 
 Only source language, standard, macros and in-snapshot include directories survive.

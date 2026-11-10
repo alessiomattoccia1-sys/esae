@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Generate a portable compilation database for ONLY the owned demo, without building."""
 import json
 from pathlib import Path

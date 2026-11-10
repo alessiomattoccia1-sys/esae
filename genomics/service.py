@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Resumable local public-source experiment orchestration, no cloud backend."""
 from pathlib import Path

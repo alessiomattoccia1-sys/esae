@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """python -m dynamics.cli run|serve|reproduce|models|simulate|monte-carlo"""
 

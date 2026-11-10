@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Generic state-space processes and estimators; no aircraft-specific logic."""
 

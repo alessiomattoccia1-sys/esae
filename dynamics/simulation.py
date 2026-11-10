@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Abstract interacting agents, independent from civil-flight parsing or hardware."""
 

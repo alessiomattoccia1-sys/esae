@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Qualified MDE environment, separate from existing ESAE/GEE runtimes."""
 from pathlib import Path

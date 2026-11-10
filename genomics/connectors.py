@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Official ClinVar/Ensembl adapters; future provider contract, not fake connectors."""
 import json,re

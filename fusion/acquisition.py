@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Allowlisted anonymous official data; immutable bytes and bounded resource use."""
 

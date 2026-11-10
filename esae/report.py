@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 from html import escape
 import json
 

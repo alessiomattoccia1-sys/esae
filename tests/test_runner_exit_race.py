@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Existing native runner: tolerate exited-child EPERM, never a live denial."""
 

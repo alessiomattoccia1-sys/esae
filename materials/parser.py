@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Whitelisted physical properties and crystal validation; no simulation or ML."""
 import json,re,math,hashlib,zipfile,io

@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Explicit local reproduction of a pinned third-party benchmark, no build scripts.
 
 Run with: .venv/bin/python -m benchmarks.reproduce_cppcheck --output .local/cppcheck-benchmark

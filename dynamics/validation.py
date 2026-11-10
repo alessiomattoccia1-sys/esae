@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Equal-flight retrospective metrics, covariance diagnostics and paired resampling."""
 

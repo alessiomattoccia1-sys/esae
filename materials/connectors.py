@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Pinned official JARVIS/Figshare acquisition, no arbitrary URLs or cloud AI."""
 import json,re,hashlib,os

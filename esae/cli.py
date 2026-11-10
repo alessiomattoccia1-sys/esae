@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 import argparse
 from pathlib import Path
 import json

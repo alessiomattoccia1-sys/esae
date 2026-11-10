@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 import json
 from pathlib import Path
 import pytest

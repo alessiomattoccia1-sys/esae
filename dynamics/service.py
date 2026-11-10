@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Persistent isolated Dynamics jobs and pinned offline source replay."""
 

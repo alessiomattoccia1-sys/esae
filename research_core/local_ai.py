@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Opt-in literal-loopback hypotheses; facts and computed numbers stay external."""
 import json,re,httpx

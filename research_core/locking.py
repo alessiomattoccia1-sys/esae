@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """One local research operation across threads and processes, no daemon."""
 import fcntl,threading,os

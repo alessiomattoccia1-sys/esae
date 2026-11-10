@@ -1,4 +1,5 @@
 #!/bin/zsh
+# Copyright 2026 Alessio Mattoccia
 set -eu
 cd -- "${0:A:h}"
 if [[ ! -x .venv/bin/python ]]; then

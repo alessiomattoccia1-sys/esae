@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 import pytest
 from benchmarks.reproduce_cppcheck import validate_checkpoint
 

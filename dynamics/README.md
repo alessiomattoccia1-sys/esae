@@ -1,5 +1,7 @@
 # Dynamics Lab — Drone Dynamics Engine0.1.0
 
+A project by **Alessio Mattoccia**.
+
 A separate family from Research Engines. Historical civil flight observations, transparent mathematical models and explicitly synthetic multi-agent experiments.
 
 ## Run on the qualified platform

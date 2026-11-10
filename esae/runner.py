@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Operator-selected executables, bounded execution, no shell or network."""
 from dataclasses import dataclass
 from pathlib import Path

@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Explicit units/dates and missingness; XML/CSV/JSON are data, never commands."""
 

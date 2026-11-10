@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Domain-independent seeded experiments and uncertainty/distribution utilities."""
 

@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Bounded isolated HDF4 detector reader; never executes archive content."""
 

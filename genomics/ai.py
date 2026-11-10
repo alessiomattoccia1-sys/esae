@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Optional bounded evidence-referenced local hypotheses; never numeric results."""
 import json,httpx,re

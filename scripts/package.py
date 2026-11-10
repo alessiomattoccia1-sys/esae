@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Deterministic original-source distribution; explicit allowlist only."""
 from pathlib import Path
 import hashlib

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright 2026 Alessio Mattoccia
 """Explicit user-run setup. Installs only inside this ESAE directory."""
 import hashlib
 import json

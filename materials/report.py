@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Self-contained scientific report; only real computed data, escaped sources."""
 from html import escape

@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 from pathlib import Path
 from typing import Annotated
 import json

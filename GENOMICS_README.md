@@ -1,6 +1,8 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 # Research Engines · Genomics Evidence Engine 0.1
 
+A project by **Alessio Mattoccia**.
+
 Experimental, local analysis of **public** human variant evidence. ClinVar data,
 deterministic comparisons, exact Ensembl SNV annotation, provenance and real
 reports. **Not a diagnostic product. No personal genetic data or clinical advice.**

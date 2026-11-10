@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Static scientific export, with real denominators and escaped source data."""
 from html import escape

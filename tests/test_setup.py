@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 import tarfile
 import pytest
 from scripts.setup import validate_member

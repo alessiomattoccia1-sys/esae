@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Explicitly opt-in local Ollama; no fallback, no downloads, no cloud."""
 import ipaddress
 import json

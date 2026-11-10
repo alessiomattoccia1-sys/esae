@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Explicit operator entry points. Serves only loopback; no startup service."""
 import argparse,json,os

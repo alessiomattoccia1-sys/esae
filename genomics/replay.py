@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Replay the published normalized snapshot without network or private cache."""
 import argparse,gzip,json

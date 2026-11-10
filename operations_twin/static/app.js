@@ -1,3 +1,4 @@
+// Copyright 2026 Alessio Mattoccia
 // SPDX-License-Identifier: Apache-2.0
 'use strict';
 const $=id=>document.getElementById(id),fmt=v=>typeof v==='number'?new Intl.NumberFormat('it-IT',{maximumFractionDigits:4}).format(v):v===null||v===undefined?'—':String(v),node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};

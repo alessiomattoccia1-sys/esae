@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Lexical include graph. This is deliberately NOT a complete call graph/AST."""
 from pathlib import PurePosixPath
 import re

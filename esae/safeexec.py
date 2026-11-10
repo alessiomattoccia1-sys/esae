@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Isolated resource setup; no repository-controlled code is imported."""
 import os
 import resource

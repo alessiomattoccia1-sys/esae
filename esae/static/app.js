@@ -1,3 +1,4 @@
+// Copyright 2026 Alessio Mattoccia
 'use strict';
 const $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
 const svgNS='http://www.w3.org/2000/svg';

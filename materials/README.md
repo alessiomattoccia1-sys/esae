@@ -1,5 +1,7 @@
 # Materials Discovery Engine — MDE 0.1.0
 
+A project by **Alessio Mattoccia**.
+
 **Research Engines / CODE · LIFE · MATTER**. This third engine shares the existing repository and minimal research core with ESAE0.1.1 and GEE0.1.0. It acquires real public NIST JARVIS-DFT data, validates crystals and units, and performs deterministic photovoltaic screening. It is not a chatbot or a DFT simulator.
 
 Qualified platform: Mac mini M1, macOS27, Python3.12. Windows/Linux are not qualified. Python3.11+ is the code target; the exact tested wheels/lock are for Python3.12/macOSarm64. No service, model or global package is installed automatically.

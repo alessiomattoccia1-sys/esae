@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Transparent lexical heuristics. Evidence != proof of a runtime defect."""
 import re
 from .dependencies import mask_comments

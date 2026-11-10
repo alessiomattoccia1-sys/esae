@@ -1,5 +1,7 @@
 # Fusion Plasma Research Engine 0.1.0
 
+A project by **Alessio Mattoccia**.
+
 FPRE is the fifth member of Research Engines: CODE · LIFE · MATTER · MARKETS · FUSION. It is a local computational laboratory for retrospective experimental diagnostics, with independent magnetic and inertial algorithms and a shared evidence pipeline.
 
 ## Use

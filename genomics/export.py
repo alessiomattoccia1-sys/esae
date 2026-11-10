@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Qualified static public artifacts; never copies raw cache or local paths."""
 from pathlib import Path

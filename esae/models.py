@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 from dataclasses import dataclass, field, asdict
 from datetime import datetime, timezone
 from hashlib import sha256

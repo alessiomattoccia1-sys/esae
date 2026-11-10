@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 from pathlib import Path
 from esae.tools import cppcheck_findings,clang_findings
 from esae.models import Finding,deduplicate

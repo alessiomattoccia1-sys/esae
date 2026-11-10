@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Deterministic evidence comparisons. No diagnosis or reliability score."""
 from collections import Counter,defaultdict

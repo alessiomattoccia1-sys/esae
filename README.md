@@ -1,5 +1,7 @@
 # Embedded Software Analysis Engine — ESAE v0.1.1
 
+A project by **Alessio Mattoccia**.
+
 Part of **Research Engines**: this existing repository also contains the
 independent [Genomics Evidence Engine 0.1](GENOMICS_README.md),
 [Materials Discovery Engine 0.1](materials/README.md), public-source

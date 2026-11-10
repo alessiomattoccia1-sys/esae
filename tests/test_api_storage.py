@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 import json
 import pytest
 from fastapi.testclient import TestClient

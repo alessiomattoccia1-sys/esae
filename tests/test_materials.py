@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Known synthetic cases, distinct from live JARVIS qualification."""
 from pathlib import Path

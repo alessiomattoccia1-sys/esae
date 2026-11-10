@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 from pathlib import Path
 import platform
 import sys

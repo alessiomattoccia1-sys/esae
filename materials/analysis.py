@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Deterministic PV screening, transparent ordering and paired statistics."""
 from dataclasses import dataclass,asdict

@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Predeclared retrospective finance statistics; no trading or forecasts."""
 

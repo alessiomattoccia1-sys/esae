@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Generic discrete-event adapter beside the unchanged fixed-step Dynamics core."""
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Deterministic family source release; no local archive, secrets or binaries."""
 from pathlib import Path

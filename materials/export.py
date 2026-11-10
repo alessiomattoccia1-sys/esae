@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Qualify public CC-BY normalized data and original reports; never raw archives."""
 from pathlib import Path

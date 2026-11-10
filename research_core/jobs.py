@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Persistent local research jobs; domain results stay in their own schema."""
 import json,sqlite3,threading,uuid

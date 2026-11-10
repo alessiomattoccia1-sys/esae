@@ -1,3 +1,4 @@
+// Copyright 2026 Alessio Mattoccia
 // SPDX-License-Identifier: Apache-2.0
 'use strict';
 const $=q=>document.querySelector(q),$$=q=>[...document.querySelectorAll(q)];

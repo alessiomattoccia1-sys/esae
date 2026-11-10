@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 import json,httpx,pytest
 from research_core.local_ai import hypothesis

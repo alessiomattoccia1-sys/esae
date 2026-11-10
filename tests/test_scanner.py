@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 from pathlib import Path
 import pytest
 from esae.scanner import inventory,validate_root,InputError,snapshot,read_regular

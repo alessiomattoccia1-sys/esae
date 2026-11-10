@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Bounded public-data parsers. Never retain patient/sample observations."""
 import csv,gzip,io,re,hashlib,json

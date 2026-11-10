@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 # SPDX-License-Identifier: Apache-2.0
 """Original deterministic process discovery and columnar SQL; no PM4Py/AGPL."""
 

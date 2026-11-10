@@ -1,3 +1,4 @@
+# Copyright 2026 Alessio Mattoccia
 """Bounded repository inventory and immutable source evidence snapshot."""
 from pathlib import Path
 from dataclasses import dataclass
