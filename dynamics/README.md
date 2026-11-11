@@ -1,4 +1,6 @@
-# Dynamics Lab — Drone Dynamics Engine0.1.0
+# Dynamics Lab — Drone Dynamics Engine
+
+**English source distribution · v0.1.1**
 
 A project by **Alessio Mattoccia**.
 

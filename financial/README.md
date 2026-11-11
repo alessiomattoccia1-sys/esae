@@ -21,7 +21,7 @@ python3.12 scripts/setup_financial.py
 ```
 
 Open http://127.0.0.1:4204/ . Opening the dashboard does not acquire data.
-Press **Avvia ricerca reale** to explicitly download official data and run the
+Press **Start research** to explicitly download official data and run the
 analysis. An unchecked refresh box uses the hash-verified cache. Refresh records
 a new acquisition and changes against previously seen source values.
 No persistent service is installed. Ctrl-C stops the local server.

@@ -12,7 +12,7 @@ Qualified platform: Mac mini M1, macOS27, Python3.12. Windows/Linux are not qual
 2. In the extracted directory: `python3.12 scripts/setup_materials.py`. This creates `.venv-mde` separately from ESAE/GEE.
 3. Run `.venv-mde/bin/python -m materials.cli serve`.
 4. Open http://127.0.0.1:4202/ in a browser. Opening the dashboard performs no acquisition.
-5. Press **Avvia screening reale** to acquire the pinned official snapshot (48,447,610bytes). Cache, SQLite, structures and computation stay in `.local/materials`. The dashboard shows progress and restores saved studies after refresh.
+5. Press **Start screening** to acquire the pinned official snapshot (48,447,610bytes). Cache, SQLite, structures and computation stay in `.local/materials`. The dashboard shows progress and restores saved studies after refresh.
 6. Explore all six areas, filter materials, open details and export HTML/JSON/CSV/manifest. Close the terminal with Ctrl+C. Results persist locally.
 
 Alternatively run `.venv-mde/bin/python -m materials.cli run --data .local/materials`. The JSON output includes a job ID. Raw verification: `.venv-mde/bin/python -m materials.cli verify --data .local/materials --job JOB_ID`.

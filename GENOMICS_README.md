@@ -22,7 +22,7 @@ python3.12 scripts/setup_genomics.py
 .venv/bin/python -m genomics.cli serve --data .local/genomics
 ```
 
-Open **http://127.0.0.1:4198/**. Press **Avvia studio reale** to acquire the
+Open **http://127.0.0.1:4198/**. Press **Start study** to acquire the
 documented BRCA1/BRCA2 sample. Nothing is downloaded merely by opening an empty
 dashboard. Use Overview, Genomic Explorer, Evidence Analysis, Research Findings
 and optional AI Insights. Each variant opens actual VCV/RCV/SCV/coordinate detail.

@@ -1,5 +1,7 @@
 # Operations Twin Engine — v0.1
 
+**English source distribution · v0.1.1**
+
 A project by **Alessio Mattoccia**.
 
 Dynamics Lab / Engine02. **Understand the Process. Model the System. Test the Change.**
